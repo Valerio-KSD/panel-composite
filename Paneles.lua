@@ -2,23 +2,23 @@
 
 require "strict"
 
-f_pliegueSuperior=40
-f_pliegueInferior=32
-f_pliegueIzquierda=40
-f_pliegueDerecha=40
+alaSuperior=40
+alaInferior=32
+alaIzquierda=40
+alaDerecha=40
 
-f_AnchuraPlaca  = 1000
-f_MargenPlaca  = 3
-f_AlturaPlaca  = 500
-
-
-f_dobladilloSuperior=36
-f_dobladilloInferior=0
+anchuraPlaca  = 1000
+margenPlaca  = 3
+alturaPlaca  = 500
 
 
+pliegueSuperior=36
+pliegueInferior=0
 
-f_OrigenX=0
-f_OrigenY=0
+
+
+origenX=0
+origenY=0
 
 ruta=""
 doc = VectricJob()
@@ -33,7 +33,6 @@ function main(script_path)
 	   DisplayMessageBox("Trabajo NO Cargado")
 		return false;
 	end
-	
 	
 	
 		
@@ -53,145 +52,131 @@ function main(script_path)
 	return true; 
 end 
 
---[[
-function OnLuaButton_modeloAH()
-	Dibujar_Fresado1_AH()
-	Dibujar_Solapas()
-	Dibujar_Botas()
-	Dibujar_Escuadras()
-end
-function OnLuaButton_modeloAH1()
-	Dibujar_FresadoAH()
-	Dibujar_Solapas()
-	Dibujar_Botas()
-	Dibujar_Escuadras()
-end
-function OnLuaButton_modeloAH2()
-	Dibujar_FresadoAH()
-	Dibujar_Solapas()
-	Dibujar_Botas()
-	Dibujar_Escuadras()
-end
-function OnLuaButton_modeloAH3()
-	Dibujar_FresadoAH()
-	Dibujar_Solapas()
-	Dibujar_Botas()
-	Dibujar_Escuadras()
-end
-function OnLuaButton_modeloAH4()
-	Dibujar_FresadoAH()
-	Dibujar_Solapas()
-	Dibujar_Botas()
-	Dibujar_Escuadras()
-end
-function OnLuaButton_modeloAH5()
-	Dibujar_FresadoAH()
-	Dibujar_Solapas()
-	Dibujar_Botas()
-	Dibujar_Escuadras()
-end
-function OnLuaButton_modeloAH6()
-	Dibujar_FresadoAH()
-	Dibujar_Solapas()
-	Dibujar_Botas()
-	Dibujar_Escuadras()
-end
-function OnLuaButton_modeloAH7()
-	Dibujar_FresadoAH()
-	Dibujar_Solapas()
-	Dibujar_Botas()
-	Dibujar_Escuadras()
-end
-function OnLuaButton_modeloAH8()
-	Dibujar_FresadoAH()
-	Dibujar_Solapas()
-	Dibujar_Botas()
-	Dibujar_Escuadras()
-end
-]]
 
 
-function Dibujar_Fresado1_AH(doc,f_AnchuraPlaca,f_AlturaPlaca,f_MargenPlaca,f_OrigenX,f_OrigenY,LineaSuperior,LineaInferior)
-	f_pliegueSuperior=40
-	f_pliegueInferior=32
-	f_pliegueIzquierda=40
-	f_pliegueDerecha=40
-
-	
-	f_dobladilloSuperior=36
-	f_dobladilloInferior=10
-	
-	
-	
+function dibujarFresado_AH(doc,anchuraPlaca,alturaPlaca,margenPlaca,origenX,origenY,modelo)
 	
 	
 	local Contour = Contour(0.0)
 	
-	local fresado9 = Point2D(f_OrigenX+f_pliegueIzquierda,f_OrigenY)
-	local fresado1 = Point2D(f_OrigenX+f_pliegueIzquierda, f_OrigenY+f_pliegueInferior)
-	local fresado2 = Point2D(f_OrigenX+f_pliegueIzquierda, f_OrigenY+f_pliegueInferior+f_dobladilloInferior)
-	local fresado3 = Point2D(f_OrigenX+f_AnchuraPlaca+f_pliegueIzquierda,f_OrigenY+f_pliegueInferior+f_dobladilloInferior)
-	local fresado4 = Point2D(f_OrigenX+f_AnchuraPlaca+f_pliegueIzquierda,f_OrigenY+f_pliegueInferior)
- 	local fresado10 = Point2D(f_OrigenX+f_pliegueIzquierda+f_AnchuraPlaca,f_OrigenY)
-  	local fresado5 = Point2D(f_OrigenX+f_AnchuraPlaca+f_pliegueIzquierda,f_OrigenY+f_pliegueInferior+f_AlturaPlaca+f_dobladilloSuperior+f_dobladilloInferior)
-   	local fresado6 = Point2D(f_OrigenX+f_pliegueIzquierda,f_OrigenY+f_pliegueInferior+f_AlturaPlaca+f_dobladilloSuperior+f_dobladilloInferior)
-   	local fresado7 = Point2D(f_OrigenX+f_pliegueIzquierda,f_OrigenY+f_pliegueInferior+f_AlturaPlaca+f_dobladilloInferior)
-	local fresado8 = Point2D(f_OrigenX+f_AnchuraPlaca+f_pliegueIzquierda,f_OrigenY+f_pliegueInferior+f_AlturaPlaca+f_dobladilloInferior)
-	local fresado11 = Point2D(f_OrigenX+f_AnchuraPlaca+f_pliegueIzquierda,f_OrigenY+f_pliegueInferior+f_dobladilloInferior+f_AlturaPlaca+f_dobladilloSuperior+f_pliegueSuperior)
+	local fresado9 = Point2D(origenX+alaIzquierda,origenY)
+	local fresado1 = Point2D(origenX+alaIzquierda, origenY+alaInferior)
+	local fresado2 = Point2D(origenX+alaIzquierda, origenY+alaInferior+pliegueInferior)
+	local fresado3 = Point2D(origenX+anchuraPlaca+alaIzquierda,origenY+alaInferior+pliegueInferior)
+	local fresado4 = Point2D(origenX+anchuraPlaca+alaIzquierda,origenY+alaInferior)
+ 	local fresado10 = Point2D(origenX+alaIzquierda+anchuraPlaca,origenY)
+  	local fresado5 = Point2D(origenX+anchuraPlaca+alaIzquierda,origenY+alaInferior+alturaPlaca+pliegueSuperior+pliegueInferior)
+   	local fresado6 = Point2D(origenX+alaIzquierda,origenY+alaInferior+alturaPlaca+pliegueSuperior+pliegueInferior)
+   	local fresado7 = Point2D(origenX+alaIzquierda,origenY+alaInferior+alturaPlaca+pliegueInferior)
+	local fresado8 = Point2D(origenX+anchuraPlaca+alaIzquierda,origenY+alaInferior+alturaPlaca+pliegueInferior)
+	local fresado11 = Point2D(origenX+anchuraPlaca+alaIzquierda,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior)
 	
 	
-	--local fresado9 = Point2D(f_OrigenX+f_pliegueIzquierda,f_OrigenY+f_pliegueInferior+f_AlturaPlaca)
-	--
-	--
-	--
-	--[[
-	Contour:AppendPoint(fresado1)
-	Contour:LineTo(fresado6)
+	if modelo==0 then --REF AH
+		Contour:AppendPoint(fresado9)
+		Contour:LineTo(fresado2)
+		Contour:LineTo(fresado3)
+		Contour:LineTo(fresado10)
+		Contour:LineTo(fresado5)
+		Contour:LineTo(fresado6)
+		Contour:LineTo(fresado7)
+		Contour:LineTo(fresado8)
+		Contour:LineTo(fresado7)
+		Contour:LineTo(fresado2)
+	elseif modelo==1 then --REF AH1
+		Contour:AppendPoint(fresado9)
+		Contour:LineTo(fresado2)
+		Contour:LineTo(fresado3)
+		Contour:LineTo(fresado10)
+		Contour:LineTo(fresado5)
+		Contour:LineTo(fresado6)
+		Contour:LineTo(fresado7)
+		Contour:LineTo(fresado8)
+		Contour:LineTo(fresado7)
+		Contour:LineTo(fresado1)
+	elseif modelo==2 then --REF AH2
+		Contour:AppendPoint(fresado1)
+		Contour:LineTo(fresado2)
+		Contour:LineTo(fresado3)
+		Contour:LineTo(fresado4)
+		Contour:LineTo(fresado1)
+		Contour:LineTo(fresado6)
+		Contour:LineTo(fresado5)
+		Contour:LineTo(fresado4)
+		Contour:LineTo(fresado8)
+		Contour:LineTo(fresado7)
+	elseif modelo==3 then --REF AH3
+		Contour:AppendPoint(fresado1)
+		Contour:LineTo(fresado2)
+		Contour:LineTo(fresado3)
+		Contour:LineTo(fresado4)
+		Contour:LineTo(fresado1)
+		Contour:LineTo(fresado6)
+		Contour:LineTo(fresado5)
+		Contour:LineTo(fresado4)
+		Contour:LineTo(fresado8)
+		Contour:LineTo(fresado7)
+	elseif modelo==4 then --REF AH4
+		Contour:AppendPoint(fresado9)
+		Contour:LineTo(fresado2)
+		Contour:LineTo(fresado3)
+		Contour:LineTo(fresado10)
+		Contour:LineTo(fresado5)
+		Contour:LineTo(fresado8)
+		Contour:LineTo(fresado7)
+		Contour:LineTo(fresado6)
+		Contour:LineTo(fresado1)
+	elseif modelo==5 then --REF AH5
+		Contour:AppendPoint(fresado1)
+		Contour:LineTo(fresado2)
+		Contour:LineTo(fresado3)
+		Contour:LineTo(fresado4)
+		Contour:LineTo(fresado5)
+		Contour:LineTo(fresado8)
+		Contour:LineTo(fresado7)
+		Contour:LineTo(fresado6)
+		Contour:LineTo(fresado1)
+		Contour:LineTo(fresado4)
+	elseif modelo==6 then --REF AH6
+		Contour:AppendPoint(fresado9)
+		Contour:LineTo(fresado2)
+		Contour:LineTo(fresado3)
+		Contour:LineTo(fresado10)
+		Contour:LineTo(fresado11)
+		Contour:LineTo(fresado5)
+		Contour:LineTo(fresado6)
+		Contour:LineTo(fresado7)
+		Contour:LineTo(fresado8)
+		Contour:LineTo(fresado7)
+		Contour:LineTo(fresado1)
+	elseif modelo==7 then --REF AH7
+		Contour:AppendPoint(fresado1)
+		Contour:LineTo(fresado2)
+		Contour:LineTo(fresado3)
+		Contour:LineTo(fresado4)
+		Contour:LineTo(fresado1)
+		Contour:LineTo(fresado6)
+		Contour:LineTo(fresado5)
+		Contour:LineTo(fresado11)
+		Contour:LineTo(fresado8)
+		Contour:LineTo(fresado7)
+		Contour:LineTo(fresado8)
+		Contour:LineTo(fresado4)
+	else  --REF AH8
+		Contour:AppendPoint(fresado9)
+		Contour:LineTo(fresado2)
+		Contour:LineTo(fresado3)
+		Contour:LineTo(fresado10)
+		Contour:LineTo(fresado4)
+		Contour:LineTo(fresado1)
+		Contour:LineTo(fresado6)
+		Contour:LineTo(fresado5)
+		Contour:LineTo(fresado8)
+		Contour:LineTo(fresado7)
+		Contour:LineTo(fresado8)
+		Contour:LineTo(fresado4)
+	end
 	
-	Contour:AppendPoint(fresado8)
-	Contour:LineTo(fresado7)
-	
-	Contour:AppendPoint(fresado4)
-	Contour:LineTo(fresado5)
-	
-	Contour:AppendPoint(fresado2)
-	Contour:LineTo(fresado3)
-	]]
-	
-	--COMENTARIO DE PRUEBA
-	Contour:AppendPoint(fresado1)
-	Contour:LineTo(fresado2)
-	Contour:LineTo(fresado3)
-	Contour:LineTo(fresado4)
-	Contour:LineTo(fresado5)
-	Contour:LineTo(fresado8)
-	Contour:LineTo(fresado7)
-	Contour:LineTo(fresado6)
-	Contour:LineTo(fresado2)
-	Contour:LineTo(fresado9)
-	Contour:LineTo(fresado1)
-	Contour:LineTo(fresado4)
-	Contour:LineTo(fresado10)
-	Contour:LineTo(fresado11)
-	Contour:LineTo(fresado5)
-	Contour:LineTo(fresado6)
-	
-	
-	
-	
-	
-	--[[
-	Contour:AppendPoint(fresado1)
-   	Contour:LineTo(fresado2)
-	Contour:LineTo(fresado3)
-	Contour:LineTo(fresado4)
-	Contour:LineTo(fresado5)
-	Contour:LineTo(fresado6)
-	Contour:LineTo(fresado7)
-	Contour:LineTo(fresado8)
-	Contour:LineTo(fresado7)--Contour:LineTo(fresado9)
-	Contour:LineTo(fresado1)
-	]]
 	
 	--------------------------------------------------------
 	local cad_object = CreateCadContour(Contour)
@@ -211,6 +196,8 @@ end
 
 
 
+
+
 function OnLuaButton_modeloAH(framePrincipal)
 
    
@@ -221,11 +208,11 @@ function OnLuaButton_modeloAH(framePrincipal)
 	
 	 
 
-	modeloAH:AddDoubleField("anchuraPlacaAH", f_AnchuraPlaca)
-    modeloAH:AddDoubleField("margenPlacaAH", f_MargenPlaca)
-    modeloAH:AddDoubleField("alturaPlacaAH", f_AlturaPlaca)
-	modeloAH:AddDoubleField("origenXAH", f_OrigenX)
-	modeloAH:AddDoubleField("origenYAH", f_OrigenY)	
+	modeloAH:AddDoubleField("anchuraPlacaAH", anchuraPlaca)
+    modeloAH:AddDoubleField("margenPlacaAH", margenPlaca)
+    modeloAH:AddDoubleField("alturaPlacaAH", alturaPlaca)
+	modeloAH:AddDoubleField("origenXAH", origenX)
+	modeloAH:AddDoubleField("origenYAH", origenY)	
 	
 	
     if  not modeloAH:ShowDialog() then
@@ -243,36 +230,38 @@ end
 function OnLuaButton_aceptarAH(modeloAH)
 
     	
-	f_AnchuraPlaca  = modeloAH:GetDoubleField("anchuraPlacaAH")
-    f_MargenPlaca  = modeloAH:GetDoubleField("margenPlacaAH")
-    f_AlturaPlaca  = modeloAH:GetDoubleField("alturaPlacaAH")
-	f_OrigenX = modeloAH:GetDoubleField("origenXAH")
-	f_OrigenY = modeloAH:GetDoubleField("origenYAH")	
+	anchuraPlaca  = modeloAH:GetDoubleField("anchuraPlacaAH")
+    margenPlaca  = modeloAH:GetDoubleField("margenPlacaAH")
+    alturaPlaca  = modeloAH:GetDoubleField("alturaPlacaAH")
+	origenX = modeloAH:GetDoubleField("origenXAH")
+	origenY = modeloAH:GetDoubleField("origenYAH")	
 	
 	
-	f_AnchuraPlaca=f_AnchuraPlaca-f_MargenPlaca
-    f_AlturaPlaca=f_AlturaPlaca-f_MargenPlaca
+	anchuraPlaca=anchuraPlaca-margenPlaca
+    alturaPlaca=alturaPlaca-margenPlaca
 	
-	if f_AnchuraPlaca < 0 then
+	if anchuraPlaca < 0 then
 		
 		DisplayMessageBox("La anchura de la placa NO puede ser negativa.Creación Modelo AH Fallida")
 				
 	
-	elseif f_MargenPlaca < 0 then
+	elseif margenPlaca < 0 then
 		
 		DisplayMessageBox("El margen de la placa NO puede ser negativo.Creación Modelo AH Fallida")
 	
-	elseif  f_AlturaPlaca < 0 then
+	elseif  alturaPlaca < 0 then
 		
 		DisplayMessageBox("La altura de la placa NO puede ser negativa.Creación Modelo AH Fallida")
 	
     	
 	else
 	
-		--Dibujar_FresadoAH(doc,f_AnchuraPlaca,f_AlturaPlaca,f_MargenPlaca, f_OrigenX,f_OrigenY)
-		Dibujar_Fresado1_AH(doc,f_AnchuraPlaca,f_AlturaPlaca,f_MargenPlaca, f_OrigenX,f_OrigenY)
-		--Dibujar_CorteAH(doc,f_AnchuraPlaca,f_AlturaPlaca,f_MargenPlaca,f_OrigenX,f_OrigenY)
-	
+		--Dibujar_FresadoAH(doc,anchuraPlaca,alturaPlaca,margenPlaca, origenX,origenY)
+		dibujarFresado_AH(doc,anchuraPlaca,alturaPlaca,margenPlaca, origenX,origenY,0)
+		
+		Dibujar_CorteAH(doc,anchuraPlaca,alturaPlaca,margenPlaca,origenX,origenY)
+		
+		
 		DisplayMessageBox("Modelo AH Creado Correctamente")
 	
 	end
@@ -281,31 +270,21 @@ return true;
 
 end
 
-
-function Dibujar_FresadoAH(doc,f_AnchuraPlaca,f_AlturaPlaca,f_MargenPlaca,f_OrigenX,f_OrigenY)
-
-	f_pliegueSuperior=40
-	f_pliegueInferior=32
-	f_pliegueIzquierda=40
-	f_pliegueDerecha=40
-
-	
-	f_dobladilloSuperior=36
-	f_dobladilloInferior=0
-	
+--[[
+function Dibujar_FresadoAH(doc,anchuraPlaca,alturaPlaca,margenPlaca,origenX,origenY)
 	
 	
 	local Contour = Contour(0.0)
 	
- 	local fresado1 = Point2D(f_OrigenX+f_pliegueIzquierda, f_OrigenY)
-  	local fresado2 = Point2D(f_OrigenX+f_pliegueIzquierda, f_OrigenY+f_pliegueInferior)
-   	local fresado3 = Point2D(f_OrigenX+f_AnchuraPlaca+f_pliegueIzquierda,f_OrigenY+f_pliegueInferior)
-   	local fresado4 = Point2D(f_OrigenX+f_AnchuraPlaca+f_pliegueIzquierda,f_OrigenY)
-	local fresado5 = Point2D(f_OrigenX+f_AnchuraPlaca+f_pliegueIzquierda,f_OrigenY+f_pliegueInferior+f_AlturaPlaca+f_dobladilloSuperior)
-	local fresado6 = Point2D(f_OrigenX+f_pliegueIzquierda,f_OrigenY+f_pliegueInferior+f_AlturaPlaca+f_dobladilloSuperior)
-	local fresado7 = Point2D(f_OrigenX+f_pliegueIzquierda,f_OrigenY+f_pliegueInferior+f_AlturaPlaca)
-	local fresado8 = Point2D(f_OrigenX+f_AnchuraPlaca+f_pliegueIzquierda,f_OrigenY+f_pliegueInferior+f_AlturaPlaca)
-	local fresado9 = Point2D(f_OrigenX+f_pliegueIzquierda,f_OrigenY+f_pliegueInferior+f_AlturaPlaca)
+ 	local fresado1 = Point2D(origenX+alaIzquierda, origenY)
+  	local fresado2 = Point2D(origenX+alaIzquierda, origenY+alaInferior)
+   	local fresado3 = Point2D(origenX+anchuraPlaca+alaIzquierda,origenY+alaInferior)
+   	local fresado4 = Point2D(origenX+anchuraPlaca+alaIzquierda,origenY)
+	local fresado5 = Point2D(origenX+anchuraPlaca+alaIzquierda,origenY+alaInferior+alturaPlaca+pliegueSuperior)
+	local fresado6 = Point2D(origenX+alaIzquierda,origenY+alaInferior+alturaPlaca+pliegueSuperior)
+	local fresado7 = Point2D(origenX+alaIzquierda,origenY+alaInferior+alturaPlaca)
+	local fresado8 = Point2D(origenX+anchuraPlaca+alaIzquierda,origenY+alaInferior+alturaPlaca)
+	local fresado9 = Point2D(origenX+alaIzquierda,origenY+alaInferior+alturaPlaca)
 	
 	
 	Contour:AppendPoint(fresado1)
@@ -331,45 +310,37 @@ function Dibujar_FresadoAH(doc,f_AnchuraPlaca,f_AlturaPlaca,f_MargenPlaca,f_Orig
 	-----------------------------------------------------------------
 	return true; 
 end
+]]
 
-function Dibujar_CorteAH(doc,f_AnchuraPlaca,f_AlturaPlaca,f_MargenPlaca,f_OrigenX,f_OrigenY)
-
-	f_pliegueSuperior=40
-	f_pliegueInferior=32
-	f_pliegueIzquierda=40
-	f_pliegueDerecha=40
-
-	
-	f_dobladilloSuperior=36
-	f_dobladilloInferior=0
+function Dibujar_CorteAH(doc,anchuraPlaca,alturaPlaca,margenPlaca,origenX,origenY)
 	
 	
-	local f_sumaComienzoFin=109
-	local f_alturaBotaDeCuelgue=56
-	local f_anchoBota=18.5
+	local sumaComienzoFin=109
+	local alturaBotaDeCuelgue=56
+	local anchoBota=18.5
 	
 	
-	local f_anchoLateral1=21.5
-	local f_alturaLateral1=15.3
+	local anchoLateral1=21.5
+	local alturaLateral1=15.3
 	
-	local f_anchoLateral2=36.9
-	local f_alturaLateral2=36.7
+	local anchoLateral2=36.9
+	local alturaLateral2=36.7
 	
-	local f_tramoRecto1BotaDerecha=52
-	local f_radioArcoBotaDerecha=4
-	local f_tramoRecto2BotaDerecha=18
-	local f_tramoRecto3BotaDerecha=7.5
-	local f_tramoRecto4BotaDerecha=26
+	local tramoRecto1BotaDerecha=52
+	local radioArcoBotaDerecha=4
+	local tramoRecto2BotaDerecha=18
+	local tramoRecto3BotaDerecha=7.5
+	local tramoRecto4BotaDerecha=26
 	
 	--Parte Inferior
 
 	local Contour = Contour(0.0)
 
-	local corte1 = Point2D(f_OrigenX+(f_pliegueIzquierda-f_pliegueInferior),f_OrigenY)
-	local corte2 = Point2D(f_OrigenX+f_pliegueIzquierda+f_AnchuraPlaca+f_pliegueInferior,f_OrigenY)
-	local corte3 = Point2D(f_OrigenX+f_pliegueIzquierda+f_AnchuraPlaca,f_OrigenY+f_pliegueInferior)
-	local corte4 = Point2D(f_OrigenX+f_pliegueIzquierda+f_AnchuraPlaca+f_anchoLateral2,f_OrigenY+f_pliegueInferior+f_alturaLateral2)
-	local corte5 = Point2D(f_OrigenX+f_pliegueIzquierda+f_AnchuraPlaca+f_anchoLateral1,f_OrigenY+f_pliegueInferior+f_alturaLateral1+f_alturaLateral2)
+	local corte1 = Point2D(origenX+(alaIzquierda-alaInferior),origenY)
+	local corte2 = Point2D(origenX+alaIzquierda+anchuraPlaca+alaInferior,origenY)
+	local corte3 = Point2D(origenX+alaIzquierda+anchuraPlaca,origenY+alaInferior)
+	local corte4 = Point2D(origenX+alaIzquierda+anchuraPlaca+anchoLateral2,origenY+alaInferior+alturaLateral2)
+	local corte5 = Point2D(origenX+alaIzquierda+anchuraPlaca+anchoLateral1,origenY+alaInferior+alturaLateral1+alturaLateral2)
 	
 	Contour:AppendPoint(corte1)
    	Contour:LineTo(corte2)
@@ -377,128 +348,128 @@ function Dibujar_CorteAH(doc,f_AnchuraPlaca,f_AlturaPlaca,f_MargenPlaca,f_Origen
 	Contour:LineTo(corte4)
 	Contour:LineTo(corte5)
 	
-	local repeticiones=2--math.ceiling((f_AlturaPlaca-f_sumaComienzoFin)/500.0)
-	local f_tramoRectoEntreBotaDeCuelgue=(f_AlturaPlaca-f_sumaComienzoFin-((repeticiones+1)*f_alturaBotaDeCuelgue)-(repeticiones*f_anchoBota))/repeticiones
-	
-	local puntoInicioX=(f_OrigenX+f_pliegueIzquierda+f_AnchuraPlaca+f_anchoLateral1)
-	local puntoInicioY=(f_OrigenY+f_pliegueInferior+f_alturaLateral1+f_alturaLateral2)
-	
-	
 	
 	
 	--Bucle con bota de cuelgue + Bota----
 	
+	
+	local repeticiones=2--math.ceiling((alturaPlaca-sumaComienzoFin)/500.0)
+	local tramoRectoEntreBotaDeCuelgue=(alturaPlaca-sumaComienzoFin-((repeticiones+1)*alturaBotaDeCuelgue)-(repeticiones*anchoBota))/repeticiones
+	
+	local puntoInicioX=(origenX+alaIzquierda+anchuraPlaca+anchoLateral1)
+	local puntoInicioY=(origenY+alaInferior+alturaLateral1+alturaLateral2)
+	
 	for n=1, repeticiones do
 	
-	    local corte6 = Point2D(puntoInicioX, puntoInicioY+f_tramoRecto1BotaDerecha)
+	    local corte6 = Point2D(puntoInicioX, puntoInicioY+tramoRecto1BotaDerecha)
 		Contour:LineTo(corte6)
 		
-		puntoInicioY=puntoInicioY+f_tramoRecto1BotaDerecha
+		puntoInicioY=puntoInicioY+tramoRecto1BotaDerecha
 		
-		local corte7=Point2D(puntoInicioX+(2*f_radioArcoBotaDerecha),puntoInicioY)
-		local corte8=Point2D(puntoInicioX+(f_radioArcoBotaDerecha),puntoInicioY)
+		local corte7=Point2D(puntoInicioX+(2*radioArcoBotaDerecha),puntoInicioY)
+		local corte8=Point2D(puntoInicioX+(radioArcoBotaDerecha),puntoInicioY)
 		Contour:ArcTo(corte7,corte8,false)
-		puntoInicioX=puntoInicioX+(2*f_radioArcoBotaDerecha)
+		puntoInicioX=puntoInicioX+(2*radioArcoBotaDerecha)
 		
-		local corte9=Point2D(puntoInicioX, puntoInicioY-f_tramoRecto2BotaDerecha)
+		local corte9=Point2D(puntoInicioX, puntoInicioY-tramoRecto2BotaDerecha)
 		Contour:LineTo(corte9)
-		puntoInicioY=puntoInicioY-f_tramoRecto2BotaDerecha
+		puntoInicioY=puntoInicioY-tramoRecto2BotaDerecha
 		
-		local corte10=Point2D(puntoInicioX+(f_radioArcoBotaDerecha),puntoInicioY-f_radioArcoBotaDerecha)
-		local corte11=Point2D(puntoInicioX+(f_radioArcoBotaDerecha),puntoInicioY)
+		local corte10=Point2D(puntoInicioX+(radioArcoBotaDerecha),puntoInicioY-radioArcoBotaDerecha)
+		local corte11=Point2D(puntoInicioX+(radioArcoBotaDerecha),puntoInicioY)
 		Contour:ArcTo(corte10,corte11,true)
-		puntoInicioX=puntoInicioX+f_radioArcoBotaDerecha
-		puntoInicioY=puntoInicioY-f_radioArcoBotaDerecha
+		puntoInicioX=puntoInicioX+radioArcoBotaDerecha
+		puntoInicioY=puntoInicioY-radioArcoBotaDerecha
 		
-		local corte12=Point2D(puntoInicioX+f_tramoRecto3BotaDerecha,puntoInicioY)
+		local corte12=Point2D(puntoInicioX+tramoRecto3BotaDerecha,puntoInicioY)
 		Contour:LineTo(corte12)
-		puntoInicioX=puntoInicioX+f_tramoRecto3BotaDerecha
+		puntoInicioX=puntoInicioX+tramoRecto3BotaDerecha
 		
-		local corte13=Point2D(puntoInicioX,puntoInicioY+f_tramoRecto4BotaDerecha)
+		local corte13=Point2D(puntoInicioX,puntoInicioY+tramoRecto4BotaDerecha)
 		Contour:LineTo(corte13)
-		puntoInicioY=puntoInicioY+f_tramoRecto4BotaDerecha
+		puntoInicioY=puntoInicioY+tramoRecto4BotaDerecha
 		
-		local corte14=Point2D(puntoInicioX,puntoInicioY+f_tramoRectoEntreBotaDeCuelgue)
+		local corte14=Point2D(puntoInicioX,puntoInicioY+tramoRectoEntreBotaDeCuelgue)
 		Contour:LineTo(corte14)
-		puntoInicioY=puntoInicioY+f_tramoRectoEntreBotaDeCuelgue
+		puntoInicioY=puntoInicioY+tramoRectoEntreBotaDeCuelgue
 		
-		local corte15=Point2D(puntoInicioX-(f_pliegueDerecha-f_anchoLateral1),puntoInicioY+(f_pliegueDerecha-f_anchoLateral1))
+		local corte15=Point2D(puntoInicioX-(alaDerecha-anchoLateral1),puntoInicioY+(alaDerecha-anchoLateral1))
 		Contour:LineTo(corte15)
-		puntoInicioX=puntoInicioX-(f_pliegueDerecha-f_anchoLateral1)
-		puntoInicioY=puntoInicioY+(f_pliegueDerecha-f_anchoLateral1)
+		puntoInicioX=puntoInicioX-(alaDerecha-anchoLateral1)
+		puntoInicioY=puntoInicioY+(alaDerecha-anchoLateral1)
 
 	end
 	
 	  --Última bota de cuelgue
 	
-        local corte16 = Point2D(puntoInicioX, puntoInicioY+f_tramoRecto1BotaDerecha)
+        local corte16 = Point2D(puntoInicioX, puntoInicioY+tramoRecto1BotaDerecha)
 		Contour:LineTo(corte16)
 		
-		puntoInicioY=puntoInicioY+f_tramoRecto1BotaDerecha
+		puntoInicioY=puntoInicioY+tramoRecto1BotaDerecha
 		
-		local corte17=Point2D(puntoInicioX+(2*f_radioArcoBotaDerecha),puntoInicioY)
-		local corte18=Point2D(puntoInicioX+(f_radioArcoBotaDerecha),puntoInicioY)
+		local corte17=Point2D(puntoInicioX+(2*radioArcoBotaDerecha),puntoInicioY)
+		local corte18=Point2D(puntoInicioX+(radioArcoBotaDerecha),puntoInicioY)
 		Contour:ArcTo(corte17,corte18,false)
-		puntoInicioX=puntoInicioX+(2*f_radioArcoBotaDerecha)
+		puntoInicioX=puntoInicioX+(2*radioArcoBotaDerecha)
 		
-		local corte19=Point2D(puntoInicioX, puntoInicioY-f_tramoRecto2BotaDerecha)
+		local corte19=Point2D(puntoInicioX, puntoInicioY-tramoRecto2BotaDerecha)
 		Contour:LineTo(corte19)
-		puntoInicioY=puntoInicioY-f_tramoRecto2BotaDerecha
+		puntoInicioY=puntoInicioY-tramoRecto2BotaDerecha
 		
-		local corte20=Point2D(puntoInicioX+(f_radioArcoBotaDerecha),puntoInicioY-f_radioArcoBotaDerecha)
-		local corte21=Point2D(puntoInicioX+(f_radioArcoBotaDerecha),puntoInicioY)
+		local corte20=Point2D(puntoInicioX+(radioArcoBotaDerecha),puntoInicioY-radioArcoBotaDerecha)
+		local corte21=Point2D(puntoInicioX+(radioArcoBotaDerecha),puntoInicioY)
 		Contour:ArcTo(corte20,corte21,true)
-		puntoInicioX=puntoInicioX+f_radioArcoBotaDerecha
-		puntoInicioY=puntoInicioY-f_radioArcoBotaDerecha
+		puntoInicioX=puntoInicioX+radioArcoBotaDerecha
+		puntoInicioY=puntoInicioY-radioArcoBotaDerecha
 		
-		local corte22=Point2D(puntoInicioX+f_tramoRecto3BotaDerecha,puntoInicioY)
+		local corte22=Point2D(puntoInicioX+tramoRecto3BotaDerecha,puntoInicioY)
 		Contour:LineTo(corte22)
-		puntoInicioX=puntoInicioX+f_tramoRecto3BotaDerecha
+		puntoInicioX=puntoInicioX+tramoRecto3BotaDerecha
 		
-		local corte23=Point2D(puntoInicioX,puntoInicioY+f_tramoRecto4BotaDerecha)
+		local corte23=Point2D(puntoInicioX,puntoInicioY+tramoRecto4BotaDerecha)
 		Contour:LineTo(corte23)
-		puntoInicioY=puntoInicioY+f_tramoRecto4BotaDerecha
+		puntoInicioY=puntoInicioY+tramoRecto4BotaDerecha
 		
 		----------------------------------------------
 		--Parte superior
 		
 		
-	  local corte24 = Point2D(f_OrigenX+f_AnchuraPlaca+f_pliegueIzquierda,f_OrigenY+f_AlturaPlaca+f_pliegueInferior)
+	  local corte24 = Point2D(origenX+anchuraPlaca+alaIzquierda,origenY+alturaPlaca+alaInferior)
 	  Contour:LineTo(corte24)
 	  
-	  local corte24 = Point2D(f_OrigenX+f_AnchuraPlaca+f_pliegueIzquierda+f_dobladilloSuperior,f_OrigenY+f_AlturaPlaca+f_pliegueInferior+f_dobladilloSuperior)
+	  local corte24 = Point2D(origenX+anchuraPlaca+alaIzquierda+pliegueSuperior,origenY+alturaPlaca+alaInferior+pliegueSuperior)
 	  Contour:LineTo(corte24)
 	  
-	  local corte25 = Point2D(f_OrigenX+f_AnchuraPlaca+f_pliegueIzquierda,f_OrigenY+f_AlturaPlaca+f_pliegueInferior+f_dobladilloSuperior)
+	  local corte25 = Point2D(origenX+anchuraPlaca+alaIzquierda,origenY+alturaPlaca+alaInferior+pliegueSuperior)
 	  Contour:LineTo(corte25)
 	  
-	  local corte26 = Point2D(f_OrigenX+f_AnchuraPlaca+f_pliegueIzquierda,f_OrigenY+f_AlturaPlaca+f_pliegueInferior+f_dobladilloSuperior+f_pliegueSuperior)
+	  local corte26 = Point2D(origenX+anchuraPlaca+alaIzquierda,origenY+alturaPlaca+alaInferior+pliegueSuperior+alaSuperior)
 	  Contour:LineTo(corte26)
 	  
-	  local corte27 = Point2D(f_OrigenX+f_pliegueIzquierda,f_OrigenY+f_AlturaPlaca+f_pliegueInferior+f_dobladilloSuperior+f_pliegueSuperior)
+	  local corte27 = Point2D(origenX+alaIzquierda,origenY+alturaPlaca+alaInferior+pliegueSuperior+alaSuperior)
 	  Contour:LineTo(corte27)
 	  
-	  local corte28 = Point2D(f_OrigenX+f_pliegueIzquierda,f_OrigenY+f_AlturaPlaca+f_pliegueInferior+f_dobladilloSuperior)
+	  local corte28 = Point2D(origenX+alaIzquierda,origenY+alturaPlaca+alaInferior+pliegueSuperior)
 	  Contour:LineTo(corte28)
 	  
-	  local corte29 = Point2D(f_OrigenX+(f_pliegueIzquierda-f_dobladilloSuperior),f_OrigenY+f_AlturaPlaca+f_pliegueInferior+f_dobladilloSuperior)
+	  local corte29 = Point2D(origenX+(alaIzquierda-pliegueSuperior),origenY+alturaPlaca+alaInferior+pliegueSuperior)
 	  Contour:LineTo(corte29)
 	  
-	  local corte30 = Point2D(f_OrigenX+f_pliegueIzquierda,f_OrigenY+f_AlturaPlaca+f_pliegueInferior)
+	  local corte30 = Point2D(origenX+alaIzquierda,origenY+alturaPlaca+alaInferior)
 	  Contour:LineTo(corte30)
 	  
-	  local corte31 = Point2D(f_OrigenX,f_OrigenY+f_AlturaPlaca+f_pliegueInferior-f_pliegueSuperior)
+	  local corte31 = Point2D(origenX,origenY+alturaPlaca+alaInferior-alaSuperior)
 	  Contour:LineTo(corte31)
 	  
 	  
-	local f_tramoRecto1BotaIzquierda=26
-	local f_radioArcoBotaIzquierda=4
-	local f_tramoRecto2BotaIzquierda=7.5
-	local f_tramoRecto3BotaIzquierda=18
-	local f_tramoRecto4BotaIzquierda=52
+	local tramoRecto1BotaIzquierda=26
+	local radioArcoBotaIzquierda=4
+	local tramoRecto2BotaIzquierda=7.5
+	local tramoRecto3BotaIzquierda=18
+	local tramoRecto4BotaIzquierda=52
 		
-	local puntoInicioX=(f_OrigenX)
-	local puntoInicioY=(f_OrigenY+f_AlturaPlaca+f_pliegueInferior-f_pliegueSuperior)
+	local puntoInicioX=(origenX)
+	local puntoInicioY=(origenY+alturaPlaca+alaInferior-alaSuperior)
 	
 	
 	
@@ -507,44 +478,44 @@ function Dibujar_CorteAH(doc,f_AnchuraPlaca,f_AlturaPlaca,f_MargenPlaca,f_Origen
 	
 	for n=1, repeticiones do
 	
-	    local corte32 = Point2D(puntoInicioX, puntoInicioY-f_tramoRecto1BotaIzquierda)
+	    local corte32 = Point2D(puntoInicioX, puntoInicioY-tramoRecto1BotaIzquierda)
 		Contour:LineTo(corte32)
 		
-		puntoInicioY=puntoInicioY-f_tramoRecto1BotaIzquierda
+		puntoInicioY=puntoInicioY-tramoRecto1BotaIzquierda
 		
-		local corte33=Point2D(puntoInicioX+f_tramoRecto2BotaIzquierda, puntoInicioY)
+		local corte33=Point2D(puntoInicioX+tramoRecto2BotaIzquierda, puntoInicioY)
 		Contour:LineTo(corte33)
-		puntoInicioX=puntoInicioX+f_tramoRecto2BotaIzquierda
+		puntoInicioX=puntoInicioX+tramoRecto2BotaIzquierda
 		
-		local corte34=Point2D(puntoInicioX+(f_radioArcoBotaIzquierda),puntoInicioY+f_radioArcoBotaIzquierda)
-		local corte35=Point2D(puntoInicioX,puntoInicioY+f_radioArcoBotaIzquierda)
+		local corte34=Point2D(puntoInicioX+(radioArcoBotaIzquierda),puntoInicioY+radioArcoBotaIzquierda)
+		local corte35=Point2D(puntoInicioX,puntoInicioY+radioArcoBotaIzquierda)
 		Contour:ArcTo(corte34,corte35,true)
-		puntoInicioX=puntoInicioX+f_radioArcoBotaIzquierda
-		puntoInicioY=puntoInicioY+f_radioArcoBotaIzquierda
+		puntoInicioX=puntoInicioX+radioArcoBotaIzquierda
+		puntoInicioY=puntoInicioY+radioArcoBotaIzquierda
 		
-		local corte36=Point2D(puntoInicioX, puntoInicioY+f_tramoRecto3BotaIzquierda)
+		local corte36=Point2D(puntoInicioX, puntoInicioY+tramoRecto3BotaIzquierda)
 		Contour:LineTo(corte36)
-		puntoInicioY=puntoInicioY+f_tramoRecto3BotaIzquierda
+		puntoInicioY=puntoInicioY+tramoRecto3BotaIzquierda
 		
-		local corte37=Point2D(puntoInicioX+(2*f_radioArcoBotaIzquierda),puntoInicioY)
-		local corte38=Point2D(puntoInicioX+(f_radioArcoBotaIzquierda),puntoInicioY)
+		local corte37=Point2D(puntoInicioX+(2*radioArcoBotaIzquierda),puntoInicioY)
+		local corte38=Point2D(puntoInicioX+(radioArcoBotaIzquierda),puntoInicioY)
 		Contour:ArcTo(corte37,corte38,false)
-		puntoInicioX=puntoInicioX+(2*f_radioArcoBotaIzquierda)
+		puntoInicioX=puntoInicioX+(2*radioArcoBotaIzquierda)
 		
 		
-		local corte39=Point2D(puntoInicioX,puntoInicioY-f_tramoRecto4BotaIzquierda)
+		local corte39=Point2D(puntoInicioX,puntoInicioY-tramoRecto4BotaIzquierda)
 		Contour:LineTo(corte39)
-		puntoInicioY=puntoInicioY-f_tramoRecto4BotaIzquierda
+		puntoInicioY=puntoInicioY-tramoRecto4BotaIzquierda
 		
-		local corte40=Point2D(puntoInicioX-(f_pliegueIzquierda-f_anchoLateral1),puntoInicioY-(f_pliegueIzquierda-f_anchoLateral1))
+		local corte40=Point2D(puntoInicioX-(alaIzquierda-anchoLateral1),puntoInicioY-(alaIzquierda-anchoLateral1))
 		Contour:LineTo(corte40)
 		
-		puntoInicioY=puntoInicioY-(f_pliegueIzquierda-f_anchoLateral1)
-		puntoInicioX=puntoInicioX-(f_pliegueIzquierda-f_anchoLateral1)
+		puntoInicioY=puntoInicioY-(alaIzquierda-anchoLateral1)
+		puntoInicioX=puntoInicioX-(alaIzquierda-anchoLateral1)
 			
-		local corte41=Point2D(puntoInicioX,puntoInicioY-f_tramoRectoEntreBotaDeCuelgue)
+		local corte41=Point2D(puntoInicioX,puntoInicioY-tramoRectoEntreBotaDeCuelgue)
 		Contour:LineTo(corte41)
-		puntoInicioY=puntoInicioY-f_tramoRectoEntreBotaDeCuelgue
+		puntoInicioY=puntoInicioY-tramoRectoEntreBotaDeCuelgue
 		
 		
 
@@ -552,34 +523,34 @@ function Dibujar_CorteAH(doc,f_AnchuraPlaca,f_AlturaPlaca,f_MargenPlaca,f_Origen
 	
     --Última bota de culegue
 	
-		local corte42 = Point2D(puntoInicioX, puntoInicioY-f_tramoRecto1BotaIzquierda)
+		local corte42 = Point2D(puntoInicioX, puntoInicioY-tramoRecto1BotaIzquierda)
 		Contour:LineTo(corte42)
 		
-		puntoInicioY=puntoInicioY-f_tramoRecto1BotaIzquierda
+		puntoInicioY=puntoInicioY-tramoRecto1BotaIzquierda
 		
-		local corte43=Point2D(puntoInicioX+f_tramoRecto2BotaIzquierda, puntoInicioY)
+		local corte43=Point2D(puntoInicioX+tramoRecto2BotaIzquierda, puntoInicioY)
 		Contour:LineTo(corte43)
-		puntoInicioX=puntoInicioX+f_tramoRecto2BotaIzquierda
+		puntoInicioX=puntoInicioX+tramoRecto2BotaIzquierda
 		
-		local corte44=Point2D(puntoInicioX+(f_radioArcoBotaIzquierda),puntoInicioY+f_radioArcoBotaIzquierda)
-		local corte45=Point2D(puntoInicioX,puntoInicioY+f_radioArcoBotaIzquierda)
+		local corte44=Point2D(puntoInicioX+(radioArcoBotaIzquierda),puntoInicioY+radioArcoBotaIzquierda)
+		local corte45=Point2D(puntoInicioX,puntoInicioY+radioArcoBotaIzquierda)
 		Contour:ArcTo(corte44,corte45,true)
-		puntoInicioX=puntoInicioX+f_radioArcoBotaIzquierda
-		puntoInicioY=puntoInicioY+f_radioArcoBotaIzquierda
+		puntoInicioX=puntoInicioX+radioArcoBotaIzquierda
+		puntoInicioY=puntoInicioY+radioArcoBotaIzquierda
 		
-		local corte46=Point2D(puntoInicioX, puntoInicioY+f_tramoRecto3BotaIzquierda)
+		local corte46=Point2D(puntoInicioX, puntoInicioY+tramoRecto3BotaIzquierda)
 		Contour:LineTo(corte46)
-		puntoInicioY=puntoInicioY+f_tramoRecto3BotaIzquierda
+		puntoInicioY=puntoInicioY+tramoRecto3BotaIzquierda
 		
-		local corte47=Point2D(puntoInicioX+(2*f_radioArcoBotaIzquierda),puntoInicioY)
-		local corte48=Point2D(puntoInicioX+(f_radioArcoBotaIzquierda),puntoInicioY)
+		local corte47=Point2D(puntoInicioX+(2*radioArcoBotaIzquierda),puntoInicioY)
+		local corte48=Point2D(puntoInicioX+(radioArcoBotaIzquierda),puntoInicioY)
 		Contour:ArcTo(corte47,corte48,false)
-		puntoInicioX=puntoInicioX+(2*f_radioArcoBotaIzquierda)
+		puntoInicioX=puntoInicioX+(2*radioArcoBotaIzquierda)
 		
 		
-		local corte49=Point2D(puntoInicioX,puntoInicioY-f_tramoRecto4BotaIzquierda)
+		local corte49=Point2D(puntoInicioX,puntoInicioY-tramoRecto4BotaIzquierda)
 		Contour:LineTo(corte49)
-		puntoInicioY=puntoInicioY-f_tramoRecto4BotaIzquierda
+		puntoInicioY=puntoInicioY-tramoRecto4BotaIzquierda
 		
 		--------------------------------------------
 		
@@ -600,11 +571,11 @@ function Dibujar_CorteAH(doc,f_AnchuraPlaca,f_AlturaPlaca,f_MargenPlaca,f_Origen
 	return true; 
 end
 
-function Dibujar_Taladros(doc,f_AnchuraPlaca,f_AlturaPlaca,f_MargenPlaca,f_Alturapliegue)
+function Dibujar_Taladros(doc,anchuraPlaca,alturaPlaca,margenPlaca,alturaAla)
 
 	local Contour = Contour(0.0)
 
-	local corte1 = Point2D(f_OrigenX,f_OrigenY)
+	local corte1 = Point2D(origenX,origenY)
 	
    
    	Contour:AppendPoint(corte1)
