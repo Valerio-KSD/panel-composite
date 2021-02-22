@@ -119,7 +119,7 @@ function Dibujar_Fresado1_AH(doc,f_AnchuraPlaca,f_AlturaPlaca,f_MargenPlaca,f_Or
 
 	
 	f_dobladilloSuperior=36
-	f_dobladilloInferior=0
+	f_dobladilloInferior=10
 	
 	
 	
@@ -144,9 +144,43 @@ function Dibujar_Fresado1_AH(doc,f_AnchuraPlaca,f_AlturaPlaca,f_MargenPlaca,f_Or
 	--
 	--
 	--
+	--[[
+	Contour:AppendPoint(fresado1)
+	Contour:LineTo(fresado6)
+	
+	Contour:AppendPoint(fresado8)
+	Contour:LineTo(fresado7)
+	
+	Contour:AppendPoint(fresado4)
+	Contour:LineTo(fresado5)
+	
+	Contour:AppendPoint(fresado2)
+	Contour:LineTo(fresado3)
+	]]
+	
+	
+	Contour:AppendPoint(fresado1)
+	Contour:LineTo(fresado2)
+	Contour:LineTo(fresado3)
+	Contour:LineTo(fresado4)
+	Contour:LineTo(fresado5)
+	Contour:LineTo(fresado8)
+	Contour:LineTo(fresado7)
+	Contour:LineTo(fresado6)
+	Contour:LineTo(fresado2)
+	Contour:LineTo(fresado9)
+	Contour:LineTo(fresado1)
+	Contour:LineTo(fresado4)
+	Contour:LineTo(fresado10)
+	Contour:LineTo(fresado11)
+	Contour:LineTo(fresado5)
+	Contour:LineTo(fresado6)
 	
 	
 	
+	
+	
+	--[[
 	Contour:AppendPoint(fresado1)
    	Contour:LineTo(fresado2)
 	Contour:LineTo(fresado3)
@@ -157,6 +191,7 @@ function Dibujar_Fresado1_AH(doc,f_AnchuraPlaca,f_AlturaPlaca,f_MargenPlaca,f_Or
 	Contour:LineTo(fresado8)
 	Contour:LineTo(fresado7)--Contour:LineTo(fresado9)
 	Contour:LineTo(fresado1)
+	]]
 	
 	--------------------------------------------------------
 	local cad_object = CreateCadContour(Contour)
