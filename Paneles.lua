@@ -158,7 +158,7 @@ function Dibujar_Fresado1_AH(doc,f_AnchuraPlaca,f_AlturaPlaca,f_MargenPlaca,f_Or
 	Contour:LineTo(fresado3)
 	]]
 	
-	
+	--COMENTARIO DE PRUEBA
 	Contour:AppendPoint(fresado1)
 	Contour:LineTo(fresado2)
 	Contour:LineTo(fresado3)
