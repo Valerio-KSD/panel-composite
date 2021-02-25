@@ -3,6 +3,12 @@
 
 require "strict"
 
+--Matrices
+cantidadX=1
+cantidadY=1
+distanciaX=100
+distanciaY=100
+
 --Entradas comunes a todos los modelos [AH][BH][CH]
 alaSuperior=40
 alaInferior=40
@@ -33,7 +39,7 @@ anchuraPlaca=anchura1+anchura2
 
 
 
-modelo=17
+modelo=0
 --[AH=0 - AH1=1 - AH2=2 - AH3=3 - AH4=4 - AH5=5 - AH6=6 - AH7=7 - AH8=8]
 --[BH=9 - BH1=10 - BH2=11 - BH3=12 - BH4=13 - BH5=14 - BH6=15 - BH7=16 - BH8=17]
 --[BH9=18 - BH10=19 - BH11=20 - BH12=21 - BH13=22 - BH14=23 - BH15=24 - BH16=25 - BH17=26]
@@ -60,39 +66,134 @@ function main(script_path)
 		
 	local html_path = "file:" .. script_path .. "\\Paneles\\Paneles.html"
 	
-	local framePrincipal = HTML_Dialog(false, html_path, 1375, 735, "KSD Motion Control S.L.U.")
-	
+	local framePrincipal = HTML_Dialog(false, html_path, 1900, 950, "KSD Motion Control S.L.U.")
+
+	--framePrincipal:AddRadioGroup("refAH", 1)
+		
 	if  not framePrincipal:ShowDialog() then
 	
 		return false;
 		
 	end
-	
+
+	--modelo=framePrincipal:GetRadioIndex("refAH")
 		
 	return true; 
 end 
 
+function OnLuaButton_refAH()
+	modelo=0
+  return true
+end
+
+function OnLuaButton_refAH1()
+	modelo=1
+  return true
+end
+
+function OnLuaButton_refAH2()
+	modelo=2
+  return true
+end
+
+function OnLuaButton_refAH3()
+	modelo=3
+  return true
+end
+
+function OnLuaButton_refAH4()
+	modelo=4
+  return true
+end
+
+function OnLuaButton_refAH5()
+	modelo=5
+  return true
+end
+
+function OnLuaButton_refAH6()
+	modelo=6
+  return true
+end
+
+function OnLuaButton_refAH7()
+	modelo=7
+  return true
+end
+
+function OnLuaButton_refAH8()
+	modelo=8
+  return true
+end
+
 
 function OnLuaButton_modeloAH(framePrincipal)
 
-	local html_path = "file:" .. ruta .. "\\Paneles\\modeloAH.html"
-		
-	local modeloAH = HTML_Dialog(false, html_path, 1375, 735, "Modelo AH")
-	
-	 
 
-	modeloAH:AddDoubleField("anchuraPlacaAH", anchuraPlaca)
-    modeloAH:AddDoubleField("margenPlacaAH", margenPlaca)
-    modeloAH:AddDoubleField("alturaPlacaAH", alturaPlaca)
-	modeloAH:AddDoubleField("origenXAH", origenX)
-	modeloAH:AddDoubleField("origenYAH", origenY)	
-	
-	
-    if  not modeloAH:ShowDialog() then
+
+	if modelo == 0 then 
 		
-			return false;
-				
-	end
+		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaAH.html"
+			
+		local modeloAH = HTML_Dialog(false, html_path, 1900, 950, "REFERENCIA AH")
+		
+		 
+
+		modeloAH:AddDoubleField("anchuraPlaca", anchuraPlaca)
+	    modeloAH:AddDoubleField("margenPlaca", margenPlaca)
+	    modeloAH:AddDoubleField("alturaPlaca", alturaPlaca)
+		--modeloAH:AddDoubleField("origenX", origenX)
+		--modeloAH:AddDoubleField("origenY", origenY)
+
+		modeloAH:AddIntegerField("cantidadX", cantidadX)
+		modeloAH:AddIntegerField("cantidadY", cantidadY)
+		modeloAH:AddDoubleField("distanciaX", distanciaX)
+		modeloAH:AddDoubleField("distanciaY", distanciaY)
+
+		modeloAH:AddDoubleField("alaLateral", alaIzquierda)
+		modeloAH:AddDoubleField("alaSuperior", alaSuperior)
+		modeloAH:AddDoubleField("alaInferior", alaInferior)
+		modeloAH:AddDoubleField("pliegueInferior", pliegueInferior)
+		modeloAH:AddDoubleField("pliegueSuperior", pliegueSuperior)
+		modeloAH:AddDoubleField("margenA", margenA)
+		modeloAH:AddDoubleField("margenB", margenB)
+		
+		
+		
+	    if  not modeloAH:ShowDialog() then
+			
+				return false;
+					
+		end
+
+   	elseif modelo==1 then
+
+   		
+    elseif modelo==2 then
+
+
+    elseif modelo==3 then
+
+
+    elseif modelo==4 then
+
+
+    elseif modelo==5 then
+
+
+    elseif modelo==6 then
+
+
+    elseif modelo==7 then
+
+
+    elseif modelo==8 then
+
+
+
+  	end
+
+	
 	
 	
 	
@@ -103,11 +204,24 @@ end
 function OnLuaButton_aceptarAH(modeloAH)
 
     	
-	anchuraPlaca  = modeloAH:GetDoubleField("anchuraPlacaAH")
-    margenPlaca  = modeloAH:GetDoubleField("margenPlacaAH")
-    alturaPlaca  = modeloAH:GetDoubleField("alturaPlacaAH")
-	origenX = modeloAH:GetDoubleField("origenXAH")
-	origenY = modeloAH:GetDoubleField("origenYAH")	
+	anchuraPlaca  = modeloAH:GetDoubleField("anchuraPlaca")
+    margenPlaca  = modeloAH:GetDoubleField("margenPlaca")
+    alturaPlaca  = modeloAH:GetDoubleField("alturaPlaca")
+	--origenX = modeloAH:GetDoubleField("origenXAH")
+	--origenY = modeloAH:GetDoubleField("origenYAH")
+
+	cantidadX=modeloAH:GetIntegerField("cantidadX")
+	cantidadY=modeloAH:GetIntegerField("cantidadY")
+	distanciaX=modeloAH:GetDoubleField("distanciaX")
+	distanciaY=modeloAH:GetDoubleField("distanciaY")
+
+	alaIzquierda=modeloAH:GetDoubleField("alaLateral")
+	alaSuperior=modeloAH:GetDoubleField("alaSuperior")
+	alaInferior=modeloAH:GetDoubleField("alaInferior")
+	pliegueInferior=modeloAH:GetDoubleField("pliegueInferior")
+	pliegueSuperior=modeloAH:GetDoubleField("pliegueSuperior")
+	margenA=modeloAH:GetDoubleField("margenA")
+	margenB=modeloAH:GetDoubleField("margenB")
 	
 	
 	anchuraPlaca=anchuraPlaca-margenPlaca
@@ -783,7 +897,7 @@ function dibujarFresadoBH(doc)
 	local cur_layer = doc.LayerManager:GetActiveLayer()
 	local layer = doc.LayerManager:GetLayerWithName("Fresado")
 	layer:AddObject(cad_object, true)
-	layer:(0.3,0.8,0.4)
+	layer:SetColor(0.3,0.8,0.4)
 	layer.Visible = true 
 	doc.LayerManager:SetActiveLayer(cur_layer)
 	doc:Refresh2DView()	
