@@ -1,19 +1,18 @@
 -- VECTRIC LUA SCRIPT
 
-
 require "strict"
 
 --Entradas comunes a todos los modelos [AH][BH][CH]
 alaSuperior=40
 alaInferior=40
-alaDerecha=40
+alaDerecha=40--64
 alaIzquierda=alaDerecha
 
 pliegueSuperior=36
 pliegueInferior=36
 
-margenA=57 --Margen Superior
-margenB=108 --132 --Margen Inferior
+margenA=57--74 --Margen Superior
+margenB=108--132 --Margen Inferior
 
 anchuraPlaca = 2000 --1000
 margenPlaca = 3
@@ -26,14 +25,14 @@ origenY=0
 
 
 --Entrada para modelo [BH]
-anchura1=1200 --izquierda
-anchura2=800 --derecha
-anchuraPlaca=anchura1+anchura2
+--anchura1=1200 --izquierda
+--anchura2=800 --derecha
+--anchuraPlaca=anchura1+anchura2
 
 
 
 
-modelo=17
+modelo=3
 --[AH=0 - AH1=1 - AH2=2 - AH3=3 - AH4=4 - AH5=5 - AH6=6 - AH7=7 - AH8=8]
 --[BH=9 - BH1=10 - BH2=11 - BH3=12 - BH4=13 - BH5=14 - BH6=15 - BH7=16 - BH8=17]
 --[BH9=18 - BH10=19 - BH11=20 - BH12=21 - BH13=22 - BH14=23 - BH15=24 - BH16=25 - BH17=26]
@@ -348,7 +347,7 @@ function dibujarCorteAH(doc)
 	
 	
 		--Variables MARGENES superior e inferior
-	local cotaInicioDerecha=(margenB-alturaBotaDeCuelgue)*(36.8/52) --36.8 
+	local cotaInicioDerecha=((margenB-alturaBotaDeCuelgue)+(alaDerecha-anchoBota))/2 --[relacion trigonometrica][explicacion en la hoja de papel] 
 	
 	local anchoLateral1=alaDerecha-anchoBota  --21.5 --variable para reducir codigo (se podria eliminar)
 	local alturaLateral1=cotaInicioDerecha-alaDerecha+anchoBota --15.3  --variable para reducir codigo (se podria eliminar)
@@ -488,7 +487,7 @@ function dibujarCorteAH(doc)
 		--Variables por si el ala derecha e izquierda no son simetricas
 	local margenA_izq = margenA --Al igualarlo al tamaño de los margenes de la derecha la figura es simetrica, si deja de ser simetrica, hay que pedirle que introduzca manualmente los margenes de la izquierda
 	local margenB_izq = margenB
-	local cotaInicioIzquierda=(margenB_izq-alturaBotaDeCuelgue)*(36.8/52)
+	local cotaInicioIzquierda=((margenB-alturaBotaDeCuelgue)+(alaIzquierda-anchoBota))/2 --[relacion trigonometrica][explicacion en la hoja de papel]
 	
 	
 	--Parte inicial
@@ -783,7 +782,7 @@ function dibujarFresadoBH(doc)
 	local cur_layer = doc.LayerManager:GetActiveLayer()
 	local layer = doc.LayerManager:GetLayerWithName("Fresado")
 	layer:AddObject(cad_object, true)
-	layer:(0.3,0.8,0.4)
+	layer:SetColor(0.3,0.8,0.4)
 	layer.Visible = true 
 	doc.LayerManager:SetActiveLayer(cur_layer)
 	doc:Refresh2DView()	
