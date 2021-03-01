@@ -37,6 +37,11 @@ anchuraPlaca=anchura1+anchura2
 	
 separacionPliegues=4
 
+--Entrada para modelo [CH]
+anchuraIzq=400
+anchuraCentro=1200
+anchuraDcha=400
+
 
 
 --[[
@@ -233,6 +238,8 @@ function OnLuaButton_aceptarAH(modeloAH)
 	anchuraPlaca=anchuraPlaca-margenPlaca
     alturaPlaca=alturaPlaca-margenPlaca
 	
+	alaDerecha=alaIzquierda
+	
 	if anchuraPlaca < 0 then
 		
 		DisplayMessageBox("La anchura de la placa NO puede ser negativa.Creación Modelo AH Fallida")
@@ -258,10 +265,11 @@ function OnLuaButton_aceptarAH(modeloAH)
 		
 		
 		
-		dibujarFresadoBH(doc)
-		dibujarCorteBH(doc)
+		--dibujarFresadoBH(doc)
+		--dibujarCorteBH(doc)
 		--dibujarTaldrosBH(doc)
 		
+		dibujarFresadoCH(doc)
 		
 		DisplayMessageBox("Modelo AH Creado Correctamente")
 	
@@ -736,10 +744,10 @@ end
 --[CH=27 - CH1=28 - CH2=329 - CH3=30 - CH4=31 - CH5=32 - CH6=33 - CH7=34 - CH8=35]
 
 function dibujarFresadoBH(doc)
-	modelo=26 --[borrar]
+	modelo=12 --[borrar]
 	anchuraPlaca=anchura1+anchura2 --[borrar]
 	
-
+	
 	
 	--Puntos trayectoria
 	local Contour = Contour(0.0)
@@ -821,7 +829,7 @@ function dibujarFresadoBH(doc)
 		Contour:LineTo(fresado10)
 		Contour:LineTo(fresado15)
 		
-	elseif modelo==14 or modelo==22  then --REF [BH4]  [BH13]
+	elseif modelo==13 or modelo==22  then --REF [BH4]  [BH13]
 		Contour:AppendPoint(fresado1)
 		Contour:LineTo(fresado3)
 		Contour:LineTo(fresado4)
@@ -934,7 +942,7 @@ end
 --[CH=27 - CH1=28 - CH2=329 - CH3=30 - CH4=31 - CH5=32 - CH6=33 - CH7=34 - CH8=35]
 
 function dibujarCorteBH(doc)
-	modelo=26 --[borrar]
+	modelo=12 --[borrar]
 	anchuraPlaca=anchura1+anchura2 --borrar
 	
 	local Contour = Contour(0.0)
@@ -1194,52 +1202,138 @@ function dibujarCorteBH(doc)
 	
 	
 	
+--[AH=0 - AH1=1 - AH2=2 - AH3=3 - AH4=4 - AH5=5 - AH6=6 - AH7=7 - AH8=8]
+--[BH=9 - BH1=10 - BH2=11 - BH3=12 - BH4=13 - BH5=14 - BH6=15 - BH7=16 - BH8=17]
+--[BH9=18 - BH10=19 - BH11=20 - BH12=21 - BH13=22 - BH14=23 - BH15=24 - BH16=25 - BH17=26]
+--[CH=27 - CH1=28 - CH2=329 - CH3=30 - CH4=31 - CH5=32 - CH6=33 - CH7=34 - CH8=35]
+	
 	--PARTE SUPERIOR------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 	
-	if (modelo==0 or modelo==1 or modelo==2 or modelo==3 or modelo==4 or modelo==5 or modelo==8) then --Parte Superior para los modelos (AH-AH1-AH2-AH3-AH4-AH5-AH8)   ->[el tamaño de la escuadra depende del PLIEGUE]
-		local corte40 = Point2D(origenX+alaIzquierda+anchuraPlaca,origenY+alaInferior+pliegueInferior+alturaPlaca)
-		local corte41 = Point2D(origenX+alaIzquierda+anchuraPlaca+pliegueSuperior,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior)
-		local corte42 = Point2D(origenX+alaIzquierda+anchuraPlaca,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior)
-		local corte43 = Point2D(origenX+alaIzquierda+anchuraPlaca,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior)
-		local corte44 = Point2D(origenX+alaIzquierda,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior)
-		local corte45 = Point2D(origenX+alaIzquierda,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior)
-		local corte46 = Point2D(origenX+(alaIzquierda-pliegueSuperior),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior)
-		local corte47 = Point2D(origenX+alaIzquierda,origenY+alaInferior+pliegueInferior+alturaPlaca)
+	if modelo==9 or modelo==18 or modelo==10 or modelo==19 or modelo==11 or modelo==20 or modelo==12 or modelo==21 or modelo==17 or modelo==26 or modelo==13 or modelo==22 or modelo==14 or modelo==23  then --Parte Superior [BH-BH9][BH1-BH10][BH2-BH11][BH3-BH12][BH8-BH17][BH4-BH13][BH5-BH14]
 		
+		local corte40 = Point2D(origenX+alaIzquierda+anchura1+anchura2,origenY+alaInferior+pliegueInferior+alturaPlaca)
+		local corte41 = Point2D(origenX+alaIzquierda+anchura1+anchura2+pliegueSuperior,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior)
+		local corte42 = Point2D(origenX+alaIzquierda+anchura1+anchura2,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior)
+		local corte43 = Point2D(origenX+alaIzquierda+anchura1+anchura2,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior)
 		Contour:LineTo(corte40)
 		Contour:LineTo(corte41)
 		Contour:LineTo(corte42)
 		Contour:LineTo(corte43)
-		Contour:LineTo(corte44)
-		Contour:LineTo(corte45)
-		Contour:LineTo(corte46)
-		Contour:LineTo(corte47)
+		
+		local corte44
+		local corte45
+		local corte46
+		local corte47
+		local corte48
+		
+		if modelo==9 or modelo==10 or modelo==11 or modelo==12 or modelo==17 then --[BH][BH1][BH2][BH3][BH8]
+			corte44 = Point2D(origenX+alaIzquierda+anchura1+pliegueSuperior,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior)
+			corte45 = Point2D(origenX+alaIzquierda+anchura1+pliegueSuperior,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior)
+			corte46 = Point2D(origenX+alaIzquierda+anchura1,origenY+alaInferior+pliegueInferior+alturaPlaca)
+			corte47 = Point2D(origenX+alaIzquierda+anchura1-pliegueSuperior,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior)
+			corte48 = Point2D(origenX+alaIzquierda+anchura1-pliegueSuperior,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior)
+			Contour:LineTo(corte44)
+			Contour:LineTo(corte45)
+			Contour:LineTo(corte46)
+			Contour:LineTo(corte47)
+			Contour:LineTo(corte48)
+			
+		elseif modelo==13 or modelo==14 then --[BH5][BH6]
+			corte44 = Point2D(origenX+alaIzquierda+anchura1+alaSuperior+pliegueSuperior,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior)
+			corte45 = Point2D(origenX+alaIzquierda+anchura1,origenY+alaInferior+pliegueInferior+alturaPlaca)
+			corte46 = Point2D(origenX+alaIzquierda+anchura1-pliegueSuperior-alaSuperior,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior)
+			Contour:LineTo(corte44)
+			Contour:LineTo(corte45)
+			Contour:LineTo(corte46)
+			
+		else
+			corte44 = Point2D(origenX+alaIzquierda+anchura1+separacionPliegues/2,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior)
+			corte45 = Point2D(origenX+alaIzquierda+anchura1+separacionPliegues/2,origenY+alaInferior+pliegueInferior+alturaPlaca+separacionPliegues/2)
+			Contour:LineTo(corte44)
+			Contour:LineTo(corte45)
+			
+			corte46 = Point2D(origenX+alaIzquierda+anchura1,origenY+alaInferior+pliegueInferior+alturaPlaca+separacionPliegues/2) --centro de la circunferencia
+			corte47 = Point2D(origenX+alaIzquierda+anchura1-separacionPliegues/2,origenY+alaInferior+pliegueInferior+alturaPlaca+separacionPliegues/2)
+			Contour:ArcTo(corte47,corte46,false)
+			
+			corte48 = Point2D(origenX+alaIzquierda+anchura1-separacionPliegues/2,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior)
+			Contour:LineTo(corte48)
+			
+		end
 		
 		
-	else --Parte Superior para los modelos (AH6-AH7)   ->[el tamaño de la escuadra depende del ALA]
-		local corte40 = Point2D(origenX+alaIzquierda+anchuraPlaca,origenY+alaInferior+pliegueInferior+alturaPlaca)
-		local corte41 = Point2D(origenX+alaIzquierda+anchuraPlaca+alaSuperior,origenY+alaInferior+pliegueInferior+alturaPlaca+alaSuperior)
-		local corte42 = Point2D(origenX+alaIzquierda+anchuraPlaca+alaSuperior,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior-alaSuperior)
-		local corte43 = Point2D(origenX+alaIzquierda+anchuraPlaca,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior)
-		local corte44 = Point2D(origenX+alaIzquierda+anchuraPlaca+alaSuperior,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior)
-		local corte45 = Point2D(origenX+(alaIzquierda-alaSuperior),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior)
-		local corte46 = Point2D(origenX+alaIzquierda,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior)
-		local corte47 = Point2D(origenX+(alaIzquierda-alaSuperior),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior-alaSuperior)
-		local corte48 = Point2D(origenX+(alaIzquierda-alaSuperior),origenY+alaInferior+pliegueInferior+alturaPlaca+alaSuperior)
-		local corte49 = Point2D(origenX+alaIzquierda,origenY+alaInferior+pliegueInferior+alturaPlaca)
-		
-		Contour:LineTo(corte40)
-		Contour:LineTo(corte41)
-		Contour:LineTo(corte42)
-		Contour:LineTo(corte43)
-		Contour:LineTo(corte44)
-		Contour:LineTo(corte45)
-		Contour:LineTo(corte46)
-		Contour:LineTo(corte47)
-		Contour:LineTo(corte48)
+		local corte49 = Point2D(origenX+alaIzquierda,origenY+alaInferior+pliegueInferior+alturaPlaca+alaSuperior+pliegueSuperior)
+		local corte50 = Point2D(origenX+alaIzquierda,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior)
+		local corte51 = Point2D(origenX+alaIzquierda-pliegueSuperior,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior)
+		local corte52 = Point2D(origenX+alaIzquierda,origenY+alaInferior+pliegueInferior+alturaPlaca)
 		Contour:LineTo(corte49)
+		Contour:LineTo(corte50)
+		Contour:LineTo(corte51)
+		Contour:LineTo(corte52)
 		
+		
+	elseif modelo==15 or modelo==24 or modelo==16 or modelo==25  then --Parte Superior [BH6-BH15][BH7-BH16]
+		
+		local corte40 = Point2D(origenX+alaIzquierda+anchura1+anchura2,origenY+alaInferior+pliegueInferior+alturaPlaca)
+		local corte41 = Point2D(origenX+alaIzquierda+anchura1+anchura2+alaSuperior,origenY+alaInferior+pliegueInferior+alturaPlaca+alaSuperior)
+		local corte42 = Point2D(origenX+alaIzquierda+anchura1+anchura2+alaSuperior,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior-alaSuperior)
+		local corte43 = Point2D(origenX+alaIzquierda+anchura1+anchura2,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior)
+		local corte44 = Point2D(origenX+alaIzquierda+anchura1+anchura2+alaSuperior,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior)
+		Contour:LineTo(corte40)
+		Contour:LineTo(corte41)
+		Contour:LineTo(corte42)
+		Contour:LineTo(corte43)
+		Contour:LineTo(corte44)
+		
+		local corte45
+		local corte46
+		local corte47
+		local corte48
+		local corte49
+		
+		if modelo==15 or modelo==16 then --[BH6][BH7]
+			corte45 = Point2D(origenX+alaIzquierda+anchura1+pliegueSuperior,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior)
+			corte46 = Point2D(origenX+alaIzquierda+anchura1+pliegueSuperior,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior)
+			corte47 = Point2D(origenX+alaIzquierda+anchura1,origenY+alaInferior+pliegueInferior+alturaPlaca)
+			corte48 = Point2D(origenX+alaIzquierda+anchura1-pliegueSuperior,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior)
+			corte49 = Point2D(origenX+alaIzquierda+anchura1-pliegueSuperior,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior)
+			Contour:LineTo(corte45)
+			Contour:LineTo(corte46)
+			Contour:LineTo(corte47)
+			Contour:LineTo(corte48)
+			Contour:LineTo(corte49)
+			
+		else --[BH15][BH16]
+			corte45 = Point2D(origenX+alaIzquierda+anchura1+separacionPliegues/2,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior)
+			corte46 = Point2D(origenX+alaIzquierda+anchura1+separacionPliegues/2,origenY+alaInferior+pliegueInferior+alturaPlaca+separacionPliegues/2)
+			Contour:LineTo(corte45)
+			Contour:LineTo(corte46)
+			
+			corte47 = Point2D(origenX+alaIzquierda+anchura1,origenY+alaInferior+pliegueInferior+alturaPlaca+separacionPliegues/2) --centro de la circunferencia
+			corte48 = Point2D(origenX+alaIzquierda+anchura1-separacionPliegues/2,origenY+alaInferior+pliegueInferior+alturaPlaca+separacionPliegues/2)
+			Contour:ArcTo(corte48,corte47,false)
+			
+			corte49 = Point2D(origenX+alaIzquierda+anchura1-separacionPliegues/2,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior)
+			Contour:LineTo(corte49)
+			
+		end
+		
+		
+		local corte50 = Point2D(origenX+alaIzquierda-alaSuperior,origenY+alaInferior+pliegueInferior+alturaPlaca+alaSuperior+pliegueSuperior)
+		local corte51 = Point2D(origenX+alaIzquierda,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior)
+		local corte52 = Point2D(origenX+alaIzquierda-alaSuperior,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior-alaSuperior)
+		local corte53 = Point2D(origenX+alaIzquierda-alaSuperior,origenY+alaInferior+pliegueInferior+alturaPlaca+alaSuperior)
+		local corte54 = Point2D(origenX+alaIzquierda,origenY+alaInferior+pliegueInferior+alturaPlaca)
+		Contour:LineTo(corte50)
+		Contour:LineTo(corte51)
+		Contour:LineTo(corte52)
+		Contour:LineTo(corte53)
+		Contour:LineTo(corte54)
+		
+	
 	end
+	
+	
 	
 	
 	
@@ -1372,3 +1466,125 @@ end
 ----------------------------------------------------------------------------------------------- DIBUJAR REF CH ---------------------------------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+--[AH=0 - AH1=1 - AH2=2 - AH3=3 - AH4=4 - AH5=5 - AH6=6 - AH7=7 - AH8=8]
+--[BH=9 - BH1=10 - BH2=11 - BH3=12 - BH4=13 - BH5=14 - BH6=15 - BH7=16 - BH8=17]
+--[BH9=18 - BH10=19 - BH11=20 - BH12=21 - BH13=22 - BH14=23 - BH15=24 - BH16=25 - BH17=26]
+--[CH=27 - CH1=28 - CH2=329 - CH3=30 - CH4=31 - CH5=32 - CH6=33 - CH7=34 - CH8=35]
+
+function dibujarFresadoCH(doc)
+	modelo=29 --[borrar]
+	
+	anchuraIzq=400 --[borrar]
+	anchuraCentro=1200 --[borrar]
+	anchuraDcha=400 --[borrar]
+	
+	anchuraPlaca=anchuraIzq+anchuraCentro+anchuraDcha --[borrar]
+	
+	
+	
+	--Puntos trayectoria
+	local Contour = Contour(0.0)
+	
+	
+	local fresado1 = Point2D(origenX+alaIzquierda,origenY)
+	local fresado2 = Point2D(origenX+alaIzquierda,origenY+alaInferior)
+	local fresado3 = Point2D(origenX+alaIzquierda+anchuraIzq-pliegueInferior,origenY+alaInferior)
+	local fresado4 = Point2D(origenX+alaIzquierda,origenY+alaInferior+pliegueInferior)
+	local fresado5 = Point2D(origenX+alaIzquierda+anchuraIzq,origenY+alaInferior+pliegueInferior)
+	local fresado6
+	local fresado7 = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro,origenY+alaInferior+pliegueInferior)
+	local fresado8
+	local fresado9 = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro+pliegueInferior,origenY+alaInferior)
+	local fresado10 = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro+anchuraDcha,origenY+alaInferior+pliegueInferior)
+	local fresado11 = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro+anchuraDcha,origenY+alaInferior)
+	local fresado12 = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro+anchuraDcha,origenY)
+	local fresado13 = Point2D(origenX+alaIzquierda,origenY+alaInferior+pliegueInferior+alturaPlaca)
+	local fresado14 = Point2D(origenX+alaIzquierda+anchuraIzq,origenY+alaInferior+pliegueInferior+alturaPlaca)
+	local fresado15 = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro,origenY+alaInferior+pliegueInferior+alturaPlaca)
+	local fresado16 = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro+anchuraDcha,origenY+alaInferior+pliegueInferior+alturaPlaca)
+	local fresado17 = Point2D(origenX+alaIzquierda,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior)
+	local fresado18 = Point2D(origenX+alaIzquierda+anchuraIzq-pliegueSuperior,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior)
+	local fresado19
+	local fresado20
+	local fresado21 = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro+pliegueSuperior,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior)
+	local fresado22 = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro+anchuraDcha,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior)
+	local fresado23 = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro+anchuraDcha,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior)
+	
+	
+	
+	
+		
+	
+	if modelo==27 or modelo==28 or modelo==35 then --REF [CH][CH1][CH8]
+		Contour:AppendPoint(fresado1)
+		Contour:LineTo(fresado4)
+		Contour:LineTo(fresado10)
+		Contour:LineTo(fresado12)
+		Contour:LineTo(fresado22)
+		Contour:LineTo(fresado21)
+		Contour:LineTo(fresado22)
+		Contour:LineTo(fresado16)
+		Contour:LineTo(fresado15)
+		Contour:LineTo(fresado7)
+		Contour:LineTo(fresado15)
+		Contour:LineTo(fresado14)
+		Contour:LineTo(fresado5)
+		Contour:LineTo(fresado14)
+		Contour:LineTo(fresado13)
+		Contour:LineTo(fresado17)
+		Contour:LineTo(fresado18)
+		Contour:LineTo(fresado17)
+		Contour:LineTo(fresado1)
+		
+		
+	elseif modelo==29 or modelo==30 then --[CH2][CH3]
+		Contour:AppendPoint(fresado2)
+		Contour:LineTo(fresado3)
+		Contour:LineTo(fresado2)
+		Contour:LineTo(fresado4)
+		Contour:LineTo(fresado10)
+		Contour:LineTo(fresado11)
+		Contour:LineTo(fresado9)
+		Contour:LineTo(fresado11)
+		Contour:LineTo(fresado22)
+		Contour:LineTo(fresado21)
+		Contour:LineTo(fresado22)
+		Contour:LineTo(fresado16)
+		Contour:LineTo(fresado15)
+		Contour:LineTo(fresado7)
+		Contour:LineTo(fresado15)
+		Contour:LineTo(fresado14)
+		Contour:LineTo(fresado5)
+		Contour:LineTo(fresado14)
+		Contour:LineTo(fresado13)
+		Contour:LineTo(fresado17)
+		Contour:LineTo(fresado18)
+		Contour:LineTo(fresado17)
+		Contour:LineTo(fresado2)
+	
+	elseif modelo==31 then --[CH4]
+	
+	elseif modelo==32 then --[CH5]
+	
+	elseif modelo==33 then --[CH6]
+	
+	elseif modelo==34 then --[CH7]
+	
+		
+	end
+	
+	
+	--------------------------------------------------------
+	local cad_object = CreateCadContour(Contour)
+	local cur_layer = doc.LayerManager:GetActiveLayer()
+	local layer = doc.LayerManager:GetLayerWithName("Fresado")
+	layer:AddObject(cad_object, true)
+	layer:SetColor(0.3,0.8,0.4)
+	layer.Visible = true 
+	doc.LayerManager:SetActiveLayer(cur_layer)
+	doc:Refresh2DView()	
+	-----------------------------------------------------------------
+	return true; 
+end
+
