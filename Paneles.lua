@@ -71,13 +71,7 @@ anchuraDcha=400
 
 
 
---[[
-<<<<<<< HEAD
-modelo=3
-=======
-modelo=0
->>>>>>> 295e5dfc59ed759cbd537fdc67b0a386768cd20a
-]]
+
 
 modelo=0
 
@@ -204,11 +198,11 @@ function OnLuaButton_modeloAH(framePrincipal)
 		modeloAH:AddDoubleField("alaLateral", alaIzquierda)
 		modeloAH:AddDoubleField("alaSuperior", alaSuperior)
 		modeloAH:AddDoubleField("alaInferior", alaInferior)
-<<<<<<< HEAD
+
 		--modeloAH:AddDoubleField("pliegueInferior", pliegueInferior)
-=======
+
 		modeloAH:AddDoubleField("pliegueInferior", pliegueInferior) --No lleva pliegue inferior
->>>>>>> dad597bfe66999383933152f688e45bdb15aaf6b
+
 		modeloAH:AddDoubleField("pliegueSuperior", pliegueSuperior)
 		modeloAH:AddDoubleField("margenA", margenA)
 		modeloAH:AddDoubleField("margenB", margenB)
@@ -345,16 +339,16 @@ function OnLuaButton_aceptarAH(modeloAH)
 		
 		
 		
-<<<<<<< HEAD
+
 		dibujarFresadoAH(doc)
 		dibujarCorteAH(doc)
 		dibujarTextoAH(doc)
 		dibujarTaladrosAH(doc)
-=======
+
 		--dibujarFresadoAH(doc)
 		--dibujarCorteAH(doc)
 		--dibujarTaldrosAH(doc)
->>>>>>> dad597bfe66999383933152f688e45bdb15aaf6b
+
 		
 		
 		
@@ -373,7 +367,7 @@ return true;
 
 end
 
-<<<<<<< HEAD
+
 function dibujarTextoAH(doc)
 
 	--------------------------------------------------------
