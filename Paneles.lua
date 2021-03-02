@@ -3,11 +3,38 @@
 
 require "strict"
 
+--Variable texto
+textoDescriptivo=""
+
+--Variables Taladros/Coliso
+crearColiso=1
+diametroTaladros=5
+anchuraColiso=20
+alturaColiso=5
+
+--Márgenes Taladros
+margenAla=26.26
+
+margenTaladroBota=8.04
+
+margenXTaladroSuperior=13.46
+margenYTaladroSuperior=9.06
+
+margenXTaladroInferior=11.64
+margenYTaladroInferior=8.84
+
+distanciaYTaladrosSuperiores=53.24
+
+distanciaXTaladrosInferiores=1.82
+
+
+anchoBota=18.5
+
 --Matrices
-cantidadX=1
-cantidadY=1
-distanciaX=100
-distanciaY=100
+--cantidadX=1
+--cantidadY=1
+--distanciaX=100
+--distanciaY=100
 
 --Entradas comunes a todos los modelos [AH][BH][CH]
 alaSuperior=40
@@ -81,6 +108,16 @@ function main(script_path)
 	return true; 
 end 
 
+function OnLuaButton_crearColiso()
+	crearColiso=1
+	return true
+end
+
+function OnLuaButton_noCrearColiso()
+	crearColiso=0
+	return true
+end
+
 function OnLuaButton_refAH()
 	modelo=0
   return true
@@ -136,28 +173,32 @@ function OnLuaButton_modeloAH(framePrincipal)
 		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaAH.html"
 			
 		local modeloAH = HTML_Dialog(false, html_path, 1900, 950, "REFERENCIA AH")
+
+		textoDescriptivo="REFERENCIA AH"
 		
 		 
-
+        modeloAH:AddTextField("textoDescriptivo", textoDescriptivo)
 		modeloAH:AddDoubleField("anchuraPlaca", anchuraPlaca)
 	    modeloAH:AddDoubleField("margenPlaca", margenPlaca)
 	    modeloAH:AddDoubleField("alturaPlaca", alturaPlaca)
 		--modeloAH:AddDoubleField("origenX", origenX)
 		--modeloAH:AddDoubleField("origenY", origenY)
 
-		modeloAH:AddIntegerField("cantidadX", cantidadX)
-		modeloAH:AddIntegerField("cantidadY", cantidadY)
-		modeloAH:AddDoubleField("distanciaX", distanciaX)
-		modeloAH:AddDoubleField("distanciaY", distanciaY)
+		--modeloAH:AddIntegerField("cantidadX", cantidadX)
+		--modeloAH:AddIntegerField("cantidadY", cantidadY)
+		--modeloAH:AddDoubleField("distanciaX", distanciaX)
+		--modeloAH:AddDoubleField("distanciaY", distanciaY)
 
 		modeloAH:AddDoubleField("alaLateral", alaIzquierda)
 		modeloAH:AddDoubleField("alaSuperior", alaSuperior)
 		modeloAH:AddDoubleField("alaInferior", alaInferior)
-		modeloAH:AddDoubleField("pliegueInferior", pliegueInferior)
+		--modeloAH:AddDoubleField("pliegueInferior", pliegueInferior)
 		modeloAH:AddDoubleField("pliegueSuperior", pliegueSuperior)
 		modeloAH:AddDoubleField("margenA", margenA)
 		modeloAH:AddDoubleField("margenB", margenB)
-		
+
+		modeloAH:AddDoubleField("diametroTaladros", diametroTaladros)
+		--modeloAH:AddCheckBox("crearColiso", true)
 		
 		
 	    if  not modeloAH:ShowDialog() then
@@ -203,29 +244,69 @@ end
 
 function OnLuaButton_aceptarAH(modeloAH)
 
-    	
-	anchuraPlaca  = modeloAH:GetDoubleField("anchuraPlaca")
-    margenPlaca  = modeloAH:GetDoubleField("margenPlaca")
-    alturaPlaca  = modeloAH:GetDoubleField("alturaPlaca")
-	--origenX = modeloAH:GetDoubleField("origenXAH")
-	--origenY = modeloAH:GetDoubleField("origenYAH")
 
-	cantidadX=modeloAH:GetIntegerField("cantidadX")
-	cantidadY=modeloAH:GetIntegerField("cantidadY")
-	distanciaX=modeloAH:GetDoubleField("distanciaX")
-	distanciaY=modeloAH:GetDoubleField("distanciaY")
+	if modelo==0 then
 
-	alaIzquierda=modeloAH:GetDoubleField("alaLateral")
-	alaSuperior=modeloAH:GetDoubleField("alaSuperior")
-	alaInferior=modeloAH:GetDoubleField("alaInferior")
-	pliegueInferior=modeloAH:GetDoubleField("pliegueInferior")
-	pliegueSuperior=modeloAH:GetDoubleField("pliegueSuperior")
-	margenA=modeloAH:GetDoubleField("margenA")
-	margenB=modeloAH:GetDoubleField("margenB")
-	
+		pliegueInferior=0
+		textoDescriptivo=modeloAH:GetTextField("textoDescriptivo")
+		anchuraPlaca  = modeloAH:GetDoubleField("anchuraPlaca")
+	    margenPlaca  = modeloAH:GetDoubleField("margenPlaca")
+	    alturaPlaca  = modeloAH:GetDoubleField("alturaPlaca")
+		--origenX = modeloAH:GetDoubleField("origenXAH")
+		--origenY = modeloAH:GetDoubleField("origenYAH")
+
+		--cantidadX=modeloAH:GetIntegerField("cantidadX")
+		--cantidadY=modeloAH:GetIntegerField("cantidadY")
+		--distanciaX=modeloAH:GetDoubleField("distanciaX")
+		--distanciaY=modeloAH:GetDoubleField("distanciaY")
+
+		alaIzquierda=modeloAH:GetDoubleField("alaLateral")
+		alaSuperior=modeloAH:GetDoubleField("alaSuperior")
+		alaInferior=modeloAH:GetDoubleField("alaInferior")
+		--pliegueInferior=modeloAH:GetDoubleField("pliegueInferior")
+		pliegueSuperior=modeloAH:GetDoubleField("pliegueSuperior")
+		margenA=modeloAH:GetDoubleField("margenA")
+		margenB=modeloAH:GetDoubleField("margenB")
+
+		diametroTaladros=modeloAH:GetDoubleField("diametroTaladros")
+		alturaColiso=diametroTaladros
+		--crearColiso=modeloAH:GetCheckBox("crearColiso")
+
+
+
+	elseif modelo==1 then
+
+   		
+    elseif modelo==2 then
+
+
+    elseif modelo==3 then
+
+
+    elseif modelo==4 then
+
+
+    elseif modelo==5 then
+
+
+    elseif modelo==6 then
+
+
+    elseif modelo==7 then
+
+
+    elseif modelo==8 then
+
+
+
+  	end
+
+    
 	
 	anchuraPlaca=anchuraPlaca-margenPlaca
     alturaPlaca=alturaPlaca-margenPlaca
+
+    --Comprobaciones y validaciones de los datos
 	
 	if anchuraPlaca < 0 then
 		
@@ -248,6 +329,8 @@ function OnLuaButton_aceptarAH(modeloAH)
 		
 		dibujarFresadoAH(doc)
 		dibujarCorteAH(doc)
+		dibujarTextoAH(doc)
+		dibujarTaladrosAH(doc)
 		
 		
 		
@@ -262,7 +345,26 @@ return true;
 
 end
 
+function dibujarTextoAH(doc)
 
+	--------------------------------------------------------
+	
+	local cur_layer = doc.LayerManager:GetActiveLayer()
+	local layer = doc.LayerManager:GetLayerWithName("Descripcion")
+	local origenTexto=Point2D(anchuraPlaca/2-(2*alaIzquierda),alturaPlaca/2+pliegueInferior)
+    local texto=CadMarker(textoDescriptivo,origenTexto,0)
+    texto:SetColor(0,0,1)
+	
+	layer:AddObject(texto,true)
+	layer:SetColor(0,0,1)
+	layer.Visible = true 
+	doc.LayerManager:SetActiveLayer(cur_layer)
+	doc:Refresh2DView()	
+	-----------------------------------------------------------------
+	return true; 
+
+
+end
 
 function dibujarFresadoAH(doc)
 	
@@ -292,6 +394,9 @@ function dibujarFresadoAH(doc)
 		Contour:LineTo(fresado8)
 		Contour:LineTo(fresado7)
 		Contour:LineTo(fresado2)
+
+
+
 	elseif modelo==2 or modelo==3 then --REF [AH2][AH3]
 		Contour:AppendPoint(fresado1)
 		Contour:LineTo(fresado2)
@@ -369,7 +474,9 @@ function dibujarFresadoAH(doc)
 	local cad_object = CreateCadContour(Contour)
 	local cur_layer = doc.LayerManager:GetActiveLayer()
 	local layer = doc.LayerManager:GetLayerWithName("Fresado")
+	
 	layer:AddObject(cad_object, true)
+	
 	layer:SetColor(0.3,0.8,0.4)
 	layer.Visible = true 
 	doc.LayerManager:SetActiveLayer(cur_layer)
@@ -688,26 +795,325 @@ function dibujarCorteAH(doc)
 end
 
 
-
-
-function dibujarTaldrosAH(doc)
+function colisoIzq()
 
 	local Contour = Contour(0.0)
+    --Coliso Izquierda
+	local origenColisoIzq = Point2D(origenX+alaIzquierda+anchuraColiso,origenY+alaInferior+alturaPlaca+pliegueSuperior+alaSuperior-(2*alturaColiso))
+	local pt2ColisoIzq=Point2D(origenX+alaIzquierda+(2*anchuraColiso),origenY+alaInferior+alturaPlaca+pliegueSuperior+alaSuperior-(2*alturaColiso))
+    local pt3ColisoIzq=Point2D(origenX+alaIzquierda+(2*anchuraColiso),origenY+alaInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso)
+    local pt4ColisoIzq=Point2D(origenX+alaIzquierda+anchuraColiso,origenY+alaInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso)
+	
+    Contour:AppendPoint(origenColisoIzq)
+	Contour:LineTo(pt2ColisoIzq)
+	Contour:LineTo(pt3ColisoIzq)
+	Contour:LineTo(pt4ColisoIzq)
+	Contour:LineTo(origenColisoIzq)
 
-	local corte1 = Point2D(origenX,origenY)
-   
-   	Contour:AppendPoint(corte1)
-   
-	--------------------------------------------------------
 	local cad_object = CreateCadContour(Contour)
+
 	local cur_layer = doc.LayerManager:GetActiveLayer()
 	local layer = doc.LayerManager:GetLayerWithName("Taladros")
+
 	layer:AddObject(cad_object, true)
-	layer:SetColor(0.1,0.1,0.1)
+	layer:SetColor(0,0,1)
 	layer.Visible = true 
 	doc.LayerManager:SetActiveLayer(cur_layer)
 	doc:Refresh2DView()	
-	-----------------------------------------------------------------
+
+end
+
+function colisoDer()
+
+    local Contour = Contour(0.0)
+	--Coliso Derecha
+	local origenColisoDerecha = Point2D(origenX+alaIzquierda+anchuraPlaca-(2*anchuraColiso),origenY+alaInferior+alturaPlaca+pliegueSuperior+alaSuperior-(2*alturaColiso))
+	local pt2ColisoDer=Point2D(origenX+alaIzquierda+anchuraPlaca-anchuraColiso,origenY+alaInferior+alturaPlaca+pliegueSuperior+alaSuperior-(2*alturaColiso))
+    local pt3ColisoDer=Point2D(origenX+alaIzquierda+anchuraPlaca-anchuraColiso,origenY+alaInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso)
+    local pt4ColisoDer=Point2D(origenX+alaIzquierda+anchuraPlaca-(2*anchuraColiso),origenY+alaInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso)
+	
+    Contour:AppendPoint(origenColisoDerecha)
+	Contour:LineTo(pt2ColisoDer)
+	Contour:LineTo(pt3ColisoDer)
+	Contour:LineTo(pt4ColisoDer)
+	Contour:LineTo(origenColisoDerecha)
+
+	local cad_object = CreateCadContour(Contour)
+	local cur_layer = doc.LayerManager:GetActiveLayer()
+	local layer = doc.LayerManager:GetLayerWithName("Taladros")
+
+	layer:AddObject(cad_object, true)
+	layer:SetColor(0,0,1)
+	layer.Visible = true 
+	doc.LayerManager:SetActiveLayer(cur_layer)
+	doc:Refresh2DView()	
+
+
+end
+
+function dibujarTaladro(puntoCentro, Radio, Layer)
+
+	
+    
+    local function Polar2D(pt, ang, dis)     
+      return Point2D((pt.X + dis * math.cos(math.rad(ang))), 
+                     (pt.Y + dis * math.sin(math.rad(ang))))  
+    end -- End Fuction
+    local pa = Polar2D(puntoCentro,   180.0, Radio) 
+    local pb = Polar2D(puntoCentro,     0.0, Radio)
+    local line = Contour(0.0)
+    local layer = doc.LayerManager:GetLayerWithName(Layer)
+    line:AppendPoint(pa) ;    
+    line:ArcTo(pb,1);   
+    line:ArcTo(pa,1);    
+    layer:AddObject(CreateCadContour(line), true)
+    local cur_layer = doc.LayerManager:GetActiveLayer()
+    layer:SetColor(0,0,1)
+	layer.Visible = true 
+	doc.LayerManager:SetActiveLayer(cur_layer)
+	doc:Refresh2DView()	
+    return true 
+  end -- function end
+
+
+function dibujarTaladrosAH(doc)
+
+	if modelo==0 then
+
+		local numeroFilasTaladros=1
+		local numeroColumnasTaladros=2
+
+		--Con colisos superiores
+    	if crearColiso==1 then
+			
+		   --Dibujar Coliso Izquierda y Derecha
+	       colisoIzq()
+		   colisoDer()
+
+		   --Dibujar Taladros Superiores e inferiores
+
+		   for i=1, numeroFilasTaladros do
+
+		   	for j=1, numeroColumnasTaladros do
+
+		   		local puntoCentro = Point2D(anchoBota+margenTaladroBota+((j-1)*(anchuraPlaca+(2*margenXTaladroSuperior))),alaInferior+alturaPlaca+pliegueSuperior-margenYTaladroSuperior)
+		        local radio = diametroTaladros/2
+		        local layer = "Taladros"
+		        dibujarTaladro(puntoCentro, radio, layer)
+
+		        local puntoCentro = Point2D(anchoBota+margenTaladroBota+((j-1)*(anchuraPlaca+(2*margenXTaladroSuperior))),alaInferior+alturaPlaca+pliegueSuperior-margenYTaladroSuperior-distanciaYTaladrosSuperiores)
+		        local radio = diametroTaladros/2
+		        local layer = "Taladros"
+		        dibujarTaladro(puntoCentro, radio, layer)
+
+		        local puntoCentro = Point2D(anchoBota+margenTaladroBota+((j-1)*(anchuraPlaca+(2*margenXTaladroSuperior))),alaInferior+margenAla)
+		        local radio = diametroTaladros/2
+		        local layer = "Taladros"
+		        dibujarTaladro(puntoCentro, radio, layer)
+
+		        local puntoCentro = Point2D((anchoBota+margenTaladroBota+((j-1)*(anchuraPlaca+(2*margenXTaladroInferior))))+distanciaXTaladrosInferiores,margenYTaladroInferior)
+		        local radio = diametroTaladros/2
+		        local layer = "Taladros"
+		        dibujarTaladro(puntoCentro, radio, layer)
+
+		   	end
+
+		   end
+
+
+
+		 --Sin colisos superiores	  		
+   		 else
+   		 	
+	   		--Taladro Superior Izquierda
+	   		local puntoCentro = Point2D(alaIzquierda+anchuraColiso+anchuraColiso/2,alaInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
+	        local radio = diametroTaladros/2
+	        local layer = "Taladros"
+	        dibujarTaladro(puntoCentro, radio, layer)
+	        
+	        --Taladro Superior Derecha
+	   		local puntoCentro = Point2D(alaIzquierda+anchuraPlaca-anchuraColiso-anchuraColiso/2,alaInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
+	        local radio = diametroTaladros/2
+	        local layer = "Taladros"
+	        dibujarTaladro(puntoCentro, radio, layer)
+
+	        --Dibujar Taladros Superiores e inferiores
+
+		   for i=1, numeroFilasTaladros do
+
+		   	for j=1, numeroColumnasTaladros do
+
+		   		local puntoCentro = Point2D(anchoBota+margenTaladroBota+((j-1)*(anchuraPlaca+(2*margenXTaladroSuperior))),alaInferior+alturaPlaca+pliegueSuperior-margenYTaladroSuperior)
+		        local radio = diametroTaladros/2
+		        local layer = "Taladros"
+		        dibujarTaladro(puntoCentro, radio, layer)
+
+		        local puntoCentro = Point2D(anchoBota+margenTaladroBota+((j-1)*(anchuraPlaca+(2*margenXTaladroSuperior))),alaInferior+alturaPlaca+pliegueSuperior-margenYTaladroSuperior-distanciaYTaladrosSuperiores)
+		        local radio = diametroTaladros/2
+		        local layer = "Taladros"
+		        dibujarTaladro(puntoCentro, radio, layer)
+
+		        local puntoCentro = Point2D(anchoBota+margenTaladroBota+((j-1)*(anchuraPlaca+(2*margenXTaladroSuperior))),alaInferior+margenAla)
+		        local radio = diametroTaladros/2
+		        local layer = "Taladros"
+		        dibujarTaladro(puntoCentro, radio, layer)
+
+		        local puntoCentro = Point2D((anchoBota+margenTaladroBota+((j-1)*(anchuraPlaca+(2*margenXTaladroInferior))))+distanciaXTaladrosInferiores,margenYTaladroInferior)
+		        local radio = diametroTaladros/2
+		        local layer = "Taladros"
+		        dibujarTaladro(puntoCentro, radio, layer)
+
+		   	end
+
+		   end
+
+        end
+
+
+    elseif (modelo==2) then
+
+
+    elseif (modelo==3) then
+
+
+
+   	--Test	
+    elseif (modelo==4) then
+
+
+
+
+    --Test
+	elseif (modelo==5) then
+
+		local numeroFilasTaladros=1
+		local numeroColumnasTaladros=2
+
+		--Con colisos superiores
+    	if crearColiso==1 then
+			
+		   --Dibujar Coliso Izquierda y Derecha
+	       colisoIzq()
+		   colisoDer()
+
+		   --Dibujar Taladros Superiores e inferiores
+
+		   for i=1, numeroFilasTaladros do
+
+		   	for j=1, numeroColumnasTaladros do
+
+		   		
+		   		local puntoCentro = Point2D(anchoBota+margenTaladroBota+((j-1)*(anchuraPlaca+(2*margenXTaladroSuperior))),alaInferior+alturaPlaca+pliegueSuperior-margenYTaladroSuperior)
+		        local radio = diametroTaladros/2
+		        local layer = "Taladros"
+		        dibujarTaladro(puntoCentro, radio, layer)
+
+		        local puntoCentro = Point2D(anchoBota+margenTaladroBota+((j-1)*(anchuraPlaca+(2*margenXTaladroSuperior))),alaInferior+alturaPlaca+pliegueSuperior-margenYTaladroSuperior-distanciaYTaladrosSuperiores)
+		        local radio = diametroTaladros/2
+		        local layer = "Taladros"
+		        dibujarTaladro(puntoCentro, radio, layer)
+
+
+		   		local puntoCentro = Point2D(anchoBota+margenTaladroBota+((j-1)*(anchuraPlaca+(2*margenXTaladroSuperior))),alaInferior+alturaPlaca+margenYTaladroSuperior)
+		        local radio = diametroTaladros/2
+		        local layer = "Taladros"
+		        dibujarTaladro(puntoCentro, radio, layer)
+
+		        local puntoCentro = Point2D(anchoBota+margenTaladroBota+((j-1)*(anchuraPlaca+(2*margenXTaladroSuperior))),alaInferior+alturaPlaca+margenYTaladroSuperior-distanciaYTaladrosSuperiores)
+		        local radio = diametroTaladros/2
+		        local layer = "Taladros"
+		        dibujarTaladro(puntoCentro, radio, layer)
+
+		        local puntoCentro = Point2D(anchoBota+margenTaladroBota+((j-1)*(anchuraPlaca+(2*margenXTaladroSuperior))),alaInferior+margenAla)
+		        local radio = diametroTaladros/2
+		        local layer = "Taladros"
+		        dibujarTaladro(puntoCentro, radio, layer)
+
+		        local puntoCentro = Point2D((anchoBota+margenTaladroBota+((j-1)*(anchuraPlaca+(2*margenXTaladroInferior))))+distanciaXTaladrosInferiores,margenYTaladroInferior)
+		        local radio = diametroTaladros/2
+		        local layer = "Taladros"
+		        dibujarTaladro(puntoCentro, radio, layer)
+
+		   	end
+
+		   end
+
+
+
+		 --Sin colisos superiores	  		
+   		 else
+   		 	
+	   		--Taladro Superior Izquierda
+	   		local puntoCentro = Point2D(alaIzquierda+anchuraColiso+anchuraColiso/2,alaInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
+	        local radio = diametroTaladros/2
+	        local layer = "Taladros"
+	        dibujarTaladro(puntoCentro, radio, layer)
+	        
+	        --Taladro Superior Derecha
+	   		local puntoCentro = Point2D(alaIzquierda+anchuraPlaca-anchuraColiso-anchuraColiso/2,alaInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
+	        local radio = diametroTaladros/2
+	        local layer = "Taladros"
+	        dibujarTaladro(puntoCentro, radio, layer)
+
+	        --Dibujar Taladros Superiores e inferiores
+
+		   for i=1, numeroFilasTaladros do
+
+		   	for j=1, numeroColumnasTaladros do
+
+		   		local puntoCentro = Point2D(anchoBota+margenTaladroBota+((j-1)*(anchuraPlaca+(2*margenXTaladroSuperior))),alaInferior+alturaPlaca+pliegueSuperior-margenYTaladroSuperior)
+		        local radio = diametroTaladros/2
+		        local layer = "Taladros"
+		        dibujarTaladro(puntoCentro, radio, layer)
+
+		        local puntoCentro = Point2D(anchoBota+margenTaladroBota+((j-1)*(anchuraPlaca+(2*margenXTaladroSuperior))),alaInferior+alturaPlaca+pliegueSuperior-margenYTaladroSuperior-distanciaYTaladrosSuperiores)
+		        local radio = diametroTaladros/2
+		        local layer = "Taladros"
+		        dibujarTaladro(puntoCentro, radio, layer)
+
+
+		   		local puntoCentro = Point2D(anchoBota+margenTaladroBota+((j-1)*(anchuraPlaca+(2*margenXTaladroSuperior))),alaInferior+alturaPlaca+margenYTaladroSuperior)
+		        local radio = diametroTaladros/2
+		        local layer = "Taladros"
+		        dibujarTaladro(puntoCentro, radio, layer)
+
+		        local puntoCentro = Point2D(anchoBota+margenTaladroBota+((j-1)*(anchuraPlaca+(2*margenXTaladroSuperior))),alaInferior+alturaPlaca+margenYTaladroSuperior-distanciaYTaladrosSuperiores)
+		        local radio = diametroTaladros/2
+		        local layer = "Taladros"
+		        dibujarTaladro(puntoCentro, radio, layer)
+
+		        local puntoCentro = Point2D(anchoBota+margenTaladroBota+((j-1)*(anchuraPlaca+(2*margenXTaladroSuperior))),alaInferior+margenAla)
+		        local radio = diametroTaladros/2
+		        local layer = "Taladros"
+		        dibujarTaladro(puntoCentro, radio, layer)
+
+		        local puntoCentro = Point2D((anchoBota+margenTaladroBota+((j-1)*(anchuraPlaca+(2*margenXTaladroInferior))))+distanciaXTaladrosInferiores,margenYTaladroInferior)
+		        local radio = diametroTaladros/2
+		        local layer = "Taladros"
+		        dibujarTaladro(puntoCentro, radio, layer)
+
+		   	end
+
+		   end
+
+        end
+
+   	elseif modelo==6 then
+
+
+   	elseif modelo==7 then
+    
+
+    else
+
+
+
+
+
+  	end
+
+	
+   
 	return true; 
 end
 
