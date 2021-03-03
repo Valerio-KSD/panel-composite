@@ -57,6 +57,7 @@ origenX=0
 origenY=0
 
 
+
 --Entrada para modelo [BH]
 anchura1=1200 --izquierda
 anchura2=800 --derecha
@@ -81,12 +82,14 @@ modelo=0
 --[CH=27 - CH1=28 - CH2=329 - CH3=30 - CH4=31 - CH5=32 - CH6=33 - CH7=34 - CH8=35]
 
 
- 
+
 
 ruta=""
 doc = VectricJob()
 
-		
+
+
+
 function main(script_path)
 
     ruta=script_path
@@ -116,6 +119,11 @@ function main(script_path)
 	return true; 
 end 
 
+
+
+
+
+
 function OnLuaButton_crearColiso()
 	crearColiso=1
 	return true
@@ -125,6 +133,8 @@ function OnLuaButton_noCrearColiso()
 	crearColiso=0
 	return true
 end
+
+
 
 function OnLuaButton_refAH()
 	modelo=0
@@ -172,17 +182,117 @@ function OnLuaButton_refAH8()
 end
 
 
+
+function OnLuaButton_refBH()
+	modelo=9
+  return true
+end
+
+function OnLuaButton_refBH1()
+	modelo=10
+  return true
+end
+
+function OnLuaButton_refBH2()
+	modelo=11
+  return true
+end
+
+function OnLuaButton_refBH3()
+	modelo=12
+  return true
+end
+
+function OnLuaButton_refBH4()
+	modelo=13
+  return true
+end
+
+function OnLuaButton_refBH5()
+	modelo=14
+  return true
+end
+
+function OnLuaButton_refBH6()
+	modelo=15
+  return true
+end
+
+function OnLuaButton_refBH7()
+	modelo=16
+  return true
+end
+
+function OnLuaButton_refBH8()
+	modelo=17
+  return true
+end
+
+function OnLuaButton_refBH9()
+	modelo=18
+  return true
+end
+
+function OnLuaButton_refBH10()
+	modelo=19
+  return true
+end
+
+function OnLuaButton_refBH11()
+	modelo=20
+  return true
+end
+
+function OnLuaButton_refBH12()
+	modelo=21
+  return true
+end
+
+function OnLuaButton_refBH13()
+	modelo=22
+  return true
+end
+
+function OnLuaButton_refBH14()
+	modelo=23
+  return true
+end
+
+function OnLuaButton_refBH15()
+	modelo=24
+  return true
+end
+
+function OnLuaButton_refBH16()
+	modelo=25
+  return true
+end
+
+function OnLuaButton_refBH17()
+	modelo=26
+  return true
+end
+
+
+
+
+
+
+
+
+
 function OnLuaButton_modeloAH(framePrincipal)
 
 	if modelo == 0 then 
 		
 		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaAH.html"
-			
-		local modeloAH = HTML_Dialog(false, html_path, 1900, 950, "REFERENCIA AH")
-
-		textoDescriptivo="REFERENCIA AH"
 		
-		 
+		local modeloAH = HTML_Dialog(false, html_path, 1900, 950, "REFERENCIA AH")
+		
+		textoDescriptivo="REFERENCIA AH"
+		anchuraPlaca=2000 margenPlaca=3 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=32
+		pliegueSuperior=36 pliegueInferior=0  margenA=57 margenB=108 diametroTaladros=5 
+		
         modeloAH:AddTextField("textoDescriptivo", textoDescriptivo)
 		modeloAH:AddDoubleField("anchuraPlaca", anchuraPlaca)
 	    modeloAH:AddDoubleField("margenPlaca", margenPlaca)
@@ -199,9 +309,7 @@ function OnLuaButton_modeloAH(framePrincipal)
 		modeloAH:AddDoubleField("alaSuperior", alaSuperior)
 		modeloAH:AddDoubleField("alaInferior", alaInferior)
 
-		--modeloAH:AddDoubleField("pliegueInferior", pliegueInferior)
-
-		modeloAH:AddDoubleField("pliegueInferior", pliegueInferior) --No lleva pliegue inferior
+		--modeloAH:AddDoubleField("pliegueInferior", pliegueInferior) --No lleva pliegue inferior
 
 		modeloAH:AddDoubleField("pliegueSuperior", pliegueSuperior)
 		modeloAH:AddDoubleField("margenA", margenA)
@@ -210,7 +318,6 @@ function OnLuaButton_modeloAH(framePrincipal)
 		modeloAH:AddDoubleField("diametroTaladros", diametroTaladros)
 		--modeloAH:AddCheckBox("crearColiso", true)
 		
-		
 	    if  not modeloAH:ShowDialog() then
 			
 				return false;
@@ -218,50 +325,305 @@ function OnLuaButton_modeloAH(framePrincipal)
 		end
 
    	elseif modelo==1 then
+		
+		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaAH1.html"
+			
+		local modeloAH = HTML_Dialog(false, html_path, 1900, 950, "REFERENCIA AH1")
 
-   		
+		textoDescriptivo="REFERENCIA AH1"
+		anchuraPlaca=2000 margenPlaca=3 alturaPlaca=1000 alaIzquierda=40 alaSuperior=20 alaInferior=32
+		pliegueSuperior=40 pliegueInferior=0  margenA=57 margenB=108 diametroTaladros=5 
+		
+        modeloAH:AddTextField("textoDescriptivo", textoDescriptivo)
+		modeloAH:AddDoubleField("anchuraPlaca", anchuraPlaca)
+	    modeloAH:AddDoubleField("margenPlaca", margenPlaca)
+	    modeloAH:AddDoubleField("alturaPlaca", alturaPlaca)
+		--modeloAH:AddDoubleField("origenX", origenX)
+		--modeloAH:AddDoubleField("origenY", origenY)
+
+		modeloAH:AddDoubleField("alaLateral", alaIzquierda)
+		modeloAH:AddDoubleField("alaSuperior", alaSuperior)
+		modeloAH:AddDoubleField("alaInferior", alaInferior)
+
+		--modeloAH:AddDoubleField("pliegueInferior", pliegueInferior) --No lleva pliegue inferior
+
+		modeloAH:AddDoubleField("pliegueSuperior", pliegueSuperior)
+		modeloAH:AddDoubleField("margenA", margenA)
+		modeloAH:AddDoubleField("margenB", margenB)
+
+		modeloAH:AddDoubleField("diametroTaladros", diametroTaladros)
+		
+	    if  not modeloAH:ShowDialog() then
+			
+				return false;
+					
+		end
+		
     elseif modelo==2 then
+				
+		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaAH2.html"
+			
+		local modeloAH = HTML_Dialog(false, html_path, 1900, 950, "REFERENCIA AH2")
 
+		textoDescriptivo="REFERENCIA AH2"
+		anchuraPlaca=2000 margenPlaca=3 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=20.6
+		pliegueSuperior=36 pliegueInferior=40  margenA=57 margenB=108 diametroTaladros=5 
+		
+        modeloAH:AddTextField("textoDescriptivo", textoDescriptivo)
+		modeloAH:AddDoubleField("anchuraPlaca", anchuraPlaca)
+	    modeloAH:AddDoubleField("margenPlaca", margenPlaca)
+	    modeloAH:AddDoubleField("alturaPlaca", alturaPlaca)
+		--modeloAH:AddDoubleField("origenX", origenX)
+		--modeloAH:AddDoubleField("origenY", origenY)
 
+		modeloAH:AddDoubleField("alaLateral", alaIzquierda)
+		modeloAH:AddDoubleField("alaSuperior", alaSuperior)
+		modeloAH:AddDoubleField("alaInferior", alaInferior)
+
+		modeloAH:AddDoubleField("pliegueInferior", pliegueInferior)
+
+		modeloAH:AddDoubleField("pliegueSuperior", pliegueSuperior)
+		modeloAH:AddDoubleField("margenA", margenA)
+		modeloAH:AddDoubleField("margenB", margenB)
+
+		modeloAH:AddDoubleField("diametroTaladros", diametroTaladros)
+		
+	    if  not modeloAH:ShowDialog() then
+			
+				return false;
+					
+		end
+	
     elseif modelo==3 then
+				
+		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaAH3.html"
+			
+		local modeloAH = HTML_Dialog(false, html_path, 1900, 950, "REFERENCIA AH3")
 
+		textoDescriptivo="REFERENCIA AH3"
+		anchuraPlaca=2000 margenPlaca=3 alturaPlaca=1000 alaIzquierda=40 alaSuperior=20 alaInferior=20
+		pliegueSuperior=40 pliegueInferior=40  margenA=57 margenB=108 diametroTaladros=5 
+		
+        modeloAH:AddTextField("textoDescriptivo", textoDescriptivo)
+		modeloAH:AddDoubleField("anchuraPlaca", anchuraPlaca)
+	    modeloAH:AddDoubleField("margenPlaca", margenPlaca)
+	    modeloAH:AddDoubleField("alturaPlaca", alturaPlaca)
+		--modeloAH:AddDoubleField("origenX", origenX)
+		--modeloAH:AddDoubleField("origenY", origenY)
 
+		modeloAH:AddDoubleField("alaLateral", alaIzquierda)
+		modeloAH:AddDoubleField("alaSuperior", alaSuperior)
+		modeloAH:AddDoubleField("alaInferior", alaInferior)
+
+		modeloAH:AddDoubleField("pliegueInferior", pliegueInferior)
+
+		modeloAH:AddDoubleField("pliegueSuperior", pliegueSuperior)
+		modeloAH:AddDoubleField("margenA", margenA)
+		modeloAH:AddDoubleField("margenB", margenB)
+
+		modeloAH:AddDoubleField("diametroTaladros", diametroTaladros)
+		
+	    if  not modeloAH:ShowDialog() then
+			
+				return false;
+					
+		end
+	
     elseif modelo==4 then
+				
+		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaAH4.html"
+			
+		local modeloAH = HTML_Dialog(false, html_path, 1900, 950, "REFERENCIA AH4")
 
+		textoDescriptivo="REFERENCIA AH4"
+		anchuraPlaca=2000 margenPlaca=3 alturaPlaca=1000 alaIzquierda=40 alaSuperior=260 alaInferior=32
+		pliegueSuperior=40 pliegueInferior=0  margenA=57 margenB=108 diametroTaladros=5 
+		
+        modeloAH:AddTextField("textoDescriptivo", textoDescriptivo)
+		modeloAH:AddDoubleField("anchuraPlaca", anchuraPlaca)
+	    modeloAH:AddDoubleField("margenPlaca", margenPlaca)
+	    modeloAH:AddDoubleField("alturaPlaca", alturaPlaca)
+		--modeloAH:AddDoubleField("origenX", origenX)
+		--modeloAH:AddDoubleField("origenY", origenY)
 
+		modeloAH:AddDoubleField("alaLateral", alaIzquierda)
+		modeloAH:AddDoubleField("alaSuperior", alaSuperior)
+		modeloAH:AddDoubleField("alaInferior", alaInferior)
+
+		--modeloAH:AddDoubleField("pliegueInferior", pliegueInferior) --No lleva pliegue inferior
+
+		modeloAH:AddDoubleField("pliegueSuperior", pliegueSuperior)
+		modeloAH:AddDoubleField("margenA", margenA)
+		modeloAH:AddDoubleField("margenB", margenB)
+
+		modeloAH:AddDoubleField("diametroTaladros", diametroTaladros)
+		
+	    if  not modeloAH:ShowDialog() then
+			
+				return false;
+					
+		end
+	
     elseif modelo==5 then
+				
+		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaAH5.html"
+			
+		local modeloAH = HTML_Dialog(false, html_path, 1900, 950, "REFERENCIA AH5")
 
+		textoDescriptivo="REFERENCIA AH5"
+		anchuraPlaca=2000 margenPlaca=3 alturaPlaca=1000 alaIzquierda=40 alaSuperior=260 alaInferior=20
+		pliegueSuperior=40 pliegueInferior=40  margenA=57 margenB=108 diametroTaladros=5 
+		
+        modeloAH:AddTextField("textoDescriptivo", textoDescriptivo)
+		modeloAH:AddDoubleField("anchuraPlaca", anchuraPlaca)
+	    modeloAH:AddDoubleField("margenPlaca", margenPlaca)
+	    modeloAH:AddDoubleField("alturaPlaca", alturaPlaca)
+		--modeloAH:AddDoubleField("origenX", origenX)
+		--modeloAH:AddDoubleField("origenY", origenY)
 
+		modeloAH:AddDoubleField("alaLateral", alaIzquierda)
+		modeloAH:AddDoubleField("alaSuperior", alaSuperior)
+		modeloAH:AddDoubleField("alaInferior", alaInferior)
+
+		modeloAH:AddDoubleField("pliegueInferior", pliegueInferior)
+
+		modeloAH:AddDoubleField("pliegueSuperior", pliegueSuperior)
+		modeloAH:AddDoubleField("margenA", margenA)
+		modeloAH:AddDoubleField("margenB", margenB)
+
+		modeloAH:AddDoubleField("diametroTaladros", diametroTaladros)
+		
+	    if  not modeloAH:ShowDialog() then
+			
+				return false;
+					
+		end
+	
     elseif modelo==6 then
+				
+		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaAH6.html"
+			
+		local modeloAH = HTML_Dialog(false, html_path, 1900, 950, "REFERENCIA AH6")
 
+		textoDescriptivo="REFERENCIA AH6"
+		anchuraPlaca=2000 margenPlaca=3 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=32
+		pliegueSuperior=300 pliegueInferior=0  margenA=57 margenB=108 diametroTaladros=5 
+		
+        modeloAH:AddTextField("textoDescriptivo", textoDescriptivo)
+		modeloAH:AddDoubleField("anchuraPlaca", anchuraPlaca)
+	    modeloAH:AddDoubleField("margenPlaca", margenPlaca)
+	    modeloAH:AddDoubleField("alturaPlaca", alturaPlaca)
+		--modeloAH:AddDoubleField("origenX", origenX)
+		--modeloAH:AddDoubleField("origenY", origenY)
 
+		modeloAH:AddDoubleField("alaLateral", alaIzquierda)
+		modeloAH:AddDoubleField("alaSuperior", alaSuperior)
+		modeloAH:AddDoubleField("alaInferior", alaInferior)
+
+		--modeloAH:AddDoubleField("pliegueInferior", pliegueInferior) --No lleva pliegue inferior
+
+		modeloAH:AddDoubleField("pliegueSuperior", pliegueSuperior)
+		modeloAH:AddDoubleField("margenA", margenA)
+		modeloAH:AddDoubleField("margenB", margenB)
+
+		modeloAH:AddDoubleField("diametroTaladros", diametroTaladros)
+		
+	    if  not modeloAH:ShowDialog() then
+			
+				return false;
+					
+		end
+	
     elseif modelo==7 then
+				
+		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaAH7.html"
+			
+		local modeloAH = HTML_Dialog(false, html_path, 1900, 950, "REFERENCIA AH7")
 
+		textoDescriptivo="REFERENCIA AH7"
+		anchuraPlaca=2000 margenPlaca=3 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=20
+		pliegueSuperior=300 pliegueInferior=40  margenA=57 margenB=108 diametroTaladros=5 
+		
+        modeloAH:AddTextField("textoDescriptivo", textoDescriptivo)
+		modeloAH:AddDoubleField("anchuraPlaca", anchuraPlaca)
+	    modeloAH:AddDoubleField("margenPlaca", margenPlaca)
+	    modeloAH:AddDoubleField("alturaPlaca", alturaPlaca)
+		--modeloAH:AddDoubleField("origenX", origenX)
+		--modeloAH:AddDoubleField("origenY", origenY)
 
+		modeloAH:AddDoubleField("alaLateral", alaIzquierda)
+		modeloAH:AddDoubleField("alaSuperior", alaSuperior)
+		modeloAH:AddDoubleField("alaInferior", alaInferior)
+
+		modeloAH:AddDoubleField("pliegueInferior", pliegueInferior)
+
+		modeloAH:AddDoubleField("pliegueSuperior", pliegueSuperior)
+		modeloAH:AddDoubleField("margenA", margenA)
+		modeloAH:AddDoubleField("margenB", margenB)
+
+		modeloAH:AddDoubleField("diametroTaladros", diametroTaladros)
+		
+	    if  not modeloAH:ShowDialog() then
+			
+				return false;
+					
+		end
+	
     elseif modelo==8 then
+				
+		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaAH8.html"
+			
+		local modeloAH = HTML_Dialog(false, html_path, 1900, 950, "REFERENCIA AH8")
 
+		textoDescriptivo="REFERENCIA AH8"
+		anchuraPlaca=2000 margenPlaca=3 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=40
+		pliegueSuperior=36 pliegueInferior=300 margenA=57 margenB=108 diametroTaladros=5 
+		
+        modeloAH:AddTextField("textoDescriptivo", textoDescriptivo)
+		modeloAH:AddDoubleField("anchuraPlaca", anchuraPlaca)
+	    modeloAH:AddDoubleField("margenPlaca", margenPlaca)
+	    modeloAH:AddDoubleField("alturaPlaca", alturaPlaca)
+		--modeloAH:AddDoubleField("origenX", origenX)
+		--modeloAH:AddDoubleField("origenY", origenY)
 
+		modeloAH:AddDoubleField("alaLateral", alaIzquierda)
+		modeloAH:AddDoubleField("alaSuperior", alaSuperior)
+		modeloAH:AddDoubleField("alaInferior", alaInferior)
 
+		modeloAH:AddDoubleField("pliegueInferior", pliegueInferior)
+
+		modeloAH:AddDoubleField("pliegueSuperior", pliegueSuperior)
+		modeloAH:AddDoubleField("margenA", margenA)
+		modeloAH:AddDoubleField("margenB", margenB)
+
+		modeloAH:AddDoubleField("diametroTaladros", diametroTaladros)
+		
+	    if  not modeloAH:ShowDialog() then
+			
+				return false;
+					
+		end
   	end
-
-	
-	
 	
 	
 return true;
 
 end
 
+
+
+
+
+
 function OnLuaButton_aceptarAH(modeloAH)
 
-
-	if modelo==0 then
-
+	if modelo==0 or modelo==1 or modelo==4 or modelo==6 then --Modelos con pliegue inferior = 0
 		pliegueInferior=0
-		textoDescriptivo=modeloAH:GetTextField("textoDescriptivo")
-		anchuraPlaca  = modeloAH:GetDoubleField("anchuraPlaca")
-	    margenPlaca  = modeloAH:GetDoubleField("margenPlaca")
-	    alturaPlaca  = modeloAH:GetDoubleField("alturaPlaca")
+		
+		textoDescriptivo = modeloAH:GetTextField("textoDescriptivo")
+		anchuraPlaca = modeloAH:GetDoubleField("anchuraPlaca")
+	    margenPlaca = modeloAH:GetDoubleField("margenPlaca")
+	    alturaPlaca = modeloAH:GetDoubleField("alturaPlaca")
 		--origenX = modeloAH:GetDoubleField("origenXAH")
 		--origenY = modeloAH:GetDoubleField("origenYAH")
 
@@ -279,47 +641,42 @@ function OnLuaButton_aceptarAH(modeloAH)
 		margenB=modeloAH:GetDoubleField("margenB")
 
 		diametroTaladros=modeloAH:GetDoubleField("diametroTaladros")
-		alturaColiso=diametroTaladros
+		--alturaColiso=diametroTaladros
 		--crearColiso=modeloAH:GetCheckBox("crearColiso")
 
 
 
-	elseif modelo==1 then
+	elseif modelo==2 or modelo==3 or modelo==5 or modelo==7 or modelo==8 then --Modelos con pliegue inferior != 0 
+		
+		textoDescriptivo = modeloAH:GetTextField("textoDescriptivo")
+		anchuraPlaca = modeloAH:GetDoubleField("anchuraPlaca")
+	    margenPlaca = modeloAH:GetDoubleField("margenPlaca")
+	    alturaPlaca = modeloAH:GetDoubleField("alturaPlaca")
+		
+		alaIzquierda = modeloAH:GetDoubleField("alaLateral")
+		alaSuperior = modeloAH:GetDoubleField("alaSuperior")
+		alaInferior = modeloAH:GetDoubleField("alaInferior")
+		
+		pliegueInferior=modeloAH:GetDoubleField("pliegueInferior")
+		pliegueSuperior = modeloAH:GetDoubleField("pliegueSuperior")
+		margenA = modeloAH:GetDoubleField("margenA")
+		margenB = modeloAH:GetDoubleField("margenB")
 
-   		
-    elseif modelo==2 then
-
-
-    elseif modelo==3 then
-
-
-    elseif modelo==4 then
-
-
-    elseif modelo==5 then
-
-
-    elseif modelo==6 then
-
-
-    elseif modelo==7 then
-
-
-    elseif modelo==8 then
-
-
-
+		diametroTaladros=modeloAH:GetDoubleField("diametroTaladros")
+		
+		--crearColiso=modeloAH:GetCheckBox("crearColiso")
   	end
 
     
-	
+	--Caracteristicas generales
 	anchuraPlaca=anchuraPlaca-margenPlaca
     alturaPlaca=alturaPlaca-margenPlaca
-
-    --Comprobaciones y validaciones de los datos
 	
 	alaDerecha=alaIzquierda
 	
+	alturaColiso=diametroTaladros
+	
+    --Comprobaciones y validaciones de los datos
 	if anchuraPlaca < 0 then
 		
 		DisplayMessageBox("La anchura de la placa NO puede ser negativa.Creación Modelo AH Fallida")
@@ -339,25 +696,40 @@ function OnLuaButton_aceptarAH(modeloAH)
 		
 		
 		
-
+		--origenX=-(alaDerecha+anchuraPlaca+alaIzquierda+200)
+		--origenY=-(0)
+		
 		dibujarFresadoAH(doc)
 		dibujarCorteAH(doc)
 		dibujarTextoAH(doc)
 		dibujarTaladrosAH(doc)
-
-		--dibujarFresadoAH(doc)
-		--dibujarCorteAH(doc)
-		--dibujarTaldrosAH(doc)
-
 		
 		
+		
+		
+		
+		--origenX=-(alaDerechaanchura1+anchura2+alaIzquierda+200)
+		--origenY=-(0)
 		
 		--dibujarFresadoBH(doc)
 		--dibujarCorteBH(doc)
-		--dibujarTaldrosBH(doc)
+		--dibujarTextoBH(doc)
+		--dibujarTaladrosBH(doc)
 		
-		dibujarFresadoCH(doc)
-		dibujarCorteCH(doc)
+		
+		
+		
+		
+		
+		
+		--origenX=-(alaDerecha+anchuraIzq+anchuraCentro+anchuraDcha+alaIzquierda+200)
+		--origenY=-(0)
+		
+		--dibujarFresadoCH(doc)
+		--dibujarCorteCH(doc)
+		--dibujarTextoCH(doc)
+		--dibujarTaladrosCH(doc)
+				
 		
 		DisplayMessageBox("Modelo AH Creado Correctamente")
 	
@@ -368,33 +740,770 @@ return true;
 end
 
 
-function dibujarTextoAH(doc)
 
-	--------------------------------------------------------
+function OnLuaButton_modeloBH(framePrincipal)
 	
-	local cur_layer = doc.LayerManager:GetActiveLayer()
-	local layer = doc.LayerManager:GetLayerWithName("Descripcion")
-	local origenTexto=Point2D(anchuraPlaca/2-(2*alaIzquierda),alturaPlaca/2+pliegueInferior)
-    local texto=CadMarker(textoDescriptivo,origenTexto,0)
-    texto:SetColor(0,0,1)
-	
-	layer:AddObject(texto,true)
-	layer:SetColor(0,0,1)
-	layer.Visible = true 
-	doc.LayerManager:SetActiveLayer(cur_layer)
-	doc:Refresh2DView()	
-	-----------------------------------------------------------------
-	return true; 
+	if modelo == 9 then 
+		
+		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH.html"
+		
+		local modeloBH = HTML_Dialog(false, html_path, 1900, 950, "REFERENCIA BH")
+		
+		textoDescriptivo="REFERENCIA BH"
+		anchura1=1200 anchura2=800 margenPlaca=3 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=32
+		pliegueSuperior=36 pliegueInferior=0  margenA=57 margenB=108 diametroTaladros=5 
+		
+        modeloBH:AddTextField("textoDescriptivo", textoDescriptivo)
+		modeloBH:AddDoubleField("anchuraPlacaIzquierda", anchura1)
+		modeloBH:AddDoubleField("anchuraPlacaDerecha", anchura2)
+	    modeloBH:AddDoubleField("margenPlaca", margenPlaca)
+	    modeloBH:AddDoubleField("alturaPlaca", alturaPlaca)
+		--modeloBH:AddDoubleField("origenX", origenX)
+		--modeloBH:AddDoubleField("origenY", origenY)
 
+		modeloBH:AddDoubleField("alaLateral", alaIzquierda)
+		modeloBH:AddDoubleField("alaSuperior", alaSuperior)
+		modeloBH:AddDoubleField("alaInferior", alaInferior)
+
+		--modeloBH:AddDoubleField("pliegueInferior", pliegueInferior) --No lleva pliegue inferior
+
+		modeloBH:AddDoubleField("pliegueSuperior", pliegueSuperior)
+		modeloBH:AddDoubleField("margenA", margenA)
+		modeloBH:AddDoubleField("margenB", margenB)
+
+		modeloBH:AddDoubleField("diametroTaladros", diametroTaladros)
+		--modeloBH:AddCheckBox("crearColiso", true)
+		
+	    if  not modeloBH:ShowDialog() then
+			
+				return false;
+					
+		end
+
+   	elseif modelo==10 then
+		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH1.html"
+		
+		local modeloBH = HTML_Dialog(false, html_path, 1900, 950, "REFERENCIA BH1")
+		
+		textoDescriptivo="REFERENCIA BH1"
+		anchura1=1200 anchura2=800 margenPlaca=3 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=32
+		pliegueSuperior=36 pliegueInferior=0  margenA=57 margenB=108 diametroTaladros=5 
+		
+        modeloBH:AddTextField("textoDescriptivo", textoDescriptivo)
+		modeloBH:AddDoubleField("anchuraPlacaIzquierda", anchura1)
+		modeloBH:AddDoubleField("anchuraPlacaDerecha", anchura2)
+	    modeloBH:AddDoubleField("margenPlaca", margenPlaca)
+	    modeloBH:AddDoubleField("alturaPlaca", alturaPlaca)
+		--modeloBH:AddDoubleField("origenX", origenX)
+		--modeloBH:AddDoubleField("origenY", origenY)
+
+		modeloBH:AddDoubleField("alaLateral", alaIzquierda)
+		modeloBH:AddDoubleField("alaSuperior", alaSuperior)
+		modeloBH:AddDoubleField("alaInferior", alaInferior)
+
+		--modeloBH:AddDoubleField("pliegueInferior", pliegueInferior) --No lleva pliegue inferior
+
+		modeloBH:AddDoubleField("pliegueSuperior", pliegueSuperior)
+		modeloBH:AddDoubleField("margenA", margenA)
+		modeloBH:AddDoubleField("margenB", margenB)
+
+		modeloBH:AddDoubleField("diametroTaladros", diametroTaladros)
+		--modeloBH:AddCheckBox("crearColiso", true)
+		
+	    if  not modeloBH:ShowDialog() then
+			
+				return false;
+					
+		end
+	elseif modelo==11 then
+		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH2.html"
+		
+		local modeloBH = HTML_Dialog(false, html_path, 1900, 950, "REFERENCIA BH2")
+		
+		textoDescriptivo="REFERENCIA BH2"
+		anchura1=1200 anchura2=800 margenPlaca=3 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=32
+		pliegueSuperior=36 pliegueInferior=4000  margenA=57 margenB=108 diametroTaladros=5 
+		
+        modeloBH:AddTextField("textoDescriptivo", textoDescriptivo)
+		modeloBH:AddDoubleField("anchuraPlacaIzquierda", anchura1)
+		modeloBH:AddDoubleField("anchuraPlacaDerecha", anchura2)
+	    modeloBH:AddDoubleField("margenPlaca", margenPlaca)
+	    modeloBH:AddDoubleField("alturaPlaca", alturaPlaca)
+		--modeloBH:AddDoubleField("origenX", origenX)
+		--modeloBH:AddDoubleField("origenY", origenY)
+
+		modeloBH:AddDoubleField("alaLateral", alaIzquierda)
+		modeloBH:AddDoubleField("alaSuperior", alaSuperior)
+		modeloBH:AddDoubleField("alaInferior", alaInferior)
+
+		modeloBH:AddDoubleField("pliegueInferior", pliegueInferior)
+
+		modeloBH:AddDoubleField("pliegueSuperior", pliegueSuperior)
+		modeloBH:AddDoubleField("margenA", margenA)
+		modeloBH:AddDoubleField("margenB", margenB)
+
+		modeloBH:AddDoubleField("diametroTaladros", diametroTaladros)
+		--modeloBH:AddCheckBox("crearColiso", true)
+		
+	    if  not modeloBH:ShowDialog() then
+			
+				return false;
+					
+		end
+	elseif modelo==12 then
+		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH3.html"
+		
+		local modeloBH = HTML_Dialog(false, html_path, 1900, 950, "REFERENCIA BH3")
+		
+		textoDescriptivo="REFERENCIA BH3"
+		anchura1=1200 anchura2=800 margenPlaca=3 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=32
+		pliegueSuperior=36 pliegueInferior=4000  margenA=57 margenB=108 diametroTaladros=5 
+		
+        modeloBH:AddTextField("textoDescriptivo", textoDescriptivo)
+		modeloBH:AddDoubleField("anchuraPlacaIzquierda", anchura1)
+		modeloBH:AddDoubleField("anchuraPlacaDerecha", anchura2)
+	    modeloBH:AddDoubleField("margenPlaca", margenPlaca)
+	    modeloBH:AddDoubleField("alturaPlaca", alturaPlaca)
+		--modeloBH:AddDoubleField("origenX", origenX)
+		--modeloBH:AddDoubleField("origenY", origenY)
+
+		modeloBH:AddDoubleField("alaLateral", alaIzquierda)
+		modeloBH:AddDoubleField("alaSuperior", alaSuperior)
+		modeloBH:AddDoubleField("alaInferior", alaInferior)
+
+		modeloBH:AddDoubleField("pliegueInferior", pliegueInferior)
+
+		modeloBH:AddDoubleField("pliegueSuperior", pliegueSuperior)
+		modeloBH:AddDoubleField("margenA", margenA)
+		modeloBH:AddDoubleField("margenB", margenB)
+
+		modeloBH:AddDoubleField("diametroTaladros", diametroTaladros)
+		--modeloBH:AddCheckBox("crearColiso", true)
+		
+	    if  not modeloBH:ShowDialog() then
+			
+				return false;
+					
+		end
+	elseif modelo==13 then
+		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH4.html"
+		
+		local modeloBH = HTML_Dialog(false, html_path, 1900, 950, "REFERENCIA BH4")
+		
+		textoDescriptivo="REFERENCIA BH4"
+		anchura1=1200 anchura2=800 margenPlaca=3 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=32
+		pliegueSuperior=36 pliegueInferior=0  margenA=57 margenB=108 diametroTaladros=5 
+		
+        modeloBH:AddTextField("textoDescriptivo", textoDescriptivo)
+		modeloBH:AddDoubleField("anchuraPlacaIzquierda", anchura1)
+		modeloBH:AddDoubleField("anchuraPlacaDerecha", anchura2)
+	    modeloBH:AddDoubleField("margenPlaca", margenPlaca)
+	    modeloBH:AddDoubleField("alturaPlaca", alturaPlaca)
+		--modeloBH:AddDoubleField("origenX", origenX)
+		--modeloBH:AddDoubleField("origenY", origenY)
+
+		modeloBH:AddDoubleField("alaLateral", alaIzquierda)
+		modeloBH:AddDoubleField("alaSuperior", alaSuperior)
+		modeloBH:AddDoubleField("alaInferior", alaInferior)
+
+		--modeloBH:AddDoubleField("pliegueInferior", pliegueInferior) --No lleva pliegue inferior
+
+		modeloBH:AddDoubleField("pliegueSuperior", pliegueSuperior)
+		modeloBH:AddDoubleField("margenA", margenA)
+		modeloBH:AddDoubleField("margenB", margenB)
+
+		modeloBH:AddDoubleField("diametroTaladros", diametroTaladros)
+		--modeloBH:AddCheckBox("crearColiso", true)
+		
+	    if  not modeloBH:ShowDialog() then
+			
+				return false;
+					
+		end
+	elseif modelo==14 then
+		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH5.html"
+		
+		local modeloBH = HTML_Dialog(false, html_path, 1900, 950, "REFERENCIA BH5")
+		
+		textoDescriptivo="REFERENCIA BH5"
+		anchura1=1200 anchura2=800 margenPlaca=3 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=32
+		pliegueSuperior=36 pliegueInferior=4000  margenA=57 margenB=108 diametroTaladros=5 
+		
+        modeloBH:AddTextField("textoDescriptivo", textoDescriptivo)
+		modeloBH:AddDoubleField("anchuraPlacaIzquierda", anchura1)
+		modeloBH:AddDoubleField("anchuraPlacaDerecha", anchura2)
+	    modeloBH:AddDoubleField("margenPlaca", margenPlaca)
+	    modeloBH:AddDoubleField("alturaPlaca", alturaPlaca)
+		--modeloBH:AddDoubleField("origenX", origenX)
+		--modeloBH:AddDoubleField("origenY", origenY)
+
+		modeloBH:AddDoubleField("alaLateral", alaIzquierda)
+		modeloBH:AddDoubleField("alaSuperior", alaSuperior)
+		modeloBH:AddDoubleField("alaInferior", alaInferior)
+
+		modeloBH:AddDoubleField("pliegueInferior", pliegueInferior)
+
+		modeloBH:AddDoubleField("pliegueSuperior", pliegueSuperior)
+		modeloBH:AddDoubleField("margenA", margenA)
+		modeloBH:AddDoubleField("margenB", margenB)
+
+		modeloBH:AddDoubleField("diametroTaladros", diametroTaladros)
+		--modeloBH:AddCheckBox("crearColiso", true)
+		
+	    if  not modeloBH:ShowDialog() then
+			
+				return false;
+					
+		end
+	elseif modelo==15 then
+		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH6.html"
+		
+		local modeloBH = HTML_Dialog(false, html_path, 1900, 950, "REFERENCIA BH6")
+		
+		textoDescriptivo="REFERENCIA BH6"
+		anchura1=1200 anchura2=800 margenPlaca=3 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=32
+		pliegueSuperior=36 pliegueInferior=0  margenA=57 margenB=108 diametroTaladros=5 
+		
+        modeloBH:AddTextField("textoDescriptivo", textoDescriptivo)
+		modeloBH:AddDoubleField("anchuraPlacaIzquierda", anchura1)
+		modeloBH:AddDoubleField("anchuraPlacaDerecha", anchura2)
+	    modeloBH:AddDoubleField("margenPlaca", margenPlaca)
+	    modeloBH:AddDoubleField("alturaPlaca", alturaPlaca)
+		--modeloBH:AddDoubleField("origenX", origenX)
+		--modeloBH:AddDoubleField("origenY", origenY)
+
+		modeloBH:AddDoubleField("alaLateral", alaIzquierda)
+		modeloBH:AddDoubleField("alaSuperior", alaSuperior)
+		modeloBH:AddDoubleField("alaInferior", alaInferior)
+
+		--modeloBH:AddDoubleField("pliegueInferior", pliegueInferior) --No lleva pliegue inferior
+
+		modeloBH:AddDoubleField("pliegueSuperior", pliegueSuperior)
+		modeloBH:AddDoubleField("margenA", margenA)
+		modeloBH:AddDoubleField("margenB", margenB)
+
+		modeloBH:AddDoubleField("diametroTaladros", diametroTaladros)
+		--modeloBH:AddCheckBox("crearColiso", true)
+		
+	    if  not modeloBH:ShowDialog() then
+			
+				return false;
+					
+		end
+	elseif modelo==16 then
+		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH7.html"
+		
+		local modeloBH = HTML_Dialog(false, html_path, 1900, 950, "REFERENCIA BH7")
+		
+		textoDescriptivo="REFERENCIA BH7"
+		anchura1=1200 anchura2=800 margenPlaca=3 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=32
+		pliegueSuperior=36 pliegueInferior=4000  margenA=57 margenB=108 diametroTaladros=5 
+		
+        modeloBH:AddTextField("textoDescriptivo", textoDescriptivo)
+		modeloBH:AddDoubleField("anchuraPlacaIzquierda", anchura1)
+		modeloBH:AddDoubleField("anchuraPlacaDerecha", anchura2)
+	    modeloBH:AddDoubleField("margenPlaca", margenPlaca)
+	    modeloBH:AddDoubleField("alturaPlaca", alturaPlaca)
+		--modeloBH:AddDoubleField("origenX", origenX)
+		--modeloBH:AddDoubleField("origenY", origenY)
+
+		modeloBH:AddDoubleField("alaLateral", alaIzquierda)
+		modeloBH:AddDoubleField("alaSuperior", alaSuperior)
+		modeloBH:AddDoubleField("alaInferior", alaInferior)
+
+		modeloBH:AddDoubleField("pliegueInferior", pliegueInferior)
+		
+		modeloBH:AddDoubleField("pliegueSuperior", pliegueSuperior)
+		modeloBH:AddDoubleField("margenA", margenA)
+		modeloBH:AddDoubleField("margenB", margenB)
+
+		modeloBH:AddDoubleField("diametroTaladros", diametroTaladros)
+		--modeloBH:AddCheckBox("crearColiso", true)
+		
+	    if  not modeloBH:ShowDialog() then
+			
+				return false;
+					
+		end
+	elseif modelo==17 then
+		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH8.html"
+		
+		local modeloBH = HTML_Dialog(false, html_path, 1900, 950, "REFERENCIA BH8")
+		
+		textoDescriptivo="REFERENCIA BH8"
+		anchura1=1200 anchura2=800 margenPlaca=3 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=32
+		pliegueSuperior=36 pliegueInferior=4000  margenA=57 margenB=108 diametroTaladros=5 
+		
+        modeloBH:AddTextField("textoDescriptivo", textoDescriptivo)
+		modeloBH:AddDoubleField("anchuraPlacaIzquierda", anchura1)
+		modeloBH:AddDoubleField("anchuraPlacaDerecha", anchura2)
+	    modeloBH:AddDoubleField("margenPlaca", margenPlaca)
+	    modeloBH:AddDoubleField("alturaPlaca", alturaPlaca)
+		--modeloBH:AddDoubleField("origenX", origenX)
+		--modeloBH:AddDoubleField("origenY", origenY)
+
+		modeloBH:AddDoubleField("alaLateral", alaIzquierda)
+		modeloBH:AddDoubleField("alaSuperior", alaSuperior)
+		modeloBH:AddDoubleField("alaInferior", alaInferior)
+
+		modeloBH:AddDoubleField("pliegueInferior", pliegueInferior)
+
+		modeloBH:AddDoubleField("pliegueSuperior", pliegueSuperior)
+		modeloBH:AddDoubleField("margenA", margenA)
+		modeloBH:AddDoubleField("margenB", margenB)
+
+		modeloBH:AddDoubleField("diametroTaladros", diametroTaladros)
+		--modeloBH:AddCheckBox("crearColiso", true)
+		
+	    if  not modeloBH:ShowDialog() then
+			
+				return false;
+					
+		end
+	elseif modelo==18 then
+		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH9.html"
+		
+		local modeloBH = HTML_Dialog(false, html_path, 1900, 950, "REFERENCIA BH9")
+		
+		textoDescriptivo="REFERENCIA BH9"
+		anchura1=1200 anchura2=800 margenPlaca=3 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=32
+		pliegueSuperior=36 pliegueInferior=0  margenA=57 margenB=108 diametroTaladros=5 
+		
+        modeloBH:AddTextField("textoDescriptivo", textoDescriptivo)
+		modeloBH:AddDoubleField("anchuraPlacaIzquierda", anchura1)
+		modeloBH:AddDoubleField("anchuraPlacaDerecha", anchura2)
+	    modeloBH:AddDoubleField("margenPlaca", margenPlaca)
+	    modeloBH:AddDoubleField("alturaPlaca", alturaPlaca)
+		--modeloBH:AddDoubleField("origenX", origenX)
+		--modeloBH:AddDoubleField("origenY", origenY)
+
+		modeloBH:AddDoubleField("alaLateral", alaIzquierda)
+		modeloBH:AddDoubleField("alaSuperior", alaSuperior)
+		modeloBH:AddDoubleField("alaInferior", alaInferior)
+
+		--modeloBH:AddDoubleField("pliegueInferior", pliegueInferior) --No lleva pliegue inferior
+
+		modeloBH:AddDoubleField("pliegueSuperior", pliegueSuperior)
+		modeloBH:AddDoubleField("margenA", margenA)
+		modeloBH:AddDoubleField("margenB", margenB)
+
+		modeloBH:AddDoubleField("diametroTaladros", diametroTaladros)
+		--modeloBH:AddCheckBox("crearColiso", true)
+		
+	    if  not modeloBH:ShowDialog() then
+			
+				return false;
+					
+		end
+	elseif modelo==19 then
+		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH10.html"
+		
+		local modeloBH = HTML_Dialog(false, html_path, 1900, 950, "REFERENCIA BH10")
+		
+		textoDescriptivo="REFERENCIA BH10"
+		anchura1=1200 anchura2=800 margenPlaca=3 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=32
+		pliegueSuperior=36 pliegueInferior=0  margenA=57 margenB=108 diametroTaladros=5 
+		
+        modeloBH:AddTextField("textoDescriptivo", textoDescriptivo)
+		modeloBH:AddDoubleField("anchuraPlacaIzquierda", anchura1)
+		modeloBH:AddDoubleField("anchuraPlacaDerecha", anchura2)
+	    modeloBH:AddDoubleField("margenPlaca", margenPlaca)
+	    modeloBH:AddDoubleField("alturaPlaca", alturaPlaca)
+		--modeloBH:AddDoubleField("origenX", origenX)
+		--modeloBH:AddDoubleField("origenY", origenY)
+
+		modeloBH:AddDoubleField("alaLateral", alaIzquierda)
+		modeloBH:AddDoubleField("alaSuperior", alaSuperior)
+		modeloBH:AddDoubleField("alaInferior", alaInferior)
+
+		--modeloBH:AddDoubleField("pliegueInferior", pliegueInferior) --No lleva pliegue inferior
+
+		modeloBH:AddDoubleField("pliegueSuperior", pliegueSuperior)
+		modeloBH:AddDoubleField("margenA", margenA)
+		modeloBH:AddDoubleField("margenB", margenB)
+
+		modeloBH:AddDoubleField("diametroTaladros", diametroTaladros)
+		--modeloBH:AddCheckBox("crearColiso", true)
+		
+	    if  not modeloBH:ShowDialog() then
+			
+				return false;
+					
+		end
+	elseif modelo==20 then
+		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH11.html"
+		
+		local modeloBH = HTML_Dialog(false, html_path, 1900, 950, "REFERENCIA BH11")
+		
+		textoDescriptivo="REFERENCIA BH11"
+		anchura1=1200 anchura2=800 margenPlaca=3 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=32
+		pliegueSuperior=36 pliegueInferior=4000  margenA=57 margenB=108 diametroTaladros=5 
+		
+        modeloBH:AddTextField("textoDescriptivo", textoDescriptivo)
+		modeloBH:AddDoubleField("anchuraPlacaIzquierda", anchura1)
+		modeloBH:AddDoubleField("anchuraPlacaDerecha", anchura2)
+	    modeloBH:AddDoubleField("margenPlaca", margenPlaca)
+	    modeloBH:AddDoubleField("alturaPlaca", alturaPlaca)
+		--modeloBH:AddDoubleField("origenX", origenX)
+		--modeloBH:AddDoubleField("origenY", origenY)
+
+		modeloBH:AddDoubleField("alaLateral", alaIzquierda)
+		modeloBH:AddDoubleField("alaSuperior", alaSuperior)
+		modeloBH:AddDoubleField("alaInferior", alaInferior)
+
+		modeloBH:AddDoubleField("pliegueInferior", pliegueInferior)
+
+		modeloBH:AddDoubleField("pliegueSuperior", pliegueSuperior)
+		modeloBH:AddDoubleField("margenA", margenA)
+		modeloBH:AddDoubleField("margenB", margenB)
+
+		modeloBH:AddDoubleField("diametroTaladros", diametroTaladros)
+		--modeloBH:AddCheckBox("crearColiso", true)
+		
+	    if  not modeloBH:ShowDialog() then
+			
+				return false;
+					
+		end
+	elseif modelo==21 then
+		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH12.html"
+		
+		local modeloBH = HTML_Dialog(false, html_path, 1900, 950, "REFERENCIA BH12")
+		
+		textoDescriptivo="REFERENCIA BH12"
+		anchura1=1200 anchura2=800 margenPlaca=3 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=32
+		pliegueSuperior=36 pliegueInferior=4000  margenA=57 margenB=108 diametroTaladros=5 
+		
+        modeloBH:AddTextField("textoDescriptivo", textoDescriptivo)
+		modeloBH:AddDoubleField("anchuraPlacaIzquierda", anchura1)
+		modeloBH:AddDoubleField("anchuraPlacaDerecha", anchura2)
+	    modeloBH:AddDoubleField("margenPlaca", margenPlaca)
+	    modeloBH:AddDoubleField("alturaPlaca", alturaPlaca)
+		--modeloBH:AddDoubleField("origenX", origenX)
+		--modeloBH:AddDoubleField("origenY", origenY)
+
+		modeloBH:AddDoubleField("alaLateral", alaIzquierda)
+		modeloBH:AddDoubleField("alaSuperior", alaSuperior)
+		modeloBH:AddDoubleField("alaInferior", alaInferior)
+
+		modeloBH:AddDoubleField("pliegueInferior", pliegueInferior)
+
+		modeloBH:AddDoubleField("pliegueSuperior", pliegueSuperior)
+		modeloBH:AddDoubleField("margenA", margenA)
+		modeloBH:AddDoubleField("margenB", margenB)
+
+		modeloBH:AddDoubleField("diametroTaladros", diametroTaladros)
+		--modeloBH:AddCheckBox("crearColiso", true)
+		
+	    if  not modeloBH:ShowDialog() then
+			
+				return false;
+					
+		end
+	elseif modelo==22 then
+		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH13.html"
+		
+		local modeloBH = HTML_Dialog(false, html_path, 1900, 950, "REFERENCIA BH13")
+		
+		textoDescriptivo="REFERENCIA BH13"
+		anchura1=1200 anchura2=800 margenPlaca=3 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=32
+		pliegueSuperior=36 pliegueInferior=0  margenA=57 margenB=108 diametroTaladros=5 
+		
+        modeloBH:AddTextField("textoDescriptivo", textoDescriptivo)
+		modeloBH:AddDoubleField("anchuraPlacaIzquierda", anchura1)
+		modeloBH:AddDoubleField("anchuraPlacaDerecha", anchura2)
+	    modeloBH:AddDoubleField("margenPlaca", margenPlaca)
+	    modeloBH:AddDoubleField("alturaPlaca", alturaPlaca)
+		--modeloBH:AddDoubleField("origenX", origenX)
+		--modeloBH:AddDoubleField("origenY", origenY)
+
+		modeloBH:AddDoubleField("alaLateral", alaIzquierda)
+		modeloBH:AddDoubleField("alaSuperior", alaSuperior)
+		modeloBH:AddDoubleField("alaInferior", alaInferior)
+
+		--modeloBH:AddDoubleField("pliegueInferior", pliegueInferior) --No lleva pliegue inferior
+
+		modeloBH:AddDoubleField("pliegueSuperior", pliegueSuperior)
+		modeloBH:AddDoubleField("margenA", margenA)
+		modeloBH:AddDoubleField("margenB", margenB)
+
+		modeloBH:AddDoubleField("diametroTaladros", diametroTaladros)
+		--modeloBH:AddCheckBox("crearColiso", true)
+		
+	    if  not modeloBH:ShowDialog() then
+			
+				return false;
+					
+		end
+	elseif modelo==23 then
+		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH14.html"
+		
+		local modeloBH = HTML_Dialog(false, html_path, 1900, 950, "REFERENCIA BH14")
+		
+		textoDescriptivo="REFERENCIA BH14"
+		anchura1=1200 anchura2=800 margenPlaca=3 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=32
+		pliegueSuperior=36 pliegueInferior=4000  margenA=57 margenB=108 diametroTaladros=5 
+		
+        modeloBH:AddTextField("textoDescriptivo", textoDescriptivo)
+		modeloBH:AddDoubleField("anchuraPlacaIzquierda", anchura1)
+		modeloBH:AddDoubleField("anchuraPlacaDerecha", anchura2)
+	    modeloBH:AddDoubleField("margenPlaca", margenPlaca)
+	    modeloBH:AddDoubleField("alturaPlaca", alturaPlaca)
+		--modeloBH:AddDoubleField("origenX", origenX)
+		--modeloBH:AddDoubleField("origenY", origenY)
+
+		modeloBH:AddDoubleField("alaLateral", alaIzquierda)
+		modeloBH:AddDoubleField("alaSuperior", alaSuperior)
+		modeloBH:AddDoubleField("alaInferior", alaInferior)
+
+		modeloBH:AddDoubleField("pliegueInferior", pliegueInferior)
+
+		modeloBH:AddDoubleField("pliegueSuperior", pliegueSuperior)
+		modeloBH:AddDoubleField("margenA", margenA)
+		modeloBH:AddDoubleField("margenB", margenB)
+
+		modeloBH:AddDoubleField("diametroTaladros", diametroTaladros)
+		--modeloBH:AddCheckBox("crearColiso", true)
+		
+	    if  not modeloBH:ShowDialog() then
+			
+				return false;
+					
+		end
+	elseif modelo==24 then
+		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH15.html"
+		
+		local modeloBH = HTML_Dialog(false, html_path, 1900, 950, "REFERENCIA BH15")
+		
+		textoDescriptivo="REFERENCIA BH15"
+		anchura1=1200 anchura2=800 margenPlaca=3 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=32
+		pliegueSuperior=36 pliegueInferior=0  margenA=57 margenB=108 diametroTaladros=5 
+		
+        modeloBH:AddTextField("textoDescriptivo", textoDescriptivo)
+		modeloBH:AddDoubleField("anchuraPlacaIzquierda", anchura1)
+		modeloBH:AddDoubleField("anchuraPlacaDerecha", anchura2)
+	    modeloBH:AddDoubleField("margenPlaca", margenPlaca)
+	    modeloBH:AddDoubleField("alturaPlaca", alturaPlaca)
+		--modeloBH:AddDoubleField("origenX", origenX)
+		--modeloBH:AddDoubleField("origenY", origenY)
+
+		modeloBH:AddDoubleField("alaLateral", alaIzquierda)
+		modeloBH:AddDoubleField("alaSuperior", alaSuperior)
+		modeloBH:AddDoubleField("alaInferior", alaInferior)
+
+		--modeloBH:AddDoubleField("pliegueInferior", pliegueInferior) --No lleva pliegue inferior
+
+		modeloBH:AddDoubleField("pliegueSuperior", pliegueSuperior)
+		modeloBH:AddDoubleField("margenA", margenA)
+		modeloBH:AddDoubleField("margenB", margenB)
+
+		modeloBH:AddDoubleField("diametroTaladros", diametroTaladros)
+		--modeloBH:AddCheckBox("crearColiso", true)
+		
+	    if  not modeloBH:ShowDialog() then
+			
+				return false;
+					
+		end
+	elseif modelo==25 then
+		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH16.html"
+		
+		local modeloBH = HTML_Dialog(false, html_path, 1900, 950, "REFERENCIA BH16")
+		
+		textoDescriptivo="REFERENCIA BH16"
+		anchura1=1200 anchura2=800 margenPlaca=3 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=32
+		pliegueSuperior=36 pliegueInferior=4000  margenA=57 margenB=108 diametroTaladros=5 
+		
+        modeloBH:AddTextField("textoDescriptivo", textoDescriptivo)
+		modeloBH:AddDoubleField("anchuraPlacaIzquierda", anchura1)
+		modeloBH:AddDoubleField("anchuraPlacaDerecha", anchura2)
+	    modeloBH:AddDoubleField("margenPlaca", margenPlaca)
+	    modeloBH:AddDoubleField("alturaPlaca", alturaPlaca)
+		--modeloBH:AddDoubleField("origenX", origenX)
+		--modeloBH:AddDoubleField("origenY", origenY)
+
+		modeloBH:AddDoubleField("alaLateral", alaIzquierda)
+		modeloBH:AddDoubleField("alaSuperior", alaSuperior)
+		modeloBH:AddDoubleField("alaInferior", alaInferior)
+
+		modeloBH:AddDoubleField("pliegueInferior", pliegueInferior)
+
+		modeloBH:AddDoubleField("pliegueSuperior", pliegueSuperior)
+		modeloBH:AddDoubleField("margenA", margenA)
+		modeloBH:AddDoubleField("margenB", margenB)
+
+		modeloBH:AddDoubleField("diametroTaladros", diametroTaladros)
+		--modeloBH:AddCheckBox("crearColiso", true)
+		
+	    if  not modeloBH:ShowDialog() then
+			
+				return false;
+					
+		end
+		
+	elseif modelo==26 then
+		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH17.html"
+		
+		local modeloBH = HTML_Dialog(false, html_path, 1900, 950, "REFERENCIA BH17")
+		
+		textoDescriptivo="REFERENCIA BH17"
+		anchura1=1200 anchura2=800 margenPlaca=3 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=32
+		pliegueSuperior=36 pliegueInferior=4000  margenA=57 margenB=108 diametroTaladros=5 
+		
+        modeloBH:AddTextField("textoDescriptivo", textoDescriptivo)
+		modeloBH:AddDoubleField("anchuraPlacaIzquierda", anchura1)
+		modeloBH:AddDoubleField("anchuraPlacaDerecha", anchura2)
+	    modeloBH:AddDoubleField("margenPlaca", margenPlaca)
+	    modeloBH:AddDoubleField("alturaPlaca", alturaPlaca)
+		--modeloBH:AddDoubleField("origenX", origenX)
+		--modeloBH:AddDoubleField("origenY", origenY)
+
+		modeloBH:AddDoubleField("alaLateral", alaIzquierda)
+		modeloBH:AddDoubleField("alaSuperior", alaSuperior)
+		modeloBH:AddDoubleField("alaInferior", alaInferior)
+
+		modeloBH:AddDoubleField("pliegueInferior", pliegueInferior)
+
+		modeloBH:AddDoubleField("pliegueSuperior", pliegueSuperior)
+		modeloBH:AddDoubleField("margenA", margenA)
+		modeloBH:AddDoubleField("margenB", margenB)
+
+		modeloBH:AddDoubleField("diametroTaladros", diametroTaladros)
+		--modeloBH:AddCheckBox("crearColiso", true)
+		
+	    if  not modeloBH:ShowDialog() then
+			
+				return false;
+					
+		end
+	end
+		
+
+return true;
 
 end
-=======
+  
+  
+  
+function OnLuaButton_aceptarBH(modeloBH)
+
+	if modelo==9 or modelo==10 or modelo==13 or modelo==15 then --SIN PLIEGUE / FILA 1
+		pliegueInferior=0
+		
+		textoDescriptivo = modeloBH:GetTextField("textoDescriptivo")
+		anchura1 = modeloBH:GetDoubleField("anchuraPlacaIzquierda")
+		anchura2 = modeloBH:GetDoubleField("anchuraPlacaDerecha")
+	    margenPlaca = modeloBH:GetDoubleField("margenPlaca")
+	    alturaPlaca = modeloBH:GetDoubleField("alturaPlaca")
+		--origenX = modeloBH:GetDoubleField("origenXAH")
+		--origenY = modeloBH:GetDoubleField("origenYAH")
+
+		--cantidadX=modeloBH:GetIntegerField("cantidadX")
+		--cantidadY=modeloBH:GetIntegerField("cantidadY")
+		--distanciaX=modeloBH:GetDoubleField("distanciaX")
+		--distanciaY=modeloBH:GetDoubleField("distanciaY")
+
+		alaIzquierda=modeloBH:GetDoubleField("alaLateral")
+		alaSuperior=modeloBH:GetDoubleField("alaSuperior")
+		alaInferior=modeloBH:GetDoubleField("alaInferior")
+		--pliegueInferior=modeloBH:GetDoubleField("pliegueInferior")
+		pliegueSuperior=modeloBH:GetDoubleField("pliegueSuperior")
+		margenA=modeloBH:GetDoubleField("margenA")
+		margenB=modeloBH:GetDoubleField("margenB")
+
+		diametroTaladros=modeloBH:GetDoubleField("diametroTaladros")
+		--alturaColiso=diametroTaladros
+		--crearColiso=modeloBH:GetCheckBox("crearColiso")
+
+
+
+	elseif modelo==11 or modelo==12 or modelo==14 or modelo==16 or modelo==17 then  --CON PLIEGUE / FILA 1
+		
+		textoDescriptivo = modeloBH:GetTextField("textoDescriptivo")
+		anchura1 = modeloBH:GetDoubleField("anchuraPlacaIzquierda")
+		anchura2 = modeloBH:GetDoubleField("anchuraPlacaDerecha")
+	    margenPlaca = modeloBH:GetDoubleField("margenPlaca")
+	    alturaPlaca = modeloBH:GetDoubleField("alturaPlaca")
+		--origenX = modeloBH:GetDoubleField("origenXAH")
+		--origenY = modeloBH:GetDoubleField("origenYAH")
+
+		--cantidadX=modeloBH:GetIntegerField("cantidadX")
+		--cantidadY=modeloBH:GetIntegerField("cantidadY")
+		--distanciaX=modeloBH:GetDoubleField("distanciaX")
+		--distanciaY=modeloBH:GetDoubleField("distanciaY")
+
+		alaIzquierda=modeloBH:GetDoubleField("alaLateral")
+		alaSuperior=modeloBH:GetDoubleField("alaSuperior")
+		alaInferior=modeloBH:GetDoubleField("alaInferior")
+		pliegueInferior=modeloBH:GetDoubleField("pliegueInferior")
+		pliegueSuperior=modeloBH:GetDoubleField("pliegueSuperior")
+		margenA=modeloBH:GetDoubleField("margenA")
+		margenB=modeloBH:GetDoubleField("margenB")
+
+		diametroTaladros=modeloBH:GetDoubleField("diametroTaladros")
+		--alturaColiso=diametroTaladros
+		--crearColiso=modeloBH:GetCheckBox("crearColiso")
+		
+		
+	elseif modelo==18 or modelo==19 or modelo==22 or modelo==24 then  --SIN PLIEGUE / FILA 2 -> 18 19 22 24
+	
+	elseif modelo==20 or modelo==21 or modelo==23 or modelo==25 or modelo==26 then  --CON PLIEGUE / FILA 2 ->20 21 23 25 26
+	
+  	end
+
+    
+	--Caracteristicas generales
+	anchuraPlaca=anchura1+anchura2 --¿Como se reparte el margen de la placa en este tipo de piezas? <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< DUDA <<<<<<<<<<<<<<<<
+	
+	anchuraPlaca=anchuraPlaca-margenPlaca
+    alturaPlaca=alturaPlaca-margenPlaca
+	
+	alaDerecha=alaIzquierda
+	
+	alturaColiso=diametroTaladros
+	
+    --Comprobaciones y validaciones de los datos
+	if anchuraPlaca < 0 then
+		
+		DisplayMessageBox("La anchura de la placa NO puede ser negativa.Creación Modelo AH Fallida")
+				
+	
+	elseif margenPlaca < 0 then
+		
+		DisplayMessageBox("El margen de la placa NO puede ser negativo.Creación Modelo AH Fallida")
+	
+	elseif  alturaPlaca < 0 then
+		
+		DisplayMessageBox("La altura de la placa NO puede ser negativa.Creación Modelo AH Fallida")
+	
+    	
+	else
+		
+		--origenX=-(alaDerecha+anchura1+anchura2+alaIzquierda+200)
+		--origenY=-(0)
+		
+		dibujarFresadoBH(doc)
+		dibujarCorteBH(doc)
+		--dibujarTextoBH(doc)
+		--dibujarTaladrosBH(doc)
+		
+			
+		DisplayMessageBox("Modelo AH Creado Correctamente")
+	
+	end
+	
+return true;
+
+end
+
+
+--=======
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------- DIBUJAR REF AH ---------------------------------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
->>>>>>> dad597bfe66999383933152f688e45bdb15aaf6b
+-->>>>>>> dad597bfe66999383933152f688e45bdb15aaf6b
 
 function dibujarFresadoAH(doc)
 	
@@ -1147,6 +2256,28 @@ function dibujarTaladrosAH(doc)
 	return true; 
 end
 
+
+
+
+function dibujarTextoAH(doc)
+	
+	--------------------------------------------------------
+	local cur_layer = doc.LayerManager:GetActiveLayer()
+	local layer = doc.LayerManager:GetLayerWithName("Descripcion")
+	local origenTexto=Point2D(anchuraPlaca/2-(2*alaIzquierda),alturaPlaca/2+pliegueInferior)
+    local texto=CadMarker(textoDescriptivo,origenTexto,0)
+    texto:SetColor(0,0,1)
+	
+	layer:AddObject(texto,true)
+	layer:SetColor(0,0,1)
+	layer.Visible = true 
+	doc.LayerManager:SetActiveLayer(cur_layer)
+	doc:Refresh2DView()	
+	-----------------------------------------------------------------
+	return true; 
+	
+end
+
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------- DIBUJAR REF BH ---------------------------------------------------------------------------------------------------------------------
@@ -1159,8 +2290,8 @@ end
 --[CH=27 - CH1=28 - CH2=329 - CH3=30 - CH4=31 - CH5=32 - CH6=33 - CH7=34 - CH8=35]
 
 function dibujarFresadoBH(doc)
-	modelo=12 --[borrar]
-	anchuraPlaca=anchura1+anchura2 --[borrar]
+	--modelo=12 --[borrar]
+	--anchuraPlaca=anchura1+anchura2 --[borrar]
 	
 	
 	
@@ -1614,14 +2745,6 @@ function dibujarCorteBH(doc)
 	
 	
 	
-	
-	
-	
---[AH=0 - AH1=1 - AH2=2 - AH3=3 - AH4=4 - AH5=5 - AH6=6 - AH7=7 - AH8=8]
---[BH=9 - BH1=10 - BH2=11 - BH3=12 - BH4=13 - BH5=14 - BH6=15 - BH7=16 - BH8=17]
---[BH9=18 - BH10=19 - BH11=20 - BH12=21 - BH13=22 - BH14=23 - BH15=24 - BH16=25 - BH17=26]
---[CH=27 - CH1=28 - CH2=329 - CH3=30 - CH4=31 - CH5=32 - CH6=33 - CH7=34 - CH8=35]
-	
 	--PARTE SUPERIOR------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 	
 	if modelo==9 or modelo==18 or modelo==10 or modelo==19 or modelo==11 or modelo==20 or modelo==12 or modelo==21 or modelo==17 or modelo==26 or modelo==13 or modelo==22 or modelo==14 or modelo==23  then --Parte Superior [BH-BH9][BH1-BH10][BH2-BH11][BH3-BH12][BH8-BH17][BH4-BH13][BH5-BH14]
@@ -1752,10 +2875,6 @@ function dibujarCorteBH(doc)
 	
 	
 	
-	
-	
-	
-	
 	--PARTE IZQUIERDA (BOTAS)------------------------------------------------------------------------------------------------------------------------------------------------------------------
 		--Variables BOTAS
 	local tramoRecto1BotaIzquierda=26
@@ -1854,27 +2973,6 @@ end
 
 
 
-function dibujarTaldrosBH(doc)
-
-	local Contour = Contour(0.0)
-
-	local corte1 = Point2D(origenX,origenY)
-   
-   	Contour:AppendPoint(corte1)
-   
-	--------------------------------------------------------
-	local cad_object = CreateCadContour(Contour)
-	local cur_layer = doc.LayerManager:GetActiveLayer()
-	local layer = doc.LayerManager:GetLayerWithName("Taladros")
-	layer:AddObject(cad_object, true)
-	layer:SetColor(0.1,0.1,0.1)
-	layer.Visible = true 
-	doc.LayerManager:SetActiveLayer(cur_layer)
-	doc:Refresh2DView()	
-	-----------------------------------------------------------------
-	return true; 
-end
-
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1888,21 +2986,16 @@ end
 --[CH=27 - CH1=28 - CH2=29 - CH3=30 - CH4=31 - CH5=32 - CH6=33 - CH7=34 - CH8=35]
 
 function dibujarFresadoCH(doc)
-	modelo=33 --[borrar]
-	
-	anchuraIzq=400 --[borrar]
-	anchuraCentro=1200 --[borrar]
-	anchuraDcha=400 --[borrar]
-	
-	anchuraPlaca=anchuraIzq+anchuraCentro+anchuraDcha --[borrar]
+	--modelo=33 --[borrar]
+	--anchuraIzq=400 --[borrar]
+	--anchuraCentro=1200 --[borrar]
+	--anchuraDcha=400 --[borrar]
+	--anchuraPlaca=anchuraIzq+anchuraCentro+anchuraDcha --[borrar]
 	
 	
 	
 	--Puntos trayectoria 
 	local Contour = Contour(0.0)
-	
-
-	
 	
 	local fresado1 = Point2D(origenX+alaIzquierda,origenY)
 	local fresado2 = Point2D(origenX+alaIzquierda,origenY+alaInferior)
@@ -1927,10 +3020,6 @@ function dibujarFresadoCH(doc)
 	local fresado21 = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro+pliegueSuperior,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior)
 	local fresado22 = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro+anchuraDcha,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior)
 	local fresado23 = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro+anchuraDcha,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior)
-	
-
-	
-		
 	
 	if modelo==27 or modelo==28 then --REF [CH][CH1]
 		Contour:AppendPoint(fresado1)
@@ -2145,7 +3234,7 @@ end
 
 function dibujarCorteCH(doc)
 	
-	modelo=33 --[borrar]
+	--modelo=33 --[borrar]
 	
 	
 	local Contour = Contour(0.0)
@@ -2261,9 +3350,6 @@ function dibujarCorteCH(doc)
 	
 	
 	
-	
-	
-	
 	--PARTE DERECHA (BOTAS)------------------------------------------------------------------------------------------------------------------------------------------------------------------
 	
 		--Variables BOTAS
@@ -2351,11 +3437,6 @@ function dibujarCorteCH(doc)
 	
 	
 	
-	
---[AH=0 - AH1=1 - AH2=2 - AH3=3 - AH4=4 - AH5=5 - AH6=6 - AH7=7 - AH8=8]
---[BH=9 - BH1=10 - BH2=11 - BH3=12 - BH4=13 - BH5=14 - BH6=15 - BH7=16 - BH8=17]
---[BH9=18 - BH10=19 - BH11=20 - BH12=21 - BH13=22 - BH14=23 - BH15=24 - BH16=25 - BH17=26]
---[CH=27 - CH1=28 - CH2=29 - CH3=30 - CH4=31 - CH5=32 - CH6=33 - CH7=34 - CH8=35]
 	
 	--PARTE SUPERIOR------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 	
