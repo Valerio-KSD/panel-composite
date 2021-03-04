@@ -27,6 +27,7 @@ distanciaYTaladrosSuperiores=53.24
 distanciaXTaladrosInferiores=1.82
 
 
+alturaBotaDeCuelgue=56
 anchoBota=18.5
 
 --Matrices
@@ -38,7 +39,7 @@ anchoBota=18.5
 --Entradas comunes a todos los modelos [AH][BH][CH]
 alaSuperior=40
 alaInferior=40
-alaDerecha=40--64
+alaDerecha=40
 alaIzquierda=alaDerecha
 
 pliegueSuperior=36
@@ -47,9 +48,10 @@ pliegueInferior=36
 margenA=57--74 --Margen Superior
 margenB=108--132 --Margen Inferior
 
-anchuraPlaca = 2000 --1000
-margenPlaca = 3
-alturaPlaca = 1000 --500
+anchuraPlaca = 2000
+alturaPlaca = 1000
+--margenPlaca = 3
+
 
 
 
@@ -62,8 +64,8 @@ origenY=0
 anchura1=1200 --izquierda
 anchura2=800 --derecha
 anchuraPlaca=anchura1+anchura2
-	
-separacionPliegues=4
+
+distanciaAlas=4
 
 --Entrada para modelo [CH]
 anchuraIzq=400
@@ -290,12 +292,12 @@ function OnLuaButton_modeloAH(framePrincipal)
 		local modeloAH = HTML_Dialog(false, html_path, 1900, 950, "REFERENCIA AH")
 		
 		textoDescriptivo="REFERENCIA AH"
-		anchuraPlaca=2000 margenPlaca=3 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=32
+		anchuraPlaca=2000 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=32
 		pliegueSuperior=36 pliegueInferior=0  margenA=57 margenB=108 diametroTaladros=5 
 		
         modeloAH:AddTextField("textoDescriptivo", textoDescriptivo)
 		modeloAH:AddDoubleField("anchuraPlaca", anchuraPlaca)
-	    modeloAH:AddDoubleField("margenPlaca", margenPlaca)
+	    --modeloAH:AddDoubleField("margenPlaca", margenPlaca)
 	    modeloAH:AddDoubleField("alturaPlaca", alturaPlaca)
 		--modeloAH:AddDoubleField("origenX", origenX)
 		--modeloAH:AddDoubleField("origenY", origenY)
@@ -331,12 +333,12 @@ function OnLuaButton_modeloAH(framePrincipal)
 		local modeloAH = HTML_Dialog(false, html_path, 1900, 950, "REFERENCIA AH1")
 
 		textoDescriptivo="REFERENCIA AH1"
-		anchuraPlaca=2000 margenPlaca=3 alturaPlaca=1000 alaIzquierda=40 alaSuperior=20 alaInferior=32
+		anchuraPlaca=2000 alturaPlaca=1000 alaIzquierda=40 alaSuperior=20 alaInferior=32
 		pliegueSuperior=40 pliegueInferior=0  margenA=57 margenB=108 diametroTaladros=5 
 		
         modeloAH:AddTextField("textoDescriptivo", textoDescriptivo)
 		modeloAH:AddDoubleField("anchuraPlaca", anchuraPlaca)
-	    modeloAH:AddDoubleField("margenPlaca", margenPlaca)
+	    --modeloAH:AddDoubleField("margenPlaca", margenPlaca)
 	    modeloAH:AddDoubleField("alturaPlaca", alturaPlaca)
 		--modeloAH:AddDoubleField("origenX", origenX)
 		--modeloAH:AddDoubleField("origenY", origenY)
@@ -366,12 +368,12 @@ function OnLuaButton_modeloAH(framePrincipal)
 		local modeloAH = HTML_Dialog(false, html_path, 1900, 950, "REFERENCIA AH2")
 
 		textoDescriptivo="REFERENCIA AH2"
-		anchuraPlaca=2000 margenPlaca=3 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=20.6
+		anchuraPlaca=2000 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=20.6
 		pliegueSuperior=36 pliegueInferior=40  margenA=57 margenB=108 diametroTaladros=5 
 		
         modeloAH:AddTextField("textoDescriptivo", textoDescriptivo)
 		modeloAH:AddDoubleField("anchuraPlaca", anchuraPlaca)
-	    modeloAH:AddDoubleField("margenPlaca", margenPlaca)
+	    --modeloAH:AddDoubleField("margenPlaca", margenPlaca)
 	    modeloAH:AddDoubleField("alturaPlaca", alturaPlaca)
 		--modeloAH:AddDoubleField("origenX", origenX)
 		--modeloAH:AddDoubleField("origenY", origenY)
@@ -401,12 +403,12 @@ function OnLuaButton_modeloAH(framePrincipal)
 		local modeloAH = HTML_Dialog(false, html_path, 1900, 950, "REFERENCIA AH3")
 
 		textoDescriptivo="REFERENCIA AH3"
-		anchuraPlaca=2000 margenPlaca=3 alturaPlaca=1000 alaIzquierda=40 alaSuperior=20 alaInferior=20
+		anchuraPlaca=2000 alturaPlaca=1000 alaIzquierda=40 alaSuperior=20 alaInferior=20
 		pliegueSuperior=40 pliegueInferior=40  margenA=57 margenB=108 diametroTaladros=5 
 		
         modeloAH:AddTextField("textoDescriptivo", textoDescriptivo)
 		modeloAH:AddDoubleField("anchuraPlaca", anchuraPlaca)
-	    modeloAH:AddDoubleField("margenPlaca", margenPlaca)
+	    --modeloAH:AddDoubleField("margenPlaca", margenPlaca)
 	    modeloAH:AddDoubleField("alturaPlaca", alturaPlaca)
 		--modeloAH:AddDoubleField("origenX", origenX)
 		--modeloAH:AddDoubleField("origenY", origenY)
@@ -436,12 +438,12 @@ function OnLuaButton_modeloAH(framePrincipal)
 		local modeloAH = HTML_Dialog(false, html_path, 1900, 950, "REFERENCIA AH4")
 
 		textoDescriptivo="REFERENCIA AH4"
-		anchuraPlaca=2000 margenPlaca=3 alturaPlaca=1000 alaIzquierda=40 alaSuperior=260 alaInferior=32
+		anchuraPlaca=2000 alturaPlaca=1000 alaIzquierda=40 alaSuperior=260 alaInferior=32
 		pliegueSuperior=40 pliegueInferior=0  margenA=57 margenB=108 diametroTaladros=5 
 		
         modeloAH:AddTextField("textoDescriptivo", textoDescriptivo)
 		modeloAH:AddDoubleField("anchuraPlaca", anchuraPlaca)
-	    modeloAH:AddDoubleField("margenPlaca", margenPlaca)
+	    --modeloAH:AddDoubleField("margenPlaca", margenPlaca)
 	    modeloAH:AddDoubleField("alturaPlaca", alturaPlaca)
 		--modeloAH:AddDoubleField("origenX", origenX)
 		--modeloAH:AddDoubleField("origenY", origenY)
@@ -471,12 +473,12 @@ function OnLuaButton_modeloAH(framePrincipal)
 		local modeloAH = HTML_Dialog(false, html_path, 1900, 950, "REFERENCIA AH5")
 
 		textoDescriptivo="REFERENCIA AH5"
-		anchuraPlaca=2000 margenPlaca=3 alturaPlaca=1000 alaIzquierda=40 alaSuperior=260 alaInferior=20
+		anchuraPlaca=2000 alturaPlaca=1000 alaIzquierda=40 alaSuperior=260 alaInferior=20
 		pliegueSuperior=40 pliegueInferior=40  margenA=57 margenB=108 diametroTaladros=5 
 		
         modeloAH:AddTextField("textoDescriptivo", textoDescriptivo)
 		modeloAH:AddDoubleField("anchuraPlaca", anchuraPlaca)
-	    modeloAH:AddDoubleField("margenPlaca", margenPlaca)
+	    --modeloAH:AddDoubleField("margenPlaca", margenPlaca)
 	    modeloAH:AddDoubleField("alturaPlaca", alturaPlaca)
 		--modeloAH:AddDoubleField("origenX", origenX)
 		--modeloAH:AddDoubleField("origenY", origenY)
@@ -506,12 +508,12 @@ function OnLuaButton_modeloAH(framePrincipal)
 		local modeloAH = HTML_Dialog(false, html_path, 1900, 950, "REFERENCIA AH6")
 
 		textoDescriptivo="REFERENCIA AH6"
-		anchuraPlaca=2000 margenPlaca=3 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=32
+		anchuraPlaca=2000 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=32
 		pliegueSuperior=300 pliegueInferior=0  margenA=57 margenB=108 diametroTaladros=5 
 		
         modeloAH:AddTextField("textoDescriptivo", textoDescriptivo)
 		modeloAH:AddDoubleField("anchuraPlaca", anchuraPlaca)
-	    modeloAH:AddDoubleField("margenPlaca", margenPlaca)
+	    --modeloAH:AddDoubleField("margenPlaca", margenPlaca)
 	    modeloAH:AddDoubleField("alturaPlaca", alturaPlaca)
 		--modeloAH:AddDoubleField("origenX", origenX)
 		--modeloAH:AddDoubleField("origenY", origenY)
@@ -541,12 +543,12 @@ function OnLuaButton_modeloAH(framePrincipal)
 		local modeloAH = HTML_Dialog(false, html_path, 1900, 950, "REFERENCIA AH7")
 
 		textoDescriptivo="REFERENCIA AH7"
-		anchuraPlaca=2000 margenPlaca=3 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=20
+		anchuraPlaca=2000 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=20
 		pliegueSuperior=300 pliegueInferior=40  margenA=57 margenB=108 diametroTaladros=5 
 		
         modeloAH:AddTextField("textoDescriptivo", textoDescriptivo)
 		modeloAH:AddDoubleField("anchuraPlaca", anchuraPlaca)
-	    modeloAH:AddDoubleField("margenPlaca", margenPlaca)
+	    --modeloAH:AddDoubleField("margenPlaca", margenPlaca)
 	    modeloAH:AddDoubleField("alturaPlaca", alturaPlaca)
 		--modeloAH:AddDoubleField("origenX", origenX)
 		--modeloAH:AddDoubleField("origenY", origenY)
@@ -576,12 +578,12 @@ function OnLuaButton_modeloAH(framePrincipal)
 		local modeloAH = HTML_Dialog(false, html_path, 1900, 950, "REFERENCIA AH8")
 
 		textoDescriptivo="REFERENCIA AH8"
-		anchuraPlaca=2000 margenPlaca=3 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=40
+		anchuraPlaca=2000 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=40
 		pliegueSuperior=36 pliegueInferior=300 margenA=57 margenB=108 diametroTaladros=5 
 		
         modeloAH:AddTextField("textoDescriptivo", textoDescriptivo)
 		modeloAH:AddDoubleField("anchuraPlaca", anchuraPlaca)
-	    modeloAH:AddDoubleField("margenPlaca", margenPlaca)
+	    --modeloAH:AddDoubleField("margenPlaca", margenPlaca)
 	    modeloAH:AddDoubleField("alturaPlaca", alturaPlaca)
 		--modeloAH:AddDoubleField("origenX", origenX)
 		--modeloAH:AddDoubleField("origenY", origenY)
@@ -622,7 +624,7 @@ function OnLuaButton_aceptarAH(modeloAH)
 		
 		textoDescriptivo = modeloAH:GetTextField("textoDescriptivo")
 		anchuraPlaca = modeloAH:GetDoubleField("anchuraPlaca")
-	    margenPlaca = modeloAH:GetDoubleField("margenPlaca")
+	    --margenPlaca = modeloAH:GetDoubleField("margenPlaca")
 	    alturaPlaca = modeloAH:GetDoubleField("alturaPlaca")
 		--origenX = modeloAH:GetDoubleField("origenXAH")
 		--origenY = modeloAH:GetDoubleField("origenYAH")
@@ -650,7 +652,7 @@ function OnLuaButton_aceptarAH(modeloAH)
 		
 		textoDescriptivo = modeloAH:GetTextField("textoDescriptivo")
 		anchuraPlaca = modeloAH:GetDoubleField("anchuraPlaca")
-	    margenPlaca = modeloAH:GetDoubleField("margenPlaca")
+	    --margenPlaca = modeloAH:GetDoubleField("margenPlaca")
 	    alturaPlaca = modeloAH:GetDoubleField("alturaPlaca")
 		
 		alaIzquierda = modeloAH:GetDoubleField("alaLateral")
@@ -669,8 +671,8 @@ function OnLuaButton_aceptarAH(modeloAH)
 
     
 	--Caracteristicas generales
-	anchuraPlaca=anchuraPlaca-margenPlaca
-    alturaPlaca=alturaPlaca-margenPlaca
+	--anchuraPlaca=anchuraPlaca-margenPlaca
+    --alturaPlaca=alturaPlaca-margenPlaca
 	
 	alaDerecha=alaIzquierda
 	
@@ -678,49 +680,29 @@ function OnLuaButton_aceptarAH(modeloAH)
 	
     --Comprobaciones y validaciones de los datos
 	if anchuraPlaca < 0 then
-		
-		DisplayMessageBox("La anchura de la placa NO puede ser negativa.Creación Modelo AH Fallida")
-				
-	
-	elseif margenPlaca < 0 then
-		
-		DisplayMessageBox("El margen de la placa NO puede ser negativo.Creación Modelo AH Fallida")
-	
+		DisplayMessageBox("La anchura de la placa NO puede ser negativa. Creación Modelo AH Fallida")	
 	elseif  alturaPlaca < 0 then
-		
-		DisplayMessageBox("La altura de la placa NO puede ser negativa.Creación Modelo AH Fallida")
-	
-    	
+		DisplayMessageBox("La altura de la placa NO puede ser negativa. Creación Modelo AH Fallida")
+	elseif alaIzquierda<0 or alaSuperior<0 or alaInferior<0 then
+    	DisplayMessageBox("El tamaño las alas NO puede ser negativa. Creación Modelo AH Fallida")
+	elseif pliegueSuperior<0 or pliegueInferior<0 then
+		DisplayMessageBox("El tamaño del pliegue NO puede ser negativo. Creación Modelo AH Fallida")
+	elseif margenA<alturaBotaDeCuelgue then
+		DisplayMessageBox("El tamaño del margenA no puede ser menor al tamaño de una bota de cuelgue. Creación Modelo AH Fallida")	
 	else
 		
-		
-		
-		
-		--origenX=-(alaDerecha+anchuraPlaca+alaIzquierda+200)
-		--origenY=-(0)
-		
-		dibujarFresadoAH(doc)
-		dibujarCorteAH(doc)
-		dibujarTextoAH(doc)
-		dibujarTaladrosAH(doc)
-		
-		
-		
-		
-		
-		--origenX=-(alaDerechaanchura1+anchura2+alaIzquierda+200)
-		--origenY=-(0)
-		
-		--dibujarFresadoBH(doc)
-		--dibujarCorteBH(doc)
-		--dibujarTextoBH(doc)
-		--dibujarTaladrosBH(doc)
-		
-		
-		
-		
-		
-		
+		--Para dibujar la pieza fuera del area de trabajo
+			--origenX=-(alaDerecha+anchuraPlaca+alaIzquierda+200)
+			--origenY=-(0)
+			
+		--Para dibujar la pieza
+			dibujarFresadoAH(doc)
+			dibujarCorteAH(doc)
+			dibujarTexto(doc)
+			dibujarTaladrosAH(doc)
+			
+			
+			
 		
 		--origenX=-(alaDerecha+anchuraIzq+anchuraCentro+anchuraDcha+alaIzquierda+200)
 		--origenY=-(0)
@@ -750,13 +732,13 @@ function OnLuaButton_modeloBH(framePrincipal)
 		local modeloBH = HTML_Dialog(false, html_path, 1900, 950, "REFERENCIA BH")
 		
 		textoDescriptivo="REFERENCIA BH"
-		anchura1=1200 anchura2=800 margenPlaca=3 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=32
+		anchura1=1200 anchura2=800 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=32
 		pliegueSuperior=36 pliegueInferior=0  margenA=57 margenB=108 diametroTaladros=5 
 		
         modeloBH:AddTextField("textoDescriptivo", textoDescriptivo)
 		modeloBH:AddDoubleField("anchuraPlacaIzquierda", anchura1)
 		modeloBH:AddDoubleField("anchuraPlacaDerecha", anchura2)
-	    modeloBH:AddDoubleField("margenPlaca", margenPlaca)
+	    --modeloBH:AddDoubleField("margenPlaca", margenPlaca)
 	    modeloBH:AddDoubleField("alturaPlaca", alturaPlaca)
 		--modeloBH:AddDoubleField("origenX", origenX)
 		--modeloBH:AddDoubleField("origenY", origenY)
@@ -786,13 +768,13 @@ function OnLuaButton_modeloBH(framePrincipal)
 		local modeloBH = HTML_Dialog(false, html_path, 1900, 950, "REFERENCIA BH1")
 		
 		textoDescriptivo="REFERENCIA BH1"
-		anchura1=1200 anchura2=800 margenPlaca=3 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=32
-		pliegueSuperior=36 pliegueInferior=0  margenA=57 margenB=108 diametroTaladros=5 
+		anchura1=1200 anchura2=800 alturaPlaca=1000 alaIzquierda=40 alaSuperior=20 alaInferior=32
+		pliegueSuperior=40 pliegueInferior=0  margenA=57 margenB=108 diametroTaladros=5 
 		
         modeloBH:AddTextField("textoDescriptivo", textoDescriptivo)
 		modeloBH:AddDoubleField("anchuraPlacaIzquierda", anchura1)
 		modeloBH:AddDoubleField("anchuraPlacaDerecha", anchura2)
-	    modeloBH:AddDoubleField("margenPlaca", margenPlaca)
+	    --modeloBH:AddDoubleField("margenPlaca", margenPlaca)
 	    modeloBH:AddDoubleField("alturaPlaca", alturaPlaca)
 		--modeloBH:AddDoubleField("origenX", origenX)
 		--modeloBH:AddDoubleField("origenY", origenY)
@@ -821,13 +803,13 @@ function OnLuaButton_modeloBH(framePrincipal)
 		local modeloBH = HTML_Dialog(false, html_path, 1900, 950, "REFERENCIA BH2")
 		
 		textoDescriptivo="REFERENCIA BH2"
-		anchura1=1200 anchura2=800 margenPlaca=3 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=32
-		pliegueSuperior=36 pliegueInferior=4000  margenA=57 margenB=108 diametroTaladros=5 
+		anchura1=1200 anchura2=800 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=20.6
+		pliegueSuperior=36 pliegueInferior=40  margenA=57 margenB=108 diametroTaladros=5 
 		
         modeloBH:AddTextField("textoDescriptivo", textoDescriptivo)
 		modeloBH:AddDoubleField("anchuraPlacaIzquierda", anchura1)
 		modeloBH:AddDoubleField("anchuraPlacaDerecha", anchura2)
-	    modeloBH:AddDoubleField("margenPlaca", margenPlaca)
+	    --modeloBH:AddDoubleField("margenPlaca", margenPlaca)
 	    modeloBH:AddDoubleField("alturaPlaca", alturaPlaca)
 		--modeloBH:AddDoubleField("origenX", origenX)
 		--modeloBH:AddDoubleField("origenY", origenY)
@@ -856,13 +838,13 @@ function OnLuaButton_modeloBH(framePrincipal)
 		local modeloBH = HTML_Dialog(false, html_path, 1900, 950, "REFERENCIA BH3")
 		
 		textoDescriptivo="REFERENCIA BH3"
-		anchura1=1200 anchura2=800 margenPlaca=3 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=32
-		pliegueSuperior=36 pliegueInferior=4000  margenA=57 margenB=108 diametroTaladros=5 
+		anchura1=1200 anchura2=800 alturaPlaca=1000 alaIzquierda=40 alaSuperior=20 alaInferior=20
+		pliegueSuperior=36 pliegueInferior=40  margenA=57 margenB=108 diametroTaladros=5 
 		
         modeloBH:AddTextField("textoDescriptivo", textoDescriptivo)
 		modeloBH:AddDoubleField("anchuraPlacaIzquierda", anchura1)
 		modeloBH:AddDoubleField("anchuraPlacaDerecha", anchura2)
-	    modeloBH:AddDoubleField("margenPlaca", margenPlaca)
+	    --modeloBH:AddDoubleField("margenPlaca", margenPlaca)
 	    modeloBH:AddDoubleField("alturaPlaca", alturaPlaca)
 		--modeloBH:AddDoubleField("origenX", origenX)
 		--modeloBH:AddDoubleField("origenY", origenY)
@@ -891,13 +873,13 @@ function OnLuaButton_modeloBH(framePrincipal)
 		local modeloBH = HTML_Dialog(false, html_path, 1900, 950, "REFERENCIA BH4")
 		
 		textoDescriptivo="REFERENCIA BH4"
-		anchura1=1200 anchura2=800 margenPlaca=3 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=32
-		pliegueSuperior=36 pliegueInferior=0  margenA=57 margenB=108 diametroTaladros=5 
+		anchura1=1200 anchura2=800 alturaPlaca=1000 alaIzquierda=40 alaSuperior=260 alaInferior=32
+		pliegueSuperior=40 pliegueInferior=0  margenA=57 margenB=108 diametroTaladros=5 
 		
         modeloBH:AddTextField("textoDescriptivo", textoDescriptivo)
 		modeloBH:AddDoubleField("anchuraPlacaIzquierda", anchura1)
 		modeloBH:AddDoubleField("anchuraPlacaDerecha", anchura2)
-	    modeloBH:AddDoubleField("margenPlaca", margenPlaca)
+	    --modeloBH:AddDoubleField("margenPlaca", margenPlaca)
 	    modeloBH:AddDoubleField("alturaPlaca", alturaPlaca)
 		--modeloBH:AddDoubleField("origenX", origenX)
 		--modeloBH:AddDoubleField("origenY", origenY)
@@ -926,13 +908,13 @@ function OnLuaButton_modeloBH(framePrincipal)
 		local modeloBH = HTML_Dialog(false, html_path, 1900, 950, "REFERENCIA BH5")
 		
 		textoDescriptivo="REFERENCIA BH5"
-		anchura1=1200 anchura2=800 margenPlaca=3 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=32
-		pliegueSuperior=36 pliegueInferior=4000  margenA=57 margenB=108 diametroTaladros=5 
+		anchura1=1200 anchura2=800 alturaPlaca=1000 alaIzquierda=40 alaSuperior=260 alaInferior=20
+		pliegueSuperior=40 pliegueInferior=40  margenA=57 margenB=108 diametroTaladros=5 
 		
         modeloBH:AddTextField("textoDescriptivo", textoDescriptivo)
 		modeloBH:AddDoubleField("anchuraPlacaIzquierda", anchura1)
 		modeloBH:AddDoubleField("anchuraPlacaDerecha", anchura2)
-	    modeloBH:AddDoubleField("margenPlaca", margenPlaca)
+	    --modeloBH:AddDoubleField("margenPlaca", margenPlaca)
 	    modeloBH:AddDoubleField("alturaPlaca", alturaPlaca)
 		--modeloBH:AddDoubleField("origenX", origenX)
 		--modeloBH:AddDoubleField("origenY", origenY)
@@ -961,13 +943,13 @@ function OnLuaButton_modeloBH(framePrincipal)
 		local modeloBH = HTML_Dialog(false, html_path, 1900, 950, "REFERENCIA BH6")
 		
 		textoDescriptivo="REFERENCIA BH6"
-		anchura1=1200 anchura2=800 margenPlaca=3 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=32
-		pliegueSuperior=36 pliegueInferior=0  margenA=57 margenB=108 diametroTaladros=5 
+		anchura1=1200 anchura2=800 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=32
+		pliegueSuperior=300 pliegueInferior=0  margenA=57 margenB=108 diametroTaladros=5 
 		
         modeloBH:AddTextField("textoDescriptivo", textoDescriptivo)
 		modeloBH:AddDoubleField("anchuraPlacaIzquierda", anchura1)
 		modeloBH:AddDoubleField("anchuraPlacaDerecha", anchura2)
-	    modeloBH:AddDoubleField("margenPlaca", margenPlaca)
+	    --modeloBH:AddDoubleField("margenPlaca", margenPlaca)
 	    modeloBH:AddDoubleField("alturaPlaca", alturaPlaca)
 		--modeloBH:AddDoubleField("origenX", origenX)
 		--modeloBH:AddDoubleField("origenY", origenY)
@@ -996,13 +978,13 @@ function OnLuaButton_modeloBH(framePrincipal)
 		local modeloBH = HTML_Dialog(false, html_path, 1900, 950, "REFERENCIA BH7")
 		
 		textoDescriptivo="REFERENCIA BH7"
-		anchura1=1200 anchura2=800 margenPlaca=3 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=32
-		pliegueSuperior=36 pliegueInferior=4000  margenA=57 margenB=108 diametroTaladros=5 
+		anchura1=1200 anchura2=800 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=20
+		pliegueSuperior=300 pliegueInferior=40  margenA=57 margenB=108 diametroTaladros=5 
 		
         modeloBH:AddTextField("textoDescriptivo", textoDescriptivo)
 		modeloBH:AddDoubleField("anchuraPlacaIzquierda", anchura1)
 		modeloBH:AddDoubleField("anchuraPlacaDerecha", anchura2)
-	    modeloBH:AddDoubleField("margenPlaca", margenPlaca)
+	    --modeloBH:AddDoubleField("margenPlaca", margenPlaca)
 	    modeloBH:AddDoubleField("alturaPlaca", alturaPlaca)
 		--modeloBH:AddDoubleField("origenX", origenX)
 		--modeloBH:AddDoubleField("origenY", origenY)
@@ -1031,13 +1013,13 @@ function OnLuaButton_modeloBH(framePrincipal)
 		local modeloBH = HTML_Dialog(false, html_path, 1900, 950, "REFERENCIA BH8")
 		
 		textoDescriptivo="REFERENCIA BH8"
-		anchura1=1200 anchura2=800 margenPlaca=3 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=32
-		pliegueSuperior=36 pliegueInferior=4000  margenA=57 margenB=108 diametroTaladros=5 
+		anchura1=1200 anchura2=800 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=32
+		pliegueSuperior=36 pliegueInferior=300  margenA=57 margenB=108 diametroTaladros=5 
 		
         modeloBH:AddTextField("textoDescriptivo", textoDescriptivo)
 		modeloBH:AddDoubleField("anchuraPlacaIzquierda", anchura1)
 		modeloBH:AddDoubleField("anchuraPlacaDerecha", anchura2)
-	    modeloBH:AddDoubleField("margenPlaca", margenPlaca)
+	    --modeloBH:AddDoubleField("margenPlaca", margenPlaca)
 	    modeloBH:AddDoubleField("alturaPlaca", alturaPlaca)
 		--modeloBH:AddDoubleField("origenX", origenX)
 		--modeloBH:AddDoubleField("origenY", origenY)
@@ -1066,13 +1048,13 @@ function OnLuaButton_modeloBH(framePrincipal)
 		local modeloBH = HTML_Dialog(false, html_path, 1900, 950, "REFERENCIA BH9")
 		
 		textoDescriptivo="REFERENCIA BH9"
-		anchura1=1200 anchura2=800 margenPlaca=3 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=32
+		anchura1=1200 anchura2=800 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=32
 		pliegueSuperior=36 pliegueInferior=0  margenA=57 margenB=108 diametroTaladros=5 
 		
         modeloBH:AddTextField("textoDescriptivo", textoDescriptivo)
 		modeloBH:AddDoubleField("anchuraPlacaIzquierda", anchura1)
 		modeloBH:AddDoubleField("anchuraPlacaDerecha", anchura2)
-	    modeloBH:AddDoubleField("margenPlaca", margenPlaca)
+	    --modeloBH:AddDoubleField("margenPlaca", margenPlaca)
 	    modeloBH:AddDoubleField("alturaPlaca", alturaPlaca)
 		--modeloBH:AddDoubleField("origenX", origenX)
 		--modeloBH:AddDoubleField("origenY", origenY)
@@ -1080,6 +1062,7 @@ function OnLuaButton_modeloBH(framePrincipal)
 		modeloBH:AddDoubleField("alaLateral", alaIzquierda)
 		modeloBH:AddDoubleField("alaSuperior", alaSuperior)
 		modeloBH:AddDoubleField("alaInferior", alaInferior)
+		modeloBH:AddDoubleField("distanciaAlas", distanciaAlas)
 
 		--modeloBH:AddDoubleField("pliegueInferior", pliegueInferior) --No lleva pliegue inferior
 
@@ -1101,13 +1084,13 @@ function OnLuaButton_modeloBH(framePrincipal)
 		local modeloBH = HTML_Dialog(false, html_path, 1900, 950, "REFERENCIA BH10")
 		
 		textoDescriptivo="REFERENCIA BH10"
-		anchura1=1200 anchura2=800 margenPlaca=3 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=32
-		pliegueSuperior=36 pliegueInferior=0  margenA=57 margenB=108 diametroTaladros=5 
+		anchura1=1200 anchura2=800 alturaPlaca=1000 alaIzquierda=40 alaSuperior=20 alaInferior=32
+		pliegueSuperior=40 pliegueInferior=0  margenA=57 margenB=108 diametroTaladros=5 
 		
         modeloBH:AddTextField("textoDescriptivo", textoDescriptivo)
 		modeloBH:AddDoubleField("anchuraPlacaIzquierda", anchura1)
 		modeloBH:AddDoubleField("anchuraPlacaDerecha", anchura2)
-	    modeloBH:AddDoubleField("margenPlaca", margenPlaca)
+	    --modeloBH:AddDoubleField("margenPlaca", margenPlaca)
 	    modeloBH:AddDoubleField("alturaPlaca", alturaPlaca)
 		--modeloBH:AddDoubleField("origenX", origenX)
 		--modeloBH:AddDoubleField("origenY", origenY)
@@ -1115,6 +1098,7 @@ function OnLuaButton_modeloBH(framePrincipal)
 		modeloBH:AddDoubleField("alaLateral", alaIzquierda)
 		modeloBH:AddDoubleField("alaSuperior", alaSuperior)
 		modeloBH:AddDoubleField("alaInferior", alaInferior)
+		modeloBH:AddDoubleField("distanciaAlas", distanciaAlas)
 
 		--modeloBH:AddDoubleField("pliegueInferior", pliegueInferior) --No lleva pliegue inferior
 
@@ -1136,13 +1120,13 @@ function OnLuaButton_modeloBH(framePrincipal)
 		local modeloBH = HTML_Dialog(false, html_path, 1900, 950, "REFERENCIA BH11")
 		
 		textoDescriptivo="REFERENCIA BH11"
-		anchura1=1200 anchura2=800 margenPlaca=3 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=32
-		pliegueSuperior=36 pliegueInferior=4000  margenA=57 margenB=108 diametroTaladros=5 
+		anchura1=1200 anchura2=800 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=20.6
+		pliegueSuperior=36 pliegueInferior=40  margenA=57 margenB=108 diametroTaladros=5 
 		
         modeloBH:AddTextField("textoDescriptivo", textoDescriptivo)
 		modeloBH:AddDoubleField("anchuraPlacaIzquierda", anchura1)
 		modeloBH:AddDoubleField("anchuraPlacaDerecha", anchura2)
-	    modeloBH:AddDoubleField("margenPlaca", margenPlaca)
+	    --modeloBH:AddDoubleField("margenPlaca", margenPlaca)
 	    modeloBH:AddDoubleField("alturaPlaca", alturaPlaca)
 		--modeloBH:AddDoubleField("origenX", origenX)
 		--modeloBH:AddDoubleField("origenY", origenY)
@@ -1150,6 +1134,7 @@ function OnLuaButton_modeloBH(framePrincipal)
 		modeloBH:AddDoubleField("alaLateral", alaIzquierda)
 		modeloBH:AddDoubleField("alaSuperior", alaSuperior)
 		modeloBH:AddDoubleField("alaInferior", alaInferior)
+		modeloBH:AddDoubleField("distanciaAlas", distanciaAlas)
 
 		modeloBH:AddDoubleField("pliegueInferior", pliegueInferior)
 
@@ -1171,13 +1156,13 @@ function OnLuaButton_modeloBH(framePrincipal)
 		local modeloBH = HTML_Dialog(false, html_path, 1900, 950, "REFERENCIA BH12")
 		
 		textoDescriptivo="REFERENCIA BH12"
-		anchura1=1200 anchura2=800 margenPlaca=3 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=32
-		pliegueSuperior=36 pliegueInferior=4000  margenA=57 margenB=108 diametroTaladros=5 
+		anchura1=1200 anchura2=800 alturaPlaca=1000 alaIzquierda=40 alaSuperior=20 alaInferior=20
+		pliegueSuperior=36 pliegueInferior=40  margenA=57 margenB=108 diametroTaladros=5 
 		
         modeloBH:AddTextField("textoDescriptivo", textoDescriptivo)
 		modeloBH:AddDoubleField("anchuraPlacaIzquierda", anchura1)
 		modeloBH:AddDoubleField("anchuraPlacaDerecha", anchura2)
-	    modeloBH:AddDoubleField("margenPlaca", margenPlaca)
+	    --modeloBH:AddDoubleField("margenPlaca", margenPlaca)
 	    modeloBH:AddDoubleField("alturaPlaca", alturaPlaca)
 		--modeloBH:AddDoubleField("origenX", origenX)
 		--modeloBH:AddDoubleField("origenY", origenY)
@@ -1185,6 +1170,7 @@ function OnLuaButton_modeloBH(framePrincipal)
 		modeloBH:AddDoubleField("alaLateral", alaIzquierda)
 		modeloBH:AddDoubleField("alaSuperior", alaSuperior)
 		modeloBH:AddDoubleField("alaInferior", alaInferior)
+		modeloBH:AddDoubleField("distanciaAlas", distanciaAlas)
 
 		modeloBH:AddDoubleField("pliegueInferior", pliegueInferior)
 
@@ -1206,13 +1192,13 @@ function OnLuaButton_modeloBH(framePrincipal)
 		local modeloBH = HTML_Dialog(false, html_path, 1900, 950, "REFERENCIA BH13")
 		
 		textoDescriptivo="REFERENCIA BH13"
-		anchura1=1200 anchura2=800 margenPlaca=3 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=32
-		pliegueSuperior=36 pliegueInferior=0  margenA=57 margenB=108 diametroTaladros=5 
+		anchura1=1200 anchura2=800 alturaPlaca=1000 alaIzquierda=40 alaSuperior=260 alaInferior=32
+		pliegueSuperior=40 pliegueInferior=0  margenA=57 margenB=108 diametroTaladros=5 
 		
         modeloBH:AddTextField("textoDescriptivo", textoDescriptivo)
 		modeloBH:AddDoubleField("anchuraPlacaIzquierda", anchura1)
 		modeloBH:AddDoubleField("anchuraPlacaDerecha", anchura2)
-	    modeloBH:AddDoubleField("margenPlaca", margenPlaca)
+	    --modeloBH:AddDoubleField("margenPlaca", margenPlaca)
 	    modeloBH:AddDoubleField("alturaPlaca", alturaPlaca)
 		--modeloBH:AddDoubleField("origenX", origenX)
 		--modeloBH:AddDoubleField("origenY", origenY)
@@ -1220,6 +1206,7 @@ function OnLuaButton_modeloBH(framePrincipal)
 		modeloBH:AddDoubleField("alaLateral", alaIzquierda)
 		modeloBH:AddDoubleField("alaSuperior", alaSuperior)
 		modeloBH:AddDoubleField("alaInferior", alaInferior)
+		modeloBH:AddDoubleField("distanciaAlas", distanciaAlas)
 
 		--modeloBH:AddDoubleField("pliegueInferior", pliegueInferior) --No lleva pliegue inferior
 
@@ -1241,13 +1228,13 @@ function OnLuaButton_modeloBH(framePrincipal)
 		local modeloBH = HTML_Dialog(false, html_path, 1900, 950, "REFERENCIA BH14")
 		
 		textoDescriptivo="REFERENCIA BH14"
-		anchura1=1200 anchura2=800 margenPlaca=3 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=32
-		pliegueSuperior=36 pliegueInferior=4000  margenA=57 margenB=108 diametroTaladros=5 
+		anchura1=1200 anchura2=800 alturaPlaca=1000 alaIzquierda=40 alaSuperior=260 alaInferior=20
+		pliegueSuperior=40 pliegueInferior=40  margenA=57 margenB=108 diametroTaladros=5 
 		
         modeloBH:AddTextField("textoDescriptivo", textoDescriptivo)
 		modeloBH:AddDoubleField("anchuraPlacaIzquierda", anchura1)
 		modeloBH:AddDoubleField("anchuraPlacaDerecha", anchura2)
-	    modeloBH:AddDoubleField("margenPlaca", margenPlaca)
+	    --modeloBH:AddDoubleField("margenPlaca", margenPlaca)
 	    modeloBH:AddDoubleField("alturaPlaca", alturaPlaca)
 		--modeloBH:AddDoubleField("origenX", origenX)
 		--modeloBH:AddDoubleField("origenY", origenY)
@@ -1255,6 +1242,7 @@ function OnLuaButton_modeloBH(framePrincipal)
 		modeloBH:AddDoubleField("alaLateral", alaIzquierda)
 		modeloBH:AddDoubleField("alaSuperior", alaSuperior)
 		modeloBH:AddDoubleField("alaInferior", alaInferior)
+		modeloBH:AddDoubleField("distanciaAlas", distanciaAlas)
 
 		modeloBH:AddDoubleField("pliegueInferior", pliegueInferior)
 
@@ -1276,13 +1264,13 @@ function OnLuaButton_modeloBH(framePrincipal)
 		local modeloBH = HTML_Dialog(false, html_path, 1900, 950, "REFERENCIA BH15")
 		
 		textoDescriptivo="REFERENCIA BH15"
-		anchura1=1200 anchura2=800 margenPlaca=3 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=32
-		pliegueSuperior=36 pliegueInferior=0  margenA=57 margenB=108 diametroTaladros=5 
+		anchura1=1200 anchura2=800 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=32
+		pliegueSuperior=300 pliegueInferior=0  margenA=57 margenB=108 diametroTaladros=5 
 		
         modeloBH:AddTextField("textoDescriptivo", textoDescriptivo)
 		modeloBH:AddDoubleField("anchuraPlacaIzquierda", anchura1)
 		modeloBH:AddDoubleField("anchuraPlacaDerecha", anchura2)
-	    modeloBH:AddDoubleField("margenPlaca", margenPlaca)
+	    --modeloBH:AddDoubleField("margenPlaca", margenPlaca)
 	    modeloBH:AddDoubleField("alturaPlaca", alturaPlaca)
 		--modeloBH:AddDoubleField("origenX", origenX)
 		--modeloBH:AddDoubleField("origenY", origenY)
@@ -1290,6 +1278,7 @@ function OnLuaButton_modeloBH(framePrincipal)
 		modeloBH:AddDoubleField("alaLateral", alaIzquierda)
 		modeloBH:AddDoubleField("alaSuperior", alaSuperior)
 		modeloBH:AddDoubleField("alaInferior", alaInferior)
+		modeloBH:AddDoubleField("distanciaAlas", distanciaAlas)
 
 		--modeloBH:AddDoubleField("pliegueInferior", pliegueInferior) --No lleva pliegue inferior
 
@@ -1311,13 +1300,13 @@ function OnLuaButton_modeloBH(framePrincipal)
 		local modeloBH = HTML_Dialog(false, html_path, 1900, 950, "REFERENCIA BH16")
 		
 		textoDescriptivo="REFERENCIA BH16"
-		anchura1=1200 anchura2=800 margenPlaca=3 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=32
-		pliegueSuperior=36 pliegueInferior=4000  margenA=57 margenB=108 diametroTaladros=5 
+		anchura1=1200 anchura2=800 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=20
+		pliegueSuperior=300 pliegueInferior=40  margenA=57 margenB=108 diametroTaladros=5 
 		
         modeloBH:AddTextField("textoDescriptivo", textoDescriptivo)
 		modeloBH:AddDoubleField("anchuraPlacaIzquierda", anchura1)
 		modeloBH:AddDoubleField("anchuraPlacaDerecha", anchura2)
-	    modeloBH:AddDoubleField("margenPlaca", margenPlaca)
+	    --modeloBH:AddDoubleField("margenPlaca", margenPlaca)
 	    modeloBH:AddDoubleField("alturaPlaca", alturaPlaca)
 		--modeloBH:AddDoubleField("origenX", origenX)
 		--modeloBH:AddDoubleField("origenY", origenY)
@@ -1325,6 +1314,7 @@ function OnLuaButton_modeloBH(framePrincipal)
 		modeloBH:AddDoubleField("alaLateral", alaIzquierda)
 		modeloBH:AddDoubleField("alaSuperior", alaSuperior)
 		modeloBH:AddDoubleField("alaInferior", alaInferior)
+		modeloBH:AddDoubleField("distanciaAlas", distanciaAlas)
 
 		modeloBH:AddDoubleField("pliegueInferior", pliegueInferior)
 
@@ -1347,13 +1337,13 @@ function OnLuaButton_modeloBH(framePrincipal)
 		local modeloBH = HTML_Dialog(false, html_path, 1900, 950, "REFERENCIA BH17")
 		
 		textoDescriptivo="REFERENCIA BH17"
-		anchura1=1200 anchura2=800 margenPlaca=3 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=32
-		pliegueSuperior=36 pliegueInferior=4000  margenA=57 margenB=108 diametroTaladros=5 
+		anchura1=1200 anchura2=800 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=40
+		pliegueSuperior=36 pliegueInferior=300  margenA=57 margenB=108 diametroTaladros=5 
 		
         modeloBH:AddTextField("textoDescriptivo", textoDescriptivo)
 		modeloBH:AddDoubleField("anchuraPlacaIzquierda", anchura1)
 		modeloBH:AddDoubleField("anchuraPlacaDerecha", anchura2)
-	    modeloBH:AddDoubleField("margenPlaca", margenPlaca)
+	    --modeloBH:AddDoubleField("margenPlaca", margenPlaca)
 	    modeloBH:AddDoubleField("alturaPlaca", alturaPlaca)
 		--modeloBH:AddDoubleField("origenX", origenX)
 		--modeloBH:AddDoubleField("origenY", origenY)
@@ -1361,6 +1351,7 @@ function OnLuaButton_modeloBH(framePrincipal)
 		modeloBH:AddDoubleField("alaLateral", alaIzquierda)
 		modeloBH:AddDoubleField("alaSuperior", alaSuperior)
 		modeloBH:AddDoubleField("alaInferior", alaInferior)
+		modeloBH:AddDoubleField("distanciaAlas", distanciaAlas)
 
 		modeloBH:AddDoubleField("pliegueInferior", pliegueInferior)
 
@@ -1382,9 +1373,10 @@ function OnLuaButton_modeloBH(framePrincipal)
 return true;
 
 end
-  
-  
-  
+
+
+
+
 function OnLuaButton_aceptarBH(modeloBH)
 
 	if modelo==9 or modelo==10 or modelo==13 or modelo==15 then --SIN PLIEGUE / FILA 1
@@ -1393,15 +1385,10 @@ function OnLuaButton_aceptarBH(modeloBH)
 		textoDescriptivo = modeloBH:GetTextField("textoDescriptivo")
 		anchura1 = modeloBH:GetDoubleField("anchuraPlacaIzquierda")
 		anchura2 = modeloBH:GetDoubleField("anchuraPlacaDerecha")
-	    margenPlaca = modeloBH:GetDoubleField("margenPlaca")
+	    --margenPlaca = modeloBH:GetDoubleField("margenPlaca")
 	    alturaPlaca = modeloBH:GetDoubleField("alturaPlaca")
 		--origenX = modeloBH:GetDoubleField("origenXAH")
 		--origenY = modeloBH:GetDoubleField("origenYAH")
-
-		--cantidadX=modeloBH:GetIntegerField("cantidadX")
-		--cantidadY=modeloBH:GetIntegerField("cantidadY")
-		--distanciaX=modeloBH:GetDoubleField("distanciaX")
-		--distanciaY=modeloBH:GetDoubleField("distanciaY")
 
 		alaIzquierda=modeloBH:GetDoubleField("alaLateral")
 		alaSuperior=modeloBH:GetDoubleField("alaSuperior")
@@ -1412,7 +1399,7 @@ function OnLuaButton_aceptarBH(modeloBH)
 		margenB=modeloBH:GetDoubleField("margenB")
 
 		diametroTaladros=modeloBH:GetDoubleField("diametroTaladros")
-		--alturaColiso=diametroTaladros
+		
 		--crearColiso=modeloBH:GetCheckBox("crearColiso")
 
 
@@ -1422,15 +1409,10 @@ function OnLuaButton_aceptarBH(modeloBH)
 		textoDescriptivo = modeloBH:GetTextField("textoDescriptivo")
 		anchura1 = modeloBH:GetDoubleField("anchuraPlacaIzquierda")
 		anchura2 = modeloBH:GetDoubleField("anchuraPlacaDerecha")
-	    margenPlaca = modeloBH:GetDoubleField("margenPlaca")
+	    --margenPlaca = modeloBH:GetDoubleField("margenPlaca")
 	    alturaPlaca = modeloBH:GetDoubleField("alturaPlaca")
 		--origenX = modeloBH:GetDoubleField("origenXAH")
 		--origenY = modeloBH:GetDoubleField("origenYAH")
-
-		--cantidadX=modeloBH:GetIntegerField("cantidadX")
-		--cantidadY=modeloBH:GetIntegerField("cantidadY")
-		--distanciaX=modeloBH:GetDoubleField("distanciaX")
-		--distanciaY=modeloBH:GetDoubleField("distanciaY")
 
 		alaIzquierda=modeloBH:GetDoubleField("alaLateral")
 		alaSuperior=modeloBH:GetDoubleField("alaSuperior")
@@ -1441,22 +1423,66 @@ function OnLuaButton_aceptarBH(modeloBH)
 		margenB=modeloBH:GetDoubleField("margenB")
 
 		diametroTaladros=modeloBH:GetDoubleField("diametroTaladros")
-		--alturaColiso=diametroTaladros
+		
 		--crearColiso=modeloBH:GetCheckBox("crearColiso")
-		
-		
+
 	elseif modelo==18 or modelo==19 or modelo==22 or modelo==24 then  --SIN PLIEGUE / FILA 2 -> 18 19 22 24
+		pliegueInferior=0
+		
+		textoDescriptivo = modeloBH:GetTextField("textoDescriptivo")
+		anchura1 = modeloBH:GetDoubleField("anchuraPlacaIzquierda")
+		anchura2 = modeloBH:GetDoubleField("anchuraPlacaDerecha")
+	    --margenPlaca = modeloBH:GetDoubleField("margenPlaca")
+	    alturaPlaca = modeloBH:GetDoubleField("alturaPlaca")
+		--origenX = modeloBH:GetDoubleField("origenXAH")
+		--origenY = modeloBH:GetDoubleField("origenYAH")
+		
+		alaIzquierda=modeloBH:GetDoubleField("alaLateral")
+		alaSuperior=modeloBH:GetDoubleField("alaSuperior")
+		alaInferior=modeloBH:GetDoubleField("alaInferior")
+		distanciaAlas=modeloBH:GetDoubleField("distanciaAlas")
+		
+		--pliegueInferior=modeloBH:GetDoubleField("pliegueInferior")
+		pliegueSuperior=modeloBH:GetDoubleField("pliegueSuperior")
+		margenA=modeloBH:GetDoubleField("margenA")
+		margenB=modeloBH:GetDoubleField("margenB")
+
+		diametroTaladros=modeloBH:GetDoubleField("diametroTaladros")
+		
+		--crearColiso=modeloBH:GetCheckBox("crearColiso")
 	
 	elseif modelo==20 or modelo==21 or modelo==23 or modelo==25 or modelo==26 then  --CON PLIEGUE / FILA 2 ->20 21 23 25 26
+	
+		textoDescriptivo = modeloBH:GetTextField("textoDescriptivo")
+		anchura1 = modeloBH:GetDoubleField("anchuraPlacaIzquierda")
+		anchura2 = modeloBH:GetDoubleField("anchuraPlacaDerecha")
+	    --margenPlaca = modeloBH:GetDoubleField("margenPlaca")
+	    alturaPlaca = modeloBH:GetDoubleField("alturaPlaca")
+		--origenX = modeloBH:GetDoubleField("origenXAH")
+		--origenY = modeloBH:GetDoubleField("origenYAH")
+
+		alaIzquierda=modeloBH:GetDoubleField("alaLateral")
+		alaSuperior=modeloBH:GetDoubleField("alaSuperior")
+		alaInferior=modeloBH:GetDoubleField("alaInferior")
+		distanciaAlas=modeloBH:GetDoubleField("distanciaAlas")
+		
+		pliegueInferior=modeloBH:GetDoubleField("pliegueInferior")
+		pliegueSuperior=modeloBH:GetDoubleField("pliegueSuperior")
+		margenA=modeloBH:GetDoubleField("margenA")
+		margenB=modeloBH:GetDoubleField("margenB")
+
+		diametroTaladros=modeloBH:GetDoubleField("diametroTaladros")
+		
+		--crearColiso=modeloBH:GetCheckBox("crearColiso")
 	
   	end
 
     
 	--Caracteristicas generales
-	anchuraPlaca=anchura1+anchura2 --¿Como se reparte el margen de la placa en este tipo de piezas? <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< DUDA <<<<<<<<<<<<<<<<
+	anchuraPlaca=anchura1+anchura2
 	
-	anchuraPlaca=anchuraPlaca-margenPlaca
-    alturaPlaca=alturaPlaca-margenPlaca
+	--anchuraPlaca=anchuraPlaca-margenPlaca
+    --alturaPlaca=alturaPlaca-margenPlaca
 	
 	alaDerecha=alaIzquierda
 	
@@ -1468,9 +1494,9 @@ function OnLuaButton_aceptarBH(modeloBH)
 		DisplayMessageBox("La anchura de la placa NO puede ser negativa.Creación Modelo AH Fallida")
 				
 	
-	elseif margenPlaca < 0 then
+	--elseif margenPlaca < 0 then
 		
-		DisplayMessageBox("El margen de la placa NO puede ser negativo.Creación Modelo AH Fallida")
+		--DisplayMessageBox("El margen de la placa NO puede ser negativo.Creación Modelo AH Fallida")
 	
 	elseif  alturaPlaca < 0 then
 		
@@ -1479,13 +1505,15 @@ function OnLuaButton_aceptarBH(modeloBH)
     	
 	else
 		
-		--origenX=-(alaDerecha+anchura1+anchura2+alaIzquierda+200)
-		--origenY=-(0)
+		--Para que la pieza apareza fuera del area de trabajo
+			--origenX=-(alaDerecha+anchura1+anchura2+alaIzquierda+200)
+			--origenY=-(0)
 		
-		dibujarFresadoBH(doc)
-		dibujarCorteBH(doc)
-		--dibujarTextoBH(doc)
-		--dibujarTaladrosBH(doc)
+		--Para dibujar la pieza
+			dibujarFresadoBH(doc)
+			dibujarCorteBH(doc)
+			dibujarTexto(doc)
+			--dibujarTaladrosBH(doc)
 		
 			
 		DisplayMessageBox("Modelo AH Creado Correctamente")
@@ -1521,6 +1549,8 @@ function dibujarFresadoAH(doc)
 	local fresado8 = Point2D(origenX+anchuraPlaca+alaIzquierda,origenY+alaInferior+alturaPlaca+pliegueInferior)
 	local fresado11 = Point2D(origenX+anchuraPlaca+alaIzquierda,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior)
 	
+	local fresado12 = Point2D(origenX+alaIzquierda,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior)
+	
 	
 	if modelo==0 or modelo==1 then --REF [AH][AH1]
 		Contour:AppendPoint(fresado9)
@@ -1533,8 +1563,6 @@ function dibujarFresadoAH(doc)
 		Contour:LineTo(fresado8)
 		Contour:LineTo(fresado7)
 		Contour:LineTo(fresado2)
-
-
 
 	elseif modelo==2 or modelo==3 then --REF [AH2][AH3]
 		Contour:AppendPoint(fresado1)
@@ -1576,6 +1604,7 @@ function dibujarFresadoAH(doc)
 		Contour:LineTo(fresado11)
 		Contour:LineTo(fresado5)
 		Contour:LineTo(fresado6)
+		Contour:LineTo(fresado12)
 		Contour:LineTo(fresado7)
 		Contour:LineTo(fresado8)
 		Contour:LineTo(fresado7)
@@ -1586,6 +1615,7 @@ function dibujarFresadoAH(doc)
 		Contour:LineTo(fresado3)
 		Contour:LineTo(fresado4)
 		Contour:LineTo(fresado1)
+		Contour:LineTo(fresado12)
 		Contour:LineTo(fresado6)
 		Contour:LineTo(fresado5)
 		Contour:LineTo(fresado11)
@@ -1696,10 +1726,7 @@ function dibujarCorteAH(doc)
 	
 	--PARTE DERECHA (BOTAS)------------------------------------------------------------------------------------------------------------------------------------------------------------------
 	
-		--Variables BOTAS
-	local alturaBotaDeCuelgue=56
-	local anchoBota=18.5
-	
+		--Variables BOTAS	
 	local tramoRecto1BotaDerecha=52
 	local radioArcoBotaDerecha=4
 	local tramoRecto2BotaDerecha=18
@@ -2259,12 +2286,11 @@ end
 
 
 
-function dibujarTextoAH(doc)
-	
+function dibujarTexto(doc)
 	--------------------------------------------------------
 	local cur_layer = doc.LayerManager:GetActiveLayer()
 	local layer = doc.LayerManager:GetLayerWithName("Descripcion")
-	local origenTexto=Point2D(anchuraPlaca/2-(2*alaIzquierda),alturaPlaca/2+pliegueInferior)
+	local origenTexto = Point2D(anchuraPlaca/3-(2*alaIzquierda),alturaPlaca/2+pliegueInferior+alaInferior)
     local texto=CadMarker(textoDescriptivo,origenTexto,0)
     texto:SetColor(0,0,1)
 	
@@ -2290,7 +2316,7 @@ end
 --[CH=27 - CH1=28 - CH2=329 - CH3=30 - CH4=31 - CH5=32 - CH6=33 - CH7=34 - CH8=35]
 
 function dibujarFresadoBH(doc)
-	--modelo=12 --[borrar]
+	--modelo=9 --[borrar]
 	--anchuraPlaca=anchura1+anchura2 --[borrar]
 	
 	
@@ -2321,17 +2347,24 @@ function dibujarFresadoBH(doc)
 	local fresado16 = Point2D(origenX+alaIzquierda+anchura1,origenY+alaInferior+pliegueInferior+alturaPlaca)
 	local fresado17 = Point2D(origenX+alaIzquierda+anchura1+anchura2,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior)
 	
+	local fresado18 = Point2D(origenX+alaIzquierda,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior)
+	
 	
 	if modelo>=9 and modelo<=17 then
 		fresado8 = Point2D(origenX+alaIzquierda+anchura1-pliegueInferior,origenY+alaInferior)
 		fresado9 = Point2D(origenX+alaIzquierda+anchura1+pliegueInferior,origenY+alaInferior)
 		fresado12 = Point2D(origenX+alaIzquierda+anchura1-pliegueSuperior,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior)
 		fresado13 = Point2D(origenX+alaIzquierda+anchura1+pliegueSuperior,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior)
+	elseif modelo==21 then
+		fresado8 = Point2D(origenX+alaIzquierda+anchura1-pliegueInferior,origenY+alaInferior)
+		fresado9 = Point2D(origenX+alaIzquierda+anchura1+pliegueInferior,origenY+alaInferior)
+		fresado12 = Point2D(origenX+alaIzquierda+anchura1-(distanciaAlas/2),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior)
+		fresado13 = Point2D(origenX+alaIzquierda+anchura1+(distanciaAlas/2),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior)
 	elseif modelo>=18 and modelo<=26 then
-		fresado8 = Point2D(origenX+alaIzquierda+anchura1-(separacionPliegues/2),origenY+alaInferior)	
-		fresado9 = Point2D(origenX+alaIzquierda+anchura1+(separacionPliegues/2),origenY+alaInferior)
-		fresado12 = Point2D(origenX+alaIzquierda+anchura1-(separacionPliegues/2),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior)
-		fresado13 = Point2D(origenX+alaIzquierda+anchura1+(separacionPliegues/2),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior)
+		fresado8 = Point2D(origenX+alaIzquierda+anchura1-(distanciaAlas/2),origenY+alaInferior)	
+		fresado9 = Point2D(origenX+alaIzquierda+anchura1+(distanciaAlas/2),origenY+alaInferior)
+		fresado12 = Point2D(origenX+alaIzquierda+anchura1-(distanciaAlas/2),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior)
+		fresado13 = Point2D(origenX+alaIzquierda+anchura1+(distanciaAlas/2),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior)
 	end
 	
 	
@@ -2354,7 +2387,7 @@ function dibujarFresadoBH(doc)
 		Contour:LineTo(fresado3)
 		Contour:LineTo(fresado10)
 		
-	elseif modelo==11 or modelo==12  or modelo==20 or modelo==21  then --REF [BH2][BH3] [BH11][BH12]
+	elseif modelo==11 or modelo==12  or modelo==20 or modelo==21 then --REF [BH2][BH3] [BH11][BH12]
 		Contour:AppendPoint(fresado8)
 		Contour:LineTo(fresado2)
 		Contour:LineTo(fresado3)
@@ -2415,6 +2448,7 @@ function dibujarFresadoBH(doc)
 		Contour:LineTo(fresado14)
 		Contour:LineTo(fresado15)
 		Contour:LineTo(fresado10)
+		Contour:LineTo(fresado18)
 		Contour:LineTo(fresado11)
 		Contour:LineTo(fresado12)
 		Contour:LineTo(fresado11)
@@ -2436,6 +2470,7 @@ function dibujarFresadoBH(doc)
 		Contour:LineTo(fresado14)
 		Contour:LineTo(fresado15)
 		Contour:LineTo(fresado10)
+		Contour:LineTo(fresado18)
 		Contour:LineTo(fresado11)
 		Contour:LineTo(fresado12)
 		Contour:LineTo(fresado11)
@@ -2488,8 +2523,8 @@ end
 --[CH=27 - CH1=28 - CH2=329 - CH3=30 - CH4=31 - CH5=32 - CH6=33 - CH7=34 - CH8=35]
 
 function dibujarCorteBH(doc)
-	modelo=12 --[borrar]
-	anchuraPlaca=anchura1+anchura2 --borrar
+	--modelo=9 --[borrar]
+	--anchuraPlaca=anchura1+anchura2 --borrar
 	
 	local Contour = Contour(0.0)
 	
@@ -2517,17 +2552,17 @@ function dibujarCorteBH(doc)
 			Contour:LineTo(corte4)
 			Contour:LineTo(corte5)
 		else --[BH9][BH10]
-			corte3 = Point2D(origenX+alaIzquierda+anchura1-separacionPliegues/2,origenY)
-			corte4 = Point2D(origenX+alaIzquierda+anchura1-separacionPliegues/2,origenY+alaInferior-separacionPliegues/2)
+			corte3 = Point2D(origenX+alaIzquierda+anchura1-distanciaAlas/2,origenY)
+			corte4 = Point2D(origenX+alaIzquierda+anchura1-distanciaAlas/2,origenY+alaInferior-distanciaAlas/2)
 			Contour:LineTo(corte3)
 			Contour:LineTo(corte4)
 			
-			corte5 = Point2D(origenX+alaIzquierda+anchura1,origenY+alaInferior-separacionPliegues/2) --centro de la circunferencia
-			corte6 = Point2D(origenX+alaIzquierda+anchura1+separacionPliegues/2,origenY+alaInferior-separacionPliegues/2)
+			corte5 = Point2D(origenX+alaIzquierda+anchura1,origenY+alaInferior-distanciaAlas/2) --centro de la circunferencia
+			corte6 = Point2D(origenX+alaIzquierda+anchura1+distanciaAlas/2,origenY+alaInferior-distanciaAlas/2)
 			
 			Contour:ArcTo(corte6,corte5,false)
 			
-			corte7 = Point2D(origenX+alaIzquierda+anchura1+separacionPliegues/2,origenY)
+			corte7 = Point2D(origenX+alaIzquierda+anchura1+distanciaAlas/2,origenY)
 			Contour:LineTo(corte7)
 		end
 		
@@ -2567,17 +2602,17 @@ function dibujarCorteBH(doc)
 			Contour:LineTo(corte9)
 			
 		else --[BH11]
-			corte5 = Point2D(origenX+alaIzquierda+anchura1-separacionPliegues/2,origenY)
-			corte6 = Point2D(origenX+alaIzquierda+anchura1-separacionPliegues/2,origenY+alaInferior+pliegueInferior-separacionPliegues/2)
+			corte5 = Point2D(origenX+alaIzquierda+anchura1-distanciaAlas/2,origenY)
+			corte6 = Point2D(origenX+alaIzquierda+anchura1-distanciaAlas/2,origenY+alaInferior+pliegueInferior-distanciaAlas/2)
 			Contour:LineTo(corte5)
 			Contour:LineTo(corte6)
 			
-			corte7 = Point2D(origenX+alaIzquierda+anchura1,origenY+alaInferior+pliegueInferior-separacionPliegues/2) --centro de la circunferencia
-			corte8 = Point2D(origenX+alaIzquierda+anchura1+separacionPliegues/2,origenY+alaInferior+pliegueInferior-separacionPliegues/2)
+			corte7 = Point2D(origenX+alaIzquierda+anchura1,origenY+alaInferior+pliegueInferior-distanciaAlas/2) --centro de la circunferencia
+			corte8 = Point2D(origenX+alaIzquierda+anchura1+distanciaAlas/2,origenY+alaInferior+pliegueInferior-distanciaAlas/2)
 			
 			Contour:ArcTo(corte8,corte7,false)
 			
-			corte9 = Point2D(origenX+alaIzquierda+anchura1+separacionPliegues/2,origenY)
+			corte9 = Point2D(origenX+alaIzquierda+anchura1+distanciaAlas/2,origenY)
 			Contour:LineTo(corte9)
 		end
 		
@@ -2625,17 +2660,17 @@ function dibujarCorteBH(doc)
 			Contour:LineTo(corte9)
 			Contour:LineTo(corte10)
 		else --[BH17]
-			corte6 = Point2D(origenX+alaIzquierda+anchura1-separacionPliegues/2,origenY)
-			corte7 = Point2D(origenX+alaIzquierda+anchura1-separacionPliegues/2,origenY+alaInferior+pliegueInferior-separacionPliegues/2)
+			corte6 = Point2D(origenX+alaIzquierda+anchura1-distanciaAlas/2,origenY)
+			corte7 = Point2D(origenX+alaIzquierda+anchura1-distanciaAlas/2,origenY+alaInferior+pliegueInferior-distanciaAlas/2)
 			Contour:LineTo(corte6)
 			Contour:LineTo(corte7)
 			
-			corte8 = Point2D(origenX+alaIzquierda+anchura1,origenY+alaInferior+pliegueInferior-separacionPliegues/2) --centro de la circunferencia
-			corte9 = Point2D(origenX+alaIzquierda+anchura1+separacionPliegues/2,origenY+alaInferior+pliegueInferior-separacionPliegues/2)
+			corte8 = Point2D(origenX+alaIzquierda+anchura1,origenY+alaInferior+pliegueInferior-distanciaAlas/2) --centro de la circunferencia
+			corte9 = Point2D(origenX+alaIzquierda+anchura1+distanciaAlas/2,origenY+alaInferior+pliegueInferior-distanciaAlas/2)
 			
 			Contour:ArcTo(corte9,corte8,false)
 			
-			corte10 = Point2D(origenX+alaIzquierda+anchura1+separacionPliegues/2,origenY)
+			corte10 = Point2D(origenX+alaIzquierda+anchura1+distanciaAlas/2,origenY)
 			Contour:LineTo(corte10)
 		end
 		
@@ -2785,16 +2820,16 @@ function dibujarCorteBH(doc)
 			Contour:LineTo(corte46)
 			
 		else
-			corte44 = Point2D(origenX+alaIzquierda+anchura1+separacionPliegues/2,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior)
-			corte45 = Point2D(origenX+alaIzquierda+anchura1+separacionPliegues/2,origenY+alaInferior+pliegueInferior+alturaPlaca+separacionPliegues/2)
+			corte44 = Point2D(origenX+alaIzquierda+anchura1+distanciaAlas/2,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior)
+			corte45 = Point2D(origenX+alaIzquierda+anchura1+distanciaAlas/2,origenY+alaInferior+pliegueInferior+alturaPlaca+distanciaAlas/2)
 			Contour:LineTo(corte44)
 			Contour:LineTo(corte45)
 			
-			corte46 = Point2D(origenX+alaIzquierda+anchura1,origenY+alaInferior+pliegueInferior+alturaPlaca+separacionPliegues/2) --centro de la circunferencia
-			corte47 = Point2D(origenX+alaIzquierda+anchura1-separacionPliegues/2,origenY+alaInferior+pliegueInferior+alturaPlaca+separacionPliegues/2)
+			corte46 = Point2D(origenX+alaIzquierda+anchura1,origenY+alaInferior+pliegueInferior+alturaPlaca+distanciaAlas/2) --centro de la circunferencia
+			corte47 = Point2D(origenX+alaIzquierda+anchura1-distanciaAlas/2,origenY+alaInferior+pliegueInferior+alturaPlaca+distanciaAlas/2)
 			Contour:ArcTo(corte47,corte46,false)
 			
-			corte48 = Point2D(origenX+alaIzquierda+anchura1-separacionPliegues/2,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior)
+			corte48 = Point2D(origenX+alaIzquierda+anchura1-distanciaAlas/2,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior)
 			Contour:LineTo(corte48)
 			
 		end
@@ -2842,16 +2877,16 @@ function dibujarCorteBH(doc)
 			Contour:LineTo(corte49)
 			
 		else --[BH15][BH16]
-			corte45 = Point2D(origenX+alaIzquierda+anchura1+separacionPliegues/2,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior)
-			corte46 = Point2D(origenX+alaIzquierda+anchura1+separacionPliegues/2,origenY+alaInferior+pliegueInferior+alturaPlaca+separacionPliegues/2)
+			corte45 = Point2D(origenX+alaIzquierda+anchura1+distanciaAlas/2,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior)
+			corte46 = Point2D(origenX+alaIzquierda+anchura1+distanciaAlas/2,origenY+alaInferior+pliegueInferior+alturaPlaca+distanciaAlas/2)
 			Contour:LineTo(corte45)
 			Contour:LineTo(corte46)
 			
-			corte47 = Point2D(origenX+alaIzquierda+anchura1,origenY+alaInferior+pliegueInferior+alturaPlaca+separacionPliegues/2) --centro de la circunferencia
-			corte48 = Point2D(origenX+alaIzquierda+anchura1-separacionPliegues/2,origenY+alaInferior+pliegueInferior+alturaPlaca+separacionPliegues/2)
+			corte47 = Point2D(origenX+alaIzquierda+anchura1,origenY+alaInferior+pliegueInferior+alturaPlaca+distanciaAlas/2) --centro de la circunferencia
+			corte48 = Point2D(origenX+alaIzquierda+anchura1-distanciaAlas/2,origenY+alaInferior+pliegueInferior+alturaPlaca+distanciaAlas/2)
 			Contour:ArcTo(corte48,corte47,false)
 			
-			corte49 = Point2D(origenX+alaIzquierda+anchura1-separacionPliegues/2,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior)
+			corte49 = Point2D(origenX+alaIzquierda+anchura1-distanciaAlas/2,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior)
 			Contour:LineTo(corte49)
 			
 		end
@@ -3021,6 +3056,8 @@ function dibujarFresadoCH(doc)
 	local fresado22 = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro+anchuraDcha,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior)
 	local fresado23 = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro+anchuraDcha,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior)
 	
+	local fresado24 = Point2D(origenX+alaIzquierda,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior)
+	
 	if modelo==27 or modelo==28 then --REF [CH][CH1]
 		Contour:AppendPoint(fresado1)
 		Contour:LineTo(fresado4)
@@ -3128,6 +3165,7 @@ function dibujarFresadoCH(doc)
 		Contour:LineTo(fresado5)
 		Contour:LineTo(fresado14)
 		Contour:LineTo(fresado13)
+		Contour:LineTo(fresado24)
 		Contour:LineTo(fresado17)
 		Contour:LineTo(fresado18)
 		Contour:LineTo(fresado17)
@@ -3155,6 +3193,7 @@ function dibujarFresadoCH(doc)
 		Contour:LineTo(fresado5)
 		Contour:LineTo(fresado14)
 		Contour:LineTo(fresado13)
+		Contour:LineTo(fresado24)
 		Contour:LineTo(fresado17)
 		Contour:LineTo(fresado18)
 		Contour:LineTo(fresado17)
