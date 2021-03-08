@@ -1972,7 +1972,7 @@ function OnLuaButton_aceptarCH(modeloCH)
 			dibujarFresadoCH(doc)
 			dibujarCorteCH(doc)
 			dibujarTexto(doc)
-			--dibujarTaladrosBH(doc)
+			dibujarTaladrosCH(doc)
 		
 			
 		DisplayMessageBox("Modelo CH Creado Correctamente")
@@ -2581,8 +2581,7 @@ function dibujarTaladrosAH(doc)
 
         end
 
---<<<<<<< HEAD
---=======
+
     
     --Dispone de pliegue inferior
     elseif (modelo==2 or modelo==3) then
@@ -2670,28 +2669,27 @@ function dibujarTaladrosAH(doc)
 		        local radio = diametroTaladros/2
 		        local layer = "Taladros"
 		        dibujarTaladro(puntoCentro, radio, layer)
->>>>>>> 6fbdaf8b2cf9f9f22904255b3b8dba6433a75bf4
+
 
     elseif (modelo==2) then
 
 
-<<<<<<< HEAD
+
     elseif (modelo==3) then
-=======
+
 		   	end
 
 		   end]]--
 
         end
--->>>>>>> 6fbdaf8b2cf9f9f22904255b3b8dba6433a75bf4
+
 
 
 
    	--Test	
     elseif (modelo==4) then
 
---<<<<<<< HEAD
---=======
+
     	--local numeroFilasTaladros=1
 		--local numeroColumnasTaladros=2
 
@@ -2873,11 +2871,11 @@ function dibujarTaladrosAH(doc)
 		        local radio = diametroTaladros/2
 		        local layer = "Taladros"
 		        dibujarTaladro(puntoCentro, radio, layer)
->>>>>>> 6fbdaf8b2cf9f9f22904255b3b8dba6433a75bf4
 
 
 
-<<<<<<< HEAD
+
+
     --Test
 	elseif (modelo==5) then
 =======
@@ -2894,7 +2892,7 @@ function dibujarTaladrosAH(doc)
 
    
 	elseif (modelo==6) then
--->>>>>>> 6fbdaf8b2cf9f9f22904255b3b8dba6433a75bf4
+
 
 		--local numeroFilasTaladros=1
 		--local numeroColumnasTaladros=2
@@ -3019,10 +3017,7 @@ function dibujarTaladrosAH(doc)
 
         end
 
---<<<<<<< HEAD
-   	elseif modelo==6 then
 
---=======
    	elseif modelo==7 then
 
    		--local numeroFilasTaladros=1
@@ -3146,9 +3141,7 @@ function dibujarTaladrosAH(doc)
 
 		   end]]--
 		   end
--->>>>>>> 6fbdaf8b2cf9f9f22904255b3b8dba6433a75bf4
 
-   	elseif modelo==7 then
     
 
     else
@@ -3925,76 +3918,7 @@ function dibujarCorteBH(doc)
 	return true; 
 end
 
-<<<<<<< HEAD
-=======
-function colisoIzqBH(i)
 
-
-
---<<<<<<< HEAD
---=======
-		local Contour = Contour(0.0)
-
-	
-	    --Coliso Izquierda
-		local origenColisoIzq = Point2D(origenX+alaIzquierda+anchuraColiso+(i*(anchura1+(pliegueSuperior))),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-(2*alturaColiso))
-		local pt2ColisoIzq=Point2D(origenX+alaIzquierda+(2*anchuraColiso)+(i*(anchura1+(pliegueSuperior))),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-(2*alturaColiso))
-	    local pt3ColisoIzq=Point2D(origenX+alaIzquierda+(2*anchuraColiso)+(i*(anchura1+(pliegueSuperior))),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso)
-	    local pt4ColisoIzq=Point2D(origenX+alaIzquierda+anchuraColiso+(i*(anchura1+(pliegueSuperior))),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso)
-		
-	    Contour:AppendPoint(origenColisoIzq)
-		Contour:LineTo(pt2ColisoIzq)
-		Contour:LineTo(pt3ColisoIzq)
-		Contour:LineTo(pt4ColisoIzq)
-		Contour:LineTo(origenColisoIzq)
-
-		local cad_object = CreateCadContour(Contour)
-
-		local cur_layer = doc.LayerManager:GetActiveLayer()
-		local layer = doc.LayerManager:GetLayerWithName("Taladros")
-
-		layer:AddObject(cad_object, true)
-		layer:SetColor(0,0,1)
-		layer.Visible = true 
-		doc.LayerManager:SetActiveLayer(cur_layer)
-		doc:Refresh2DView()	
-
-	
-
-end
-
-function colisoDerBH(i)
-
-	
-
-    local Contour = Contour(0.0)
-
-   
-		--Coliso Derecha
-		local origenColisoDerecha = Point2D(origenX+alaIzquierda+anchura1-(pliegueSuperior)-(2*anchuraColiso)+(i*(anchura2+(pliegueSuperior))),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-(2*alturaColiso))
-		local pt2ColisoDer=Point2D(origenX+alaIzquierda+anchura1-(pliegueSuperior)-(anchuraColiso)+(i*(anchura2+(pliegueSuperior))),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-(2*alturaColiso))
-	    local pt3ColisoDer=Point2D(origenX+alaIzquierda+anchura1-(pliegueSuperior)-(anchuraColiso)+(i*(anchura2+(pliegueSuperior))),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso)
-	    local pt4ColisoDer=Point2D(origenX+alaIzquierda+anchura1-(pliegueSuperior)-(2*anchuraColiso)+(i*(anchura2+(pliegueSuperior))),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso)
-		
-	    Contour:AppendPoint(origenColisoDerecha)
-		Contour:LineTo(pt2ColisoDer)
-		Contour:LineTo(pt3ColisoDer)
-		Contour:LineTo(pt4ColisoDer)
-		Contour:LineTo(origenColisoDerecha)
-
-		local cad_object = CreateCadContour(Contour)
-		local cur_layer = doc.LayerManager:GetActiveLayer()
-		local layer = doc.LayerManager:GetLayerWithName("Taladros")
-
-		layer:AddObject(cad_object, true)
-		layer:SetColor(0,0,1)
-		layer.Visible = true 
-		doc.LayerManager:SetActiveLayer(cur_layer)
-		doc:Refresh2DView()	
-
-	
-end
->>>>>>> 39d1b33427e2abff4c25221f042a078c4bf6fb9d
 
 
 function dibujarTaladrosBH(doc)
