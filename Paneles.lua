@@ -4855,7 +4855,7 @@ end
 
 
 
--->>>>>>> 6fbdaf8b2cf9f9f22904255b3b8dba6433a75bf4
+
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------- DIBUJAR REF CH ---------------------------------------------------------------------------------------------------------------------
@@ -5571,7 +5571,7 @@ function dibujarTaladrosCH(doc)
 	local numeroColisos=1
     local numeroTaladros=1
 
-	if modelo==9 then
+	if modelo==27 then
 
 		numeroColisos=1
 		numeroTaladros=1
@@ -5579,52 +5579,743 @@ function dibujarTaladrosCH(doc)
 		--Con colisos superiores
     	if crearColiso==1 then
 			
-		   --Dibujar Coliso Izquierda y Derecha
+		  
 		   	for i=0,numeroColisos do
 
-		   		--Coliso Izquierda
-				local origenColiso = Point2D(origenX+alaIzquierda+anchuraColiso+(i*(anchura1+(pliegueSuperior))),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-(2*alturaColiso))
-				local pt2Coliso=Point2D(origenX+alaIzquierda+(2*anchuraColiso)+(i*(anchura1+(pliegueSuperior))),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-(2*alturaColiso))
-			    local pt3Coliso=Point2D(origenX+alaIzquierda+(2*anchuraColiso)+(i*(anchura1+(pliegueSuperior))),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso)
-			    local pt4Coliso=Point2D(origenX+alaIzquierda+anchuraColiso+(i*(anchura1+(pliegueSuperior))),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso)
-		  		  
-		       dibujarColiso(origenColiso,pt2Coliso,pt3Coliso,pt4Coliso)
+		   			--Coliso lateral izquierda y centro
+					local origenColiso = Point2D(origenX+alaIzquierda+anchuraColiso+(i*(anchuraIzq+(pliegueSuperior))),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-(2*alturaColiso))
+					local pt2Coliso=Point2D(origenX+alaIzquierda+(2*anchuraColiso)+(i*(anchuraIzq +(pliegueSuperior))),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-(2*alturaColiso))
+				    local pt3Coliso=Point2D(origenX+alaIzquierda+(2*anchuraColiso)+(i*(anchuraIzq+(pliegueSuperior))),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso)
+				    local pt4Coliso=Point2D(origenX+alaIzquierda+anchuraColiso+(i*(anchuraIzq+(pliegueSuperior))),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso)
+			  		  
+			       dibujarColiso(origenColiso,pt2Coliso,pt3Coliso,pt4Coliso)
 
-		       --Coliso Derecha
-				local origenColiso = Point2D(origenX+alaIzquierda+anchura1-(pliegueSuperior)-(2*anchuraColiso)+(i*(anchura2+(pliegueSuperior))),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-(2*alturaColiso))
-				local pt2Coliso=Point2D(origenX+alaIzquierda+anchura1-(pliegueSuperior)-(anchuraColiso)+(i*(anchura2+(pliegueSuperior))),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-(2*alturaColiso))
-			    local pt3Coliso=Point2D(origenX+alaIzquierda+anchura1-(pliegueSuperior)-(anchuraColiso)+(i*(anchura2+(pliegueSuperior))),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso)
-			    local pt4Coliso=Point2D(origenX+alaIzquierda+anchura1-(pliegueSuperior)-(2*anchuraColiso)+(i*(anchura2+(pliegueSuperior))),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso)
+			       
+					local origenColiso = Point2D(origenX+alaIzquierda+anchuraIzq-(pliegueSuperior)-(2*anchuraColiso)+(i*(anchuraCentro)),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-(2*alturaColiso))
+					local pt2Coliso=Point2D(origenX+alaIzquierda+anchuraIzq-(pliegueSuperior)-(anchuraColiso)+(i*(anchuraCentro)),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-(2*alturaColiso))
+				    local pt3Coliso=Point2D(origenX+alaIzquierda+anchuraIzq-(pliegueSuperior)-(anchuraColiso)+(i*(anchuraCentro)),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso)
+				    local pt4Coliso=Point2D(origenX+alaIzquierda+anchuraIzq-(pliegueSuperior)-(2*anchuraColiso)+(i*(anchuraCentro)),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso)
 
-			   dibujarColiso(origenColiso,pt2Coliso,pt3Coliso,pt4Coliso)
+				   dibujarColiso(origenColiso,pt2Coliso,pt3Coliso,pt4Coliso)
+
+			   				
 
 		    end
+
+		    --Coliso lateral derecha
+			local origenColiso = Point2D(origenX+alaIzquierda+anchuraColiso+(anchuraIzq+anchuraCentro+pliegueSuperior),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-(2*alturaColiso))
+			local pt2Coliso=Point2D(origenX+alaIzquierda+(2*anchuraColiso)+(anchuraIzq+anchuraCentro+pliegueSuperior),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-(2*alturaColiso))
+		    local pt3Coliso=Point2D(origenX+alaIzquierda+(2*anchuraColiso)+(anchuraIzq+anchuraCentro+pliegueSuperior),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso)
+		    local pt4Coliso=Point2D(origenX+alaIzquierda+anchuraColiso+(anchuraIzq+anchuraCentro+pliegueSuperior),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso)
+	  		  
+	       dibujarColiso(origenColiso,pt2Coliso,pt3Coliso,pt4Coliso)
+
+	       
+			local origenColiso = Point2D(origenX+alaIzquierda+anchuraIzq-(pliegueSuperior)-(2*anchuraColiso)+(anchuraCentro+anchuraDerecha+pliegueSuperior),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-(2*alturaColiso))
+			local pt2Coliso=Point2D(origenX+alaIzquierda+anchuraIzq-(pliegueSuperior)-(anchuraColiso)+(anchuraCentro+anchuraDerecha+pliegueSuperior),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-(2*alturaColiso))
+		    local pt3Coliso=Point2D(origenX+alaIzquierda+anchuraIzq-(pliegueSuperior)-(anchuraColiso)+(anchuraCentro+anchuraDerecha+pliegueSuperior),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso)
+		    local pt4Coliso=Point2D(origenX+alaIzquierda+anchuraIzq-(pliegueSuperior)-(2*anchuraColiso)+(anchuraCentro+anchuraDerecha+pliegueSuperior),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso)
+
+		   dibujarColiso(origenColiso,pt2Coliso,pt3Coliso,pt4Coliso)
+
 
 		 --Sin colisos superiores	  		
    		 else
 
-   		 	for i=0,numeroColisos do
+   		 	for i=0,numeroTaladros do
    		 	
-		   		--Taladro Superior Izquierda
-		   		local puntoCentro = Point2D(origenX+alaIzquierda+anchuraColiso+anchuraColiso/2+(i*(anchura1+(pliegueSuperior))),alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
+		   		--Taladro lateral izquierda y centro
+		   		local puntoCentro = Point2D(origenX+alaIzquierda+anchuraColiso+anchuraColiso/2+(i*(anchuraIzq+(pliegueSuperior))),alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
 		        local radio = diametroTaladros/2
 		        local layer = "Taladros"
 		        dibujarTaladro(puntoCentro, radio, layer)
 		        
 		        --Taladro Superior Derecha
-		   		local puntoCentro = Point2D(origenX+alaIzquierda+anchura1-(pliegueSuperior)-(anchuraColiso)-anchuraColiso/2+(i*(anchura2+(pliegueSuperior))),alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
+		   		local puntoCentro = Point2D(origenX+alaIzquierda+anchuraIzq-(pliegueSuperior)-(anchuraColiso)-anchuraColiso/2+(i*(anchuraCentro)),alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
 		        local radio = diametroTaladros/2
 		        local layer = "Taladros"
 		        dibujarTaladro(puntoCentro, radio, layer)
 
 	        end
+
+
+	        --Taladro lateral derecha
+		   		local puntoCentro = Point2D(origenX+alaIzquierda+anchuraColiso+anchuraColiso/2+(anchuraIzq+anchuraCentro+pliegueSuperior),alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
+		        local radio = diametroTaladros/2
+		        local layer = "Taladros"
+		        dibujarTaladro(puntoCentro, radio, layer)
+		        
+		        --Taladro Superior Derecha
+		   		local puntoCentro = Point2D(origenX+alaIzquierda+anchuraIzq-(pliegueSuperior)-(anchuraColiso)-anchuraColiso/2+(anchuraCentro+anchuraDerecha+pliegueSuperior),alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
+		        local radio = diametroTaladros/2
+		        local layer = "Taladros"
+		        dibujarTaladro(puntoCentro, radio, layer)
+
+
         end
 
     end
 
+    if modelo==28 then
+
+		numeroColisos=1
+		numeroTaladros=1
+				
+		--Con colisos superiores
+    	if crearColiso==1 then
+			
+		  
+		   	for i=0,numeroColisos do
+
+		   			--Coliso lateral izquierda y centro
+					local origenColiso = Point2D(origenX+alaIzquierda+anchuraColiso+(i*(anchuraIzq+(pliegueSuperior))),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-(2*alturaColiso))
+					local pt2Coliso=Point2D(origenX+alaIzquierda+(2*anchuraColiso)+(i*(anchuraIzq +(pliegueSuperior))),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-(2*alturaColiso))
+				    local pt3Coliso=Point2D(origenX+alaIzquierda+(2*anchuraColiso)+(i*(anchuraIzq+(pliegueSuperior))),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso)
+				    local pt4Coliso=Point2D(origenX+alaIzquierda+anchuraColiso+(i*(anchuraIzq+(pliegueSuperior))),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso)
+			  		  
+			       dibujarColiso(origenColiso,pt2Coliso,pt3Coliso,pt4Coliso)
+
+			       
+					local origenColiso = Point2D(origenX+alaIzquierda+anchuraIzq-(pliegueSuperior)-(2*anchuraColiso)+(i*(anchuraCentro)),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-(2*alturaColiso))
+					local pt2Coliso=Point2D(origenX+alaIzquierda+anchuraIzq-(pliegueSuperior)-(anchuraColiso)+(i*(anchuraCentro)),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-(2*alturaColiso))
+				    local pt3Coliso=Point2D(origenX+alaIzquierda+anchuraIzq-(pliegueSuperior)-(anchuraColiso)+(i*(anchuraCentro)),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso)
+				    local pt4Coliso=Point2D(origenX+alaIzquierda+anchuraIzq-(pliegueSuperior)-(2*anchuraColiso)+(i*(anchuraCentro)),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso)
+
+				   dibujarColiso(origenColiso,pt2Coliso,pt3Coliso,pt4Coliso)
+
+			   				
+
+		    end
+
+		    --Coliso lateral derecha
+			local origenColiso = Point2D(origenX+alaIzquierda+anchuraColiso+(anchuraIzq+anchuraCentro+pliegueSuperior),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-(2*alturaColiso))
+			local pt2Coliso=Point2D(origenX+alaIzquierda+(2*anchuraColiso)+(anchuraIzq+anchuraCentro+pliegueSuperior),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-(2*alturaColiso))
+		    local pt3Coliso=Point2D(origenX+alaIzquierda+(2*anchuraColiso)+(anchuraIzq+anchuraCentro+pliegueSuperior),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso)
+		    local pt4Coliso=Point2D(origenX+alaIzquierda+anchuraColiso+(anchuraIzq+anchuraCentro+pliegueSuperior),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso)
+	  		  
+	       dibujarColiso(origenColiso,pt2Coliso,pt3Coliso,pt4Coliso)
+
+	       
+			local origenColiso = Point2D(origenX+alaIzquierda+anchuraIzq-(pliegueSuperior)-(2*anchuraColiso)+(anchuraCentro+anchuraDerecha+pliegueSuperior),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-(2*alturaColiso))
+			local pt2Coliso=Point2D(origenX+alaIzquierda+anchuraIzq-(pliegueSuperior)-(anchuraColiso)+(anchuraCentro+anchuraDerecha+pliegueSuperior),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-(2*alturaColiso))
+		    local pt3Coliso=Point2D(origenX+alaIzquierda+anchuraIzq-(pliegueSuperior)-(anchuraColiso)+(anchuraCentro+anchuraDerecha+pliegueSuperior),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso)
+		    local pt4Coliso=Point2D(origenX+alaIzquierda+anchuraIzq-(pliegueSuperior)-(2*anchuraColiso)+(anchuraCentro+anchuraDerecha+pliegueSuperior),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso)
+
+		   dibujarColiso(origenColiso,pt2Coliso,pt3Coliso,pt4Coliso)
 
 
+		 --Sin colisos superiores	  		
+   		 else
 
+   		 	for i=0,numeroTaladros do
+   		 	
+		   		--Taladro lateral izquierda y centro
+		   		local puntoCentro = Point2D(origenX+alaIzquierda+anchuraColiso+anchuraColiso/2+(i*(anchuraIzq+(pliegueSuperior))),alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
+		        local radio = diametroTaladros/2
+		        local layer = "Taladros"
+		        dibujarTaladro(puntoCentro, radio, layer)
+		        
+		        --Taladro Superior Derecha
+		   		local puntoCentro = Point2D(origenX+alaIzquierda+anchuraIzq-(pliegueSuperior)-(anchuraColiso)-anchuraColiso/2+(i*(anchuraCentro)),alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
+		        local radio = diametroTaladros/2
+		        local layer = "Taladros"
+		        dibujarTaladro(puntoCentro, radio, layer)
+
+	        end
+
+
+	        --Taladro lateral derecha
+		   		local puntoCentro = Point2D(origenX+alaIzquierda+anchuraColiso+anchuraColiso/2+(anchuraIzq+anchuraCentro+pliegueSuperior),alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
+		        local radio = diametroTaladros/2
+		        local layer = "Taladros"
+		        dibujarTaladro(puntoCentro, radio, layer)
+		        
+		        --Taladro Superior Derecha
+		   		local puntoCentro = Point2D(origenX+alaIzquierda+anchuraIzq-(pliegueSuperior)-(anchuraColiso)-anchuraColiso/2+(anchuraCentro+anchuraDerecha+pliegueSuperior),alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
+		        local radio = diametroTaladros/2
+		        local layer = "Taladros"
+		        dibujarTaladro(puntoCentro, radio, layer)
+
+
+        end
+
+    end
+
+    if modelo==29 then
+
+		numeroColisos=1
+		numeroTaladros=1
+				
+		--Con colisos superiores
+    	if crearColiso==1 then
+			
+		  
+		   	for i=0,numeroColisos do
+
+		   			--Coliso lateral izquierda y centro
+					local origenColiso = Point2D(origenX+alaIzquierda+anchuraColiso+(i*(anchuraIzq+(pliegueSuperior))),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-(2*alturaColiso))
+					local pt2Coliso=Point2D(origenX+alaIzquierda+(2*anchuraColiso)+(i*(anchuraIzq +(pliegueSuperior))),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-(2*alturaColiso))
+				    local pt3Coliso=Point2D(origenX+alaIzquierda+(2*anchuraColiso)+(i*(anchuraIzq+(pliegueSuperior))),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso)
+				    local pt4Coliso=Point2D(origenX+alaIzquierda+anchuraColiso+(i*(anchuraIzq+(pliegueSuperior))),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso)
+			  		  
+			       dibujarColiso(origenColiso,pt2Coliso,pt3Coliso,pt4Coliso)
+
+			       
+					local origenColiso = Point2D(origenX+alaIzquierda+anchuraIzq-(pliegueSuperior)-(2*anchuraColiso)+(i*(anchuraCentro)),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-(2*alturaColiso))
+					local pt2Coliso=Point2D(origenX+alaIzquierda+anchuraIzq-(pliegueSuperior)-(anchuraColiso)+(i*(anchuraCentro)),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-(2*alturaColiso))
+				    local pt3Coliso=Point2D(origenX+alaIzquierda+anchuraIzq-(pliegueSuperior)-(anchuraColiso)+(i*(anchuraCentro)),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso)
+				    local pt4Coliso=Point2D(origenX+alaIzquierda+anchuraIzq-(pliegueSuperior)-(2*anchuraColiso)+(i*(anchuraCentro)),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso)
+
+				   dibujarColiso(origenColiso,pt2Coliso,pt3Coliso,pt4Coliso)
+
+			   				
+
+		    end
+
+		    --Coliso lateral derecha
+			local origenColiso = Point2D(origenX+alaIzquierda+anchuraColiso+(anchuraIzq+anchuraCentro+pliegueSuperior),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-(2*alturaColiso))
+			local pt2Coliso=Point2D(origenX+alaIzquierda+(2*anchuraColiso)+(anchuraIzq+anchuraCentro+pliegueSuperior),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-(2*alturaColiso))
+		    local pt3Coliso=Point2D(origenX+alaIzquierda+(2*anchuraColiso)+(anchuraIzq+anchuraCentro+pliegueSuperior),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso)
+		    local pt4Coliso=Point2D(origenX+alaIzquierda+anchuraColiso+(anchuraIzq+anchuraCentro+pliegueSuperior),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso)
+	  		  
+	       dibujarColiso(origenColiso,pt2Coliso,pt3Coliso,pt4Coliso)
+
+	       
+			local origenColiso = Point2D(origenX+alaIzquierda+anchuraIzq-(pliegueSuperior)-(2*anchuraColiso)+(anchuraCentro+anchuraDerecha+pliegueSuperior),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-(2*alturaColiso))
+			local pt2Coliso=Point2D(origenX+alaIzquierda+anchuraIzq-(pliegueSuperior)-(anchuraColiso)+(anchuraCentro+anchuraDerecha+pliegueSuperior),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-(2*alturaColiso))
+		    local pt3Coliso=Point2D(origenX+alaIzquierda+anchuraIzq-(pliegueSuperior)-(anchuraColiso)+(anchuraCentro+anchuraDerecha+pliegueSuperior),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso)
+		    local pt4Coliso=Point2D(origenX+alaIzquierda+anchuraIzq-(pliegueSuperior)-(2*anchuraColiso)+(anchuraCentro+anchuraDerecha+pliegueSuperior),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso)
+
+		   dibujarColiso(origenColiso,pt2Coliso,pt3Coliso,pt4Coliso)
+
+
+		 --Sin colisos superiores	  		
+   		 else
+
+   		 	for i=0,numeroTaladros do
+   		 	
+		   		--Taladro lateral izquierda y centro
+		   		local puntoCentro = Point2D(origenX+alaIzquierda+anchuraColiso+anchuraColiso/2+(i*(anchuraIzq+(pliegueSuperior))),alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
+		        local radio = diametroTaladros/2
+		        local layer = "Taladros"
+		        dibujarTaladro(puntoCentro, radio, layer)
+		        
+		        --Taladro Superior Derecha
+		   		local puntoCentro = Point2D(origenX+alaIzquierda+anchuraIzq-(pliegueSuperior)-(anchuraColiso)-anchuraColiso/2+(i*(anchuraCentro)),alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
+		        local radio = diametroTaladros/2
+		        local layer = "Taladros"
+		        dibujarTaladro(puntoCentro, radio, layer)
+
+	        end
+
+
+	        --Taladro lateral derecha
+		   		local puntoCentro = Point2D(origenX+alaIzquierda+anchuraColiso+anchuraColiso/2+(anchuraIzq+anchuraCentro+pliegueSuperior),alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
+		        local radio = diametroTaladros/2
+		        local layer = "Taladros"
+		        dibujarTaladro(puntoCentro, radio, layer)
+		        
+		        --Taladro Superior Derecha
+		   		local puntoCentro = Point2D(origenX+alaIzquierda+anchuraIzq-(pliegueSuperior)-(anchuraColiso)-anchuraColiso/2+(anchuraCentro+anchuraDerecha+pliegueSuperior),alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
+		        local radio = diametroTaladros/2
+		        local layer = "Taladros"
+		        dibujarTaladro(puntoCentro, radio, layer)
+
+
+        end
+
+    end
+
+    if modelo==30 then
+
+		numeroColisos=1
+		numeroTaladros=1
+				
+		--Con colisos superiores
+    	if crearColiso==1 then
+			
+		  
+		   	for i=0,numeroColisos do
+
+		   			--Coliso lateral izquierda y centro
+					local origenColiso = Point2D(origenX+alaIzquierda+anchuraColiso+(i*(anchuraIzq+(pliegueSuperior))),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-(2*alturaColiso))
+					local pt2Coliso=Point2D(origenX+alaIzquierda+(2*anchuraColiso)+(i*(anchuraIzq +(pliegueSuperior))),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-(2*alturaColiso))
+				    local pt3Coliso=Point2D(origenX+alaIzquierda+(2*anchuraColiso)+(i*(anchuraIzq+(pliegueSuperior))),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso)
+				    local pt4Coliso=Point2D(origenX+alaIzquierda+anchuraColiso+(i*(anchuraIzq+(pliegueSuperior))),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso)
+			  		  
+			       dibujarColiso(origenColiso,pt2Coliso,pt3Coliso,pt4Coliso)
+
+			       
+					local origenColiso = Point2D(origenX+alaIzquierda+anchuraIzq-(pliegueSuperior)-(2*anchuraColiso)+(i*(anchuraCentro)),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-(2*alturaColiso))
+					local pt2Coliso=Point2D(origenX+alaIzquierda+anchuraIzq-(pliegueSuperior)-(anchuraColiso)+(i*(anchuraCentro)),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-(2*alturaColiso))
+				    local pt3Coliso=Point2D(origenX+alaIzquierda+anchuraIzq-(pliegueSuperior)-(anchuraColiso)+(i*(anchuraCentro)),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso)
+				    local pt4Coliso=Point2D(origenX+alaIzquierda+anchuraIzq-(pliegueSuperior)-(2*anchuraColiso)+(i*(anchuraCentro)),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso)
+
+				   dibujarColiso(origenColiso,pt2Coliso,pt3Coliso,pt4Coliso)
+
+			   				
+
+		    end
+
+		    --Coliso lateral derecha
+			local origenColiso = Point2D(origenX+alaIzquierda+anchuraColiso+(anchuraIzq+anchuraCentro+pliegueSuperior),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-(2*alturaColiso))
+			local pt2Coliso=Point2D(origenX+alaIzquierda+(2*anchuraColiso)+(anchuraIzq+anchuraCentro+pliegueSuperior),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-(2*alturaColiso))
+		    local pt3Coliso=Point2D(origenX+alaIzquierda+(2*anchuraColiso)+(anchuraIzq+anchuraCentro+pliegueSuperior),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso)
+		    local pt4Coliso=Point2D(origenX+alaIzquierda+anchuraColiso+(anchuraIzq+anchuraCentro+pliegueSuperior),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso)
+	  		  
+	       dibujarColiso(origenColiso,pt2Coliso,pt3Coliso,pt4Coliso)
+
+	       
+			local origenColiso = Point2D(origenX+alaIzquierda+anchuraIzq-(pliegueSuperior)-(2*anchuraColiso)+(anchuraCentro+anchuraDerecha+pliegueSuperior),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-(2*alturaColiso))
+			local pt2Coliso=Point2D(origenX+alaIzquierda+anchuraIzq-(pliegueSuperior)-(anchuraColiso)+(anchuraCentro+anchuraDerecha+pliegueSuperior),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-(2*alturaColiso))
+		    local pt3Coliso=Point2D(origenX+alaIzquierda+anchuraIzq-(pliegueSuperior)-(anchuraColiso)+(anchuraCentro+anchuraDerecha+pliegueSuperior),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso)
+		    local pt4Coliso=Point2D(origenX+alaIzquierda+anchuraIzq-(pliegueSuperior)-(2*anchuraColiso)+(anchuraCentro+anchuraDerecha+pliegueSuperior),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso)
+
+		   dibujarColiso(origenColiso,pt2Coliso,pt3Coliso,pt4Coliso)
+
+
+		 --Sin colisos superiores	  		
+   		 else
+
+   		 	for i=0,numeroTaladros do
+   		 	
+		   		--Taladro lateral izquierda y centro
+		   		local puntoCentro = Point2D(origenX+alaIzquierda+anchuraColiso+anchuraColiso/2+(i*(anchuraIzq+(pliegueSuperior))),alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
+		        local radio = diametroTaladros/2
+		        local layer = "Taladros"
+		        dibujarTaladro(puntoCentro, radio, layer)
+		        
+		        --Taladro Superior Derecha
+		   		local puntoCentro = Point2D(origenX+alaIzquierda+anchuraIzq-(pliegueSuperior)-(anchuraColiso)-anchuraColiso/2+(i*(anchuraCentro)),alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
+		        local radio = diametroTaladros/2
+		        local layer = "Taladros"
+		        dibujarTaladro(puntoCentro, radio, layer)
+
+	        end
+
+
+	        --Taladro lateral derecha
+		   		local puntoCentro = Point2D(origenX+alaIzquierda+anchuraColiso+anchuraColiso/2+(anchuraIzq+anchuraCentro+pliegueSuperior),alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
+		        local radio = diametroTaladros/2
+		        local layer = "Taladros"
+		        dibujarTaladro(puntoCentro, radio, layer)
+		        
+		        --Taladro Superior Derecha
+		   		local puntoCentro = Point2D(origenX+alaIzquierda+anchuraIzq-(pliegueSuperior)-(anchuraColiso)-anchuraColiso/2+(anchuraCentro+anchuraDerecha+pliegueSuperior),alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
+		        local radio = diametroTaladros/2
+		        local layer = "Taladros"
+		        dibujarTaladro(puntoCentro, radio, layer)
+
+
+        end
+
+    end
+
+    if modelo==31 then
+
+		
+				
+		--Con colisos superiores
+    	if crearColiso==1 then
+			
+		  
+   			--Coliso lateral izquierda 
+			local origenColiso = Point2D(origenX+alaIzquierda+anchuraColiso,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-(2*alturaColiso))
+			local pt2Coliso=Point2D(origenX+alaIzquierda+(2*anchuraColiso),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-(2*alturaColiso))
+		    local pt3Coliso=Point2D(origenX+alaIzquierda+(2*anchuraColiso),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso)
+		    local pt4Coliso=Point2D(origenX+alaIzquierda+anchuraColiso,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso)
+	  		  
+	       dibujarColiso(origenColiso,pt2Coliso,pt3Coliso,pt4Coliso)
+
+	       --Coliso central Izquierdo
+		
+			local origenColiso = Point2D(origenX+alaIzquierda+anchuraColiso+(anchuraIzq+alaSuperior+pliegueSuperior),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-(2*alturaColiso))
+			local pt2Coliso=Point2D(origenX+alaIzquierda+(2*anchuraColiso)+(anchuraIzq+alaSuperior+pliegueSuperior),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-(2*alturaColiso))
+		    local pt3Coliso=Point2D(origenX+alaIzquierda+(2*anchuraColiso)+(anchuraIzq+alaSuperior+pliegueSuperior),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso)
+		    local pt4Coliso=Point2D(origenX+alaIzquierda+anchuraColiso+(anchuraIzq+alaSuperior+pliegueSuperior),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso)
+	  		  
+	       dibujarColiso(origenColiso,pt2Coliso,pt3Coliso,pt4Coliso)
+
+		  
+			--Coliso central Derecho
+			local origenColiso = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro-(alaSuperior+pliegueSuperior)-(2*anchuraColiso),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-(2*alturaColiso))
+			local pt2Coliso=Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro-(alaSuperior+pliegueSuperior)-(anchuraColiso),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-(2*alturaColiso))
+		    local pt3Coliso=Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro-(alaSuperior+pliegueSuperior)-(anchuraColiso),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso)
+		    local pt4Coliso=Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro-(alaSuperior+pliegueSuperior)-(2*anchuraColiso),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso)
+
+		   dibujarColiso(origenColiso,pt2Coliso,pt3Coliso,pt4Coliso)   				
+
+
+		    --Coliso lateral derecha
+			local origenColiso = Point2D(origenX+alaIzquierda-(2*anchuraColiso)+(anchuraIzq+anchuraCentro+anchuraDerecha),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-(2*alturaColiso))
+			local pt2Coliso=Point2D(origenX+alaIzquierda-(anchuraColiso)+(anchuraIzq+anchuraCentro+anchuraDerecha),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-(2*alturaColiso))
+		    local pt3Coliso=Point2D(origenX+alaIzquierda-(anchuraColiso)+(anchuraIzq+anchuraCentro+anchuraDerecha),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso)
+		    local pt4Coliso=Point2D(origenX+alaIzquierda-(2*anchuraColiso)+(anchuraIzq+anchuraCentro+anchuraDerecha),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso)
+	  		  
+	       dibujarColiso(origenColiso,pt2Coliso,pt3Coliso,pt4Coliso)
+
+	       
+			
+
+		 --Sin colisos superiores	  		
+   		 else
+
+   		 	 	
+		   		--Taladro lateral izquierda 
+		   		local puntoCentro = Point2D(origenX+alaIzquierda+anchuraColiso+anchuraColiso/2,alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
+		        local radio = diametroTaladros/2
+		        local layer = "Taladros"
+		        dibujarTaladro(puntoCentro, radio, layer)
+		        
+		        --Taladro Superior Derecha
+		   		local puntoCentro = Point2D(origenX+alaIzquierda+(anchuraIzq+alaSuperior+pliegueSuperior)+anchuraColiso+anchuraColiso/2,alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
+		        local radio = diametroTaladros/2
+		        local layer = "Taladros"
+		        dibujarTaladro(puntoCentro, radio, layer)
+
+	     
+	        --Taladro lateral derecha
+		   		local puntoCentro = Point2D(origenX+alaIzquierda-anchuraColiso-anchuraColiso/2+(anchuraIzq+anchuraCentro-pliegueSuperior-alaSuperior),alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
+		        local radio = diametroTaladros/2
+		        local layer = "Taladros"
+		        dibujarTaladro(puntoCentro, radio, layer)
+		        
+		        --Taladro Superior Derecha
+		   		local puntoCentro = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro+anchuraDerecha-anchuraColiso-anchuraColiso/2,alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
+		        local radio = diametroTaladros/2
+		        local layer = "Taladros"
+		        dibujarTaladro(puntoCentro, radio, layer)
+
+
+        end
+
+    end
+
+    if modelo==32 then
+
+		
+				
+		--Con colisos superiores
+    	if crearColiso==1 then
+			
+		  
+   			--Coliso lateral izquierda 
+			local origenColiso = Point2D(origenX+alaIzquierda+anchuraColiso,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-(2*alturaColiso))
+			local pt2Coliso=Point2D(origenX+alaIzquierda+(2*anchuraColiso),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-(2*alturaColiso))
+		    local pt3Coliso=Point2D(origenX+alaIzquierda+(2*anchuraColiso),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso)
+		    local pt4Coliso=Point2D(origenX+alaIzquierda+anchuraColiso,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso)
+	  		  
+	       dibujarColiso(origenColiso,pt2Coliso,pt3Coliso,pt4Coliso)
+
+	       --Coliso central Izquierdo
+		
+			local origenColiso = Point2D(origenX+alaIzquierda+anchuraColiso+(anchuraIzq+alaSuperior+pliegueSuperior),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-(2*alturaColiso))
+			local pt2Coliso=Point2D(origenX+alaIzquierda+(2*anchuraColiso)+(anchuraIzq+alaSuperior+pliegueSuperior),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-(2*alturaColiso))
+		    local pt3Coliso=Point2D(origenX+alaIzquierda+(2*anchuraColiso)+(anchuraIzq+alaSuperior+pliegueSuperior),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso)
+		    local pt4Coliso=Point2D(origenX+alaIzquierda+anchuraColiso+(anchuraIzq+alaSuperior+pliegueSuperior),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso)
+	  		  
+	       dibujarColiso(origenColiso,pt2Coliso,pt3Coliso,pt4Coliso)
+
+		  
+			--Coliso central Derecho
+			local origenColiso = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro-(alaSuperior+pliegueSuperior)-(2*anchuraColiso),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-(2*alturaColiso))
+			local pt2Coliso=Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro-(alaSuperior+pliegueSuperior)-(anchuraColiso),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-(2*alturaColiso))
+		    local pt3Coliso=Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro-(alaSuperior+pliegueSuperior)-(anchuraColiso),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso)
+		    local pt4Coliso=Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro-(alaSuperior+pliegueSuperior)-(2*anchuraColiso),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso)
+
+		   dibujarColiso(origenColiso,pt2Coliso,pt3Coliso,pt4Coliso)   				
+
+
+		    --Coliso lateral derecha
+			local origenColiso = Point2D(origenX+alaIzquierda-(2*anchuraColiso)+(anchuraIzq+anchuraCentro+anchuraDerecha),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-(2*alturaColiso))
+			local pt2Coliso=Point2D(origenX+alaIzquierda-(anchuraColiso)+(anchuraIzq+anchuraCentro+anchuraDerecha),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-(2*alturaColiso))
+		    local pt3Coliso=Point2D(origenX+alaIzquierda-(anchuraColiso)+(anchuraIzq+anchuraCentro+anchuraDerecha),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso)
+		    local pt4Coliso=Point2D(origenX+alaIzquierda-(2*anchuraColiso)+(anchuraIzq+anchuraCentro+anchuraDerecha),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso)
+	  		  
+	       dibujarColiso(origenColiso,pt2Coliso,pt3Coliso,pt4Coliso)
+
+	       
+			
+
+		 --Sin colisos superiores	  		
+   		 else
+
+   		 	 	
+		   		--Taladro lateral izquierda 
+		   		local puntoCentro = Point2D(origenX+alaIzquierda+anchuraColiso+anchuraColiso/2,alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
+		        local radio = diametroTaladros/2
+		        local layer = "Taladros"
+		        dibujarTaladro(puntoCentro, radio, layer)
+		        
+		        --Taladro Superior Derecha
+		   		local puntoCentro = Point2D(origenX+alaIzquierda+(anchuraIzq+alaSuperior+pliegueSuperior)+anchuraColiso+anchuraColiso/2,alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
+		        local radio = diametroTaladros/2
+		        local layer = "Taladros"
+		        dibujarTaladro(puntoCentro, radio, layer)
+
+	     
+	        --Taladro lateral derecha
+		   		local puntoCentro = Point2D(origenX+alaIzquierda-anchuraColiso-anchuraColiso/2+(anchuraIzq+anchuraCentro-pliegueSuperior-alaSuperior),alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
+		        local radio = diametroTaladros/2
+		        local layer = "Taladros"
+		        dibujarTaladro(puntoCentro, radio, layer)
+		        
+		        --Taladro Superior Derecha
+		   		local puntoCentro = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro+anchuraDerecha-anchuraColiso-anchuraColiso/2,alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
+		        local radio = diametroTaladros/2
+		        local layer = "Taladros"
+		        dibujarTaladro(puntoCentro, radio, layer)
+
+
+        end
+
+    end
+
+   --***************************************
+   if modelo==33 then
+		
+				
+		--Con colisos superiores
+    	if crearColiso==1 then
+			
+		  
+   			--Coliso lateral izquierda 
+			local origenColiso = Point2D(origenX+alaIzquierda+anchuraColiso,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-(2*alturaColiso))
+			local pt2Coliso=Point2D(origenX+alaIzquierda+(2*anchuraColiso),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-(2*alturaColiso))
+		    local pt3Coliso=Point2D(origenX+alaIzquierda+(2*anchuraColiso),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso)
+		    local pt4Coliso=Point2D(origenX+alaIzquierda+anchuraColiso,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso)
+	  		  
+	       dibujarColiso(origenColiso,pt2Coliso,pt3Coliso,pt4Coliso)
+
+	       --Coliso central Izquierdo
+		
+			local origenColiso = Point2D(origenX+alaIzquierda+anchuraColiso+(anchuraIzq+pliegueSuperior),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-(2*alturaColiso))
+			local pt2Coliso=Point2D(origenX+alaIzquierda+(2*anchuraColiso)+(anchuraIzq+pliegueSuperior),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-(2*alturaColiso))
+		    local pt3Coliso=Point2D(origenX+alaIzquierda+(2*anchuraColiso)+(anchuraIzq+pliegueSuperior),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso)
+		    local pt4Coliso=Point2D(origenX+alaIzquierda+anchuraColiso+(anchuraIzq+pliegueSuperior),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso)
+	  		  
+	       dibujarColiso(origenColiso,pt2Coliso,pt3Coliso,pt4Coliso)
+
+		  
+			--Coliso central Derecho
+			local origenColiso = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro-(pliegueSuperior)-(2*anchuraColiso),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-(2*alturaColiso))
+			local pt2Coliso=Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro-(pliegueSuperior)-(anchuraColiso),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-(2*alturaColiso))
+		    local pt3Coliso=Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro-(pliegueSuperior)-(anchuraColiso),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso)
+		    local pt4Coliso=Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro-(pliegueSuperior)-(2*anchuraColiso),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso)
+
+		   dibujarColiso(origenColiso,pt2Coliso,pt3Coliso,pt4Coliso)   				
+
+
+		    --Coliso lateral derecha
+			local origenColiso = Point2D(origenX+alaIzquierda-(2*anchuraColiso)+(anchuraIzq+anchuraCentro+anchuraDerecha),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-(2*alturaColiso))
+			local pt2Coliso=Point2D(origenX+alaIzquierda-(anchuraColiso)+(anchuraIzq+anchuraCentro+anchuraDerecha),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-(2*alturaColiso))
+		    local pt3Coliso=Point2D(origenX+alaIzquierda-(anchuraColiso)+(anchuraIzq+anchuraCentro+anchuraDerecha),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso)
+		    local pt4Coliso=Point2D(origenX+alaIzquierda-(2*anchuraColiso)+(anchuraIzq+anchuraCentro+anchuraDerecha),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso)
+	  		  
+	       dibujarColiso(origenColiso,pt2Coliso,pt3Coliso,pt4Coliso)
+
+	       
+			
+
+		 --Sin colisos superiores	  		
+   		 else
+
+   		 	 	
+		   		--Taladro lateral izquierda 
+		   		local puntoCentro = Point2D(origenX+alaIzquierda+anchuraColiso+anchuraColiso/2,alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
+		        local radio = diametroTaladros/2
+		        local layer = "Taladros"
+		        dibujarTaladro(puntoCentro, radio, layer)
+		        
+		        --Taladro Superior Derecha
+		   		local puntoCentro = Point2D(origenX+alaIzquierda+(anchuraIzq+pliegueSuperior)+anchuraColiso+anchuraColiso/2,alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
+		        local radio = diametroTaladros/2
+		        local layer = "Taladros"
+		        dibujarTaladro(puntoCentro, radio, layer)
+
+	     
+	        --Taladro lateral derecha
+		   		local puntoCentro = Point2D(origenX+alaIzquierda-anchuraColiso-anchuraColiso/2+(anchuraIzq+anchuraCentro-pliegueSuperior),alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
+		        local radio = diametroTaladros/2
+		        local layer = "Taladros"
+		        dibujarTaladro(puntoCentro, radio, layer)
+		        
+		        --Taladro Superior Derecha
+		   		local puntoCentro = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro+anchuraDerecha-anchuraColiso-anchuraColiso/2,alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
+		        local radio = diametroTaladros/2
+		        local layer = "Taladros"
+		        dibujarTaladro(puntoCentro, radio, layer)
+
+
+        end
+
+    end
+
+     if modelo==34 then
+		
+				
+		--Con colisos superiores
+    	if crearColiso==1 then
+			
+		  
+   			--Coliso lateral izquierda 
+			local origenColiso = Point2D(origenX+alaIzquierda+anchuraColiso,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-(2*alturaColiso))
+			local pt2Coliso=Point2D(origenX+alaIzquierda+(2*anchuraColiso),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-(2*alturaColiso))
+		    local pt3Coliso=Point2D(origenX+alaIzquierda+(2*anchuraColiso),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso)
+		    local pt4Coliso=Point2D(origenX+alaIzquierda+anchuraColiso,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso)
+	  		  
+	       dibujarColiso(origenColiso,pt2Coliso,pt3Coliso,pt4Coliso)
+
+	       --Coliso central Izquierdo
+		
+			local origenColiso = Point2D(origenX+alaIzquierda+anchuraColiso+(anchuraIzq+pliegueSuperior),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-(2*alturaColiso))
+			local pt2Coliso=Point2D(origenX+alaIzquierda+(2*anchuraColiso)+(anchuraIzq+pliegueSuperior),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-(2*alturaColiso))
+		    local pt3Coliso=Point2D(origenX+alaIzquierda+(2*anchuraColiso)+(anchuraIzq+pliegueSuperior),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso)
+		    local pt4Coliso=Point2D(origenX+alaIzquierda+anchuraColiso+(anchuraIzq+pliegueSuperior),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso)
+	  		  
+	       dibujarColiso(origenColiso,pt2Coliso,pt3Coliso,pt4Coliso)
+
+		  
+			--Coliso central Derecho
+			local origenColiso = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro-(pliegueSuperior)-(2*anchuraColiso),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-(2*alturaColiso))
+			local pt2Coliso=Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro-(pliegueSuperior)-(anchuraColiso),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-(2*alturaColiso))
+		    local pt3Coliso=Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro-(pliegueSuperior)-(anchuraColiso),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso)
+		    local pt4Coliso=Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro-(pliegueSuperior)-(2*anchuraColiso),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso)
+
+		   dibujarColiso(origenColiso,pt2Coliso,pt3Coliso,pt4Coliso)   				
+
+
+		    --Coliso lateral derecha
+			local origenColiso = Point2D(origenX+alaIzquierda-(2*anchuraColiso)+(anchuraIzq+anchuraCentro+anchuraDerecha),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-(2*alturaColiso))
+			local pt2Coliso=Point2D(origenX+alaIzquierda-(anchuraColiso)+(anchuraIzq+anchuraCentro+anchuraDerecha),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-(2*alturaColiso))
+		    local pt3Coliso=Point2D(origenX+alaIzquierda-(anchuraColiso)+(anchuraIzq+anchuraCentro+anchuraDerecha),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso)
+		    local pt4Coliso=Point2D(origenX+alaIzquierda-(2*anchuraColiso)+(anchuraIzq+anchuraCentro+anchuraDerecha),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso)
+	  		  
+	       dibujarColiso(origenColiso,pt2Coliso,pt3Coliso,pt4Coliso)
+
+	       
+			
+
+		 --Sin colisos superiores	  		
+   		 else
+
+   		 	 	
+		   		--Taladro lateral izquierda 
+		   		local puntoCentro = Point2D(origenX+alaIzquierda+anchuraColiso+anchuraColiso/2,alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
+		        local radio = diametroTaladros/2
+		        local layer = "Taladros"
+		        dibujarTaladro(puntoCentro, radio, layer)
+		        
+		        --Taladro Superior Derecha
+		   		local puntoCentro = Point2D(origenX+alaIzquierda+(anchuraIzq+pliegueSuperior)+anchuraColiso+anchuraColiso/2,alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
+		        local radio = diametroTaladros/2
+		        local layer = "Taladros"
+		        dibujarTaladro(puntoCentro, radio, layer)
+
+	     
+	        --Taladro lateral derecha
+		   		local puntoCentro = Point2D(origenX+alaIzquierda-anchuraColiso-anchuraColiso/2+(anchuraIzq+anchuraCentro-pliegueSuperior),alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
+		        local radio = diametroTaladros/2
+		        local layer = "Taladros"
+		        dibujarTaladro(puntoCentro, radio, layer)
+		        
+		        --Taladro Superior Derecha
+		   		local puntoCentro = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro+anchuraDerecha-anchuraColiso-anchuraColiso/2,alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
+		        local radio = diametroTaladros/2
+		        local layer = "Taladros"
+		        dibujarTaladro(puntoCentro, radio, layer)
+
+
+        end
+
+    end
+
+    if modelo==35 then
+
+		numeroColisos=1
+		numeroTaladros=1
+				
+		--Con colisos superiores
+    	if crearColiso==1 then
+			
+		  
+		   	for i=0,numeroColisos do
+
+		   			--Coliso lateral izquierda y centro
+					local origenColiso = Point2D(origenX+alaIzquierda+anchuraColiso+(i*(anchuraIzq+(pliegueSuperior))),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-(2*alturaColiso))
+					local pt2Coliso=Point2D(origenX+alaIzquierda+(2*anchuraColiso)+(i*(anchuraIzq +(pliegueSuperior))),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-(2*alturaColiso))
+				    local pt3Coliso=Point2D(origenX+alaIzquierda+(2*anchuraColiso)+(i*(anchuraIzq+(pliegueSuperior))),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso)
+				    local pt4Coliso=Point2D(origenX+alaIzquierda+anchuraColiso+(i*(anchuraIzq+(pliegueSuperior))),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso)
+			  		  
+			       dibujarColiso(origenColiso,pt2Coliso,pt3Coliso,pt4Coliso)
+
+			       
+					local origenColiso = Point2D(origenX+alaIzquierda+anchuraIzq-(pliegueSuperior)-(2*anchuraColiso)+(i*(anchuraCentro)),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-(2*alturaColiso))
+					local pt2Coliso=Point2D(origenX+alaIzquierda+anchuraIzq-(pliegueSuperior)-(anchuraColiso)+(i*(anchuraCentro)),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-(2*alturaColiso))
+				    local pt3Coliso=Point2D(origenX+alaIzquierda+anchuraIzq-(pliegueSuperior)-(anchuraColiso)+(i*(anchuraCentro)),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso)
+				    local pt4Coliso=Point2D(origenX+alaIzquierda+anchuraIzq-(pliegueSuperior)-(2*anchuraColiso)+(i*(anchuraCentro)),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso)
+
+				   dibujarColiso(origenColiso,pt2Coliso,pt3Coliso,pt4Coliso)
+
+			   				
+
+		    end
+
+		    --Coliso lateral derecha
+			local origenColiso = Point2D(origenX+alaIzquierda+anchuraColiso+(anchuraIzq+anchuraCentro+pliegueSuperior),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-(2*alturaColiso))
+			local pt2Coliso=Point2D(origenX+alaIzquierda+(2*anchuraColiso)+(anchuraIzq+anchuraCentro+pliegueSuperior),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-(2*alturaColiso))
+		    local pt3Coliso=Point2D(origenX+alaIzquierda+(2*anchuraColiso)+(anchuraIzq+anchuraCentro+pliegueSuperior),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso)
+		    local pt4Coliso=Point2D(origenX+alaIzquierda+anchuraColiso+(anchuraIzq+anchuraCentro+pliegueSuperior),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso)
+	  		  
+	       dibujarColiso(origenColiso,pt2Coliso,pt3Coliso,pt4Coliso)
+
+	       
+			local origenColiso = Point2D(origenX+alaIzquierda+anchuraIzq-(pliegueSuperior)-(2*anchuraColiso)+(anchuraCentro+anchuraDerecha+pliegueSuperior),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-(2*alturaColiso))
+			local pt2Coliso=Point2D(origenX+alaIzquierda+anchuraIzq-(pliegueSuperior)-(anchuraColiso)+(anchuraCentro+anchuraDerecha+pliegueSuperior),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-(2*alturaColiso))
+		    local pt3Coliso=Point2D(origenX+alaIzquierda+anchuraIzq-(pliegueSuperior)-(anchuraColiso)+(anchuraCentro+anchuraDerecha+pliegueSuperior),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso)
+		    local pt4Coliso=Point2D(origenX+alaIzquierda+anchuraIzq-(pliegueSuperior)-(2*anchuraColiso)+(anchuraCentro+anchuraDerecha+pliegueSuperior),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso)
+
+		   dibujarColiso(origenColiso,pt2Coliso,pt3Coliso,pt4Coliso)
+
+
+		 --Sin colisos superiores	  		
+   		 else
+
+   		 	for i=0,numeroTaladros do
+   		 	
+		   		--Taladro lateral izquierda y centro
+		   		local puntoCentro = Point2D(origenX+alaIzquierda+anchuraColiso+anchuraColiso/2+(i*(anchuraIzq+(pliegueSuperior))),alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
+		        local radio = diametroTaladros/2
+		        local layer = "Taladros"
+		        dibujarTaladro(puntoCentro, radio, layer)
+		        
+		        --Taladro Superior Derecha
+		   		local puntoCentro = Point2D(origenX+alaIzquierda+anchuraIzq-(pliegueSuperior)-(anchuraColiso)-anchuraColiso/2+(i*(anchuraCentro)),alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
+		        local radio = diametroTaladros/2
+		        local layer = "Taladros"
+		        dibujarTaladro(puntoCentro, radio, layer)
+
+	        end
+
+
+	        --Taladro lateral derecha
+		   		local puntoCentro = Point2D(origenX+alaIzquierda+anchuraColiso+anchuraColiso/2+(anchuraIzq+anchuraCentro+pliegueSuperior),alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
+		        local radio = diametroTaladros/2
+		        local layer = "Taladros"
+		        dibujarTaladro(puntoCentro, radio, layer)
+		        
+		        --Taladro Superior Derecha
+		   		local puntoCentro = Point2D(origenX+alaIzquierda+anchuraIzq-(pliegueSuperior)-(anchuraColiso)-anchuraColiso/2+(anchuraCentro+anchuraDerecha+pliegueSuperior),alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
+		        local radio = diametroTaladros/2
+		        local layer = "Taladros"
+		        dibujarTaladro(puntoCentro, radio, layer)
+
+
+        end
+
+    end
+
+   
 
 end
 
