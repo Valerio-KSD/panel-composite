@@ -362,7 +362,8 @@ function OnLuaButton_modeloAH(framePrincipal)
 		modeloAH:AddDoubleField("pliegueSuperior", pliegueSuperior)
 		modeloAH:AddDoubleField("margenA", margenA)
 		modeloAH:AddDoubleField("margenB", margenB)
-
+		
+		modeloAH:AddDoubleField("anchuraColiso", anchuraColiso)
 		modeloAH:AddDoubleField("diametroTaladros", diametroTaladros)
 		--modeloAH:AddCheckBox("crearColiso", true)
 		
@@ -398,7 +399,8 @@ function OnLuaButton_modeloAH(framePrincipal)
 		modeloAH:AddDoubleField("pliegueSuperior", pliegueSuperior)
 		modeloAH:AddDoubleField("margenA", margenA)
 		modeloAH:AddDoubleField("margenB", margenB)
-
+		
+		modeloAH:AddDoubleField("anchuraColiso", anchuraColiso)
 		modeloAH:AddDoubleField("diametroTaladros", diametroTaladros)
 		
 	    if  not modeloAH:ShowDialog() then
@@ -433,7 +435,8 @@ function OnLuaButton_modeloAH(framePrincipal)
 		modeloAH:AddDoubleField("pliegueSuperior", pliegueSuperior)
 		modeloAH:AddDoubleField("margenA", margenA)
 		modeloAH:AddDoubleField("margenB", margenB)
-
+		
+		modeloAH:AddDoubleField("anchuraColiso", anchuraColiso)
 		modeloAH:AddDoubleField("diametroTaladros", diametroTaladros)
 		
 	    if  not modeloAH:ShowDialog() then
@@ -469,6 +472,7 @@ function OnLuaButton_modeloAH(framePrincipal)
 		modeloAH:AddDoubleField("margenA", margenA)
 		modeloAH:AddDoubleField("margenB", margenB)
 
+		modeloAH:AddDoubleField("anchuraColiso", anchuraColiso)
 		modeloAH:AddDoubleField("diametroTaladros", diametroTaladros)
 		
 	    if  not modeloAH:ShowDialog() then
@@ -504,6 +508,7 @@ function OnLuaButton_modeloAH(framePrincipal)
 		modeloAH:AddDoubleField("margenA", margenA)
 		modeloAH:AddDoubleField("margenB", margenB)
 
+		modeloAH:AddDoubleField("anchuraColiso", anchuraColiso)
 		modeloAH:AddDoubleField("diametroTaladros", diametroTaladros)
 		
 	    if  not modeloAH:ShowDialog() then
@@ -539,6 +544,7 @@ function OnLuaButton_modeloAH(framePrincipal)
 		modeloAH:AddDoubleField("margenA", margenA)
 		modeloAH:AddDoubleField("margenB", margenB)
 
+		modeloAH:AddDoubleField("anchuraColiso", anchuraColiso)
 		modeloAH:AddDoubleField("diametroTaladros", diametroTaladros)
 		
 	    if  not modeloAH:ShowDialog() then
@@ -574,6 +580,7 @@ function OnLuaButton_modeloAH(framePrincipal)
 		modeloAH:AddDoubleField("margenA", margenA)
 		modeloAH:AddDoubleField("margenB", margenB)
 
+		modeloAH:AddDoubleField("anchuraColiso", anchuraColiso)
 		modeloAH:AddDoubleField("diametroTaladros", diametroTaladros)
 		
 	    if  not modeloAH:ShowDialog() then
@@ -609,6 +616,7 @@ function OnLuaButton_modeloAH(framePrincipal)
 		modeloAH:AddDoubleField("margenA", margenA)
 		modeloAH:AddDoubleField("margenB", margenB)
 
+		modeloAH:AddDoubleField("anchuraColiso", anchuraColiso)
 		modeloAH:AddDoubleField("diametroTaladros", diametroTaladros)
 		
 	    if  not modeloAH:ShowDialog() then
@@ -644,6 +652,7 @@ function OnLuaButton_modeloAH(framePrincipal)
 		modeloAH:AddDoubleField("margenA", margenA)
 		modeloAH:AddDoubleField("margenB", margenB)
 
+		modeloAH:AddDoubleField("anchuraColiso", anchuraColiso)
 		modeloAH:AddDoubleField("diametroTaladros", diametroTaladros)
 		
 	    if  not modeloAH:ShowDialog() then
@@ -687,7 +696,8 @@ function OnLuaButton_aceptarAH(modeloAH)
 		pliegueSuperior=modeloAH:GetDoubleField("pliegueSuperior")
 		margenA=modeloAH:GetDoubleField("margenA")
 		margenB=modeloAH:GetDoubleField("margenB")
-
+		
+		anchuraColiso=modeloAH:GetDoubleField("anchuraColiso")
 		diametroTaladros=modeloAH:GetDoubleField("diametroTaladros")
 		--alturaColiso=diametroTaladros
 		--crearColiso=modeloAH:GetCheckBox("crearColiso")
@@ -710,6 +720,7 @@ function OnLuaButton_aceptarAH(modeloAH)
 		margenA = modeloAH:GetDoubleField("margenA")
 		margenB = modeloAH:GetDoubleField("margenB")
 
+		anchuraColiso=modeloAH:GetDoubleField("anchuraColiso")
 		diametroTaladros=modeloAH:GetDoubleField("diametroTaladros")
 		
 		--crearColiso=modeloAH:GetCheckBox("crearColiso")
@@ -733,6 +744,10 @@ function OnLuaButton_aceptarAH(modeloAH)
     	DisplayMessageBox("El tamaño las alas NO puede ser negativa. Creación Modelo AH Fallida")
 	elseif pliegueSuperior<0 or pliegueInferior<0 then
 		DisplayMessageBox("El tamaño del pliegue NO puede ser negativo. Creación Modelo AH Fallida")
+	elseif anchuraColiso>anchuraPlaca/2 then 
+		DisplayMessageBox("El tamaño de los colisos NO puede ser mayor al ancho de la plancha. Creación Modelo AH Fallida")
+	
+	
 	elseif margenA<alturaBotaDeCuelgue then
 		DisplayMessageBox("El tamaño del margenA no puede ser menor al tamaño de una bota de cuelgue. Creación Modelo AH Fallida")	
 	else
@@ -786,7 +801,8 @@ function OnLuaButton_modeloBH(framePrincipal)
 		modeloBH:AddDoubleField("pliegueSuperior", pliegueSuperior)
 		modeloBH:AddDoubleField("margenA", margenA)
 		modeloBH:AddDoubleField("margenB", margenB)
-
+		
+		modeloBH:AddDoubleField("anchuraColiso", anchuraColiso)
 		modeloBH:AddDoubleField("diametroTaladros", diametroTaladros)
 		--modeloBH:AddCheckBox("crearColiso", true)
 		
@@ -823,6 +839,7 @@ function OnLuaButton_modeloBH(framePrincipal)
 		modeloBH:AddDoubleField("margenA", margenA)
 		modeloBH:AddDoubleField("margenB", margenB)
 
+		modeloBH:AddDoubleField("anchuraColiso", anchuraColiso)
 		modeloBH:AddDoubleField("diametroTaladros", diametroTaladros)
 		--modeloBH:AddCheckBox("crearColiso", true)
 		
@@ -858,6 +875,7 @@ function OnLuaButton_modeloBH(framePrincipal)
 		modeloBH:AddDoubleField("margenA", margenA)
 		modeloBH:AddDoubleField("margenB", margenB)
 
+		modeloBH:AddDoubleField("anchuraColiso", anchuraColiso)
 		modeloBH:AddDoubleField("diametroTaladros", diametroTaladros)
 		--modeloBH:AddCheckBox("crearColiso", true)
 		
@@ -893,6 +911,7 @@ function OnLuaButton_modeloBH(framePrincipal)
 		modeloBH:AddDoubleField("margenA", margenA)
 		modeloBH:AddDoubleField("margenB", margenB)
 
+		modeloBH:AddDoubleField("anchuraColiso", anchuraColiso)
 		modeloBH:AddDoubleField("diametroTaladros", diametroTaladros)
 		--modeloBH:AddCheckBox("crearColiso", true)
 		
@@ -928,6 +947,7 @@ function OnLuaButton_modeloBH(framePrincipal)
 		modeloBH:AddDoubleField("margenA", margenA)
 		modeloBH:AddDoubleField("margenB", margenB)
 
+		modeloBH:AddDoubleField("anchuraColiso", anchuraColiso)
 		modeloBH:AddDoubleField("diametroTaladros", diametroTaladros)
 		--modeloBH:AddCheckBox("crearColiso", true)
 		
@@ -963,6 +983,7 @@ function OnLuaButton_modeloBH(framePrincipal)
 		modeloBH:AddDoubleField("margenA", margenA)
 		modeloBH:AddDoubleField("margenB", margenB)
 
+		modeloBH:AddDoubleField("anchuraColiso", anchuraColiso)
 		modeloBH:AddDoubleField("diametroTaladros", diametroTaladros)
 		--modeloBH:AddCheckBox("crearColiso", true)
 		
@@ -998,6 +1019,7 @@ function OnLuaButton_modeloBH(framePrincipal)
 		modeloBH:AddDoubleField("margenA", margenA)
 		modeloBH:AddDoubleField("margenB", margenB)
 
+		modeloBH:AddDoubleField("anchuraColiso", anchuraColiso)
 		modeloBH:AddDoubleField("diametroTaladros", diametroTaladros)
 		--modeloBH:AddCheckBox("crearColiso", true)
 		
@@ -1033,6 +1055,7 @@ function OnLuaButton_modeloBH(framePrincipal)
 		modeloBH:AddDoubleField("margenA", margenA)
 		modeloBH:AddDoubleField("margenB", margenB)
 
+		modeloBH:AddDoubleField("anchuraColiso", anchuraColiso)
 		modeloBH:AddDoubleField("diametroTaladros", diametroTaladros)
 		--modeloBH:AddCheckBox("crearColiso", true)
 		
@@ -1068,6 +1091,7 @@ function OnLuaButton_modeloBH(framePrincipal)
 		modeloBH:AddDoubleField("margenA", margenA)
 		modeloBH:AddDoubleField("margenB", margenB)
 
+		modeloBH:AddDoubleField("anchuraColiso", anchuraColiso)
 		modeloBH:AddDoubleField("diametroTaladros", diametroTaladros)
 		--modeloBH:AddCheckBox("crearColiso", true)
 		
@@ -1104,6 +1128,7 @@ function OnLuaButton_modeloBH(framePrincipal)
 		modeloBH:AddDoubleField("margenA", margenA)
 		modeloBH:AddDoubleField("margenB", margenB)
 
+		modeloBH:AddDoubleField("anchuraColiso", anchuraColiso)
 		modeloBH:AddDoubleField("diametroTaladros", diametroTaladros)
 		--modeloBH:AddCheckBox("crearColiso", true)
 		
@@ -1140,6 +1165,7 @@ function OnLuaButton_modeloBH(framePrincipal)
 		modeloBH:AddDoubleField("margenA", margenA)
 		modeloBH:AddDoubleField("margenB", margenB)
 
+		modeloBH:AddDoubleField("anchuraColiso", anchuraColiso)
 		modeloBH:AddDoubleField("diametroTaladros", diametroTaladros)
 		--modeloBH:AddCheckBox("crearColiso", true)
 		
@@ -1176,6 +1202,7 @@ function OnLuaButton_modeloBH(framePrincipal)
 		modeloBH:AddDoubleField("margenA", margenA)
 		modeloBH:AddDoubleField("margenB", margenB)
 
+		modeloBH:AddDoubleField("anchuraColiso", anchuraColiso)
 		modeloBH:AddDoubleField("diametroTaladros", diametroTaladros)
 		--modeloBH:AddCheckBox("crearColiso", true)
 		
@@ -1212,6 +1239,7 @@ function OnLuaButton_modeloBH(framePrincipal)
 		modeloBH:AddDoubleField("margenA", margenA)
 		modeloBH:AddDoubleField("margenB", margenB)
 
+		modeloBH:AddDoubleField("anchuraColiso", anchuraColiso)
 		modeloBH:AddDoubleField("diametroTaladros", diametroTaladros)
 		--modeloBH:AddCheckBox("crearColiso", true)
 		
@@ -1248,6 +1276,7 @@ function OnLuaButton_modeloBH(framePrincipal)
 		modeloBH:AddDoubleField("margenA", margenA)
 		modeloBH:AddDoubleField("margenB", margenB)
 
+		modeloBH:AddDoubleField("anchuraColiso", anchuraColiso)
 		modeloBH:AddDoubleField("diametroTaladros", diametroTaladros)
 		--modeloBH:AddCheckBox("crearColiso", true)
 		
@@ -1284,6 +1313,7 @@ function OnLuaButton_modeloBH(framePrincipal)
 		modeloBH:AddDoubleField("margenA", margenA)
 		modeloBH:AddDoubleField("margenB", margenB)
 
+		modeloBH:AddDoubleField("anchuraColiso", anchuraColiso)
 		modeloBH:AddDoubleField("diametroTaladros", diametroTaladros)
 		--modeloBH:AddCheckBox("crearColiso", true)
 		
@@ -1320,6 +1350,7 @@ function OnLuaButton_modeloBH(framePrincipal)
 		modeloBH:AddDoubleField("margenA", margenA)
 		modeloBH:AddDoubleField("margenB", margenB)
 
+		modeloBH:AddDoubleField("anchuraColiso", anchuraColiso)
 		modeloBH:AddDoubleField("diametroTaladros", diametroTaladros)
 		--modeloBH:AddCheckBox("crearColiso", true)
 		
@@ -1356,6 +1387,7 @@ function OnLuaButton_modeloBH(framePrincipal)
 		modeloBH:AddDoubleField("margenA", margenA)
 		modeloBH:AddDoubleField("margenB", margenB)
 
+		modeloBH:AddDoubleField("anchuraColiso", anchuraColiso)
 		modeloBH:AddDoubleField("diametroTaladros", diametroTaladros)
 		--modeloBH:AddCheckBox("crearColiso", true)
 		
@@ -1393,6 +1425,7 @@ function OnLuaButton_modeloBH(framePrincipal)
 		modeloBH:AddDoubleField("margenA", margenA)
 		modeloBH:AddDoubleField("margenB", margenB)
 
+		modeloBH:AddDoubleField("anchuraColiso", anchuraColiso)
 		modeloBH:AddDoubleField("diametroTaladros", diametroTaladros)
 		--modeloBH:AddCheckBox("crearColiso", true)
 		
@@ -1432,6 +1465,7 @@ function OnLuaButton_aceptarBH(modeloBH)
 		margenA=modeloBH:GetDoubleField("margenA")
 		margenB=modeloBH:GetDoubleField("margenB")
 
+		anchuraColiso=modeloBH:GetDoubleField("anchuraColiso")
 		diametroTaladros=modeloBH:GetDoubleField("diametroTaladros")
 		
 		--crearColiso=modeloBH:GetCheckBox("crearColiso")
@@ -1456,6 +1490,7 @@ function OnLuaButton_aceptarBH(modeloBH)
 		margenA=modeloBH:GetDoubleField("margenA")
 		margenB=modeloBH:GetDoubleField("margenB")
 
+		anchuraColiso=modeloBH:GetDoubleField("anchuraColiso")
 		diametroTaladros=modeloBH:GetDoubleField("diametroTaladros")
 		
 		--crearColiso=modeloBH:GetCheckBox("crearColiso")
@@ -1481,6 +1516,7 @@ function OnLuaButton_aceptarBH(modeloBH)
 		margenA=modeloBH:GetDoubleField("margenA")
 		margenB=modeloBH:GetDoubleField("margenB")
 
+		anchuraColiso=modeloBH:GetDoubleField("anchuraColiso")
 		diametroTaladros=modeloBH:GetDoubleField("diametroTaladros")
 		
 		--crearColiso=modeloBH:GetCheckBox("crearColiso")
@@ -1505,6 +1541,7 @@ function OnLuaButton_aceptarBH(modeloBH)
 		margenA=modeloBH:GetDoubleField("margenA")
 		margenB=modeloBH:GetDoubleField("margenB")
 
+		anchuraColiso=modeloBH:GetDoubleField("anchuraColiso")
 		diametroTaladros=modeloBH:GetDoubleField("diametroTaladros")
 		
 		--crearColiso=modeloBH:GetCheckBox("crearColiso")
@@ -1581,7 +1618,8 @@ function OnLuaButton_modeloCH(framePrincipal)
 		modeloCH:AddDoubleField("pliegueSuperior", pliegueSuperior)
 		modeloCH:AddDoubleField("margenA", margenA)
 		modeloCH:AddDoubleField("margenB", margenB)
-
+		
+		modeloCH:AddDoubleField("anchuraColiso", anchuraColiso)
 		modeloCH:AddDoubleField("diametroTaladros", diametroTaladros)
 		--modeloCH:AddCheckBox("crearColiso", true)
 		
@@ -1619,6 +1657,7 @@ function OnLuaButton_modeloCH(framePrincipal)
 		modeloCH:AddDoubleField("margenA", margenA)
 		modeloCH:AddDoubleField("margenB", margenB)
 
+		modeloCH:AddDoubleField("anchuraColiso", anchuraColiso)
 		modeloCH:AddDoubleField("diametroTaladros", diametroTaladros)
 		--modeloCH:AddCheckBox("crearColiso", true)
 		
@@ -1656,6 +1695,7 @@ function OnLuaButton_modeloCH(framePrincipal)
 		modeloCH:AddDoubleField("margenA", margenA)
 		modeloCH:AddDoubleField("margenB", margenB)
 
+		modeloCH:AddDoubleField("anchuraColiso", anchuraColiso)
 		modeloCH:AddDoubleField("diametroTaladros", diametroTaladros)
 		--modeloCH:AddCheckBox("crearColiso", true)
 		
@@ -1692,6 +1732,7 @@ function OnLuaButton_modeloCH(framePrincipal)
 		modeloCH:AddDoubleField("margenA", margenA)
 		modeloCH:AddDoubleField("margenB", margenB)
 
+		modeloCH:AddDoubleField("anchuraColiso", anchuraColiso)
 		modeloCH:AddDoubleField("diametroTaladros", diametroTaladros)
 		--modeloCH:AddCheckBox("crearColiso", true)
 		
@@ -1728,6 +1769,7 @@ function OnLuaButton_modeloCH(framePrincipal)
 		modeloCH:AddDoubleField("margenA", margenA)
 		modeloCH:AddDoubleField("margenB", margenB)
 
+		modeloCH:AddDoubleField("anchuraColiso", anchuraColiso)
 		modeloCH:AddDoubleField("diametroTaladros", diametroTaladros)
 		--modeloCH:AddCheckBox("crearColiso", true)
 		
@@ -1764,6 +1806,7 @@ function OnLuaButton_modeloCH(framePrincipal)
 		modeloCH:AddDoubleField("margenA", margenA)
 		modeloCH:AddDoubleField("margenB", margenB)
 
+		modeloCH:AddDoubleField("anchuraColiso", anchuraColiso)
 		modeloCH:AddDoubleField("diametroTaladros", diametroTaladros)
 		--modeloCH:AddCheckBox("crearColiso", true)
 		
@@ -1800,6 +1843,7 @@ function OnLuaButton_modeloCH(framePrincipal)
 		modeloCH:AddDoubleField("margenA", margenA)
 		modeloCH:AddDoubleField("margenB", margenB)
 
+		modeloCH:AddDoubleField("anchuraColiso", anchuraColiso)
 		modeloCH:AddDoubleField("diametroTaladros", diametroTaladros)
 		--modeloCH:AddCheckBox("crearColiso", true)
 		
@@ -1836,6 +1880,7 @@ function OnLuaButton_modeloCH(framePrincipal)
 		modeloCH:AddDoubleField("margenA", margenA)
 		modeloCH:AddDoubleField("margenB", margenB)
 
+		modeloCH:AddDoubleField("anchuraColiso", anchuraColiso)
 		modeloCH:AddDoubleField("diametroTaladros", diametroTaladros)
 		--modeloCH:AddCheckBox("crearColiso", true)
 		
@@ -1872,6 +1917,7 @@ function OnLuaButton_modeloCH(framePrincipal)
 		modeloCH:AddDoubleField("margenA", margenA)
 		modeloCH:AddDoubleField("margenB", margenB)
 
+		modeloCH:AddDoubleField("anchuraColiso", anchuraColiso)
 		modeloCH:AddDoubleField("diametroTaladros", diametroTaladros)
 		--modeloCH:AddCheckBox("crearColiso", true)
 		
@@ -1913,6 +1959,7 @@ function OnLuaButton_aceptarCH(modeloCH)
 		margenA=modeloCH:GetDoubleField("margenA")
 		margenB=modeloCH:GetDoubleField("margenB")
 
+		anchuraColiso=modeloCH:GetDoubleField("anchuraColiso")
 		diametroTaladros=modeloCH:GetDoubleField("diametroTaladros")
 		
 		--crearColiso=modeloCH:GetCheckBox("crearColiso")
@@ -1937,6 +1984,7 @@ function OnLuaButton_aceptarCH(modeloCH)
 		margenA=modeloCH:GetDoubleField("margenA")
 		margenB=modeloCH:GetDoubleField("margenB")
 		
+		anchuraColiso=modeloCH:GetDoubleField("anchuraColiso")
 		diametroTaladros=modeloCH:GetDoubleField("diametroTaladros")
 		
 		--crearColiso=modeloCH:GetCheckBox("crearColiso")
