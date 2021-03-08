@@ -71,7 +71,7 @@ distanciaAlas=4
 --Entrada para modelo [CH]
 anchuraIzq=400
 anchuraCentro=1200
-anchuraDcha=400
+anchuraDerecha=400
 
 
 
@@ -82,7 +82,7 @@ modelo=0
 --[AH=0 - AH1=1 - AH2=2 - AH3=3 - AH4=4 - AH5=5 - AH6=6 - AH7=7 - AH8=8]
 --[BH=9 - BH1=10 - BH2=11 - BH3=12 - BH4=13 - BH5=14 - BH6=15 - BH7=16 - BH8=17]
 --[BH9=18 - BH10=19 - BH11=20 - BH12=21 - BH13=22 - BH14=23 - BH15=24 - BH16=25 - BH17=26]
---[CH=27 - CH1=28 - CH2=329 - CH3=30 - CH4=31 - CH5=32 - CH6=33 - CH7=34 - CH8=35]
+--[CH=27 - CH1=28 - CH2=29 - CH3=30 - CH4=31 - CH5=32 - CH6=33 - CH7=34 - CH8=35]
 
 
 
@@ -277,6 +277,51 @@ function OnLuaButton_refBH17()
 end
 
 
+function OnLuaButton_refCH()
+	modelo=27
+  return true
+end
+
+function OnLuaButton_refCH1()
+	modelo=28
+  return true
+end
+
+function OnLuaButton_refCH2()
+	modelo=29
+  return true
+end
+
+function OnLuaButton_refCH3()
+	modelo=30
+  return true
+end
+
+function OnLuaButton_refCH4()
+	modelo=31
+  return true
+end
+
+function OnLuaButton_refCH5()
+	modelo=32
+  return true
+end
+
+function OnLuaButton_refCH6()
+	modelo=33
+  return true
+end
+
+function OnLuaButton_refCH7()
+	modelo=34
+  return true
+end
+
+function OnLuaButton_refCH8()
+	modelo=35
+  return true
+end
+
 
 
 
@@ -369,7 +414,7 @@ function OnLuaButton_modeloAH(framePrincipal)
 		local modeloAH = HTML_Dialog(false, html_path, 1900, 950, "REFERENCIA AH2")
 
 		textoDescriptivo="REFERENCIA AH2"
-		anchuraPlaca=2000 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=20.6
+		anchuraPlaca=2000 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=20
 		pliegueSuperior=36 pliegueInferior=40  margenA=57 margenB=108 diametroTaladros=5 
 		
         modeloAH:AddTextField("textoDescriptivo", textoDescriptivo)
@@ -693,8 +738,8 @@ function OnLuaButton_aceptarAH(modeloAH)
 	else
 		
 		--Para dibujar la pieza fuera del area de trabajo
-			--origenX=-(alaDerecha+anchuraPlaca+alaIzquierda+200)
-			--origenY=-(0)
+			--origenX=-(alaDerecha+anchuraPlaca+alaIzquierda+400)
+			--origenY=400
 			
 		--Para dibujar la pieza
 			dibujarFresadoAH(doc)
@@ -702,18 +747,6 @@ function OnLuaButton_aceptarAH(modeloAH)
 			dibujarTexto(doc)
 			dibujarTaladrosAH(doc)
 			
-			
-			
-		
-		--origenX=-(alaDerecha+anchuraIzq+anchuraCentro+anchuraDcha+alaIzquierda+200)
-		--origenY=-(0)
-		
-		--dibujarFresadoCH(doc)
-		--dibujarCorteCH(doc)
-		--dibujarTextoCH(doc)
-		--dibujarTaladrosCH(doc)
-				
-		
 		DisplayMessageBox("Modelo AH Creado Correctamente")
 	
 	end
@@ -804,7 +837,7 @@ function OnLuaButton_modeloBH(framePrincipal)
 		local modeloBH = HTML_Dialog(false, html_path, 1900, 950, "REFERENCIA BH2")
 		
 		textoDescriptivo="REFERENCIA BH2"
-		anchura1=1200 anchura2=800 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=20.6
+		anchura1=1200 anchura2=800 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=20
 		pliegueSuperior=36 pliegueInferior=40  margenA=57 margenB=108 diametroTaladros=5 
 		
         modeloBH:AddTextField("textoDescriptivo", textoDescriptivo)
@@ -1121,7 +1154,7 @@ function OnLuaButton_modeloBH(framePrincipal)
 		local modeloBH = HTML_Dialog(false, html_path, 1900, 950, "REFERENCIA BH11")
 		
 		textoDescriptivo="REFERENCIA BH11"
-		anchura1=1200 anchura2=800 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=20.6
+		anchura1=1200 anchura2=800 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=20
 		pliegueSuperior=36 pliegueInferior=40  margenA=57 margenB=108 diametroTaladros=5 
 		
         modeloBH:AddTextField("textoDescriptivo", textoDescriptivo)
@@ -1380,7 +1413,7 @@ end
 
 function OnLuaButton_aceptarBH(modeloBH)
 
-	if modelo==9 or modelo==10 or modelo==13 or modelo==15 then --SIN PLIEGUE / FILA 1
+	if modelo==9 or modelo==10 or modelo==13 or modelo==15 then --SIN PLIEGUE / COLUMNA 1
 		pliegueInferior=0
 		
 		textoDescriptivo = modeloBH:GetTextField("textoDescriptivo")
@@ -1405,7 +1438,7 @@ function OnLuaButton_aceptarBH(modeloBH)
 
 
 
-	elseif modelo==11 or modelo==12 or modelo==14 or modelo==16 or modelo==17 then  --CON PLIEGUE / FILA 1
+	elseif modelo==11 or modelo==12 or modelo==14 or modelo==16 or modelo==17 then  --CON PLIEGUE / COLUMNA 1
 		
 		textoDescriptivo = modeloBH:GetTextField("textoDescriptivo")
 		anchura1 = modeloBH:GetDoubleField("anchuraPlacaIzquierda")
@@ -1427,7 +1460,7 @@ function OnLuaButton_aceptarBH(modeloBH)
 		
 		--crearColiso=modeloBH:GetCheckBox("crearColiso")
 
-	elseif modelo==18 or modelo==19 or modelo==22 or modelo==24 then  --SIN PLIEGUE / FILA 2 -> 18 19 22 24
+	elseif modelo==18 or modelo==19 or modelo==22 or modelo==24 then  --SIN PLIEGUE / COLUMNA 2
 		pliegueInferior=0
 		
 		textoDescriptivo = modeloBH:GetTextField("textoDescriptivo")
@@ -1452,7 +1485,7 @@ function OnLuaButton_aceptarBH(modeloBH)
 		
 		--crearColiso=modeloBH:GetCheckBox("crearColiso")
 	
-	elseif modelo==20 or modelo==21 or modelo==23 or modelo==25 or modelo==26 then  --CON PLIEGUE / FILA 2 ->20 21 23 25 26
+	elseif modelo==20 or modelo==21 or modelo==23 or modelo==25 or modelo==26 then  --CON PLIEGUE / COLUMNA 2
 	
 		textoDescriptivo = modeloBH:GetTextField("textoDescriptivo")
 		anchura1 = modeloBH:GetDoubleField("anchuraPlacaIzquierda")
@@ -1490,25 +1523,15 @@ function OnLuaButton_aceptarBH(modeloBH)
 	alturaColiso=diametroTaladros
 	
     --Comprobaciones y validaciones de los datos
-	if anchuraPlaca < 0 then
-		
-		DisplayMessageBox("La anchura de la placa NO puede ser negativa.Creación Modelo AH Fallida")
-				
-	
-	--elseif margenPlaca < 0 then
-		
-		--DisplayMessageBox("El margen de la placa NO puede ser negativo.Creación Modelo AH Fallida")
-	
+	if anchuraPlaca < 0 then	
+		DisplayMessageBox("La anchura de la placa NO puede ser negativa.Creación Modelo BH Fallida")
 	elseif  alturaPlaca < 0 then
-		
-		DisplayMessageBox("La altura de la placa NO puede ser negativa.Creación Modelo AH Fallida")
-	
-    	
+		DisplayMessageBox("La altura de la placa NO puede ser negativa.Creación Modelo BH Fallida")
 	else
 		
 		--Para que la pieza apareza fuera del area de trabajo
-			--origenX=-(alaDerecha+anchura1+anchura2+alaIzquierda+200)
-			--origenY=-(0)
+			--origenX=-(alaDerecha+anchura1+anchura2+alaIzquierda+400)
+			--origenY=400
 		
 		--Para dibujar la pieza
 			dibujarFresadoBH(doc)
@@ -1522,6 +1545,441 @@ function OnLuaButton_aceptarBH(modeloBH)
 	end
 	
 return true;
+
+end
+
+
+
+
+
+function OnLuaButton_modeloCH(framePrincipal)
+	
+	if modelo == 27 then 
+		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaCH.html"
+		
+		local modeloCH = HTML_Dialog(false, html_path, 1900, 950, "REFERENCIA CH")
+		
+		textoDescriptivo="REFERENCIA CH"
+		anchuraIzq=400 anchuraCentro=1200 anchuraDerecha=400 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=32
+		pliegueSuperior=36 pliegueInferior=0  margenA=57 margenB=108 diametroTaladros=5 
+		
+        modeloCH:AddTextField("textoDescriptivo", textoDescriptivo)
+		modeloCH:AddDoubleField("anchuraPlacaIzquierda", anchuraIzq)
+		modeloCH:AddDoubleField("anchuraPlacaCentro", anchuraCentro)
+		modeloCH:AddDoubleField("anchuraPlacaDerecha", anchuraDerecha)
+	    --modeloCH:AddDoubleField("margenPlaca", margenPlaca)
+	    modeloCH:AddDoubleField("alturaPlaca", alturaPlaca)
+		--modeloCH:AddDoubleField("origenX", origenX)
+		--modeloCH:AddDoubleField("origenY", origenY)
+
+		modeloCH:AddDoubleField("alaLateral", alaIzquierda)
+		modeloCH:AddDoubleField("alaSuperior", alaSuperior)
+		modeloCH:AddDoubleField("alaInferior", alaInferior)
+
+		--modeloCH:AddDoubleField("pliegueInferior", pliegueInferior) --No lleva pliegue inferior
+
+		modeloCH:AddDoubleField("pliegueSuperior", pliegueSuperior)
+		modeloCH:AddDoubleField("margenA", margenA)
+		modeloCH:AddDoubleField("margenB", margenB)
+
+		modeloCH:AddDoubleField("diametroTaladros", diametroTaladros)
+		--modeloCH:AddCheckBox("crearColiso", true)
+		
+	    if  not modeloCH:ShowDialog() then
+			
+				return false;
+					
+		end
+	
+	elseif modelo == 28 then 
+		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaCH1.html"
+		
+		local modeloCH = HTML_Dialog(false, html_path, 1900, 950, "REFERENCIA CH1")
+		
+		textoDescriptivo="REFERENCIA CH1"
+		anchuraIzq=400 anchuraCentro=1200 anchuraDerecha=400 alturaPlaca=1000 alaIzquierda=40 alaSuperior=20 alaInferior=32
+		pliegueSuperior=40 pliegueInferior=0  margenA=57 margenB=108 diametroTaladros=5 
+		
+        modeloCH:AddTextField("textoDescriptivo", textoDescriptivo)
+		modeloCH:AddDoubleField("anchuraPlacaIzquierda", anchuraIzq)
+		modeloCH:AddDoubleField("anchuraPlacaCentro", anchuraCentro)
+		modeloCH:AddDoubleField("anchuraPlacaDerecha", anchuraDerecha)
+	    --modeloCH:AddDoubleField("margenPlaca", margenPlaca)
+	    modeloCH:AddDoubleField("alturaPlaca", alturaPlaca)
+		--modeloCH:AddDoubleField("origenX", origenX)
+		--modeloCH:AddDoubleField("origenY", origenY)
+
+		modeloCH:AddDoubleField("alaLateral", alaIzquierda)
+		modeloCH:AddDoubleField("alaSuperior", alaSuperior)
+		modeloCH:AddDoubleField("alaInferior", alaInferior)
+
+		--modeloCH:AddDoubleField("pliegueInferior", pliegueInferior) --No lleva pliegue inferior
+
+		modeloCH:AddDoubleField("pliegueSuperior", pliegueSuperior)
+		modeloCH:AddDoubleField("margenA", margenA)
+		modeloCH:AddDoubleField("margenB", margenB)
+
+		modeloCH:AddDoubleField("diametroTaladros", diametroTaladros)
+		--modeloCH:AddCheckBox("crearColiso", true)
+		
+	    if  not modeloCH:ShowDialog() then
+			
+				return false;
+					
+		end
+		
+	elseif modelo == 29 then 
+		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaCH2.html"
+		
+		local modeloCH = HTML_Dialog(false, html_path, 1900, 950, "REFERENCIA CH2")
+		
+		textoDescriptivo="REFERENCIA CH2"
+		anchuraIzq=400 anchuraCentro=1200 anchuraDerecha=400 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=20
+		pliegueSuperior=36 pliegueInferior=40  margenA=57 margenB=108 diametroTaladros=5 
+		
+        modeloCH:AddTextField("textoDescriptivo", textoDescriptivo)
+		modeloCH:AddDoubleField("anchuraPlacaIzquierda", anchuraIzq)
+		modeloCH:AddDoubleField("anchuraPlacaCentro", anchuraCentro)
+		modeloCH:AddDoubleField("anchuraPlacaDerecha", anchuraDerecha)
+	    --modeloCH:AddDoubleField("margenPlaca", margenPlaca)
+	    modeloCH:AddDoubleField("alturaPlaca", alturaPlaca)
+		--modeloCH:AddDoubleField("origenX", origenX)
+		--modeloCH:AddDoubleField("origenY", origenY)
+
+		modeloCH:AddDoubleField("alaLateral", alaIzquierda)
+		modeloCH:AddDoubleField("alaSuperior", alaSuperior)
+		modeloCH:AddDoubleField("alaInferior", alaInferior)
+
+		modeloCH:AddDoubleField("pliegueInferior", pliegueInferior)
+
+		modeloCH:AddDoubleField("pliegueSuperior", pliegueSuperior)
+		modeloCH:AddDoubleField("margenA", margenA)
+		modeloCH:AddDoubleField("margenB", margenB)
+
+		modeloCH:AddDoubleField("diametroTaladros", diametroTaladros)
+		--modeloCH:AddCheckBox("crearColiso", true)
+		
+	    if  not modeloCH:ShowDialog() then
+			
+				return false;
+					
+		end
+	elseif modelo == 30 then 
+		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaCH3.html"
+		
+		local modeloCH = HTML_Dialog(false, html_path, 1900, 950, "REFERENCIA CH3")
+		
+		textoDescriptivo="REFERENCIA CH3"
+		anchuraIzq=400 anchuraCentro=1200 anchuraDerecha=400 alturaPlaca=1000 alaIzquierda=40 alaSuperior=20 alaInferior=20
+		pliegueSuperior=36 pliegueInferior=40  margenA=57 margenB=108 diametroTaladros=5 
+		
+        modeloCH:AddTextField("textoDescriptivo", textoDescriptivo)
+		modeloCH:AddDoubleField("anchuraPlacaIzquierda", anchuraIzq)
+		modeloCH:AddDoubleField("anchuraPlacaCentro", anchuraCentro)
+		modeloCH:AddDoubleField("anchuraPlacaDerecha", anchuraDerecha)
+	    --modeloCH:AddDoubleField("margenPlaca", margenPlaca)
+	    modeloCH:AddDoubleField("alturaPlaca", alturaPlaca)
+		--modeloCH:AddDoubleField("origenX", origenX)
+		--modeloCH:AddDoubleField("origenY", origenY)
+
+		modeloCH:AddDoubleField("alaLateral", alaIzquierda)
+		modeloCH:AddDoubleField("alaSuperior", alaSuperior)
+		modeloCH:AddDoubleField("alaInferior", alaInferior)
+
+		modeloCH:AddDoubleField("pliegueInferior", pliegueInferior)
+
+		modeloCH:AddDoubleField("pliegueSuperior", pliegueSuperior)
+		modeloCH:AddDoubleField("margenA", margenA)
+		modeloCH:AddDoubleField("margenB", margenB)
+
+		modeloCH:AddDoubleField("diametroTaladros", diametroTaladros)
+		--modeloCH:AddCheckBox("crearColiso", true)
+		
+	    if  not modeloCH:ShowDialog() then
+			
+				return false;
+					
+		end
+	elseif modelo == 31 then 
+		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaCH4.html"
+		
+		local modeloCH = HTML_Dialog(false, html_path, 1900, 950, "REFERENCIA CH4")
+		
+		textoDescriptivo="REFERENCIA CH4"
+		anchuraIzq=400 anchuraCentro=1200 anchuraDerecha=400 alturaPlaca=1000 alaIzquierda=40 alaSuperior=260 alaInferior=32
+		pliegueSuperior=40 pliegueInferior=0  margenA=57 margenB=108 diametroTaladros=5 
+		
+        modeloCH:AddTextField("textoDescriptivo", textoDescriptivo)
+		modeloCH:AddDoubleField("anchuraPlacaIzquierda", anchuraIzq)
+		modeloCH:AddDoubleField("anchuraPlacaCentro", anchuraCentro)
+		modeloCH:AddDoubleField("anchuraPlacaDerecha", anchuraDerecha)
+	    --modeloCH:AddDoubleField("margenPlaca", margenPlaca)
+	    modeloCH:AddDoubleField("alturaPlaca", alturaPlaca)
+		--modeloCH:AddDoubleField("origenX", origenX)
+		--modeloCH:AddDoubleField("origenY", origenY)
+
+		modeloCH:AddDoubleField("alaLateral", alaIzquierda)
+		modeloCH:AddDoubleField("alaSuperior", alaSuperior)
+		modeloCH:AddDoubleField("alaInferior", alaInferior)
+
+		--modeloCH:AddDoubleField("pliegueInferior", pliegueInferior) --No lleva pliegue inferior
+
+		modeloCH:AddDoubleField("pliegueSuperior", pliegueSuperior)
+		modeloCH:AddDoubleField("margenA", margenA)
+		modeloCH:AddDoubleField("margenB", margenB)
+
+		modeloCH:AddDoubleField("diametroTaladros", diametroTaladros)
+		--modeloCH:AddCheckBox("crearColiso", true)
+		
+	    if  not modeloCH:ShowDialog() then
+			
+				return false;
+					
+		end
+	elseif modelo == 32 then 
+		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaCH5.html"
+		
+		local modeloCH = HTML_Dialog(false, html_path, 1900, 950, "REFERENCIA CH5")
+		
+		textoDescriptivo="REFERENCIA CH5"
+		anchuraIzq=400 anchuraCentro=1200 anchuraDerecha=400 alturaPlaca=1000 alaIzquierda=40 alaSuperior=260 alaInferior=20
+		pliegueSuperior=40 pliegueInferior=40  margenA=57 margenB=108 diametroTaladros=5 
+		
+        modeloCH:AddTextField("textoDescriptivo", textoDescriptivo)
+		modeloCH:AddDoubleField("anchuraPlacaIzquierda", anchuraIzq)
+		modeloCH:AddDoubleField("anchuraPlacaCentro", anchuraCentro)
+		modeloCH:AddDoubleField("anchuraPlacaDerecha", anchuraDerecha)
+	    --modeloCH:AddDoubleField("margenPlaca", margenPlaca)
+	    modeloCH:AddDoubleField("alturaPlaca", alturaPlaca)
+		--modeloCH:AddDoubleField("origenX", origenX)
+		--modeloCH:AddDoubleField("origenY", origenY)
+
+		modeloCH:AddDoubleField("alaLateral", alaIzquierda)
+		modeloCH:AddDoubleField("alaSuperior", alaSuperior)
+		modeloCH:AddDoubleField("alaInferior", alaInferior)
+
+		modeloCH:AddDoubleField("pliegueInferior", pliegueInferior)
+
+		modeloCH:AddDoubleField("pliegueSuperior", pliegueSuperior)
+		modeloCH:AddDoubleField("margenA", margenA)
+		modeloCH:AddDoubleField("margenB", margenB)
+
+		modeloCH:AddDoubleField("diametroTaladros", diametroTaladros)
+		--modeloCH:AddCheckBox("crearColiso", true)
+		
+	    if  not modeloCH:ShowDialog() then
+			
+				return false;
+					
+		end
+	elseif modelo == 33 then 
+		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaCH6.html"
+		
+		local modeloCH = HTML_Dialog(false, html_path, 1900, 950, "REFERENCIA CH6")
+		
+		textoDescriptivo="REFERENCIA CH6"
+		anchuraIzq=400 anchuraCentro=1200 anchuraDerecha=400 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=32
+		pliegueSuperior=300 pliegueInferior=0  margenA=57 margenB=108 diametroTaladros=5 
+		
+        modeloCH:AddTextField("textoDescriptivo", textoDescriptivo)
+		modeloCH:AddDoubleField("anchuraPlacaIzquierda", anchuraIzq)
+		modeloCH:AddDoubleField("anchuraPlacaCentro", anchuraCentro)
+		modeloCH:AddDoubleField("anchuraPlacaDerecha", anchuraDerecha)
+	    --modeloCH:AddDoubleField("margenPlaca", margenPlaca)
+	    modeloCH:AddDoubleField("alturaPlaca", alturaPlaca)
+		--modeloCH:AddDoubleField("origenX", origenX)
+		--modeloCH:AddDoubleField("origenY", origenY)
+
+		modeloCH:AddDoubleField("alaLateral", alaIzquierda)
+		modeloCH:AddDoubleField("alaSuperior", alaSuperior)
+		modeloCH:AddDoubleField("alaInferior", alaInferior)
+
+		--modeloCH:AddDoubleField("pliegueInferior", pliegueInferior) --No lleva pliegue inferior
+
+		modeloCH:AddDoubleField("pliegueSuperior", pliegueSuperior)
+		modeloCH:AddDoubleField("margenA", margenA)
+		modeloCH:AddDoubleField("margenB", margenB)
+
+		modeloCH:AddDoubleField("diametroTaladros", diametroTaladros)
+		--modeloCH:AddCheckBox("crearColiso", true)
+		
+	    if  not modeloCH:ShowDialog() then
+			
+				return false;
+					
+		end
+	elseif modelo == 34 then 
+		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaCH7.html"
+		
+		local modeloCH = HTML_Dialog(false, html_path, 1900, 950, "REFERENCIA CH7")
+		
+		textoDescriptivo="REFERENCIA CH7"
+		anchuraIzq=400 anchuraCentro=1200 anchuraDerecha=400 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=20
+		pliegueSuperior=300 pliegueInferior=40  margenA=57 margenB=108 diametroTaladros=5 
+		
+        modeloCH:AddTextField("textoDescriptivo", textoDescriptivo)
+		modeloCH:AddDoubleField("anchuraPlacaIzquierda", anchuraIzq)
+		modeloCH:AddDoubleField("anchuraPlacaCentro", anchuraCentro)
+		modeloCH:AddDoubleField("anchuraPlacaDerecha", anchuraDerecha)
+	    --modeloCH:AddDoubleField("margenPlaca", margenPlaca)
+	    modeloCH:AddDoubleField("alturaPlaca", alturaPlaca)
+		--modeloCH:AddDoubleField("origenX", origenX)
+		--modeloCH:AddDoubleField("origenY", origenY)
+
+		modeloCH:AddDoubleField("alaLateral", alaIzquierda)
+		modeloCH:AddDoubleField("alaSuperior", alaSuperior)
+		modeloCH:AddDoubleField("alaInferior", alaInferior)
+
+		modeloCH:AddDoubleField("pliegueInferior", pliegueInferior)
+
+		modeloCH:AddDoubleField("pliegueSuperior", pliegueSuperior)
+		modeloCH:AddDoubleField("margenA", margenA)
+		modeloCH:AddDoubleField("margenB", margenB)
+
+		modeloCH:AddDoubleField("diametroTaladros", diametroTaladros)
+		--modeloCH:AddCheckBox("crearColiso", true)
+		
+	    if  not modeloCH:ShowDialog() then
+			
+				return false;
+					
+		end
+	elseif modelo == 35 then 
+		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaCH8.html"
+		
+		local modeloCH = HTML_Dialog(false, html_path, 1900, 950, "REFERENCIA CH8")
+		
+		textoDescriptivo="REFERENCIA CH8"
+		anchuraIzq=400 anchuraCentro=1200 anchuraDerecha=400 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=40
+		pliegueSuperior=36 pliegueInferior=300  margenA=57 margenB=108 diametroTaladros=5 
+		
+        modeloCH:AddTextField("textoDescriptivo", textoDescriptivo)
+		modeloCH:AddDoubleField("anchuraPlacaIzquierda", anchuraIzq)
+		modeloCH:AddDoubleField("anchuraPlacaCentro", anchuraCentro)
+		modeloCH:AddDoubleField("anchuraPlacaDerecha", anchuraDerecha)
+	    --modeloCH:AddDoubleField("margenPlaca", margenPlaca)
+	    modeloCH:AddDoubleField("alturaPlaca", alturaPlaca)
+		--modeloCH:AddDoubleField("origenX", origenX)
+		--modeloCH:AddDoubleField("origenY", origenY)
+
+		modeloCH:AddDoubleField("alaLateral", alaIzquierda)
+		modeloCH:AddDoubleField("alaSuperior", alaSuperior)
+		modeloCH:AddDoubleField("alaInferior", alaInferior)
+
+		modeloCH:AddDoubleField("pliegueInferior", pliegueInferior)
+
+		modeloCH:AddDoubleField("pliegueSuperior", pliegueSuperior)
+		modeloCH:AddDoubleField("margenA", margenA)
+		modeloCH:AddDoubleField("margenB", margenB)
+
+		modeloCH:AddDoubleField("diametroTaladros", diametroTaladros)
+		--modeloCH:AddCheckBox("crearColiso", true)
+		
+	    if  not modeloCH:ShowDialog() then
+			
+				return false;
+					
+		end
+	
+	
+	end
+		
+
+	return true;
+
+end
+
+
+
+function OnLuaButton_aceptarCH(modeloCH)
+
+	if modelo==27 or modelo==28 or modelo==31 or modelo==33 then --SIN PLIEGUE CH
+		pliegueInferior=0
+		
+		textoDescriptivo = modeloCH:GetTextField("textoDescriptivo")
+		anchuraIzq = modeloCH:GetDoubleField("anchuraPlacaIzquierda")
+		anchuraCentro = modeloCH:GetDoubleField("anchuraPlacaCentro")
+		anchuraDerecha = modeloCH:GetDoubleField("anchuraPlacaDerecha")
+	    --margenPlaca = modeloCH:GetDoubleField("margenPlaca")
+	    alturaPlaca = modeloCH:GetDoubleField("alturaPlaca")
+		--origenX = modeloCH:GetDoubleField("origenXAH")
+		--origenY = modeloCH:GetDoubleField("origenYAH")
+
+		alaIzquierda=modeloCH:GetDoubleField("alaLateral")
+		alaSuperior=modeloCH:GetDoubleField("alaSuperior")
+		alaInferior=modeloCH:GetDoubleField("alaInferior")
+		--pliegueInferior=modeloCH:GetDoubleField("pliegueInferior")
+		pliegueSuperior=modeloCH:GetDoubleField("pliegueSuperior")
+		margenA=modeloCH:GetDoubleField("margenA")
+		margenB=modeloCH:GetDoubleField("margenB")
+
+		diametroTaladros=modeloCH:GetDoubleField("diametroTaladros")
+		
+		--crearColiso=modeloCH:GetCheckBox("crearColiso")
+
+
+	elseif modelo==29 or modelo==30 or modelo==32 or modelo==34 or modelo==35 then  --CON PLIEGUE CH
+		
+		textoDescriptivo = modeloCH:GetTextField("textoDescriptivo")
+		anchuraIzq = modeloCH:GetDoubleField("anchuraPlacaIzquierda")
+		anchuraCentro = modeloCH:GetDoubleField("anchuraPlacaCentro")
+		anchuraDerecha = modeloCH:GetDoubleField("anchuraPlacaDerecha")
+	    --margenPlaca = modeloCH:GetDoubleField("margenPlaca")
+	    alturaPlaca = modeloCH:GetDoubleField("alturaPlaca")
+		--origenX = modeloCH:GetDoubleField("origenXAH")
+		--origenY = modeloCH:GetDoubleField("origenYAH")
+		
+		alaIzquierda=modeloCH:GetDoubleField("alaLateral")
+		alaSuperior=modeloCH:GetDoubleField("alaSuperior")
+		alaInferior=modeloCH:GetDoubleField("alaInferior")
+		pliegueInferior=modeloCH:GetDoubleField("pliegueInferior")
+		pliegueSuperior=modeloCH:GetDoubleField("pliegueSuperior")
+		margenA=modeloCH:GetDoubleField("margenA")
+		margenB=modeloCH:GetDoubleField("margenB")
+		
+		diametroTaladros=modeloCH:GetDoubleField("diametroTaladros")
+		
+		--crearColiso=modeloCH:GetCheckBox("crearColiso")
+	
+  	end
+
+    
+	--Caracteristicas generales
+	anchuraPlaca=anchuraIzq+anchuraCentro+anchuraDerecha
+	
+	--anchuraPlaca=anchuraPlaca-margenPlaca
+    --alturaPlaca=alturaPlaca-margenPlaca
+	
+	alaDerecha=alaIzquierda
+	
+	alturaColiso=diametroTaladros
+	
+    --Comprobaciones y validaciones de los datos
+	if anchuraPlaca < 0 then
+		DisplayMessageBox("La anchura de la placa NO puede ser negativa.Creación Modelo CH Fallida")
+	elseif  alturaPlaca < 0 then
+		
+		DisplayMessageBox("La altura de la placa NO puede ser negativa.Creación Modelo CH Fallida")
+	
+    	
+	else
+		
+		--Para que la pieza apareza fuera del area de trabajo
+			--origenX=-(alaDerecha+anchuraIzq+anchuraCentro+anchuraDerecha+alaIzquierda+400)
+			--origenY= 400
+		
+		--Para dibujar la pieza
+			dibujarFresadoCH(doc)
+			dibujarCorteCH(doc)
+			dibujarTexto(doc)
+			--dibujarTaladrosBH(doc)
+		
+			
+		DisplayMessageBox("Modelo CH Creado Correctamente")
+	
+	end
+	
+	return true;
 
 end
 
@@ -2021,7 +2479,7 @@ function dibujarTaladro(puntoCentro, Radio, Layer)
 
 function dibujarTaladrosAH(doc)
 
-	if (modelo==0 or modelo==1) then
+	if modelo==0 then
 
 		--local numeroFilasTaladros=1
 		--local numeroColumnasTaladros=2
@@ -2123,6 +2581,8 @@ function dibujarTaladrosAH(doc)
 
         end
 
+--<<<<<<< HEAD
+--=======
     
     --Dispone de pliegue inferior
     elseif (modelo==2 or modelo==3) then
@@ -2210,29 +2670,28 @@ function dibujarTaladrosAH(doc)
 		        local radio = diametroTaladros/2
 		        local layer = "Taladros"
 		        dibujarTaladro(puntoCentro, radio, layer)
+>>>>>>> 6fbdaf8b2cf9f9f22904255b3b8dba6433a75bf4
 
-		        local puntoCentro = Point2D(anchoBota+margenTaladroBota+((j-1)*(anchuraPlaca+(2*margenXTaladroSuperior))),alaInferior+margenAla)
-		        local radio = diametroTaladros/2
-		        local layer = "Taladros"
-		        dibujarTaladro(puntoCentro, radio, layer)
+    elseif (modelo==2) then
 
-		        local puntoCentro = Point2D((anchoBota+margenTaladroBota+((j-1)*(anchuraPlaca+(2*margenXTaladroInferior))))+distanciaXTaladrosInferiores,margenYTaladroInferior+alaInferior)
-		        local radio = diametroTaladros/2
-		        local layer = "Taladros"
-		        dibujarTaladro(puntoCentro, radio, layer)
 
+<<<<<<< HEAD
+    elseif (modelo==3) then
+=======
 		   	end
 
 		   end]]--
 
         end
+-->>>>>>> 6fbdaf8b2cf9f9f22904255b3b8dba6433a75bf4
 
 
 
-    --Sin pliegues    
-   	
+   	--Test	
     elseif (modelo==4) then
 
+--<<<<<<< HEAD
+--=======
     	--local numeroFilasTaladros=1
 		--local numeroColumnasTaladros=2
 
@@ -2414,17 +2873,14 @@ function dibujarTaladrosAH(doc)
 		        local radio = diametroTaladros/2
 		        local layer = "Taladros"
 		        dibujarTaladro(puntoCentro, radio, layer)
+>>>>>>> 6fbdaf8b2cf9f9f22904255b3b8dba6433a75bf4
 
-		        local puntoCentro = Point2D(anchoBota+margenTaladroBota+((j-1)*(anchuraPlaca+(2*margenXTaladroSuperior))),alaInferior+alturaPlaca+alaLateral-margenYTaladroSuperior-distanciaYTaladrosSuperiores)
-		        local radio = diametroTaladros/2
-		        local layer = "Taladros"
-		        dibujarTaladro(puntoCentro, radio, layer)
 
-		        local puntoCentro = Point2D(anchoBota+margenTaladroBota+((j-1)*(anchuraPlaca+(2*margenXTaladroSuperior))),alaInferior+margenAla)
-		        local radio = diametroTaladros/2
-		        local layer = "Taladros"
-		        dibujarTaladro(puntoCentro, radio, layer)
 
+<<<<<<< HEAD
+    --Test
+	elseif (modelo==5) then
+=======
 		        local puntoCentro = Point2D((anchoBota+margenTaladroBota+((j-1)*(anchuraPlaca+(2*margenXTaladroInferior))))+distanciaXTaladrosInferiores,margenYTaladroInferior)
 		        local radio = diametroTaladros/2
 		        local layer = "Taladros"
@@ -2438,6 +2894,7 @@ function dibujarTaladrosAH(doc)
 
    
 	elseif (modelo==6) then
+-->>>>>>> 6fbdaf8b2cf9f9f22904255b3b8dba6433a75bf4
 
 		--local numeroFilasTaladros=1
 		--local numeroColumnasTaladros=2
@@ -2467,23 +2924,23 @@ function dibujarTaladrosAH(doc)
 		   	for j=1, numeroColumnasTaladros do
 
 		   		
-		   		local puntoCentro = Point2D(anchoBota+margenTaladroBota+((j-1)*(anchuraPlaca+(2*margenXTaladroSuperior))),alaInferior+alturaPlaca+pliegueSuperior+alaSuperior-margenYTaladroSuperior)
-		        local radio = diametroTaladros/2
-		        local layer = "Taladros"
-		        dibujarTaladro(puntoCentro, radio, layer)
-
-		        local puntoCentro = Point2D(anchoBota+margenTaladroBota+((j-1)*(anchuraPlaca+(2*margenXTaladroSuperior))),alaInferior+alturaPlaca+pliegueSuperior+alaSuperior-margenYTaladroSuperior-distanciaYTaladrosSuperiores)
-		        local radio = diametroTaladros/2
-		        local layer = "Taladros"
-		        dibujarTaladro(puntoCentro, radio, layer)
-
-
 		   		local puntoCentro = Point2D(anchoBota+margenTaladroBota+((j-1)*(anchuraPlaca+(2*margenXTaladroSuperior))),alaInferior+alturaPlaca+pliegueSuperior-margenYTaladroSuperior)
 		        local radio = diametroTaladros/2
 		        local layer = "Taladros"
 		        dibujarTaladro(puntoCentro, radio, layer)
 
 		        local puntoCentro = Point2D(anchoBota+margenTaladroBota+((j-1)*(anchuraPlaca+(2*margenXTaladroSuperior))),alaInferior+alturaPlaca+pliegueSuperior-margenYTaladroSuperior-distanciaYTaladrosSuperiores)
+		        local radio = diametroTaladros/2
+		        local layer = "Taladros"
+		        dibujarTaladro(puntoCentro, radio, layer)
+
+
+		   		local puntoCentro = Point2D(anchoBota+margenTaladroBota+((j-1)*(anchuraPlaca+(2*margenXTaladroSuperior))),alaInferior+alturaPlaca+margenYTaladroSuperior)
+		        local radio = diametroTaladros/2
+		        local layer = "Taladros"
+		        dibujarTaladro(puntoCentro, radio, layer)
+
+		        local puntoCentro = Point2D(anchoBota+margenTaladroBota+((j-1)*(anchuraPlaca+(2*margenXTaladroSuperior))),alaInferior+alturaPlaca+margenYTaladroSuperior-distanciaYTaladrosSuperiores)
 		        local radio = diametroTaladros/2
 		        local layer = "Taladros"
 		        dibujarTaladro(puntoCentro, radio, layer)
@@ -2525,23 +2982,23 @@ function dibujarTaladrosAH(doc)
 
 		   	for j=1, numeroColumnasTaladros do
 
-		   		local puntoCentro = Point2D(anchoBota+margenTaladroBota+((j-1)*(anchuraPlaca+(2*margenXTaladroSuperior))),alaInferior+alturaPlaca+pliegueSuperior+alaSuperior-margenYTaladroSuperior)
-		        local radio = diametroTaladros/2
-		        local layer = "Taladros"
-		        dibujarTaladro(puntoCentro, radio, layer)
-
-		        local puntoCentro = Point2D(anchoBota+margenTaladroBota+((j-1)*(anchuraPlaca+(2*margenXTaladroSuperior))),alaInferior+alturaPlaca+pliegueSuperior+alaSuperior-margenYTaladroSuperior-distanciaYTaladrosSuperiores)
-		        local radio = diametroTaladros/2
-		        local layer = "Taladros"
-		        dibujarTaladro(puntoCentro, radio, layer)
-
-
 		   		local puntoCentro = Point2D(anchoBota+margenTaladroBota+((j-1)*(anchuraPlaca+(2*margenXTaladroSuperior))),alaInferior+alturaPlaca+pliegueSuperior-margenYTaladroSuperior)
 		        local radio = diametroTaladros/2
 		        local layer = "Taladros"
 		        dibujarTaladro(puntoCentro, radio, layer)
 
 		        local puntoCentro = Point2D(anchoBota+margenTaladroBota+((j-1)*(anchuraPlaca+(2*margenXTaladroSuperior))),alaInferior+alturaPlaca+pliegueSuperior-margenYTaladroSuperior-distanciaYTaladrosSuperiores)
+		        local radio = diametroTaladros/2
+		        local layer = "Taladros"
+		        dibujarTaladro(puntoCentro, radio, layer)
+
+
+		   		local puntoCentro = Point2D(anchoBota+margenTaladroBota+((j-1)*(anchuraPlaca+(2*margenXTaladroSuperior))),alaInferior+alturaPlaca+margenYTaladroSuperior)
+		        local radio = diametroTaladros/2
+		        local layer = "Taladros"
+		        dibujarTaladro(puntoCentro, radio, layer)
+
+		        local puntoCentro = Point2D(anchoBota+margenTaladroBota+((j-1)*(anchuraPlaca+(2*margenXTaladroSuperior))),alaInferior+alturaPlaca+margenYTaladroSuperior-distanciaYTaladrosSuperiores)
 		        local radio = diametroTaladros/2
 		        local layer = "Taladros"
 		        dibujarTaladro(puntoCentro, radio, layer)
@@ -2562,6 +3019,10 @@ function dibujarTaladrosAH(doc)
 
         end
 
+--<<<<<<< HEAD
+   	elseif modelo==6 then
+
+--=======
    	elseif modelo==7 then
 
    		--local numeroFilasTaladros=1
@@ -2684,11 +3145,12 @@ function dibujarTaladrosAH(doc)
 		   	end
 
 		   end]]--
+		   end
+-->>>>>>> 6fbdaf8b2cf9f9f22904255b3b8dba6433a75bf4
 
-        end
-   
+   	elseif modelo==7 then
     
-    --Modelo 8
+
     else
 
     	
@@ -3463,6 +3925,76 @@ function dibujarCorteBH(doc)
 	return true; 
 end
 
+<<<<<<< HEAD
+=======
+function colisoIzqBH(i)
+
+
+
+--<<<<<<< HEAD
+--=======
+		local Contour = Contour(0.0)
+
+	
+	    --Coliso Izquierda
+		local origenColisoIzq = Point2D(origenX+alaIzquierda+anchuraColiso+(i*(anchura1+(pliegueSuperior))),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-(2*alturaColiso))
+		local pt2ColisoIzq=Point2D(origenX+alaIzquierda+(2*anchuraColiso)+(i*(anchura1+(pliegueSuperior))),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-(2*alturaColiso))
+	    local pt3ColisoIzq=Point2D(origenX+alaIzquierda+(2*anchuraColiso)+(i*(anchura1+(pliegueSuperior))),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso)
+	    local pt4ColisoIzq=Point2D(origenX+alaIzquierda+anchuraColiso+(i*(anchura1+(pliegueSuperior))),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso)
+		
+	    Contour:AppendPoint(origenColisoIzq)
+		Contour:LineTo(pt2ColisoIzq)
+		Contour:LineTo(pt3ColisoIzq)
+		Contour:LineTo(pt4ColisoIzq)
+		Contour:LineTo(origenColisoIzq)
+
+		local cad_object = CreateCadContour(Contour)
+
+		local cur_layer = doc.LayerManager:GetActiveLayer()
+		local layer = doc.LayerManager:GetLayerWithName("Taladros")
+
+		layer:AddObject(cad_object, true)
+		layer:SetColor(0,0,1)
+		layer.Visible = true 
+		doc.LayerManager:SetActiveLayer(cur_layer)
+		doc:Refresh2DView()	
+
+	
+
+end
+
+function colisoDerBH(i)
+
+	
+
+    local Contour = Contour(0.0)
+
+   
+		--Coliso Derecha
+		local origenColisoDerecha = Point2D(origenX+alaIzquierda+anchura1-(pliegueSuperior)-(2*anchuraColiso)+(i*(anchura2+(pliegueSuperior))),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-(2*alturaColiso))
+		local pt2ColisoDer=Point2D(origenX+alaIzquierda+anchura1-(pliegueSuperior)-(anchuraColiso)+(i*(anchura2+(pliegueSuperior))),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-(2*alturaColiso))
+	    local pt3ColisoDer=Point2D(origenX+alaIzquierda+anchura1-(pliegueSuperior)-(anchuraColiso)+(i*(anchura2+(pliegueSuperior))),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso)
+	    local pt4ColisoDer=Point2D(origenX+alaIzquierda+anchura1-(pliegueSuperior)-(2*anchuraColiso)+(i*(anchura2+(pliegueSuperior))),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso)
+		
+	    Contour:AppendPoint(origenColisoDerecha)
+		Contour:LineTo(pt2ColisoDer)
+		Contour:LineTo(pt3ColisoDer)
+		Contour:LineTo(pt4ColisoDer)
+		Contour:LineTo(origenColisoDerecha)
+
+		local cad_object = CreateCadContour(Contour)
+		local cur_layer = doc.LayerManager:GetActiveLayer()
+		local layer = doc.LayerManager:GetLayerWithName("Taladros")
+
+		layer:AddObject(cad_object, true)
+		layer:SetColor(0,0,1)
+		layer.Visible = true 
+		doc.LayerManager:SetActiveLayer(cur_layer)
+		doc:Refresh2DView()	
+
+	
+end
+>>>>>>> 39d1b33427e2abff4c25221f042a078c4bf6fb9d
 
 
 function dibujarTaladrosBH(doc)
@@ -4399,6 +4931,7 @@ end
 
 
 
+-->>>>>>> 6fbdaf8b2cf9f9f22904255b3b8dba6433a75bf4
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------- DIBUJAR REF CH ---------------------------------------------------------------------------------------------------------------------
@@ -4414,8 +4947,8 @@ function dibujarFresadoCH(doc)
 	--modelo=33 --[borrar]
 	--anchuraIzq=400 --[borrar]
 	--anchuraCentro=1200 --[borrar]
-	--anchuraDcha=400 --[borrar]
-	--anchuraPlaca=anchuraIzq+anchuraCentro+anchuraDcha --[borrar]
+	--anchuraDerecha=400 --[borrar]
+	--anchuraPlaca=anchuraIzq+anchuraCentro+anchuraDerecha --[borrar]
 	
 	
 	
@@ -4431,20 +4964,20 @@ function dibujarFresadoCH(doc)
 	local fresado7 = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro,origenY+alaInferior+pliegueInferior)
 	local fresado8 = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro-pliegueInferior,origenY+alaInferior)--Punto externo a la polilinea principal
 	local fresado9 = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro+pliegueInferior,origenY+alaInferior)
-	local fresado10 = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro+anchuraDcha,origenY+alaInferior+pliegueInferior)
-	local fresado11 = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro+anchuraDcha,origenY+alaInferior)
-	local fresado12 = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro+anchuraDcha,origenY)
+	local fresado10 = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro+anchuraDerecha,origenY+alaInferior+pliegueInferior)
+	local fresado11 = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro+anchuraDerecha,origenY+alaInferior)
+	local fresado12 = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro+anchuraDerecha,origenY)
 	local fresado13 = Point2D(origenX+alaIzquierda,origenY+alaInferior+pliegueInferior+alturaPlaca)
 	local fresado14 = Point2D(origenX+alaIzquierda+anchuraIzq,origenY+alaInferior+pliegueInferior+alturaPlaca)
 	local fresado15 = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro,origenY+alaInferior+pliegueInferior+alturaPlaca)
-	local fresado16 = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro+anchuraDcha,origenY+alaInferior+pliegueInferior+alturaPlaca)
+	local fresado16 = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro+anchuraDerecha,origenY+alaInferior+pliegueInferior+alturaPlaca)
 	local fresado17 = Point2D(origenX+alaIzquierda,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior)
 	local fresado18 = Point2D(origenX+alaIzquierda+anchuraIzq-pliegueSuperior,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior)
 	local fresado19 = Point2D(origenX+alaIzquierda+anchuraIzq+pliegueSuperior,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior)--Punto externo a la polilinea principal
 	local fresado20 = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro-pliegueSuperior,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior)--Punto externo a la polilinea principal
 	local fresado21 = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro+pliegueSuperior,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior)
-	local fresado22 = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro+anchuraDcha,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior)
-	local fresado23 = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro+anchuraDcha,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior)
+	local fresado22 = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro+anchuraDerecha,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior)
+	local fresado23 = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro+anchuraDerecha,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior)
 	
 	local fresado24 = Point2D(origenX+alaIzquierda,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior)
 	
@@ -4471,9 +5004,8 @@ function dibujarFresadoCH(doc)
 		
 		dibujarFresadoCH_auxiliar(doc,fresado19,fresado20)
 		
-	elseif modelo==29 or modelo==30  or modelo==35 then --[CH2][CH3][CH8]
-		Contour:AppendPoint(fresado2)
-		Contour:LineTo(fresado3)
+	elseif modelo==29 or modelo==30 then --[CH2][CH3]
+		Contour:AppendPoint(fresado3)
 		Contour:LineTo(fresado2)
 		Contour:LineTo(fresado4)
 		Contour:LineTo(fresado10)
@@ -4592,6 +5124,35 @@ function dibujarFresadoCH(doc)
 		dibujarFresadoCH_auxiliar(doc,fresado6,fresado8)
 		dibujarFresadoCH_auxiliar(doc,fresado19,fresado20)
 		
+	elseif modelo==35 then --[CH8]
+		Contour:AppendPoint(fresado3)
+		Contour:LineTo(fresado2)
+		Contour:LineTo(fresado1)
+		Contour:LineTo(fresado4)
+		Contour:LineTo(fresado10)
+		Contour:LineTo(fresado12)
+		Contour:LineTo(fresado11)
+		Contour:LineTo(fresado9)
+		Contour:LineTo(fresado11)
+		Contour:LineTo(fresado22)
+		Contour:LineTo(fresado21)
+		Contour:LineTo(fresado22)
+		Contour:LineTo(fresado16)
+		Contour:LineTo(fresado15)
+		Contour:LineTo(fresado7)
+		Contour:LineTo(fresado15)
+		Contour:LineTo(fresado14)
+		Contour:LineTo(fresado5)
+		Contour:LineTo(fresado14)
+		Contour:LineTo(fresado13)
+		Contour:LineTo(fresado17)
+		Contour:LineTo(fresado18)
+		Contour:LineTo(fresado17)
+		Contour:LineTo(fresado2)
+		
+		dibujarFresadoCH_auxiliar(doc,fresado19,fresado20)
+		dibujarFresadoCH_auxiliar(doc,fresado6,fresado8)
+		
 	end
 	
 	--[[
@@ -4656,11 +5217,6 @@ end
 
 
 
---[AH=0 - AH1=1 - AH2=2 - AH3=3 - AH4=4 - AH5=5 - AH6=6 - AH7=7 - AH8=8]
---[BH=9 - BH1=10 - BH2=11 - BH3=12 - BH4=13 - BH5=14 - BH6=15 - BH7=16 - BH8=17]
---[BH9=18 - BH10=19 - BH11=20 - BH12=21 - BH13=22 - BH14=23 - BH15=24 - BH16=25 - BH17=26]
---[CH=27 - CH1=28 - CH2=29 - CH3=30 - CH4=31 - CH5=32 - CH6=33 - CH7=34 - CH8=35]
-
 function dibujarCorteCH(doc)
 	
 	--modelo=33 --[borrar]
@@ -4679,8 +5235,8 @@ function dibujarCorteCH(doc)
 		local corte6 = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro-alaInferior,origenY)
 		local corte7 = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro,origenY+alaInferior)
 		local corte8 = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro+alaInferior,origenY)
-		local corte9 = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro+anchuraDcha+alaInferior,origenY)
-		local corte10 = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro+anchuraDcha,origenY+alaInferior)
+		local corte9 = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro+anchuraDerecha+alaInferior,origenY)
+		local corte10 = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro+anchuraDerecha,origenY+alaInferior)
 		
 		Contour:AppendPoint(corte1)
 		Contour:LineTo(corte2)
@@ -4708,10 +5264,10 @@ function dibujarCorteCH(doc)
 		local corte12 = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro,origenY+alaInferior+pliegueInferior)
 		local corte13 = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro+pliegueInferior,origenY+alaInferior)
 		local corte14 = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro+pliegueInferior,origenY)
-		local corte15 = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro+anchuraDcha,origenY)
-		local corte16 = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro+anchuraDcha,origenY+alaInferior)
-		local corte17 = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro+anchuraDcha+pliegueInferior,origenY+alaInferior)
-		local corte18 = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro+anchuraDcha,origenY+alaInferior+pliegueInferior)
+		local corte15 = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro+anchuraDerecha,origenY)
+		local corte16 = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro+anchuraDerecha,origenY+alaInferior)
+		local corte17 = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro+anchuraDerecha+pliegueInferior,origenY+alaInferior)
+		local corte18 = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro+anchuraDerecha,origenY+alaInferior+pliegueInferior)
 		
 		Contour:AppendPoint(corte1)
 		Contour:LineTo(corte2)
@@ -4748,11 +5304,11 @@ function dibujarCorteCH(doc)
 		local corte13 = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro,origenY+alaInferior+pliegueInferior)
 		local corte14 = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro+pliegueInferior,origenY+alaInferior)
 		local corte15 = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro+pliegueInferior,origenY)
-		local corte16 = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro+anchuraDcha+alaInferior,origenY)
-		local corte17 = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro+anchuraDcha,origenY+alaInferior)
-		local corte18 = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro+anchuraDcha+alaInferior,origenY+alaInferior*2)
-		local corte19 = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro+anchuraDcha+alaInferior,origenY+pliegueInferior)
-		local corte20 = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro+anchuraDcha,origenY+pliegueInferior+alaInferior)
+		local corte16 = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro+anchuraDerecha+alaInferior,origenY)
+		local corte17 = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro+anchuraDerecha,origenY+alaInferior)
+		local corte18 = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro+anchuraDerecha+alaInferior,origenY+alaInferior*2)
+		local corte19 = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro+anchuraDerecha+alaInferior,origenY+pliegueInferior)
+		local corte20 = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro+anchuraDerecha,origenY+pliegueInferior+alaInferior)
 		
 		Contour:AppendPoint(corte1)
 		Contour:LineTo(corte2)
@@ -4870,10 +5426,10 @@ function dibujarCorteCH(doc)
 	--PARTE SUPERIOR------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 	
 	if modelo==27 or modelo==28 or modelo==29 or modelo==30 or modelo==35 then --Parte Superior [CH][CH1][CH2][CH3][CH8]
-		local corte40 = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro+anchuraDcha,origenY+alaInferior+pliegueInferior+alturaPlaca)
-		local corte41 = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro+anchuraDcha+pliegueSuperior,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior)
-		local corte42 = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro+anchuraDcha,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior)
-		local corte43 = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro+anchuraDcha,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior)
+		local corte40 = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro+anchuraDerecha,origenY+alaInferior+pliegueInferior+alturaPlaca)
+		local corte41 = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro+anchuraDerecha+pliegueSuperior,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior)
+		local corte42 = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro+anchuraDerecha,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior)
+		local corte43 = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro+anchuraDerecha,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior)
 		local corte44 = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro+pliegueSuperior,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior)
 		local corte45 = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro+pliegueSuperior,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior)
 		local corte46 = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro,origenY+alaInferior+pliegueInferior+alturaPlaca)
@@ -4909,10 +5465,10 @@ function dibujarCorteCH(doc)
 		Contour:LineTo(corte57)
 		
 	elseif modelo==31 or modelo==32 then --Parte Superior [CH4][CH5]
-		local corte40 = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro+anchuraDcha,origenY+alaInferior+pliegueInferior+alturaPlaca)
-		local corte41 = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro+anchuraDcha+pliegueSuperior,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior)
-		local corte42 = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro+anchuraDcha,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior)
-		local corte43 = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro+anchuraDcha,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior)
+		local corte40 = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro+anchuraDerecha,origenY+alaInferior+pliegueInferior+alturaPlaca)
+		local corte41 = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro+anchuraDerecha+pliegueSuperior,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior)
+		local corte42 = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro+anchuraDerecha,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior)
+		local corte43 = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro+anchuraDerecha,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior)
 		local corte44 = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro+pliegueSuperior+alaSuperior,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior)
 		local corte45 = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro,origenY+alaInferior+pliegueInferior+alturaPlaca)
 		local corte46 = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro-pliegueSuperior-alaSuperior,origenY+alaInferior+pliegueInferior+alturaPlaca+alaSuperior+pliegueSuperior)
@@ -4940,11 +5496,11 @@ function dibujarCorteCH(doc)
 		Contour:LineTo(corte53)
 	
 	elseif modelo==33 or modelo==34 then --[CH6][CH7]
-		local corte40 = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro+anchuraDcha,origenY+alaInferior+pliegueInferior+alturaPlaca)
-		local corte41 = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro+anchuraDcha+alaSuperior,origenY+alaInferior+pliegueInferior+alturaPlaca+alaSuperior)
-		local corte42 = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro+anchuraDcha+alaSuperior,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior-alaSuperior)
-		local corte43 = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro+anchuraDcha,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior)
-		local corte44 = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro+anchuraDcha+alaSuperior,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior)
+		local corte40 = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro+anchuraDerecha,origenY+alaInferior+pliegueInferior+alturaPlaca)
+		local corte41 = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro+anchuraDerecha+alaSuperior,origenY+alaInferior+pliegueInferior+alturaPlaca+alaSuperior)
+		local corte42 = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro+anchuraDerecha+alaSuperior,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior-alaSuperior)
+		local corte43 = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro+anchuraDerecha,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior)
+		local corte44 = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro+anchuraDerecha+alaSuperior,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior)
 		local corte45 = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro+pliegueSuperior,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior)
 		local corte46 = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro+pliegueSuperior,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior)
 		local corte47 = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro,origenY+alaInferior+pliegueInferior+alturaPlaca)
