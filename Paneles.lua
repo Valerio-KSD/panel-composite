@@ -111,34 +111,47 @@ alaDerecha=50
 	
 
 
+
+
+
+--Documento
 ruta=""
 doc = VectricJob()
+
+--Tamaño de la ventana [en pixeles]
+tamX=1024
+tamY=768
 
 function main(script_path)
 
     ruta=script_path
 	
-		
 	if not doc.Exists then
 	   DisplayMessageBox("Trabajo NO Cargado")
 		return false;
 	end
 	
-	
-		
 	local html_path = "file:" .. script_path .. "\\Paneles\\Paneles.html"
 	
-	local framePrincipal = HTML_Dialog(false, html_path, 1900, 950, "KSD Motion Control S.L.U.")
-
-	--framePrincipal:AddRadioGroup("refAH", 1)
+	
+	
+	--local framePrincipal = HTML_Dialog(false, html_path, 1900, 950, "KSD Motion Control S.L.U.") --24" (proporcion original)
+	--local framePrincipal = HTML_Dialog(false, html_path, 1920, 1200, "KSD Motion Control S.L.U.") --24" (proporcion 4:3)
+	--local framePrincipal = HTML_Dialog(false, html_path, 1024, 768, "KSD Motion Control S.L.U.") --14.7" (proporcion 4:3)
+	local framePrincipal = HTML_Dialog(false, html_path, tamX, tamY, "KSD Motion Control S.L.U.") --14.7" (proporcion 4:3)
+	--14.7" (proporcion 4:3)
+	--14.7" (proporcion 16:10)
+	--14.7" (proporcion 16:9)
+	--14.7" (proporcion 21:9)
+	
+	
+	
 		
 	if  not framePrincipal:ShowDialog() then
 	
 		return false;
 		
 	end
-
-	--modelo=framePrincipal:GetRadioIndex("refAH")
 		
 	return true; 
 end 
@@ -350,7 +363,7 @@ function OnLuaButton_modeloAH(framePrincipal)
 		
 		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaAH.html"
 		
-		local modeloAH = HTML_Dialog(false, html_path, 1900, 950, "REFERENCIA AH")
+		local modeloAH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA AH")
 		
 		textoDescriptivo="REFERENCIA AH"
 		anchuraPlaca=2000 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=32
@@ -392,7 +405,7 @@ function OnLuaButton_modeloAH(framePrincipal)
 		
 		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaAH1.html"
 			
-		local modeloAH = HTML_Dialog(false, html_path, 1900, 950, "REFERENCIA AH1")
+		local modeloAH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA AH1")
 
 		textoDescriptivo="REFERENCIA AH1"
 		anchuraPlaca=2000 alturaPlaca=1000 alaIzquierda=40 alaSuperior=20 alaInferior=32
@@ -428,7 +441,7 @@ function OnLuaButton_modeloAH(framePrincipal)
 				
 		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaAH2.html"
 			
-		local modeloAH = HTML_Dialog(false, html_path, 1900, 950, "REFERENCIA AH2")
+		local modeloAH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA AH2")
 
 		textoDescriptivo="REFERENCIA AH2"
 		anchuraPlaca=2000 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=20
@@ -464,7 +477,7 @@ function OnLuaButton_modeloAH(framePrincipal)
 				
 		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaAH3.html"
 			
-		local modeloAH = HTML_Dialog(false, html_path, 1900, 950, "REFERENCIA AH3")
+		local modeloAH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA AH3")
 
 		textoDescriptivo="REFERENCIA AH3"
 		anchuraPlaca=2000 alturaPlaca=1000 alaIzquierda=40 alaSuperior=20 alaInferior=20
@@ -500,7 +513,7 @@ function OnLuaButton_modeloAH(framePrincipal)
 				
 		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaAH4.html"
 			
-		local modeloAH = HTML_Dialog(false, html_path, 1900, 950, "REFERENCIA AH4")
+		local modeloAH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA AH4")
 
 		textoDescriptivo="REFERENCIA AH4"
 		anchuraPlaca=2000 alturaPlaca=1000 alaIzquierda=40 alaSuperior=260 alaInferior=32
@@ -536,7 +549,7 @@ function OnLuaButton_modeloAH(framePrincipal)
 				
 		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaAH5.html"
 			
-		local modeloAH = HTML_Dialog(false, html_path, 1900, 950, "REFERENCIA AH5")
+		local modeloAH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA AH5")
 
 		textoDescriptivo="REFERENCIA AH5"
 		anchuraPlaca=2000 alturaPlaca=1000 alaIzquierda=40 alaSuperior=260 alaInferior=20
@@ -572,7 +585,7 @@ function OnLuaButton_modeloAH(framePrincipal)
 				
 		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaAH6.html"
 			
-		local modeloAH = HTML_Dialog(false, html_path, 1900, 950, "REFERENCIA AH6")
+		local modeloAH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA AH6")
 
 		textoDescriptivo="REFERENCIA AH6"
 		anchuraPlaca=2000 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=32
@@ -608,7 +621,7 @@ function OnLuaButton_modeloAH(framePrincipal)
 				
 		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaAH7.html"
 			
-		local modeloAH = HTML_Dialog(false, html_path, 1900, 950, "REFERENCIA AH7")
+		local modeloAH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA AH7")
 
 		textoDescriptivo="REFERENCIA AH7"
 		anchuraPlaca=2000 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=20
@@ -644,7 +657,7 @@ function OnLuaButton_modeloAH(framePrincipal)
 				
 		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaAH8.html"
 			
-		local modeloAH = HTML_Dialog(false, html_path, 1900, 950, "REFERENCIA AH8")
+		local modeloAH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA AH8")
 
 		textoDescriptivo="REFERENCIA AH8"
 		anchuraPlaca=2000 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=40
@@ -786,7 +799,7 @@ function OnLuaButton_aceptarAH(modeloAH)
 			
 			
 			
-		DisplayMessageBox("Modelo AH Creado Correctamente")
+		DisplayMessageBox("Modelo AH"..modelo.." Creado Correctamente")
 		
 	
 	end
@@ -806,7 +819,7 @@ function OnLuaButton_modeloBH(framePrincipal)
 		
 		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH.html"
 		
-		local modeloBH = HTML_Dialog(false, html_path, 1900, 950, "REFERENCIA BH")
+		local modeloBH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA BH")
 		
 		textoDescriptivo="REFERENCIA BH"
 		anchura1=1200 anchura2=800 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=32
@@ -843,7 +856,7 @@ function OnLuaButton_modeloBH(framePrincipal)
    	elseif modelo==10 then
 		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH1.html"
 		
-		local modeloBH = HTML_Dialog(false, html_path, 1900, 950, "REFERENCIA BH1")
+		local modeloBH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA BH1")
 		
 		textoDescriptivo="REFERENCIA BH1"
 		anchura1=1200 anchura2=800 alturaPlaca=1000 alaIzquierda=40 alaSuperior=20 alaInferior=32
@@ -879,7 +892,7 @@ function OnLuaButton_modeloBH(framePrincipal)
 	elseif modelo==11 then
 		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH2.html"
 		
-		local modeloBH = HTML_Dialog(false, html_path, 1900, 950, "REFERENCIA BH2")
+		local modeloBH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA BH2")
 		
 		textoDescriptivo="REFERENCIA BH2"
 		anchura1=1200 anchura2=800 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=20
@@ -915,7 +928,7 @@ function OnLuaButton_modeloBH(framePrincipal)
 	elseif modelo==12 then
 		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH3.html"
 		
-		local modeloBH = HTML_Dialog(false, html_path, 1900, 950, "REFERENCIA BH3")
+		local modeloBH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA BH3")
 		
 		textoDescriptivo="REFERENCIA BH3"
 		anchura1=1200 anchura2=800 alturaPlaca=1000 alaIzquierda=40 alaSuperior=20 alaInferior=20
@@ -951,7 +964,7 @@ function OnLuaButton_modeloBH(framePrincipal)
 	elseif modelo==13 then
 		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH4.html"
 		
-		local modeloBH = HTML_Dialog(false, html_path, 1900, 950, "REFERENCIA BH4")
+		local modeloBH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA BH4")
 		
 		textoDescriptivo="REFERENCIA BH4"
 		anchura1=1200 anchura2=800 alturaPlaca=1000 alaIzquierda=40 alaSuperior=260 alaInferior=32
@@ -987,7 +1000,7 @@ function OnLuaButton_modeloBH(framePrincipal)
 	elseif modelo==14 then
 		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH5.html"
 		
-		local modeloBH = HTML_Dialog(false, html_path, 1900, 950, "REFERENCIA BH5")
+		local modeloBH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA BH5")
 		
 		textoDescriptivo="REFERENCIA BH5"
 		anchura1=1200 anchura2=800 alturaPlaca=1000 alaIzquierda=40 alaSuperior=260 alaInferior=20
@@ -1023,7 +1036,7 @@ function OnLuaButton_modeloBH(framePrincipal)
 	elseif modelo==15 then
 		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH6.html"
 		
-		local modeloBH = HTML_Dialog(false, html_path, 1900, 950, "REFERENCIA BH6")
+		local modeloBH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA BH6")
 		
 		textoDescriptivo="REFERENCIA BH6"
 		anchura1=1200 anchura2=800 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=32
@@ -1059,7 +1072,7 @@ function OnLuaButton_modeloBH(framePrincipal)
 	elseif modelo==16 then
 		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH7.html"
 		
-		local modeloBH = HTML_Dialog(false, html_path, 1900, 950, "REFERENCIA BH7")
+		local modeloBH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA BH7")
 		
 		textoDescriptivo="REFERENCIA BH7"
 		anchura1=1200 anchura2=800 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=20
@@ -1095,7 +1108,7 @@ function OnLuaButton_modeloBH(framePrincipal)
 	elseif modelo==17 then
 		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH8.html"
 		
-		local modeloBH = HTML_Dialog(false, html_path, 1900, 950, "REFERENCIA BH8")
+		local modeloBH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA BH8")
 		
 		textoDescriptivo="REFERENCIA BH8"
 		anchura1=1200 anchura2=800 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=32
@@ -1131,7 +1144,7 @@ function OnLuaButton_modeloBH(framePrincipal)
 	elseif modelo==18 then
 		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH9.html"
 		
-		local modeloBH = HTML_Dialog(false, html_path, 1900, 950, "REFERENCIA BH9")
+		local modeloBH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA BH9")
 		
 		textoDescriptivo="REFERENCIA BH9"
 		anchura1=1200 anchura2=800 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=32
@@ -1168,7 +1181,7 @@ function OnLuaButton_modeloBH(framePrincipal)
 	elseif modelo==19 then
 		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH10.html"
 		
-		local modeloBH = HTML_Dialog(false, html_path, 1900, 950, "REFERENCIA BH10")
+		local modeloBH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA BH10")
 		
 		textoDescriptivo="REFERENCIA BH10"
 		anchura1=1200 anchura2=800 alturaPlaca=1000 alaIzquierda=40 alaSuperior=20 alaInferior=32
@@ -1205,7 +1218,7 @@ function OnLuaButton_modeloBH(framePrincipal)
 	elseif modelo==20 then
 		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH11.html"
 		
-		local modeloBH = HTML_Dialog(false, html_path, 1900, 950, "REFERENCIA BH11")
+		local modeloBH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA BH11")
 		
 		textoDescriptivo="REFERENCIA BH11"
 		anchura1=1200 anchura2=800 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=20
@@ -1242,7 +1255,7 @@ function OnLuaButton_modeloBH(framePrincipal)
 	elseif modelo==21 then
 		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH12.html"
 		
-		local modeloBH = HTML_Dialog(false, html_path, 1900, 950, "REFERENCIA BH12")
+		local modeloBH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA BH12")
 		
 		textoDescriptivo="REFERENCIA BH12"
 		anchura1=1200 anchura2=800 alturaPlaca=1000 alaIzquierda=40 alaSuperior=20 alaInferior=20
@@ -1279,7 +1292,7 @@ function OnLuaButton_modeloBH(framePrincipal)
 	elseif modelo==22 then
 		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH13.html"
 		
-		local modeloBH = HTML_Dialog(false, html_path, 1900, 950, "REFERENCIA BH13")
+		local modeloBH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA BH13")
 		
 		textoDescriptivo="REFERENCIA BH13"
 		anchura1=1200 anchura2=800 alturaPlaca=1000 alaIzquierda=40 alaSuperior=260 alaInferior=32
@@ -1316,7 +1329,7 @@ function OnLuaButton_modeloBH(framePrincipal)
 	elseif modelo==23 then
 		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH14.html"
 		
-		local modeloBH = HTML_Dialog(false, html_path, 1900, 950, "REFERENCIA BH14")
+		local modeloBH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA BH14")
 		
 		textoDescriptivo="REFERENCIA BH14"
 		anchura1=1200 anchura2=800 alturaPlaca=1000 alaIzquierda=40 alaSuperior=260 alaInferior=20
@@ -1353,7 +1366,7 @@ function OnLuaButton_modeloBH(framePrincipal)
 	elseif modelo==24 then
 		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH15.html"
 		
-		local modeloBH = HTML_Dialog(false, html_path, 1900, 950, "REFERENCIA BH15")
+		local modeloBH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA BH15")
 		
 		textoDescriptivo="REFERENCIA BH15"
 		anchura1=1200 anchura2=800 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=32
@@ -1390,7 +1403,7 @@ function OnLuaButton_modeloBH(framePrincipal)
 	elseif modelo==25 then
 		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH16.html"
 		
-		local modeloBH = HTML_Dialog(false, html_path, 1900, 950, "REFERENCIA BH16")
+		local modeloBH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA BH16")
 		
 		textoDescriptivo="REFERENCIA BH16"
 		anchura1=1200 anchura2=800 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=20
@@ -1428,7 +1441,7 @@ function OnLuaButton_modeloBH(framePrincipal)
 	elseif modelo==26 then
 		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH17.html"
 		
-		local modeloBH = HTML_Dialog(false, html_path, 1900, 950, "REFERENCIA BH17")
+		local modeloBH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA BH17")
 		
 		textoDescriptivo="REFERENCIA BH17"
 		anchura1=1200 anchura2=800 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=40
@@ -1611,7 +1624,7 @@ function OnLuaButton_aceptarBH(modeloBH)
 			dibujarTaladrosBH(doc)
 		
 			
-		DisplayMessageBox("Modelo BH Creado Correctamente")
+		DisplayMessageBox("Modelo BH"..modelo-9 .. " Creado Correctamente")
 	
 	end
 	
@@ -1629,7 +1642,7 @@ function OnLuaButton_modeloCH(framePrincipal)
 	if modelo == 27 then 
 		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaCH.html"
 		
-		local modeloCH = HTML_Dialog(false, html_path, 1900, 950, "REFERENCIA CH")
+		local modeloCH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA CH")
 		
 		textoDescriptivo="REFERENCIA CH"
 		anchuraIzq=400 anchuraCentro=1200 anchuraDerecha=400 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=32
@@ -1667,7 +1680,7 @@ function OnLuaButton_modeloCH(framePrincipal)
 	elseif modelo == 28 then 
 		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaCH1.html"
 		
-		local modeloCH = HTML_Dialog(false, html_path, 1900, 950, "REFERENCIA CH1")
+		local modeloCH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA CH1")
 		
 		textoDescriptivo="REFERENCIA CH1"
 		anchuraIzq=400 anchuraCentro=1200 anchuraDerecha=400 alturaPlaca=1000 alaIzquierda=40 alaSuperior=20 alaInferior=32
@@ -1705,7 +1718,7 @@ function OnLuaButton_modeloCH(framePrincipal)
 	elseif modelo == 29 then 
 		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaCH2.html"
 		
-		local modeloCH = HTML_Dialog(false, html_path, 1900, 950, "REFERENCIA CH2")
+		local modeloCH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA CH2")
 		
 		textoDescriptivo="REFERENCIA CH2"
 		anchuraIzq=400 anchuraCentro=1200 anchuraDerecha=400 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=20
@@ -1742,7 +1755,7 @@ function OnLuaButton_modeloCH(framePrincipal)
 	elseif modelo == 30 then 
 		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaCH3.html"
 		
-		local modeloCH = HTML_Dialog(false, html_path, 1900, 950, "REFERENCIA CH3")
+		local modeloCH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA CH3")
 		
 		textoDescriptivo="REFERENCIA CH3"
 		anchuraIzq=400 anchuraCentro=1200 anchuraDerecha=400 alturaPlaca=1000 alaIzquierda=40 alaSuperior=20 alaInferior=20
@@ -1779,7 +1792,7 @@ function OnLuaButton_modeloCH(framePrincipal)
 	elseif modelo == 31 then 
 		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaCH4.html"
 		
-		local modeloCH = HTML_Dialog(false, html_path, 1900, 950, "REFERENCIA CH4")
+		local modeloCH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA CH4")
 		
 		textoDescriptivo="REFERENCIA CH4"
 		anchuraIzq=400 anchuraCentro=1200 anchuraDerecha=400 alturaPlaca=1000 alaIzquierda=40 alaSuperior=260 alaInferior=32
@@ -1816,7 +1829,7 @@ function OnLuaButton_modeloCH(framePrincipal)
 	elseif modelo == 32 then 
 		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaCH5.html"
 		
-		local modeloCH = HTML_Dialog(false, html_path, 1900, 950, "REFERENCIA CH5")
+		local modeloCH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA CH5")
 		
 		textoDescriptivo="REFERENCIA CH5"
 		anchuraIzq=400 anchuraCentro=1200 anchuraDerecha=400 alturaPlaca=1000 alaIzquierda=40 alaSuperior=260 alaInferior=20
@@ -1853,7 +1866,7 @@ function OnLuaButton_modeloCH(framePrincipal)
 	elseif modelo == 33 then 
 		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaCH6.html"
 		
-		local modeloCH = HTML_Dialog(false, html_path, 1900, 950, "REFERENCIA CH6")
+		local modeloCH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA CH6")
 		
 		textoDescriptivo="REFERENCIA CH6"
 		anchuraIzq=400 anchuraCentro=1200 anchuraDerecha=400 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=32
@@ -1890,7 +1903,7 @@ function OnLuaButton_modeloCH(framePrincipal)
 	elseif modelo == 34 then 
 		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaCH7.html"
 		
-		local modeloCH = HTML_Dialog(false, html_path, 1900, 950, "REFERENCIA CH7")
+		local modeloCH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA CH7")
 		
 		textoDescriptivo="REFERENCIA CH7"
 		anchuraIzq=400 anchuraCentro=1200 anchuraDerecha=400 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=20
@@ -1927,7 +1940,7 @@ function OnLuaButton_modeloCH(framePrincipal)
 	elseif modelo == 35 then 
 		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaCH8.html"
 		
-		local modeloCH = HTML_Dialog(false, html_path, 1900, 950, "REFERENCIA CH8")
+		local modeloCH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA CH8")
 		
 		textoDescriptivo="REFERENCIA CH8"
 		anchuraIzq=400 anchuraCentro=1200 anchuraDerecha=400 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=40
@@ -2062,7 +2075,7 @@ function OnLuaButton_aceptarCH(modeloCH)
 			dibujarTaladrosCH(doc)
 		
 			
-		DisplayMessageBox("Modelo CH Creado Correctamente")
+		DisplayMessageBox("Modelo CH"..modelo-27 .." Creado Correctamente")
 	
 	end
 	
@@ -2081,7 +2094,7 @@ function OnLuaButton_modelo000(framePrincipal)
 	if modelo == 101 then 
 		local html_path = "file:" .. ruta .. "\\Paneles\\referencia001.html"
 		
-		local modelo000 = HTML_Dialog(false, html_path, 1900, 950, "BANDEJA CLIENTES 001")
+		local modelo000 = HTML_Dialog(false, html_path, tamX, tamY, "BANDEJA CLIENTES 001")
 		
 		textoDescriptivo="BANDEJA 001"
 		anchura1=50 anchura2=130 anchura3=285 anchura4=1745 anchura5=300 anchura6=130 anchura7=50
@@ -2111,7 +2124,7 @@ function OnLuaButton_modelo000(framePrincipal)
 	elseif modelo == 102 then 
 		local html_path = "file:" .. ruta .. "\\Paneles\\referencia002.html"
 		
-		local modelo000 = HTML_Dialog(false, html_path, 1900, 950, "BANDEJA CLIENTES 002")
+		local modelo000 = HTML_Dialog(false, html_path, tamX, tamY, "BANDEJA CLIENTES 002")
 		
 		textoDescriptivo="BANDEJA 002"
 		anchura1=50 anchura2=130 anchura3=290 anchura4=1765 anchura5=295 anchura6=130 anchura7=50
@@ -2142,7 +2155,7 @@ function OnLuaButton_modelo000(framePrincipal)
 	elseif modelo == 103 then 
 		local html_path = "file:" .. ruta .. "\\Paneles\\referencia003.html"
 		
-		local modelo000 = HTML_Dialog(false, html_path, 1900, 950, "BANDEJA CLIENTES 003")
+		local modelo000 = HTML_Dialog(false, html_path, tamX, tamY, "BANDEJA CLIENTES 003")
 		
 		textoDescriptivo="BANDEJA 003"
 		altura1=20 altura2=30 altura3=50 altura4=90 altura5=100 altura6=70 altura7=15 altura8=60 altura9=0 altura10=0
@@ -2328,152 +2341,47 @@ function dibujarFresadoAH(doc)
    	local fresado7 = Point2D(origenX+alaIzquierda,origenY+alaInferior+alturaPlaca+pliegueInferior)
 	local fresado8 = Point2D(origenX+anchuraPlaca+alaIzquierda,origenY+alaInferior+alturaPlaca+pliegueInferior)
 	local fresado11 = Point2D(origenX+anchuraPlaca+alaIzquierda,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior)
-	
 	local fresado12 = Point2D(origenX+alaIzquierda,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior)
 	
-	
 	if modelo==0 or modelo==1 then --REF [AH][AH1]
-		--[[Contour:AppendPoint(fresado9)
-		Contour:LineTo(fresado2)
-		Contour:LineTo(fresado3)
-		Contour:LineTo(fresado10)
-		Contour:LineTo(fresado5)
-		Contour:LineTo(fresado6)
-		Contour:LineTo(fresado7)
-		Contour:LineTo(fresado8)
-		Contour:LineTo(fresado7)
-		Contour:LineTo(fresado2)--]]
-		
 		dibujarFresado_auxiliar(doc,fresado9,fresado6)
 		dibujarFresado_auxiliar(doc,fresado10,fresado5)
 		dibujarFresado_auxiliar(doc,fresado6,fresado5)
 		dibujarFresado_auxiliar(doc,fresado7,fresado8)
 		dibujarFresado_auxiliar(doc,fresado2,fresado3)
-
 	elseif modelo==2 or modelo==3 then --REF [AH2][AH3]
-		--[[Contour:AppendPoint(fresado1)
-		Contour:LineTo(fresado2)
-		Contour:LineTo(fresado3)
-		Contour:LineTo(fresado4)
-		Contour:LineTo(fresado1)
-		Contour:LineTo(fresado6)
-		Contour:LineTo(fresado5)
-		Contour:LineTo(fresado4)
-		Contour:LineTo(fresado8)
-		Contour:LineTo(fresado7)--]]
-		
 		dibujarFresado_auxiliar(doc,fresado1,fresado4)
 		dibujarFresado_auxiliar(doc,fresado2,fresado3)
 		dibujarFresado_auxiliar(doc,fresado6,fresado5)
 		dibujarFresado_auxiliar(doc,fresado7,fresado8)
 		dibujarFresado_auxiliar(doc,fresado1,fresado6)
 		dibujarFresado_auxiliar(doc,fresado4,fresado5)
-		
-		
 	elseif modelo==4 then --REF [AH4]
-		--[[Contour:AppendPoint(fresado9)
-		Contour:LineTo(fresado2)
-		Contour:LineTo(fresado3)
-		Contour:LineTo(fresado10)
-		Contour:LineTo(fresado5)
-		Contour:LineTo(fresado8)
-		Contour:LineTo(fresado7)
-		Contour:LineTo(fresado6)
-		Contour:LineTo(fresado1)--]]
-		
 		dibujarFresado_auxiliar(doc,fresado9,fresado6)
 		dibujarFresado_auxiliar(doc,fresado10,fresado5)
 		dibujarFresado_auxiliar(doc,fresado7,fresado8)
 		dibujarFresado_auxiliar(doc,fresado2,fresado3)
-
-		
-		
-		
 	elseif modelo==5 then --REF [AH5]
-		--[[Contour:AppendPoint(fresado1)
-		Contour:LineTo(fresado2)
-		Contour:LineTo(fresado3)
-		Contour:LineTo(fresado4)
-		Contour:LineTo(fresado5)
-		Contour:LineTo(fresado8)
-		Contour:LineTo(fresado7)
-		Contour:LineTo(fresado6)
-		Contour:LineTo(fresado1)
-		Contour:LineTo(fresado4)--]]
-		
 		dibujarFresado_auxiliar(doc,fresado1,fresado6)
 		dibujarFresado_auxiliar(doc,fresado4,fresado5)
 		dibujarFresado_auxiliar(doc,fresado7,fresado8)
 		dibujarFresado_auxiliar(doc,fresado2,fresado3)
 		dibujarFresado_auxiliar(doc,fresado1,fresado4)
-		
-		
-		
 	elseif modelo==6 then --REF [AH6]
-		--[[Contour:AppendPoint(fresado9)
-		Contour:LineTo(fresado2)
-		Contour:LineTo(fresado3)
-		Contour:LineTo(fresado10)
-		Contour:LineTo(fresado11)
-		Contour:LineTo(fresado5)
-		Contour:LineTo(fresado6)
-		Contour:LineTo(fresado12)
-		Contour:LineTo(fresado7)
-		Contour:LineTo(fresado8)
-		Contour:LineTo(fresado7)
-		Contour:LineTo(fresado1)--]]
-		
-		dibujarFresado_auxiliar(doc,fresado9,fresado6)
-		dibujarFresado_auxiliar(doc,fresado10,fresado5)
+		dibujarFresado_auxiliar(doc,fresado9,fresado12)
+		dibujarFresado_auxiliar(doc,fresado10,fresado11)
 		dibujarFresado_auxiliar(doc,fresado6,fresado5)
 		dibujarFresado_auxiliar(doc,fresado7,fresado8)
 		dibujarFresado_auxiliar(doc,fresado2,fresado3)
-		
-		
-		
-		
-		
-		
-		
 	elseif modelo==7 then --REF [AH7]
-		--[[Contour:AppendPoint(fresado1)
-		Contour:LineTo(fresado2)
-		Contour:LineTo(fresado3)
-		Contour:LineTo(fresado4)
-		Contour:LineTo(fresado1)
-		Contour:LineTo(fresado12)
-		Contour:LineTo(fresado6)
-		Contour:LineTo(fresado5)
-		Contour:LineTo(fresado11)
-		Contour:LineTo(fresado8)
-		Contour:LineTo(fresado7)
-		Contour:LineTo(fresado8)
-		Contour:LineTo(fresado4)--]]
-		
 		dibujarFresado_auxiliar(doc,fresado6,fresado7)
 		dibujarFresado_auxiliar(doc,fresado7,fresado8)
 		dibujarFresado_auxiliar(doc,fresado2,fresado3)
 		dibujarFresado_auxiliar(doc,fresado1,fresado4)
 		dibujarFresado_auxiliar(doc,fresado1,fresado12)
 		dibujarFresado_auxiliar(doc,fresado4,fresado11)
-		
-		
-		
-		
+		dibujarFresado_auxiliar(doc,fresado6,fresado5)
 	elseif modelo==8 then  --REF [AH8]
-		--[[Contour:AppendPoint(fresado9)
-		Contour:LineTo(fresado2)
-		Contour:LineTo(fresado3)
-		Contour:LineTo(fresado10)
-		Contour:LineTo(fresado4)
-		Contour:LineTo(fresado1)
-		Contour:LineTo(fresado6)
-		Contour:LineTo(fresado5)
-		Contour:LineTo(fresado8)
-		Contour:LineTo(fresado7)
-		Contour:LineTo(fresado8)
-		Contour:LineTo(fresado4)--]]
-		
 		dibujarFresado_auxiliar(doc,fresado6,fresado5)
 		dibujarFresado_auxiliar(doc,fresado7,fresado8)
 		dibujarFresado_auxiliar(doc,fresado2,fresado3)
@@ -3678,136 +3586,74 @@ function dibujarFresadoBH(doc)
 	
 	
 	if modelo==9 or modelo==10 or modelo==18 or modelo==19  then --REF [BH][BH1] [BH9][BH10]
-		Contour:AppendPoint(fresado1)
-		Contour:LineTo(fresado3)
-		Contour:LineTo(fresado4)
-		Contour:LineTo(fresado6)
-		Contour:LineTo(fresado14)
-		Contour:LineTo(fresado13)
-		Contour:LineTo(fresado14)
-		Contour:LineTo(fresado15)
-		Contour:LineTo(fresado10)
-		Contour:LineTo(fresado11)
-		Contour:LineTo(fresado12)
-		Contour:LineTo(fresado11)
-		Contour:LineTo(fresado10)
-		Contour:LineTo(fresado16)
-		Contour:LineTo(fresado7)
-		Contour:LineTo(fresado3)
-		Contour:LineTo(fresado10)
+		dibujarFresado_auxiliar(doc,fresado1,fresado11)
+		dibujarFresado_auxiliar(doc,fresado6,fresado14)
+		dibujarFresado_auxiliar(doc,fresado11,fresado12)
+		dibujarFresado_auxiliar(doc,fresado13,fresado14)
+		dibujarFresado_auxiliar(doc,fresado10,fresado15)
+		dibujarFresado_auxiliar(doc,fresado16,fresado7)
+		dibujarFresado_auxiliar(doc,fresado3,fresado4)
 		
-	elseif modelo==11 or modelo==12  or modelo==20 or modelo==21 then --REF [BH2][BH3] [BH11][BH12]
-		Contour:AppendPoint(fresado8)
-		Contour:LineTo(fresado2)
-		Contour:LineTo(fresado3)
-		Contour:LineTo(fresado4)
-		Contour:LineTo(fresado5)
-		Contour:LineTo(fresado9)
-		Contour:LineTo(fresado5)
-		Contour:LineTo(fresado14)
-		Contour:LineTo(fresado13)
-		Contour:LineTo(fresado14)
-		Contour:LineTo(fresado15)
-		Contour:LineTo(fresado16)
-		Contour:LineTo(fresado7)
-		Contour:LineTo(fresado3)
-		Contour:LineTo(fresado11)
-		Contour:LineTo(fresado12)
-		Contour:LineTo(fresado11)
-		Contour:LineTo(fresado10)
-		Contour:LineTo(fresado15)
+	elseif modelo==11 or modelo==12  or modelo==20 or modelo==21 then --REF [BH2][BH3] [BH11][BH12]	
+		dibujarFresado_auxiliar(doc,fresado8,fresado2)
+		dibujarFresado_auxiliar(doc,fresado9,fresado5)
+		dibujarFresado_auxiliar(doc,fresado3,fresado4)
+		dibujarFresado_auxiliar(doc,fresado2,fresado11)
+		dibujarFresado_auxiliar(doc,fresado5,fresado14)
+		dibujarFresado_auxiliar(doc,fresado11,fresado12)
+		dibujarFresado_auxiliar(doc,fresado13,fresado14)
+		dibujarFresado_auxiliar(doc,fresado10,fresado15)
+		dibujarFresado_auxiliar(doc,fresado16,fresado7)
 		
-	elseif modelo==13 or modelo==22  then --REF [BH4]  [BH13]
-		Contour:AppendPoint(fresado1)
-		Contour:LineTo(fresado3)
-		Contour:LineTo(fresado4)
-		Contour:LineTo(fresado6)
-		Contour:LineTo(fresado14)
-		Contour:LineTo(fresado15)
-		Contour:LineTo(fresado10)
-		Contour:LineTo(fresado11)
-		Contour:LineTo(fresado3)
-		Contour:LineTo(fresado7)
-		Contour:LineTo(fresado16)
+		
+	elseif modelo==13 or modelo==22  then --REF [BH4]  [BH13]		
+		dibujarFresado_auxiliar(doc,fresado1,fresado11)
+		dibujarFresado_auxiliar(doc,fresado10,fresado15)
+		dibujarFresado_auxiliar(doc,fresado14,fresado6)
+		dibujarFresado_auxiliar(doc,fresado3,fresado4)
+		dibujarFresado_auxiliar(doc,fresado16,fresado7)
 		
 	elseif modelo==14 or modelo==23  then --REF [BH5]  [BH14]
-		Contour:AppendPoint(fresado8)
-		Contour:LineTo(fresado2)
-		Contour:LineTo(fresado3)
-		Contour:LineTo(fresado4)
-		Contour:LineTo(fresado5)
-		Contour:LineTo(fresado9)
-		Contour:LineTo(fresado5)
-		Contour:LineTo(fresado14)
-		Contour:LineTo(fresado15)
-		Contour:LineTo(fresado10)
-		Contour:LineTo(fresado11)
-		Contour:LineTo(fresado3)
-		Contour:LineTo(fresado7)
-		Contour:LineTo(fresado16)
+		dibujarFresado_auxiliar(doc,fresado2,fresado11)
+		dibujarFresado_auxiliar(doc,fresado10,fresado15)
+		dibujarFresado_auxiliar(doc,fresado14,fresado5)
+		dibujarFresado_auxiliar(doc,fresado5,fresado9)
+		dibujarFresado_auxiliar(doc,fresado2,fresado8)
+		dibujarFresado_auxiliar(doc,fresado3,fresado4)
+		dibujarFresado_auxiliar(doc,fresado16,fresado7)
 		
 	elseif modelo==15 or modelo==24  then --REF [BH6] [BH15]
-		Contour:AppendPoint(fresado1)
-		Contour:LineTo(fresado3)
-		Contour:LineTo(fresado4)
-		Contour:LineTo(fresado6)
-		Contour:LineTo(fresado17)
-		Contour:LineTo(fresado14)
-		Contour:LineTo(fresado13)
-		Contour:LineTo(fresado14)
-		Contour:LineTo(fresado15)
-		Contour:LineTo(fresado10)
-		Contour:LineTo(fresado18)
-		Contour:LineTo(fresado11)
-		Contour:LineTo(fresado12)
-		Contour:LineTo(fresado11)
-		Contour:LineTo(fresado3)
-		Contour:LineTo(fresado7)
-		Contour:LineTo(fresado16)
+		dibujarFresado_auxiliar(doc,fresado1,fresado18)
+		dibujarFresado_auxiliar(doc,fresado11,fresado12)
+		dibujarFresado_auxiliar(doc,fresado13,fresado14)
+		dibujarFresado_auxiliar(doc,fresado15,fresado10)
+		dibujarFresado_auxiliar(doc,fresado16,fresado7)
+		dibujarFresado_auxiliar(doc,fresado17,fresado6)
+		dibujarFresado_auxiliar(doc,fresado3,fresado4)
 		
 	elseif modelo==16 or modelo==25  then --REF [BH7]  [BH16]
-		Contour:AppendPoint(fresado8)
-		Contour:LineTo(fresado2)
-		Contour:LineTo(fresado3)
-		Contour:LineTo(fresado4)
-		Contour:LineTo(fresado5)
-		Contour:LineTo(fresado9)
-		Contour:LineTo(fresado5)
-		Contour:LineTo(fresado17)
-		Contour:LineTo(fresado14)
-		Contour:LineTo(fresado13)
-		Contour:LineTo(fresado14)
-		Contour:LineTo(fresado15)
-		Contour:LineTo(fresado10)
-		Contour:LineTo(fresado18)
-		Contour:LineTo(fresado11)
-		Contour:LineTo(fresado12)
-		Contour:LineTo(fresado11)
-		Contour:LineTo(fresado3)
-		Contour:LineTo(fresado7)
-		Contour:LineTo(fresado16)
 		
-	elseif modelo==17 or modelo==26  then --REF [BH8] [BH17]
-		Contour:AppendPoint(fresado8)
-		Contour:LineTo(fresado2)
-		Contour:LineTo(fresado1)
-		Contour:LineTo(fresado3)
-		Contour:LineTo(fresado4)
-		Contour:LineTo(fresado6)
-		Contour:LineTo(fresado5)
-		Contour:LineTo(fresado9)
-		Contour:LineTo(fresado5)
-		Contour:LineTo(fresado14)
-		Contour:LineTo(fresado13)
-		Contour:LineTo(fresado14)
-		Contour:LineTo(fresado15)
-		Contour:LineTo(fresado10)
-		Contour:LineTo(fresado11)
-		Contour:LineTo(fresado12)
-		Contour:LineTo(fresado11)
-		Contour:LineTo(fresado3)
-		Contour:LineTo(fresado7)
-		Contour:LineTo(fresado16)	
+		dibujarFresado_auxiliar(doc,fresado1,fresado18)
+		dibujarFresado_auxiliar(doc,fresado17,fresado6)
+		dibujarFresado_auxiliar(doc,fresado2,fresado8)
+		dibujarFresado_auxiliar(doc,fresado9,fresado5)
+		dibujarFresado_auxiliar(doc,fresado3,fresado4)
+		dibujarFresado_auxiliar(doc,fresado7,fresado16)
+		dibujarFresado_auxiliar(doc,fresado10,fresado15)
+		dibujarFresado_auxiliar(doc,fresado11,fresado12)
+		dibujarFresado_auxiliar(doc,fresado13,fresado14)
+		
+	elseif modelo==17 or modelo==26  then --REF [BH8] [BH17]		
+		dibujarFresado_auxiliar(doc,fresado11,fresado12)
+		dibujarFresado_auxiliar(doc,fresado13,fresado14)
+		dibujarFresado_auxiliar(doc,fresado10,fresado15)
+		dibujarFresado_auxiliar(doc,fresado16,fresado7)
+		dibujarFresado_auxiliar(doc,fresado3,fresado4)
+		dibujarFresado_auxiliar(doc,fresado6,fresado17)
+		dibujarFresado_auxiliar(doc,fresado18,fresado1)
+		dibujarFresado_auxiliar(doc,fresado2,fresado8)
+		dibujarFresado_auxiliar(doc,fresado9,fresado5)
+		
 	end
 	
 	
@@ -5306,7 +5152,7 @@ function dibujarFresadoCH(doc)
 	local fresado24 = Point2D(origenX+alaIzquierda,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior)
 	
 	if modelo==27 or modelo==28 then --REF [CH][CH1]
-		Contour:AppendPoint(fresado1)
+		--[[Contour:AppendPoint(fresado1)
 		Contour:LineTo(fresado4)
 		Contour:LineTo(fresado10)
 		Contour:LineTo(fresado12)
@@ -5324,12 +5170,21 @@ function dibujarFresadoCH(doc)
 		Contour:LineTo(fresado17)
 		Contour:LineTo(fresado18)
 		Contour:LineTo(fresado17)
-		Contour:LineTo(fresado1)
+		Contour:LineTo(fresado1)--]]
 		
+		dibujarFresado_auxiliar(doc,fresado1,fresado17)
+		dibujarFresado_auxiliar(doc,fresado17,fresado18)
 		dibujarFresado_auxiliar(doc,fresado19,fresado20)
+		dibujarFresado_auxiliar(doc,fresado21,fresado22)
+		dibujarFresado_auxiliar(doc,fresado22,fresado12)
+		dibujarFresado_auxiliar(doc,fresado10,fresado4)
+		dibujarFresado_auxiliar(doc,fresado5,fresado14)
+		dibujarFresado_auxiliar(doc,fresado13,fresado16)
+		dibujarFresado_auxiliar(doc,fresado15,fresado7)
+
 		
 	elseif modelo==29 or modelo==30 then --[CH2][CH3]
-		Contour:AppendPoint(fresado3)
+		--[[Contour:AppendPoint(fresado3)
 		Contour:LineTo(fresado2)
 		Contour:LineTo(fresado4)
 		Contour:LineTo(fresado10)
@@ -5353,10 +5208,25 @@ function dibujarFresadoCH(doc)
 		Contour:LineTo(fresado2)
 		
 		dibujarFresado_auxiliar(doc,fresado19,fresado20)
-		dibujarFresado_auxiliar(doc,fresado6,fresado8)
+		dibujarFresado_auxiliar(doc,fresado6,fresado8)--]]
+		
+		dibujarFresado_auxiliar(doc,fresado2,fresado17)
+		dibujarFresado_auxiliar(doc,fresado17,fresado18)
+		dibujarFresado_auxiliar(doc,fresado19,fresado20)
+		dibujarFresado_auxiliar(doc,fresado21,fresado22)
+		dibujarFresado_auxiliar(doc,fresado22,fresado11)
+		dibujarFresado_auxiliar(doc,fresado11,fresado9)
+		dibujarFresado_auxiliar(doc,fresado8,fresado6)
+		dibujarFresado_auxiliar(doc,fresado3,fresado2)
+		dibujarFresado_auxiliar(doc,fresado4,fresado10)
+		dibujarFresado_auxiliar(doc,fresado7,fresado15)
+		dibujarFresado_auxiliar(doc,fresado16,fresado13)
+		dibujarFresado_auxiliar(doc,fresado14,fresado5)
+		
+		
 	
 	elseif modelo==31 then --[CH4]
-		Contour:AppendPoint(fresado1)
+		--[[Contour:AppendPoint(fresado1)
 		Contour:LineTo(fresado4)
 		Contour:LineTo(fresado10)
 		Contour:LineTo(fresado12)
@@ -5370,10 +5240,17 @@ function dibujarFresadoCH(doc)
 		Contour:LineTo(fresado14)
 		Contour:LineTo(fresado13)
 		Contour:LineTo(fresado17)
-		Contour:LineTo(fresado1)
+		Contour:LineTo(fresado1)--]]
+		
+		dibujarFresado_auxiliar(doc,fresado1,fresado17)
+		dibujarFresado_auxiliar(doc,fresado13,fresado16)
+		dibujarFresado_auxiliar(doc,fresado16,fresado12)
+		dibujarFresado_auxiliar(doc,fresado10,fresado4)
+		dibujarFresado_auxiliar(doc,fresado5,fresado14)
+		dibujarFresado_auxiliar(doc,fresado15,fresado7)
 		
 	elseif modelo==32 then --[CH5]
-		Contour:AppendPoint(fresado3)
+		--[[Contour:AppendPoint(fresado3)
 		Contour:LineTo(fresado2)
 		Contour:LineTo(fresado4)
 		Contour:LineTo(fresado10)
@@ -5392,10 +5269,20 @@ function dibujarFresadoCH(doc)
 		Contour:LineTo(fresado17)
 		Contour:LineTo(fresado2)
 		
-		dibujarFresado_auxiliar(doc,fresado6,fresado8)
+		dibujarFresado_auxiliar(doc,fresado6,fresado8)--]]
+		
+		dibujarFresado_auxiliar(doc,fresado2,fresado17)
+		dibujarFresado_auxiliar(doc,fresado13,fresado16)
+		dibujarFresado_auxiliar(doc,fresado22,fresado11)
+		dibujarFresado_auxiliar(doc,fresado11,fresado9)
+		dibujarFresado_auxiliar(doc,fresado8,fresado6)
+		dibujarFresado_auxiliar(doc,fresado3,fresado2)
+		dibujarFresado_auxiliar(doc,fresado4,fresado10)
+		dibujarFresado_auxiliar(doc,fresado7,fresado15)
+		dibujarFresado_auxiliar(doc,fresado14,fresado5)
 	
 	elseif modelo==33 then --[CH6]
-		Contour:AppendPoint(fresado1)
+		--[[Contour:AppendPoint(fresado1)
 		Contour:LineTo(fresado4)
 		Contour:LineTo(fresado10)
 		Contour:LineTo(fresado12)
@@ -5417,10 +5304,20 @@ function dibujarFresadoCH(doc)
 		Contour:LineTo(fresado17)
 		Contour:LineTo(fresado1)
 		
+		dibujarFresado_auxiliar(doc,fresado19,fresado20)--]]
+		
+		dibujarFresado_auxiliar(doc,fresado1,fresado17)
+		dibujarFresado_auxiliar(doc,fresado17,fresado18)
 		dibujarFresado_auxiliar(doc,fresado19,fresado20)
+		dibujarFresado_auxiliar(doc,fresado21,fresado22)
+		dibujarFresado_auxiliar(doc,fresado22,fresado12)
+		dibujarFresado_auxiliar(doc,fresado10,fresado4)
+		dibujarFresado_auxiliar(doc,fresado5,fresado14)
+		dibujarFresado_auxiliar(doc,fresado13,fresado16)
+		dibujarFresado_auxiliar(doc,fresado15,fresado7)
 	
 	elseif modelo==34 then --[CH7]
-		Contour:AppendPoint(fresado3)
+		--[[Contour:AppendPoint(fresado3)
 		Contour:LineTo(fresado2)
 		Contour:LineTo(fresado4)
 		Contour:LineTo(fresado10)
@@ -5446,10 +5343,23 @@ function dibujarFresadoCH(doc)
 		Contour:LineTo(fresado2)
 		
 		dibujarFresado_auxiliar(doc,fresado6,fresado8)
+		dibujarFresado_auxiliar(doc,fresado19,fresado20)--]]
+		
+		dibujarFresado_auxiliar(doc,fresado2,fresado24)
+		dibujarFresado_auxiliar(doc,fresado17,fresado18)
 		dibujarFresado_auxiliar(doc,fresado19,fresado20)
+		dibujarFresado_auxiliar(doc,fresado21,fresado22)
+		dibujarFresado_auxiliar(doc,fresado23,fresado11)
+		dibujarFresado_auxiliar(doc,fresado11,fresado9)
+		dibujarFresado_auxiliar(doc,fresado8,fresado6)
+		dibujarFresado_auxiliar(doc,fresado3,fresado2)
+		dibujarFresado_auxiliar(doc,fresado4,fresado10)
+		dibujarFresado_auxiliar(doc,fresado7,fresado15)
+		dibujarFresado_auxiliar(doc,fresado16,fresado13)
+		dibujarFresado_auxiliar(doc,fresado14,fresado5)
 		
 	elseif modelo==35 then --[CH8]
-		Contour:AppendPoint(fresado3)
+		--[[Contour:AppendPoint(fresado3)
 		Contour:LineTo(fresado2)
 		Contour:LineTo(fresado1)
 		Contour:LineTo(fresado4)
@@ -5475,7 +5385,20 @@ function dibujarFresadoCH(doc)
 		Contour:LineTo(fresado2)
 		
 		dibujarFresado_auxiliar(doc,fresado19,fresado20)
-		dibujarFresado_auxiliar(doc,fresado6,fresado8)
+		dibujarFresado_auxiliar(doc,fresado6,fresado8)--]]
+		
+		dibujarFresado_auxiliar(doc,fresado1,fresado17)
+		dibujarFresado_auxiliar(doc,fresado17,fresado18)
+		dibujarFresado_auxiliar(doc,fresado19,fresado20)
+		dibujarFresado_auxiliar(doc,fresado21,fresado22)
+		dibujarFresado_auxiliar(doc,fresado22,fresado12)
+		dibujarFresado_auxiliar(doc,fresado11,fresado9)
+		dibujarFresado_auxiliar(doc,fresado8,fresado6)
+		dibujarFresado_auxiliar(doc,fresado3,fresado2)
+		dibujarFresado_auxiliar(doc,fresado4,fresado10)
+		dibujarFresado_auxiliar(doc,fresado7,fresado15)
+		dibujarFresado_auxiliar(doc,fresado16,fresado13)
+		dibujarFresado_auxiliar(doc,fresado14,fresado5)
 		
 	end
 	
