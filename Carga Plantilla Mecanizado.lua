@@ -22,6 +22,9 @@ function main(script_path)
  
     
     local template_path =script_path .."\\plantilla_4mm_90grados+taladros+corte.ToolpathTemplate"
+    --local template_path_fresado =script_path .."\\90grados.ToolpathTemplate"
+    --local template_path_corte =script_path .."\\corte.ToolpathTemplate"
+    --local template_path_taladros =script_path .."\\taladros.ToolpathTemplate"
 	
     local toolpath_manager = ToolpathManager()
 
@@ -35,8 +38,22 @@ function main(script_path)
     --Carga de la plantilla de mecanizado
     if not toolpath_manager:LoadToolpathTemplate(template_path) then
        MessageBox("Error: Plantilla NO cargada " .. template_path)
+       return false
+    end
+    --[[if not toolpath_manager:LoadToolpathTemplate(template_path_fresado) then
+       MessageBox("Error: Plantilla NO cargada " .. template_path_fresado)
 	   return false
     end
+
+    if not toolpath_manager:LoadToolpathTemplate(template_path_corte) then
+       MessageBox("Error: Plantilla NO cargada " .. template_path_corte)
+       return false
+    end
+
+    if not toolpath_manager:LoadToolpathTemplate(template_path_taladros) then
+       MessageBox("Error: Plantilla NO cargada " .. template_path_taladros)
+       return false
+    end]]--
 	
     --MessageBox("Plantilla cargada " .. template_path)
     
@@ -48,7 +65,7 @@ function main(script_path)
 	   --MessageBox("Resultados de recalcular todo\n" .. calc_result)
 	end
 
-
+    MessageBox("Archivo CARGADO correctamente.")
 	
     return true;
 end    
