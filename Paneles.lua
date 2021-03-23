@@ -2,6 +2,15 @@
 
 require "strict"
 
+
+ruta_carpeta="https://cuttool.es/prueba/"
+carpeta="Paneles"
+
+--DisplayMessageBox("La ruta es: " .. ruta_carpeta.. "" .. carpeta .. "")
+
+
+
+
 --Variable texto
 textoDescriptivo=""
 
@@ -66,6 +75,10 @@ anchuraIzq=400
 anchuraCentro=1200
 anchuraDerecha=400
 
+--Entrada para modelo [DH]
+pliegueDer=50
+pliegueIzq=50
+
 
 origenX=0
 origenY=0
@@ -78,6 +91,10 @@ modelo=0
 --[BH=9 - BH1=10 - BH2=11 - BH3=12 - BH4=13 - BH5=14 - BH6=15 - BH7=16 - BH8=17]
 --[BH9=18 - BH10=19 - BH11=20 - BH12=21 - BH13=22 - BH14=23 - BH15=24 - BH16=25 - BH17=26]
 --[CH=27 - CH1=28 - CH2=29 - CH3=30 - CH4=31 - CH5=32 - CH6=33 - CH7=34 - CH8=35]
+
+--[DH=40 - DH1=41 - DH2=42 - DH3=43 - DH4=44 - DH5=45 - DH6=46 - DH7=47]
+
+--[ref001=101 - ref002=102 - ref003=103 - ref004=104 - ref005=105]
 
 
 
@@ -94,6 +111,14 @@ alaInferior=34
 pliegueSuperior=35
 alaSuperior=40
 margenFresado=1
+
+pliegueInf1=34
+pliegueInf2=34
+pliegueInf3=34
+pliegueInf4=34
+pliegueInf5=34
+pliegueInf6=34
+pliegueInf7=34
 
 --PIEZA ESPECIAL 003
 altura1=50
@@ -135,7 +160,11 @@ function main(script_path)
 	   DisplayMessageBox("Trabajo NO Cargado")
 		return false;
 	end	
-	local html_path = "file:" .. script_path .. "\\Paneles\\Paneles.html"
+	
+	
+	--local html_path = "file:" .. script_path .. "\\Paneles\\Paneles.html"
+	local html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/Paneles.html"
+
 	
 	
 	local framePrincipal = HTML_Dialog(false, html_path, tamX, tamY, "KSD Motion Control S.L.U.") --14.7" (proporcion 4:3)
@@ -460,11 +489,15 @@ function OnLuaButton_modeloAH(framePrincipal)
 
 	if modelo == 0 then 
 		
-		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaAH.html"
+		DisplayMessageBox("La ruta es: " .. ruta_carpeta.. "" .. carpeta .. "")
+
+		
+		--local html_path = "file:" .. ruta .. "\\Paneles\\referenciaAH.html"
+		local html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referenciaAH.html"
 		
 		local modeloAH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA AH")
 		
-		textoDescriptivo="REFERENCIA AH"
+		textoDescriptivo="AH"
 		anchuraPlaca=2000 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=32
 		pliegueSuperior=36 pliegueInferior=0  margenA=57 margenB=108 diametroTaladros=5 
 		
@@ -502,11 +535,13 @@ function OnLuaButton_modeloAH(framePrincipal)
 
    	elseif modelo==1 then
 		
-		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaAH1.html"
+		--local html_path = "file:" .. ruta .. "\\Paneles\\referenciaAH1.html"
+		local html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referenciaAH1.html"
 			
 		local modeloAH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA AH1")
+		
 
-		textoDescriptivo="REFERENCIA AH1"
+		textoDescriptivo="AH1"
 		anchuraPlaca=2000 alturaPlaca=1000 alaIzquierda=40 alaSuperior=20 alaInferior=32
 		pliegueSuperior=40 pliegueInferior=0  margenA=57 margenB=108 diametroTaladros=5 
 		
@@ -538,11 +573,12 @@ function OnLuaButton_modeloAH(framePrincipal)
 		
     elseif modelo==2 then
 				
-		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaAH2.html"
+		--local html_path = "file:" .. ruta .. "\\Paneles\\referenciaAH2.html"
+		local html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referenciaAH2.html"
 			
 		local modeloAH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA AH2")
 
-		textoDescriptivo="REFERENCIA AH2"
+		textoDescriptivo="AH2"
 		anchuraPlaca=2000 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=20
 		pliegueSuperior=36 pliegueInferior=40  margenA=57 margenB=108 diametroTaladros=5 
 		
@@ -574,11 +610,12 @@ function OnLuaButton_modeloAH(framePrincipal)
 	
     elseif modelo==3 then
 				
-		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaAH3.html"
+		--local html_path = "file:" .. ruta .. "\\Paneles\\referenciaAH3.html"
+		local html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referenciaAH3.html"
 			
 		local modeloAH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA AH3")
 
-		textoDescriptivo="REFERENCIA AH3"
+		textoDescriptivo="AH3"
 		anchuraPlaca=2000 alturaPlaca=1000 alaIzquierda=40 alaSuperior=20 alaInferior=20
 		pliegueSuperior=40 pliegueInferior=40  margenA=57 margenB=108 diametroTaladros=5 
 		
@@ -610,11 +647,12 @@ function OnLuaButton_modeloAH(framePrincipal)
 	
     elseif modelo==4 then
 				
-		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaAH4.html"
+		--local html_path = "file:" .. ruta .. "\\Paneles\\referenciaAH4.html"
+		local html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referenciaAH4.html"
 			
 		local modeloAH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA AH4")
 
-		textoDescriptivo="REFERENCIA AH4"
+		textoDescriptivo="AH4"
 		anchuraPlaca=2000 alturaPlaca=1000 alaIzquierda=40 alaSuperior=260 alaInferior=32
 		pliegueSuperior=40 pliegueInferior=0  margenA=57 margenB=108 diametroTaladros=5 
 		
@@ -646,11 +684,12 @@ function OnLuaButton_modeloAH(framePrincipal)
 	
     elseif modelo==5 then
 				
-		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaAH5.html"
+		--local html_path = "file:" .. ruta .. "\\Paneles\\referenciaAH5.html"
+		local html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referenciaAH5.html"
 			
 		local modeloAH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA AH5")
 
-		textoDescriptivo="REFERENCIA AH5"
+		textoDescriptivo="AH5"
 		anchuraPlaca=2000 alturaPlaca=1000 alaIzquierda=40 alaSuperior=260 alaInferior=20
 		pliegueSuperior=40 pliegueInferior=40  margenA=57 margenB=108 diametroTaladros=5 
 		
@@ -682,11 +721,12 @@ function OnLuaButton_modeloAH(framePrincipal)
 	
     elseif modelo==6 then
 				
-		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaAH6.html"
+		--local html_path = "file:" .. ruta .. "\\Paneles\\referenciaAH6.html"
+		local html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referenciaAH6.html"
 			
 		local modeloAH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA AH6")
 
-		textoDescriptivo="REFERENCIA AH6"
+		textoDescriptivo="AH6"
 		anchuraPlaca=2000 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=32
 		pliegueSuperior=300 pliegueInferior=0  margenA=57 margenB=108 diametroTaladros=5 
 		
@@ -718,11 +758,12 @@ function OnLuaButton_modeloAH(framePrincipal)
 	
     elseif modelo==7 then
 				
-		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaAH7.html"
+		--local html_path = "file:" .. ruta .. "\\Paneles\\referenciaAH7.html"
+		local html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referenciaAH7.html"
 			
 		local modeloAH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA AH7")
 
-		textoDescriptivo="REFERENCIA AH7"
+		textoDescriptivo="AH7"
 		anchuraPlaca=2000 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=20
 		pliegueSuperior=300 pliegueInferior=40  margenA=57 margenB=108 diametroTaladros=5 
 		
@@ -754,11 +795,12 @@ function OnLuaButton_modeloAH(framePrincipal)
 	
     elseif modelo==8 then
 				
-		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaAH8.html"
+		--local html_path = "file:" .. ruta .. "\\Paneles\\referenciaAH8.html"
+		local html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referenciaAH8.html"
 			
 		local modeloAH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA AH8")
 
-		textoDescriptivo="REFERENCIA AH8"
+		textoDescriptivo="AH8"
 		anchuraPlaca=2000 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=40
 		pliegueSuperior=36 pliegueInferior=300 margenA=57 margenB=108 diametroTaladros=5 
 		
@@ -919,11 +961,12 @@ function OnLuaButton_modeloBH(framePrincipal)
 	
 	if modelo == 9 then 
 		
-		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH.html"
+		--local html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH.html"
+		local html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referenciaBH.html"
 		
 		local modeloBH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA BH")
 		
-		textoDescriptivo="REFERENCIA BH"
+		textoDescriptivo="BH"
 		anchura1=1200 anchura2=800 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=32
 		pliegueSuperior=36 pliegueInferior=0  margenA=57 margenB=108 diametroTaladros=5 
 		
@@ -956,11 +999,12 @@ function OnLuaButton_modeloBH(framePrincipal)
 		end
 
    	elseif modelo==10 then
-		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH1.html"
+		--local html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH1.html"
+		local html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referenciaBH1.html"
 		
 		local modeloBH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA BH1")
 		
-		textoDescriptivo="REFERENCIA BH1"
+		textoDescriptivo="BH1"
 		anchura1=1200 anchura2=800 alturaPlaca=1000 alaIzquierda=40 alaSuperior=20 alaInferior=32
 		pliegueSuperior=40 pliegueInferior=0  margenA=57 margenB=108 diametroTaladros=5 
 		
@@ -992,11 +1036,12 @@ function OnLuaButton_modeloBH(framePrincipal)
 					
 		end
 	elseif modelo==11 then
-		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH2.html"
+		--local html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH2.html"
+		local html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referenciaBH2.html"
 		
 		local modeloBH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA BH2")
 		
-		textoDescriptivo="REFERENCIA BH2"
+		textoDescriptivo="BH2"
 		anchura1=1200 anchura2=800 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=20
 		pliegueSuperior=36 pliegueInferior=40  margenA=57 margenB=108 diametroTaladros=5 
 		
@@ -1028,11 +1073,12 @@ function OnLuaButton_modeloBH(framePrincipal)
 					
 		end
 	elseif modelo==12 then
-		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH3.html"
+		--local html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH3.html"
+		local html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referenciaBH3.html"
 		
 		local modeloBH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA BH3")
 		
-		textoDescriptivo="REFERENCIA BH3"
+		textoDescriptivo="BH3"
 		anchura1=1200 anchura2=800 alturaPlaca=1000 alaIzquierda=40 alaSuperior=20 alaInferior=20
 		pliegueSuperior=36 pliegueInferior=40  margenA=57 margenB=108 diametroTaladros=5 
 		
@@ -1064,11 +1110,12 @@ function OnLuaButton_modeloBH(framePrincipal)
 					
 		end
 	elseif modelo==13 then
-		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH4.html"
+		--local html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH4.html"
+		local html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referenciaBH4.html"
 		
 		local modeloBH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA BH4")
 		
-		textoDescriptivo="REFERENCIA BH4"
+		textoDescriptivo="BH4"
 		anchura1=1200 anchura2=800 alturaPlaca=1000 alaIzquierda=40 alaSuperior=260 alaInferior=32
 		pliegueSuperior=40 pliegueInferior=0  margenA=57 margenB=108 diametroTaladros=5 
 		
@@ -1100,11 +1147,12 @@ function OnLuaButton_modeloBH(framePrincipal)
 					
 		end
 	elseif modelo==14 then
-		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH5.html"
+		--local html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH5.html"
+		local html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referenciaBH5.html"
 		
 		local modeloBH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA BH5")
 		
-		textoDescriptivo="REFERENCIA BH5"
+		textoDescriptivo="BH5"
 		anchura1=1200 anchura2=800 alturaPlaca=1000 alaIzquierda=40 alaSuperior=260 alaInferior=20
 		pliegueSuperior=40 pliegueInferior=40  margenA=57 margenB=108 diametroTaladros=5 
 		
@@ -1136,11 +1184,12 @@ function OnLuaButton_modeloBH(framePrincipal)
 					
 		end
 	elseif modelo==15 then
-		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH6.html"
+		--local html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH6.html"
+		local html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referenciaBH6.html"
 		
 		local modeloBH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA BH6")
 		
-		textoDescriptivo="REFERENCIA BH6"
+		textoDescriptivo="BH6"
 		anchura1=1200 anchura2=800 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=32
 		pliegueSuperior=300 pliegueInferior=0  margenA=57 margenB=108 diametroTaladros=5 
 		
@@ -1172,11 +1221,12 @@ function OnLuaButton_modeloBH(framePrincipal)
 					
 		end
 	elseif modelo==16 then
-		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH7.html"
+		--local html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH7.html"
+		local html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referenciaBH7.html"
 		
 		local modeloBH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA BH7")
 		
-		textoDescriptivo="REFERENCIA BH7"
+		textoDescriptivo="BH7"
 		anchura1=1200 anchura2=800 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=20
 		pliegueSuperior=300 pliegueInferior=40  margenA=57 margenB=108 diametroTaladros=5 
 		
@@ -1208,11 +1258,12 @@ function OnLuaButton_modeloBH(framePrincipal)
 					
 		end
 	elseif modelo==17 then
-		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH8.html"
+		--local html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH8.html"
+		local html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referenciaBH8.html"
 		
 		local modeloBH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA BH8")
 		
-		textoDescriptivo="REFERENCIA BH8"
+		textoDescriptivo="BH8"
 		anchura1=1200 anchura2=800 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=32
 		pliegueSuperior=36 pliegueInferior=300  margenA=57 margenB=108 diametroTaladros=5 
 		
@@ -1244,11 +1295,12 @@ function OnLuaButton_modeloBH(framePrincipal)
 					
 		end
 	elseif modelo==18 then
-		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH9.html"
+		--local html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH9.html"
+		local html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referenciaBH9.html"
 		
 		local modeloBH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA BH9")
 		
-		textoDescriptivo="REFERENCIA BH9"
+		textoDescriptivo="BH9"
 		anchura1=1200 anchura2=800 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=32
 		pliegueSuperior=36 pliegueInferior=0  margenA=57 margenB=108 diametroTaladros=5 
 		
@@ -1281,11 +1333,12 @@ function OnLuaButton_modeloBH(framePrincipal)
 					
 		end
 	elseif modelo==19 then
-		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH10.html"
+		--local html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH10.html"
+		local html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referenciaBH10.html"
 		
 		local modeloBH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA BH10")
 		
-		textoDescriptivo="REFERENCIA BH10"
+		textoDescriptivo="BH10"
 		anchura1=1200 anchura2=800 alturaPlaca=1000 alaIzquierda=40 alaSuperior=20 alaInferior=32
 		pliegueSuperior=40 pliegueInferior=0  margenA=57 margenB=108 diametroTaladros=5 
 		
@@ -1318,11 +1371,12 @@ function OnLuaButton_modeloBH(framePrincipal)
 					
 		end
 	elseif modelo==20 then
-		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH11.html"
+		--local html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH11.html"
+		local html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referenciaBH11.html"
 		
 		local modeloBH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA BH11")
 		
-		textoDescriptivo="REFERENCIA BH11"
+		textoDescriptivo="BH11"
 		anchura1=1200 anchura2=800 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=20
 		pliegueSuperior=36 pliegueInferior=40  margenA=57 margenB=108 diametroTaladros=5 
 		
@@ -1355,11 +1409,12 @@ function OnLuaButton_modeloBH(framePrincipal)
 					
 		end
 	elseif modelo==21 then
-		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH12.html"
+		--local html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH12.html"
+		local html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referenciaBH12.html"
 		
 		local modeloBH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA BH12")
 		
-		textoDescriptivo="REFERENCIA BH12"
+		textoDescriptivo="BH12"
 		anchura1=1200 anchura2=800 alturaPlaca=1000 alaIzquierda=40 alaSuperior=20 alaInferior=20
 		pliegueSuperior=36 pliegueInferior=40  margenA=57 margenB=108 diametroTaladros=5 
 		
@@ -1392,11 +1447,12 @@ function OnLuaButton_modeloBH(framePrincipal)
 					
 		end
 	elseif modelo==22 then
-		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH13.html"
+		--local html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH13.html"
+		local html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referenciaBH13.html"
 		
 		local modeloBH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA BH13")
 		
-		textoDescriptivo="REFERENCIA BH13"
+		textoDescriptivo="BH13"
 		anchura1=1200 anchura2=800 alturaPlaca=1000 alaIzquierda=40 alaSuperior=260 alaInferior=32
 		pliegueSuperior=40 pliegueInferior=0  margenA=57 margenB=108 diametroTaladros=5 
 		
@@ -1429,11 +1485,12 @@ function OnLuaButton_modeloBH(framePrincipal)
 					
 		end
 	elseif modelo==23 then
-		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH14.html"
+		--local html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH14.html"
+		local html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referenciaBH14.html"
 		
 		local modeloBH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA BH14")
 		
-		textoDescriptivo="REFERENCIA BH14"
+		textoDescriptivo="BH14"
 		anchura1=1200 anchura2=800 alturaPlaca=1000 alaIzquierda=40 alaSuperior=260 alaInferior=20
 		pliegueSuperior=40 pliegueInferior=40  margenA=57 margenB=108 diametroTaladros=5 
 		
@@ -1466,11 +1523,12 @@ function OnLuaButton_modeloBH(framePrincipal)
 					
 		end
 	elseif modelo==24 then
-		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH15.html"
+		--local html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH15.html"
+		local html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referenciaBH15.html"
 		
 		local modeloBH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA BH15")
 		
-		textoDescriptivo="REFERENCIA BH15"
+		textoDescriptivo="BH15"
 		anchura1=1200 anchura2=800 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=32
 		pliegueSuperior=300 pliegueInferior=0  margenA=57 margenB=108 diametroTaladros=5 
 		
@@ -1503,11 +1561,12 @@ function OnLuaButton_modeloBH(framePrincipal)
 					
 		end
 	elseif modelo==25 then
-		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH16.html"
+		--local html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH16.html"
+		local html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referenciaBH16.html"
 		
 		local modeloBH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA BH16")
 		
-		textoDescriptivo="REFERENCIA BH16"
+		textoDescriptivo="BH16"
 		anchura1=1200 anchura2=800 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=20
 		pliegueSuperior=300 pliegueInferior=40  margenA=57 margenB=108 diametroTaladros=5 
 		
@@ -1541,11 +1600,12 @@ function OnLuaButton_modeloBH(framePrincipal)
 		end
 		
 	elseif modelo==26 then
-		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH17.html"
+		--local html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH17.html"
+		local html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referenciaBH17.html"
 		
 		local modeloBH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA BH17")
 		
-		textoDescriptivo="REFERENCIA BH17"
+		textoDescriptivo="BH17"
 		anchura1=1200 anchura2=800 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=40
 		pliegueSuperior=36 pliegueInferior=300  margenA=57 margenB=108 diametroTaladros=5 
 		
@@ -1749,7 +1809,7 @@ function OnLuaButton_modeloCH(framePrincipal)
 		
 		local modeloCH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA CH")
 		
-		textoDescriptivo="REFERENCIA CH"
+		textoDescriptivo="CH"
 		anchuraIzq=400 anchuraCentro=1200 anchuraDerecha=400 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=32
 		pliegueSuperior=36 pliegueInferior=0  margenA=57 margenB=108 diametroTaladros=5 
 		
@@ -1787,7 +1847,7 @@ function OnLuaButton_modeloCH(framePrincipal)
 		
 		local modeloCH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA CH1")
 		
-		textoDescriptivo="REFERENCIA CH1"
+		textoDescriptivo="CH1"
 		anchuraIzq=400 anchuraCentro=1200 anchuraDerecha=400 alturaPlaca=1000 alaIzquierda=40 alaSuperior=20 alaInferior=32
 		pliegueSuperior=40 pliegueInferior=0  margenA=57 margenB=108 diametroTaladros=5 
 		
@@ -1825,7 +1885,7 @@ function OnLuaButton_modeloCH(framePrincipal)
 		
 		local modeloCH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA CH2")
 		
-		textoDescriptivo="REFERENCIA CH2"
+		textoDescriptivo="CH2"
 		anchuraIzq=400 anchuraCentro=1200 anchuraDerecha=400 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=20
 		pliegueSuperior=36 pliegueInferior=40  margenA=57 margenB=108 diametroTaladros=5 
 		
@@ -1862,7 +1922,7 @@ function OnLuaButton_modeloCH(framePrincipal)
 		
 		local modeloCH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA CH3")
 		
-		textoDescriptivo="REFERENCIA CH3"
+		textoDescriptivo="CH3"
 		anchuraIzq=400 anchuraCentro=1200 anchuraDerecha=400 alturaPlaca=1000 alaIzquierda=40 alaSuperior=20 alaInferior=20
 		pliegueSuperior=36 pliegueInferior=40  margenA=57 margenB=108 diametroTaladros=5 
 		
@@ -1899,7 +1959,7 @@ function OnLuaButton_modeloCH(framePrincipal)
 		
 		local modeloCH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA CH4")
 		
-		textoDescriptivo="REFERENCIA CH4"
+		textoDescriptivo="CH4"
 		anchuraIzq=400 anchuraCentro=1200 anchuraDerecha=400 alturaPlaca=1000 alaIzquierda=40 alaSuperior=260 alaInferior=32
 		pliegueSuperior=40 pliegueInferior=0  margenA=57 margenB=108 diametroTaladros=5 
 		
@@ -1936,7 +1996,7 @@ function OnLuaButton_modeloCH(framePrincipal)
 		
 		local modeloCH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA CH5")
 		
-		textoDescriptivo="REFERENCIA CH5"
+		textoDescriptivo="CH5"
 		anchuraIzq=400 anchuraCentro=1200 anchuraDerecha=400 alturaPlaca=1000 alaIzquierda=40 alaSuperior=260 alaInferior=20
 		pliegueSuperior=40 pliegueInferior=40  margenA=57 margenB=108 diametroTaladros=5 
 		
@@ -1973,7 +2033,7 @@ function OnLuaButton_modeloCH(framePrincipal)
 		
 		local modeloCH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA CH6")
 		
-		textoDescriptivo="REFERENCIA CH6"
+		textoDescriptivo="CH6"
 		anchuraIzq=400 anchuraCentro=1200 anchuraDerecha=400 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=32
 		pliegueSuperior=300 pliegueInferior=0  margenA=57 margenB=108 diametroTaladros=5 
 		
@@ -2010,7 +2070,7 @@ function OnLuaButton_modeloCH(framePrincipal)
 		
 		local modeloCH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA CH7")
 		
-		textoDescriptivo="REFERENCIA CH7"
+		textoDescriptivo="CH7"
 		anchuraIzq=400 anchuraCentro=1200 anchuraDerecha=400 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=20
 		pliegueSuperior=300 pliegueInferior=40  margenA=57 margenB=108 diametroTaladros=5 
 		
@@ -2047,7 +2107,7 @@ function OnLuaButton_modeloCH(framePrincipal)
 		
 		local modeloCH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA CH8")
 		
-		textoDescriptivo="REFERENCIA CH8"
+		textoDescriptivo="CH8"
 		anchuraIzq=400 anchuraCentro=1200 anchuraDerecha=400 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=40
 		pliegueSuperior=36 pliegueInferior=300  margenA=57 margenB=108 diametroTaladros=5 
 		
@@ -2204,7 +2264,7 @@ function OnLuaButton_modeloDH(framePrincipal)
 		
 		local modeloDH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA DH")
 		
-		textoDescriptivo="REFERENCIA DH"
+		textoDescriptivo="DH"
 		anchuraPlaca=500 alturaPlaca=500 
 		
         modeloDH:AddTextField("textoDescriptivo", textoDescriptivo)
@@ -2212,9 +2272,7 @@ function OnLuaButton_modeloDH(framePrincipal)
 	    modeloDH:AddDoubleField("alturaPlaca", alturaPlaca)
 		
 	    if  not modeloDH:ShowDialog() then
-			
 				return false;
-					
 		end
 	
 	elseif modelo == 41 then 
@@ -2222,34 +2280,20 @@ function OnLuaButton_modeloDH(framePrincipal)
 		
 		local modeloDH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA DH1")
 		
-		textoDescriptivo="REFERENCIA DH1"
-		anchuraIzq=400 anchuraCentro=1200 anchuraDerecha=400 alturaPlaca=1000 alaIzquierda=40 alaSuperior=20 alaInferior=32
-		pliegueSuperior=40 pliegueInferior=0  margenA=57 margenB=108 diametroTaladros=5 
+		textoDescriptivo="DH1"
+		altura1=400 altura2=400 anchuraPlaca=1000
+		alaSuperior=50 alaInferior=50 
 		
         modeloDH:AddTextField("textoDescriptivo", textoDescriptivo)
-		modeloDH:AddDoubleField("anchuraPlacaIzquierda", anchuraIzq)
-		modeloDH:AddDoubleField("anchuraPlacaCentro", anchuraCentro)
-		modeloDH:AddDoubleField("anchuraPlacaDerecha", anchuraDerecha)
-	    modeloDH:AddDoubleField("alturaPlaca", alturaPlaca)
-
-
-		modeloDH:AddDoubleField("alaLateral", alaIzquierda)
+		modeloDH:AddDoubleField("anchuraPlaca", anchuraPlaca)
+		modeloDH:AddDoubleField("altura1", altura1)
+		modeloDH:AddDoubleField("altura2", altura2)
+		
 		modeloDH:AddDoubleField("alaSuperior", alaSuperior)
 		modeloDH:AddDoubleField("alaInferior", alaInferior)
-
-		--modeloDH:AddDoubleField("pliegueInferior", pliegueInferior) --No lleva pliegue inferior
-
-		modeloDH:AddDoubleField("pliegueSuperior", pliegueSuperior)
-		modeloDH:AddDoubleField("margenA", margenA)
-		modeloDH:AddDoubleField("margenB", margenB)
-
-		modeloDH:AddDoubleField("anchuraColiso", anchuraColiso)
-		modeloDH:AddDoubleField("diametroTaladros", diametroTaladros)
 		
 	    if  not modeloDH:ShowDialog() then
-			
 				return false;
-					
 		end
 		
 	elseif modelo == 42 then 
@@ -2257,398 +2301,218 @@ function OnLuaButton_modeloDH(framePrincipal)
 		
 		local modeloDH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA DH2")
 		
-		textoDescriptivo="REFERENCIA DH2"
-		anchuraIzq=400 anchuraCentro=1200 anchuraDerecha=400 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=20
-		pliegueSuperior=36 pliegueInferior=40  margenA=57 margenB=108 diametroTaladros=5 
+		textoDescriptivo="DH2"
+		anchuraPlaca=1000 alturaPlaca=500 
+		alaInferior=20 pliegueInferior=30
 		
         modeloDH:AddTextField("textoDescriptivo", textoDescriptivo)
-		modeloDH:AddDoubleField("anchuraPlacaIzquierda", anchuraIzq)
-		modeloDH:AddDoubleField("anchuraPlacaCentro", anchuraCentro)
-		modeloDH:AddDoubleField("anchuraPlacaDerecha", anchuraDerecha)
+		modeloDH:AddDoubleField("anchuraPlaca", anchuraPlaca)
 	    modeloDH:AddDoubleField("alturaPlaca", alturaPlaca)
 
-		modeloDH:AddDoubleField("alaLateral", alaIzquierda)
-		modeloDH:AddDoubleField("alaSuperior", alaSuperior)
 		modeloDH:AddDoubleField("alaInferior", alaInferior)
-
 		modeloDH:AddDoubleField("pliegueInferior", pliegueInferior)
-
-		modeloDH:AddDoubleField("pliegueSuperior", pliegueSuperior)
-		modeloDH:AddDoubleField("margenA", margenA)
-		modeloDH:AddDoubleField("margenB", margenB)
-
-		modeloDH:AddDoubleField("anchuraColiso", anchuraColiso)
-		modeloDH:AddDoubleField("diametroTaladros", diametroTaladros)
 		
 	    if  not modeloDH:ShowDialog() then
-			
 				return false;
-					
 		end
+		
 	elseif modelo == 43 then 
 		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaDH3.html"
 		
 		local modeloDH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA DH3")
 		
-		textoDescriptivo="REFERENCIA DH3"
-		anchuraIzq=400 anchuraCentro=1200 anchuraDerecha=400 alturaPlaca=1000 alaIzquierda=40 alaSuperior=20 alaInferior=20
-		pliegueSuperior=36 pliegueInferior=40  margenA=57 margenB=108 diametroTaladros=5 
+		textoDescriptivo="DH3"
+		anchuraPlaca=1000 alturaPlaca=500 
+		alaInferior=20 alaSuperior=20 pliegueSuperior=30 pliegueInferior=30		
 		
         modeloDH:AddTextField("textoDescriptivo", textoDescriptivo)
-		modeloDH:AddDoubleField("anchuraPlacaIzquierda", anchuraIzq)
-		modeloDH:AddDoubleField("anchuraPlacaCentro", anchuraCentro)
-		modeloDH:AddDoubleField("anchuraPlacaDerecha", anchuraDerecha)
+		modeloDH:AddDoubleField("anchuraPlaca", anchuraPlaca)
 	    modeloDH:AddDoubleField("alturaPlaca", alturaPlaca)
 
-		modeloDH:AddDoubleField("alaLateral", alaIzquierda)
-		modeloDH:AddDoubleField("alaSuperior", alaSuperior)
 		modeloDH:AddDoubleField("alaInferior", alaInferior)
-
+		modeloDH:AddDoubleField("alaSuperior", alaSuperior)
 		modeloDH:AddDoubleField("pliegueInferior", pliegueInferior)
-
 		modeloDH:AddDoubleField("pliegueSuperior", pliegueSuperior)
-		modeloDH:AddDoubleField("margenA", margenA)
-		modeloDH:AddDoubleField("margenB", margenB)
-
-		modeloDH:AddDoubleField("anchuraColiso", anchuraColiso)
-		modeloDH:AddDoubleField("diametroTaladros", diametroTaladros)
 		
 	    if  not modeloDH:ShowDialog() then
-			
 				return false;
-					
 		end
+	
 	elseif modelo == 44 then 
 		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaDH4.html"
 		
 		local modeloDH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA DH4")
 		
-		textoDescriptivo="REFERENCIA DH4"
-		anchuraIzq=400 anchuraCentro=1200 anchuraDerecha=400 alturaPlaca=1000 alaIzquierda=40 alaSuperior=260 alaInferior=32
-		pliegueSuperior=40 pliegueInferior=0  margenA=57 margenB=108 diametroTaladros=5 
+		textoDescriptivo="DH4"
+		anchura1=300 anchura2=300 alturaPlaca=1000 
 		
         modeloDH:AddTextField("textoDescriptivo", textoDescriptivo)
-		modeloDH:AddDoubleField("anchuraPlacaIzquierda", anchuraIzq)
-		modeloDH:AddDoubleField("anchuraPlacaCentro", anchuraCentro)
-		modeloDH:AddDoubleField("anchuraPlacaDerecha", anchuraDerecha)
+		modeloDH:AddDoubleField("anchura1", anchura1)
+		modeloDH:AddDoubleField("anchura2", anchura2)
 	    modeloDH:AddDoubleField("alturaPlaca", alturaPlaca)
-
-		modeloDH:AddDoubleField("alaLateral", alaIzquierda)
-		modeloDH:AddDoubleField("alaSuperior", alaSuperior)
-		modeloDH:AddDoubleField("alaInferior", alaInferior)
-
-		--modeloDH:AddDoubleField("pliegueInferior", pliegueInferior) --No lleva pliegue inferior
-
-		modeloDH:AddDoubleField("pliegueSuperior", pliegueSuperior)
-		modeloDH:AddDoubleField("margenA", margenA)
-		modeloDH:AddDoubleField("margenB", margenB)
-
-		modeloDH:AddDoubleField("anchuraColiso", anchuraColiso)
-		modeloDH:AddDoubleField("diametroTaladros", diametroTaladros)
 		
 	    if  not modeloDH:ShowDialog() then
-			
 				return false;
-					
 		end
+	
 	elseif modelo == 45 then 
 		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaDH5.html"
 		
 		local modeloDH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA DH5")
 		
-		textoDescriptivo="REFERENCIA DH5"
-		anchuraIzq=400 anchuraCentro=1200 anchuraDerecha=400 alturaPlaca=1000 alaIzquierda=40 alaSuperior=260 alaInferior=20
-		pliegueSuperior=40 pliegueInferior=40  margenA=57 margenB=108 diametroTaladros=5 
+		textoDescriptivo="DH5"
+		anchura1=20 anchura2=40 anchura3=500 anchura4=200 alturaPlaca=1000 
 		
         modeloDH:AddTextField("textoDescriptivo", textoDescriptivo)
-		modeloDH:AddDoubleField("anchuraPlacaIzquierda", anchuraIzq)
-		modeloDH:AddDoubleField("anchuraPlacaCentro", anchuraCentro)
-		modeloDH:AddDoubleField("anchuraPlacaDerecha", anchuraDerecha)
+		modeloDH:AddDoubleField("anchura1", anchura1)
+		modeloDH:AddDoubleField("anchura2", anchura2)
+		modeloDH:AddDoubleField("anchura3", anchura3)
+		modeloDH:AddDoubleField("anchura4", anchura4)
 	    modeloDH:AddDoubleField("alturaPlaca", alturaPlaca)
-
-		modeloDH:AddDoubleField("alaLateral", alaIzquierda)
-		modeloDH:AddDoubleField("alaSuperior", alaSuperior)
-		modeloDH:AddDoubleField("alaInferior", alaInferior)
-
-		modeloDH:AddDoubleField("pliegueInferior", pliegueInferior)
-
-		modeloDH:AddDoubleField("pliegueSuperior", pliegueSuperior)
-		modeloDH:AddDoubleField("margenA", margenA)
-		modeloDH:AddDoubleField("margenB", margenB)
-
-		modeloDH:AddDoubleField("anchuraColiso", anchuraColiso)
-		modeloDH:AddDoubleField("diametroTaladros", diametroTaladros)
 		
 	    if  not modeloDH:ShowDialog() then
-			
 				return false;
-					
 		end
+	
 	elseif modelo == 46 then 
 		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaDH6.html"
 		
 		local modeloDH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA DH6")
 		
-		textoDescriptivo="REFERENCIA DH6"
-		anchuraIzq=400 anchuraCentro=1200 anchuraDerecha=400 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=32
-		pliegueSuperior=300 pliegueInferior=0  margenA=57 margenB=108 diametroTaladros=5 
+		textoDescriptivo="DH6"
+		anchuraPlaca=1500 alturaPlaca=1500
+		alaIzquierda=50 alaSuperior=50 alaInferior=50 alaDerecha=50
 		
         modeloDH:AddTextField("textoDescriptivo", textoDescriptivo)
-		modeloDH:AddDoubleField("anchuraPlacaIzquierda", anchuraIzq)
-		modeloDH:AddDoubleField("anchuraPlacaCentro", anchuraCentro)
-		modeloDH:AddDoubleField("anchuraPlacaDerecha", anchuraDerecha)
+		modeloDH:AddDoubleField("anchuraPlaca", anchuraPlaca)
 	    modeloDH:AddDoubleField("alturaPlaca", alturaPlaca)
 
-		modeloDH:AddDoubleField("alaLateral", alaIzquierda)
+		modeloDH:AddDoubleField("alaIzquierda", alaIzquierda)
+		modeloDH:AddDoubleField("alaDerecha", alaDerecha)
 		modeloDH:AddDoubleField("alaSuperior", alaSuperior)
 		modeloDH:AddDoubleField("alaInferior", alaInferior)
-
-		--modeloDH:AddDoubleField("pliegueInferior", pliegueInferior) --No lleva pliegue inferior
-
-		modeloDH:AddDoubleField("pliegueSuperior", pliegueSuperior)
-		modeloDH:AddDoubleField("margenA", margenA)
-		modeloDH:AddDoubleField("margenB", margenB)
-
-		modeloDH:AddDoubleField("anchuraColiso", anchuraColiso)
-		modeloDH:AddDoubleField("diametroTaladros", diametroTaladros)
 		
 	    if  not modeloDH:ShowDialog() then
-			
 				return false;
-					
 		end
+	
 	elseif modelo == 47 then 
 		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaDH7.html"
 		
 		local modeloDH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA DH7")
 		
-		textoDescriptivo="REFERENCIA DH7"
-		anchuraIzq=400 anchuraCentro=1200 anchuraDerecha=400 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=20
-		pliegueSuperior=300 pliegueInferior=40  margenA=57 margenB=108 diametroTaladros=5 
+		textoDescriptivo="DH7"
+		anchuraPlaca=700 alturaPlaca=1000 
+		alaIzquierda=40 alaSuperior=40 alaInferior=20 alaDerecha=40
+		pliegueDer=50 pliegueIzq=50 
 		
         modeloDH:AddTextField("textoDescriptivo", textoDescriptivo)
-		modeloDH:AddDoubleField("anchuraPlacaIzquierda", anchuraIzq)
-		modeloDH:AddDoubleField("anchuraPlacaCentro", anchuraCentro)
-		modeloDH:AddDoubleField("anchuraPlacaDerecha", anchuraDerecha)
+		modeloDH:AddDoubleField("anchuraPlaca", anchuraPlaca)
 	    modeloDH:AddDoubleField("alturaPlaca", alturaPlaca)
 
-		modeloDH:AddDoubleField("alaLateral", alaIzquierda)
+		modeloDH:AddDoubleField("alaIzquierda", alaIzquierda)
+		modeloDH:AddDoubleField("alaDerecha", alaDerecha)
 		modeloDH:AddDoubleField("alaSuperior", alaSuperior)
 		modeloDH:AddDoubleField("alaInferior", alaInferior)
 
-		modeloDH:AddDoubleField("pliegueInferior", pliegueInferior)
-
-		modeloDH:AddDoubleField("pliegueSuperior", pliegueSuperior)
-		modeloDH:AddDoubleField("margenA", margenA)
-		modeloDH:AddDoubleField("margenB", margenB)
-
-		modeloDH:AddDoubleField("anchuraColiso", anchuraColiso)
-		modeloDH:AddDoubleField("diametroTaladros", diametroTaladros)
+		modeloDH:AddDoubleField("pliegueIzq", pliegueIzq)
+		modeloDH:AddDoubleField("pliegueDer", pliegueDer)
 		
 	    if  not modeloDH:ShowDialog() then
-			
 				return false;
-					
 		end
-	elseif modelo == 48 then 
-		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaDH8.html"
-		
-		local modeloDH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA DH8")
-		
-		textoDescriptivo="REFERENCIA DH8"
-		anchuraIzq=400 anchuraCentro=1200 anchuraDerecha=400 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=40
-		pliegueSuperior=36 pliegueInferior=300  margenA=57 margenB=108 diametroTaladros=5 
-		
-        modeloDH:AddTextField("textoDescriptivo", textoDescriptivo)
-		modeloDH:AddDoubleField("anchuraPlacaIzquierda", anchuraIzq)
-		modeloDH:AddDoubleField("anchuraPlacaCentro", anchuraCentro)
-		modeloDH:AddDoubleField("anchuraPlacaDerecha", anchuraDerecha)
-	    modeloDH:AddDoubleField("alturaPlaca", alturaPlaca)
-
-		modeloDH:AddDoubleField("alaLateral", alaIzquierda)
-		modeloDH:AddDoubleField("alaSuperior", alaSuperior)
-		modeloDH:AddDoubleField("alaInferior", alaInferior)
-
-		modeloDH:AddDoubleField("pliegueInferior", pliegueInferior)
-
-		modeloDH:AddDoubleField("pliegueSuperior", pliegueSuperior)
-		modeloDH:AddDoubleField("margenA", margenA)
-		modeloDH:AddDoubleField("margenB", margenB)
-
-		modeloDH:AddDoubleField("anchuraColiso", anchuraColiso)
-		modeloDH:AddDoubleField("diametroTaladros", diametroTaladros)
-		
-	    if  not modeloDH:ShowDialog() then
-			
-				return false;
-					
-		end
-	
-	elseif modelo == 49 then 
-		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaDH.html"
-		
-		local modeloDH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA DH9")
-		
-		textoDescriptivo="REFERENCIA DH9"
-		anchuraIzq=400 anchuraCentro=1200 anchuraDerecha=400 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=40
-		pliegueSuperior=36 pliegueInferior=300  margenA=57 margenB=108 diametroTaladros=5 
-		
-        modeloDH:AddTextField("textoDescriptivo", textoDescriptivo)
-		modeloDH:AddDoubleField("anchuraPlacaIzquierda", anchuraIzq)
-		modeloDH:AddDoubleField("anchuraPlacaCentro", anchuraCentro)
-		modeloDH:AddDoubleField("anchuraPlacaDerecha", anchuraDerecha)
-	    modeloDH:AddDoubleField("alturaPlaca", alturaPlaca)
-
-		modeloDH:AddDoubleField("alaLateral", alaIzquierda)
-		modeloDH:AddDoubleField("alaSuperior", alaSuperior)
-		modeloDH:AddDoubleField("alaInferior", alaInferior)
-
-		modeloDH:AddDoubleField("pliegueInferior", pliegueInferior)
-
-		modeloDH:AddDoubleField("pliegueSuperior", pliegueSuperior)
-		modeloDH:AddDoubleField("margenA", margenA)
-		modeloDH:AddDoubleField("margenB", margenB)
-
-		modeloDH:AddDoubleField("anchuraColiso", anchuraColiso)
-		modeloDH:AddDoubleField("diametroTaladros", diametroTaladros)
-		
-	    if  not modeloDH:ShowDialog() then
-			
-				return false;
-					
-		end
-	
-	elseif modelo == 50 then 
-		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaDH10.html"
-		
-		local modeloDH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA DH10")
-		
-		textoDescriptivo="REFERENCIA DH10"
-		anchuraIzq=400 anchuraCentro=1200 anchuraDerecha=400 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=40
-		pliegueSuperior=36 pliegueInferior=300  margenA=57 margenB=108 diametroTaladros=5 
-		
-        modeloDH:AddTextField("textoDescriptivo", textoDescriptivo)
-		modeloDH:AddDoubleField("anchuraPlacaIzquierda", anchuraIzq)
-		modeloDH:AddDoubleField("anchuraPlacaCentro", anchuraCentro)
-		modeloDH:AddDoubleField("anchuraPlacaDerecha", anchuraDerecha)
-	    modeloDH:AddDoubleField("alturaPlaca", alturaPlaca)
-
-		modeloDH:AddDoubleField("alaLateral", alaIzquierda)
-		modeloDH:AddDoubleField("alaSuperior", alaSuperior)
-		modeloDH:AddDoubleField("alaInferior", alaInferior)
-
-		modeloDH:AddDoubleField("pliegueInferior", pliegueInferior)
-
-		modeloDH:AddDoubleField("pliegueSuperior", pliegueSuperior)
-		modeloDH:AddDoubleField("margenA", margenA)
-		modeloDH:AddDoubleField("margenB", margenB)
-
-		modeloDH:AddDoubleField("anchuraColiso", anchuraColiso)
-		modeloDH:AddDoubleField("diametroTaladros", diametroTaladros)
-		
-	    if  not modeloDH:ShowDialog() then
-			
-				return false;
-					
-		end
-	elseif modelo == 51 then 
-		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaDH11.html"
-		
-		local modeloDH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA DH1")
-		
-		textoDescriptivo="REFERENCIA DH11"
-		anchuraIzq=400 anchuraCentro=1200 anchuraDerecha=400 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=40
-		pliegueSuperior=36 pliegueInferior=300  margenA=57 margenB=108 diametroTaladros=5 
-		
-        modeloDH:AddTextField("textoDescriptivo", textoDescriptivo)
-		modeloDH:AddDoubleField("anchuraPlacaIzquierda", anchuraIzq)
-		modeloDH:AddDoubleField("anchuraPlacaCentro", anchuraCentro)
-		modeloDH:AddDoubleField("anchuraPlacaDerecha", anchuraDerecha)
-	    modeloDH:AddDoubleField("alturaPlaca", alturaPlaca)
-
-		modeloDH:AddDoubleField("alaLateral", alaIzquierda)
-		modeloDH:AddDoubleField("alaSuperior", alaSuperior)
-		modeloDH:AddDoubleField("alaInferior", alaInferior)
-
-		modeloDH:AddDoubleField("pliegueInferior", pliegueInferior)
-
-		modeloDH:AddDoubleField("pliegueSuperior", pliegueSuperior)
-		modeloDH:AddDoubleField("margenA", margenA)
-		modeloDH:AddDoubleField("margenB", margenB)
-
-		modeloDH:AddDoubleField("anchuraColiso", anchuraColiso)
-		modeloDH:AddDoubleField("diametroTaladros", diametroTaladros)
-		
-	    if  not modeloDH:ShowDialog() then
-			
-				return false;
-					
-		end
-	
 	
 	end
-		
-
+	
+	
 	return true;
-
+	
 end
 
 
 function OnLuaButton_aceptarDH(modeloDH)
 
-	if modelo==40 or modelo==41 or modelo==31 or modelo==33 then --SIN PLIEGUE DH
-		pliegueInferior=0
-		
+	if modelo==40 then --DH
 		textoDescriptivo = modeloDH:GetTextField("textoDescriptivo")
-		anchuraIzq = modeloDH:GetDoubleField("anchuraPlacaIzquierda")
-		anchuraCentro = modeloDH:GetDoubleField("anchuraPlacaCentro")
-		anchuraDerecha = modeloDH:GetDoubleField("anchuraPlacaDerecha")
+		anchuraPlaca = modeloDH:GetDoubleField("anchuraPlaca")
 	    alturaPlaca = modeloDH:GetDoubleField("alturaPlaca")
-
-		alaIzquierda=modeloDH:GetDoubleField("alaLateral")
+	
+	elseif modelo==41 then  --DH1
+		textoDescriptivo = modeloDH:GetTextField("textoDescriptivo")
+		anchuraPlaca = modeloDH:GetDoubleField("anchuraPlaca")
+	    altura1 = modeloDH:GetDoubleField("altura1")
+	    altura2 = modeloDH:GetDoubleField("altura2")
+		
 		alaSuperior=modeloDH:GetDoubleField("alaSuperior")
 		alaInferior=modeloDH:GetDoubleField("alaInferior")
-		--pliegueInferior=modeloDH:GetDoubleField("pliegueInferior")
-		pliegueSuperior=modeloDH:GetDoubleField("pliegueSuperior")
-		margenA=modeloDH:GetDoubleField("margenA")
-		margenB=modeloDH:GetDoubleField("margenB")
-
-		anchuraColiso=modeloDH:GetDoubleField("anchuraColiso")
-		diametroTaladros=modeloDH:GetDoubleField("diametroTaladros")
-
-
-	elseif modelo==29 or modelo==30 or modelo==32 or modelo==34 or modelo==35 then  --CON PLIEGUE DH
-		
+	
+	elseif modelo==42 then --DH2
 		textoDescriptivo = modeloDH:GetTextField("textoDescriptivo")
-		anchuraIzq = modeloDH:GetDoubleField("anchuraPlacaIzquierda")
-		anchuraCentro = modeloDH:GetDoubleField("anchuraPlacaCentro")
-		anchuraDerecha = modeloDH:GetDoubleField("anchuraPlacaDerecha")
+		anchuraPlaca = modeloDH:GetDoubleField("anchuraPlaca")
 	    alturaPlaca = modeloDH:GetDoubleField("alturaPlaca")
 		
-		alaIzquierda=modeloDH:GetDoubleField("alaLateral")
-		alaSuperior=modeloDH:GetDoubleField("alaSuperior")
+		pliegueInferior=modeloDH:GetDoubleField("pliegueInferior")
 		alaInferior=modeloDH:GetDoubleField("alaInferior")
+	
+	elseif modelo==43 then --DH3
+		textoDescriptivo = modeloDH:GetTextField("textoDescriptivo")
+		anchuraPlaca = modeloDH:GetDoubleField("anchuraPlaca")
+	    alturaPlaca = modeloDH:GetDoubleField("alturaPlaca")
+		
 		pliegueInferior=modeloDH:GetDoubleField("pliegueInferior")
 		pliegueSuperior=modeloDH:GetDoubleField("pliegueSuperior")
-		margenA=modeloDH:GetDoubleField("margenA")
-		margenB=modeloDH:GetDoubleField("margenB")
+		alaInferior=modeloDH:GetDoubleField("alaInferior")
+		alaSuperior=modeloDH:GetDoubleField("alaSuperior")
 		
-		anchuraColiso=modeloDH:GetDoubleField("anchuraColiso")
-		diametroTaladros=modeloDH:GetDoubleField("diametroTaladros")
+	elseif modelo==44 then --DH4
+		textoDescriptivo = modeloDH:GetTextField("textoDescriptivo")
+		anchura1 = modeloDH:GetDoubleField("anchura1")
+		anchura2 = modeloDH:GetDoubleField("anchura2")
+	    alturaPlaca = modeloDH:GetDoubleField("alturaPlaca")
+	
+	elseif modelo==45 then --DH5
+		textoDescriptivo = modeloDH:GetTextField("textoDescriptivo")
+		anchura1 = modeloDH:GetDoubleField("anchura1")
+		anchura2 = modeloDH:GetDoubleField("anchura2")
+		anchura3 = modeloDH:GetDoubleField("anchura3")
+		anchura4 = modeloDH:GetDoubleField("anchura4")
+	    alturaPlaca = modeloDH:GetDoubleField("alturaPlaca")
+	
+	elseif modelo==46 then --DH6
+		textoDescriptivo = modeloDH:GetTextField("textoDescriptivo")
+		anchuraPlaca = modeloDH:GetDoubleField("anchuraPlaca")
+	    alturaPlaca = modeloDH:GetDoubleField("alturaPlaca")
+	
+		alaDerecha=modeloDH:GetDoubleField("alaDerecha")
+		alaIzquierda=modeloDH:GetDoubleField("alaIzquierda")
+		alaInferior=modeloDH:GetDoubleField("alaInferior")
+		alaSuperior=modeloDH:GetDoubleField("alaSuperior")
+	
+	elseif modelo==47 then --DH7
+		textoDescriptivo = modeloDH:GetTextField("textoDescriptivo")
+		anchuraPlaca = modeloDH:GetDoubleField("anchuraPlaca")
+	    alturaPlaca = modeloDH:GetDoubleField("alturaPlaca")
+	
+		alaDerecha=modeloDH:GetDoubleField("alaDerecha")
+		alaIzquierda=modeloDH:GetDoubleField("alaIzquierda")
+		alaInferior=modeloDH:GetDoubleField("alaInferior")
+		alaSuperior=modeloDH:GetDoubleField("alaSuperior")
 		
+		pliegueIzq=modeloDH:GetDoubleField("pliegueIzq")
+		pliegueDer=modeloDH:GetDoubleField("pliegueDer")
 	
   	end
 
     
 	--Caracteristicas generales
-	anchuraPlaca=anchuraIzq+anchuraCentro+anchuraDerecha
+	--anchuraPlaca=anchuraIzq+anchuraCentro+anchuraDerecha
 	
 	--anchuraPlaca=anchuraPlaca-margenPlaca
     --alturaPlaca=alturaPlaca-margenPlaca
 	
-	alaDerecha=alaIzquierda
+	--alaDerecha=alaIzquierda
 	
-	alturaColiso=diametroTaladros
+	--alturaColiso=diametroTaladros
 	
     --Comprobaciones y validaciones de los datos
 	if anchuraPlaca < 0 then
@@ -2673,10 +2537,9 @@ function OnLuaButton_aceptarDH(modeloDH)
 			dibujarFresadoDH(doc)
 			dibujarCorteDH(doc)
 			dibujarTexto(doc)
-			dibujarTaladrosDH(doc)
 		
 			
-		DisplayMessageBox("Modelo DH"..modelo-27 .." Creado Correctamente")
+		DisplayMessageBox("Modelo DH"..modelo-40 .." Creado Correctamente")
 	
 	end
 	
@@ -4181,11 +4044,6 @@ end
 ----------------------------------------------------------------------------------------------- DIBUJAR REF BH ---------------------------------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
---[AH=0 - AH1=1 - AH2=2 - AH3=3 - AH4=4 - AH5=5 - AH6=6 - AH7=7 - AH8=8]
---[BH=9 - BH1=10 - BH2=11 - BH3=12 - BH4=13 - BH5=14 - BH6=15 - BH7=16 - BH8=17]
---[BH9=18 - BH10=19 - BH11=20 - BH12=21 - BH13=22 - BH14=23 - BH15=24 - BH16=25 - BH17=26]
---[CH=27 - CH1=28 - CH2=329 - CH3=30 - CH4=31 - CH5=32 - CH6=33 - CH7=34 - CH8=35]
 
 function dibujarFresadoBH(doc)
 	
@@ -5765,11 +5623,6 @@ end
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
---[AH=0 - AH1=1 - AH2=2 - AH3=3 - AH4=4 - AH5=5 - AH6=6 - AH7=7 - AH8=8]
---[BH=9 - BH1=10 - BH2=11 - BH3=12 - BH4=13 - BH5=14 - BH6=15 - BH7=16 - BH8=17]
---[BH9=18 - BH10=19 - BH11=20 - BH12=21 - BH13=22 - BH14=23 - BH15=24 - BH16=25 - BH17=26]
---[CH=27 - CH1=28 - CH2=29 - CH3=30 - CH4=31 - CH5=32 - CH6=33 - CH7=34 - CH8=35]
-
 function dibujarFresadoCH(doc)
 	
 	--Puntos trayectoria 
@@ -7133,289 +6986,99 @@ end
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 function dibujarFresadoDH(doc)
-	--VARIABLES DE ENTRADA
-		--Albardilla
-			alaInferior=20
-			pliegueInferior=30
-			alturaPlaca=220
-			pliegueSuperior=30
-			alaSuperior=20
-		--Alfeizar 2
 	
-	
-	
-	--Albardilla->40
-	--local fresado1 = Point2D(,)
-	
-	
-	
-	
-	
-	
-	
-	--Puntos trayectoria 
 	local Contour = Contour(0.0)
+	local fresado1
+	local fresado2
+	local fresado3
+	local fresado4
+		
+	if modelo==41 then --[DH1]
+		fresado1 = Point2D(origenX,origenY+alaInferior)
+		fresado2 = Point2D(origenX+anchuraPlaca,origenY+alaInferior)
+		dibujarFresado_auxiliar(doc,fresado1,fresado2)
+		
+		fresado1 = Point2D(origenX,origenY+alaInferior+altura1)
+		fresado2 = Point2D(origenX+anchuraPlaca,origenY+alaInferior+altura1)
+		dibujarFresado_auxiliar(doc,fresado1,fresado2)
+		
+		fresado1 = Point2D(origenX,origenY+alaInferior+altura1+altura2)
+		fresado2 = Point2D(origenX+anchuraPlaca,origenY+alaInferior+altura1+altura2)
+		dibujarFresado_auxiliar(doc,fresado1,fresado2)
 	
+	elseif modelo==42 then --[DH2]
+		fresado1 = Point2D(origenX,origenY+alaInferior)
+		fresado2 = Point2D(origenX+anchuraPlaca,origenY+alaInferior)
+		dibujarFresado_auxiliar(doc,fresado1,fresado2)
+		
+		fresado1 = Point2D(origenX,origenY+alaInferior+pliegueInferior)
+		fresado2 = Point2D(origenX+anchuraPlaca,origenY+alaInferior+pliegueInferior)
+		dibujarFresado_auxiliar(doc,fresado1,fresado2)
+		
+	elseif modelo==43 then --[DH3]
+		fresado1 = Point2D(origenX,origenY+alaInferior)
+		fresado2 = Point2D(origenX+anchuraPlaca,origenY+alaInferior)
+		dibujarFresado_auxiliar(doc,fresado1,fresado2)
+		
+		fresado1 = Point2D(origenX,origenY+alaInferior+pliegueInferior)
+		fresado2 = Point2D(origenX+anchuraPlaca,origenY+alaInferior+pliegueInferior)
+		dibujarFresado_auxiliar(doc,fresado1,fresado2)
+		
+		fresado1 = Point2D(origenX,origenY+alaInferior+pliegueInferior+alturaPlaca)
+		fresado2 = Point2D(origenX+anchuraPlaca,origenY+alaInferior+pliegueInferior+alturaPlaca)
+		dibujarFresado_auxiliar(doc,fresado1,fresado2)
+		
+		fresado1 = Point2D(origenX,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior)
+		fresado2 = Point2D(origenX+anchuraPlaca,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior)
+		dibujarFresado_auxiliar(doc,fresado1,fresado2)
 	
-	
-	
-	
-	
-	local fresado1 = Point2D(origenX+alaIzquierda,origenY)
-	local fresado2 = Point2D(origenX+alaIzquierda,origenY+alaInferior)
-	local fresado3 = Point2D(origenX+alaIzquierda+anchuraIzq-pliegueInferior,origenY+alaInferior)
-	local fresado4 = Point2D(origenX+alaIzquierda,origenY+alaInferior+pliegueInferior)
-	local fresado5 = Point2D(origenX+alaIzquierda+anchuraIzq,origenY+alaInferior+pliegueInferior)
-	local fresado6 = Point2D(origenX+alaIzquierda+anchuraIzq+pliegueInferior,origenY+alaInferior)--Punto externo a la polilinea principal
-	local fresado7 = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro,origenY+alaInferior+pliegueInferior)
-	local fresado8 = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro-pliegueInferior,origenY+alaInferior)--Punto externo a la polilinea principal
-	local fresado9 = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro+pliegueInferior,origenY+alaInferior)
-	local fresado10 = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro+anchuraDerecha,origenY+alaInferior+pliegueInferior)
-	local fresado11 = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro+anchuraDerecha,origenY+alaInferior)
-	local fresado12 = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro+anchuraDerecha,origenY)
-	local fresado13 = Point2D(origenX+alaIzquierda,origenY+alaInferior+pliegueInferior+alturaPlaca)
-	local fresado14 = Point2D(origenX+alaIzquierda+anchuraIzq,origenY+alaInferior+pliegueInferior+alturaPlaca)
-	local fresado15 = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro,origenY+alaInferior+pliegueInferior+alturaPlaca)
-	local fresado16 = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro+anchuraDerecha,origenY+alaInferior+pliegueInferior+alturaPlaca)
-	local fresado17 = Point2D(origenX+alaIzquierda,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior)
-	local fresado18 = Point2D(origenX+alaIzquierda+anchuraIzq-pliegueSuperior,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior)
-	local fresado19 = Point2D(origenX+alaIzquierda+anchuraIzq+pliegueSuperior,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior)--Punto externo a la polilinea principal
-	local fresado20 = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro-pliegueSuperior,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior)--Punto externo a la polilinea principal
-	local fresado21 = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro+pliegueSuperior,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior)
-	local fresado22 = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro+anchuraDerecha,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior)
-	local fresado23 = Point2D(origenX+alaIzquierda+anchuraIzq+anchuraCentro+anchuraDerecha,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior)
-	
-	local fresado24 = Point2D(origenX+alaIzquierda,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior)
-	
-	if modelo==40 then --REF [DH]		
-		dibujarFresado_auxiliar(doc,fresado1,fresado17)
-		dibujarFresado_auxiliar(doc,fresado17,fresado18)
-		dibujarFresado_auxiliar(doc,fresado19,fresado20)
-		dibujarFresado_auxiliar(doc,fresado21,fresado22)
-		dibujarFresado_auxiliar(doc,fresado22,fresado12)
-		dibujarFresado_auxiliar(doc,fresado10,fresado4)
-		dibujarFresado_auxiliar(doc,fresado5,fresado14)
-		dibujarFresado_auxiliar(doc,fresado13,fresado16)
-		dibujarFresado_auxiliar(doc,fresado15,fresado7)
-
+	elseif modelo==44 then --[DH4]
+		fresado1 = Point2D(origenX+anchura1,origenY)
+		fresado2 = Point2D(origenX+anchura1,origenY+alturaPlaca)
+		dibujarFresado_auxiliar(doc,fresado1,fresado2)
 		
-	elseif modelo==29 or modelo==30 then --[CH2][CH3]
-		--[[Contour:AppendPoint(fresado3)
-		Contour:LineTo(fresado2)
-		Contour:LineTo(fresado4)
-		Contour:LineTo(fresado10)
-		Contour:LineTo(fresado11)
-		Contour:LineTo(fresado9)
-		Contour:LineTo(fresado11)
-		Contour:LineTo(fresado22)
-		Contour:LineTo(fresado21)
-		Contour:LineTo(fresado22)
-		Contour:LineTo(fresado16)
-		Contour:LineTo(fresado15)
-		Contour:LineTo(fresado7)
-		Contour:LineTo(fresado15)
-		Contour:LineTo(fresado14)
-		Contour:LineTo(fresado5)
-		Contour:LineTo(fresado14)
-		Contour:LineTo(fresado13)
-		Contour:LineTo(fresado17)
-		Contour:LineTo(fresado18)
-		Contour:LineTo(fresado17)
-		Contour:LineTo(fresado2)
+	elseif modelo==45 then --[DH5]
+		fresado1 = Point2D(origenX+anchura1,origenY)
+		fresado2 = Point2D(origenX+anchura1,origenY+alturaPlaca)
+		dibujarFresado_auxiliar(doc,fresado1,fresado2)
 		
-		dibujarFresado_auxiliar(doc,fresado19,fresado20)
-		dibujarFresado_auxiliar(doc,fresado6,fresado8)--]]
+		fresado1 = Point2D(origenX+anchura1+anchura2,origenY)
+		fresado2 = Point2D(origenX+anchura1+anchura2,origenY+alturaPlaca)
+		dibujarFresado_auxiliar(doc,fresado1,fresado2)
 		
-		dibujarFresado_auxiliar(doc,fresado2,fresado17)
-		dibujarFresado_auxiliar(doc,fresado17,fresado18)
-		dibujarFresado_auxiliar(doc,fresado19,fresado20)
-		dibujarFresado_auxiliar(doc,fresado21,fresado22)
-		dibujarFresado_auxiliar(doc,fresado22,fresado11)
-		dibujarFresado_auxiliar(doc,fresado11,fresado9)
-		dibujarFresado_auxiliar(doc,fresado8,fresado6)
-		dibujarFresado_auxiliar(doc,fresado3,fresado2)
-		dibujarFresado_auxiliar(doc,fresado4,fresado10)
-		dibujarFresado_auxiliar(doc,fresado7,fresado15)
-		dibujarFresado_auxiliar(doc,fresado16,fresado13)
-		dibujarFresado_auxiliar(doc,fresado14,fresado5)
+		fresado1 = Point2D(origenX+anchura1+anchura2+anchura3,origenY)
+		fresado2 = Point2D(origenX+anchura1+anchura2+anchura3,origenY+alturaPlaca)
+		dibujarFresado_auxiliar(doc,fresado1,fresado2)	
 		
+	elseif modelo==46 then --[DH6]
+		fresado1 = Point2D(origenX+alaIzquierda,origenY+alaInferior)
+		fresado2 = Point2D(origenX+alaIzquierda+anchuraPlaca,origenY+alaInferior)
+		fresado3=Point2D(origenX+alaIzquierda+anchuraPlaca,origenY+alaInferior+alturaPlaca)
+		fresado4=Point2D(origenX+alaIzquierda,origenY+alaInferior+alturaPlaca)
 		
-	
-	elseif modelo==31 then --[CH4]
-		--[[Contour:AppendPoint(fresado1)
-		Contour:LineTo(fresado4)
-		Contour:LineTo(fresado10)
-		Contour:LineTo(fresado12)
-		Contour:LineTo(fresado22)
-		Contour:LineTo(fresado16)
-		Contour:LineTo(fresado15)
-		Contour:LineTo(fresado7)
-		Contour:LineTo(fresado15)
-		Contour:LineTo(fresado14)
-		Contour:LineTo(fresado5)
-		Contour:LineTo(fresado14)
-		Contour:LineTo(fresado13)
-		Contour:LineTo(fresado17)
-		Contour:LineTo(fresado1)--]]
+		dibujarFresado_auxiliar(doc,fresado1,fresado2)
+		dibujarFresado_auxiliar(doc,fresado2,fresado3)
+		dibujarFresado_auxiliar(doc,fresado3,fresado4)
+		dibujarFresado_auxiliar(doc,fresado4,fresado1)
 		
-		dibujarFresado_auxiliar(doc,fresado1,fresado17)
-		dibujarFresado_auxiliar(doc,fresado13,fresado16)
-		dibujarFresado_auxiliar(doc,fresado16,fresado12)
-		dibujarFresado_auxiliar(doc,fresado10,fresado4)
-		dibujarFresado_auxiliar(doc,fresado5,fresado14)
-		dibujarFresado_auxiliar(doc,fresado15,fresado7)
+	elseif modelo==47 then --[DH7]
+		fresado1 = Point2D(origenX+alaIzquierda+pliegueIzq,origenY+alaInferior)
+		fresado2 = Point2D(origenX+alaIzquierda+pliegueIzq+anchuraPlaca,origenY+alaInferior)
+		fresado3 = Point2D(origenX+alaIzquierda+pliegueIzq+anchuraPlaca,origenY+alaInferior+alturaPlaca)
+		fresado4 = Point2D(origenX+alaIzquierda+pliegueIzq,origenY+alaInferior+alturaPlaca)
 		
-	elseif modelo==32 then --[CH5]
-		--[[Contour:AppendPoint(fresado3)
-		Contour:LineTo(fresado2)
-		Contour:LineTo(fresado4)
-		Contour:LineTo(fresado10)
-		Contour:LineTo(fresado11)
-		Contour:LineTo(fresado9)
-		Contour:LineTo(fresado11)
-		Contour:LineTo(fresado22)
-		Contour:LineTo(fresado16)
-		Contour:LineTo(fresado15)
-		Contour:LineTo(fresado7)
-		Contour:LineTo(fresado15)
-		Contour:LineTo(fresado14)
-		Contour:LineTo(fresado5)
-		Contour:LineTo(fresado14)
-		Contour:LineTo(fresado13)
-		Contour:LineTo(fresado17)
-		Contour:LineTo(fresado2)
+		dibujarFresado_auxiliar(doc,fresado1,fresado2)
+		dibujarFresado_auxiliar(doc,fresado2,fresado3)
+		dibujarFresado_auxiliar(doc,fresado3,fresado4)
+		dibujarFresado_auxiliar(doc,fresado4,fresado1)
 		
-		dibujarFresado_auxiliar(doc,fresado6,fresado8)--]]
+		fresado1 = Point2D(origenX+alaIzquierda,origenY+alaInferior)
+		fresado2 = Point2D(origenX+alaIzquierda,origenY+alaInferior+alturaPlaca)
+		dibujarFresado_auxiliar(doc,fresado1,fresado2)
 		
-		dibujarFresado_auxiliar(doc,fresado2,fresado17)
-		dibujarFresado_auxiliar(doc,fresado13,fresado16)
-		dibujarFresado_auxiliar(doc,fresado22,fresado11)
-		dibujarFresado_auxiliar(doc,fresado11,fresado9)
-		dibujarFresado_auxiliar(doc,fresado8,fresado6)
-		dibujarFresado_auxiliar(doc,fresado3,fresado2)
-		dibujarFresado_auxiliar(doc,fresado4,fresado10)
-		dibujarFresado_auxiliar(doc,fresado7,fresado15)
-		dibujarFresado_auxiliar(doc,fresado14,fresado5)
-	
-	elseif modelo==33 then --[CH6]
-		--[[Contour:AppendPoint(fresado1)
-		Contour:LineTo(fresado4)
-		Contour:LineTo(fresado10)
-		Contour:LineTo(fresado12)
-		Contour:LineTo(fresado23)
-		Contour:LineTo(fresado22)
-		Contour:LineTo(fresado21)
-		Contour:LineTo(fresado22)
-		Contour:LineTo(fresado16)
-		Contour:LineTo(fresado15)
-		Contour:LineTo(fresado7)
-		Contour:LineTo(fresado15)
-		Contour:LineTo(fresado14)
-		Contour:LineTo(fresado5)
-		Contour:LineTo(fresado14)
-		Contour:LineTo(fresado13)
-		Contour:LineTo(fresado24)
-		Contour:LineTo(fresado17)
-		Contour:LineTo(fresado18)
-		Contour:LineTo(fresado17)
-		Contour:LineTo(fresado1)
-		
-		dibujarFresado_auxiliar(doc,fresado19,fresado20)--]]
-		
-		dibujarFresado_auxiliar(doc,fresado1,fresado17)
-		dibujarFresado_auxiliar(doc,fresado17,fresado18)
-		dibujarFresado_auxiliar(doc,fresado19,fresado20)
-		dibujarFresado_auxiliar(doc,fresado21,fresado22)
-		dibujarFresado_auxiliar(doc,fresado22,fresado12)
-		dibujarFresado_auxiliar(doc,fresado10,fresado4)
-		dibujarFresado_auxiliar(doc,fresado5,fresado14)
-		dibujarFresado_auxiliar(doc,fresado13,fresado16)
-		dibujarFresado_auxiliar(doc,fresado15,fresado7)
-	
-	elseif modelo==34 then --[CH7]
-		--[[Contour:AppendPoint(fresado3)
-		Contour:LineTo(fresado2)
-		Contour:LineTo(fresado4)
-		Contour:LineTo(fresado10)
-		Contour:LineTo(fresado11)
-		Contour:LineTo(fresado9)
-		Contour:LineTo(fresado11)
-		Contour:LineTo(fresado23)
-		Contour:LineTo(fresado22)
-		Contour:LineTo(fresado21)
-		Contour:LineTo(fresado22)
-		Contour:LineTo(fresado16)
-		Contour:LineTo(fresado15)
-		Contour:LineTo(fresado7)
-		Contour:LineTo(fresado15)
-		Contour:LineTo(fresado14)
-		Contour:LineTo(fresado5)
-		Contour:LineTo(fresado14)
-		Contour:LineTo(fresado13)
-		Contour:LineTo(fresado24)
-		Contour:LineTo(fresado17)
-		Contour:LineTo(fresado18)
-		Contour:LineTo(fresado17)
-		Contour:LineTo(fresado2)
-		
-		dibujarFresado_auxiliar(doc,fresado6,fresado8)
-		dibujarFresado_auxiliar(doc,fresado19,fresado20)--]]
-		
-		dibujarFresado_auxiliar(doc,fresado2,fresado24)
-		dibujarFresado_auxiliar(doc,fresado17,fresado18)
-		dibujarFresado_auxiliar(doc,fresado19,fresado20)
-		dibujarFresado_auxiliar(doc,fresado21,fresado22)
-		dibujarFresado_auxiliar(doc,fresado23,fresado11)
-		dibujarFresado_auxiliar(doc,fresado11,fresado9)
-		dibujarFresado_auxiliar(doc,fresado8,fresado6)
-		dibujarFresado_auxiliar(doc,fresado3,fresado2)
-		dibujarFresado_auxiliar(doc,fresado4,fresado10)
-		dibujarFresado_auxiliar(doc,fresado7,fresado15)
-		dibujarFresado_auxiliar(doc,fresado16,fresado13)
-		dibujarFresado_auxiliar(doc,fresado14,fresado5)
-		
-	elseif modelo==35 then --[CH8]
-		--[[Contour:AppendPoint(fresado3)
-		Contour:LineTo(fresado2)
-		Contour:LineTo(fresado1)
-		Contour:LineTo(fresado4)
-		Contour:LineTo(fresado10)
-		Contour:LineTo(fresado12)
-		Contour:LineTo(fresado11)
-		Contour:LineTo(fresado9)
-		Contour:LineTo(fresado11)
-		Contour:LineTo(fresado22)
-		Contour:LineTo(fresado21)
-		Contour:LineTo(fresado22)
-		Contour:LineTo(fresado16)
-		Contour:LineTo(fresado15)
-		Contour:LineTo(fresado7)
-		Contour:LineTo(fresado15)
-		Contour:LineTo(fresado14)
-		Contour:LineTo(fresado5)
-		Contour:LineTo(fresado14)
-		Contour:LineTo(fresado13)
-		Contour:LineTo(fresado17)
-		Contour:LineTo(fresado18)
-		Contour:LineTo(fresado17)
-		Contour:LineTo(fresado2)
-		
-		dibujarFresado_auxiliar(doc,fresado19,fresado20)
-		dibujarFresado_auxiliar(doc,fresado6,fresado8)--]]
-		
-		dibujarFresado_auxiliar(doc,fresado1,fresado17)
-		dibujarFresado_auxiliar(doc,fresado17,fresado18)
-		dibujarFresado_auxiliar(doc,fresado19,fresado20)
-		dibujarFresado_auxiliar(doc,fresado21,fresado22)
-		dibujarFresado_auxiliar(doc,fresado22,fresado12)
-		dibujarFresado_auxiliar(doc,fresado11,fresado9)
-		dibujarFresado_auxiliar(doc,fresado8,fresado6)
-		dibujarFresado_auxiliar(doc,fresado3,fresado2)
-		dibujarFresado_auxiliar(doc,fresado4,fresado10)
-		dibujarFresado_auxiliar(doc,fresado7,fresado15)
-		dibujarFresado_auxiliar(doc,fresado16,fresado13)
-		dibujarFresado_auxiliar(doc,fresado14,fresado5)
-		
+		fresado1 = Point2D(origenX+alaIzquierda+pliegueDer+anchuraPlaca+pliegueIzq,origenY+alaInferior)
+		fresado2 = Point2D(origenX+alaIzquierda+pliegueDer+anchuraPlaca+pliegueIzq,origenY+alaInferior+alturaPlaca)
+		dibujarFresado_auxiliar(doc,fresado1,fresado2)
 	end
 	
 	--------------------------------------------------------
@@ -7430,6 +7093,161 @@ function dibujarFresadoDH(doc)
 	--------------------------------------------------------
 	return true; 
 end
+
+
+
+function dibujarCorteDH(doc)
+	
+	local Contour = Contour(0.0)
+	
+	--Modelo 40 (cuadrado simple)
+	if modelo==40 then --[DH]
+		local corte1 = Point2D(origenX,origenY)
+		local corte2 = Point2D(origenX+anchuraPlaca,origenY)
+		local corte3 = Point2D(origenX+anchuraPlaca,origenY+alturaPlaca)
+		local corte4 = Point2D(origenX,origenY+alturaPlaca)
+		
+		Contour:AppendPoint(corte1)
+		Contour:LineTo(corte2)
+		Contour:LineTo(corte3)
+		Contour:LineTo(corte4)
+		Contour:LineTo(corte1)
+		
+	elseif modelo==41 then --[DH1]
+		local corte1 = Point2D(origenX,origenY)
+		local corte2 = Point2D(origenX+anchuraPlaca,origenY)
+		local corte3 = Point2D(origenX+anchuraPlaca,origenY+alaInferior+altura1+altura2+alaSuperior)
+		local corte4 = Point2D(origenX,origenY+alaInferior+altura1+altura2+alaSuperior)
+		
+		Contour:AppendPoint(corte1)
+		Contour:LineTo(corte2)
+		Contour:LineTo(corte3)
+		Contour:LineTo(corte4)
+		Contour:LineTo(corte1)
+		
+	elseif modelo==42 then --[DH2]
+		local corte1 = Point2D(origenX,origenY)
+		local corte2 = Point2D(origenX+anchuraPlaca,origenY)
+		local corte3 = Point2D(origenX+anchuraPlaca,origenY+alaInferior+pliegueInferior+alturaPlaca)
+		local corte4 = Point2D(origenX,origenY+alaInferior+pliegueInferior+alturaPlaca)
+		
+		Contour:AppendPoint(corte1)
+		Contour:LineTo(corte2)
+		Contour:LineTo(corte3)
+		Contour:LineTo(corte4)
+		Contour:LineTo(corte1)
+	
+	elseif modelo==43 then --[DH3] 
+		local corte1 = Point2D(origenX,origenY)
+		local corte2 = Point2D(origenX+anchuraPlaca,origenY)
+		local corte3 = Point2D(origenX+anchuraPlaca,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior)
+		local corte4 = Point2D(origenX,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior)
+		
+		Contour:AppendPoint(corte1)
+		Contour:LineTo(corte2)
+		Contour:LineTo(corte3)
+		Contour:LineTo(corte4)
+		Contour:LineTo(corte1)
+		
+	elseif modelo==44 then --[Dh4]
+		local corte1 = Point2D(origenX,origenY)
+		local corte2 = Point2D(origenX+anchura1+anchura2,origenY)
+		local corte3 = Point2D(origenX+anchura1+anchura2,origenY+alturaPlaca)
+		local corte4 = Point2D(origenX,origenY+alturaPlaca)
+		
+		Contour:AppendPoint(corte1)
+		Contour:LineTo(corte2)
+		Contour:LineTo(corte3)
+		Contour:LineTo(corte4)
+		Contour:LineTo(corte1)
+		
+	elseif modelo==45 then --[DH5]
+		local corte1 = Point2D(origenX,origenY)
+		local corte2 = Point2D(origenX+anchura1+anchura2+anchura3+anchura4,origenY)
+		local corte3 = Point2D(origenX+anchura1+anchura2+anchura3+anchura4,origenY+alturaPlaca)
+		local corte4 = Point2D(origenX,origenY+alturaPlaca)
+		
+		Contour:AppendPoint(corte1)
+		Contour:LineTo(corte2)
+		Contour:LineTo(corte3)
+		Contour:LineTo(corte4)
+		Contour:LineTo(corte1)
+		
+	elseif modelo==46 then --[DH6]
+		local corte1 = Point2D(origenX+alaIzquierda,origenY+alaInferior)
+		local corte2 = Point2D(origenX+alaIzquierda,origenY)
+		local corte3 = Point2D(origenX+alaIzquierda+anchuraPlaca,origenY)
+		local corte4 = Point2D(origenX+alaIzquierda+anchuraPlaca,origenY+alaInferior)
+		local corte5 = Point2D(origenX+alaIzquierda+anchuraPlaca+alaDerecha,origenY+alaInferior)
+		local corte6 = Point2D(origenX+alaIzquierda+anchuraPlaca+alaDerecha,origenY+alaInferior+alturaPlaca)
+		local corte7 = Point2D(origenX+alaIzquierda+anchuraPlaca,origenY+alaInferior+alturaPlaca)
+		local corte8 = Point2D(origenX+alaIzquierda+anchuraPlaca,origenY+alaInferior+alturaPlaca+alaSuperior)
+		local corte9 = Point2D(origenX+alaIzquierda,origenY+alaInferior+alturaPlaca+alaSuperior)
+		local corte10 = Point2D(origenX+alaIzquierda,origenY+alaInferior+alturaPlaca)
+		local corte11 = Point2D(origenX,origenY+alaInferior+alturaPlaca)
+		local corte12 = Point2D(origenX,origenY+alaInferior)
+		
+		Contour:AppendPoint(corte1)
+		Contour:LineTo(corte2)
+		Contour:LineTo(corte3)
+		Contour:LineTo(corte4)
+		Contour:LineTo(corte5)
+		Contour:LineTo(corte6)
+		Contour:LineTo(corte7)
+		Contour:LineTo(corte8)
+		Contour:LineTo(corte9)
+		Contour:LineTo(corte10)
+		Contour:LineTo(corte11)
+		Contour:LineTo(corte12)
+		Contour:LineTo(corte1)
+		
+	elseif modelo==47 then --[DH7]  
+		local corte1 = Point2D(origenX,origenY+alaInferior)
+		local corte2 = Point2D(origenX+alaIzquierda+pliegueIzq,origenY+alaInferior)
+		local corte3 = Point2D(origenX+alaIzquierda+pliegueIzq,origenY)
+		local corte4 = Point2D(origenX+alaIzquierda+pliegueIzq+anchuraPlaca,origenY)
+		local corte5 = Point2D(origenX+alaIzquierda+pliegueIzq+anchuraPlaca,origenY+alaInferior)
+		local corte6 = Point2D(origenX+alaIzquierda+pliegueIzq+anchuraPlaca+pliegueDer+alaDerecha,origenY+alaInferior)
+		local corte7 = Point2D(origenX+alaIzquierda+pliegueIzq+anchuraPlaca+pliegueDer+alaDerecha,origenY+alaInferior+alturaPlaca)
+		local corte8 = Point2D(origenX+alaIzquierda+pliegueIzq+anchuraPlaca,origenY+alaInferior+alturaPlaca)
+		local corte9 = Point2D(origenX+alaIzquierda+pliegueIzq+anchuraPlaca,origenY+alaInferior+alturaPlaca+alaSuperior)
+		local corte10 = Point2D(origenX+alaIzquierda+pliegueIzq,origenY+alaInferior+alturaPlaca+alaSuperior)
+		local corte11 = Point2D(origenX+alaIzquierda+pliegueIzq,origenY+alaInferior+alturaPlaca)
+		local corte12 = Point2D(origenX,origenY+alaInferior+alturaPlaca)
+		
+		Contour:AppendPoint(corte1)
+		Contour:LineTo(corte2)
+		Contour:LineTo(corte3)
+		Contour:LineTo(corte4)
+		Contour:LineTo(corte5)
+		Contour:LineTo(corte6)
+		Contour:LineTo(corte7)
+		Contour:LineTo(corte8)
+		Contour:LineTo(corte9)
+		Contour:LineTo(corte10)
+		Contour:LineTo(corte11)
+		Contour:LineTo(corte12)
+		Contour:LineTo(corte1)
+		
+		
+	end
+	
+	
+	
+	--------------------------------------------------------
+	local cad_object = CreateCadContour(Contour)
+	local cur_layer = doc.LayerManager:GetActiveLayer()
+	local layer = doc.LayerManager:GetLayerWithName("Corte")
+	layer:AddObject(cad_object, true)
+    layer:SetColor(0.9,0.2,0.2)
+	layer.Visible = true 
+	doc.LayerManager:SetActiveLayer(cur_layer)
+	doc:Refresh2DView()	
+	-----------------------------------------------------------------
+	return true; 
+end
+
+
 
 
 
