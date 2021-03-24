@@ -3,10 +3,24 @@
 require "strict"
 
 
+---------------------------------------------------------------
+------------------- GESTION DE ARCHIVOS -----------------------
+---------------------------------------------------------------
+
 ruta_carpeta="https://cuttool.es/prueba/"
 carpeta="Paneles"
 
 --DisplayMessageBox("La ruta es: " .. ruta_carpeta.. "" .. carpeta .. "")
+
+remoto=1 --Esto es para que los archivos html se lean en remoto (https://...) o en local (file:/...)
+--1=remoto
+--0=local
+
+---------------------------------------------------------------
+---------------------------------------------------------------
+---------------------------------------------------------------
+
+
 
 
 
@@ -86,14 +100,11 @@ origenY=0
 
 
 modelo=0
-
 --[AH=0 - AH1=1 - AH2=2 - AH3=3 - AH4=4 - AH5=5 - AH6=6 - AH7=7 - AH8=8]
 --[BH=9 - BH1=10 - BH2=11 - BH3=12 - BH4=13 - BH5=14 - BH6=15 - BH7=16 - BH8=17]
 --[BH9=18 - BH10=19 - BH11=20 - BH12=21 - BH13=22 - BH14=23 - BH15=24 - BH16=25 - BH17=26]
 --[CH=27 - CH1=28 - CH2=29 - CH3=30 - CH4=31 - CH5=32 - CH6=33 - CH7=34 - CH8=35]
-
 --[DH=40 - DH1=41 - DH2=42 - DH3=43 - DH4=44 - DH5=45 - DH6=46 - DH7=47]
-
 --[ref001=101 - ref002=102 - ref003=103 - ref004=104 - ref005=105]
 
 
@@ -161,9 +172,12 @@ function main(script_path)
 		return false;
 	end	
 	
-	
-	--local html_path = "file:" .. script_path .. "\\Paneles\\Paneles.html"
-	local html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/Paneles.html"
+	local html_path
+	if remoto==1 then
+		html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/Paneles.html"
+	else
+		html_path = "file:" .. script_path .. "\\Paneles\\Paneles.html"
+	end
 
 	
 	
@@ -489,11 +503,15 @@ function OnLuaButton_modeloAH(framePrincipal)
 
 	if modelo == 0 then 
 		
-		DisplayMessageBox("La ruta es: " .. ruta_carpeta.. "" .. carpeta .. "")
-
 		
-		--local html_path = "file:" .. ruta .. "\\Paneles\\referenciaAH.html"
-		local html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referenciaAH.html"
+		local html_path
+		if remoto==1 then
+			html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referenciaAH.html"
+		else
+			html_path = "file:" .. ruta .. "\\Paneles\\referenciaAH.html"
+		end
+		
+		
 		
 		local modeloAH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA AH")
 		
@@ -534,9 +552,14 @@ function OnLuaButton_modeloAH(framePrincipal)
 		end
 
    	elseif modelo==1 then
+		local html_path
+		if remoto==1 then
+			html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referenciaAH1.html"
+		else
+			html_path = "file:" .. ruta .. "\\Paneles\\referenciaAH1.html"
+		end
 		
-		--local html_path = "file:" .. ruta .. "\\Paneles\\referenciaAH1.html"
-		local html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referenciaAH1.html"
+
 			
 		local modeloAH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA AH1")
 		
@@ -572,9 +595,13 @@ function OnLuaButton_modeloAH(framePrincipal)
 		end
 		
     elseif modelo==2 then
-				
-		--local html_path = "file:" .. ruta .. "\\Paneles\\referenciaAH2.html"
-		local html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referenciaAH2.html"
+		local html_path
+		if remoto==1 then
+			html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referenciaAH2.html"
+		else
+			html_path = "file:" .. ruta .. "\\Paneles\\referenciaAH2.html"
+		end
+		
 			
 		local modeloAH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA AH2")
 
@@ -609,9 +636,13 @@ function OnLuaButton_modeloAH(framePrincipal)
 		end
 	
     elseif modelo==3 then
-				
-		--local html_path = "file:" .. ruta .. "\\Paneles\\referenciaAH3.html"
-		local html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referenciaAH3.html"
+		local html_path
+		if remoto==1 then
+			html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referenciaAH3.html"
+		else
+			html_path = "file:" .. ruta .. "\\Paneles\\referenciaAH3.html"
+		end	
+		
 			
 		local modeloAH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA AH3")
 
@@ -646,9 +677,13 @@ function OnLuaButton_modeloAH(framePrincipal)
 		end
 	
     elseif modelo==4 then
-				
-		--local html_path = "file:" .. ruta .. "\\Paneles\\referenciaAH4.html"
-		local html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referenciaAH4.html"
+		local html_path
+		if remoto==1 then
+			html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referenciaAH4.html"
+		else
+			html_path = "file:" .. ruta .. "\\Paneles\\referenciaAH4.html"
+		end
+		
 			
 		local modeloAH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA AH4")
 
@@ -683,9 +718,13 @@ function OnLuaButton_modeloAH(framePrincipal)
 		end
 	
     elseif modelo==5 then
-				
-		--local html_path = "file:" .. ruta .. "\\Paneles\\referenciaAH5.html"
-		local html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referenciaAH5.html"
+		local html_path
+		if remoto==1 then
+			html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referenciaAH5.html"
+		else
+			html_path = "file:" .. ruta .. "\\Paneles\\referenciaAH5.html"
+		end
+		
 			
 		local modeloAH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA AH5")
 
@@ -720,9 +759,13 @@ function OnLuaButton_modeloAH(framePrincipal)
 		end
 	
     elseif modelo==6 then
-				
-		--local html_path = "file:" .. ruta .. "\\Paneles\\referenciaAH6.html"
-		local html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referenciaAH6.html"
+		local html_path
+		if remoto==1 then
+			html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referenciaAH6.html"
+		else
+			html_path = "file:" .. ruta .. "\\Paneles\\referenciaAH6.html"
+		end
+		
 			
 		local modeloAH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA AH6")
 
@@ -757,9 +800,13 @@ function OnLuaButton_modeloAH(framePrincipal)
 		end
 	
     elseif modelo==7 then
-				
-		--local html_path = "file:" .. ruta .. "\\Paneles\\referenciaAH7.html"
-		local html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referenciaAH7.html"
+		local html_path
+		if remoto==1 then
+			html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referenciaAH7.html"
+		else
+			html_path = "file:" .. ruta .. "\\Paneles\\referenciaAH7.html"
+		end
+		
 			
 		local modeloAH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA AH7")
 
@@ -794,9 +841,13 @@ function OnLuaButton_modeloAH(framePrincipal)
 		end
 	
     elseif modelo==8 then
-				
-		--local html_path = "file:" .. ruta .. "\\Paneles\\referenciaAH8.html"
-		local html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referenciaAH8.html"
+		local html_path
+		if remoto==1 then
+			html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referenciaAH8.html"
+		else
+			html_path = "file:" .. ruta .. "\\Paneles\\referenciaAH8.html"
+		end
+		
 			
 		local modeloAH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA AH8")
 
@@ -960,9 +1011,14 @@ end
 function OnLuaButton_modeloBH(framePrincipal)
 	
 	if modelo == 9 then 
+		local html_path
+		if remoto==1 then
+			html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referenciaBH.html"
+		else
+			html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH.html"
+		end
 		
-		--local html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH.html"
-		local html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referenciaBH.html"
+		
 		
 		local modeloBH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA BH")
 		
@@ -999,8 +1055,13 @@ function OnLuaButton_modeloBH(framePrincipal)
 		end
 
    	elseif modelo==10 then
-		--local html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH1.html"
-		local html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referenciaBH1.html"
+		local html_path
+		if remoto==1 then
+			html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referenciaBH1.html"
+		else
+			html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH1.html"
+		end
+		
 		
 		local modeloBH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA BH1")
 		
@@ -1036,8 +1097,12 @@ function OnLuaButton_modeloBH(framePrincipal)
 					
 		end
 	elseif modelo==11 then
-		--local html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH2.html"
-		local html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referenciaBH2.html"
+		local html_path
+		if remoto==1 then
+			html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referenciaBH2.html"
+		else
+			html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH2.html"
+		end
 		
 		local modeloBH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA BH2")
 		
@@ -1073,8 +1138,12 @@ function OnLuaButton_modeloBH(framePrincipal)
 					
 		end
 	elseif modelo==12 then
-		--local html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH3.html"
-		local html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referenciaBH3.html"
+		local html_path
+		if remoto==1 then
+			html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referenciaBH3.html"
+		else
+			html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH3.html"
+		end
 		
 		local modeloBH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA BH3")
 		
@@ -1110,8 +1179,12 @@ function OnLuaButton_modeloBH(framePrincipal)
 					
 		end
 	elseif modelo==13 then
-		--local html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH4.html"
-		local html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referenciaBH4.html"
+		local html_path
+		if remoto==1 then
+			html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referenciaBH4.html"
+		else
+			html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH4.html"
+		end
 		
 		local modeloBH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA BH4")
 		
@@ -1147,8 +1220,12 @@ function OnLuaButton_modeloBH(framePrincipal)
 					
 		end
 	elseif modelo==14 then
-		--local html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH5.html"
-		local html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referenciaBH5.html"
+		local html_path
+		if remoto==1 then
+			html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referenciaBH5.html"
+		else
+			html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH5.html"
+		end
 		
 		local modeloBH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA BH5")
 		
@@ -1184,8 +1261,12 @@ function OnLuaButton_modeloBH(framePrincipal)
 					
 		end
 	elseif modelo==15 then
-		--local html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH6.html"
-		local html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referenciaBH6.html"
+		local html_path
+		if remoto==1 then
+			html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referenciaBH6.html"
+		else
+			html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH6.html"
+		end
 		
 		local modeloBH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA BH6")
 		
@@ -1221,8 +1302,12 @@ function OnLuaButton_modeloBH(framePrincipal)
 					
 		end
 	elseif modelo==16 then
-		--local html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH7.html"
-		local html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referenciaBH7.html"
+		local html_path
+		if remoto==1 then
+			html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referenciaBH7.html"
+		else
+			html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH7.html"
+		end
 		
 		local modeloBH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA BH7")
 		
@@ -1258,8 +1343,12 @@ function OnLuaButton_modeloBH(framePrincipal)
 					
 		end
 	elseif modelo==17 then
-		--local html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH8.html"
-		local html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referenciaBH8.html"
+		local html_path
+		if remoto==1 then
+			html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referenciaBH8.html"
+		else
+			html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH8.html"
+		end
 		
 		local modeloBH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA BH8")
 		
@@ -1295,8 +1384,12 @@ function OnLuaButton_modeloBH(framePrincipal)
 					
 		end
 	elseif modelo==18 then
-		--local html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH9.html"
-		local html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referenciaBH9.html"
+		local html_path
+		if remoto==1 then
+			html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referenciaBH9.html"
+		else
+			html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH9.html"
+		end
 		
 		local modeloBH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA BH9")
 		
@@ -1333,8 +1426,12 @@ function OnLuaButton_modeloBH(framePrincipal)
 					
 		end
 	elseif modelo==19 then
-		--local html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH10.html"
-		local html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referenciaBH10.html"
+		local html_path
+		if remoto==1 then
+			html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referenciaBH10.html"
+		else
+			html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH10.html"
+		end
 		
 		local modeloBH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA BH10")
 		
@@ -1371,8 +1468,12 @@ function OnLuaButton_modeloBH(framePrincipal)
 					
 		end
 	elseif modelo==20 then
-		--local html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH11.html"
-		local html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referenciaBH11.html"
+		local html_path
+		if remoto==1 then
+			html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referenciaBH11.html"
+		else
+			html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH11.html"
+		end
 		
 		local modeloBH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA BH11")
 		
@@ -1409,8 +1510,12 @@ function OnLuaButton_modeloBH(framePrincipal)
 					
 		end
 	elseif modelo==21 then
-		--local html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH12.html"
-		local html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referenciaBH12.html"
+		local html_path
+		if remoto==1 then
+			html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referenciaBH12.html"
+		else
+			html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH12.html"
+		end
 		
 		local modeloBH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA BH12")
 		
@@ -1447,8 +1552,12 @@ function OnLuaButton_modeloBH(framePrincipal)
 					
 		end
 	elseif modelo==22 then
-		--local html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH13.html"
-		local html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referenciaBH13.html"
+		local html_path
+		if remoto==1 then
+			html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referenciaBH13.html"
+		else
+			html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH13.html"
+		end
 		
 		local modeloBH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA BH13")
 		
@@ -1485,8 +1594,12 @@ function OnLuaButton_modeloBH(framePrincipal)
 					
 		end
 	elseif modelo==23 then
-		--local html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH14.html"
-		local html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referenciaBH14.html"
+		local html_path
+		if remoto==1 then
+			html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referenciaBH14.html"
+		else
+			html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH14.html"
+		end
 		
 		local modeloBH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA BH14")
 		
@@ -1523,8 +1636,12 @@ function OnLuaButton_modeloBH(framePrincipal)
 					
 		end
 	elseif modelo==24 then
-		--local html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH15.html"
-		local html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referenciaBH15.html"
+		local html_path
+		if remoto==1 then
+			html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referenciaBH15.html"
+		else
+			html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH15.html"
+		end
 		
 		local modeloBH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA BH15")
 		
@@ -1561,8 +1678,12 @@ function OnLuaButton_modeloBH(framePrincipal)
 					
 		end
 	elseif modelo==25 then
-		--local html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH16.html"
-		local html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referenciaBH16.html"
+		local html_path
+		if remoto==1 then
+			html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referenciaBH16.html"
+		else
+			html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH16.html"
+		end
 		
 		local modeloBH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA BH16")
 		
@@ -1600,8 +1721,12 @@ function OnLuaButton_modeloBH(framePrincipal)
 		end
 		
 	elseif modelo==26 then
-		--local html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH17.html"
-		local html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referenciaBH17.html"
+		local html_path
+		if remoto==1 then
+			html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referenciaBH17.html"
+		else
+			html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH17.html"
+		end
 		
 		local modeloBH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA BH17")
 		
@@ -1805,7 +1930,13 @@ end
 function OnLuaButton_modeloCH(framePrincipal)
 	
 	if modelo == 27 then 
-		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaCH.html"
+		local html_path
+		if remoto==1 then
+			html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referenciaCH.html"
+		else
+			html_path = "file:" .. ruta .. "\\Paneles\\referenciaCH.html"
+		end
+		
 		
 		local modeloCH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA CH")
 		
@@ -1843,7 +1974,13 @@ function OnLuaButton_modeloCH(framePrincipal)
 		end
 	
 	elseif modelo == 28 then 
-		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaCH1.html"
+		local html_path
+		if remoto==1 then
+			html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referenciaCH1.html"
+		else
+			html_path = "file:" .. ruta .. "\\Paneles\\referenciaCH1.html"
+		end
+		
 		
 		local modeloCH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA CH1")
 		
@@ -1881,7 +2018,12 @@ function OnLuaButton_modeloCH(framePrincipal)
 		end
 		
 	elseif modelo == 29 then 
-		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaCH2.html"
+		local html_path
+		if remoto==1 then
+			html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referenciaCH2.html"
+		else
+			html_path = "file:" .. ruta .. "\\Paneles\\referenciaCH2.html"
+		end
 		
 		local modeloCH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA CH2")
 		
@@ -1918,7 +2060,13 @@ function OnLuaButton_modeloCH(framePrincipal)
 					
 		end
 	elseif modelo == 30 then 
-		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaCH3.html"
+		local html_path
+		if remoto==1 then
+			html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referenciaCH3.html"
+		else
+			html_path = "file:" .. ruta .. "\\Paneles\\referenciaCH3.html"
+		end
+		
 		
 		local modeloCH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA CH3")
 		
@@ -1955,7 +2103,12 @@ function OnLuaButton_modeloCH(framePrincipal)
 					
 		end
 	elseif modelo == 31 then 
-		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaCH4.html"
+		local html_path
+		if remoto==1 then
+			html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referenciaCH4.html"
+		else
+			html_path = "file:" .. ruta .. "\\Paneles\\referenciaCH4.html"
+		end
 		
 		local modeloCH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA CH4")
 		
@@ -1992,7 +2145,12 @@ function OnLuaButton_modeloCH(framePrincipal)
 					
 		end
 	elseif modelo == 32 then 
-		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaCH5.html"
+		local html_path
+		if remoto==1 then
+			html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referenciaCH5.html"
+		else
+			html_path = "file:" .. ruta .. "\\Paneles\\referenciaCH5.html"
+		end
 		
 		local modeloCH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA CH5")
 		
@@ -2029,7 +2187,12 @@ function OnLuaButton_modeloCH(framePrincipal)
 					
 		end
 	elseif modelo == 33 then 
-		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaCH6.html"
+		local html_path
+		if remoto==1 then
+			html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referenciaCH6.html"
+		else
+			html_path = "file:" .. ruta .. "\\Paneles\\referenciaCH6.html"
+		end
 		
 		local modeloCH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA CH6")
 		
@@ -2066,7 +2229,12 @@ function OnLuaButton_modeloCH(framePrincipal)
 					
 		end
 	elseif modelo == 34 then 
-		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaCH7.html"
+		local html_path
+		if remoto==1 then
+			html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referenciaCH7.html"
+		else
+			html_path = "file:" .. ruta .. "\\Paneles\\referenciaCH7.html"
+		end
 		
 		local modeloCH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA CH7")
 		
@@ -2103,7 +2271,12 @@ function OnLuaButton_modeloCH(framePrincipal)
 					
 		end
 	elseif modelo == 35 then 
-		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaCH8.html"
+		local html_path
+		if remoto==1 then
+			html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referenciaCH8.html"
+		else
+			html_path = "file:" .. ruta .. "\\Paneles\\referenciaCH8.html"
+		end
 		
 		local modeloCH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA CH8")
 		
@@ -2260,7 +2433,13 @@ end
 function OnLuaButton_modeloDH(framePrincipal)
 	
 	if modelo == 40 then 
-		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaDH.html"
+		local html_path
+		if remoto==1 then
+			html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referenciaDH.html"
+		else
+			html_path = "file:" .. ruta .. "\\Paneles\\referenciaDH.html"
+		end
+		
 		
 		local modeloDH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA DH")
 		
@@ -2276,7 +2455,12 @@ function OnLuaButton_modeloDH(framePrincipal)
 		end
 	
 	elseif modelo == 41 then 
-		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaDH1.html"
+		local html_path
+		if remoto==1 then
+			html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referenciaDH1.html"
+		else
+			html_path = "file:" .. ruta .. "\\Paneles\\referenciaDH1.html"
+		end
 		
 		local modeloDH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA DH1")
 		
@@ -2297,7 +2481,12 @@ function OnLuaButton_modeloDH(framePrincipal)
 		end
 		
 	elseif modelo == 42 then 
-		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaDH2.html"
+		local html_path
+		if remoto==1 then
+			html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referenciaDH2.html"
+		else
+			html_path = "file:" .. ruta .. "\\Paneles\\referenciaDH2.html"
+		end
 		
 		local modeloDH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA DH2")
 		
@@ -2317,7 +2506,12 @@ function OnLuaButton_modeloDH(framePrincipal)
 		end
 		
 	elseif modelo == 43 then 
-		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaDH3.html"
+		local html_path
+		if remoto==1 then
+			html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referenciaDH3.html"
+		else
+			html_path = "file:" .. ruta .. "\\Paneles\\referenciaDH3.html"
+		end
 		
 		local modeloDH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA DH3")
 		
@@ -2339,7 +2533,12 @@ function OnLuaButton_modeloDH(framePrincipal)
 		end
 	
 	elseif modelo == 44 then 
-		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaDH4.html"
+		local html_path
+		if remoto==1 then
+			html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referenciaDH4.html"
+		else
+			html_path = "file:" .. ruta .. "\\Paneles\\referenciaDH4.html"
+		end
 		
 		local modeloDH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA DH4")
 		
@@ -2356,7 +2555,12 @@ function OnLuaButton_modeloDH(framePrincipal)
 		end
 	
 	elseif modelo == 45 then 
-		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaDH5.html"
+		local html_path
+		if remoto==1 then
+			html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referenciaDH5.html"
+		else
+			html_path = "file:" .. ruta .. "\\Paneles\\referenciaDH5.html"
+		end
 		
 		local modeloDH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA DH5")
 		
@@ -2375,7 +2579,12 @@ function OnLuaButton_modeloDH(framePrincipal)
 		end
 	
 	elseif modelo == 46 then 
-		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaDH6.html"
+		local html_path
+		if remoto==1 then
+			html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referenciaDH6.html"
+		else
+			html_path = "file:" .. ruta .. "\\Paneles\\referenciaDH6.html"
+		end
 		
 		local modeloDH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA DH6")
 		
@@ -2397,7 +2606,12 @@ function OnLuaButton_modeloDH(framePrincipal)
 		end
 	
 	elseif modelo == 47 then 
-		local html_path = "file:" .. ruta .. "\\Paneles\\referenciaDH7.html"
+		local html_path
+		if remoto==1 then
+			html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referenciaDH7.html"
+		else
+			html_path = "file:" .. ruta .. "\\Paneles\\referenciaDH7.html"
+		end
 		
 		local modeloDH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA DH7")
 		
@@ -2557,13 +2771,21 @@ end
 function OnLuaButton_modelo000(framePrincipal)
 
 	if modelo == 101 then 
-		local html_path = "file:" .. ruta .. "\\Paneles\\referencia001.html"
+		local html_path
+		if remoto==1 then
+			html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referencia001.html"
+		else
+			html_path = "file:" .. ruta .. "\\Paneles\\referencia001.html"
+		end
+		
+		
 		
 		local modelo000 = HTML_Dialog(false, html_path, tamX, tamY, "BANDEJA CLIENTES 001")
 		
 		textoDescriptivo="BANDEJA 001"
 		anchura1=50 anchura2=130 anchura3=285 anchura4=1745 anchura5=300 anchura6=130 anchura7=50
 		alturaPlaca=457 alaInferior=34 pliegueSuperior=35 alaSuperior=40 margenFresado=1
+		
 		
         modelo000:AddTextField("textoDescriptivo", textoDescriptivo)
 		modelo000:AddDoubleField("anchura1", anchura1)
@@ -2573,8 +2795,6 @@ function OnLuaButton_modelo000(framePrincipal)
 		modelo000:AddDoubleField("anchura5", anchura5)
 		modelo000:AddDoubleField("anchura6", anchura6)
 		modelo000:AddDoubleField("anchura7", anchura7)
-		
-	    modelo000:AddDoubleField("alturaPlaca", alturaPlaca)
 
 		modelo000:AddDoubleField("alaSuperior", alaSuperior)
 		modelo000:AddDoubleField("pliegueSuperior", pliegueSuperior)
@@ -2587,13 +2807,21 @@ function OnLuaButton_modelo000(framePrincipal)
 		end
 	
 	elseif modelo == 102 then 
-		local html_path = "file:" .. ruta .. "\\Paneles\\referencia002.html"
+		local html_path
+		if remoto==1 then
+			html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referencia002.html"
+		else
+			html_path = "file:" .. ruta .. "\\Paneles\\referencia002.html"
+		end
+		
 		
 		local modelo000 = HTML_Dialog(false, html_path, tamX, tamY, "BANDEJA CLIENTES 002")
 		
 		textoDescriptivo="BANDEJA 002"
 		anchura1=50 anchura2=130 anchura3=290 anchura4=1765 anchura5=295 anchura6=130 anchura7=50
 		alturaPlaca=500	alaInferior=20 pliegueSuperior=35 pliegueInferior=105 alaSuperior=40 margenFresado=1
+		
+		pliegueInf1=34 pliegueInf2=34 pliegueInf3=34 pliegueInf4=34 pliegueInf5=34 pliegueInf6=34 pliegueInf7=34
 		
         modelo000:AddTextField("textoDescriptivo", textoDescriptivo)
 		modelo000:AddDoubleField("anchura1", anchura1)
@@ -2604,11 +2832,18 @@ function OnLuaButton_modelo000(framePrincipal)
 		modelo000:AddDoubleField("anchura6", anchura6)
 		modelo000:AddDoubleField("anchura7", anchura7)
 		
+		modelo000:AddDoubleField("pliegueInf1", pliegueInf1)
+	    modelo000:AddDoubleField("pliegueInf2", pliegueInf2)
+	    modelo000:AddDoubleField("pliegueInf3", pliegueInf3)
+	    modelo000:AddDoubleField("pliegueInf4", pliegueInf4)
+	    modelo000:AddDoubleField("pliegueInf5", pliegueInf5)
+	    modelo000:AddDoubleField("pliegueInf6", pliegueInf6)
+	    modelo000:AddDoubleField("pliegueInf7", pliegueInf7)
+		
 	    modelo000:AddDoubleField("alturaPlaca", alturaPlaca)
 
 		modelo000:AddDoubleField("alaSuperior", alaSuperior)
 		modelo000:AddDoubleField("pliegueSuperior", pliegueSuperior)
-		modelo000:AddDoubleField("pliegueInferior", pliegueInferior)
 		modelo000:AddDoubleField("alaInferior", alaInferior)
 		
 		modelo000:AddDoubleField("margenFresado", margenFresado)
@@ -2618,7 +2853,13 @@ function OnLuaButton_modelo000(framePrincipal)
 		end
 	
 	elseif modelo == 103 then 
-		local html_path = "file:" .. ruta .. "\\Paneles\\referencia003.html"
+		local html_path
+		if remoto==1 then
+			html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referencia003.html"
+		else
+			html_path = "file:" .. ruta .. "\\Paneles\\referencia003.html"
+		end
+		
 		
 		local modelo000 = HTML_Dialog(false, html_path, tamX, tamY, "BANDEJA CLIENTES 003")
 		
@@ -2648,7 +2889,13 @@ function OnLuaButton_modelo000(framePrincipal)
 		end
 		
 	elseif modelo == 104 then 
-		local html_path = "file:" .. ruta .. "\\Paneles\\referencia004.html"
+		local html_path
+		if remoto==1 then
+			html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referencia004.html"
+		else
+			html_path = "file:" .. ruta .. "\\Paneles\\referencia004.html"
+		end
+		
 		
 		local modelo000 = HTML_Dialog(false, html_path, tamX, tamY, "BANDEJA CLIENTES 004")
 		
@@ -2672,7 +2919,13 @@ function OnLuaButton_modelo000(framePrincipal)
 		end
 	
 	elseif modelo == 105 then 
-		local html_path = "file:" .. ruta .. "\\Paneles\\referencia005.html"
+		local html_path
+		if remoto==1 then
+			html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referencia005.html"
+		else
+			html_path = "file:" .. ruta .. "\\Paneles\\referencia005.html"
+		end
+		
 		
 		local modelo000 = HTML_Dialog(false, html_path, tamX, tamY, "BANDEJA CLIENTES 004")
 		
@@ -2735,11 +2988,18 @@ function OnLuaButton_aceptar000(modelo000)
 		anchura6 = modelo000:GetDoubleField("anchura6")
 		anchura7 = modelo000:GetDoubleField("anchura7")
 		
+		pliegueInf1 = modelo000:GetDoubleField("pliegueInf1")
+		pliegueInf2 = modelo000:GetDoubleField("pliegueInf2")
+		pliegueInf3 = modelo000:GetDoubleField("pliegueInf3")
+		pliegueInf4 = modelo000:GetDoubleField("pliegueInf4")
+		pliegueInf5 = modelo000:GetDoubleField("pliegueInf5")
+		pliegueInf6 = modelo000:GetDoubleField("pliegueInf6")
+		pliegueInf7 = modelo000:GetDoubleField("pliegueInf7")
+		
 	    alturaPlaca = modelo000:GetDoubleField("alturaPlaca")
 		
 		alaSuperior=modelo000:GetDoubleField("alaSuperior")
 		pliegueSuperior=modelo000:GetDoubleField("pliegueSuperior")
-		pliegueInferior=modelo000:GetDoubleField("pliegueInferior")
 		alaInferior=modelo000:GetDoubleField("alaInferior")
 		
 		margenFresado=modelo000:GetDoubleField("margenFresado")
@@ -2817,10 +3077,7 @@ function OnLuaButton_aceptar000(modelo000)
 	end
 
     
-	
-	--alaDerecha=alaIzquierda
-	alturaColiso=diametroTaladros
-	
+
 		
 	
 	
@@ -7591,8 +7848,17 @@ end
 
 
 function dibujarFresado002(doc)
-
 	
+	
+	local plieguesInf={pliegueInf1, pliegueInf2, pliegueInf3, pliegueInf4, pliegueInf5, pliegueInf6, pliegueInf7}
+	
+	--sacar el mayor pliegue
+	pliegueInferior=pliegueInf1
+	for n=1, 7 do
+		if pliegueInferior<plieguesInf[n] then
+			pliegueInferior=plieguesInf[n]
+		end
+	end
 	
 	
 	
@@ -7723,52 +7989,53 @@ function dibujarFresado002(doc)
 	
 	
 	
+	
 	--anchura1 - Inferior
-	if anchura1>(pliegueInferior) then 
-		local fresado55 = Point2D(origenX,origenY+alaInferior)
-		local fresado56 = Point2D(origenX+anchura1-pliegueInferior,origenY+alaInferior)
+	if anchura1>(pliegueInf1) then 
+		local fresado55 = Point2D(origenX,origenY+pliegueInferior+alaInferior-pliegueInf1)
+		local fresado56 = Point2D(origenX+anchura1-pliegueInf1,origenY+alaInferior+pliegueInferior-pliegueInf1)
 		dibujarFresado002_auxiliar(doc,fresado55,fresado56)
 	end
 	
 	--anchura2 - Inferior
-	if anchura2>(pliegueInferior)*2 then 
-		local fresado55 = Point2D(origenX+anchura1+pliegueInferior,origenY+alaInferior)
-		local fresado56 = Point2D(origenX+anchura1+anchura2-pliegueInferior,origenY+alaInferior)
+	if anchura2>(pliegueInf2)*2 then 
+		local fresado55 = Point2D(origenX+anchura1+pliegueInf2,origenY+alaInferior+pliegueInferior-pliegueInf2)
+		local fresado56 = Point2D(origenX+anchura1+anchura2-pliegueInf2,origenY+alaInferior+pliegueInferior-pliegueInf2)
 		dibujarFresado002_auxiliar(doc,fresado55,fresado56)
 	end
 	
 	--anchura3 - Inferior
-	if anchura3>(pliegueInferior)*2 then 
-		local fresado55 = Point2D(origenX+anchura1+anchura2+pliegueInferior,origenY+alaInferior)
-		local fresado56 = Point2D(origenX+anchura1+anchura2+anchura3-pliegueInferior,origenY+alaInferior)
+	if anchura3>(pliegueInf3)*2 then 
+		local fresado55 = Point2D(origenX+anchura1+anchura2+pliegueInf3,origenY+alaInferior+pliegueInferior-pliegueInf3)
+		local fresado56 = Point2D(origenX+anchura1+anchura2+anchura3-pliegueInf3,origenY+alaInferior+pliegueInferior-pliegueInf3)
 		dibujarFresado002_auxiliar(doc,fresado55,fresado56)
 	end
 	
 	--anchura4 - Inferior
-	if anchura4>(pliegueInferior)*2 then 
-		local fresado55 = Point2D(origenX+anchura1+anchura2+anchura3+pliegueInferior,origenY+alaInferior)
-		local fresado56 = Point2D(origenX+anchura1+anchura2+anchura3+anchura4-pliegueInferior,origenY+alaInferior)
+	if anchura4>(pliegueInf4)*2 then 
+		local fresado55 = Point2D(origenX+anchura1+anchura2+anchura3+pliegueInf4,origenY+alaInferior+pliegueInferior-pliegueInf4)
+		local fresado56 = Point2D(origenX+anchura1+anchura2+anchura3+anchura4-pliegueInf4,origenY+alaInferior+pliegueInferior-pliegueInf4)
 		dibujarFresado002_auxiliar(doc,fresado55,fresado56)
 	end
 	
 	--anchura5 - Inferior
-	if anchura5>(pliegueInferior)*2 then 
-		local fresado55 = Point2D(origenX+anchura1+anchura2+anchura3+anchura4+pliegueInferior,origenY+alaInferior)
-		local fresado56 = Point2D(origenX+anchura1+anchura2+anchura3+anchura4+anchura5-pliegueInferior,origenY+alaInferior)
+	if anchura5>(pliegueInf5)*2 then 
+		local fresado55 = Point2D(origenX+anchura1+anchura2+anchura3+anchura4+pliegueInf5,origenY+alaInferior+pliegueInferior-pliegueInf5)
+		local fresado56 = Point2D(origenX+anchura1+anchura2+anchura3+anchura4+anchura5-pliegueInf5,origenY+alaInferior+pliegueInferior-pliegueInf5)
 		dibujarFresado002_auxiliar(doc,fresado55,fresado56)
 	end
 	
 	--anchura6 - Inferior
-	if anchura6>(pliegueInferior)*2 then 
-		local fresado55 = Point2D(origenX+anchura1+anchura2+anchura3+anchura4+anchura5+pliegueInferior,origenY+alaInferior)
-		local fresado56 = Point2D(origenX+anchura1+anchura2+anchura3+anchura4+anchura5+anchura6-pliegueInferior,origenY+alaInferior)
+	if anchura6>(pliegueInf6)*2 then 
+		local fresado55 = Point2D(origenX+anchura1+anchura2+anchura3+anchura4+anchura5+pliegueInf6,origenY+alaInferior+pliegueInferior-pliegueInf6)
+		local fresado56 = Point2D(origenX+anchura1+anchura2+anchura3+anchura4+anchura5+anchura6-pliegueInf6,origenY+alaInferior+pliegueInferior-pliegueInf6)
 		dibujarFresado002_auxiliar(doc,fresado55,fresado56)
 	end
 	
 	--anchura7 - Inferior
-	if anchura7>(pliegueInferior) then 
-		local fresado55 = Point2D(origenX+anchura1+anchura2+anchura3+anchura4+anchura5+anchura6+pliegueInferior,origenY+alaInferior)
-		local fresado56 = Point2D(origenX+anchura1+anchura2+anchura3+anchura4+anchura5+anchura6+anchura7,origenY+alaInferior)
+	if anchura7>(pliegueInf7) then 
+		local fresado55 = Point2D(origenX+anchura1+anchura2+anchura3+anchura4+anchura5+anchura6+pliegueInf7,origenY+alaInferior+pliegueInferior-pliegueInf7)
+		local fresado56 = Point2D(origenX+anchura1+anchura2+anchura3+anchura4+anchura5+anchura6+anchura7,origenY+alaInferior+pliegueInferior-pliegueInf7)
 		dibujarFresado002_auxiliar(doc,fresado55,fresado56)
 	end
 	
@@ -7812,8 +8079,16 @@ end
 
 
 function dibujarCorte002(doc)
-
 	
+	local plieguesInf={pliegueInf1, pliegueInf2, pliegueInf3, pliegueInf4, pliegueInf5, pliegueInf6, pliegueInf7}
+	
+	--sacar el mayor pliegue
+	pliegueInferior=pliegueInf1
+	for n=1, 7 do
+		if pliegueInferior<plieguesInf[n] then
+			pliegueInferior=plieguesInf[n]
+		end
+	end
 	
 	
 	
@@ -7822,11 +8097,11 @@ function dibujarCorte002(doc)
 	
 	--PARTE INFERIOR-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 	
-	--Anchura primera
-	if anchura1>(alaInferior+pliegueInferior) then
+	--Anchura primera 
+	if anchura1>(alaInferior+pliegueInf1) then
 		local corte1 = Point2D(origenX,origenY+alaInferior+pliegueInferior)
-		local corte2 = Point2D(origenX,origenY)
-		local corte3 = Point2D(origenX+anchura1-alaInferior-pliegueInferior,origenY)
+		local corte2 = Point2D(origenX,origenY+pliegueInferior-pliegueInf1)
+		local corte3 = Point2D(origenX+anchura1-alaInferior-pliegueInf1,origenY+pliegueInferior-pliegueInf1)
 		Contour:AppendPoint(corte1)
 		Contour:LineTo(corte2)
 		Contour:LineTo(corte3)
@@ -7841,16 +8116,16 @@ function dibujarCorte002(doc)
 	Contour:LineTo(corte4)
 	
 	
-	--Bucle anchuras intermedias
+	--Bucle anchuras intermedias 
 	local anchuras={anchura1,anchura2,anchura3,anchura4,anchura5,anchura6,anchura7}
 	local repeticiones=5 --math.length(anchuras -2)
 	local anchoA=anchuras[1]
 	for n=2, (repeticiones+1) do
 		local corte1 = Point2D(origenX+anchoA,origenY+alaInferior+pliegueInferior)
 		Contour:LineTo(corte1)
-		if anchuras[n]>(alaInferior+pliegueInferior)*2 then
-			local corte2 = Point2D(origenX+anchoA+alaInferior+pliegueInferior,origenY)
-			local corte3 = Point2D(origenX+anchoA+anchuras[n]-alaInferior-pliegueInferior,origenY)
+		if anchuras[n]>(alaInferior+plieguesInf[n])*2 then
+			local corte2 = Point2D(origenX+anchoA+alaInferior+plieguesInf[n],origenY+pliegueInferior-plieguesInf[n])
+			local corte3 = Point2D(origenX+anchoA+anchuras[n]-alaInferior-plieguesInf[n],origenY+pliegueInferior-plieguesInf[n])
 			Contour:LineTo(corte2)
 			Contour:LineTo(corte3)
 			
@@ -7866,11 +8141,11 @@ function dibujarCorte002(doc)
 	end	
 	
 	
-	--Anchura ultima
-	if anchura7>(alaInferior+pliegueInferior) then
+	--Anchura ultima 
+	if anchura7>(alaInferior+pliegueInf7) then
 		local corte1 = Point2D(origenX+anchoA,origenY+alaInferior+pliegueInferior)
-		local corte2 = Point2D(origenX+anchoA+alaInferior+pliegueInferior,origenY)
-		local corte3 = Point2D(origenX+anchoA+anchura7,origenY)
+		local corte2 = Point2D(origenX+anchoA+alaInferior+pliegueInf7,origenY+pliegueInferior-pliegueInf7)
+		local corte3 = Point2D(origenX+anchoA+anchura7,origenY+pliegueInferior-pliegueInf7)
 		Contour:LineTo(corte1)
 		Contour:LineTo(corte2)
 		Contour:LineTo(corte3)
@@ -7883,6 +8158,7 @@ function dibujarCorte002(doc)
 	end
 	local corte4 = Point2D(origenX+anchoA+anchura7,origenY+alaInferior+pliegueInferior)
 	Contour:LineTo(corte4)
+	
 	
 	
 	
