@@ -93,6 +93,11 @@ anchuraDerecha=400
 pliegueDer=50
 pliegueIzq=50
 
+--Entrada para modelo [E]
+margenM1=50
+margenM2=50
+
+
 
 origenX=0
 origenY=0
@@ -2807,16 +2812,25 @@ function OnLuaButton_modeloE(framePrincipal)
 		end
 		
 		
-		local modeloDH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA E0")
+		local modeloE = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA E0")
 		
 		textoDescriptivo="E0"
-		anchuraPlaca=500 alturaPlaca=500 
+		anchuraPlaca=500 altura1=50 altura2=50 altura3=50 altura4=50 altura5=50  
+		margenM1=50 margenM2=50
 		
-        modeloDH:AddTextField("textoDescriptivo", textoDescriptivo)
-		modeloDH:AddDoubleField("anchuraPlaca", anchuraPlaca)
-	    modeloDH:AddDoubleField("alturaPlaca", alturaPlaca)
+        modeloE:AddTextField("textoDescriptivo", textoDescriptivo)
+		modeloE:AddDoubleField("altura1", altura1)
+		modeloE:AddDoubleField("altura2", altura2)
+		modeloE:AddDoubleField("altura3", altura3)
+		modeloE:AddDoubleField("altura4", altura4)
+		modeloE:AddDoubleField("altura5", altura5)
 		
-	    if  not modeloDH:ShowDialog() then
+	    modeloE:AddDoubleField("anchuraPlaca", anchuraPlaca)
+		
+	    modeloE:AddDoubleField("margenM1", margenM1)
+	    modeloE:AddDoubleField("margenM2", margenM2)
+		
+	    if  not modeloE:ShowDialog() then
 				return false;
 		end
 	
@@ -2828,21 +2842,21 @@ function OnLuaButton_modeloE(framePrincipal)
 			html_path = "file:" .. ruta .. "\\Paneles\\referenciaE1.html"
 		end
 		
-		local modeloDH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA E1")
+		local modeloE = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA E1")
 		
 		textoDescriptivo="E1"
 		altura1=400 altura2=400 anchuraPlaca=1000
 		alaSuperior=50 alaInferior=50 
 		
-        modeloDH:AddTextField("textoDescriptivo", textoDescriptivo)
-		modeloDH:AddDoubleField("anchuraPlaca", anchuraPlaca)
-		modeloDH:AddDoubleField("altura1", altura1)
-		modeloDH:AddDoubleField("altura2", altura2)
+        modeloE:AddTextField("textoDescriptivo", textoDescriptivo)
+		modeloE:AddDoubleField("anchuraPlaca", anchuraPlaca)
+		modeloE:AddDoubleField("altura1", altura1)
+		modeloE:AddDoubleField("altura2", altura2)
 		
-		modeloDH:AddDoubleField("alaSuperior", alaSuperior)
-		modeloDH:AddDoubleField("alaInferior", alaInferior)
+		modeloE:AddDoubleField("alaSuperior", alaSuperior)
+		modeloE:AddDoubleField("alaInferior", alaInferior)
 		
-	    if  not modeloDH:ShowDialog() then
+	    if  not modeloE:ShowDialog() then
 				return false;
 		end
 		
@@ -2854,20 +2868,20 @@ function OnLuaButton_modeloE(framePrincipal)
 			html_path = "file:" .. ruta .. "\\Paneles\\referenciaE2.html"
 		end
 		
-		local modeloDH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA E2")
+		local modeloE = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA E2")
 		
 		textoDescriptivo="E2"
 		anchuraPlaca=1000 alturaPlaca=500 
 		alaInferior=20 pliegueInferior=30
 		
-        modeloDH:AddTextField("textoDescriptivo", textoDescriptivo)
-		modeloDH:AddDoubleField("anchuraPlaca", anchuraPlaca)
-	    modeloDH:AddDoubleField("alturaPlaca", alturaPlaca)
+        modeloE:AddTextField("textoDescriptivo", textoDescriptivo)
+		modeloE:AddDoubleField("anchuraPlaca", anchuraPlaca)
+	    modeloE:AddDoubleField("alturaPlaca", alturaPlaca)
 
-		modeloDH:AddDoubleField("alaInferior", alaInferior)
-		modeloDH:AddDoubleField("pliegueInferior", pliegueInferior)
+		modeloE:AddDoubleField("alaInferior", alaInferior)
+		modeloE:AddDoubleField("pliegueInferior", pliegueInferior)
 		
-	    if  not modeloDH:ShowDialog() then
+	    if  not modeloE:ShowDialog() then
 				return false;
 		end
 		
@@ -2879,22 +2893,22 @@ function OnLuaButton_modeloE(framePrincipal)
 			html_path = "file:" .. ruta .. "\\Paneles\\referenciaE3.html"
 		end
 		
-		local modeloDH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA E3")
+		local modeloE = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA E3")
 		
 		textoDescriptivo="E3"
 		anchuraPlaca=1000 alturaPlaca=500 
 		alaInferior=20 alaSuperior=20 pliegueSuperior=30 pliegueInferior=30		
 		
-        modeloDH:AddTextField("textoDescriptivo", textoDescriptivo)
-		modeloDH:AddDoubleField("anchuraPlaca", anchuraPlaca)
-	    modeloDH:AddDoubleField("alturaPlaca", alturaPlaca)
+        modeloE:AddTextField("textoDescriptivo", textoDescriptivo)
+		modeloE:AddDoubleField("anchuraPlaca", anchuraPlaca)
+	    modeloE:AddDoubleField("alturaPlaca", alturaPlaca)
 
-		modeloDH:AddDoubleField("alaInferior", alaInferior)
-		modeloDH:AddDoubleField("alaSuperior", alaSuperior)
-		modeloDH:AddDoubleField("pliegueInferior", pliegueInferior)
-		modeloDH:AddDoubleField("pliegueSuperior", pliegueSuperior)
+		modeloE:AddDoubleField("alaInferior", alaInferior)
+		modeloE:AddDoubleField("alaSuperior", alaSuperior)
+		modeloE:AddDoubleField("pliegueInferior", pliegueInferior)
+		modeloE:AddDoubleField("pliegueSuperior", pliegueSuperior)
 		
-	    if  not modeloDH:ShowDialog() then
+	    if  not modeloE:ShowDialog() then
 				return false;
 		end
 	
@@ -2906,17 +2920,17 @@ function OnLuaButton_modeloE(framePrincipal)
 			html_path = "file:" .. ruta .. "\\Paneles\\referenciaE4.html"
 		end
 		
-		local modeloDH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA E4")
+		local modeloE = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA E4")
 		
 		textoDescriptivo="E4"
 		anchura1=300 anchura2=300 alturaPlaca=1000 
 		
-        modeloDH:AddTextField("textoDescriptivo", textoDescriptivo)
-		modeloDH:AddDoubleField("anchura1", anchura1)
-		modeloDH:AddDoubleField("anchura2", anchura2)
-	    modeloDH:AddDoubleField("alturaPlaca", alturaPlaca)
+        modeloE:AddTextField("textoDescriptivo", textoDescriptivo)
+		modeloE:AddDoubleField("anchura1", anchura1)
+		modeloE:AddDoubleField("anchura2", anchura2)
+	    modeloE:AddDoubleField("alturaPlaca", alturaPlaca)
 		
-	    if  not modeloDH:ShowDialog() then
+	    if  not modeloE:ShowDialog() then
 				return false;
 		end
 	
@@ -2928,19 +2942,19 @@ function OnLuaButton_modeloE(framePrincipal)
 			html_path = "file:" .. ruta .. "\\Paneles\\referenciaE5.html"
 		end
 		
-		local modeloDH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA E5")
+		local modeloE = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA E5")
 		
 		textoDescriptivo="E5"
 		anchura1=20 anchura2=40 anchura3=500 anchura4=200 alturaPlaca=1000 
 		
-        modeloDH:AddTextField("textoDescriptivo", textoDescriptivo)
-		modeloDH:AddDoubleField("anchura1", anchura1)
-		modeloDH:AddDoubleField("anchura2", anchura2)
-		modeloDH:AddDoubleField("anchura3", anchura3)
-		modeloDH:AddDoubleField("anchura4", anchura4)
-	    modeloDH:AddDoubleField("alturaPlaca", alturaPlaca)
+        modeloE:AddTextField("textoDescriptivo", textoDescriptivo)
+		modeloE:AddDoubleField("anchura1", anchura1)
+		modeloE:AddDoubleField("anchura2", anchura2)
+		modeloE:AddDoubleField("anchura3", anchura3)
+		modeloE:AddDoubleField("anchura4", anchura4)
+	    modeloE:AddDoubleField("alturaPlaca", alturaPlaca)
 		
-	    if  not modeloDH:ShowDialog() then
+	    if  not modeloE:ShowDialog() then
 				return false;
 		end
 	
@@ -2955,50 +2969,61 @@ end
 function OnLuaButton_aceptarE(modeloE)
 
 	if modelo==50 then --E0
-		textoDescriptivo = modeloDH:GetTextField("textoDescriptivo")
-		anchuraPlaca = modeloDH:GetDoubleField("anchuraPlaca")
-	    alturaPlaca = modeloDH:GetDoubleField("alturaPlaca")
+		textoDescriptivo = modeloE:GetTextField("textoDescriptivo")
+		
+		anchuraPlaca = modeloE:GetDoubleField("anchuraPlaca")
+	    altura1 = modeloE:GetDoubleField("altura1")
+	    altura2 = modeloE:GetDoubleField("altura2")
+	    altura3 = modeloE:GetDoubleField("altura3")
+	    altura4 = modeloE:GetDoubleField("altura4")
+	    altura5 = modeloE:GetDoubleField("altura5")
+		
+		margenM1=modeloE:GetDoubleField("margenM1")
+		margenM2=modeloE:GetDoubleField("margenM2")
 	
 	elseif modelo==51 then  --E1
-		textoDescriptivo = modeloDH:GetTextField("textoDescriptivo")
-		anchuraPlaca = modeloDH:GetDoubleField("anchuraPlaca")
-	    altura1 = modeloDH:GetDoubleField("altura1")
-	    altura2 = modeloDH:GetDoubleField("altura2")
+		textoDescriptivo = modeloE:GetTextField("textoDescriptivo")
+		anchuraPlaca = modeloE:GetDoubleField("anchuraPlaca")
+	    altura1 = modeloE:GetDoubleField("altura1")
+	    altura2 = modeloE:GetDoubleField("altura2")
+	    altura2 = modeloE:GetDoubleField("altura2")
+	    altura2 = modeloE:GetDoubleField("altura2")
+	    altura2 = modeloE:GetDoubleField("altura2")
 		
-		alaSuperior=modeloDH:GetDoubleField("alaSuperior")
-		alaInferior=modeloDH:GetDoubleField("alaInferior")
+		alaSuperior=modeloE:GetDoubleField("alaSuperior")
+		alaInferior=modeloE:GetDoubleField("alaInferior")
 	
 	elseif modelo==52 then --E2
-		textoDescriptivo = modeloDH:GetTextField("textoDescriptivo")
-		anchuraPlaca = modeloDH:GetDoubleField("anchuraPlaca")
-	    alturaPlaca = modeloDH:GetDoubleField("alturaPlaca")
+		textoDescriptivo = modeloE:GetTextField("textoDescriptivo")
+		anchuraPlaca = modeloE:GetDoubleField("anchuraPlaca")
+	    alturaPlaca = modeloE:GetDoubleField("alturaPlaca")
 		
-		pliegueInferior=modeloDH:GetDoubleField("pliegueInferior")
-		alaInferior=modeloDH:GetDoubleField("alaInferior")
+		pliegueInferior=modeloE:GetDoubleField("pliegueInferior")
+		alaInferior=modeloE:GetDoubleField("alaInferior")
 	
 	elseif modelo==53 then --E3
-		textoDescriptivo = modeloDH:GetTextField("textoDescriptivo")
-		anchuraPlaca = modeloDH:GetDoubleField("anchuraPlaca")
-	    alturaPlaca = modeloDH:GetDoubleField("alturaPlaca")
+		textoDescriptivo = modeloE:GetTextField("textoDescriptivo")
+		anchuraPlaca = modeloE:GetDoubleField("anchuraPlaca")
+	    alturaPlaca = modeloE:GetDoubleField("alturaPlaca")
 		
-		pliegueInferior=modeloDH:GetDoubleField("pliegueInferior")
-		pliegueSuperior=modeloDH:GetDoubleField("pliegueSuperior")
-		alaInferior=modeloDH:GetDoubleField("alaInferior")
-		alaSuperior=modeloDH:GetDoubleField("alaSuperior")
+		pliegueInferior=modeloE:GetDoubleField("pliegueInferior")
+		pliegueSuperior=modeloE:GetDoubleField("pliegueSuperior")
+		alaInferior=modeloE:GetDoubleField("alaInferior")
+		alaSuperior=modeloE:GetDoubleField("alaSuperior")
 		
 	elseif modelo==54 then --E4
-		textoDescriptivo = modeloDH:GetTextField("textoDescriptivo")
-		anchura1 = modeloDH:GetDoubleField("anchura1")
-		anchura2 = modeloDH:GetDoubleField("anchura2")
-	    alturaPlaca = modeloDH:GetDoubleField("alturaPlaca")
+		textoDescriptivo = modeloE:GetTextField("textoDescriptivo")
+		anchura1 = modeloE:GetDoubleField("anchura1")
+		anchura2 = modeloE:GetDoubleField("anchura2")
+	    alturaPlaca = modeloE:GetDoubleField("alturaPlaca")
 	
 	elseif modelo==55 then --E5
-		textoDescriptivo = modeloDH:GetTextField("textoDescriptivo")
-		anchura1 = modeloDH:GetDoubleField("anchura1")
-		anchura2 = modeloDH:GetDoubleField("anchura2")
-		anchura3 = modeloDH:GetDoubleField("anchura3")
-		anchura4 = modeloDH:GetDoubleField("anchura4")
-	    alturaPlaca = modeloDH:GetDoubleField("alturaPlaca")
+		textoDescriptivo = modeloE:GetTextField("textoDescriptivo")
+		anchura1 = modeloE:GetDoubleField("anchura1")
+		anchura2 = modeloE:GetDoubleField("anchura2")
+		anchura3 = modeloE:GetDoubleField("anchura3")
+		anchura4 = modeloE:GetDoubleField("anchura4")
+	    alturaPlaca = modeloE:GetDoubleField("alturaPlaca")
 	
 	
 	
@@ -4578,8 +4603,16 @@ function dibujarTexto(doc)
 	--------------------------------------------------------
 	local cur_layer = doc.LayerManager:GetActiveLayer()
 	local layer = doc.LayerManager:GetLayerWithName("Descripcion")
-	local origenTexto = Point2D(anchuraPlaca/3-(2*alaIzquierda),alturaPlaca/2+pliegueInferior+alaInferior)
-    local texto=CadMarker(textoDescriptivo,origenTexto,0)
+	
+	local origenTexto
+	if modelo>=50 and modelo<=55 then --MODELO E
+		origenTexto = Point2D(anchuraPlaca/2+margenM1,(altura1+altura2+altura3+altura4+altura5)/2)
+	else
+		origenTexto = Point2D(anchuraPlaca/3-(2*alaIzquierda),alturaPlaca/2+pliegueInferior+alaInferior)
+    end
+	
+	
+	local texto=CadMarker(textoDescriptivo,origenTexto,0)
     texto:SetColor(0,0,1)
 	
 	layer:AddObject(texto,true)
@@ -7819,11 +7852,7 @@ end
 
 
 function dibujarFresadoE(doc)
-	altura1=50
-	altura2=28
-	altura3=30
-	altura4=60
-	altura5=60
+	
 	
 	local Contour = Contour(0.0)
 	local fresado1
@@ -7832,26 +7861,23 @@ function dibujarFresadoE(doc)
 	local fresado4
 		
 	if modelo==50 then --[E0]
-		fresado1 = Point2D(origenX+altura4,origenY+altura5)
-		fresado2 = Point2D(origenX+altura4+anchura1,origenY+altura5)
+		fresado1 = Point2D(origenX+margenM1,origenY+altura5)
+		fresado2 = Point2D(origenX+margenM1+anchuraPlaca,origenY+altura5)
 		dibujarFresado_auxiliar(doc,fresado1,fresado2)
 		
 		fresado1 = Point2D(origenX,origenY+altura5+altura4)
-		fresado2 = Point2D(origenX+altura4+anchuraPlaca,origenY+altura5+altura4)
+		fresado2 = Point2D(origenX+margenM1+anchuraPlaca,origenY+altura5+altura4)
 		dibujarFresado_auxiliar(doc,fresado1,fresado2)
 		
-		--fresado1 = Point2D(origenX,origenY+altura5+altura4)
-		--fresado2 = Point2D(origenX+altura4+anchuraPlaca,origenY+altura5+altura4)
-		--dibujarFresado_auxiliar(doc,fresado1,fresado2)
-		
-		
-		fresado2 = Point2D(origenX+anchuraPlaca,origenY+alaInferior+altura1)
+		fresado1 = Point2D(origenX,origenY+altura5+altura4+altura3)
+		fresado2 = Point2D(origenX+margenM1+margenM2+anchuraPlaca,origenY+altura5+altura4+altura3)
 		dibujarFresado_auxiliar(doc,fresado1,fresado2)
 		
-		fresado1 = Point2D(origenX,origenY+alaInferior+altura1+altura2)
-		fresado2 = Point2D(origenX+anchuraPlaca,origenY+alaInferior+altura1+altura2)
+		fresado1 = Point2D(origenX+margenM1,origenY+altura5+altura4+altura3+altura2)
+		fresado2 = Point2D(origenX+margenM1+margenM2+anchuraPlaca,origenY+altura5+altura4+altura3+altura2)
 		dibujarFresado_auxiliar(doc,fresado1,fresado2)
-	
+		
+		
 	elseif modelo==51 then --[E1]
 		
 		
@@ -7887,94 +7913,22 @@ end
 
 function dibujarCorteE(doc)
 	
+	
 	local Contour = Contour(0.0)
 	
-	--Modelo 40 (cuadrado simple)
-	if modelo==40 then --[DH]
-		local corte1 = Point2D(origenX,origenY)
-		local corte2 = Point2D(origenX+anchuraPlaca,origenY)
-		local corte3 = Point2D(origenX+anchuraPlaca,origenY+alturaPlaca)
-		local corte4 = Point2D(origenX,origenY+alturaPlaca)
-		
-		Contour:AppendPoint(corte1)
-		Contour:LineTo(corte2)
-		Contour:LineTo(corte3)
-		Contour:LineTo(corte4)
-		Contour:LineTo(corte1)
-		
-	elseif modelo==41 then --[DH1]
-		local corte1 = Point2D(origenX,origenY)
-		local corte2 = Point2D(origenX+anchuraPlaca,origenY)
-		local corte3 = Point2D(origenX+anchuraPlaca,origenY+alaInferior+altura1+altura2+alaSuperior)
-		local corte4 = Point2D(origenX,origenY+alaInferior+altura1+altura2+alaSuperior)
-		
-		Contour:AppendPoint(corte1)
-		Contour:LineTo(corte2)
-		Contour:LineTo(corte3)
-		Contour:LineTo(corte4)
-		Contour:LineTo(corte1)
-		
-	elseif modelo==42 then --[DH2]
-		local corte1 = Point2D(origenX,origenY)
-		local corte2 = Point2D(origenX+anchuraPlaca,origenY)
-		local corte3 = Point2D(origenX+anchuraPlaca,origenY+alaInferior+pliegueInferior+alturaPlaca)
-		local corte4 = Point2D(origenX,origenY+alaInferior+pliegueInferior+alturaPlaca)
-		
-		Contour:AppendPoint(corte1)
-		Contour:LineTo(corte2)
-		Contour:LineTo(corte3)
-		Contour:LineTo(corte4)
-		Contour:LineTo(corte1)
 	
-	elseif modelo==43 then --[DH3] 
-		local corte1 = Point2D(origenX,origenY)
-		local corte2 = Point2D(origenX+anchuraPlaca,origenY)
-		local corte3 = Point2D(origenX+anchuraPlaca,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior)
-		local corte4 = Point2D(origenX,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior)
-		
-		Contour:AppendPoint(corte1)
-		Contour:LineTo(corte2)
-		Contour:LineTo(corte3)
-		Contour:LineTo(corte4)
-		Contour:LineTo(corte1)
-		
-	elseif modelo==44 then --[Dh4]
-		local corte1 = Point2D(origenX,origenY)
-		local corte2 = Point2D(origenX+anchura1+anchura2,origenY)
-		local corte3 = Point2D(origenX+anchura1+anchura2,origenY+alturaPlaca)
-		local corte4 = Point2D(origenX,origenY+alturaPlaca)
-		
-		Contour:AppendPoint(corte1)
-		Contour:LineTo(corte2)
-		Contour:LineTo(corte3)
-		Contour:LineTo(corte4)
-		Contour:LineTo(corte1)
-		
-	elseif modelo==45 then --[DH5]
-		local corte1 = Point2D(origenX,origenY)
-		local corte2 = Point2D(origenX+anchura1+anchura2+anchura3+anchura4,origenY)
-		local corte3 = Point2D(origenX+anchura1+anchura2+anchura3+anchura4,origenY+alturaPlaca)
-		local corte4 = Point2D(origenX,origenY+alturaPlaca)
-		
-		Contour:AppendPoint(corte1)
-		Contour:LineTo(corte2)
-		Contour:LineTo(corte3)
-		Contour:LineTo(corte4)
-		Contour:LineTo(corte1)
-		
-	elseif modelo==46 then --[DH6]
-		local corte1 = Point2D(origenX+alaIzquierda,origenY+alaInferior)
-		local corte2 = Point2D(origenX+alaIzquierda,origenY)
-		local corte3 = Point2D(origenX+alaIzquierda+anchuraPlaca,origenY)
-		local corte4 = Point2D(origenX+alaIzquierda+anchuraPlaca,origenY+alaInferior)
-		local corte5 = Point2D(origenX+alaIzquierda+anchuraPlaca+alaDerecha,origenY+alaInferior)
-		local corte6 = Point2D(origenX+alaIzquierda+anchuraPlaca+alaDerecha,origenY+alaInferior+alturaPlaca)
-		local corte7 = Point2D(origenX+alaIzquierda+anchuraPlaca,origenY+alaInferior+alturaPlaca)
-		local corte8 = Point2D(origenX+alaIzquierda+anchuraPlaca,origenY+alaInferior+alturaPlaca+alaSuperior)
-		local corte9 = Point2D(origenX+alaIzquierda,origenY+alaInferior+alturaPlaca+alaSuperior)
-		local corte10 = Point2D(origenX+alaIzquierda,origenY+alaInferior+alturaPlaca)
-		local corte11 = Point2D(origenX,origenY+alaInferior+alturaPlaca)
-		local corte12 = Point2D(origenX,origenY+alaInferior)
+	if modelo==50 then --[E0]
+		local corte1 = Point2D(origenX+margenM1,origenY)
+		local corte2 = Point2D(origenX+margenM1+anchuraPlaca,origenY)
+		local corte3 = Point2D(origenX+margenM1+anchuraPlaca,origenY+altura5+altura4)
+		local corte4 = Point2D(origenX+margenM1+anchuraPlaca+margenM2,origenY+altura5+altura4+altura3)
+		local corte5 = Point2D(origenX+margenM1+anchuraPlaca+margenM2,origenY+altura5+altura4+altura3+altura2)
+		local corte6 = Point2D(origenX+margenM1+anchuraPlaca+margenM2-altura1,origenY+altura5+altura4+altura3+altura2+altura1)
+		local corte7 = Point2D(origenX+margenM1,origenY+altura5+altura4+altura3+altura2+altura1)
+		local corte8 = Point2D(origenX+margenM1,origenY+altura5+altura4+altura3+altura2)
+		local corte9 = Point2D(origenX,origenY+altura5+altura4+altura3)
+		local corte10 = Point2D(origenX,origenY+altura5+altura4)
+		local corte11 = Point2D(origenX+margenM1,origenY+altura5)
 		
 		Contour:AppendPoint(corte1)
 		Contour:LineTo(corte2)
@@ -7987,36 +7941,27 @@ function dibujarCorteE(doc)
 		Contour:LineTo(corte9)
 		Contour:LineTo(corte10)
 		Contour:LineTo(corte11)
-		Contour:LineTo(corte12)
 		Contour:LineTo(corte1)
 		
-	elseif modelo==47 then --[DH7]  
-		local corte1 = Point2D(origenX,origenY+alaInferior)
-		local corte2 = Point2D(origenX+alaIzquierda+pliegueIzq,origenY+alaInferior)
-		local corte3 = Point2D(origenX+alaIzquierda+pliegueIzq,origenY)
-		local corte4 = Point2D(origenX+alaIzquierda+pliegueIzq+anchuraPlaca,origenY)
-		local corte5 = Point2D(origenX+alaIzquierda+pliegueIzq+anchuraPlaca,origenY+alaInferior)
-		local corte6 = Point2D(origenX+alaIzquierda+pliegueIzq+anchuraPlaca+pliegueDer+alaDerecha,origenY+alaInferior)
-		local corte7 = Point2D(origenX+alaIzquierda+pliegueIzq+anchuraPlaca+pliegueDer+alaDerecha,origenY+alaInferior+alturaPlaca)
-		local corte8 = Point2D(origenX+alaIzquierda+pliegueIzq+anchuraPlaca,origenY+alaInferior+alturaPlaca)
-		local corte9 = Point2D(origenX+alaIzquierda+pliegueIzq+anchuraPlaca,origenY+alaInferior+alturaPlaca+alaSuperior)
-		local corte10 = Point2D(origenX+alaIzquierda+pliegueIzq,origenY+alaInferior+alturaPlaca+alaSuperior)
-		local corte11 = Point2D(origenX+alaIzquierda+pliegueIzq,origenY+alaInferior+alturaPlaca)
-		local corte12 = Point2D(origenX,origenY+alaInferior+alturaPlaca)
+	elseif modelo==51 then --[E1]
 		
-		Contour:AppendPoint(corte1)
-		Contour:LineTo(corte2)
-		Contour:LineTo(corte3)
-		Contour:LineTo(corte4)
-		Contour:LineTo(corte5)
-		Contour:LineTo(corte6)
-		Contour:LineTo(corte7)
-		Contour:LineTo(corte8)
-		Contour:LineTo(corte9)
-		Contour:LineTo(corte10)
-		Contour:LineTo(corte11)
-		Contour:LineTo(corte12)
-		Contour:LineTo(corte1)
+		
+		
+	elseif modelo==52 then --[E2]
+		
+		
+	
+	elseif modelo==53 then --[E3] 
+		
+		
+		
+	elseif modelo==54 then --[E4]
+		
+		
+		
+	elseif modelo==55 then --[E5]
+		
+		
 		
 		
 	end
