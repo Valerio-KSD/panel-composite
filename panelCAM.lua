@@ -29,7 +29,9 @@ remoto=1 --Esto es para que los archivos html se lean en remoto (https://...) o 
 textoDescriptivo=""
 
 --Variables Taladros/Coliso
-crearColiso=1
+crearColiso=0
+crearTaladros=0
+
 diametroTaladros=5
 anchuraColiso=20
 alturaColiso=5
@@ -60,7 +62,10 @@ anchoBota=18.5
 --distanciaY=100
 
 --Entradas comunes a todos los modelos [AH][BH][CH]
-crearBotas=1
+crearBotas=1 --Crear o no botas
+parametroBotas=0 --Poner las botas en funcion del numero o de la distancia
+distanciaEntreBotas=500 --Distancia maxima entre botas 
+numeroBotas=3 --Numero de botas en cada lateral
 
 alaSuperior=40
 alaInferior=40
@@ -70,16 +75,16 @@ alaIzquierda=alaDerecha
 pliegueSuperior=36
 pliegueInferior=36
 
-margenA=57--74 --Margen Superior
-margenB=108--132 --Margen Inferior
+margenA=57--74
+margenB=108--132
 
 anchuraPlaca = 2000
 alturaPlaca = 1000
 --margenPlaca = 3
 
 
---Entrada para modelo [BH]
 
+--Entrada para modelo [BH]
 anchura1=1200 --izquierda
 anchura2=800 --derecha
 distanciaAlas=4
@@ -215,17 +220,39 @@ end
 
 
 
-function OnLuaButton_crearColiso()
+
+--[[function OnLuaButton_crearColiso()
 	crearColiso=1
 	return true
 end
 function OnLuaButton_noCrearColiso()
 	crearColiso=0
 	return true
+end--]]
+
+
+
+
+function OnLuaButton_parametroBotas()
+	parametroBotas=0 --Distancia maxima entre botas
+	return true
+end
+function OnLuaButton_parametroBotasNumero()
+	parametroBotas=1 --Numero de botas
+	return true
 end
 
 
 
+
+function OnLuaButton_dibujarTaladros()
+	crearTaladros=1
+	return true
+end
+function OnLuaButton_dibujarColisos()
+	crearColiso=1
+	return true
+end
 
 
 
@@ -552,6 +579,7 @@ function OnLuaButton_modeloAH(framePrincipal)
 		textoDescriptivo="AH"
 		anchuraPlaca=2000 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=32
 		pliegueSuperior=36 pliegueInferior=0  margenA=57 margenB=108 diametroTaladros=5 
+		distanciaEntreBotas=500 numeroBotas=3
 		
         modeloAH:AddTextField("textoDescriptivo", textoDescriptivo)
 		modeloAH:AddDoubleField("anchuraPlaca", anchuraPlaca)
@@ -577,7 +605,10 @@ function OnLuaButton_modeloAH(framePrincipal)
 		
 		modeloAH:AddDoubleField("anchuraColiso", anchuraColiso)
 		modeloAH:AddDoubleField("diametroTaladros", diametroTaladros)
-		--modeloAH:AddCheckBox("crearColiso", true)
+		
+		modeloAH:AddDoubleField("distanciaEntreBotas", distanciaEntreBotas)
+		modeloAH:AddDoubleField("numeroBotas", numeroBotas)
+		
 		
 	    if  not modeloAH:ShowDialog() then
 			
@@ -622,6 +653,9 @@ function OnLuaButton_modeloAH(framePrincipal)
 		modeloAH:AddDoubleField("anchuraColiso", anchuraColiso)
 		modeloAH:AddDoubleField("diametroTaladros", diametroTaladros)
 		
+		modeloAH:AddDoubleField("distanciaEntreBotas", distanciaEntreBotas)
+		modeloAH:AddDoubleField("numeroBotas", numeroBotas)
+		
 	    if  not modeloAH:ShowDialog() then
 			
 				return false;
@@ -662,6 +696,9 @@ function OnLuaButton_modeloAH(framePrincipal)
 		
 		modeloAH:AddDoubleField("anchuraColiso", anchuraColiso)
 		modeloAH:AddDoubleField("diametroTaladros", diametroTaladros)
+		
+		modeloAH:AddDoubleField("distanciaEntreBotas", distanciaEntreBotas)
+		modeloAH:AddDoubleField("numeroBotas", numeroBotas)
 		
 	    if  not modeloAH:ShowDialog() then
 			
@@ -704,6 +741,9 @@ function OnLuaButton_modeloAH(framePrincipal)
 		modeloAH:AddDoubleField("anchuraColiso", anchuraColiso)
 		modeloAH:AddDoubleField("diametroTaladros", diametroTaladros)
 		
+		modeloAH:AddDoubleField("distanciaEntreBotas", distanciaEntreBotas)
+		modeloAH:AddDoubleField("numeroBotas", numeroBotas)
+		
 	    if  not modeloAH:ShowDialog() then
 			
 				return false;
@@ -744,6 +784,9 @@ function OnLuaButton_modeloAH(framePrincipal)
 
 		modeloAH:AddDoubleField("anchuraColiso", anchuraColiso)
 		modeloAH:AddDoubleField("diametroTaladros", diametroTaladros)
+		
+		modeloAH:AddDoubleField("distanciaEntreBotas", distanciaEntreBotas)
+		modeloAH:AddDoubleField("numeroBotas", numeroBotas)
 		
 	    if  not modeloAH:ShowDialog() then
 			
@@ -786,6 +829,9 @@ function OnLuaButton_modeloAH(framePrincipal)
 		modeloAH:AddDoubleField("anchuraColiso", anchuraColiso)
 		modeloAH:AddDoubleField("diametroTaladros", diametroTaladros)
 		
+		modeloAH:AddDoubleField("distanciaEntreBotas", distanciaEntreBotas)
+		modeloAH:AddDoubleField("numeroBotas", numeroBotas)
+		
 	    if  not modeloAH:ShowDialog() then
 			
 				return false;
@@ -826,6 +872,9 @@ function OnLuaButton_modeloAH(framePrincipal)
 
 		modeloAH:AddDoubleField("anchuraColiso", anchuraColiso)
 		modeloAH:AddDoubleField("diametroTaladros", diametroTaladros)
+		
+		modeloAH:AddDoubleField("distanciaEntreBotas", distanciaEntreBotas)
+		modeloAH:AddDoubleField("numeroBotas", numeroBotas)
 		
 	    if  not modeloAH:ShowDialog() then
 			
@@ -868,6 +917,9 @@ function OnLuaButton_modeloAH(framePrincipal)
 		modeloAH:AddDoubleField("anchuraColiso", anchuraColiso)
 		modeloAH:AddDoubleField("diametroTaladros", diametroTaladros)
 		
+		modeloAH:AddDoubleField("distanciaEntreBotas", distanciaEntreBotas)
+		modeloAH:AddDoubleField("numeroBotas", numeroBotas)
+		
 	    if  not modeloAH:ShowDialog() then
 			
 				return false;
@@ -909,6 +961,9 @@ function OnLuaButton_modeloAH(framePrincipal)
 		modeloAH:AddDoubleField("anchuraColiso", anchuraColiso)
 		modeloAH:AddDoubleField("diametroTaladros", diametroTaladros)
 		
+		modeloAH:AddDoubleField("distanciaEntreBotas", distanciaEntreBotas)
+		modeloAH:AddDoubleField("numeroBotas", numeroBotas)
+		
 	    if  not modeloAH:ShowDialog() then
 			
 				return false;
@@ -949,8 +1004,11 @@ function OnLuaButton_aceptarAH(modeloAH)
 		
 		anchuraColiso=modeloAH:GetDoubleField("anchuraColiso")
 		diametroTaladros=modeloAH:GetDoubleField("diametroTaladros")
-		--alturaColiso=diametroTaladros
-		--crearColiso=modeloAH:GetCheckBox("crearColiso")
+		
+		distanciaEntreBotas=modeloAH:GetDoubleField("distanciaEntreBotas")
+		numeroBotas=modeloAH:GetDoubleField("numeroBotas")
+		
+		
 
 
 
@@ -973,7 +1031,8 @@ function OnLuaButton_aceptarAH(modeloAH)
 		anchuraColiso=modeloAH:GetDoubleField("anchuraColiso")
 		diametroTaladros=modeloAH:GetDoubleField("diametroTaladros")
 		
-		--crearColiso=modeloAH:GetCheckBox("crearColiso")
+		distanciaEntreBotas=modeloAH:GetDoubleField("distanciaEntreBotas")
+		numeroBotas=modeloAH:GetDoubleField("numeroBotas")
   	end
 
     
@@ -1080,7 +1139,10 @@ function OnLuaButton_modeloBH(framePrincipal)
 		
 		modeloBH:AddDoubleField("anchuraColiso", anchuraColiso)
 		modeloBH:AddDoubleField("diametroTaladros", diametroTaladros)
-		--modeloBH:AddCheckBox("crearColiso", true)
+		
+		
+		modeloBH:AddDoubleField("distanciaEntreBotas", distanciaEntreBotas)
+		modeloBH:AddDoubleField("numeroBotas", numeroBotas)
 		
 	    if  not modeloBH:ShowDialog() then
 			
@@ -1123,7 +1185,9 @@ function OnLuaButton_modeloBH(framePrincipal)
 
 		modeloBH:AddDoubleField("anchuraColiso", anchuraColiso)
 		modeloBH:AddDoubleField("diametroTaladros", diametroTaladros)
-		--modeloBH:AddCheckBox("crearColiso", true)
+		
+		modeloBH:AddDoubleField("distanciaEntreBotas", distanciaEntreBotas)
+		modeloBH:AddDoubleField("numeroBotas", numeroBotas)
 		
 	    if  not modeloBH:ShowDialog() then
 			
@@ -1164,7 +1228,9 @@ function OnLuaButton_modeloBH(framePrincipal)
 
 		modeloBH:AddDoubleField("anchuraColiso", anchuraColiso)
 		modeloBH:AddDoubleField("diametroTaladros", diametroTaladros)
-		--modeloBH:AddCheckBox("crearColiso", true)
+		
+		modeloBH:AddDoubleField("distanciaEntreBotas", distanciaEntreBotas)
+		modeloBH:AddDoubleField("numeroBotas", numeroBotas)
 		
 	    if  not modeloBH:ShowDialog() then
 			
@@ -1205,7 +1271,9 @@ function OnLuaButton_modeloBH(framePrincipal)
 
 		modeloBH:AddDoubleField("anchuraColiso", anchuraColiso)
 		modeloBH:AddDoubleField("diametroTaladros", diametroTaladros)
-		--modeloBH:AddCheckBox("crearColiso", true)
+		
+		modeloBH:AddDoubleField("distanciaEntreBotas", distanciaEntreBotas)
+		modeloBH:AddDoubleField("numeroBotas", numeroBotas)
 		
 	    if  not modeloBH:ShowDialog() then
 			
@@ -1246,7 +1314,9 @@ function OnLuaButton_modeloBH(framePrincipal)
 
 		modeloBH:AddDoubleField("anchuraColiso", anchuraColiso)
 		modeloBH:AddDoubleField("diametroTaladros", diametroTaladros)
-		--modeloBH:AddCheckBox("crearColiso", true)
+		
+		modeloBH:AddDoubleField("distanciaEntreBotas", distanciaEntreBotas)
+		modeloBH:AddDoubleField("numeroBotas", numeroBotas)
 		
 	    if  not modeloBH:ShowDialog() then
 			
@@ -1287,7 +1357,9 @@ function OnLuaButton_modeloBH(framePrincipal)
 
 		modeloBH:AddDoubleField("anchuraColiso", anchuraColiso)
 		modeloBH:AddDoubleField("diametroTaladros", diametroTaladros)
-		--modeloBH:AddCheckBox("crearColiso", true)
+		
+		modeloBH:AddDoubleField("distanciaEntreBotas", distanciaEntreBotas)
+		modeloBH:AddDoubleField("numeroBotas", numeroBotas)
 		
 	    if  not modeloBH:ShowDialog() then
 			
@@ -1328,7 +1400,9 @@ function OnLuaButton_modeloBH(framePrincipal)
 
 		modeloBH:AddDoubleField("anchuraColiso", anchuraColiso)
 		modeloBH:AddDoubleField("diametroTaladros", diametroTaladros)
-		--modeloBH:AddCheckBox("crearColiso", true)
+		
+		modeloBH:AddDoubleField("distanciaEntreBotas", distanciaEntreBotas)
+		modeloBH:AddDoubleField("numeroBotas", numeroBotas)
 		
 	    if  not modeloBH:ShowDialog() then
 			
@@ -1369,7 +1443,9 @@ function OnLuaButton_modeloBH(framePrincipal)
 
 		modeloBH:AddDoubleField("anchuraColiso", anchuraColiso)
 		modeloBH:AddDoubleField("diametroTaladros", diametroTaladros)
-		--modeloBH:AddCheckBox("crearColiso", true)
+		
+		modeloBH:AddDoubleField("distanciaEntreBotas", distanciaEntreBotas)
+		modeloBH:AddDoubleField("numeroBotas", numeroBotas)
 		
 	    if  not modeloBH:ShowDialog() then
 			
@@ -1410,7 +1486,9 @@ function OnLuaButton_modeloBH(framePrincipal)
 
 		modeloBH:AddDoubleField("anchuraColiso", anchuraColiso)
 		modeloBH:AddDoubleField("diametroTaladros", diametroTaladros)
-		--modeloBH:AddCheckBox("crearColiso", true)
+		
+		modeloBH:AddDoubleField("distanciaEntreBotas", distanciaEntreBotas)
+		modeloBH:AddDoubleField("numeroBotas", numeroBotas)
 		
 	    if  not modeloBH:ShowDialog() then
 			
@@ -1452,7 +1530,9 @@ function OnLuaButton_modeloBH(framePrincipal)
 
 		modeloBH:AddDoubleField("anchuraColiso", anchuraColiso)
 		modeloBH:AddDoubleField("diametroTaladros", diametroTaladros)
-		--modeloBH:AddCheckBox("crearColiso", true)
+		
+		modeloBH:AddDoubleField("distanciaEntreBotas", distanciaEntreBotas)
+		modeloBH:AddDoubleField("numeroBotas", numeroBotas)
 		
 	    if  not modeloBH:ShowDialog() then
 			
@@ -1494,7 +1574,9 @@ function OnLuaButton_modeloBH(framePrincipal)
 
 		modeloBH:AddDoubleField("anchuraColiso", anchuraColiso)
 		modeloBH:AddDoubleField("diametroTaladros", diametroTaladros)
-		--modeloBH:AddCheckBox("crearColiso", true)
+		
+		modeloBH:AddDoubleField("distanciaEntreBotas", distanciaEntreBotas)
+		modeloBH:AddDoubleField("numeroBotas", numeroBotas)
 		
 	    if  not modeloBH:ShowDialog() then
 			
@@ -1536,7 +1618,9 @@ function OnLuaButton_modeloBH(framePrincipal)
 
 		modeloBH:AddDoubleField("anchuraColiso", anchuraColiso)
 		modeloBH:AddDoubleField("diametroTaladros", diametroTaladros)
-		--modeloBH:AddCheckBox("crearColiso", true)
+		
+		modeloBH:AddDoubleField("distanciaEntreBotas", distanciaEntreBotas)
+		modeloBH:AddDoubleField("numeroBotas", numeroBotas)
 		
 	    if  not modeloBH:ShowDialog() then
 			
@@ -1578,7 +1662,9 @@ function OnLuaButton_modeloBH(framePrincipal)
 
 		modeloBH:AddDoubleField("anchuraColiso", anchuraColiso)
 		modeloBH:AddDoubleField("diametroTaladros", diametroTaladros)
-		--modeloBH:AddCheckBox("crearColiso", true)
+		
+		modeloBH:AddDoubleField("distanciaEntreBotas", distanciaEntreBotas)
+		modeloBH:AddDoubleField("numeroBotas", numeroBotas)
 		
 	    if  not modeloBH:ShowDialog() then
 			
@@ -1620,7 +1706,9 @@ function OnLuaButton_modeloBH(framePrincipal)
 
 		modeloBH:AddDoubleField("anchuraColiso", anchuraColiso)
 		modeloBH:AddDoubleField("diametroTaladros", diametroTaladros)
-		--modeloBH:AddCheckBox("crearColiso", true)
+		
+		modeloBH:AddDoubleField("distanciaEntreBotas", distanciaEntreBotas)
+		modeloBH:AddDoubleField("numeroBotas", numeroBotas)
 		
 	    if  not modeloBH:ShowDialog() then
 			
@@ -1662,7 +1750,9 @@ function OnLuaButton_modeloBH(framePrincipal)
 
 		modeloBH:AddDoubleField("anchuraColiso", anchuraColiso)
 		modeloBH:AddDoubleField("diametroTaladros", diametroTaladros)
-		--modeloBH:AddCheckBox("crearColiso", true)
+		
+		modeloBH:AddDoubleField("distanciaEntreBotas", distanciaEntreBotas)
+		modeloBH:AddDoubleField("numeroBotas", numeroBotas)
 		
 	    if  not modeloBH:ShowDialog() then
 			
@@ -1704,7 +1794,9 @@ function OnLuaButton_modeloBH(framePrincipal)
 
 		modeloBH:AddDoubleField("anchuraColiso", anchuraColiso)
 		modeloBH:AddDoubleField("diametroTaladros", diametroTaladros)
-		--modeloBH:AddCheckBox("crearColiso", true)
+		
+		modeloBH:AddDoubleField("distanciaEntreBotas", distanciaEntreBotas)
+		modeloBH:AddDoubleField("numeroBotas", numeroBotas)
 		
 	    if  not modeloBH:ShowDialog() then
 			
@@ -1746,7 +1838,9 @@ function OnLuaButton_modeloBH(framePrincipal)
 
 		modeloBH:AddDoubleField("anchuraColiso", anchuraColiso)
 		modeloBH:AddDoubleField("diametroTaladros", diametroTaladros)
-		--modeloBH:AddCheckBox("crearColiso", true)
+		
+		modeloBH:AddDoubleField("distanciaEntreBotas", distanciaEntreBotas)
+		modeloBH:AddDoubleField("numeroBotas", numeroBotas)
 		
 	    if  not modeloBH:ShowDialog() then
 			
@@ -1789,7 +1883,9 @@ function OnLuaButton_modeloBH(framePrincipal)
 
 		modeloBH:AddDoubleField("anchuraColiso", anchuraColiso)
 		modeloBH:AddDoubleField("diametroTaladros", diametroTaladros)
-		--modeloBH:AddCheckBox("crearColiso", true)
+		
+		modeloBH:AddDoubleField("distanciaEntreBotas", distanciaEntreBotas)
+		modeloBH:AddDoubleField("numeroBotas", numeroBotas)
 		
 	    if  not modeloBH:ShowDialog() then
 			
@@ -1828,7 +1924,8 @@ function OnLuaButton_aceptarBH(modeloBH)
 		anchuraColiso=modeloBH:GetDoubleField("anchuraColiso")
 		diametroTaladros=modeloBH:GetDoubleField("diametroTaladros")
 		
-		--crearColiso=modeloBH:GetCheckBox("crearColiso")
+		distanciaEntreBotas=modeloBH:GetDoubleField("distanciaEntreBotas")
+		numeroBotas=modeloBH:GetDoubleField("numeroBotas")
 
 
 
@@ -1853,7 +1950,8 @@ function OnLuaButton_aceptarBH(modeloBH)
 		anchuraColiso=modeloBH:GetDoubleField("anchuraColiso")
 		diametroTaladros=modeloBH:GetDoubleField("diametroTaladros")
 		
-		--crearColiso=modeloBH:GetCheckBox("crearColiso")
+		distanciaEntreBotas=modeloBH:GetDoubleField("distanciaEntreBotas")
+		numeroBotas=modeloBH:GetDoubleField("numeroBotas")
 
 	elseif modelo==18 or modelo==19 or modelo==22 or modelo==24 then  --SIN PLIEGUE / COLUMNA 2
 		pliegueInferior=0
@@ -1879,7 +1977,8 @@ function OnLuaButton_aceptarBH(modeloBH)
 		anchuraColiso=modeloBH:GetDoubleField("anchuraColiso")
 		diametroTaladros=modeloBH:GetDoubleField("diametroTaladros")
 		
-		--crearColiso=modeloBH:GetCheckBox("crearColiso")
+		distanciaEntreBotas=modeloBH:GetDoubleField("distanciaEntreBotas")
+		numeroBotas=modeloBH:GetDoubleField("numeroBotas")
 	
 	elseif modelo==20 or modelo==21 or modelo==23 or modelo==25 or modelo==26 then  --CON PLIEGUE / COLUMNA 2
 	
@@ -1904,7 +2003,8 @@ function OnLuaButton_aceptarBH(modeloBH)
 		anchuraColiso=modeloBH:GetDoubleField("anchuraColiso")
 		diametroTaladros=modeloBH:GetDoubleField("diametroTaladros")
 		
-		--crearColiso=modeloBH:GetCheckBox("crearColiso")
+		distanciaEntreBotas=modeloBH:GetDoubleField("distanciaEntreBotas")
+		numeroBotas=modeloBH:GetDoubleField("numeroBotas")
 	
   	end
 
@@ -1999,7 +2099,9 @@ function OnLuaButton_modeloCH(framePrincipal)
 		
 		modeloCH:AddDoubleField("anchuraColiso", anchuraColiso)
 		modeloCH:AddDoubleField("diametroTaladros", diametroTaladros)
-		--modeloCH:AddCheckBox("crearColiso", true)
+		
+		modeloCH:AddDoubleField("distanciaEntreBotas", distanciaEntreBotas)
+		modeloCH:AddDoubleField("numeroBotas", numeroBotas)
 		
 	    if  not modeloCH:ShowDialog() then
 			
@@ -2043,7 +2145,9 @@ function OnLuaButton_modeloCH(framePrincipal)
 
 		modeloCH:AddDoubleField("anchuraColiso", anchuraColiso)
 		modeloCH:AddDoubleField("diametroTaladros", diametroTaladros)
-		--modeloCH:AddCheckBox("crearColiso", true)
+		
+		modeloCH:AddDoubleField("distanciaEntreBotas", distanciaEntreBotas)
+		modeloCH:AddDoubleField("numeroBotas", numeroBotas)
 		
 	    if  not modeloCH:ShowDialog() then
 			
@@ -2086,7 +2190,9 @@ function OnLuaButton_modeloCH(framePrincipal)
 
 		modeloCH:AddDoubleField("anchuraColiso", anchuraColiso)
 		modeloCH:AddDoubleField("diametroTaladros", diametroTaladros)
-		--modeloCH:AddCheckBox("crearColiso", true)
+		
+		modeloCH:AddDoubleField("distanciaEntreBotas", distanciaEntreBotas)
+		modeloCH:AddDoubleField("numeroBotas", numeroBotas)
 		
 	    if  not modeloCH:ShowDialog() then
 			
@@ -2129,7 +2235,9 @@ function OnLuaButton_modeloCH(framePrincipal)
 
 		modeloCH:AddDoubleField("anchuraColiso", anchuraColiso)
 		modeloCH:AddDoubleField("diametroTaladros", diametroTaladros)
-		--modeloCH:AddCheckBox("crearColiso", true)
+		
+		modeloCH:AddDoubleField("distanciaEntreBotas", distanciaEntreBotas)
+		modeloCH:AddDoubleField("numeroBotas", numeroBotas)
 		
 	    if  not modeloCH:ShowDialog() then
 			
@@ -2171,7 +2279,9 @@ function OnLuaButton_modeloCH(framePrincipal)
 
 		modeloCH:AddDoubleField("anchuraColiso", anchuraColiso)
 		modeloCH:AddDoubleField("diametroTaladros", diametroTaladros)
-		--modeloCH:AddCheckBox("crearColiso", true)
+		
+		modeloCH:AddDoubleField("distanciaEntreBotas", distanciaEntreBotas)
+		modeloCH:AddDoubleField("numeroBotas", numeroBotas)
 		
 	    if  not modeloCH:ShowDialog() then
 			
@@ -2213,7 +2323,9 @@ function OnLuaButton_modeloCH(framePrincipal)
 
 		modeloCH:AddDoubleField("anchuraColiso", anchuraColiso)
 		modeloCH:AddDoubleField("diametroTaladros", diametroTaladros)
-		--modeloCH:AddCheckBox("crearColiso", true)
+		
+		modeloCH:AddDoubleField("distanciaEntreBotas", distanciaEntreBotas)
+		modeloCH:AddDoubleField("numeroBotas", numeroBotas)
 		
 	    if  not modeloCH:ShowDialog() then
 			
@@ -2255,7 +2367,9 @@ function OnLuaButton_modeloCH(framePrincipal)
 
 		modeloCH:AddDoubleField("anchuraColiso", anchuraColiso)
 		modeloCH:AddDoubleField("diametroTaladros", diametroTaladros)
-		--modeloCH:AddCheckBox("crearColiso", true)
+		
+		modeloCH:AddDoubleField("distanciaEntreBotas", distanciaEntreBotas)
+		modeloCH:AddDoubleField("numeroBotas", numeroBotas)
 		
 	    if  not modeloCH:ShowDialog() then
 			
@@ -2297,7 +2411,9 @@ function OnLuaButton_modeloCH(framePrincipal)
 
 		modeloCH:AddDoubleField("anchuraColiso", anchuraColiso)
 		modeloCH:AddDoubleField("diametroTaladros", diametroTaladros)
-		--modeloCH:AddCheckBox("crearColiso", true)
+		
+		modeloCH:AddDoubleField("distanciaEntreBotas", distanciaEntreBotas)
+		modeloCH:AddDoubleField("numeroBotas", numeroBotas)
 		
 	    if  not modeloCH:ShowDialog() then
 			
@@ -2339,7 +2455,9 @@ function OnLuaButton_modeloCH(framePrincipal)
 
 		modeloCH:AddDoubleField("anchuraColiso", anchuraColiso)
 		modeloCH:AddDoubleField("diametroTaladros", diametroTaladros)
-		--modeloCH:AddCheckBox("crearColiso", true)
+		
+		modeloCH:AddDoubleField("distanciaEntreBotas", distanciaEntreBotas)
+		modeloCH:AddDoubleField("numeroBotas", numeroBotas)
 		
 	    if  not modeloCH:ShowDialog() then
 			
@@ -2380,7 +2498,8 @@ function OnLuaButton_aceptarCH(modeloCH)
 		anchuraColiso=modeloCH:GetDoubleField("anchuraColiso")
 		diametroTaladros=modeloCH:GetDoubleField("diametroTaladros")
 		
-		--crearColiso=modeloCH:GetCheckBox("crearColiso")
+		distanciaEntreBotas=modeloCH:GetDoubleField("distanciaEntreBotas")
+		numeroBotas=modeloCH:GetDoubleField("numeroBotas")
 
 
 	elseif modelo==29 or modelo==30 or modelo==32 or modelo==34 or modelo==35 then  --CON PLIEGUE CH
@@ -2405,7 +2524,8 @@ function OnLuaButton_aceptarCH(modeloCH)
 		anchuraColiso=modeloCH:GetDoubleField("anchuraColiso")
 		diametroTaladros=modeloCH:GetDoubleField("diametroTaladros")
 		
-		--crearColiso=modeloCH:GetCheckBox("crearColiso")
+		distanciaEntreBotas=modeloCH:GetDoubleField("distanciaEntreBotas")
+		numeroBotas=modeloCH:GetDoubleField("numeroBotas")
 		
 	
   	end
@@ -3658,14 +3778,23 @@ function dibujarCorteAH(doc)
 	--PARTE DERECHA (BOTAS)------------------------------------------------------------------------------------------------------------------------------------------------------------------
 	--Variables MARGENES superior e inferior
 	local cotaInicioDerecha=((margenB-alturaBotaDeCuelgue)+(alaDerecha-anchoBota))/2 --[relacion trigonometrica][explicacion en la hoja de papel] 
-	
 	local anchoLateral1=alaDerecha-anchoBota  --21.5 --variable para reducir codigo (se podria eliminar)
 	local alturaLateral1=cotaInicioDerecha-alaDerecha+anchoBota --15.3  --variable para reducir codigo (se podria eliminar)
 	
+	local margenBota=4 --Esto es la distacia que hay entre la altura maxima de la bota y el pico que hay en el margen inferior del ala izquierda
+	local distanciaCorreccion
+	
 	local sumaComienzoFin=(margenA)+(margenB-alturaBotaDeCuelgue) --109
 	
+	
 	--Parte botas
-	local repeticiones=math.ceil((alturaPlaca-sumaComienzoFin)/500.0)
+	local repeticiones
+	if  parametroBotas==1 then
+		repeticiones=numeroBotas-1
+	else 
+		repeticiones=math.ceil((alturaPlaca-sumaComienzoFin)/distanciaEntreBotas)
+	end
+	
 	local tramoRectoEntreBotaDeCuelgue=(alturaPlaca-sumaComienzoFin-((repeticiones+1)*alturaBotaDeCuelgue)-(repeticiones*anchoBota))/repeticiones
 	
 	
@@ -3674,16 +3803,34 @@ function dibujarCorteAH(doc)
 	if crearBotas==1 then --Dobujar botas en el ala lateral
 			--Variables BOTAS	
 		local tramoRecto1BotaDerecha=52
-		local radioArcoBotaDerecha=4
+		local radioArcoBotaDerecha=4 
 		local tramoRecto2BotaDerecha=18
 		local tramoRecto3BotaDerecha=6.5
 		local tramoRecto4BotaDerecha=26
 		
+		
+		
+		
 		--Parte inicial
-		local corte20 = Point2D(origenX+alaIzquierda+anchuraPlaca+cotaInicioDerecha,origenY+alaInferior+pliegueInferior+cotaInicioDerecha)
-		local corte21 = Point2D(origenX+alaIzquierda+anchuraPlaca+anchoLateral1,origenY+alaInferior+pliegueInferior+alturaLateral1+cotaInicioDerecha)
-		Contour:LineTo(corte20)
-		Contour:LineTo(corte21)
+		if cotaInicioDerecha>alaDerecha-margenBota then --pico plano en margen B
+			distanciaCorreccion=cotaInicioDerecha-(alaDerecha-margenBota)
+			
+			local corte20 = Point2D(origenX+alaIzquierda+anchuraPlaca+cotaInicioDerecha-distanciaCorreccion,origenY+alaInferior+pliegueInferior+cotaInicioDerecha-distanciaCorreccion)
+			local corte21 = Point2D(origenX+alaIzquierda+anchuraPlaca+cotaInicioDerecha-distanciaCorreccion,origenY+alaInferior+pliegueInferior+cotaInicioDerecha+distanciaCorreccion)
+			local corte22 = Point2D(origenX+alaIzquierda+anchuraPlaca+anchoLateral1,origenY+alaInferior+pliegueInferior+alturaLateral1+cotaInicioDerecha)
+			Contour:LineTo(corte20)
+			Contour:LineTo(corte21)
+			Contour:LineTo(corte22)
+		else --pico normal en margen B
+			local corte20 = Point2D(origenX+alaIzquierda+anchuraPlaca+cotaInicioDerecha,origenY+alaInferior+pliegueInferior+cotaInicioDerecha)
+			local corte21 = Point2D(origenX+alaIzquierda+anchuraPlaca+anchoLateral1,origenY+alaInferior+pliegueInferior+alturaLateral1+cotaInicioDerecha)
+			Contour:LineTo(corte20)
+			Contour:LineTo(corte21)
+		end
+		
+		
+		
+		
 		
 		local puntoInicioX=(origenX+alaIzquierda+anchuraPlaca+anchoLateral1)
 		local puntoInicioY=(origenY+alaInferior+pliegueInferior+cotaInicioDerecha+alturaLateral1)
@@ -3879,11 +4026,32 @@ function dibujarCorteAH(doc)
 
 		end
 		
+		
+		
+		
+		
 		--Parte final
-		local corte65 = Point2D(origenX+alaIzquierda-cotaInicioIzquierda,origenY+alaInferior+pliegueInferior+cotaInicioIzquierda)
-		local corte66 = Point2D(origenX+alaIzquierda,origenY+alaInferior+pliegueInferior)
+		if cotaInicioIzquierda>alaIzquierda-margenBota then --pico plano en margen B
+			distanciaCorreccion=cotaInicioIzquierda-(alaIzquierda-margenBota)
+			
+			local corte65 = Point2D(origenX+alaIzquierda-cotaInicioIzquierda+distanciaCorreccion,origenY+alaInferior+pliegueInferior+cotaInicioIzquierda+distanciaCorreccion)
+			local corte66 = Point2D(origenX+alaIzquierda-cotaInicioIzquierda+distanciaCorreccion,origenY+alaInferior+pliegueInferior+cotaInicioIzquierda-distanciaCorreccion)
+			local corte67 = Point2D(origenX+alaIzquierda,origenY+alaInferior+pliegueInferior)
+			Contour:LineTo(corte65)
+			Contour:LineTo(corte66)
+			Contour:LineTo(corte67)
+		else --pico normal en margen B
+			local corte65 = Point2D(origenX+alaIzquierda-cotaInicioIzquierda,origenY+alaInferior+pliegueInferior+cotaInicioIzquierda)
+			local corte66 = Point2D(origenX+alaIzquierda,origenY+alaInferior+pliegueInferior)
+			Contour:LineTo(corte65)
+			Contour:LineTo(corte66)
+		end
+		
+		
+		local corte65 = Point2D(origenX+alaIzquierda,origenY+alaInferior+pliegueInferior)
 		Contour:LineTo(corte65)
-		Contour:LineTo(corte66)
+	
+	
 	
 	else --Dibujar el ala lateral lisa
 		local corte60=Point2D(origenX,origenY+alaInferior+pliegueInferior+alturaPlaca-alaIzquierda)
@@ -4025,7 +4193,7 @@ function dibujarTaladrosAH(doc)
 
 
 		 --Sin colisos superiores	  		
-   		 else
+   		 elseif crearTaladros==1 then
    		 	
 	   		--Taladro Superior Izquierda
 	   		local puntoCentro = Point2D(alaIzquierda+anchuraColiso+anchuraColiso/2,alaInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
@@ -4130,7 +4298,7 @@ function dibujarTaladrosAH(doc)
 
 
 		 --Sin colisos superiores	  		
-   		 else
+   		 elseif crearTaladros==1 then
    		 	
 	   		--Taladro Superior Izquierda
 	   		local puntoCentro = Point2D(alaIzquierda+anchuraColiso+anchuraColiso/2,alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
@@ -4234,7 +4402,7 @@ function dibujarTaladrosAH(doc)
 
 
 		 --Sin colisos superiores	  		
-   		 else
+   		 elseif crearTaladros==1 then
    		 	
 	   		--Taladro Superior Izquierda
 	   		local puntoCentro = Point2D(alaIzquierda+anchuraColiso+anchuraColiso/2,alaInferior+alturaPlaca+pliegueInferior+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
@@ -4337,7 +4505,7 @@ function dibujarTaladrosAH(doc)
 
 
 		 --Sin colisos superiores	  		
-   		 else
+   		 elseif crearTaladros==1 then
    		 	
 	   		--Taladro Superior Izquierda
 	   		local puntoCentro = Point2D(alaIzquierda+anchuraColiso+anchuraColiso/2,alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
@@ -4450,7 +4618,7 @@ function dibujarTaladrosAH(doc)
 
 
 		 --Sin colisos superiores	  		
-   		 else
+   		 elseif crearTaladros==1 then
    		 	
 	   		--Taladro Superior Izquierda
 	   		local puntoCentro = Point2D(alaIzquierda+anchuraColiso+anchuraColiso/2,alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
@@ -4576,7 +4744,7 @@ function dibujarTaladrosAH(doc)
 
 
 		 --Sin colisos superiores	  		
-   		 else
+   		 elseif crearTaladros==1 then
    		 	
 	   		--Taladro Superior Izquierda
 	   		local puntoCentro = Point2D(alaIzquierda+anchuraColiso+anchuraColiso/2,alaInferior+alturaPlaca+pliegueInferior+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
@@ -4658,7 +4826,7 @@ function dibujarTaladrosAH(doc)
 
 		 
 		 --Sin colisos superiores	  		
-   		 else
+   		 elseif crearTaladros==1 then
    		 	
 	   		--Taladro Superior Izquierda
 	   		local puntoCentro = Point2D(alaIzquierda+anchuraColiso+anchuraColiso/2,alaInferior+alturaPlaca+pliegueInferior+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
@@ -5045,8 +5213,17 @@ function dibujarCorteBH(doc)
 	local alturaLateral1=cotaInicioDerecha-alaDerecha+anchoBota --15.3  --variable para reducir codigo (se podria eliminar)
 	local sumaComienzoFin=(margenA)+(margenB-alturaBotaDeCuelgue) --109
 	
+	local margenBota=4 --Esto es la distacia que hay entre la altura maxima de la bota y el pico que hay en el margen inferior del ala izquierda
+	local distanciaCorreccion
+	
 	--Parte botas
-	local repeticiones=math.ceil((alturaPlaca-sumaComienzoFin)/500.0)
+	local repeticiones
+	if  parametroBotas==1 then
+		repeticiones=numeroBotas-1
+	else 
+		repeticiones=math.ceil((alturaPlaca-sumaComienzoFin)/distanciaEntreBotas)
+	end
+	
 	local tramoRectoEntreBotaDeCuelgue=(alturaPlaca-sumaComienzoFin-((repeticiones+1)*alturaBotaDeCuelgue)-(repeticiones*anchoBota))/repeticiones
 	
 	local puntoInicioX=(origenX+alaIzquierda+anchuraPlaca+anchoLateral1)
@@ -5055,10 +5232,21 @@ function dibujarCorteBH(doc)
 	
 	if crearBotas==1 then --Dobujar botas en el ala lateral
 		--Parte inicial
-		local corte20 = Point2D(origenX+alaIzquierda+anchuraPlaca+cotaInicioDerecha,origenY+alaInferior+pliegueInferior+cotaInicioDerecha)
-		local corte21 = Point2D(origenX+alaIzquierda+anchuraPlaca+anchoLateral1,origenY+alaInferior+pliegueInferior+alturaLateral1+cotaInicioDerecha)
-		Contour:LineTo(corte20)
-		Contour:LineTo(corte21)
+		if cotaInicioDerecha>alaDerecha-margenBota then --pico plano en margen B
+			distanciaCorreccion=cotaInicioDerecha-(alaDerecha-margenBota)
+			
+			local corte20 = Point2D(origenX+alaIzquierda+anchuraPlaca+cotaInicioDerecha-distanciaCorreccion,origenY+alaInferior+pliegueInferior+cotaInicioDerecha-distanciaCorreccion)
+			local corte21 = Point2D(origenX+alaIzquierda+anchuraPlaca+cotaInicioDerecha-distanciaCorreccion,origenY+alaInferior+pliegueInferior+cotaInicioDerecha+distanciaCorreccion)
+			local corte22 = Point2D(origenX+alaIzquierda+anchuraPlaca+anchoLateral1,origenY+alaInferior+pliegueInferior+alturaLateral1+cotaInicioDerecha)
+			Contour:LineTo(corte20)
+			Contour:LineTo(corte21)
+			Contour:LineTo(corte22)
+		else --pico normal en margen B
+			local corte20 = Point2D(origenX+alaIzquierda+anchuraPlaca+cotaInicioDerecha,origenY+alaInferior+pliegueInferior+cotaInicioDerecha)
+			local corte21 = Point2D(origenX+alaIzquierda+anchuraPlaca+anchoLateral1,origenY+alaInferior+pliegueInferior+alturaLateral1+cotaInicioDerecha)
+			Contour:LineTo(corte20)
+			Contour:LineTo(corte21)
+		end
 	
 		for n=1, (repeticiones+1) do
 			--Dibujar bota
@@ -5328,9 +5516,25 @@ function dibujarCorteBH(doc)
 		end
 		
 		--Parte final
-		local corte65 = Point2D(origenX+alaIzquierda-cotaInicioIzquierda,origenY+alaInferior+pliegueInferior+cotaInicioIzquierda)
+		if cotaInicioIzquierda>alaIzquierda-margenBota then --pico plano en margen B
+			distanciaCorreccion=cotaInicioIzquierda-(alaIzquierda-margenBota)
+			
+			local corte65 = Point2D(origenX+alaIzquierda-cotaInicioIzquierda+distanciaCorreccion,origenY+alaInferior+pliegueInferior+cotaInicioIzquierda+distanciaCorreccion)
+			local corte66 = Point2D(origenX+alaIzquierda-cotaInicioIzquierda+distanciaCorreccion,origenY+alaInferior+pliegueInferior+cotaInicioIzquierda-distanciaCorreccion)
+			local corte67 = Point2D(origenX+alaIzquierda,origenY+alaInferior+pliegueInferior)
+			Contour:LineTo(corte65)
+			Contour:LineTo(corte66)
+			Contour:LineTo(corte67)
+		else --pico normal en margen B
+			local corte65 = Point2D(origenX+alaIzquierda-cotaInicioIzquierda,origenY+alaInferior+pliegueInferior+cotaInicioIzquierda)
+			local corte66 = Point2D(origenX+alaIzquierda,origenY+alaInferior+pliegueInferior)
+			Contour:LineTo(corte65)
+			Contour:LineTo(corte66)
+		end
+		
+		
+		
 		local corte66 = Point2D(origenX+alaIzquierda,origenY+alaInferior+pliegueInferior)
-		Contour:LineTo(corte65)
 		Contour:LineTo(corte66)
 	
 	else --Dibujar el ala lateral lisa
@@ -5396,7 +5600,7 @@ function dibujarTaladrosBH(doc)
 		    end
 
 		 --Sin colisos superiores	  		
-   		 else
+   		 elseif crearTaladros==1 then
 
    		 	for i=0,numeroColisos do
    		 	
@@ -5448,7 +5652,7 @@ function dibujarTaladrosBH(doc)
 		    end
 
 		 --Sin colisos superiores	  		
-   		 else
+   		 elseif crearTaladros==1 then
 
    		 	for i=0,numeroColisos do
    		 	
@@ -5500,7 +5704,7 @@ function dibujarTaladrosBH(doc)
 		    end
 
 		 --Sin colisos superiores	  		
-   		 else
+   		 elseif crearTaladros==1 then
 
    		 	for i=0,numeroColisos do
    		 	
@@ -5550,7 +5754,7 @@ function dibujarTaladrosBH(doc)
 		    end
 
 		 --Sin colisos superiores	  		
-   		 else
+   		 elseif crearTaladros==1 then
 
    		 	for i=0,numeroColisos do
    		 	
@@ -5603,7 +5807,7 @@ function dibujarTaladrosBH(doc)
 		    end
 
 		 --Sin colisos superiores	  		
-   		 else
+   		 elseif crearTaladros==1 then
 
    		 	for i=0,numeroColisos do
    		 	
@@ -5655,7 +5859,7 @@ function dibujarTaladrosBH(doc)
 		    end
 
 		 --Sin colisos superiores	  		
-   		 else
+   		 elseif crearTaladros==1 then
 
    		 	for i=0,numeroColisos do
    		 	
@@ -5706,7 +5910,7 @@ function dibujarTaladrosBH(doc)
 		    end
 
 		 --Sin colisos superiores	  		
-   		 else
+   		 elseif crearTaladros==1 then
 
    		 	for i=0,numeroColisos do
    		 	
@@ -5757,7 +5961,7 @@ function dibujarTaladrosBH(doc)
 		    end
 
 		 --Sin colisos superiores	  		
-   		 else
+   		 elseif crearTaladros==1 then
 
    		 	for i=0,numeroColisos do
    		 	
@@ -5808,7 +6012,7 @@ function dibujarTaladrosBH(doc)
 		    end
 
 		 --Sin colisos superiores	  		
-   		 else
+   		 elseif crearTaladros==1 then
 
    		 	for i=0,numeroColisos do
    		 	
@@ -5860,7 +6064,7 @@ function dibujarTaladrosBH(doc)
 		  
 
 		 --Sin colisos superiores	  		
-   		 else
+   		 elseif crearTaladros==1 then
 
    		 	
    		 	
@@ -5911,7 +6115,7 @@ function dibujarTaladrosBH(doc)
 		  
 
 		 --Sin colisos superiores	  		
-   		 else
+   		 elseif crearTaladros==1 then
 
    		 	
    		 	
@@ -5962,7 +6166,7 @@ function dibujarTaladrosBH(doc)
 		  
 
 		 --Sin colisos superiores	  		
-   		 else
+   		 elseif crearTaladros==1 then
 
    		 	
    		 	
@@ -6013,7 +6217,7 @@ function dibujarTaladrosBH(doc)
 		  
 
 		 --Sin colisos superiores	  		
-   		 else
+   		 elseif crearTaladros==1 then
 
    		 	
    		 	
@@ -6064,7 +6268,7 @@ function dibujarTaladrosBH(doc)
 		  
 
 		 --Sin colisos superiores	  		
-   		 else
+   		 elseif crearTaladros==1 then
 
    		 	
    		 	
@@ -6115,7 +6319,7 @@ function dibujarTaladrosBH(doc)
 		  
 
 		 --Sin colisos superiores	  		
-   		 else
+   		 elseif crearTaladros==1 then
 
    		 	
    		 	
@@ -6166,7 +6370,7 @@ function dibujarTaladrosBH(doc)
 		  
 
 		 --Sin colisos superiores	  		
-   		 else
+   		 elseif crearTaladros==1 then
 
    		 	
    		 	
@@ -6217,7 +6421,7 @@ function dibujarTaladrosBH(doc)
 		  
 
 		 --Sin colisos superiores	  		
-   		 else
+   		 elseif crearTaladros==1 then
 
    		 	
    		 	
@@ -6268,7 +6472,7 @@ function dibujarTaladrosBH(doc)
 		  
 
 		 --Sin colisos superiores	  		
-   		 else
+   		 elseif crearTaladros==1 then
 
    		 	
    		 	
@@ -6381,11 +6585,11 @@ function dibujarFresadoCH(doc)
 		dibujarFresado_auxiliar(doc,fresado14,fresado5)
 	
 	elseif modelo==33 then --[CH6]		
-		dibujarFresado_auxiliar(doc,fresado1,fresado17)
+		dibujarFresado_auxiliar(doc,fresado1,fresado24)
 		dibujarFresado_auxiliar(doc,fresado17,fresado18)
 		dibujarFresado_auxiliar(doc,fresado19,fresado20)
 		dibujarFresado_auxiliar(doc,fresado21,fresado22)
-		dibujarFresado_auxiliar(doc,fresado22,fresado12)
+		dibujarFresado_auxiliar(doc,fresado23,fresado12)
 		dibujarFresado_auxiliar(doc,fresado10,fresado4)
 		dibujarFresado_auxiliar(doc,fresado5,fresado14)
 		dibujarFresado_auxiliar(doc,fresado13,fresado16)
@@ -6593,8 +6797,17 @@ function dibujarCorteCH(doc)
 	local alturaLateral1=cotaInicioDerecha-alaDerecha+anchoBota --15.3  --variable para reducir codigo (se podria eliminar)
 	local sumaComienzoFin=(margenA)+(margenB-alturaBotaDeCuelgue) --109
 	
+	local margenBota=4 --Esto es la distacia que hay entre la altura maxima de la bota y el pico que hay en el margen inferior del ala izquierda
+	local distanciaCorreccion
+	
 	--Parte botas
-	local repeticiones=math.ceil((alturaPlaca-sumaComienzoFin)/500.0)
+	local repeticiones
+	if  parametroBotas==1 then
+		repeticiones=numeroBotas-1
+	else 
+		repeticiones=math.ceil((alturaPlaca-sumaComienzoFin)/distanciaEntreBotas)
+	end
+	
 	local tramoRectoEntreBotaDeCuelgue=(alturaPlaca-sumaComienzoFin-((repeticiones+1)*alturaBotaDeCuelgue)-(repeticiones*anchoBota))/repeticiones
 	
 	local puntoInicioX=(origenX+alaIzquierda+anchuraPlaca+anchoLateral1)
@@ -6604,10 +6817,24 @@ function dibujarCorteCH(doc)
 	
 	if crearBotas==1 then --Dibujar botas en el ala derecha
 		--Parte inicial
-		local corte20 = Point2D(origenX+alaIzquierda+anchuraPlaca+cotaInicioDerecha,origenY+alaInferior+pliegueInferior+cotaInicioDerecha)
-		local corte21 = Point2D(origenX+alaIzquierda+anchuraPlaca+anchoLateral1,origenY+alaInferior+pliegueInferior+alturaLateral1+cotaInicioDerecha)
-		Contour:LineTo(corte20)
-		Contour:LineTo(corte21)
+		if cotaInicioDerecha>alaDerecha-margenBota then --pico plano en margen B
+			distanciaCorreccion=cotaInicioDerecha-(alaDerecha-margenBota)
+			
+			local corte20 = Point2D(origenX+alaIzquierda+anchuraPlaca+cotaInicioDerecha-distanciaCorreccion,origenY+alaInferior+pliegueInferior+cotaInicioDerecha-distanciaCorreccion)
+			local corte21 = Point2D(origenX+alaIzquierda+anchuraPlaca+cotaInicioDerecha-distanciaCorreccion,origenY+alaInferior+pliegueInferior+cotaInicioDerecha+distanciaCorreccion)
+			local corte22 = Point2D(origenX+alaIzquierda+anchuraPlaca+anchoLateral1,origenY+alaInferior+pliegueInferior+alturaLateral1+cotaInicioDerecha)
+			Contour:LineTo(corte20)
+			Contour:LineTo(corte21)
+			Contour:LineTo(corte22)
+		else --pico normal en margen B
+			local corte20 = Point2D(origenX+alaIzquierda+anchuraPlaca+cotaInicioDerecha,origenY+alaInferior+pliegueInferior+cotaInicioDerecha)
+			local corte21 = Point2D(origenX+alaIzquierda+anchuraPlaca+anchoLateral1,origenY+alaInferior+pliegueInferior+alturaLateral1+cotaInicioDerecha)
+			Contour:LineTo(corte20)
+			Contour:LineTo(corte21)
+		end
+		
+		
+		
 	
 		for n=1, (repeticiones+1) do
 			--Dibujar bota
@@ -6871,9 +7098,23 @@ function dibujarCorteCH(doc)
 		end
 		
 		--Parte final
-		local corte65 = Point2D(origenX+alaIzquierda-cotaInicioIzquierda,origenY+alaInferior+pliegueInferior+cotaInicioIzquierda)
+		if cotaInicioIzquierda>alaIzquierda-margenBota then --pico plano en margen B
+			distanciaCorreccion=cotaInicioIzquierda-(alaIzquierda-margenBota)
+			
+			local corte65 = Point2D(origenX+alaIzquierda-cotaInicioIzquierda+distanciaCorreccion,origenY+alaInferior+pliegueInferior+cotaInicioIzquierda+distanciaCorreccion)
+			local corte66 = Point2D(origenX+alaIzquierda-cotaInicioIzquierda+distanciaCorreccion,origenY+alaInferior+pliegueInferior+cotaInicioIzquierda-distanciaCorreccion)
+			local corte67 = Point2D(origenX+alaIzquierda,origenY+alaInferior+pliegueInferior)
+			Contour:LineTo(corte65)
+			Contour:LineTo(corte66)
+			Contour:LineTo(corte67)
+		else --pico normal en margen B
+			local corte65 = Point2D(origenX+alaIzquierda-cotaInicioIzquierda,origenY+alaInferior+pliegueInferior+cotaInicioIzquierda)
+			local corte66 = Point2D(origenX+alaIzquierda,origenY+alaInferior+pliegueInferior)
+			Contour:LineTo(corte65)
+			Contour:LineTo(corte66)
+		end
+		
 		local corte66 = Point2D(origenX+alaIzquierda,origenY+alaInferior+pliegueInferior)
-		Contour:LineTo(corte65)
 		Contour:LineTo(corte66)
 		
 	
@@ -6958,7 +7199,7 @@ function dibujarTaladrosCH(doc)
 
 
 		 --Sin colisos superiores	  		
-   		 else
+   		 elseif crearTaladros==1 then
 
    		 	for i=0,numeroTaladros do
    		 	
@@ -7043,7 +7284,7 @@ function dibujarTaladrosCH(doc)
 
 
 		 --Sin colisos superiores	  		
-   		 else
+   		 elseif crearTaladros==1 then
 
    		 	for i=0,numeroTaladros do
    		 	
@@ -7128,7 +7369,7 @@ function dibujarTaladrosCH(doc)
 
 
 		 --Sin colisos superiores	  		
-   		 else
+   		 elseif crearTaladros==1 then
 
    		 	for i=0,numeroTaladros do
    		 	
@@ -7213,7 +7454,7 @@ function dibujarTaladrosCH(doc)
 
 
 		 --Sin colisos superiores	  		
-   		 else
+   		 elseif crearTaladros==1 then
 
    		 	for i=0,numeroTaladros do
    		 	
@@ -7296,7 +7537,7 @@ function dibujarTaladrosCH(doc)
 			
 
 		 --Sin colisos superiores	  		
-   		 else
+   		 elseif crearTaladros==1 then
 
    		 	 	
 		   		--Taladro lateral izquierda 
@@ -7376,7 +7617,7 @@ function dibujarTaladrosCH(doc)
 			
 
 		 --Sin colisos superiores	  		
-   		 else
+   		 elseif crearTaladros==1 then
 
    		 	 	
 		   		--Taladro lateral izquierda 
@@ -7456,7 +7697,7 @@ function dibujarTaladrosCH(doc)
 			
 
 		 --Sin colisos superiores	  		
-   		 else
+   		 elseif crearTaladros==1 then
 
    		 	 	
 		   		--Taladro lateral izquierda 
@@ -7535,7 +7776,7 @@ function dibujarTaladrosCH(doc)
 			
 
 		 --Sin colisos superiores	  		
-   		 else
+   		 elseif crearTaladros==1 then
 
    		 	 	
 		   		--Taladro lateral izquierda 
@@ -7617,7 +7858,7 @@ function dibujarTaladrosCH(doc)
 
 
 		 --Sin colisos superiores	  		
-   		 else
+   		 elseif crearTaladros==1 then
 
    		 	for i=0,numeroTaladros do
    		 	

@@ -255,6 +255,18 @@
 								
 								
 								<br>
+								
+								<label for="parametroBotas" style="font-family: cursive"> Distancia entre botas: </label><br>
+								Por distancia maxima <input class="LuaButton" type="radio" id="parametroBotas" name="parametroBotas" value="1" checked="checked" /> <br>
+								Por numero de botas <input class="LuaButton" type="radio" id="parametroBotasNumero" name="parametroBotas" value="0"/> 
+								<br><br>
+								
+								<label for="distanciaEntreBotas" style="font-family: cursive"> Distancia máxima entre botas:</label>
+								<input type="text" class="form-control" id="distanciaEntreBotas" name="distanciaEntreBotas" placeholder="distancia Entre Botas" maxlength="7" style="font-family: cursive"/> 
+								<br>
+								
+								<label for="numeroBotas" style="font-family: cursive"> Número de botas (uds):</label>
+								<input type="text" class="form-control" id="numeroBotas" name="numeroBotas" placeholder="numero Botas" maxlength="7" style="font-family: cursive"/> 
 
 
 
@@ -284,27 +296,25 @@
 						
 							<div class="form-group" >
 							
-															
-								
-																							
-							    <label for="diametroTaladros" style="font-family: cursive"> Diámetro Taladros (mm):</label>
-								
-								<input type="text" class="form-control" id="diametroTaladros" name="diametroTaladros" placeholder="Diámetro taladros" maxlength="4" style="font-family: cursive"/> 
-								
+								<label for="dibujarTaladros" style="font-family: cursive">Dibujar Taladros </label>
+								<input class="LuaButton" type="checkbox" id="dibujarTaladros" name="dibujo" value="inactive"/>
 								<br>
+								<label for="dibujarColisos" style="font-family: cursive">Dibujar Colisos </label>
+								<input class="LuaButton" type="checkbox" id="dibujarColisos" name="dibujo" value="inactive"/>
+								<br><br>
+								
+							    <label for="diametroTaladros" style="font-family: cursive"> Diámetro Taladros (mm):</label>
+								<input type="text" class="form-control" id="diametroTaladros" name="diametroTaladros" placeholder="Diámetro taladros" maxlength="4" style="font-family: cursive"/> 
+								<br>
+								
 								<label for="anchuraColiso" style="font-family: cursive"> Anchura de los colisos (mm):</label>
 								<input type="text" class="form-control" id="anchuraColiso" name="anchuraColiso" placeholder="Anchura de los colisos" maxlength="4" style="font-family: cursive"/> 
-								
-								
 								<br>
 
-								<label for="crearColiso" style="font-family: cursive"> ¿Crear colisos superiores? </label>
-								
+								<!--<label for="crearColiso" style="font-family: cursive"> ¿Crear colisos superiores? </label>
 								SI <input class="LuaButton" type="radio" id="crearColiso" name="crearColiso" value="1" checked="checked" /> 
 								NO <input class="LuaButton" type="radio" id="noCrearColiso" name="crearColiso" value="0"/> 
-								
-								
-								<br>							
+								<br>			-->				
 
 								
 							
