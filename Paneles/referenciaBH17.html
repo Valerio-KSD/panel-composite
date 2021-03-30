@@ -59,42 +59,21 @@
 							<div class="form-group" >
 
 								<label for="textoDescriptivo" style="font-family: cursive"> Nombre de la placa (texto):</label>
-								
 								<input type="text" class="form-control" id="textoDescriptivo" name="textoDescriptivo" placeholder="Nombre de la placa" style="font-family: cursive"/> 
-
 								<br>
-							
+								
+								<label for="alturaPlaca" style="font-family: cursive" >[A] Altura Placa (mm):</label>
+								<input type="text" class="form-control" id="alturaPlaca" name="alturaPlacaAH" placeholder="Altura Placa" maxlength="7" style="font-family: cursive"/>
+								<br>
+								
 								<label for="anchuraPlacaIzquierda" style="font-family: cursive">[B1] Anchura placa Izquierda (mm):</label>
-								
 								<input type="text" class="form-control" id="anchuraPlacaIzquierda" name="anchuraPlacaIzquierda" placeholder="Anchura placa Izquierda" maxlength="8" style="font-family: cursive"/> 
-								
-								<!--<label for="anchuraPlaca">mm</label>-->
-								
 								<br>
 								
 								<label for="anchuraPlacaDerecha" style="font-family: cursive">[B2] Anchura placa Derecha (mm):</label>
-								
 								<input type="text" class="form-control" id="anchuraPlacaDerecha" name="anchuraPlacaDerecha" placeholder="Anchura placa Derecha" maxlength="8" style="font-family: cursive"/> 
 								
-								<!--<label for="anchuraPlaca">mm</label>-->
 								
-								<!--<br>
-																							
-							    <label for="margenPlaca" style="font-family: cursive" >Margen Placa (mm):</label>
-							    
-								<input type="text" class="form-control" id="margenPlaca" name="margenPlaca" placeholder="Margen Placa" maxlength="3" style="font-family: cursive"/>
-								
-								<!--<label for="margenPlaca" >mm</label>-->
-								<br>
-
-								<label for="alturaPlaca" style="font-family: cursive" >[A] Altura Placa (mm):</label>
-								
-								<input type="text" class="form-control" id="alturaPlaca" name="alturaPlacaAH" placeholder="Altura Placa" maxlength="7" style="font-family: cursive"/>
-								
-								<!--<label for="alturaPlaca" >mm</label>-->
-								<br>
-
-							
 						   </div>
 					
 													
@@ -103,67 +82,14 @@
 			</div> <!-- cierre panel -->
 		</div> <!-- fin columna datos 1 -->
 
-		 <!-- columna datos 2 -->
-		<!--<div class="col-xs-3">
 		
-			<div class="panel panel-default">
-			
-				<div class="panel-heading" style="font-family: cursive;"><center><h4><strong>  Matriz </strong></h4></center></div>
-				
-				
-				
-				<div class="panel-body" >
-				
-					
-						
-							<div class="form-group" >
-							
-								<label for="cantidadX" style="font-family: cursive"> Cantidad X (uds):</label>
-								
-								<input type="text" class="form-control" id="cantidadX" name="cantidadX" placeholder="Cantidad X" maxlength="2" style="font-family: cursive"/> 
-								
-								
-								
-								<br>
-																							
-							    <label for="cantidadY" style="font-family: cursive" > Cantidad Y (uds):</label>
-							    
-								<input type="text" class="form-control" id="cantidadY" name="cantidadY" placeholder="Cantidad Y" maxlength="2" style="font-family: cursive"/>
-								
-								
-								<br>
-
-								<label for="distanciaX" style="font-family: cursive" > Distancia X (mm):</label>
-								
-								<input type="text" class="form-control" id="distanciaX" name="distanciaX" placeholder="Distancia X" maxlength="7" style="font-family: cursive"/>
-								
-								
-								<br>
-
-								<label for="distanciaY" style="font-family: cursive" > Distancia Y (mm):</label>
-								
-								<input type="text" class="form-control" id="distanciaY" name="distanciaY" placeholder="Distancia Y" maxlength="7" style="font-family: cursive"/>
-								
-								
-								<br>
-
-							
-						   </div>
-					
-													
-					
-				</div>
-				
-			</div> 
-			
-		</div> -->
        
 
 		<div class="col-xs-3"> <!-- columna datos 3 -->
 		
 			<div class="panel panel-default">
 			
-				<div class="panel-heading" style="font-family: cursive;"><center><h4><strong>  Alas </strong></h4></center></div>
+				<div class="panel-heading" style="font-family: cursive;"><center><h4><strong>  Pliegues/Alas </strong></h4></center></div>
 				
 				
 				
@@ -172,42 +98,30 @@
 					
 						
 							<div class="form-group" >
-
 								
+								<label for="pliegueSuperior" style="font-family: cursive">[P1] Pliegue superior (mm):</label>
+								<input type="text" class="form-control" id="pliegueSuperior" name="pliegueSuperior" placeholder="pliegue superior" maxlength="4" style="font-family: cursive"/> 
+								<br>
+								
+								<label for="pliegueInferior" style="font-family: cursive">[P2] Pliegue inferior (mm):</label>
+								<input type="text" class="form-control" id="pliegueInferior" name="pliegueInferior" placeholder="Pliegue inferior" maxlength="4" style="font-family: cursive"/>
+								<br>
 							
 								<label for="alaLateral" style="font-family: cursive">[C1] Ala lateral (mm):</label>
-								
 								<input type="text" class="form-control" id="alaLateral" name="alaLateral" placeholder="Ala lateral" maxlength="4" style="font-family: cursive"/> 
-								
-								
-								
 								<br>
-																							
+								
 							    <label for="alaSuperior" style="font-family: cursive">[C2] Ala superior (mm):</label>
-								
 								<input type="text" class="form-control" id="alaSuperior" name="alaSuperior" placeholder="Ala superior" maxlength="4" style="font-family: cursive"/> 
-								
-								
 								<br>
 
 								<label for="alaInferior" style="font-family: cursive">[C3] Ala inferior (mm):</label>
-								
 								<input type="text" class="form-control" id="alaInferior" name="alaInferior" placeholder="Ala inferior" maxlength="4" style="font-family: cursive"/> 
-								
-								
 								<br>
 
 								<label for="alaInferior" style="font-family: cursive">[D] Distancia entre alas (mm):</label>
-								
 								<input type="text" class="form-control" id="distanciaAlas" name="distanciaAlas" placeholder="Distancia entre alas" maxlength="4" style="font-family: cursive"/> 
 								
-								
-								<br>
-								
-								<label for="crearBotas" style="font-family: cursive"> ¿Colocar botas en el ala lateral? </label>
-								SI <input class="LuaButton" type="radio" id="crearBotas" name="crearBotas" value="1" checked="checked" /> 
-								NO <input class="LuaButton" type="radio" id="noCrearBotas" name="crearBotas" value="0"/> 
-								<br>
 
 								
 							
@@ -224,7 +138,7 @@
 		
 			<div class="panel panel-default">
 			
-				<div class="panel-heading" style="font-family: cursive;"><center><h4><strong>  Pliegues/Márgenes </strong></h4></center></div>
+				<div class="panel-heading" style="font-family: cursive;"><center><h4><strong>  Botas </strong></h4></center></div>
 				
 				
 				
@@ -234,33 +148,19 @@
 						
 							<div class="form-group" >
 							
-								<label for="pliegueInferior" style="font-family: cursive">[P2] Pliegue inferior (mm):</label>
-								
-								<input type="text" class="form-control" id="pliegueInferior" name="pliegueInferior" placeholder="Pliegue inferior" maxlength="4" style="font-family: cursive"/>
-								
-								
-								
-								
-																							
-							    <label for="pliegueSuperior" style="font-family: cursive">[P1] Pliegue superior (mm):</label>
-								
-								<input type="text" class="form-control" id="pliegueSuperior" name="pliegueSuperior" placeholder="pliegue superior" maxlength="4" style="font-family: cursive"/> 
-								
-								
+								<center>
+							    <label for="crearBotas" style="font-family: cursive"> ¿Colocar botas? </label><br>
+								SI <input class="LuaButton" type="radio" id="crearBotas" name="crearBotas" value="1" checked="checked" /> 
+								NO <input class="LuaButton" type="radio" id="noCrearBotas" name="crearBotas" value="0"/> 
+								</center>
 								<br>
 
-								<label for="margenA" style="font-family: cursive">[M1] Margen botas superior (mm):</label>
-								
+								<label for="margenA" style="font-family: cursive">[M1] Margen superior (mm):</label>
 								<input type="text" class="form-control" id="margenA" name="margenA" placeholder="Margen A" maxlength="4" style="font-family: cursive"/> 
-								
-								
 								<br>
 
-								<label for="margenB" style="font-family: cursive">[M2] Margen botas inferior (mm):</label>
-								
+								<label for="margenB" style="font-family: cursive">[M2] Margen inferior (mm):</label>
 								<input type="text" class="form-control" id="margenB" name="margenB" placeholder="Margen B" maxlength="4" style="font-family: cursive"/> 
-								
-								
 								<br>
 								
 								<label for="parametroBotas" style="font-family: cursive"> Distancia entre botas: </label><br>
@@ -311,10 +211,9 @@
 								<br><br>
 								
 							    <label for="diametroTaladros" style="font-family: cursive"> Diámetro Taladros (mm):</label>
-								
 								<input type="text" class="form-control" id="diametroTaladros" name="diametroTaladros" placeholder="Diámetro taladros" maxlength="4" style="font-family: cursive"/> 
-								
 								<br>
+								
 								<label for="anchuraColiso" style="font-family: cursive"> Anchura de los colisos (mm):</label>
 								<input type="text" class="form-control" id="anchuraColiso" name="anchuraColiso" placeholder="Anchura de los colisos" maxlength="4" style="font-family: cursive"/> 
 								

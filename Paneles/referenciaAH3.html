@@ -61,13 +61,16 @@
 								<label for="textoDescriptivo" style="font-family: cursive"> Nombre de la placa (texto):</label>
 								<input type="text" class="form-control" id="textoDescriptivo" name="textoDescriptivo" placeholder="Nombre de la placa" style="font-family: cursive"/> 
 								<br>
-							
-								<label for="anchuraPlaca" style="font-family: cursive">[B] Anchura Placa (mm):</label>
-								<input type="text" class="form-control" id="anchuraPlaca" name="anchuraPlaca" placeholder="Anchura Placa" maxlength="8" style="font-family: cursive"/> 
-								<br>
-
+								
 								<label for="alturaPlaca" style="font-family: cursive" >[A] Altura Placa (mm):</label>
 								<input type="text" class="form-control" id="alturaPlaca" name="alturaPlacaAH" placeholder="Altura Placa" maxlength="7" style="font-family: cursive"/>
+								<br>
+								
+								<label for="anchuraPlaca" style="font-family: cursive">[B] Anchura Placa (mm):</label>
+								<input type="text" class="form-control" id="anchuraPlaca" name="anchuraPlaca" placeholder="Anchura Placa" maxlength="8" style="font-family: cursive"/> 
+								
+
+								
 								
 
 							
@@ -86,7 +89,7 @@
 		
 			<div class="panel panel-default">
 			
-				<div class="panel-heading" style="font-family: cursive;"><center><h4><strong>  Alas </strong></h4></center></div>
+				<div class="panel-heading" style="font-family: cursive;"><center><h4><strong>  Pliegues/Alas </strong></h4></center></div>
 				
 				
 				
@@ -95,6 +98,14 @@
 					
 						
 							<div class="form-group" >
+								
+								<label for="pliegueSuperior" style="font-family: cursive">[P1] Pliegue superior (mm):</label>
+								<input type="text" class="form-control" id="pliegueSuperior" name="pliegueSuperior" placeholder="pliegue superior" maxlength="4" style="font-family: cursive"/> 
+								<br>
+								
+								<label for="pliegueInferior" style="font-family: cursive">[P2] Pliegue inferior (mm):</label>
+								<input type="text" class="form-control" id="pliegueInferior" name="pliegueInferior" placeholder="Pliegue inferior" maxlength="4" style="font-family: cursive"/>
+								<br>
 								
 								<label for="alaLateral" style="font-family: cursive">[C1] Ala lateral (mm):</label>
 								<input type="text" class="form-control" id="alaLateral" name="alaLateral" placeholder="Ala lateral" maxlength="4" style="font-family: cursive"/> 
@@ -108,11 +119,6 @@
 								<input type="text" class="form-control" id="alaInferior" name="alaInferior" placeholder="Ala inferior" maxlength="4" style="font-family: cursive"/> 
 								<br>
 								
-								<label for="crearBotas" style="font-family: cursive"> ¿Colocar botas en el ala lateral? </label>
-								SI <input class="LuaButton" type="radio" id="crearBotas" name="crearBotas" value="1" checked="checked" /> 
-								NO <input class="LuaButton" type="radio" id="noCrearBotas" name="crearBotas" value="0"/> 
-								
-
 								
 							
 						   </div>
@@ -128,7 +134,7 @@
 		
 			<div class="panel panel-default">
 			
-				<div class="panel-heading" style="font-family: cursive;"><center><h4><strong>  Pliegues/Márgenes </strong></h4></center></div>
+				<div class="panel-heading" style="font-family: cursive;"><center><h4><strong>  Botas </strong></h4></center></div>
 				
 				
 				
@@ -138,19 +144,18 @@
 						
 							<div class="form-group" >
 							
-								<label for="pliegueInferior" style="font-family: cursive">[P2] Pliegue inferior (mm):</label>
-								<input type="text" class="form-control" id="pliegueInferior" name="pliegueInferior" placeholder="Pliegue inferior" maxlength="4" style="font-family: cursive"/>
-								<br>
-								
-							    <label for="pliegueSuperior" style="font-family: cursive">[P1] Pliegue superior (mm):</label>
-								<input type="text" class="form-control" id="pliegueSuperior" name="pliegueSuperior" placeholder="pliegue superior" maxlength="4" style="font-family: cursive"/> 
+								<center>
+							    <label for="crearBotas" style="font-family: cursive"> ¿Colocar botas? </label><br>
+								SI <input class="LuaButton" type="radio" id="crearBotas" name="crearBotas" value="1" checked="checked" /> 
+								NO <input class="LuaButton" type="radio" id="noCrearBotas" name="crearBotas" value="0"/> 
+								</center>
 								<br>
 
-								<label for="margenA" style="font-family: cursive">[M1] Margen botas superior (mm):</label>
+								<label for="margenA" style="font-family: cursive">[M1] Margen superior (mm):</label>
 								<input type="text" class="form-control" id="margenA" name="margenA" placeholder="Margen A" maxlength="4" style="font-family: cursive"/> 
 								<br>
 
-								<label for="margenB" style="font-family: cursive">[M2] Margen botas inferior (mm):</label>
+								<label for="margenB" style="font-family: cursive">[M2] Margen inferior (mm):</label>
 								<input type="text" class="form-control" id="margenB" name="margenB" placeholder="Margen B" maxlength="4" style="font-family: cursive"/> 
 								<br>
 								
