@@ -9,10 +9,63 @@
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/user.css" rel="stylesheet">
+	
+	<!-- Javascript -->
+	<script language='JavaScript' type='text/javascript'>
+
+    function check_value(fieldvalue)
+    {    
+		if (fieldvalue == 0){
+			document.getElementById("margenA").style.visibility="hidden"; <!--NO SE VE-->
+			document.getElementById("margenAtexto").style.visibility="hidden";
+			document.getElementById("margenB").style.visibility="hidden";
+			document.getElementById("margenBtexto").style.visibility="hidden";
+			document.getElementById("parametroBotasTexto").style.visibility="hidden";
+			document.getElementById("parametroBotas").style.visibility="hidden";
+			document.getElementById("parametroBotasNumero").style.visibility="hidden";
+			document.getElementById("porDistancia").style.visibility="hidden";
+			document.getElementById("porNumero").style.visibility="hidden";
+			document.getElementById("distanciaMaxima").style.visibility="hidden";
+			document.getElementById("distanciaEntreBotas").style.visibility="hidden";
+			document.getElementById("distanciaNumero").style.visibility="hidden";
+			document.getElementById("numeroBotas").style.visibility="hidden";
+		} else if (fieldvalue==1){
+			document.getElementById("margenA").style.visibility="visible"; <!--SE VE-->
+			document.getElementById("margenAtexto").style.visibility="visible";
+			document.getElementById("margenB").style.visibility="visible";
+			document.getElementById("margenBtexto").style.visibility="visible";
+			document.getElementById("parametroBotasTexto").style.visibility="visible";
+			document.getElementById("parametroBotas").style.visibility="visible";
+			document.getElementById("parametroBotasNumero").style.visibility="visible";
+			document.getElementById("porDistancia").style.visibility="visible";
+			document.getElementById("porNumero").style.visibility="visible";
+			document.getElementById("distanciaMaxima").style.visibility="visible";
+			document.getElementById("distanciaEntreBotas").style.visibility="visible";
+			document.getElementById("distanciaNumero").style.visibility="visible";
+			document.getElementById("numeroBotas").style.visibility="visible";
+		} else if (fieldvalue==2){
+			document.getElementById("distanciaNumero").style.visibility="hidden";
+			document.getElementById("numeroBotas").style.visibility="hidden";
+			document.getElementById("distanciaMaxima").style.visibility="visible";
+			document.getElementById("distanciaEntreBotas").style.visibility="visible";
+			
+		} else if (fieldvalue==3){
+			document.getElementById("distanciaMaxima").style.visibility="hidden";
+			document.getElementById("distanciaEntreBotas").style.visibility="hidden";
+			document.getElementById("distanciaNumero").style.visibility="visible";
+			document.getElementById("numeroBotas").style.visibility="visible";
+		}  
+    }
+	</script>
 
 
 
 </head>
+
+
+
+
+
 <body role="document">
 <div class="container-fluid">
 
@@ -142,33 +195,32 @@
 							    
 								<center>
 							    <label for="crearBotas" style="font-family: cursive"> ¿Colocar botas? </label><br>
-								SI <input class="LuaButton" type="radio" id="crearBotas" name="crearBotas" value="1" checked="checked" /> 
-								NO <input class="LuaButton" type="radio" id="noCrearBotas" name="crearBotas" value="0"/> 
+								SI <input class="LuaButton" type="radio" id="crearBotas" name="crearBotas" value="1" checked="checked" onclick='check_value(1)'/> 
+								NO <input class="LuaButton" type="radio" id="noCrearBotas" name="crearBotas" value="0" onclick='check_value(0)'/> 
 								</center>
 								<br>
-
-								<label for="margenA" style="font-family: cursive">[M1] Margen superior (mm):</label>
+								
+								<label for="margenA" id="margenAtexto" style="font-family: cursive">[M1]  Margen superior:</label>
 								<input type="text" class="form-control" id="margenA" name="margenA" placeholder="Margen A" maxlength="4" style="font-family: cursive"/> 
 								<br>
 
-								<label for="margenB" style="font-family: cursive">[M2] Margen inferior (mm):</label>
+								<label for="margenB" id="margenBtexto" style="font-family: cursive">[M2]  Margen inferior:</label>
 								<input type="text" class="form-control" id="margenB" name="margenB" placeholder="Margen B" maxlength="4" style="font-family: cursive"/> 
 								<br>
 								
-								<label for="parametroBotas" style="font-family: cursive"> Distancia entre botas: </label><br>
-								Por distancia maxima <input class="LuaButton" type="radio" id="parametroBotas" name="parametroBotas" value="1" checked="checked" /> <br>
-								Por numero de botas <input class="LuaButton" type="radio" id="parametroBotasNumero" name="parametroBotas" value="0"/> 
-								<br><br>
+								<label for="parametroBotas" id="parametroBotasTexto" style="font-family: cursive"> Distancia entre botas: </label><br>
+								<label for="parametroBotas" id="porDistancia" style="font-family: normal"> Por distancia máxima</label>
+									<input class="LuaButton" type="radio" id="parametroBotas" name="parametroBotas" value="1" onclick='check_value(2)'/>
+								<label for="parametroBotas" id="porNumero" style="font-family: normal"> Por número de botas </label>
+									<input class="LuaButton" type="radio" id="parametroBotasNumero" name="parametroBotas" value="0" onclick='check_value(3)'/> 
+								<br><br> 
 								
-								<label for="distanciaEntreBotas" style="font-family: cursive"> Distancia máxima entre botas:</label>
+								<label for="distanciaEntreBotas" id="distanciaMaxima" style="font-family: cursive"> Distancia máxima entre botas:</label>
 								<input type="text" class="form-control" id="distanciaEntreBotas" name="distanciaEntreBotas" placeholder="distancia Entre Botas" maxlength="7" style="font-family: cursive"/> 
 								<br>
 								
-								<label for="numeroBotas" style="font-family: cursive"> Número de botas (uds):</label>
+								<label for="numeroBotas"  id="distanciaNumero" style="font-family: cursive"> Número de botas:</label>
 								<input type="text" class="form-control" id="numeroBotas" name="numeroBotas" placeholder="numero Botas" maxlength="7" style="font-family: cursive"/> 
-
-
-
 								
 							
 						   </div>

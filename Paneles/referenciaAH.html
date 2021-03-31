@@ -16,11 +16,8 @@
 	<!-- Javascript -->
 	<script language='JavaScript' type='text/javascript'>
 
-
-
     function check_value(fieldvalue)
     {    
-		
 		if (fieldvalue == 0){
 			document.getElementById("margenA").style.visibility="hidden"; <!--NO SE VE-->
 			document.getElementById("margenAtexto").style.visibility="hidden";
@@ -60,10 +57,7 @@
 			document.getElementById("distanciaEntreBotas").style.visibility="hidden";
 			document.getElementById("distanciaNumero").style.visibility="visible";
 			document.getElementById("numeroBotas").style.visibility="visible";
-		}
-		
-		
-        
+		}  
     }
 	</script>
 
@@ -206,6 +200,7 @@
 					
 						
 							<div class="form-group" >
+								
 								<center>
 							    <label for="crearBotas" style="font-family: cursive"> ¿Colocar botas? </label><br>
 								SI <input class="LuaButton" type="radio" id="crearBotas" name="crearBotas" value="1" checked="checked" onclick='check_value(1)'/> 
@@ -222,9 +217,9 @@
 								<br>
 								
 								<label for="parametroBotas" id="parametroBotasTexto" style="font-family: cursive"> Distancia entre botas: </label><br>
-								<label for="parametroBotas" id="porDistancia" style="font-family: normal"> Por distancia máxima</label>
+								<label for="parametroBotas" id="porDistancia" style="font-family: cursive"> -Por distancia máxima</label>
 									<input class="LuaButton" type="radio" id="parametroBotas" name="parametroBotas" value="1" onclick='check_value(2)'/>
-								<label for="parametroBotas" id="porNumero" style="font-family: normal"> Por numero de botas </label>
+								<label for="parametroBotas" id="porNumero" style="font-family: cursive"> -Por número de botas </label>
 									<input class="LuaButton" type="radio" id="parametroBotasNumero" name="parametroBotas" value="0" onclick='check_value(3)'/> 
 								<br><br> 
 								
