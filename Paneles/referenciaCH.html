@@ -87,6 +87,8 @@
 				
 										
 					     <center><input type="image" src="images/REF_CHcotas.jpg" alt='ReferenciaAH' width='629' height='338'/></center>
+						 
+						 <label for="textoDescriptivo" style="font-family: cursive"> *Todas las dimensiones deben ir en milimetros (mm)</label>
 						
 									
 										
@@ -114,7 +116,7 @@
 						
 							<div class="form-group" >
 
-								<label for="textoDescriptivo" style="font-family: cursive"> Nombre de la placa (texto):</label>
+								<label for="textoDescriptivo" style="font-family: cursive"> Nombre de la placa:</label>
 								<input type="text" class="form-control" id="textoDescriptivo" name="textoDescriptivo" placeholder="Nombre de la placa" style="font-family: cursive"/> 
 								<br>
 
@@ -123,19 +125,19 @@
 
 								<br>
 								
-								<label for="alturaPlaca" style="font-family: cursive" >[A] Altura Placa (mm):</label>
+								<label for="alturaPlaca" style="font-family: cursive" >[A] Altura Placa:</label>
 								<input type="text" class="form-control" id="alturaPlaca" name="alturaPlacaAH" placeholder="Altura Placa" maxlength="7" style="font-family: cursive"/>
 								<br>
 								
-								<label for="anchuraPlacaIzquierda" style="font-family: cursive">[B1] Anchura placa Izquierda (mm):</label>
+								<label for="anchuraPlacaIzquierda" style="font-family: cursive">[B1] Anchura placa Izquierda:</label>
 								<input type="text" class="form-control" id="anchuraPlacaIzquierda" name="anchuraPlacaIzquierda" placeholder="Anchura placa Izquierda" maxlength="8" style="font-family: cursive"/> 
 								<br>
 								
-								<label for="anchuraPlacaCentro" style="font-family: cursive">[B2] Anchura placa Centro (mm):</label>
+								<label for="anchuraPlacaCentro" style="font-family: cursive">[B2] Anchura placa Centro:</label>
 								<input type="text" class="form-control" id="anchuraPlacaCentro" name="anchuraPlacaCentro" placeholder="Anchura placa Centro" maxlength="8" style="font-family: cursive"/> 
 								<br>
 								
-								<label for="anchuraPlacaDerecha" style="font-family: cursive">[B3] Anchura placa Derecha (mm):</label>
+								<label for="anchuraPlacaDerecha" style="font-family: cursive">[B3] Anchura placa Derecha:</label>
 								<input type="text" class="form-control" id="anchuraPlacaDerecha" name="anchuraPlacaDerecha" placeholder="Anchura placa Derecha" maxlength="8" style="font-family: cursive"/> 
 								
 
@@ -163,19 +165,19 @@
 						
 							<div class="form-group" >
 
-								<label for="pliegueSuperior" style="font-family: cursive">[P1] Pliegue superior (mm):</label>
+								<label for="pliegueSuperior" style="font-family: cursive">[P1] Pliegue superior:</label>
 								<input type="text" class="form-control" id="pliegueSuperior" name="pliegueSuperior" placeholder="pliegue superior" maxlength="4" style="font-family: cursive"/>
 								<br>
 							
-								<label for="alaLateral" style="font-family: cursive">[C1] Ala lateral (mm):</label>
+								<label for="alaLateral" style="font-family: cursive">[C1] Ala lateral:</label>
 								<input type="text" class="form-control" id="alaLateral" name="alaLateral" placeholder="Ala lateral" maxlength="4" style="font-family: cursive"/> 
 								<br>
 								
-							    <label for="alaSuperior" style="font-family: cursive">[C2] Ala superior (mm):</label>
+							    <label for="alaSuperior" style="font-family: cursive">[C2] Ala superior:</label>
 								<input type="text" class="form-control" id="alaSuperior" name="alaSuperior" placeholder="Ala superior" maxlength="4" style="font-family: cursive"/> 
 								<br>
 
-								<label for="alaInferior" style="font-family: cursive">[C3] Ala inferior (mm):</label>
+								<label for="alaInferior" style="font-family: cursive">[C3] Ala inferior:</label>
 								<input type="text" class="form-control" id="alaInferior" name="alaInferior" placeholder="Ala inferior" maxlength="4" style="font-family: cursive"/> 
 								
 
@@ -221,9 +223,9 @@
 								<br>
 								
 								<label for="parametroBotas" id="parametroBotasTexto" style="font-family: cursive"> Distancia entre botas: </label><br>
-								<label for="parametroBotas" id="porDistancia" style="font-family: normal"> Por distancia máxima</label>
+								<label for="parametroBotas" id="porDistancia" style="font-family: cursive"> -Por distancia máxima</label>
 									<input class="LuaButton" type="radio" id="parametroBotas" name="parametroBotas" value="1" onclick='check_value(2)'/>
-								<label for="parametroBotas" id="porNumero" style="font-family: normal"> Por número de botas </label>
+								<label for="parametroBotas" id="porNumero" style="font-family: cursive"> -Por número de botas </label>
 									<input class="LuaButton" type="radio" id="parametroBotasNumero" name="parametroBotas" value="0" onclick='check_value(3)'/> 
 								<br><br> 
 								
@@ -266,11 +268,11 @@
 								<input class="LuaButton" type="checkbox" id="dibujarColisos" name="dibujo" value="inactive"/>
 								<br><br>
 								
-							    <label for="diametroTaladros" style="font-family: cursive"> Diámetro Taladros (mm):</label>
+							    <label for="diametroTaladros" style="font-family: cursive"> Diámetro Taladros:</label>
 								<input type="text" class="form-control" id="diametroTaladros" name="diametroTaladros" placeholder="Diámetro taladros" maxlength="4" style="font-family: cursive"/> 
 								<br>
 								
-								<label for="anchuraColiso" style="font-family: cursive"> Anchura de los colisos (mm):</label>
+								<label for="anchuraColiso" style="font-family: cursive"> Anchura de los colisos:</label>
 								<input type="text" class="form-control" id="anchuraColiso" name="anchuraColiso" placeholder="Anchura de los colisos" maxlength="4" style="font-family: cursive"/> 
 								
 								

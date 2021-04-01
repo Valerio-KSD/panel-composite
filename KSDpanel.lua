@@ -12,7 +12,7 @@ carpeta="Paneles"
 
 --DisplayMessageBox("La ruta es: " .. ruta_carpeta.. "" .. carpeta .. "")
 
-remoto=0 --Esto es para que los archivos html se lean en remoto (https://...) o en local (file:/...)
+remoto=1 --Esto es para que los archivos html se lean en remoto (https://...) o en local (file:/...)
 --1=remoto
 --0=local
 
@@ -20,7 +20,7 @@ remoto=0 --Esto es para que los archivos html se lean en remoto (https://...) o 
 ---------------------------------------------------------------
 ---------------------------------------------------------------
 
-
+ 
 
 
 --Margen mecanizado
@@ -523,6 +523,8 @@ function OnLuaButton_ref012()
 	modelo=112
   return true
 end
+
+
 function OnLuaButton_ref013()
 	modelo=113
   return true
@@ -2037,8 +2039,8 @@ function OnLuaButton_aceptarBH(modeloBH)
 	else
 		
 		--Para que la pieza apareza fuera del area de trabajo
-			origenX=-(alaDerecha+anchura1+anchura2+alaIzquierda+400)
-			origenY=400
+			--origenX=-(alaDerecha+anchura1+anchura2+alaIzquierda+400)
+			--origenY=400
 		
 		--Para dibujar la pieza
 			dibujarFresadoBH(doc)
@@ -3451,9 +3453,38 @@ function OnLuaButton_modelo000(framePrincipal)
 		end
 		
 		
-		local modelo000 = HTML_Dialog(false, html_path, tamX, tamY, "BANDEJA CLIENTES 004")
+		local modelo000 = HTML_Dialog(false, html_path, tamX, tamY, "BANDEJA CLIENTES 005")
 		
-		textoDescriptivo="BANDEJA 004"
+		textoDescriptivo="BANDEJA 005"
+		alturaPlaca=500 anchuraPlaca=1000 margenL=565.4093		
+		alaSuperior=45 alaInferior=45 alaIzquierda=45 alaDerecha=45 pliegueSuperior=45  
+		
+        modelo000:AddTextField("textoDescriptivo", textoDescriptivo)
+		modelo000:AddDoubleField("alturaPlaca", alturaPlaca)
+		modelo000:AddDoubleField("anchuraPlaca", anchuraPlaca)
+		modelo000:AddDoubleField("margenL", margenL)
+		modelo000:AddDoubleField("alaSuperior", alaSuperior)
+		modelo000:AddDoubleField("alaInferior", alaInferior)
+		modelo000:AddDoubleField("alaIzquierda", alaIzquierda)
+		modelo000:AddDoubleField("alaDerecha", alaDerecha)
+		modelo000:AddDoubleField("pliegueSuperior", pliegueSuperior)
+		
+	    if  not modelo000:ShowDialog() then
+				return false;
+		end
+	
+	elseif modelo == 106 then  --EN CONSTRUCCION--------------------------------------------------------------------------------------------------------
+		local html_path
+		if remoto==1 then
+			html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referencia006.html"
+		else
+			html_path = "file:" .. ruta .. "\\Paneles\\referencia006.html"
+		end
+		
+		
+		local modelo000 = HTML_Dialog(false, html_path, tamX, tamY, "BANDEJA CLIENTES 006")
+		
+		textoDescriptivo="BANDEJA 006"
 		alturaPlaca=500 anchuraPlaca=1000 margenL=565.4093		
 		alaSuperior=45 alaInferior=45 alaIzquierda=45 alaDerecha=45 pliegueSuperior=45  
 		
@@ -3471,6 +3502,199 @@ function OnLuaButton_modelo000(framePrincipal)
 	    if  not modelo000:ShowDialog() then
 				return false;
 		end
+	elseif modelo == 107 then 
+		local html_path
+		if remoto==1 then
+			--html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referencia007.html"
+		else
+			html_path = "file:" .. ruta .. "\\Paneles\\referencia007.html"
+		end
+		
+		
+		local modelo000 = HTML_Dialog(false, html_path, tamX, tamY, "BANDEJA CLIENTES 007")
+		
+		textoDescriptivo="BANDEJA 007"
+		alturaPlaca=500 anchura1=55 anchura2=150 anchura3=330 anchura4=640
+		alaSuperior=45 alaInferior=45  pliegueSuperior=45  
+		
+        modelo000:AddTextField("textoDescriptivo", textoDescriptivo)
+		
+		modelo000:AddDoubleField("alturaPlaca", alturaPlaca)
+		modelo000:AddDoubleField("anchura1", anchura1)
+		modelo000:AddDoubleField("anchura2", anchura2)
+		modelo000:AddDoubleField("anchura3", anchura3)
+		modelo000:AddDoubleField("anchura4", anchura4)
+		
+		modelo000:AddDoubleField("alaSuperior", alaSuperior)
+		modelo000:AddDoubleField("alaInferior", alaInferior)
+		
+		modelo000:AddDoubleField("pliegueSuperior", pliegueSuperior)
+		
+	    if  not modelo000:ShowDialog() then
+				return false;
+		end
+	
+	elseif modelo == 108 then 
+		local html_path
+		if remoto==1 then
+			--html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referencia008.html"
+		else
+			html_path = "file:" .. ruta .. "\\Paneles\\referencia008.html"
+		end
+		
+		
+		local modelo000 = HTML_Dialog(false, html_path, tamX, tamY, "BANDEJA CLIENTES 008")
+		
+		textoDescriptivo="BANDEJA 008"
+		alturaPlaca=500 anchura1=55 anchura2=150 anchura3=330 anchura4=640
+		alaSuperior=45 alaInferior=45  pliegueSuperior=45  
+		
+        modelo000:AddTextField("textoDescriptivo", textoDescriptivo)
+		
+		modelo000:AddDoubleField("alturaPlaca", alturaPlaca)
+		modelo000:AddDoubleField("anchura1", anchura1)
+		modelo000:AddDoubleField("anchura2", anchura2)
+		modelo000:AddDoubleField("anchura3", anchura3)
+		modelo000:AddDoubleField("anchura4", anchura4)
+		
+		modelo000:AddDoubleField("alaSuperior", alaSuperior)
+		modelo000:AddDoubleField("alaInferior", alaInferior)
+		
+		modelo000:AddDoubleField("pliegueSuperior", pliegueSuperior)
+		
+	    if  not modelo000:ShowDialog() then
+				return false;
+		end
+		
+	elseif modelo == 109 then 
+		local html_path
+		if remoto==1 then
+			--html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referencia009.html"
+		else
+			html_path = "file:" .. ruta .. "\\Paneles\\referencia009.html"
+		end
+		
+		
+		local modelo000 = HTML_Dialog(false, html_path, tamX, tamY, "BANDEJA CLIENTES 009")
+		
+		textoDescriptivo="BANDEJA 009"
+		alturaPlaca=500 anchura1=55 anchura2=150 anchura3=330 anchura4=640
+		alaSuperior=45 alaInferior=45  pliegueSuperior=45  
+		
+        modelo000:AddTextField("textoDescriptivo", textoDescriptivo)
+		
+		modelo000:AddDoubleField("alturaPlaca", alturaPlaca)
+		modelo000:AddDoubleField("anchura1", anchura1)
+		modelo000:AddDoubleField("anchura2", anchura2)
+		modelo000:AddDoubleField("anchura3", anchura3)
+		modelo000:AddDoubleField("anchura4", anchura4)
+		
+		modelo000:AddDoubleField("alaSuperior", alaSuperior)
+		modelo000:AddDoubleField("alaInferior", alaInferior)
+		
+		modelo000:AddDoubleField("pliegueSuperior", pliegueSuperior)
+		
+	    if  not modelo000:ShowDialog() then
+				return false;
+		end
+		
+	elseif modelo == 110 then 
+		local html_path
+		if remoto==1 then
+			--html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referencia010.html"
+		else
+			html_path = "file:" .. ruta .. "\\Paneles\\referencia010.html"
+		end
+		
+		
+		local modelo000 = HTML_Dialog(false, html_path, tamX, tamY, "BANDEJA CLIENTES 010")
+		
+		textoDescriptivo="BANDEJA 010"
+		alturaPlaca=500 anchura1=55 anchura2=150 anchura3=330 anchura4=640
+		alaSuperior=45 alaInferior=45  pliegueSuperior=45  
+		
+        modelo000:AddTextField("textoDescriptivo", textoDescriptivo)
+		
+		modelo000:AddDoubleField("alturaPlaca", alturaPlaca)
+		modelo000:AddDoubleField("anchura1", anchura1)
+		modelo000:AddDoubleField("anchura2", anchura2)
+		modelo000:AddDoubleField("anchura3", anchura3)
+		modelo000:AddDoubleField("anchura4", anchura4)
+		
+		modelo000:AddDoubleField("alaSuperior", alaSuperior)
+		modelo000:AddDoubleField("alaInferior", alaInferior)
+		
+		modelo000:AddDoubleField("pliegueSuperior", pliegueSuperior)
+		
+	    if  not modelo000:ShowDialog() then
+				return false;
+		end
+		
+	elseif modelo == 111 then 
+		local html_path
+		if remoto==1 then
+			--html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referencia011.html"
+		else
+			html_path = "file:" .. ruta .. "\\Paneles\\referencia011.html"
+		end
+		
+		
+		local modelo000 = HTML_Dialog(false, html_path, tamX, tamY, "BANDEJA CLIENTES 011")
+		
+		textoDescriptivo="BANDEJA 011"
+		alturaPlaca=500 anchura1=55 anchura2=150 anchura3=330 anchura4=640
+		alaSuperior=45 alaInferior=45  pliegueSuperior=45  
+		
+        modelo000:AddTextField("textoDescriptivo", textoDescriptivo)
+		
+		modelo000:AddDoubleField("alturaPlaca", alturaPlaca)
+		modelo000:AddDoubleField("anchura1", anchura1)
+		modelo000:AddDoubleField("anchura2", anchura2)
+		modelo000:AddDoubleField("anchura3", anchura3)
+		modelo000:AddDoubleField("anchura4", anchura4)
+		
+		modelo000:AddDoubleField("alaSuperior", alaSuperior)
+		modelo000:AddDoubleField("alaInferior", alaInferior)
+		
+		modelo000:AddDoubleField("pliegueSuperior", pliegueSuperior)
+		
+	    if  not modelo000:ShowDialog() then
+				return false;
+		end
+		
+	elseif modelo == 112 then 
+		local html_path
+		if remoto==1 then
+			--html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referencia012.html"
+		else
+			html_path = "file:" .. ruta .. "\\Paneles\\referencia012.html"
+		end
+		
+		
+		local modelo000 = HTML_Dialog(false, html_path, tamX, tamY, "BANDEJA CLIENTES 012")
+		
+		textoDescriptivo="BANDEJA 012"
+		alturaPlaca=500 anchura1=55 anchura2=150 anchura3=330 anchura4=640
+		alaSuperior=45 alaInferior=45  pliegueSuperior=45  
+		
+        modelo000:AddTextField("textoDescriptivo", textoDescriptivo)
+		
+		modelo000:AddDoubleField("alturaPlaca", alturaPlaca)
+		modelo000:AddDoubleField("anchura1", anchura1)
+		modelo000:AddDoubleField("anchura2", anchura2)
+		modelo000:AddDoubleField("anchura3", anchura3)
+		modelo000:AddDoubleField("anchura4", anchura4)
+		
+		modelo000:AddDoubleField("alaSuperior", alaSuperior)
+		modelo000:AddDoubleField("alaInferior", alaInferior)
+		
+		modelo000:AddDoubleField("pliegueSuperior", pliegueSuperior)
+		
+	    if  not modelo000:ShowDialog() then
+				return false;
+		end
+		
+	
 	end
 	
 end
@@ -3618,6 +3842,121 @@ function OnLuaButton_aceptar000(modelo000)
 		dibujarCorte006(doc)
 		
 		DisplayMessageBox("MODELO 006 CREADO CORRECTAMENTE")
+	
+	elseif modelo==107 then  --PIEZA ESPECIAL 007
+		
+		textoDescriptivo = modelo000:GetTextField("textoDescriptivo")
+		alturaPlaca = modelo000:GetDoubleField("alturaPlaca")
+		anchura1 = modelo000:GetDoubleField("anchura1")
+		anchura2 = modelo000:GetDoubleField("anchura2")
+		anchura3 = modelo000:GetDoubleField("anchura3")
+		anchura4 = modelo000:GetDoubleField("anchura4")
+		
+		alaSuperior = modelo000:GetDoubleField("alaSuperior")
+		alaInferior = modelo000:GetDoubleField("alaInferior")
+		
+		pliegueSuperior = modelo000:GetDoubleField("pliegueSuperior")
+		
+		dibujarFresado007(doc)
+		dibujarCorte007(doc)
+		
+		DisplayMessageBox("MODELO 007 CREADO CORRECTAMENTE")
+		
+	elseif modelo==108 then  --PIEZA ESPECIAL 008
+		
+		textoDescriptivo = modelo000:GetTextField("textoDescriptivo")
+		alturaPlaca = modelo000:GetDoubleField("alturaPlaca")
+		anchura1 = modelo000:GetDoubleField("anchura1")
+		anchura2 = modelo000:GetDoubleField("anchura2")
+		anchura3 = modelo000:GetDoubleField("anchura3")
+		anchura4 = modelo000:GetDoubleField("anchura4")
+		
+		alaSuperior = modelo000:GetDoubleField("alaSuperior")
+		alaInferior = modelo000:GetDoubleField("alaInferior")
+		
+		pliegueSuperior = modelo000:GetDoubleField("pliegueSuperior")
+		
+		dibujarFresado008(doc)
+		dibujarCorte008(doc)
+		
+		DisplayMessageBox("MODELO 008 CREADO CORRECTAMENTE")
+	
+	elseif modelo==109 then  --PIEZA ESPECIAL 009
+		
+		textoDescriptivo = modelo000:GetTextField("textoDescriptivo")
+		alturaPlaca = modelo000:GetDoubleField("alturaPlaca")
+		anchura1 = modelo000:GetDoubleField("anchura1")
+		anchura2 = modelo000:GetDoubleField("anchura2")
+		anchura3 = modelo000:GetDoubleField("anchura3")
+		anchura4 = modelo000:GetDoubleField("anchura4")
+		
+		alaSuperior = modelo000:GetDoubleField("alaSuperior")
+		alaInferior = modelo000:GetDoubleField("alaInferior")
+		
+		pliegueSuperior = modelo000:GetDoubleField("pliegueSuperior")
+		
+		dibujarFresado009(doc)
+		dibujarCorte009(doc)
+		
+		DisplayMessageBox("MODELO 009 CREADO CORRECTAMENTE")
+		
+	elseif modelo==110 then  --PIEZA ESPECIAL 010
+		
+		textoDescriptivo = modelo000:GetTextField("textoDescriptivo")
+		alturaPlaca = modelo000:GetDoubleField("alturaPlaca")
+		anchura1 = modelo000:GetDoubleField("anchura1")
+		anchura2 = modelo000:GetDoubleField("anchura2")
+		anchura3 = modelo000:GetDoubleField("anchura3")
+		anchura4 = modelo000:GetDoubleField("anchura4")
+		
+		alaSuperior = modelo000:GetDoubleField("alaSuperior")
+		alaInferior = modelo000:GetDoubleField("alaInferior")
+		
+		pliegueSuperior = modelo000:GetDoubleField("pliegueSuperior")
+		
+		dibujarFresado010(doc)
+		dibujarCorte010(doc)
+		
+		DisplayMessageBox("MODELO 010 CREADO CORRECTAMENTE")
+		
+	elseif modelo==111 then  --PIEZA ESPECIAL 011
+		
+		textoDescriptivo = modelo000:GetTextField("textoDescriptivo")
+		alturaPlaca = modelo000:GetDoubleField("alturaPlaca")
+		anchura1 = modelo000:GetDoubleField("anchura1")
+		anchura2 = modelo000:GetDoubleField("anchura2")
+		anchura3 = modelo000:GetDoubleField("anchura3")
+		anchura4 = modelo000:GetDoubleField("anchura4")
+		
+		alaSuperior = modelo000:GetDoubleField("alaSuperior")
+		alaInferior = modelo000:GetDoubleField("alaInferior")
+		
+		pliegueSuperior = modelo000:GetDoubleField("pliegueSuperior")
+		
+		dibujarFresado011(doc)
+		dibujarCorte011(doc)
+		
+		DisplayMessageBox("MODELO 011 CREADO CORRECTAMENTE")
+		
+	elseif modelo==112 then  --PIEZA ESPECIAL 012
+		
+		textoDescriptivo = modelo000:GetTextField("textoDescriptivo")
+		alturaPlaca = modelo000:GetDoubleField("alturaPlaca")
+		anchura1 = modelo000:GetDoubleField("anchura1")
+		anchura2 = modelo000:GetDoubleField("anchura2")
+		anchura3 = modelo000:GetDoubleField("anchura3")
+		anchura4 = modelo000:GetDoubleField("anchura4")
+		
+		alaSuperior = modelo000:GetDoubleField("alaSuperior")
+		alaInferior = modelo000:GetDoubleField("alaInferior")
+		
+		pliegueSuperior = modelo000:GetDoubleField("pliegueSuperior")
+		
+		dibujarFresado012(doc)
+		dibujarCorte012(doc)
+		
+		DisplayMessageBox("MODELO 012 CREADO CORRECTAMENTE")
+		
 	
 	end
 
@@ -10847,7 +11186,310 @@ end
 
 
 
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------ DIBUJAR BANDEJAS CLIENTES PERSONALIZADAS ----------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------- [REFERENCIA 007] -----------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+
+
+function dibujarFresado007(doc)
+	
+	
+	--Puntos trayectoria 
+	local Contour = Contour(0.0)
+	
+	local fresado1 = Point2D(origenX,origenY+alaInferior)
+	local fresado2 = Point2D(origenX+anchura1,origenY+alaInferior)
+	local fresado3 = Point2D(origenX+anchura1+anchura2,origenY+alaInferior)
+	local fresado4 = Point2D(origenX+anchura1+anchura2+anchura3,origenY+alaInferior)
+	local fresado5 = Point2D(origenX+anchura1+anchura2+anchura3+anchura4,origenY+alaInferior)
+	local fresado6 = Point2D(origenX+anchura1+anchura2+anchura3+anchura4+anchura5,origenY+alaInferior)
+	local fresado7 = Point2D(origenX+anchura1+anchura2+anchura3+anchura4+anchura5+anchura6,origenY+alaInferior)
+	local fresado8 = Point2D(origenX+anchura1+anchura2+anchura3+anchura4+anchura5+anchura6+anchura7,origenY+alaInferior)
+	local fresado9 = Point2D(origenX,origenY+alaInferior+alturaPlaca)
+	local fresado10 = Point2D(origenX+anchura1,origenY+alaInferior+alturaPlaca)
+	local fresado11 = Point2D(origenX+anchura1+anchura2,origenY+alaInferior+alturaPlaca)
+	local fresado12 = Point2D(origenX+anchura1+anchura2+anchura3,origenY+alaInferior+alturaPlaca)
+	local fresado13 = Point2D(origenX+anchura1+anchura2+anchura3+anchura4,origenY+alaInferior+alturaPlaca)
+	local fresado14 = Point2D(origenX+anchura1+anchura2+anchura3+anchura4+anchura5,origenY+alaInferior+alturaPlaca)
+	local fresado15 = Point2D(origenX+anchura1+anchura2+anchura3+anchura4+anchura5+anchura6,origenY+alaInferior+alturaPlaca)
+	local fresado16 = Point2D(origenX+anchura1+anchura2+anchura3+anchura4+anchura5+anchura6+anchura7,origenY+alaInferior+alturaPlaca)
+	dibujarFresado_auxiliar(doc,fresado1,fresado8)
+	dibujarFresado_auxiliar(doc,fresado9,fresado16)
+	dibujarFresado_auxiliar(doc,fresado2,fresado10)
+	dibujarFresado_auxiliar(doc,fresado3,fresado11)
+	dibujarFresado_auxiliar(doc,fresado4,fresado12)
+	dibujarFresado_auxiliar(doc,fresado5,fresado13)
+	dibujarFresado_auxiliar(doc,fresado6,fresado14)
+	dibujarFresado_auxiliar(doc,fresado7,fresado15)
+	
+	
+	--anchura1
+	if anchura1>pliegueSuperior then
+		local fresado17 = Point2D(origenX,origenY+alaInferior+alturaPlaca+pliegueSuperior)
+		local fresado18 = Point2D(origenX+anchura1-pliegueSuperior,origenY+alaInferior+alturaPlaca+pliegueSuperior)
+		dibujarFresado_auxiliar(doc,fresado17,fresado18)
+		local fresado19 = Point2D(origenX+anchura1-pliegueSuperior+margenFresado,origenY+alaInferior+alturaPlaca+pliegueSuperior)
+		local fresado20 = Point2D(origenX+anchura1-pliegueSuperior+margenFresado,origenY+alaInferior+alturaPlaca+pliegueSuperior+alaSuperior)
+		dibujarFresado_auxiliar(doc,fresado19,fresado20)
+	end
+	
+	
+	--anchura2
+	if anchura2>pliegueSuperior*2 then
+		local fresado22 = Point2D(origenX+anchura1+pliegueSuperior-margenFresado,origenY+alaInferior+alturaPlaca+pliegueSuperior)
+		local fresado21 = Point2D(origenX+anchura1+pliegueSuperior-margenFresado,origenY+alaInferior+alturaPlaca+pliegueSuperior+alaSuperior)
+		dibujarFresado_auxiliar(doc,fresado21,fresado22)
+		local fresado23 = Point2D(origenX+anchura1+pliegueSuperior,origenY+alaInferior+alturaPlaca+pliegueSuperior)
+		local fresado24 = Point2D(origenX+anchura1+anchura2-pliegueSuperior,origenY+alaInferior+alturaPlaca+pliegueSuperior)
+		dibujarFresado_auxiliar(doc,fresado23,fresado24)
+		local fresado25 = Point2D(origenX+anchura1+anchura2-pliegueSuperior+margenFresado,origenY+alaInferior+alturaPlaca+pliegueSuperior)
+		local fresado26 = Point2D(origenX+anchura1+anchura2-pliegueSuperior+margenFresado,origenY+alaInferior+alturaPlaca+pliegueSuperior+alaSuperior)
+		dibujarFresado_auxiliar(doc,fresado25,fresado26)
+	end
+	
+	
+	--anchura3
+	if anchura3>pliegueSuperior*2 then
+		local fresado28 = Point2D(origenX+anchura1+anchura2+pliegueSuperior-margenFresado,origenY+alaInferior+alturaPlaca+pliegueSuperior)
+		local fresado27 = Point2D(origenX+anchura1+anchura2+pliegueSuperior-margenFresado,origenY+alaInferior+alturaPlaca+pliegueSuperior+alaSuperior)
+		dibujarFresado_auxiliar(doc,fresado28,fresado27)
+		local fresado29 = Point2D(origenX+anchura1+anchura2+pliegueSuperior,origenY+alaInferior+alturaPlaca+pliegueSuperior)
+		local fresado30 = Point2D(origenX+anchura1+anchura2+anchura3-pliegueSuperior,origenY+alaInferior+alturaPlaca+pliegueSuperior)
+		dibujarFresado_auxiliar(doc,fresado29,fresado30)
+		local fresado31 = Point2D(origenX+anchura1+anchura2+anchura3-pliegueSuperior+margenFresado,origenY+alaInferior+alturaPlaca+pliegueSuperior)
+		local fresado32 = Point2D(origenX+anchura1+anchura2+anchura3-pliegueSuperior+margenFresado,origenY+alaInferior+alturaPlaca+pliegueSuperior+alaSuperior)
+		dibujarFresado_auxiliar(doc,fresado31,fresado32)	
+	end
+	
+	
+	--anchura4
+	if anchura4>pliegueSuperior*2 then
+		local fresado34 = Point2D(origenX+anchura1+anchura2+anchura3+pliegueSuperior-margenFresado,origenY+alaInferior+alturaPlaca+pliegueSuperior)
+		local fresado33 = Point2D(origenX+anchura1+anchura2+anchura3+pliegueSuperior-margenFresado,origenY+alaInferior+alturaPlaca+pliegueSuperior+alaSuperior)
+		dibujarFresado_auxiliar(doc,fresado33,fresado34)
+		local fresado35 = Point2D(origenX+anchura1+anchura2+anchura3+pliegueSuperior,origenY+alaInferior+alturaPlaca+pliegueSuperior)
+		local fresado36 = Point2D(origenX+anchura1+anchura2+anchura3+anchura4-pliegueSuperior,origenY+alaInferior+alturaPlaca+pliegueSuperior)
+		dibujarFresado_auxiliar(doc,fresado35,fresado36)
+		local fresado37 = Point2D(origenX+anchura1+anchura2+anchura3+anchura4-pliegueSuperior+margenFresado,origenY+alaInferior+alturaPlaca+pliegueSuperior)
+		local fresado38 = Point2D(origenX+anchura1+anchura2+anchura3+anchura4-pliegueSuperior+margenFresado,origenY+alaInferior+alturaPlaca+pliegueSuperior+alaSuperior)
+		dibujarFresado_auxiliar(doc,fresado37,fresado38)	
+	end
+	
+	
+	--anchura5
+	if anchura5>pliegueSuperior*2 then
+		local fresado40 = Point2D(origenX+anchura1+anchura2+anchura3+anchura4+pliegueSuperior-margenFresado,origenY+alaInferior+alturaPlaca+pliegueSuperior)
+		local fresado39 = Point2D(origenX+anchura1+anchura2+anchura3+anchura4+pliegueSuperior-margenFresado,origenY+alaInferior+alturaPlaca+pliegueSuperior+alaSuperior)
+		dibujarFresado_auxiliar(doc,fresado39,fresado40)
+		local fresado41 = Point2D(origenX+anchura1+anchura2+anchura3+anchura4+pliegueSuperior,origenY+alaInferior+alturaPlaca+pliegueSuperior)
+		local fresado42 = Point2D(origenX+anchura1+anchura2+anchura3+anchura4+anchura5-pliegueSuperior,origenY+alaInferior+alturaPlaca+pliegueSuperior)
+		dibujarFresado_auxiliar(doc,fresado41,fresado42)
+		local fresado43 = Point2D(origenX+anchura1+anchura2+anchura3+anchura4+anchura5-pliegueSuperior+margenFresado,origenY+alaInferior+alturaPlaca+pliegueSuperior)
+		local fresado44 = Point2D(origenX+anchura1+anchura2+anchura3+anchura4+anchura5-pliegueSuperior+margenFresado,origenY+alaInferior+alturaPlaca+pliegueSuperior+alaSuperior)
+		dibujarFresado_auxiliar(doc,fresado43,fresado44)	
+	end
+	
+	
+	--anchura6
+	if anchura6>pliegueSuperior*2 then
+		local fresado46 = Point2D(origenX+anchura1+anchura2+anchura3+anchura4+anchura5+pliegueSuperior-margenFresado,origenY+alaInferior+alturaPlaca+pliegueSuperior)
+		local fresado45 = Point2D(origenX+anchura1+anchura2+anchura3+anchura4+anchura5+pliegueSuperior-margenFresado,origenY+alaInferior+alturaPlaca+pliegueSuperior+alaSuperior)
+		dibujarFresado_auxiliar(doc,fresado45,fresado46)
+		local fresado47 = Point2D(origenX+anchura1+anchura2+anchura3+anchura4+anchura5+pliegueSuperior,origenY+alaInferior+alturaPlaca+pliegueSuperior)
+		local fresado48 = Point2D(origenX+anchura1+anchura2+anchura3+anchura4+anchura5+anchura6-pliegueSuperior,origenY+alaInferior+alturaPlaca+pliegueSuperior)
+		dibujarFresado_auxiliar(doc,fresado47,fresado48)
+		local fresado49 = Point2D(origenX+anchura1+anchura2+anchura3+anchura4+anchura5+anchura6-pliegueSuperior+margenFresado,origenY+alaInferior+alturaPlaca+pliegueSuperior)
+		local fresado50 = Point2D(origenX+anchura1+anchura2+anchura3+anchura4+anchura5+anchura6-pliegueSuperior+margenFresado,origenY+alaInferior+alturaPlaca+pliegueSuperior+alaSuperior)
+		dibujarFresado_auxiliar(doc,fresado49,fresado50)	
+	end
+	
+	
+	--anchura7
+	if anchura7>pliegueSuperior then
+		local fresado52 = Point2D(origenX+anchura1+anchura2+anchura3+anchura4+anchura5+anchura6+pliegueSuperior-margenFresado,origenY+alaInferior+alturaPlaca+pliegueSuperior)
+		local fresado51 = Point2D(origenX+anchura1+anchura2+anchura3+anchura4+anchura5+anchura6+pliegueSuperior-margenFresado,origenY+alaInferior+alturaPlaca+pliegueSuperior+alaSuperior)
+		dibujarFresado_auxiliar(doc,fresado51,fresado52)
+		local fresado53 = Point2D(origenX+anchura1+anchura2+anchura3+anchura4+anchura5+anchura6+pliegueSuperior,origenY+alaInferior+alturaPlaca+pliegueSuperior)
+		local fresado54 = Point2D(origenX+anchura1+anchura2+anchura3+anchura4+anchura5+anchura6+anchura7,origenY+alaInferior+alturaPlaca+pliegueSuperior)
+		dibujarFresado_auxiliar(doc,fresado53,fresado54)
+	end
+	
+	
+	
+	
+	--------------------------------------------------------
+	local cad_object = CreateCadContour(Contour)
+	local cur_layer = doc.LayerManager:GetActiveLayer()
+	local layer = doc.LayerManager:GetLayerWithName("Fresado")
+	layer:AddObject(cad_object, true)
+	layer:SetColor(0.3,0.8,0.4)
+	layer.Visible = true 
+	doc.LayerManager:SetActiveLayer(cur_layer)
+	doc:Refresh2DView()	
+	--------------------------------------------------------
+	return true; 
+end
+
+
+
+
+
+function dibujarCorte007(doc)
+	
+	
+	local Contour = Contour(0.0)
+	
+	--PARTE INFERIOR-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	
+	--Anchura primera
+	if anchura1>alaInferior then
+		local corte1 = Point2D(origenX,origenY+alaInferior)
+		local corte2 = Point2D(origenX,origenY)
+		local corte3 = Point2D(origenX+anchura1-alaInferior,origenY)
+		Contour:AppendPoint(corte1)
+		Contour:LineTo(corte2)
+		Contour:LineTo(corte3)
+		
+	else
+		local corte1 = Point2D(origenX,origenY+alaInferior)
+		local corte2 = Point2D(origenX,origenY+alaInferior-anchura1)
+		Contour:AppendPoint(corte1)
+		Contour:LineTo(corte2)
+	end
+	local corte4 = Point2D(origenX+anchura1,origenY+alaInferior)
+	Contour:LineTo(corte4)
+	
+	
+	--Bucle anchuras intermedias
+	local anchuras={anchura1,anchura2,anchura3,anchura4,anchura5,anchura6,anchura7}
+	local repeticiones=5 --math.length(anchuras -2)
+	local anchoA=anchuras[1]
+	for n=2, (repeticiones+1) do
+		local corte1 = Point2D(origenX+anchoA,origenY+alaInferior)
+		Contour:LineTo(corte1)
+		if anchuras[n]>alaInferior*2 then
+			local corte2 = Point2D(origenX+anchoA+alaInferior,origenY)
+			local corte3 = Point2D(origenX+anchoA+anchuras[n]-alaInferior,origenY)
+			Contour:LineTo(corte2)
+			Contour:LineTo(corte3)
+			
+		else
+			local corte2 = Point2D(origenX+anchoA+anchuras[n]/2,origenY+alaInferior-anchuras[n]/2)
+			Contour:LineTo(corte2)
+		end
+		
+		local corte4 = Point2D(origenX+anchoA+anchuras[n],origenY+alaInferior)
+		Contour:LineTo(corte4)
+		
+		anchoA=anchoA+anchuras[n]
+	end	
+	
+	
+	--Anchura ultima
+	if anchura7>alaInferior then
+		local corte1 = Point2D(origenX+anchoA,origenY+alaInferior)
+		local corte2 = Point2D(origenX+anchoA+alaInferior,origenY)
+		local corte3 = Point2D(origenX+anchoA+anchura7,origenY)
+		Contour:LineTo(corte1)
+		Contour:LineTo(corte2)
+		Contour:LineTo(corte3)
+		
+	else
+		local corte1 = Point2D(origenX+anchoA,origenY+alaInferior)
+		local corte2 = Point2D(origenX+anchoA+anchura7,origenY+alaInferior-anchura7)
+		Contour:LineTo(corte1)
+		Contour:LineTo(corte2)
+	end
+	local corte4 = Point2D(origenX+anchoA+anchura7,origenY+alaInferior)
+	Contour:LineTo(corte4)
+	
+	
+	
+	
+	--PARTE SUPERIOR------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	anchoA=anchura1+anchura2+anchura3+anchura4+anchura5+anchura6+anchura7
+	
+	--Anchura primera
+	if anchura7>pliegueSuperior then
+		local corte1 = Point2D(origenX+anchoA,origenY+alaInferior+alturaPlaca+pliegueSuperior+alaSuperior)
+		local corte2 = Point2D(origenX+anchoA-(anchura7-pliegueSuperior),origenY+alaInferior+alturaPlaca+pliegueSuperior+alaSuperior)
+		local corte3 = Point2D(origenX+anchoA-(anchura7-pliegueSuperior),origenY+alaInferior+alturaPlaca+pliegueSuperior)
+		Contour:LineTo(corte1)
+		Contour:LineTo(corte2)
+		Contour:LineTo(corte3)
+	else
+		local corte1 = Point2D(origenX+anchoA,origenY+alaInferior+alturaPlaca+anchura7)
+		local corte2 = Point2D(origenX+anchoA-anchura7,origenY+alaInferior+alturaPlaca)
+		Contour:LineTo(corte1)
+		Contour:LineTo(corte2)
+	end
+	
+	
+	anchoA=anchoA-anchura7
+	local m=6
+	for n=2, (repeticiones+1) do
+		
+		local corte1 = Point2D(origenX+anchoA,origenY+alaInferior+alturaPlaca)
+		Contour:LineTo(corte1)
+		if anchuras[m]>pliegueSuperior*2 then
+			local corte2 = Point2D(origenX+anchoA-pliegueSuperior,origenY+alaInferior+alturaPlaca+pliegueSuperior)
+			local corte3 = Point2D(origenX+anchoA-pliegueSuperior,origenY+alaInferior+alturaPlaca+pliegueSuperior+alaSuperior)
+			local corte4 = Point2D(origenX+anchoA-anchuras[m]+pliegueSuperior,origenY+alaInferior+alturaPlaca+pliegueSuperior+alaSuperior)
+			local corte5 = Point2D(origenX+anchoA-anchuras[m]+pliegueSuperior,origenY+alaInferior+alturaPlaca+pliegueSuperior)
+			Contour:LineTo(corte2)
+			Contour:LineTo(corte3)
+			Contour:LineTo(corte4)
+			Contour:LineTo(corte5)
+		else
+			local corte2 = Point2D(origenX+anchoA-anchuras[m]/2,origenY+alaInferior+alturaPlaca+anchuras[m]/2)
+			Contour:LineTo(corte2)
+		end
+		
+		local corte4 = Point2D(origenX+anchoA-anchuras[m],origenY+alaInferior+alturaPlaca)
+		Contour:LineTo(corte4)
+		
+		anchoA=anchoA-anchuras[m]
+		m=m-1
+	end	
+	
+	
+	--Anchura ultima
+	if anchura1>pliegueSuperior then
+		local corte1 = Point2D(origenX+anchoA,origenY+alaInferior+alturaPlaca)
+		local corte2 = Point2D(origenX+anchoA-pliegueSuperior,origenY+alaInferior+alturaPlaca+pliegueSuperior)
+		local corte3 = Point2D(origenX+anchoA-pliegueSuperior,origenY+alaInferior+alturaPlaca+pliegueSuperior+alaSuperior)
+		local corte4 = Point2D(origenX,origenY+alaInferior+alturaPlaca+pliegueSuperior+alaSuperior)
+		Contour:LineTo(corte1)
+		Contour:LineTo(corte2)
+		Contour:LineTo(corte3)
+		Contour:LineTo(corte4)
+		
+	else
+		local corte1 = Point2D(origenX+anchoA,origenY+alaInferior+alturaPlaca)
+		local corte2 = Point2D(origenX+anchoA-anchura1,origenY+alaInferior+alturaPlaca+anchura1)
+		Contour:LineTo(corte1)
+		Contour:LineTo(corte2)
+	end
+	local corte4 = Point2D(origenX,origenY+alaInferior)
+	Contour:LineTo(corte4)
+	
+	
+	
+	--------------------------------------------------------
+	local cad_object = CreateCadContour(Contour)
+	local cur_layer = doc.LayerManager:GetActiveLayer()
+	local layer = doc.LayerManager:GetLayerWithName("Corte")
+	layer:AddObject(cad_object, true)
+    layer:SetColor(0.9,0.2,0.2)
+	layer.Visible = true 
+	doc.LayerManager:SetActiveLayer(cur_layer)
+	doc:Refresh2DView()	
+	-----------------------------------------------------------------
+	return true; 
+end
 
 
 
