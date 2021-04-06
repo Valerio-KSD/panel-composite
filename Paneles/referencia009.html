@@ -29,7 +29,7 @@
 				
 				<div class="panel-body">
 										
-					     <center><input type="image" src="images/REF_009cotas.jpg" alt='ReferenciaAH' width='560' height='275'/></center>
+					     <center><input type="image" src="images/REF_009cotas.jpg" alt='ReferenciaAH' width='500' height='275'/></center>
 						
 					
 				</div> <!-- cierre cuerpo panel -->
@@ -203,6 +203,20 @@
 								<label for="textoDescriptivo" style="font-family: cursive"> Nombre de la placa:</label>							
 								<input type="text" class="form-control" id="textoDescriptivo" name="textoDescriptivo" placeholder="Nombre de la placa" style="font-family: cursive"/> 
 								<br>
+								
+								<label for="margenMecanizado" style="font-family: cursive"> Margen cálculo área:</label>
+								<input type="text" class="form-control" id="margenMecanizado" name="margenMecanizado" placeholder="Margen mecanizado" maxlength="4" style="font-family: cursive"/>
+								<br>
+								
+								<label for="crearFresado" style="font-family: cursive"> ¿Dibujar fresado externo? </label>
+								<center>
+								SI <input class="LuaButton" type="radio" id="crearFresado" name="crearFresado" value="0" /> 
+								NO <input class="LuaButton" type="radio" id="noCrearFresado" name="crearFresado" value="1" /> 
+								</center>
+								
+								<label for="margenFresado" style="font-family: cursive"> Margen fresado (mm):</label>
+								<input type="text" class="form-control" id="margenFresado" name="margenFresado" placeholder="Margen Fresado" maxlength="8" style="font-family: cursive"/> 
+								
 								
 						   </div>
 								
