@@ -23,7 +23,8 @@ remoto=0 --Esto es para que los archivos html se lean en remoto (https://...) o 
  
 
 
-
+--Margen mecanizado
+margenMecanizado=4
 
 --Variable texto
 textoDescriptivo=""
@@ -576,16 +577,16 @@ function OnLuaButton_modeloAH(framePrincipal)
 		
 		
 		
-		local modeloAH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA AH")
+		local modeloAH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA A0")
 		
-		textoDescriptivo="AH"
+		textoDescriptivo="A0"
 		anchuraPlaca=2000 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=32
 		pliegueSuperior=36 pliegueInferior=0  margenA=57 margenB=108 diametroTaladros=5 
 		distanciaEntreBotas=500 numeroBotas=3
 		
         modeloAH:AddTextField("textoDescriptivo", textoDescriptivo)
 		modeloAH:AddDoubleField("anchuraPlaca", anchuraPlaca)
-	    --modeloAH:AddDoubleField("margenPlaca", margenPlaca)
+	    modeloAH:AddDoubleField("margenMecanizado", margenMecanizado)
 	    modeloAH:AddDoubleField("alturaPlaca", alturaPlaca)
 		--modeloAH:AddDoubleField("origenX", origenX)
 		--modeloAH:AddDoubleField("origenY", origenY)
@@ -619,6 +620,7 @@ function OnLuaButton_modeloAH(framePrincipal)
 		end
 
    	elseif modelo==1 then
+
 		local html_path
 		if remoto==1 then
 			html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referenciaAH1.html"
@@ -628,16 +630,16 @@ function OnLuaButton_modeloAH(framePrincipal)
 		
 
 			
-		local modeloAH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA AH1")
+		local modeloAH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA A1")
 		
 
-		textoDescriptivo="AH1"
+		textoDescriptivo="A1"
 		anchuraPlaca=2000 alturaPlaca=1000 alaIzquierda=40 alaSuperior=20 alaInferior=32
 		pliegueSuperior=40 pliegueInferior=0  margenA=57 margenB=108 diametroTaladros=5 
 		
         modeloAH:AddTextField("textoDescriptivo", textoDescriptivo)
 		modeloAH:AddDoubleField("anchuraPlaca", anchuraPlaca)
-	    --modeloAH:AddDoubleField("margenPlaca", margenPlaca)
+	    modeloAH:AddDoubleField("margenMecanizado", margenMecanizado)
 	    modeloAH:AddDoubleField("alturaPlaca", alturaPlaca)
 		--modeloAH:AddDoubleField("origenX", origenX)
 		--modeloAH:AddDoubleField("origenY", origenY)
@@ -673,15 +675,15 @@ function OnLuaButton_modeloAH(framePrincipal)
 		end
 		
 			
-		local modeloAH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA AH2")
+		local modeloAH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA A2")
 
-		textoDescriptivo="AH2"
+		textoDescriptivo="A2"
 		anchuraPlaca=2000 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=20
 		pliegueSuperior=36 pliegueInferior=40  margenA=57 margenB=108 diametroTaladros=5 
 		
         modeloAH:AddTextField("textoDescriptivo", textoDescriptivo)
 		modeloAH:AddDoubleField("anchuraPlaca", anchuraPlaca)
-	    --modeloAH:AddDoubleField("margenPlaca", margenPlaca)
+	    modeloAH:AddDoubleField("margenMecanizado", margenMecanizado)
 	    modeloAH:AddDoubleField("alturaPlaca", alturaPlaca)
 		--modeloAH:AddDoubleField("origenX", origenX)
 		--modeloAH:AddDoubleField("origenY", origenY)
@@ -717,15 +719,15 @@ function OnLuaButton_modeloAH(framePrincipal)
 		end	
 		
 			
-		local modeloAH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA AH3")
+		local modeloAH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA A3")
 
-		textoDescriptivo="AH3"
+		textoDescriptivo="A3"
 		anchuraPlaca=2000 alturaPlaca=1000 alaIzquierda=40 alaSuperior=20 alaInferior=20
 		pliegueSuperior=40 pliegueInferior=40  margenA=57 margenB=108 diametroTaladros=5 
 		
         modeloAH:AddTextField("textoDescriptivo", textoDescriptivo)
 		modeloAH:AddDoubleField("anchuraPlaca", anchuraPlaca)
-	    --modeloAH:AddDoubleField("margenPlaca", margenPlaca)
+	    modeloAH:AddDoubleField("margenMecanizado", margenMecanizado)
 	    modeloAH:AddDoubleField("alturaPlaca", alturaPlaca)
 		--modeloAH:AddDoubleField("origenX", origenX)
 		--modeloAH:AddDoubleField("origenY", origenY)
@@ -761,15 +763,15 @@ function OnLuaButton_modeloAH(framePrincipal)
 		end
 		
 			
-		local modeloAH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA AH4")
+		local modeloAH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA A4")
 
-		textoDescriptivo="AH4"
+		textoDescriptivo="A4"
 		anchuraPlaca=2000 alturaPlaca=1000 alaIzquierda=40 alaSuperior=260 alaInferior=32
 		pliegueSuperior=40 pliegueInferior=0  margenA=57 margenB=108 diametroTaladros=5 
 		
         modeloAH:AddTextField("textoDescriptivo", textoDescriptivo)
 		modeloAH:AddDoubleField("anchuraPlaca", anchuraPlaca)
-	    --modeloAH:AddDoubleField("margenPlaca", margenPlaca)
+	    modeloAH:AddDoubleField("margenMecanizado", margenMecanizado)
 	    modeloAH:AddDoubleField("alturaPlaca", alturaPlaca)
 		--modeloAH:AddDoubleField("origenX", origenX)
 		--modeloAH:AddDoubleField("origenY", origenY)
@@ -805,15 +807,15 @@ function OnLuaButton_modeloAH(framePrincipal)
 		end
 		
 			
-		local modeloAH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA AH5")
+		local modeloAH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA A5")
 
-		textoDescriptivo="AH5"
+		textoDescriptivo="A5"
 		anchuraPlaca=2000 alturaPlaca=1000 alaIzquierda=40 alaSuperior=260 alaInferior=20
 		pliegueSuperior=40 pliegueInferior=40  margenA=57 margenB=108 diametroTaladros=5 
 		
         modeloAH:AddTextField("textoDescriptivo", textoDescriptivo)
 		modeloAH:AddDoubleField("anchuraPlaca", anchuraPlaca)
-	    --modeloAH:AddDoubleField("margenPlaca", margenPlaca)
+	    modeloAH:AddDoubleField("margenMecanizado", margenMecanizado)
 	    modeloAH:AddDoubleField("alturaPlaca", alturaPlaca)
 		--modeloAH:AddDoubleField("origenX", origenX)
 		--modeloAH:AddDoubleField("origenY", origenY)
@@ -849,15 +851,15 @@ function OnLuaButton_modeloAH(framePrincipal)
 		end
 		
 			
-		local modeloAH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA AH6")
+		local modeloAH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA A6")
 
-		textoDescriptivo="AH6"
+		textoDescriptivo="A6"
 		anchuraPlaca=2000 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=32
 		pliegueSuperior=300 pliegueInferior=0  margenA=57 margenB=108 diametroTaladros=5 
 		
         modeloAH:AddTextField("textoDescriptivo", textoDescriptivo)
 		modeloAH:AddDoubleField("anchuraPlaca", anchuraPlaca)
-	    --modeloAH:AddDoubleField("margenPlaca", margenPlaca)
+	    modeloAH:AddDoubleField("margenMecanizado", margenMecanizado)
 	    modeloAH:AddDoubleField("alturaPlaca", alturaPlaca)
 		--modeloAH:AddDoubleField("origenX", origenX)
 		--modeloAH:AddDoubleField("origenY", origenY)
@@ -893,15 +895,15 @@ function OnLuaButton_modeloAH(framePrincipal)
 		end
 		
 			
-		local modeloAH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA AH7")
+		local modeloAH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA A7")
 
-		textoDescriptivo="AH7"
+		textoDescriptivo="A7"
 		anchuraPlaca=2000 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=20
 		pliegueSuperior=300 pliegueInferior=40  margenA=57 margenB=108 diametroTaladros=5 
 		
         modeloAH:AddTextField("textoDescriptivo", textoDescriptivo)
 		modeloAH:AddDoubleField("anchuraPlaca", anchuraPlaca)
-	    --modeloAH:AddDoubleField("margenPlaca", margenPlaca)
+	    modeloAH:AddDoubleField("margenMecanizado", margenMecanizado)
 	    modeloAH:AddDoubleField("alturaPlaca", alturaPlaca)
 		--modeloAH:AddDoubleField("origenX", origenX)
 		--modeloAH:AddDoubleField("origenY", origenY)
@@ -937,15 +939,15 @@ function OnLuaButton_modeloAH(framePrincipal)
 		end
 		
 			
-		local modeloAH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA AH8")
+		local modeloAH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA A8")
 
-		textoDescriptivo="AH8"
+		textoDescriptivo="A8"
 		anchuraPlaca=2000 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=40
 		pliegueSuperior=36 pliegueInferior=300 margenA=57 margenB=108 diametroTaladros=5 
 		
         modeloAH:AddTextField("textoDescriptivo", textoDescriptivo)
 		modeloAH:AddDoubleField("anchuraPlaca", anchuraPlaca)
-	    --modeloAH:AddDoubleField("margenPlaca", margenPlaca)
+	    modeloAH:AddDoubleField("margenMecanizado", margenMecanizado)
 	    modeloAH:AddDoubleField("alturaPlaca", alturaPlaca)
 		--modeloAH:AddDoubleField("origenX", origenX)
 		--modeloAH:AddDoubleField("origenY", origenY)
@@ -986,7 +988,7 @@ function OnLuaButton_aceptarAH(modeloAH)
 		
 		textoDescriptivo = modeloAH:GetTextField("textoDescriptivo")
 		anchuraPlaca = modeloAH:GetDoubleField("anchuraPlaca")
-	    --margenPlaca = modeloAH:GetDoubleField("margenPlaca")
+	    margenMecanizado=modeloAH:GetDoubleField("margenMecanizado")
 	    alturaPlaca = modeloAH:GetDoubleField("alturaPlaca")
 		--origenX = modeloAH:GetDoubleField("origenXAH")
 		--origenY = modeloAH:GetDoubleField("origenYAH")
@@ -1018,7 +1020,7 @@ function OnLuaButton_aceptarAH(modeloAH)
 		
 		textoDescriptivo = modeloAH:GetTextField("textoDescriptivo")
 		anchuraPlaca = modeloAH:GetDoubleField("anchuraPlaca")
-	    --margenPlaca = modeloAH:GetDoubleField("margenPlaca")
+	    margenMecanizado=modeloAH:GetDoubleField("margenMecanizado")
 	    alturaPlaca = modeloAH:GetDoubleField("alturaPlaca")
 		
 		alaIzquierda = modeloAH:GetDoubleField("alaLateral")
@@ -1086,7 +1088,7 @@ function OnLuaButton_aceptarAH(modeloAH)
 			
 			
 			
-		DisplayMessageBox("Modelo AH"..modelo.." Creado Correctamente")
+		DisplayMessageBox("Modelo A"..modelo.." Creado Correctamente")
 		
 	
 	end
@@ -1115,16 +1117,16 @@ function OnLuaButton_modeloBH(framePrincipal)
 		
 		
 		
-		local modeloBH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA BH")
+		local modeloBH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA B0")
 		
-		textoDescriptivo="BH"
+		textoDescriptivo="B0"
 		anchura1=1200 anchura2=800 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=32
 		pliegueSuperior=36 pliegueInferior=0  margenA=57 margenB=108 diametroTaladros=5 
 		
         modeloBH:AddTextField("textoDescriptivo", textoDescriptivo)
 		modeloBH:AddDoubleField("anchuraPlacaIzquierda", anchura1)
 		modeloBH:AddDoubleField("anchuraPlacaDerecha", anchura2)
-	    --modeloBH:AddDoubleField("margenPlaca", margenPlaca)
+	    modeloBH:AddDoubleField("margenMecanizado", margenMecanizado)
 	    modeloBH:AddDoubleField("alturaPlaca", alturaPlaca)
 		--modeloBH:AddDoubleField("origenX", origenX)
 		--modeloBH:AddDoubleField("origenY", origenY)
@@ -1161,16 +1163,16 @@ function OnLuaButton_modeloBH(framePrincipal)
 		end
 		
 		
-		local modeloBH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA BH1")
+		local modeloBH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA B1")
 		
-		textoDescriptivo="BH1"
+		textoDescriptivo="B1"
 		anchura1=1200 anchura2=800 alturaPlaca=1000 alaIzquierda=40 alaSuperior=20 alaInferior=32
 		pliegueSuperior=40 pliegueInferior=0  margenA=57 margenB=108 diametroTaladros=5 
 		
         modeloBH:AddTextField("textoDescriptivo", textoDescriptivo)
 		modeloBH:AddDoubleField("anchuraPlacaIzquierda", anchura1)
 		modeloBH:AddDoubleField("anchuraPlacaDerecha", anchura2)
-	    --modeloBH:AddDoubleField("margenPlaca", margenPlaca)
+	    modeloBH:AddDoubleField("margenMecanizado", margenMecanizado)
 	    modeloBH:AddDoubleField("alturaPlaca", alturaPlaca)
 		--modeloBH:AddDoubleField("origenX", origenX)
 		--modeloBH:AddDoubleField("origenY", origenY)
@@ -1204,16 +1206,16 @@ function OnLuaButton_modeloBH(framePrincipal)
 			html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH2.html"
 		end
 		
-		local modeloBH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA BH2")
+		local modeloBH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA B2")
 		
-		textoDescriptivo="BH2"
+		textoDescriptivo="B2"
 		anchura1=1200 anchura2=800 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=20
 		pliegueSuperior=36 pliegueInferior=40  margenA=57 margenB=108 diametroTaladros=5 
 		
         modeloBH:AddTextField("textoDescriptivo", textoDescriptivo)
 		modeloBH:AddDoubleField("anchuraPlacaIzquierda", anchura1)
 		modeloBH:AddDoubleField("anchuraPlacaDerecha", anchura2)
-	    --modeloBH:AddDoubleField("margenPlaca", margenPlaca)
+	    modeloBH:AddDoubleField("margenMecanizado", margenMecanizado)
 	    modeloBH:AddDoubleField("alturaPlaca", alturaPlaca)
 		--modeloBH:AddDoubleField("origenX", origenX)
 		--modeloBH:AddDoubleField("origenY", origenY)
@@ -1247,16 +1249,16 @@ function OnLuaButton_modeloBH(framePrincipal)
 			html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH3.html"
 		end
 		
-		local modeloBH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA BH3")
+		local modeloBH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA B3")
 		
-		textoDescriptivo="BH3"
+		textoDescriptivo="B3"
 		anchura1=1200 anchura2=800 alturaPlaca=1000 alaIzquierda=40 alaSuperior=20 alaInferior=20
 		pliegueSuperior=36 pliegueInferior=40  margenA=57 margenB=108 diametroTaladros=5 
 		
         modeloBH:AddTextField("textoDescriptivo", textoDescriptivo)
 		modeloBH:AddDoubleField("anchuraPlacaIzquierda", anchura1)
 		modeloBH:AddDoubleField("anchuraPlacaDerecha", anchura2)
-	    --modeloBH:AddDoubleField("margenPlaca", margenPlaca)
+	    modeloBH:AddDoubleField("margenMecanizado", margenMecanizado)
 	    modeloBH:AddDoubleField("alturaPlaca", alturaPlaca)
 		--modeloBH:AddDoubleField("origenX", origenX)
 		--modeloBH:AddDoubleField("origenY", origenY)
@@ -1290,16 +1292,16 @@ function OnLuaButton_modeloBH(framePrincipal)
 			html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH4.html"
 		end
 		
-		local modeloBH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA BH4")
+		local modeloBH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA B4")
 		
-		textoDescriptivo="BH4"
+		textoDescriptivo="B4"
 		anchura1=1200 anchura2=800 alturaPlaca=1000 alaIzquierda=40 alaSuperior=260 alaInferior=32
 		pliegueSuperior=40 pliegueInferior=0  margenA=57 margenB=108 diametroTaladros=5 
 		
         modeloBH:AddTextField("textoDescriptivo", textoDescriptivo)
 		modeloBH:AddDoubleField("anchuraPlacaIzquierda", anchura1)
 		modeloBH:AddDoubleField("anchuraPlacaDerecha", anchura2)
-	    --modeloBH:AddDoubleField("margenPlaca", margenPlaca)
+	    modeloBH:AddDoubleField("margenMecanizado", margenMecanizado)
 	    modeloBH:AddDoubleField("alturaPlaca", alturaPlaca)
 		--modeloBH:AddDoubleField("origenX", origenX)
 		--modeloBH:AddDoubleField("origenY", origenY)
@@ -1333,16 +1335,16 @@ function OnLuaButton_modeloBH(framePrincipal)
 			html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH5.html"
 		end
 		
-		local modeloBH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA BH5")
+		local modeloBH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA B5")
 		
-		textoDescriptivo="BH5"
+		textoDescriptivo="B5"
 		anchura1=1200 anchura2=800 alturaPlaca=1000 alaIzquierda=40 alaSuperior=260 alaInferior=20
 		pliegueSuperior=40 pliegueInferior=40  margenA=57 margenB=108 diametroTaladros=5 
 		
         modeloBH:AddTextField("textoDescriptivo", textoDescriptivo)
 		modeloBH:AddDoubleField("anchuraPlacaIzquierda", anchura1)
 		modeloBH:AddDoubleField("anchuraPlacaDerecha", anchura2)
-	    --modeloBH:AddDoubleField("margenPlaca", margenPlaca)
+	     modeloBH:AddDoubleField("margenMecanizado", margenMecanizado)
 	    modeloBH:AddDoubleField("alturaPlaca", alturaPlaca)
 		--modeloBH:AddDoubleField("origenX", origenX)
 		--modeloBH:AddDoubleField("origenY", origenY)
@@ -1376,16 +1378,16 @@ function OnLuaButton_modeloBH(framePrincipal)
 			html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH6.html"
 		end
 		
-		local modeloBH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA BH6")
+		local modeloBH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA B6")
 		
-		textoDescriptivo="BH6"
+		textoDescriptivo="B6"
 		anchura1=1200 anchura2=800 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=32
 		pliegueSuperior=300 pliegueInferior=0  margenA=57 margenB=108 diametroTaladros=5 
 		
         modeloBH:AddTextField("textoDescriptivo", textoDescriptivo)
 		modeloBH:AddDoubleField("anchuraPlacaIzquierda", anchura1)
 		modeloBH:AddDoubleField("anchuraPlacaDerecha", anchura2)
-	    --modeloBH:AddDoubleField("margenPlaca", margenPlaca)
+	    modeloBH:AddDoubleField("margenMecanizado", margenMecanizado)
 	    modeloBH:AddDoubleField("alturaPlaca", alturaPlaca)
 		--modeloBH:AddDoubleField("origenX", origenX)
 		--modeloBH:AddDoubleField("origenY", origenY)
@@ -1419,16 +1421,16 @@ function OnLuaButton_modeloBH(framePrincipal)
 			html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH7.html"
 		end
 		
-		local modeloBH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA BH7")
+		local modeloBH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA B7")
 		
-		textoDescriptivo="BH7"
+		textoDescriptivo="B7"
 		anchura1=1200 anchura2=800 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=20
 		pliegueSuperior=300 pliegueInferior=40  margenA=57 margenB=108 diametroTaladros=5 
 		
         modeloBH:AddTextField("textoDescriptivo", textoDescriptivo)
 		modeloBH:AddDoubleField("anchuraPlacaIzquierda", anchura1)
 		modeloBH:AddDoubleField("anchuraPlacaDerecha", anchura2)
-	    --modeloBH:AddDoubleField("margenPlaca", margenPlaca)
+	    modeloBH:AddDoubleField("margenMecanizado", margenMecanizado)
 	    modeloBH:AddDoubleField("alturaPlaca", alturaPlaca)
 		--modeloBH:AddDoubleField("origenX", origenX)
 		--modeloBH:AddDoubleField("origenY", origenY)
@@ -1462,16 +1464,16 @@ function OnLuaButton_modeloBH(framePrincipal)
 			html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH8.html"
 		end
 		
-		local modeloBH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA BH8")
+		local modeloBH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA B8")
 		
-		textoDescriptivo="BH8"
+		textoDescriptivo="B8"
 		anchura1=1200 anchura2=800 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=32
 		pliegueSuperior=36 pliegueInferior=300  margenA=57 margenB=108 diametroTaladros=5 
 		
         modeloBH:AddTextField("textoDescriptivo", textoDescriptivo)
 		modeloBH:AddDoubleField("anchuraPlacaIzquierda", anchura1)
 		modeloBH:AddDoubleField("anchuraPlacaDerecha", anchura2)
-	    --modeloBH:AddDoubleField("margenPlaca", margenPlaca)
+	    modeloBH:AddDoubleField("margenMecanizado", margenMecanizado)
 	    modeloBH:AddDoubleField("alturaPlaca", alturaPlaca)
 		--modeloBH:AddDoubleField("origenX", origenX)
 		--modeloBH:AddDoubleField("origenY", origenY)
@@ -1505,16 +1507,16 @@ function OnLuaButton_modeloBH(framePrincipal)
 			html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH9.html"
 		end
 		
-		local modeloBH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA BH9")
+		local modeloBH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA B9")
 		
-		textoDescriptivo="BH9"
+		textoDescriptivo="B9"
 		anchura1=1200 anchura2=800 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=32
 		pliegueSuperior=36 pliegueInferior=0  margenA=57 margenB=108 diametroTaladros=5 
 		
         modeloBH:AddTextField("textoDescriptivo", textoDescriptivo)
 		modeloBH:AddDoubleField("anchuraPlacaIzquierda", anchura1)
 		modeloBH:AddDoubleField("anchuraPlacaDerecha", anchura2)
-	    --modeloBH:AddDoubleField("margenPlaca", margenPlaca)
+	    modeloBH:AddDoubleField("margenMecanizado", margenMecanizado)
 	    modeloBH:AddDoubleField("alturaPlaca", alturaPlaca)
 		--modeloBH:AddDoubleField("origenX", origenX)
 		--modeloBH:AddDoubleField("origenY", origenY)
@@ -1549,16 +1551,16 @@ function OnLuaButton_modeloBH(framePrincipal)
 			html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH10.html"
 		end
 		
-		local modeloBH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA BH10")
+		local modeloBH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA B10")
 		
-		textoDescriptivo="BH10"
+		textoDescriptivo="B10"
 		anchura1=1200 anchura2=800 alturaPlaca=1000 alaIzquierda=40 alaSuperior=20 alaInferior=32
 		pliegueSuperior=40 pliegueInferior=0  margenA=57 margenB=108 diametroTaladros=5 
 		
         modeloBH:AddTextField("textoDescriptivo", textoDescriptivo)
 		modeloBH:AddDoubleField("anchuraPlacaIzquierda", anchura1)
 		modeloBH:AddDoubleField("anchuraPlacaDerecha", anchura2)
-	    --modeloBH:AddDoubleField("margenPlaca", margenPlaca)
+	    modeloBH:AddDoubleField("margenMecanizado", margenMecanizado)
 	    modeloBH:AddDoubleField("alturaPlaca", alturaPlaca)
 		--modeloBH:AddDoubleField("origenX", origenX)
 		--modeloBH:AddDoubleField("origenY", origenY)
@@ -1593,16 +1595,16 @@ function OnLuaButton_modeloBH(framePrincipal)
 			html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH11.html"
 		end
 		
-		local modeloBH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA BH11")
+		local modeloBH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA B11")
 		
-		textoDescriptivo="BH11"
+		textoDescriptivo="B11"
 		anchura1=1200 anchura2=800 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=20
 		pliegueSuperior=36 pliegueInferior=40  margenA=57 margenB=108 diametroTaladros=5 
 		
         modeloBH:AddTextField("textoDescriptivo", textoDescriptivo)
 		modeloBH:AddDoubleField("anchuraPlacaIzquierda", anchura1)
 		modeloBH:AddDoubleField("anchuraPlacaDerecha", anchura2)
-	    --modeloBH:AddDoubleField("margenPlaca", margenPlaca)
+	    modeloBH:AddDoubleField("margenMecanizado", margenMecanizado)
 	    modeloBH:AddDoubleField("alturaPlaca", alturaPlaca)
 		--modeloBH:AddDoubleField("origenX", origenX)
 		--modeloBH:AddDoubleField("origenY", origenY)
@@ -1637,16 +1639,16 @@ function OnLuaButton_modeloBH(framePrincipal)
 			html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH12.html"
 		end
 		
-		local modeloBH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA BH12")
+		local modeloBH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA B12")
 		
-		textoDescriptivo="BH12"
+		textoDescriptivo="B12"
 		anchura1=1200 anchura2=800 alturaPlaca=1000 alaIzquierda=40 alaSuperior=20 alaInferior=20
 		pliegueSuperior=36 pliegueInferior=40  margenA=57 margenB=108 diametroTaladros=5 
 		
         modeloBH:AddTextField("textoDescriptivo", textoDescriptivo)
 		modeloBH:AddDoubleField("anchuraPlacaIzquierda", anchura1)
 		modeloBH:AddDoubleField("anchuraPlacaDerecha", anchura2)
-	    --modeloBH:AddDoubleField("margenPlaca", margenPlaca)
+	    modeloBH:AddDoubleField("margenMecanizado", margenMecanizado)
 	    modeloBH:AddDoubleField("alturaPlaca", alturaPlaca)
 		--modeloBH:AddDoubleField("origenX", origenX)
 		--modeloBH:AddDoubleField("origenY", origenY)
@@ -1681,16 +1683,16 @@ function OnLuaButton_modeloBH(framePrincipal)
 			html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH13.html"
 		end
 		
-		local modeloBH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA BH13")
+		local modeloBH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA B13")
 		
-		textoDescriptivo="BH13"
+		textoDescriptivo="B13"
 		anchura1=1200 anchura2=800 alturaPlaca=1000 alaIzquierda=40 alaSuperior=260 alaInferior=32
 		pliegueSuperior=40 pliegueInferior=0  margenA=57 margenB=108 diametroTaladros=5 
 		
         modeloBH:AddTextField("textoDescriptivo", textoDescriptivo)
 		modeloBH:AddDoubleField("anchuraPlacaIzquierda", anchura1)
 		modeloBH:AddDoubleField("anchuraPlacaDerecha", anchura2)
-	    --modeloBH:AddDoubleField("margenPlaca", margenPlaca)
+	    modeloBH:AddDoubleField("margenMecanizado", margenMecanizado)
 	    modeloBH:AddDoubleField("alturaPlaca", alturaPlaca)
 		--modeloBH:AddDoubleField("origenX", origenX)
 		--modeloBH:AddDoubleField("origenY", origenY)
@@ -1725,16 +1727,16 @@ function OnLuaButton_modeloBH(framePrincipal)
 			html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH14.html"
 		end
 		
-		local modeloBH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA BH14")
+		local modeloBH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA B14")
 		
-		textoDescriptivo="BH14"
+		textoDescriptivo="B14"
 		anchura1=1200 anchura2=800 alturaPlaca=1000 alaIzquierda=40 alaSuperior=260 alaInferior=20
 		pliegueSuperior=40 pliegueInferior=40  margenA=57 margenB=108 diametroTaladros=5 
 		
         modeloBH:AddTextField("textoDescriptivo", textoDescriptivo)
 		modeloBH:AddDoubleField("anchuraPlacaIzquierda", anchura1)
 		modeloBH:AddDoubleField("anchuraPlacaDerecha", anchura2)
-	    --modeloBH:AddDoubleField("margenPlaca", margenPlaca)
+	    modeloBH:AddDoubleField("margenMecanizado", margenMecanizado)
 	    modeloBH:AddDoubleField("alturaPlaca", alturaPlaca)
 		--modeloBH:AddDoubleField("origenX", origenX)
 		--modeloBH:AddDoubleField("origenY", origenY)
@@ -1769,16 +1771,16 @@ function OnLuaButton_modeloBH(framePrincipal)
 			html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH15.html"
 		end
 		
-		local modeloBH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA BH15")
+		local modeloBH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA B15")
 		
-		textoDescriptivo="BH15"
+		textoDescriptivo="B15"
 		anchura1=1200 anchura2=800 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=32
 		pliegueSuperior=300 pliegueInferior=0  margenA=57 margenB=108 diametroTaladros=5 
 		
         modeloBH:AddTextField("textoDescriptivo", textoDescriptivo)
 		modeloBH:AddDoubleField("anchuraPlacaIzquierda", anchura1)
 		modeloBH:AddDoubleField("anchuraPlacaDerecha", anchura2)
-	    --modeloBH:AddDoubleField("margenPlaca", margenPlaca)
+	    modeloBH:AddDoubleField("margenMecanizado", margenMecanizado)
 	    modeloBH:AddDoubleField("alturaPlaca", alturaPlaca)
 		--modeloBH:AddDoubleField("origenX", origenX)
 		--modeloBH:AddDoubleField("origenY", origenY)
@@ -1813,16 +1815,16 @@ function OnLuaButton_modeloBH(framePrincipal)
 			html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH16.html"
 		end
 		
-		local modeloBH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA BH16")
+		local modeloBH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA B16")
 		
-		textoDescriptivo="BH16"
+		textoDescriptivo="B16"
 		anchura1=1200 anchura2=800 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=20
 		pliegueSuperior=300 pliegueInferior=40  margenA=57 margenB=108 diametroTaladros=5 
 		
         modeloBH:AddTextField("textoDescriptivo", textoDescriptivo)
 		modeloBH:AddDoubleField("anchuraPlacaIzquierda", anchura1)
 		modeloBH:AddDoubleField("anchuraPlacaDerecha", anchura2)
-	    --modeloBH:AddDoubleField("margenPlaca", margenPlaca)
+	    modeloBH:AddDoubleField("margenMecanizado", margenMecanizado)
 	    modeloBH:AddDoubleField("alturaPlaca", alturaPlaca)
 		--modeloBH:AddDoubleField("origenX", origenX)
 		--modeloBH:AddDoubleField("origenY", origenY)
@@ -1858,16 +1860,16 @@ function OnLuaButton_modeloBH(framePrincipal)
 			html_path = "file:" .. ruta .. "\\Paneles\\referenciaBH17.html"
 		end
 		
-		local modeloBH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA BH17")
+		local modeloBH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA B17")
 		
-		textoDescriptivo="BH17"
+		textoDescriptivo="B17"
 		anchura1=1200 anchura2=800 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=40
 		pliegueSuperior=36 pliegueInferior=300  margenA=57 margenB=108 diametroTaladros=5 
 		
         modeloBH:AddTextField("textoDescriptivo", textoDescriptivo)
 		modeloBH:AddDoubleField("anchuraPlacaIzquierda", anchura1)
 		modeloBH:AddDoubleField("anchuraPlacaDerecha", anchura2)
-	    --modeloBH:AddDoubleField("margenPlaca", margenPlaca)
+	    modeloBH:AddDoubleField("margenMecanizado", margenMecanizado)
 	    modeloBH:AddDoubleField("alturaPlaca", alturaPlaca)
 		--modeloBH:AddDoubleField("origenX", origenX)
 		--modeloBH:AddDoubleField("origenY", origenY)
@@ -1910,7 +1912,7 @@ function OnLuaButton_aceptarBH(modeloBH)
 		textoDescriptivo = modeloBH:GetTextField("textoDescriptivo")
 		anchura1 = modeloBH:GetDoubleField("anchuraPlacaIzquierda")
 		anchura2 = modeloBH:GetDoubleField("anchuraPlacaDerecha")
-	    --margenPlaca = modeloBH:GetDoubleField("margenPlaca")
+	    margenMecanizado = modeloBH:GetDoubleField("margenMecanizado")
 	    alturaPlaca = modeloBH:GetDoubleField("alturaPlaca")
 		--origenX = modeloBH:GetDoubleField("origenXAH")
 		--origenY = modeloBH:GetDoubleField("origenYAH")
@@ -1936,7 +1938,7 @@ function OnLuaButton_aceptarBH(modeloBH)
 		textoDescriptivo = modeloBH:GetTextField("textoDescriptivo")
 		anchura1 = modeloBH:GetDoubleField("anchuraPlacaIzquierda")
 		anchura2 = modeloBH:GetDoubleField("anchuraPlacaDerecha")
-	    --margenPlaca = modeloBH:GetDoubleField("margenPlaca")
+	    margenMecanizado = modeloBH:GetDoubleField("margenMecanizado")
 	    alturaPlaca = modeloBH:GetDoubleField("alturaPlaca")
 		--origenX = modeloBH:GetDoubleField("origenXAH")
 		--origenY = modeloBH:GetDoubleField("origenYAH")
@@ -1961,7 +1963,7 @@ function OnLuaButton_aceptarBH(modeloBH)
 		textoDescriptivo = modeloBH:GetTextField("textoDescriptivo")
 		anchura1 = modeloBH:GetDoubleField("anchuraPlacaIzquierda")
 		anchura2 = modeloBH:GetDoubleField("anchuraPlacaDerecha")
-	    --margenPlaca = modeloBH:GetDoubleField("margenPlaca")
+	   margenMecanizado = modeloBH:GetDoubleField("margenMecanizado")
 	    alturaPlaca = modeloBH:GetDoubleField("alturaPlaca")
 		--origenX = modeloBH:GetDoubleField("origenXAH")
 		--origenY = modeloBH:GetDoubleField("origenYAH")
@@ -1987,7 +1989,7 @@ function OnLuaButton_aceptarBH(modeloBH)
 		textoDescriptivo = modeloBH:GetTextField("textoDescriptivo")
 		anchura1 = modeloBH:GetDoubleField("anchuraPlacaIzquierda")
 		anchura2 = modeloBH:GetDoubleField("anchuraPlacaDerecha")
-	    --margenPlaca = modeloBH:GetDoubleField("margenPlaca")
+	    margenMecanizado = modeloBH:GetDoubleField("margenMecanizado")
 	    alturaPlaca = modeloBH:GetDoubleField("alturaPlaca")
 		--origenX = modeloBH:GetDoubleField("origenXAH")
 		--origenY = modeloBH:GetDoubleField("origenYAH")
@@ -2076,7 +2078,7 @@ function OnLuaButton_modeloCH(framePrincipal)
 		
 		local modeloCH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA CH")
 		
-		textoDescriptivo="CH"
+		textoDescriptivo="C0"
 		anchuraIzq=400 anchuraCentro=1200 anchuraDerecha=400 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=32
 		pliegueSuperior=36 pliegueInferior=0  margenA=57 margenB=108 diametroTaladros=5 
 		
@@ -2084,7 +2086,7 @@ function OnLuaButton_modeloCH(framePrincipal)
 		modeloCH:AddDoubleField("anchuraPlacaIzquierda", anchuraIzq)
 		modeloCH:AddDoubleField("anchuraPlacaCentro", anchuraCentro)
 		modeloCH:AddDoubleField("anchuraPlacaDerecha", anchuraDerecha)
-	    --modeloCH:AddDoubleField("margenPlaca", margenPlaca)
+	    modeloCH:AddDoubleField("margenMecanizado", margenMecanizado)
 	    modeloCH:AddDoubleField("alturaPlaca", alturaPlaca)
 		--modeloCH:AddDoubleField("origenX", origenX)
 		--modeloCH:AddDoubleField("origenY", origenY)
@@ -2122,7 +2124,7 @@ function OnLuaButton_modeloCH(framePrincipal)
 		
 		local modeloCH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA CH1")
 		
-		textoDescriptivo="CH1"
+		textoDescriptivo="C1"
 		anchuraIzq=400 anchuraCentro=1200 anchuraDerecha=400 alturaPlaca=1000 alaIzquierda=40 alaSuperior=20 alaInferior=32
 		pliegueSuperior=40 pliegueInferior=0  margenA=57 margenB=108 diametroTaladros=5 
 		
@@ -2130,7 +2132,7 @@ function OnLuaButton_modeloCH(framePrincipal)
 		modeloCH:AddDoubleField("anchuraPlacaIzquierda", anchuraIzq)
 		modeloCH:AddDoubleField("anchuraPlacaCentro", anchuraCentro)
 		modeloCH:AddDoubleField("anchuraPlacaDerecha", anchuraDerecha)
-	    --modeloCH:AddDoubleField("margenPlaca", margenPlaca)
+	   modeloCH:AddDoubleField("margenMecanizado", margenMecanizado)
 	    modeloCH:AddDoubleField("alturaPlaca", alturaPlaca)
 		--modeloCH:AddDoubleField("origenX", origenX)
 		--modeloCH:AddDoubleField("origenY", origenY)
@@ -2167,7 +2169,7 @@ function OnLuaButton_modeloCH(framePrincipal)
 		
 		local modeloCH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA CH2")
 		
-		textoDescriptivo="CH2"
+		textoDescriptivo="C2"
 		anchuraIzq=400 anchuraCentro=1200 anchuraDerecha=400 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=20
 		pliegueSuperior=36 pliegueInferior=40  margenA=57 margenB=108 diametroTaladros=5 
 		
@@ -2175,7 +2177,7 @@ function OnLuaButton_modeloCH(framePrincipal)
 		modeloCH:AddDoubleField("anchuraPlacaIzquierda", anchuraIzq)
 		modeloCH:AddDoubleField("anchuraPlacaCentro", anchuraCentro)
 		modeloCH:AddDoubleField("anchuraPlacaDerecha", anchuraDerecha)
-	    --modeloCH:AddDoubleField("margenPlaca", margenPlaca)
+	   modeloCH:AddDoubleField("margenMecanizado", margenMecanizado)
 	    modeloCH:AddDoubleField("alturaPlaca", alturaPlaca)
 		--modeloCH:AddDoubleField("origenX", origenX)
 		--modeloCH:AddDoubleField("origenY", origenY)
@@ -2212,7 +2214,7 @@ function OnLuaButton_modeloCH(framePrincipal)
 		
 		local modeloCH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA CH3")
 		
-		textoDescriptivo="CH3"
+		textoDescriptivo="C3"
 		anchuraIzq=400 anchuraCentro=1200 anchuraDerecha=400 alturaPlaca=1000 alaIzquierda=40 alaSuperior=20 alaInferior=20
 		pliegueSuperior=36 pliegueInferior=40  margenA=57 margenB=108 diametroTaladros=5 
 		
@@ -2220,7 +2222,7 @@ function OnLuaButton_modeloCH(framePrincipal)
 		modeloCH:AddDoubleField("anchuraPlacaIzquierda", anchuraIzq)
 		modeloCH:AddDoubleField("anchuraPlacaCentro", anchuraCentro)
 		modeloCH:AddDoubleField("anchuraPlacaDerecha", anchuraDerecha)
-	    --modeloCH:AddDoubleField("margenPlaca", margenPlaca)
+	    modeloCH:AddDoubleField("margenMecanizado", margenMecanizado)
 	    modeloCH:AddDoubleField("alturaPlaca", alturaPlaca)
 		--modeloCH:AddDoubleField("origenX", origenX)
 		--modeloCH:AddDoubleField("origenY", origenY)
@@ -2256,7 +2258,7 @@ function OnLuaButton_modeloCH(framePrincipal)
 		
 		local modeloCH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA CH4")
 		
-		textoDescriptivo="CH4"
+		textoDescriptivo="C4"
 		anchuraIzq=400 anchuraCentro=1200 anchuraDerecha=400 alturaPlaca=1000 alaIzquierda=40 alaSuperior=260 alaInferior=32
 		pliegueSuperior=40 pliegueInferior=0  margenA=57 margenB=108 diametroTaladros=5 
 		
@@ -2264,7 +2266,7 @@ function OnLuaButton_modeloCH(framePrincipal)
 		modeloCH:AddDoubleField("anchuraPlacaIzquierda", anchuraIzq)
 		modeloCH:AddDoubleField("anchuraPlacaCentro", anchuraCentro)
 		modeloCH:AddDoubleField("anchuraPlacaDerecha", anchuraDerecha)
-	    --modeloCH:AddDoubleField("margenPlaca", margenPlaca)
+	    modeloCH:AddDoubleField("margenMecanizado", margenMecanizado)
 	    modeloCH:AddDoubleField("alturaPlaca", alturaPlaca)
 		--modeloCH:AddDoubleField("origenX", origenX)
 		--modeloCH:AddDoubleField("origenY", origenY)
@@ -2300,7 +2302,7 @@ function OnLuaButton_modeloCH(framePrincipal)
 		
 		local modeloCH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA CH5")
 		
-		textoDescriptivo="CH5"
+		textoDescriptivo="C5"
 		anchuraIzq=400 anchuraCentro=1200 anchuraDerecha=400 alturaPlaca=1000 alaIzquierda=40 alaSuperior=260 alaInferior=20
 		pliegueSuperior=40 pliegueInferior=40  margenA=57 margenB=108 diametroTaladros=5 
 		
@@ -2308,7 +2310,7 @@ function OnLuaButton_modeloCH(framePrincipal)
 		modeloCH:AddDoubleField("anchuraPlacaIzquierda", anchuraIzq)
 		modeloCH:AddDoubleField("anchuraPlacaCentro", anchuraCentro)
 		modeloCH:AddDoubleField("anchuraPlacaDerecha", anchuraDerecha)
-	    --modeloCH:AddDoubleField("margenPlaca", margenPlaca)
+	    modeloCH:AddDoubleField("margenMecanizado", margenMecanizado)
 	    modeloCH:AddDoubleField("alturaPlaca", alturaPlaca)
 		--modeloCH:AddDoubleField("origenX", origenX)
 		--modeloCH:AddDoubleField("origenY", origenY)
@@ -2344,7 +2346,7 @@ function OnLuaButton_modeloCH(framePrincipal)
 		
 		local modeloCH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA CH6")
 		
-		textoDescriptivo="CH6"
+		textoDescriptivo="C6"
 		anchuraIzq=400 anchuraCentro=1200 anchuraDerecha=400 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=32
 		pliegueSuperior=300 pliegueInferior=0  margenA=57 margenB=108 diametroTaladros=5 
 		
@@ -2352,7 +2354,7 @@ function OnLuaButton_modeloCH(framePrincipal)
 		modeloCH:AddDoubleField("anchuraPlacaIzquierda", anchuraIzq)
 		modeloCH:AddDoubleField("anchuraPlacaCentro", anchuraCentro)
 		modeloCH:AddDoubleField("anchuraPlacaDerecha", anchuraDerecha)
-	    --modeloCH:AddDoubleField("margenPlaca", margenPlaca)
+	    modeloCH:AddDoubleField("margenMecanizado", margenMecanizado)
 	    modeloCH:AddDoubleField("alturaPlaca", alturaPlaca)
 		--modeloCH:AddDoubleField("origenX", origenX)
 		--modeloCH:AddDoubleField("origenY", origenY)
@@ -2388,7 +2390,7 @@ function OnLuaButton_modeloCH(framePrincipal)
 		
 		local modeloCH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA CH7")
 		
-		textoDescriptivo="CH7"
+		textoDescriptivo="C7"
 		anchuraIzq=400 anchuraCentro=1200 anchuraDerecha=400 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=20
 		pliegueSuperior=300 pliegueInferior=40  margenA=57 margenB=108 diametroTaladros=5 
 		
@@ -2396,7 +2398,7 @@ function OnLuaButton_modeloCH(framePrincipal)
 		modeloCH:AddDoubleField("anchuraPlacaIzquierda", anchuraIzq)
 		modeloCH:AddDoubleField("anchuraPlacaCentro", anchuraCentro)
 		modeloCH:AddDoubleField("anchuraPlacaDerecha", anchuraDerecha)
-	    --modeloCH:AddDoubleField("margenPlaca", margenPlaca)
+	    modeloCH:AddDoubleField("margenMecanizado", margenMecanizado)
 	    modeloCH:AddDoubleField("alturaPlaca", alturaPlaca)
 		--modeloCH:AddDoubleField("origenX", origenX)
 		--modeloCH:AddDoubleField("origenY", origenY)
@@ -2432,7 +2434,7 @@ function OnLuaButton_modeloCH(framePrincipal)
 		
 		local modeloCH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA CH8")
 		
-		textoDescriptivo="CH8"
+		textoDescriptivo="C8"
 		anchuraIzq=400 anchuraCentro=1200 anchuraDerecha=400 alturaPlaca=1000 alaIzquierda=40 alaSuperior=40 alaInferior=40
 		pliegueSuperior=36 pliegueInferior=300  margenA=57 margenB=108 diametroTaladros=5 
 		
@@ -2440,7 +2442,7 @@ function OnLuaButton_modeloCH(framePrincipal)
 		modeloCH:AddDoubleField("anchuraPlacaIzquierda", anchuraIzq)
 		modeloCH:AddDoubleField("anchuraPlacaCentro", anchuraCentro)
 		modeloCH:AddDoubleField("anchuraPlacaDerecha", anchuraDerecha)
-	    --modeloCH:AddDoubleField("margenPlaca", margenPlaca)
+	    modeloCH:AddDoubleField("margenMecanizado", margenMecanizado)
 	    modeloCH:AddDoubleField("alturaPlaca", alturaPlaca)
 		--modeloCH:AddDoubleField("origenX", origenX)
 		--modeloCH:AddDoubleField("origenY", origenY)
@@ -2484,7 +2486,7 @@ function OnLuaButton_aceptarCH(modeloCH)
 		anchuraIzq = modeloCH:GetDoubleField("anchuraPlacaIzquierda")
 		anchuraCentro = modeloCH:GetDoubleField("anchuraPlacaCentro")
 		anchuraDerecha = modeloCH:GetDoubleField("anchuraPlacaDerecha")
-	    --margenPlaca = modeloCH:GetDoubleField("margenPlaca")
+	    margenMecanizado = modeloCH:GetDoubleField("margenMecanizado")
 	    alturaPlaca = modeloCH:GetDoubleField("alturaPlaca")
 		--origenX = modeloCH:GetDoubleField("origenXAH")
 		--origenY = modeloCH:GetDoubleField("origenYAH")
@@ -2510,7 +2512,7 @@ function OnLuaButton_aceptarCH(modeloCH)
 		anchuraIzq = modeloCH:GetDoubleField("anchuraPlacaIzquierda")
 		anchuraCentro = modeloCH:GetDoubleField("anchuraPlacaCentro")
 		anchuraDerecha = modeloCH:GetDoubleField("anchuraPlacaDerecha")
-	    --margenPlaca = modeloCH:GetDoubleField("margenPlaca")
+	    margenMecanizado = modeloCH:GetDoubleField("margenMecanizado")
 	    alturaPlaca = modeloCH:GetDoubleField("alturaPlaca")
 		--origenX = modeloCH:GetDoubleField("origenXAH")
 		--origenY = modeloCH:GetDoubleField("origenYAH")
@@ -2597,15 +2599,15 @@ function OnLuaButton_modeloDH(framePrincipal)
 		end
 		
 		
-		local modeloDH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA DH")
+		local modeloDH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA D0")
 		
-		textoDescriptivo="DH"
+		textoDescriptivo="D0"
 		anchuraPlaca=500 alturaPlaca=500 
 		
         modeloDH:AddTextField("textoDescriptivo", textoDescriptivo)
 		modeloDH:AddDoubleField("anchuraPlaca", anchuraPlaca)
 	    modeloDH:AddDoubleField("alturaPlaca", alturaPlaca)
-		
+		modeloDH:AddDoubleField("margenMecanizado", margenMecanizado)
 	    if  not modeloDH:ShowDialog() then
 				return false;
 		end
@@ -2618,9 +2620,9 @@ function OnLuaButton_modeloDH(framePrincipal)
 			html_path = "file:" .. ruta .. "\\Paneles\\referenciaDH1.html"
 		end
 		
-		local modeloDH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA DH1")
+		local modeloDH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA D1")
 		
-		textoDescriptivo="DH1"
+		textoDescriptivo="D1"
 		altura1=400 altura2=400 anchuraPlaca=1000
 		alaSuperior=50 alaInferior=50 
 		
@@ -2628,7 +2630,7 @@ function OnLuaButton_modeloDH(framePrincipal)
 		modeloDH:AddDoubleField("anchuraPlaca", anchuraPlaca)
 		modeloDH:AddDoubleField("altura1", altura1)
 		modeloDH:AddDoubleField("altura2", altura2)
-		
+		modeloDH:AddDoubleField("margenMecanizado", margenMecanizado)
 		modeloDH:AddDoubleField("alaSuperior", alaSuperior)
 		modeloDH:AddDoubleField("alaInferior", alaInferior)
 		
@@ -2644,16 +2646,16 @@ function OnLuaButton_modeloDH(framePrincipal)
 			html_path = "file:" .. ruta .. "\\Paneles\\referenciaDH2.html"
 		end
 		
-		local modeloDH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA DH2")
+		local modeloDH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA D2")
 		
-		textoDescriptivo="DH2"
+		textoDescriptivo="D2"
 		anchuraPlaca=1000 alturaPlaca=500 
 		alaInferior=20 pliegueInferior=30
 		
         modeloDH:AddTextField("textoDescriptivo", textoDescriptivo)
 		modeloDH:AddDoubleField("anchuraPlaca", anchuraPlaca)
 	    modeloDH:AddDoubleField("alturaPlaca", alturaPlaca)
-
+		modeloDH:AddDoubleField("margenMecanizado", margenMecanizado)
 		modeloDH:AddDoubleField("alaInferior", alaInferior)
 		modeloDH:AddDoubleField("pliegueInferior", pliegueInferior)
 		
@@ -2669,16 +2671,16 @@ function OnLuaButton_modeloDH(framePrincipal)
 			html_path = "file:" .. ruta .. "\\Paneles\\referenciaDH3.html"
 		end
 		
-		local modeloDH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA DH3")
+		local modeloDH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA D3")
 		
-		textoDescriptivo="DH3"
+		textoDescriptivo="D3"
 		anchuraPlaca=1000 alturaPlaca=500 
 		alaInferior=20 alaSuperior=20 pliegueSuperior=30 pliegueInferior=30		
 		
         modeloDH:AddTextField("textoDescriptivo", textoDescriptivo)
 		modeloDH:AddDoubleField("anchuraPlaca", anchuraPlaca)
 	    modeloDH:AddDoubleField("alturaPlaca", alturaPlaca)
-
+	    modeloDH:AddDoubleField("margenMecanizado", margenMecanizado)
 		modeloDH:AddDoubleField("alaInferior", alaInferior)
 		modeloDH:AddDoubleField("alaSuperior", alaSuperior)
 		modeloDH:AddDoubleField("pliegueInferior", pliegueInferior)
@@ -2696,16 +2698,16 @@ function OnLuaButton_modeloDH(framePrincipal)
 			html_path = "file:" .. ruta .. "\\Paneles\\referenciaDH4.html"
 		end
 		
-		local modeloDH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA DH4")
+		local modeloDH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA D4")
 		
-		textoDescriptivo="DH4"
+		textoDescriptivo="D4"
 		anchura1=300 anchura2=300 alturaPlaca=1000 
 		
         modeloDH:AddTextField("textoDescriptivo", textoDescriptivo)
 		modeloDH:AddDoubleField("anchura1", anchura1)
 		modeloDH:AddDoubleField("anchura2", anchura2)
 	    modeloDH:AddDoubleField("alturaPlaca", alturaPlaca)
-		
+		modeloDH:AddDoubleField("margenMecanizado", margenMecanizado)
 	    if  not modeloDH:ShowDialog() then
 				return false;
 		end
@@ -2718,9 +2720,9 @@ function OnLuaButton_modeloDH(framePrincipal)
 			html_path = "file:" .. ruta .. "\\Paneles\\referenciaDH5.html"
 		end
 		
-		local modeloDH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA DH5")
+		local modeloDH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA D5")
 		
-		textoDescriptivo="DH5"
+		textoDescriptivo="D5"
 		anchura1=20 anchura2=40 anchura3=500 anchura4=200 alturaPlaca=1000 
 		
         modeloDH:AddTextField("textoDescriptivo", textoDescriptivo)
@@ -2729,7 +2731,7 @@ function OnLuaButton_modeloDH(framePrincipal)
 		modeloDH:AddDoubleField("anchura3", anchura3)
 		modeloDH:AddDoubleField("anchura4", anchura4)
 	    modeloDH:AddDoubleField("alturaPlaca", alturaPlaca)
-		
+		modeloDH:AddDoubleField("margenMecanizado", margenMecanizado)
 	    if  not modeloDH:ShowDialog() then
 				return false;
 		end
@@ -2742,16 +2744,16 @@ function OnLuaButton_modeloDH(framePrincipal)
 			html_path = "file:" .. ruta .. "\\Paneles\\referenciaDH6.html"
 		end
 		
-		local modeloDH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA DH6")
+		local modeloDH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA D6")
 		
-		textoDescriptivo="DH6"
+		textoDescriptivo="D6"
 		anchuraPlaca=1500 alturaPlaca=1500
 		alaIzquierda=50 alaSuperior=50 alaInferior=50 alaDerecha=50
 		
         modeloDH:AddTextField("textoDescriptivo", textoDescriptivo)
 		modeloDH:AddDoubleField("anchuraPlaca", anchuraPlaca)
 	    modeloDH:AddDoubleField("alturaPlaca", alturaPlaca)
-
+	    modeloDH:AddDoubleField("margenMecanizado", margenMecanizado)
 		modeloDH:AddDoubleField("alaIzquierda", alaIzquierda)
 		modeloDH:AddDoubleField("alaDerecha", alaDerecha)
 		modeloDH:AddDoubleField("alaSuperior", alaSuperior)
@@ -2769,9 +2771,9 @@ function OnLuaButton_modeloDH(framePrincipal)
 			html_path = "file:" .. ruta .. "\\Paneles\\referenciaDH7.html"
 		end
 		
-		local modeloDH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA DH7")
+		local modeloDH = HTML_Dialog(false, html_path, tamX, tamY, "REFERENCIA D7")
 		
-		textoDescriptivo="DH7"
+		textoDescriptivo="D7"
 		anchuraPlaca=700 alturaPlaca=1000 
 		alaIzquierda=40 alaSuperior=40 alaInferior=20 alaDerecha=40
 		pliegueDer=50 pliegueIzq=50 
@@ -2779,7 +2781,7 @@ function OnLuaButton_modeloDH(framePrincipal)
         modeloDH:AddTextField("textoDescriptivo", textoDescriptivo)
 		modeloDH:AddDoubleField("anchuraPlaca", anchuraPlaca)
 	    modeloDH:AddDoubleField("alturaPlaca", alturaPlaca)
-
+	    modeloDH:AddDoubleField("margenMecanizado", margenMecanizado)
 		modeloDH:AddDoubleField("alaIzquierda", alaIzquierda)
 		modeloDH:AddDoubleField("alaDerecha", alaDerecha)
 		modeloDH:AddDoubleField("alaSuperior", alaSuperior)
@@ -2806,16 +2808,24 @@ function OnLuaButton_aceptarDH(modeloDH)
 		textoDescriptivo = modeloDH:GetTextField("textoDescriptivo")
 		anchuraPlaca = modeloDH:GetDoubleField("anchuraPlaca")
 	    alturaPlaca = modeloDH:GetDoubleField("alturaPlaca")
+<<<<<<< HEAD
 		
 		--Punto inicial de la pieza
 			origenX=-(anchuraPlaca+400)
 			origenY= 400
+=======
+	    margenMecanizado= modeloDH:GetDoubleField("margenMecanizado")
+>>>>>>> cb0fab6f04b2d2023f0e8ee027d18ca3b6b5e0dc
 	
 	elseif modelo==41 then  --DH1
 		textoDescriptivo = modeloDH:GetTextField("textoDescriptivo")
 		anchuraPlaca = modeloDH:GetDoubleField("anchuraPlaca")
 	    altura1 = modeloDH:GetDoubleField("altura1")
 	    altura2 = modeloDH:GetDoubleField("altura2")
+<<<<<<< HEAD
+=======
+		margenMecanizado= modeloDH:GetDoubleField("margenMecanizado")
+>>>>>>> cb0fab6f04b2d2023f0e8ee027d18ca3b6b5e0dc
 		alaSuperior=modeloDH:GetDoubleField("alaSuperior")
 		alaInferior=modeloDH:GetDoubleField("alaInferior")
 		
@@ -2827,6 +2837,10 @@ function OnLuaButton_aceptarDH(modeloDH)
 		textoDescriptivo = modeloDH:GetTextField("textoDescriptivo")
 		anchuraPlaca = modeloDH:GetDoubleField("anchuraPlaca")
 	    alturaPlaca = modeloDH:GetDoubleField("alturaPlaca")
+<<<<<<< HEAD
+=======
+		margenMecanizado= modeloDH:GetDoubleField("margenMecanizado")
+>>>>>>> cb0fab6f04b2d2023f0e8ee027d18ca3b6b5e0dc
 		pliegueInferior=modeloDH:GetDoubleField("pliegueInferior")
 		alaInferior=modeloDH:GetDoubleField("alaInferior")
 		
@@ -2838,6 +2852,10 @@ function OnLuaButton_aceptarDH(modeloDH)
 		textoDescriptivo = modeloDH:GetTextField("textoDescriptivo")
 		anchuraPlaca = modeloDH:GetDoubleField("anchuraPlaca")
 	    alturaPlaca = modeloDH:GetDoubleField("alturaPlaca")
+<<<<<<< HEAD
+=======
+		margenMecanizado= modeloDH:GetDoubleField("margenMecanizado")
+>>>>>>> cb0fab6f04b2d2023f0e8ee027d18ca3b6b5e0dc
 		pliegueInferior=modeloDH:GetDoubleField("pliegueInferior")
 		pliegueSuperior=modeloDH:GetDoubleField("pliegueSuperior")
 		alaInferior=modeloDH:GetDoubleField("alaInferior")
@@ -2852,11 +2870,16 @@ function OnLuaButton_aceptarDH(modeloDH)
 		anchura1 = modeloDH:GetDoubleField("anchura1")
 		anchura2 = modeloDH:GetDoubleField("anchura2")
 	    alturaPlaca = modeloDH:GetDoubleField("alturaPlaca")
+<<<<<<< HEAD
 		
 		--Punto inicial de la pieza
 			origenX=-(anchuraPlaca+400)
 			origenY= 400
 	
+=======
+		margenMecanizado= modeloDH:GetDoubleField("margenMecanizado")
+
+>>>>>>> cb0fab6f04b2d2023f0e8ee027d18ca3b6b5e0dc
 	elseif modelo==45 then --DH5
 		textoDescriptivo = modeloDH:GetTextField("textoDescriptivo")
 		anchura1 = modeloDH:GetDoubleField("anchura1")
@@ -2864,15 +2887,24 @@ function OnLuaButton_aceptarDH(modeloDH)
 		anchura3 = modeloDH:GetDoubleField("anchura3")
 		anchura4 = modeloDH:GetDoubleField("anchura4")
 	    alturaPlaca = modeloDH:GetDoubleField("alturaPlaca")
+<<<<<<< HEAD
 		
 		--Punto inicial de la pieza
 			origenX=-(anchura1+anchura2+anchura3+anchura4+400)
 			origenY= 400
 	
+=======
+		margenMecanizado= modeloDH:GetDoubleField("margenMecanizado")
+
+>>>>>>> cb0fab6f04b2d2023f0e8ee027d18ca3b6b5e0dc
 	elseif modelo==46 then --DH6
 		textoDescriptivo = modeloDH:GetTextField("textoDescriptivo")
 		anchuraPlaca = modeloDH:GetDoubleField("anchuraPlaca")
 	    alturaPlaca = modeloDH:GetDoubleField("alturaPlaca")
+<<<<<<< HEAD
+=======
+		margenMecanizado= modeloDH:GetDoubleField("margenMecanizado")
+>>>>>>> cb0fab6f04b2d2023f0e8ee027d18ca3b6b5e0dc
 		alaDerecha=modeloDH:GetDoubleField("alaDerecha")
 		alaIzquierda=modeloDH:GetDoubleField("alaIzquierda")
 		alaInferior=modeloDH:GetDoubleField("alaInferior")
@@ -2886,6 +2918,10 @@ function OnLuaButton_aceptarDH(modeloDH)
 		textoDescriptivo = modeloDH:GetTextField("textoDescriptivo")
 		anchuraPlaca = modeloDH:GetDoubleField("anchuraPlaca")
 	    alturaPlaca = modeloDH:GetDoubleField("alturaPlaca")
+<<<<<<< HEAD
+=======
+		margenMecanizado= modeloDH:GetDoubleField("margenMecanizado")
+>>>>>>> cb0fab6f04b2d2023f0e8ee027d18ca3b6b5e0dc
 		alaDerecha=modeloDH:GetDoubleField("alaDerecha")
 		alaIzquierda=modeloDH:GetDoubleField("alaIzquierda")
 		alaInferior=modeloDH:GetDoubleField("alaInferior")
@@ -2959,7 +2995,7 @@ function OnLuaButton_modeloE(framePrincipal)
         modeloE:AddTextField("textoDescriptivo", textoDescriptivo)
 		
         modeloE:AddDoubleField("margenFresado", margenFresado)
-		
+		modeloE:AddDoubleField("margenMecanizado", margenMecanizado)
 		modeloE:AddDoubleField("altura1", altura1)
 		modeloE:AddDoubleField("altura2", altura2)
 		modeloE:AddDoubleField("altura3", altura3)
@@ -2990,7 +3026,7 @@ function OnLuaButton_modeloE(framePrincipal)
 		margenM1=50 margenM2=50 margenFresado=1
 		
         modeloE:AddTextField("textoDescriptivo", textoDescriptivo)
-		
+		modeloE:AddDoubleField("margenMecanizado", margenMecanizado)
 		modeloE:AddDoubleField("margenFresado", margenFresado)
 		modeloE:AddDoubleField("altura1", altura1)
 		modeloE:AddDoubleField("altura2", altura2)
@@ -3028,7 +3064,7 @@ function OnLuaButton_modeloE(framePrincipal)
 		modeloE:AddDoubleField("altura2", altura2)
 		modeloE:AddDoubleField("altura3", altura3)
 		modeloE:AddDoubleField("altura4", altura4)
-		
+		modeloE:AddDoubleField("margenMecanizado", margenMecanizado)
 	    modeloE:AddDoubleField("anchura1", anchura1)
 	    modeloE:AddDoubleField("anchura2", anchura2)
 		
@@ -3060,7 +3096,7 @@ function OnLuaButton_modeloE(framePrincipal)
 		modeloE:AddDoubleField("altura2", altura2)
 		modeloE:AddDoubleField("altura3", altura3)
 		modeloE:AddDoubleField("altura4", altura4)
-		
+		modeloE:AddDoubleField("margenMecanizado", margenMecanizado)
 	    modeloE:AddDoubleField("anchura1", anchura1)
 	    modeloE:AddDoubleField("anchura2", anchura2)
 		
@@ -3094,7 +3130,7 @@ function OnLuaButton_modeloE(framePrincipal)
 	    modeloE:AddDoubleField("altura2", altura2)
 	    modeloE:AddDoubleField("altura3", altura3)
 	    modeloE:AddDoubleField("altura4", altura4)
-		
+		modeloE:AddDoubleField("margenMecanizado", margenMecanizado)
 	    modeloE:AddDoubleField("margenM1", margenM1)
 	    modeloE:AddDoubleField("margenM2", margenM2)
 		
@@ -3127,7 +3163,7 @@ function OnLuaButton_modeloE(framePrincipal)
 	    modeloE:AddDoubleField("altura2", altura2)
 	    modeloE:AddDoubleField("altura3", altura3)
 	    modeloE:AddDoubleField("altura4", altura4)
-		
+		modeloE:AddDoubleField("margenMecanizado", margenMecanizado)
 	    modeloE:AddDoubleField("margenM1", margenM1)
 	    modeloE:AddDoubleField("margenM2", margenM2)
 		
@@ -3148,6 +3184,10 @@ function OnLuaButton_aceptarE(modeloE)
 	if modelo==50 then --E0
 		textoDescriptivo = modeloE:GetTextField("textoDescriptivo")
 		margenFresado = modeloE:GetDoubleField("margenFresado")
+<<<<<<< HEAD
+=======
+		margenMecanizado = modeloE:GetDoubleField("margenMecanizado")
+>>>>>>> cb0fab6f04b2d2023f0e8ee027d18ca3b6b5e0dc
 		anchuraPlaca = modeloE:GetDoubleField("anchuraPlaca")
 	    altura1 = modeloE:GetDoubleField("altura1")
 	    altura2 = modeloE:GetDoubleField("altura2")
@@ -3165,6 +3205,10 @@ function OnLuaButton_aceptarE(modeloE)
 	elseif modelo==51 then  --E1
 		textoDescriptivo = modeloE:GetTextField("textoDescriptivo")
 		margenFresado = modeloE:GetDoubleField("margenFresado")
+<<<<<<< HEAD
+=======
+		margenMecanizado = modeloE:GetDoubleField("margenMecanizado")
+>>>>>>> cb0fab6f04b2d2023f0e8ee027d18ca3b6b5e0dc
 		anchuraPlaca = modeloE:GetDoubleField("anchuraPlaca")
 	    altura1 = modeloE:GetDoubleField("altura1")
 	    altura2 = modeloE:GetDoubleField("altura2")
@@ -3182,6 +3226,10 @@ function OnLuaButton_aceptarE(modeloE)
 	elseif modelo==52 then --E2
 		textoDescriptivo = modeloE:GetTextField("textoDescriptivo")
 		margenFresado = modeloE:GetDoubleField("margenFresado")
+<<<<<<< HEAD
+=======
+		margenMecanizado = modeloE:GetDoubleField("margenMecanizado")
+>>>>>>> cb0fab6f04b2d2023f0e8ee027d18ca3b6b5e0dc
 		anchura1 = modeloE:GetDoubleField("anchura1")
 		anchura2 = modeloE:GetDoubleField("anchura2")
 	    altura1 = modeloE:GetDoubleField("altura1")
@@ -3202,6 +3250,10 @@ function OnLuaButton_aceptarE(modeloE)
 	elseif modelo==53 then --E3
 		textoDescriptivo = modeloE:GetTextField("textoDescriptivo")
 		margenFresado = modeloE:GetDoubleField("margenFresado")
+<<<<<<< HEAD
+=======
+		margenMecanizado = modeloE:GetDoubleField("margenMecanizado")
+>>>>>>> cb0fab6f04b2d2023f0e8ee027d18ca3b6b5e0dc
 		anchura1 = modeloE:GetDoubleField("anchura1")
 		anchura2 = modeloE:GetDoubleField("anchura2")
 	    altura1 = modeloE:GetDoubleField("altura1")
@@ -3221,6 +3273,10 @@ function OnLuaButton_aceptarE(modeloE)
 	elseif modelo==54 then --E4
 		textoDescriptivo = modeloE:GetTextField("textoDescriptivo")
 		margenFresado = modeloE:GetDoubleField("margenFresado")
+<<<<<<< HEAD
+=======
+		margenMecanizado = modeloE:GetDoubleField("margenMecanizado")
+>>>>>>> cb0fab6f04b2d2023f0e8ee027d18ca3b6b5e0dc
 		anchura1 = modeloE:GetDoubleField("anchura1")
 		anchura2 = modeloE:GetDoubleField("anchura2")
 	    altura1 = modeloE:GetDoubleField("altura1")
@@ -3237,6 +3293,10 @@ function OnLuaButton_aceptarE(modeloE)
 	elseif modelo==55 then --E5
 		textoDescriptivo = modeloE:GetTextField("textoDescriptivo")
 		margenFresado = modeloE:GetDoubleField("margenFresado")
+<<<<<<< HEAD
+=======
+		margenMecanizado = modeloE:GetDoubleField("margenMecanizado")
+>>>>>>> cb0fab6f04b2d2023f0e8ee027d18ca3b6b5e0dc
 		anchura1 = modeloE:GetDoubleField("anchura1")
 		anchura2 = modeloE:GetDoubleField("anchura2")
 	    altura1 = modeloE:GetDoubleField("altura1")
@@ -3284,7 +3344,11 @@ function OnLuaButton_aceptarE(modeloE)
 			end
 		
 			
+<<<<<<< HEAD
 		DisplayMessageBox("Modelo E"..modelo-50 .." Creado Correctamente")
+=======
+		DisplayMessageBox("Modelo D"..modelo-50 .." Creado Correctamente")
+>>>>>>> cb0fab6f04b2d2023f0e8ee027d18ca3b6b5e0dc
 	
 	--end
 	
@@ -3335,6 +3399,7 @@ function OnLuaButton_modelo000(framePrincipal)
 		modelo000:AddDoubleField("alaInferior", alaInferior)
 		
 		modelo000:AddDoubleField("margenFresado", margenFresado)
+		modelo000:AddDoubleField("margenMecanizado", margenMecanizado)
 		
 	    if  not modelo000:ShowDialog() then
 				return false;
@@ -3381,6 +3446,7 @@ function OnLuaButton_modelo000(framePrincipal)
 		modelo000:AddDoubleField("alaInferior", alaInferior)
 		
 		modelo000:AddDoubleField("margenFresado", margenFresado)
+		modelo000:AddDoubleField("margenMecanizado", margenMecanizado)
 		
 	    if  not modelo000:ShowDialog() then
 				return false;	
@@ -3417,6 +3483,7 @@ function OnLuaButton_modelo000(framePrincipal)
 
 		modelo000:AddDoubleField("alaIzquierda", alaIzquierda)
 		modelo000:AddDoubleField("alaDerecha", alaDerecha)
+		modelo000:AddDoubleField("margenMecanizado", margenMecanizado)
 		
 	    if  not modelo000:ShowDialog() then
 				return false;
@@ -3447,6 +3514,7 @@ function OnLuaButton_modelo000(framePrincipal)
 		modelo000:AddDoubleField("alaIzquierda", alaIzquierda)
 		modelo000:AddDoubleField("alaDerecha", alaDerecha)
 		modelo000:AddDoubleField("pliegueSuperior", pliegueSuperior)
+		modelo000:AddDoubleField("margenMecanizado", margenMecanizado)
 		
 	    if  not modelo000:ShowDialog() then
 				return false;
@@ -3505,6 +3573,7 @@ function OnLuaButton_modelo000(framePrincipal)
 		modelo000:AddDoubleField("alaIzquierda", alaIzquierda)
 		modelo000:AddDoubleField("alaDerecha", alaDerecha)
 		modelo000:AddDoubleField("pliegueSuperior", pliegueSuperior)
+		modelo000:AddDoubleField("margenMecanizado", margenMecanizado)
 		
 	    if  not modelo000:ShowDialog() then
 				return false;
@@ -3738,10 +3807,12 @@ function OnLuaButton_aceptar000(modelo000)
 		alaInferior=modelo000:GetDoubleField("alaInferior")
 		
 		margenFresado=modelo000:GetDoubleField("margenFresado")
+		margenMecanizado=modelo000:GetDoubleField("margenMecanizado")
 		
 		
 		dibujarFresado001(doc)
 		dibujarCorte001(doc)
+		dibujarTexto(doc)
 		DisplayMessageBox("MODELO 001 CREADO CORRECTAMENTE")
 		
 	elseif modelo==102 then  --PIEZA ESPECIAL 002
@@ -3770,10 +3841,11 @@ function OnLuaButton_aceptar000(modelo000)
 		alaInferior=modelo000:GetDoubleField("alaInferior")
 		
 		margenFresado=modelo000:GetDoubleField("margenFresado")
-		
+		margenMecanizado=modelo000:GetDoubleField("margenMecanizado")
 		
 		dibujarFresado002(doc)
 		dibujarCorte002(doc)
+		dibujarTexto(doc)
 		DisplayMessageBox("MODELO 002 CREADO CORRECTAMENTE")
 		
 	
@@ -3796,14 +3868,14 @@ function OnLuaButton_aceptar000(modelo000)
 		alaIzquierda=modelo000:GetDoubleField("alaIzquierda")
 		alaDerecha=modelo000:GetDoubleField("alaDerecha")
 		
-		
+		margenMecanizado=modelo000:GetDoubleField("margenMecanizado")
 		dibujarFresado003(doc)
 		if dibujoHorizontal==1 then
 			dibujarCorte003Horizontal(doc)
 		else
 			dibujarCorte003Vertical(doc)
 		end
-		
+		dibujarTexto(doc)
 		DisplayMessageBox("MODELO 003 CREADO CORRECTAMENTE")
 	
 	elseif modelo==104 then  --PIEZA ESPECIAL 004
@@ -3818,10 +3890,10 @@ function OnLuaButton_aceptar000(modelo000)
 		alaDerecha = modelo000:GetDoubleField("alaDerecha")
 		alaIzquierda = modelo000:GetDoubleField("alaIzquierda")
 		pliegueSuperior = modelo000:GetDoubleField("pliegueSuperior")
-		
+		margenMecanizado=modelo000:GetDoubleField("margenMecanizado")
 		dibujarFresado004(doc)
 		dibujarCorte004(doc)
-		
+		dibujarTexto(doc)
 		DisplayMessageBox("MODELO 004 CREADO CORRECTAMENTE")
 	
 	elseif modelo==105 then  --PIEZA ESPECIAL 005
@@ -3835,10 +3907,10 @@ function OnLuaButton_aceptar000(modelo000)
 		alaDerecha = modelo000:GetDoubleField("alaDerecha")
 		alaIzquierda = modelo000:GetDoubleField("alaIzquierda")
 		pliegueSuperior = modelo000:GetDoubleField("pliegueSuperior")
-		
+		margenMecanizado=modelo000:GetDoubleField("margenMecanizado")
 		dibujarFresado005(doc)
 		dibujarCorte005(doc)
-		
+		dibujarTexto(doc)
 		DisplayMessageBox("MODELO 005 CREADO CORRECTAMENTE")
 		
 	elseif modelo==106 then  --PIEZA ESPECIAL 006
@@ -5232,6 +5304,14 @@ function dibujarTaladrosAH(doc)
 	return true; 
 end
 
+--Función de redondeo
+function round(num, numeroDecimales)
+  if numeroDecimales and numeroDecimales>0 then
+    local mult = 10^numeroDecimales
+    return math.floor(num * mult + 0.5) / mult
+  end
+  return math.floor(num + 0.5)
+end
 
 
 function dibujarTexto(doc)
@@ -5240,10 +5320,182 @@ function dibujarTexto(doc)
 	local layer = doc.LayerManager:GetLayerWithName("Descripcion")
 	
 	local origenTexto
+<<<<<<< HEAD
 	if modelo==50 or modelo==51 then --MODELO E
 		origenTexto = Point2D(origenX+anchuraPlaca/2+margenM1,origenY+(altura1+altura2+altura3+altura4+altura5)/2)
 	elseif modelo==52 or modelo==53 or modelo==54 or modelo==55 then
 		origenTexto = Point2D(origenX+(anchura1+anchura2)/2,origenY+(altura1+altura2+altura3+altura4)/2)
+=======
+	local areaTotal
+	local areaPlana
+
+	if (modelo<=8) then --Modelo A
+
+		origenTexto = Point2D(origenX+(alaIzquierda+anchuraPlaca+alaDerecha)/2,origenY+(alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior)/2)
+
+		areaTotal= (((2*margenMecanizado)+(alaDerecha+alaIzquierda+anchuraPlaca))*((2*margenMecanizado)+(alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior)))/1000000
+		areaPlana=(((2*margenMecanizado)+(anchuraPlaca))*((2*margenMecanizado)+(alturaPlaca)))/1000000
+
+		textoDescriptivo=textoDescriptivo .. "\nArea Total: " .. round(areaTotal,2) .. " m2" .. "\nArea Plana: " .. round(areaPlana,2) .. " m2"
+
+	elseif (modelo>8) and (modelo<=26) then --Modelo B
+
+		origenTexto = Point2D(origenX+(alaDerecha+alaIzquierda+anchura1+anchura2)/2,origenY+(alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior)/2)
+
+		areaTotal= (((2*margenMecanizado)+(alaDerecha+alaIzquierda+anchura1+anchura2))*((2*margenMecanizado)+(alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior)))/1000000
+		areaPlana=(((2*margenMecanizado)+(anchura1+anchura2))*((2*margenMecanizado)+(alturaPlaca)))/1000000
+
+		textoDescriptivo=textoDescriptivo .. "\nArea Total: " .. round(areaTotal,2) .. " m2" .. "\nArea Plana: " .. round(areaPlana,2) .. " m2"
+
+	elseif (modelo>26) and (modelo<=35) then--Modelo C
+
+		origenTexto = Point2D(origenX+(alaDerecha+alaIzquierda+anchuraIzq+anchuraCentro+anchuraDerecha)/2,origenY+(alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior)/2)
+
+		areaTotal= (((2*margenMecanizado)+(alaDerecha+alaIzquierda+anchuraIzq+anchuraCentro+anchuraDerecha))*((2*margenMecanizado)+(alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior)))/1000000
+		areaPlana=(((2*margenMecanizado)+(anchuraIzq+anchuraCentro+anchuraDerecha))*((2*margenMecanizado)+(alturaPlaca)))/1000000
+
+		textoDescriptivo=textoDescriptivo .. "\nArea Total: " .. round(areaTotal,2) .. " m2" .. "\nArea Plana: " .. round(areaPlana,2) .. " m2"
+
+	elseif (modelo==40) then --Modelo D0
+
+		origenTexto = Point2D(origenX+(anchuraPlaca)/2,origenY+(alturaPlaca)/2)
+
+		areaTotal= (((2*margenMecanizado)+(anchuraPlaca))*((2*margenMecanizado)+(alturaPlaca)))/1000000
+		areaPlana=(((2*margenMecanizado)+(anchuraPlaca))*((2*margenMecanizado)+(alturaPlaca)))/1000000
+
+		textoDescriptivo=textoDescriptivo .. "\nArea Total: " .. round(areaTotal,2) .. " m2" .. "\nArea Plana: " .. round(areaPlana,2) .. " m2"
+
+
+	elseif (modelo==41) then --Modelo D1
+
+		origenTexto = Point2D(origenX+(anchuraPlaca)/2,origenY+(altura1+altura2+alaSuperior+alaInferior)/2)
+
+		areaTotal= (((2*margenMecanizado)+(anchuraPlaca))*((2*margenMecanizado)+(altura1+altura2+alaSuperior+alaInferior)))/1000000
+		areaPlana=(((2*margenMecanizado)+(anchuraPlaca))*((2*margenMecanizado)+(altura1+altura2)))/1000000
+
+		textoDescriptivo=textoDescriptivo .. "\nArea Total: " .. round(areaTotal,2) .. " m2" .. "\nArea Plana: " .. round(areaPlana,2) .. " m2"
+
+
+	elseif (modelo==42) then --Modelo D2
+
+		origenTexto = Point2D(origenX+(anchuraPlaca)/2,origenY+(alturaPlaca+pliegueInferior+alaInferior)/2)
+
+		areaTotal= (((2*margenMecanizado)+(anchuraPlaca))*((2*margenMecanizado)+(alturaPlaca+pliegueInferior+alaInferior)))/1000000
+		areaPlana=(((2*margenMecanizado)+(anchuraPlaca))*((2*margenMecanizado)+(alturaPlaca)))/1000000
+
+		textoDescriptivo=textoDescriptivo .. "\nArea Total: " .. round(areaTotal,2) .. " m2" .. "\nArea Plana: " .. round(areaPlana,2) .. " m2"
+
+
+	elseif (modelo==43) then --Modelo D3
+
+		origenTexto = Point2D(origenX+(anchuraPlaca)/2,origenY+(alturaPlaca+pliegueInferior+alaInferior+alaSuperior+pliegueSuperior)/2)
+
+		areaTotal= (((2*margenMecanizado)+(anchuraPlaca))*((2*margenMecanizado)+(alturaPlaca+pliegueInferior+alaInferior+alaSuperior+pliegueSuperior)))/1000000
+		areaPlana=(((2*margenMecanizado)+(anchuraPlaca))*((2*margenMecanizado)+(alturaPlaca)))/1000000
+
+		textoDescriptivo=textoDescriptivo .. "\nArea Total: " .. round(areaTotal,2) .. " m2" .. "\nArea Plana: " .. round(areaPlana,2) .. " m2"
+
+	elseif (modelo==44) then --Modelo D4
+
+		origenTexto = Point2D(origenX+(anchura1+anchura2)/2,origenY+(alturaPlaca)/2)
+
+		areaTotal= (((2*margenMecanizado)+(anchura1+anchura2))*((2*margenMecanizado)+(alturaPlaca)))/1000000
+		areaPlana=(((2*margenMecanizado)+(anchura1+anchura2))*((2*margenMecanizado)+(alturaPlaca)))/1000000
+
+		textoDescriptivo=textoDescriptivo .. "\nArea Total: " .. round(areaTotal,2) .. " m2" .. "\nArea Plana: " .. round(areaPlana,2) .. " m2"
+
+	
+	elseif (modelo==45) then --Modelo D5
+
+		origenTexto = Point2D(origenX+(anchura1+anchura2+anchura3+anchura4)/2,origenY+(alturaPlaca)/2)
+
+		areaTotal= (((2*margenMecanizado)+(anchura1+anchura2+anchura3+anchura4))*((2*margenMecanizado)+(alturaPlaca)))/1000000
+		areaPlana=(((2*margenMecanizado)+(anchura1+anchura2+anchura3+anchura4))*((2*margenMecanizado)+(alturaPlaca)))/1000000
+
+		textoDescriptivo=textoDescriptivo .. "\nArea Total: " .. round(areaTotal,2) .. " m2" .. "\nArea Plana: " .. round(areaPlana,2) .. " m2"
+
+    elseif (modelo==46) then --Modelo D6
+
+		origenTexto = Point2D(origenX+(alaIzquierda+alaDerecha+anchuraPlaca)/2,origenY+(alturaPlaca+alaSuperior+alaInferior)/2)
+
+		areaTotal= (((2*margenMecanizado)+(alaIzquierda+alaDerecha+anchuraPlaca))*((2*margenMecanizado)+(alturaPlaca+alaSuperior+alaInferior)))/1000000
+		areaPlana=(((2*margenMecanizado)+(anchuraPlaca))*((2*margenMecanizado)+(alturaPlaca)))/1000000
+
+		textoDescriptivo=textoDescriptivo .. "\nArea Total: " .. round(areaTotal,2) .. " m2" .. "\nArea Plana: " .. round(areaPlana,2) .. " m2"
+
+    elseif (modelo==47) then --Modelo D7
+
+		origenTexto = Point2D(origenX+(pliegueIzquierdo+alaIzquierda+alaDerecha+pliegueDerecho+anchuraPlaca)/2,origenY+(alturaPlaca+alaSuperior+alaInferior)/2)
+
+		areaTotal= (((2*margenMecanizado)+(pliegueIzquierdo+alaIzquierda+alaDerecha+pliegueDerecho+anchuraPlaca))*((2*margenMecanizado)+(alturaPlaca+alaSuperior+alaInferior)))/1000000
+		areaPlana=(((2*margenMecanizado)+(anchuraPlaca))*((2*margenMecanizado)+(alturaPlaca)))/1000000
+
+		textoDescriptivo=textoDescriptivo .. "\nArea Total: " .. round(areaTotal,2) .. " m2" .. "\nArea Plana: " .. round(areaPlana,2) .. " m2"
+
+	elseif modelo==50 or modelo==51 then --MODELO E0, E1 
+
+		origenTexto = Point2D(origenX+(anchuraPlaca+margenM1+margenM2)/2,origenY+(altura1+altura2+altura3+altura4+altura5)/2)
+
+		areaTotal= (((2*margenMecanizado)+(anchuraPlaca+margenM1+margenM2))*((2*margenMecanizado)+(altura1+altura2+altura3+altura4+altura5)))/1000000
+		areaPlana=(((2*margenMecanizado)+(anchuraPlaca+margenM1+margenM2))*((2*margenMecanizado)+(altura1+altura2+altura3+altura4+altura5)))/1000000
+
+		textoDescriptivo=textoDescriptivo .. "\nArea Total: " .. round(areaTotal,2) .. " m2" .. "\nArea Plana: " .. round(areaPlana,2) .. " m2"
+
+	elseif modelo==52 or modelo==53 or modelo==54 or modelo==55 then --MODELO E2, E3, E4, E5
+
+		origenTexto = Point2D(origenX+(anchura1+anchura2+margenM1+margenM2)/2,origenY+(altura1+altura2+altura3+altura4)/2)
+
+		areaTotal= (((2*margenMecanizado)+(anchura1+anchura2+margenM1+margenM2))*((2*margenMecanizado)+(altura1+altura2+altura3+altura4)))/1000000
+		areaPlana=(((2*margenMecanizado)+(anchura1+anchura2+margenM1+margenM2))*((2*margenMecanizado)+(altura1+altura2+altura3+altura4)))/1000000
+
+		textoDescriptivo=textoDescriptivo .. "\nArea Total: " .. round(areaTotal,2) .. " m2" .. "\nArea Plana: " .. round(areaPlana,2) .. " m2"
+
+	elseif modelo==101 then --modelo 001
+
+		origenTexto = Point2D(origenX+(anchura1+anchura2+anchura3+anchura4+anchura5+anchura6+anchura7)/2,origenY+(alturaPlaca+alaInferior+alaSuperior+pliegueSuperior)/2)
+
+		areaTotal= (((2*margenMecanizado)+(anchura1+anchura2+anchura3+anchura4+anchura5+anchura6+anchura7))*((2*margenMecanizado)+(alturaPlaca+alaInferior+alaSuperior+pliegueSuperior)))/1000000
+		areaPlana=(((2*margenMecanizado)+(anchura1+anchura2+anchura3+anchura4+anchura5+anchura6+anchura7))*((2*margenMecanizado)+(alturaPlaca)))/1000000
+
+		textoDescriptivo=textoDescriptivo .. "\nArea Total: " .. round(areaTotal,2) .. " m2" .. "\nArea Plana: " .. round(areaPlana,2) .. " m2"
+
+    elseif modelo==102 then --modelo 002
+
+    	origenTexto = Point2D(origenX+(anchura1+anchura2+anchura3+anchura4+anchura5+anchura6+anchura7)/2,origenY+(pliegueInf1+pliegueInf2+pliegueInf3+pliegueInf4+pliegueInf5+pliegueInf6+pliegueInf7+alturaPlaca+alaInferior+alaSuperior+pliegueSuperior)/2)
+
+		areaTotal= (((2*margenMecanizado)+(anchura1+anchura2+anchura3+anchura4+anchura5+anchura6+anchura7))*((2*margenMecanizado)+(pliegueInf1+pliegueInf2+pliegueInf3+pliegueInf4+pliegueInf5+pliegueInf6+pliegueInf7+alturaPlaca+alaInferior+alaSuperior+pliegueSuperior)))/1000000
+		areaPlana=(((2*margenMecanizado)+(anchura1+anchura2+anchura3+anchura4+anchura5+anchura6+anchura7))*((2*margenMecanizado)+(alturaPlaca)))/1000000
+
+		textoDescriptivo=textoDescriptivo .. "\nArea Total: " .. round(areaTotal,2) .. " m2" .. "\nArea Plana: " .. round(areaPlana,2) .. " m2"
+
+	elseif modelo==103 then --modelo 003
+
+		origenTexto = Point2D(origenX+(anchuraPlaca+alaIzquierda+alaDerecha)/2,origenY+(altura1+altura2+altura3+altura4+altura5+altura6+altura7+altura8+altura9+altura10)/2)
+
+		areaTotal= (((2*margenMecanizado)+(anchuraPlaca+alaIzquierda+alaDerecha))*((2*margenMecanizado)+(altura1+altura2+altura3+altura4+altura5+altura6+altura7+altura8+altura9+altura10)))/1000000
+		areaPlana=(((2*margenMecanizado)+(anchuraPlaca))*((2*margenMecanizado)+(altura1+altura2+altura3+altura4+altura5+altura6+altura7+altura8+altura9+altura10)))/1000000
+
+		textoDescriptivo=textoDescriptivo .. "\nArea Total: " .. round(areaTotal,2) .. " m2" .. "\nArea Plana: " .. round(areaPlana,2) .. " m2"
+
+	elseif modelo==104 then --modelo 004
+
+		origenTexto = Point2D(origenX+(anchuraPlaca+alaIzquierda+alaDerecha)/2,origenY+(alaInferior+alturaPlaca+pliegueSuperior+alaSuperior)/2)
+
+		areaTotal= (((2*margenMecanizado)+(anchuraPlaca+alaIzquierda+alaDerecha))*((2*margenMecanizado)+(alaInferior+alturaPlaca+pliegueSuperior+alaSuperior)))/1000000
+		areaPlana=(((2*margenMecanizado)+(anchuraPlaca))*((2*margenMecanizado)+(alturaPlaca)))/1000000
+
+		textoDescriptivo=textoDescriptivo .. "\nArea Total: " .. round(areaTotal,2) .. " m2" .. "\nArea Plana: " .. round(areaPlana,2) .. " m2"
+
+    elseif modelo==105 then --modelo 005
+
+		origenTexto = Point2D(origenX+(anchuraPlaca+alaIzquierda+alaDerecha)/2,origenY+(alaInferior+alturaPlaca+pliegueSuperior+alaSuperior)/2)
+
+		areaTotal= (((2*margenMecanizado)+(anchuraPlaca+alaIzquierda+alaDerecha))*((2*margenMecanizado)+(alaInferior+alturaPlaca+pliegueSuperior+alaSuperior)))/1000000
+		areaPlana=(((2*margenMecanizado)+(anchuraPlaca))*((2*margenMecanizado)+(alturaPlaca)))/1000000
+
+		textoDescriptivo=textoDescriptivo .. "\nArea Total: " .. round(areaTotal,2) .. " m2" .. "\nArea Plana: " .. round(areaPlana,2) .. " m2"
+
+>>>>>>> cb0fab6f04b2d2023f0e8ee027d18ca3b6b5e0dc
 	else
 		origenTexto = Point2D(origenX+(anchuraPlaca/3)-(2*alaIzquierda),origenY+(alturaPlaca/2)+pliegueInferior+alaInferior)
     end
