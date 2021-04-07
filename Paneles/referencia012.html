@@ -29,7 +29,9 @@
 				
 				<div class="panel-body">
 										
-					     <center><input type="image" src="images/REF_012cotas.jpg" alt='ReferenciaAH' width='570' height='275'/></center>
+					     <center><input type="image" src="images/REF_012cotas.jpg" alt='ReferenciaAH' width='500' height='275'/></center>
+						 
+						 <label for="textoDescriptivo" style="font-family: cursive"> *Todas las dimensiones deben ir en milimetros (mm) </label>
 						
 					
 				</div> <!-- cierre cuerpo panel -->
@@ -57,27 +59,12 @@
 
 								
 							
-								<label for="alturaPlaca" style="font-family: cursive">[A] Altura placa (mm):</label>
+								<label for="alturaPlaca" style="font-family: cursive">[A] Altura placa:</label>
 								<input type="text" class="form-control" id="alturaPlaca" name="alturaPlaca" placeholder="Altura placa" maxlength="8" style="font-family: cursive"/> 
 								<br>
 								
-								<label for="anchura1" style="font-family: cursive">[B1] Anchura 1 (mm):</label>
-								<input type="text" class="form-control" id="anchura1" name="anchura1" placeholder="anchura 1" maxlength="8" style="font-family: cursive"/> 
-								<br>
-								
-								<label for="anchura2" style="font-family: cursive">[B2] Anchura 2 (mm):</label>
-								<input type="text" class="form-control" id="anchura2" name="anchura2" placeholder="anchura 2" maxlength="8" style="font-family: cursive"/> 
-								<br>
-								
-								<label for="anchura3" style="font-family: cursive">[B3] Anchura 3 (mm):</label>
-								<input type="text" class="form-control" id="anchura3" name="anchura3" placeholder="anchura 3" maxlength="8" style="font-family: cursive"/> 
-								<br>
-								
-								<label for="anchura4" style="font-family: cursive">[B4] Anchura 4 (mm):</label>
-								<input type="text" class="form-control" id="anchura4" name="anchura4" placeholder="anchura4" maxlength="8" style="font-family: cursive"/> 
-								<br>
-								
-								
+								<label for="anchuraPlaca" style="font-family: cursive">[B] Anchura placa:</label>
+								<input type="text" class="form-control" id="anchuraPlaca" name="anchuraPlaca" placeholder="anchura placa" maxlength="8" style="font-family: cursive"/> 
 								
 								
 								
@@ -96,7 +83,7 @@
 		
 			<div class="panel panel-default">
 			
-				<div class="panel-heading" style="font-family: cursive;"><center><h4><strong>  Pliegues/Alas </strong></h4></center></div>
+				<div class="panel-heading" style="font-family: cursive;"><center><h4><strong>  Pliegues </strong></h4></center></div>
 				
 				
 				
@@ -105,16 +92,28 @@
 					
 						
 							<div class="form-group" >
-								<label for="pliegueSuperior" style="font-family: cursive">[P] Pliegue superior (mm):</label>
-								<input type="text" class="form-control" id="pliegueSuperior" name="pliegueSuperior" placeholder="pliegue superior" maxlength="4" style="font-family: cursive"/> .
+								<label for="pliegueInf1" style="font-family: cursive">[P1] Pliegue largo 1:</label>
+								<input type="text" class="form-control" id="pliegueInf1" name="pliegueInf1" placeholder="pliegue inf1" maxlength="4" style="font-family: cursive"/> .
 								<br>
 								
-								<label for="alaSuperior" style="font-family: cursive">[C1] Ala superior (mm):</label>
-								<input type="text" class="form-control" id="alaSuperior" name="alaSuperior" placeholder="Ala superior" maxlength="4" style="font-family: cursive"/> 
+								<label for="pliegueInf2" style="font-family: cursive">[P2] Pliegue largo 2:</label>
+								<input type="text" class="form-control" id="pliegueInf2" name="pliegueInf2" placeholder="pliegue inf2" maxlength="4" style="font-family: cursive"/> .
 								<br>
 								
-								<label for="alaInferior" style="font-family: cursive">[C2] Ala inferior (mm):</label>
-								<input type="text" class="form-control" id="alaInferior" name="alaInferior" placeholder="Ala inferior" maxlength="4" style="font-family: cursive"/> 
+								<label for="pliegueInf3" style="font-family: cursive">[P3] Pliegue largo 3:</label>
+								<input type="text" class="form-control" id="pliegueInf3" name="pliegueInf3" placeholder="pliegue inf3" maxlength="4" style="font-family: cursive"/> .
+								<br>
+								
+								<label for="pliegueIzq1" style="font-family: cursive">[C1] Pliegue corto 1:</label>
+								<input type="text" class="form-control" id="pliegueIzq1" name="pliegueIzq1" placeholder="Ala izq1" maxlength="4" style="font-family: cursive"/> 
+								<br>
+								
+								<label for="pliegueIzq2" style="font-family: cursive">[C1] Pliegue corto 2:</label>
+								<input type="text" class="form-control" id="pliegueIzq2" name="pliegueIzq2" placeholder="Ala izq2" maxlength="4" style="font-family: cursive"/> 
+								<br>
+								
+								<label for="pliegueIzq3" style="font-family: cursive">[C1] Pliegue corto 3:</label>
+								<input type="text" class="form-control" id="pliegueIzq3" name="pliegueIzq3" placeholder="Ala izq3" maxlength="4" style="font-family: cursive"/> 
 								
 							
 						   </div>
@@ -147,6 +146,16 @@
 								<label for="margenMecanizado" style="font-family: cursive"> Margen cálculo área:</label>
 								<input type="text" class="form-control" id="margenMecanizado" name="margenMecanizado" placeholder="Margen mecanizado" maxlength="4" style="font-family: cursive"/>
 								<br>
+								
+								<label for="crearFresado" style="font-family: cursive"> ¿Dibujar fresado exterior? </label>
+								<center>
+								SI <input class="LuaButton" type="radio" id="crearFresado" name="crearFresado" value="0" /> 
+								NO <input class="LuaButton" type="radio" id="noCrearFresado" name="crearFresado" value="1" checked="checked"/> 
+								</center>
+								
+								<label for="margenFresado" style="font-family: cursive"> Margen fresado:</label>
+								<input type="text" class="form-control" id="margenFresado" name="margenFresado" placeholder="Margen Fresado" maxlength="8" style="font-family: cursive"/> 
+								
 								
 						   </div>
 								
