@@ -10,9 +10,28 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/user.css" rel="stylesheet">
 
+	<!-- Javascript -->
+	<script language='JavaScript' type='text/javascript'>
 
+    function check_value(fieldvalue)
+    {    
+		if (fieldvalue == 0){
+			document.getElementById("textoMargenFresado").style.visibility="visible"; <!--SE VE-->
+			document.getElementById("margenFresado").style.visibility="visible";
+		} else if (fieldvalue==1){
+			document.getElementById("textoMargenFresado").style.visibility="hidden"; <!--NO SE VE-->
+			document.getElementById("margenFresado").style.visibility="hidden";
+		}
+		
+    }
+	</script>
 
 </head>
+
+
+
+
+
 <body role="document">
 <div class="container-fluid">
 
@@ -30,6 +49,8 @@
 				<div class="panel-body">
 										
 					     <center><input type="image" src="images/REF_E5cotas.jpg" alt='ReferenciaAH' width='450' height='270'/></center>
+						 
+						 <label for="textoDescriptivo" style="font-family: cursive"> *Todas las dimensiones deben ir en milimetros (mm)</label>
 						
 					
 				</div> <!-- cierre cuerpo panel -->
@@ -57,23 +78,27 @@
 
 								
 							
-								<label for="altura1" style="font-family: cursive">[A1] Altura  (mm):</label>
+								<label for="altura1" style="font-family: cursive">[A1] Altura 1:</label>
 								<input type="text" class="form-control" id="altura1" name="altura1" placeholder="Altura 1" maxlength="8" style="font-family: cursive"/> 
 								<br>
-								<label for="altura2" style="font-family: cursive">[A2] Altura  (mm):</label>
+								
+								<label for="altura2" style="font-family: cursive">[A2] Altura 2:</label>
 								<input type="text" class="form-control" id="altura2" name="altura2" placeholder="Altura 2" maxlength="8" style="font-family: cursive"/> 
 								<br>
-								<label for="altura3" style="font-family: cursive">[A3] Altura  (mm):</label>
+								
+								<label for="altura3" style="font-family: cursive">[A3] Altura 3:</label>
 								<input type="text" class="form-control" id="altura3" name="altura3" placeholder="Altura 3" maxlength="8" style="font-family: cursive"/> 
 								<br>
-								<label for="altura4" style="font-family: cursive">[A4] Altura  (mm):</label>
-								<input type="text" class="form-control" id="altura4" name="altura4" placeholder="Altura 4" maxlength="8" style="font-family: cursive"/> 
-								<br><br>
 								
-								<label for="anchura1" style="font-family: cursive">[B1] Anchura 1 (mm):</label>
+								<label for="altura4" style="font-family: cursive">[A4] Altura 4:</label>
+								<input type="text" class="form-control" id="altura4" name="altura4" placeholder="Altura 4" maxlength="8" style="font-family: cursive"/> 
+								<br>
+								
+								<label for="anchura1" style="font-family: cursive">[B1] Anchura 1:</label>
 								<input type="text" class="form-control" id="anchura1" name="anchura1" placeholder="Anchura 1" maxlength="8" style="font-family: cursive"/>
-								<br>										
-								<label for="anchura2" style="font-family: cursive">[B2] Anchura 2 (mm):</label>
+								<br>
+								
+								<label for="anchura2" style="font-family: cursive">[B2] Anchura 2:</label>
 								<input type="text" class="form-control" id="anchura2" name="anchura2" placeholder="Anchura 2" maxlength="8" style="font-family: cursive"/>
 								
 								
@@ -101,11 +126,11 @@
 						
 							<div class="form-group" >
 								
-								<label for="margenM1" style="font-family: cursive">[M1] Margen M1 (mm):</label>
+								<label for="margenM1" style="font-family: cursive">[M1] Margen M1:</label>
 								<input type="text" class="form-control" id="margenM1" name="margenM1" placeholder="Margen M1" maxlength="8" style="font-family: cursive"/> 
 								<br>
 								
-								<label for="margenM2" style="font-family: cursive">[M2] Margen M2 (mm):</label>
+								<label for="margenM2" style="font-family: cursive">[M2] Margen M2:</label>
 								<input type="text" class="form-control" id="margenM2" name="margenM2" placeholder="Margen M2" maxlength="8" style="font-family: cursive"/> 
 								
 							
@@ -132,23 +157,23 @@
 						
 							<div class="form-group" >
 							
-								<label for="textoDescriptivo" style="font-family: cursive"> Nombre de la placa (texto):</label>							
+								<label for="textoDescriptivo" style="font-family: cursive"> Nombre de la placa:</label>							
 								<input type="text" class="form-control" id="textoDescriptivo" name="textoDescriptivo" placeholder="Nombre de la placa" style="font-family: cursive"/> 
 								<br>
 
 								<label for="margenMecanizado" style="font-family: cursive"> Margen cálculo área:</label>
 								<input type="text" class="form-control" id="margenMecanizado" name="margenMecanizado" placeholder="Margen mecanizado" maxlength="4" style="font-family: cursive"/>
-
 								<br>
 								
-								<label for="crearFresado" style="font-family: cursive"> ¿Dibujar fresado externo? </label>
+								<label for="crearFresado" style="font-family: cursive"> ¿Dibujar fresado exterior? </label>
 								<center>
-								SI <input class="LuaButton" type="radio" id="crearFresado" name="crearFresado" value="0"/> 
-								NO <input class="LuaButton" type="radio" id="noCrearFresado" name="crearFresado" value="1" checked="checked"/> 
+								SI <input class="LuaButton" type="radio" id="crearFresado" name="crearFresado" value="0" onclick='check_value(0)'/> 
+								NO <input class="LuaButton" type="radio" id="noCrearFresado" name="crearFresado" value="1" checked="checked" onclick='check_value(1)' /> 
 								</center>
 								
-								<label for="margenFresado" style="font-family: cursive"> Margen fresado (mm):</label>
-								<input type="text" class="form-control" id="margenFresado" name="margenFresado" placeholder="Margen Fresado" maxlength="8" style="font-family: cursive"/> 
+								<label for="margenFresado" id="textoMargenFresado" style="font-family: cursive ; visibility: hidden" > Margen fresado:</label>
+								<input type="text" class="form-control" id="margenFresado" name="margenFresado" placeholder="Margen Fresado" maxlength="8" style="font-family: cursive ; visibility: hidden"/> 
+								
 								
 						   </div>
 								

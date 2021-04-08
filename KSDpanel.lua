@@ -12,7 +12,7 @@ carpeta="Paneles"
 
 --DisplayMessageBox("La ruta es: " .. ruta_carpeta.. "" .. carpeta .. "")
 
-remoto=1 --Esto es para que los archivos html se lean en remoto (https://...) o en local (file:/...)
+remoto=0 --Esto es para que los archivos html se lean en remoto (https://...) o en local (file:/...)
 --1=remoto
 --0=local
 
@@ -2808,9 +2808,12 @@ function OnLuaButton_modeloDH(framePrincipal)
 		pliegueDer=50 pliegueIzq=50 
 		
         modeloDH:AddTextField("textoDescriptivo", textoDescriptivo)
+		
 		modeloDH:AddDoubleField("anchuraPlaca", anchuraPlaca)
 	    modeloDH:AddDoubleField("alturaPlaca", alturaPlaca)
+		
 	    modeloDH:AddDoubleField("margenMecanizado", margenMecanizado)
+		
 		modeloDH:AddDoubleField("alaIzquierda", alaIzquierda)
 		modeloDH:AddDoubleField("alaDerecha", alaDerecha)
 		modeloDH:AddDoubleField("alaSuperior", alaSuperior)
@@ -2960,6 +2963,7 @@ function OnLuaButton_aceptarDH(modeloDH)
 		alaIzquierda=modeloDH:GetDoubleField("alaIzquierda")
 		alaInferior=modeloDH:GetDoubleField("alaInferior")
 		alaSuperior=modeloDH:GetDoubleField("alaSuperior")
+		
 		pliegueIzq=modeloDH:GetDoubleField("pliegueIzq")
 		pliegueDer=modeloDH:GetDoubleField("pliegueDer")
 		
@@ -3211,6 +3215,8 @@ function OnLuaButton_modeloE(framePrincipal)
 	return true;
 	
 end
+
+
 
 
 function OnLuaButton_aceptarE(modeloE)
@@ -3604,14 +3610,18 @@ function OnLuaButton_modelo000(framePrincipal)
 		alaSuperior=45 alaInferior=45 alaIzquierda=45 alaDerecha=45 pliegueSuperior=45  
 		
         modelo000:AddTextField("textoDescriptivo", textoDescriptivo)
+		
 		modelo000:AddDoubleField("alturaPlaca", alturaPlaca)
 		modelo000:AddDoubleField("anchuraPlaca", anchuraPlaca)
 		modelo000:AddDoubleField("margenL", margenL)
+		
 		modelo000:AddDoubleField("alaSuperior", alaSuperior)
 		modelo000:AddDoubleField("alaInferior", alaInferior)
 		modelo000:AddDoubleField("alaIzquierda", alaIzquierda)
 		modelo000:AddDoubleField("alaDerecha", alaDerecha)
+		
 		modelo000:AddDoubleField("pliegueSuperior", pliegueSuperior)
+		
 		modelo000:AddDoubleField("margenMecanizado", margenMecanizado)
 		
 	    if  not modelo000:ShowDialog() then
@@ -3620,7 +3630,7 @@ function OnLuaButton_modelo000(framePrincipal)
 	elseif modelo == 107 then 
 		local html_path
 		if remoto==1 then
-			--html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referencia007.html"
+			html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referencia007.html"
 		else
 			html_path = "file:" .. ruta .. "\\Paneles\\referencia007.html"
 		end
@@ -3657,7 +3667,7 @@ function OnLuaButton_modelo000(framePrincipal)
 	elseif modelo == 108 then 
 		local html_path
 		if remoto==1 then
-			--html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referencia008.html"
+			html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referencia008.html"
 		else
 			html_path = "file:" .. ruta .. "\\Paneles\\referencia008.html"
 		end
@@ -3695,7 +3705,7 @@ function OnLuaButton_modelo000(framePrincipal)
 	elseif modelo == 109 then 
 		local html_path
 		if remoto==1 then
-			--html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referencia009.html"
+			html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referencia009.html"
 		else
 			html_path = "file:" .. ruta .. "\\Paneles\\referencia009.html"
 		end
@@ -3739,7 +3749,7 @@ function OnLuaButton_modelo000(framePrincipal)
 	elseif modelo == 110 then 
 		local html_path
 		if remoto==1 then
-			--html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referencia010.html"
+			html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referencia010.html"
 		else
 			html_path = "file:" .. ruta .. "\\Paneles\\referencia010.html"
 		end
@@ -3782,7 +3792,7 @@ function OnLuaButton_modelo000(framePrincipal)
 	elseif modelo == 111 then 
 		local html_path
 		if remoto==1 then
-			--html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referencia011.html"
+			html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referencia011.html"
 		else
 			html_path = "file:" .. ruta .. "\\Paneles\\referencia011.html"
 		end
@@ -3827,7 +3837,7 @@ function OnLuaButton_modelo000(framePrincipal)
 	elseif modelo == 112 then 
 		local html_path
 		if remoto==1 then
-			--html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referencia012.html"
+			html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referencia012.html"
 		else
 			html_path = "file:" .. ruta .. "\\Paneles\\referencia012.html"
 		end
@@ -4000,11 +4010,15 @@ function OnLuaButton_aceptar000(modelo000)
 		alturaPlaca = modelo000:GetDoubleField("alturaPlaca")
 		anchuraPlaca = modelo000:GetDoubleField("anchuraPlaca")
 		margenL = modelo000:GetDoubleField("margenL")
+		
 		alaSuperior = modelo000:GetDoubleField("alaSuperior")
 		alaInferior = modelo000:GetDoubleField("alaInferior")
 		alaDerecha = modelo000:GetDoubleField("alaDerecha")
 		alaIzquierda = modelo000:GetDoubleField("alaIzquierda")
+		
 		pliegueSuperior = modelo000:GetDoubleField("pliegueSuperior")
+		
+		margenMecanizado=modelo000:GetDoubleField("margenMecanizado")
 		
 		dibujarFresado006(doc)
 		dibujarCorte006(doc)
@@ -5546,7 +5560,7 @@ function dibujarTexto(doc)
 		origenTexto = Point2D(origenX+(pliegueIzq+alaIzquierda+alaDerecha+pliegueDer+anchuraPlaca)/2,origenY+(alturaPlaca+alaSuperior+alaInferior)/2)
 
 
-		areaTotal= (((2*margenMecanizado)+(pliegueIzquierdo+alaIzquierda+alaDerecha+pliegueDerecho+anchuraPlaca))*((2*margenMecanizado)+(alturaPlaca+alaSuperior+alaInferior)))/1000000
+		areaTotal= (((2*margenMecanizado)+(pliegueIzq+alaIzquierda+alaDerecha+pliegueDer+anchuraPlaca))*((2*margenMecanizado)+(alturaPlaca+alaSuperior+alaInferior)))/1000000
 		areaPlana=(((anchuraPlaca))*((alturaPlaca)))/1000000
 
 		textoDescriptivo=textoDescriptivo .. "\nArea Total: " .. round(areaTotal,2) .. " m2" .. "\nArea Plana: " .. round(areaPlana,2) .. " m2"
@@ -11354,7 +11368,11 @@ function dibujarFresado006(doc)
 	local fresado2 = Point2D(origenX+alaInferior+anchuraPlaca,origenY)
 	local fresado3 = Point2D(origenX+alaInferior,origenY+alaInferior)
 	local fresado4 = Point2D(origenX+alaInferior+anchuraPlaca,origenY+alaInferior)
-	local fresado5 = Point2D(origenX+alaInferior+anchuraPlaca,origenY+alaInferior)
+	
+	
+	
+	
+	
 	
 	
 	
@@ -11502,7 +11520,6 @@ end
 
         --TAREAS PENDIENTES DE ESTA FIGURA--
             --Corregir formas raras abajo y a arrib a la derecha
-            --Añadir opcion de dibujar fresado exterior o no
 
 
 function dibujarFresado007(doc)
@@ -12170,9 +12187,6 @@ end
 
 
 
-
-
-
 function dibujarCorte009(doc)
 	
 	local plieguesInf={pliegueInf1, pliegueInf2, pliegueInf3, pliegueInf4, pliegueInf5, pliegueInf6, pliegueInf7}
@@ -12391,12 +12405,6 @@ function dibujarCorte009(doc)
 	
 	return true; 
 end
-
-
-
-
-
-
 
 
 
@@ -12808,8 +12816,6 @@ function dibujarCorte010(doc)
 	
 	return true; 
 end
-
-
 
 
 
@@ -13295,12 +13301,6 @@ end
 
 
 
-
-
-
-
-
-
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------ DIBUJAR BANDEJAS CLIENTES PERSONALIZADAS ----------------------------------------------------------------------------------------------------
@@ -13422,10 +13422,6 @@ function dibujarFresado012(doc)
 	--------------------------------------------------------
 	return true; 
 end
-
-
-
-
 
 
 

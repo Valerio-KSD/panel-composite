@@ -10,9 +10,31 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/user.css" rel="stylesheet">
 
+	<!-- Javascript -->
+	<script language='JavaScript' type='text/javascript'>
 
+    function check_value(fieldvalue)
+    {    
+		if (fieldvalue == 0){
+			document.getElementById("textoMargenFresado").style.visibility="visible"; <!--SE VE-->
+			document.getElementById("margenFresado").style.visibility="visible";
+		} else if (fieldvalue==1){
+			document.getElementById("textoMargenFresado").style.visibility="hidden"; <!--NO SE VE-->
+			document.getElementById("margenFresado").style.visibility="hidden";
+		}
+		
+    }
+	</script>
 
 </head>
+
+
+
+
+
+
+
+
 <body role="document">
 <div class="container-fluid">
 
@@ -211,12 +233,13 @@
 								
 								<label for="crearFresado" style="font-family: cursive"> ¿Dibujar fresado exterior? </label>
 								<center>
-								SI <input class="LuaButton" type="radio" id="crearFresado" name="crearFresado" value="0" /> 
-								NO <input class="LuaButton" type="radio" id="noCrearFresado" name="crearFresado" value="1" checked="checked"/> 
+								SI <input class="LuaButton" type="radio" id="crearFresado" name="crearFresado" value="0" onclick='check_value(0)'/> 
+								NO <input class="LuaButton" type="radio" id="noCrearFresado" name="crearFresado" value="1" checked="checked" onclick='check_value(1)' /> 
 								</center>
 								
-								<label for="margenFresado" style="font-family: cursive"> Margen fresado:</label>
-								<input type="text" class="form-control" id="margenFresado" name="margenFresado" placeholder="Margen Fresado" maxlength="8" style="font-family: cursive"/> 
+								<label for="margenFresado" id="textoMargenFresado" style="font-family: cursive ; visibility: hidden" > Margen fresado:</label>
+								<input type="text" class="form-control" id="margenFresado" name="margenFresado" placeholder="Margen Fresado" maxlength="8" style="font-family: cursive ; visibility: hidden"/> 
+								
 								
 								
 						   </div>
