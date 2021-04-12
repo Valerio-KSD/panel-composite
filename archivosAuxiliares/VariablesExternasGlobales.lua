@@ -25,6 +25,10 @@ remoto=0 --Esto es para que los archivos html se lean en remoto (https://...) o 
 ---------------------------------------------------------------
 ---------------------------------------------------------------
 ---------------------------------------------------------------
+
+
+
+
 --Margen mecanizado
 margenMecanizado=4
 
@@ -201,6 +205,27 @@ anchuraIzq=400
 ruta=""
 doc = VectricJob()
 
+
+
+
+
 --Tamaño de la ventana [en pixeles]
-tamX=1024 --1900
-tamY=768 --950
+tamanoVentana=1
+
+if tamanoVentana==1 then --GRANDE
+	tamX=1024--1920
+	tamY=1080-35 --(Se resta la barra de window que son 35px)
+elseif tamanoVentana==2 then --MEDIANA 
+	tamX=1280
+	tamY=720
+elseif tamanoVentana==3 then --PEQUEÑA
+	tamX=1024
+	tamY=768
+end
+
+
+
+
+
+
+
