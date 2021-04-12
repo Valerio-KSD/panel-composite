@@ -13,6 +13,11 @@
 ------------------- GESTION DE ARCHIVOS -----------------------
 ---------------------------------------------------------------
 
+contrasenaUsuario=""
+contrasenaProducto=""
+
+
+
 ruta_carpeta="https://cuttool.es/prueba/"
 carpeta="Paneles"
 
@@ -173,6 +178,7 @@ dibujoVertical=0
 margenM=100
 margenL=700
 
+
 --PIEZA ESPECIAL 006
 margenS=522.6872
 alfa=45
@@ -198,6 +204,7 @@ anchuraInf=900
 anchuraSup=900
 anchuraDer=400
 anchuraIzq=400
+
 
 
 
