@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Comprobar licencia</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/user.css" rel="stylesheet">
+
+<!-- Javascript -->
+	<script language='JavaScript' type='text/javascript'>
+
+		function cargarValor() 
+		{
+ 			var contrasena="1";
+
+ 			document.getElementById("contrasenaProducto").value=contrasena;
+
+		}
+	</script>
+</head>
+<body role="document" onload="cargarValor()">
+<div class="container-fluid">
+
+	<div class="row"> <!-- primera fila -->
+	
+		
+		<div class="col-xs-12"> <!-- columna -->
+		
+			<div class="panel panel-default">
+			
+				<div class="panel-heading" style="font-family: cursive"><h5><center><strong>  VERIFICAR LICENCIA  </strong></center></h5></div>
+				
+				
+				
+				<div class="panel-body">
+
+					<!--CON CONTRASEÑA
+				
+				    <label for="contrasenaUsuario" style="font-family: cursive">Clave de la licencia:</label>
+					<input type="hidden" class="form-control" id="contrasenaUsuario" name="contrasenaUsuario" placeholder="Clave" value="" maxlength="20" style="font-family: cursive"/> 
+					<br>
+					<center><button class="LuaButton" id="aceptarLicencia" type="button" style="background-color:chartreuse;color:black; font-family:cursive;font-size:100%;text-align:center;"> VERIFICAR </button></center>
+
+					<input type="hidden" class="form-control" id="contrasenaProducto" name="contrasenaProducto" placeholder="Contraseña Producto" value="" maxlength="20" style="font-family: cursive" />
+					<br> 
+
+					-->
+
+					<!-- CON VALOR FIJO -->
+
+										
+					<center><button class="LuaButton" id="aceptarLicencia" type="button" style="background-color:chartreuse;color:black; font-family:cursive;font-size:100%;text-align:center;"> VERIFICAR </button></center>
+
+					<input type="hidden" class="form-control" id="contrasenaProducto" name="contrasenaProducto" value="" maxlength="20" style="font-family: cursive" />
+					<br> 	
+						
+						
+					
+				</div> <!-- cierre cuerpo panel -->
+			</div> <!-- cierre panel -->
+		</div> <!-- fin columna  -->
+						
+	</div> <!-- fin primera fila  -->
+
+	
+	
+	
+</div>
+</body>
+</html>
