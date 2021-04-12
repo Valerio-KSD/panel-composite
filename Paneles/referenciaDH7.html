@@ -32,6 +32,8 @@
 										
 					     <center><input type="image" src="images/REF_DH7cotas.jpg" alt='ReferenciaAH' width='300' height='300'/></center>
 						 
+						 <label for="textoDescriptivo" style="font-family: cursive"> *Todas las dimensiones deben ir en milimetros (mm)</label>
+						 
 						
 				</div> <!-- cierre cuerpo panel -->
 			</div> <!-- cierre panel -->
@@ -46,7 +48,7 @@
 		
 			<div class="panel panel-default">
 			
-				<div class="panel-heading" style="font-family: cursive;"><center><h4><strong>  Dimensiones I </strong></h4></center></div>
+				<div class="panel-heading" style="font-family: cursive;"><center><h4><strong>  Dimensiones Placa </strong></h4></center></div>
 				
 				
 				
@@ -57,11 +59,11 @@
 							<div class="form-group" >
 
 
-								<label for="alturaPlaca" style="font-family: cursive" >[A] Altura placa (mm):</label>
+								<label for="alturaPlaca" style="font-family: cursive" >[A] Altura placa:</label>
 								<input type="text" class="form-control" id="alturaPlaca" name="alturaPlaca" placeholder="Altura Placa" maxlength="7" style="font-family: cursive"/>
 								<br>
 								
-								<label for="anchuraPlaca" style="font-family: cursive">[B] Anchura placa (mm):</label>
+								<label for="anchuraPlaca" style="font-family: cursive">[B] Anchura placa:</label>
 								<input type="text" class="form-control" id="anchuraPlaca" name="anchuraPlaca" placeholder="Anchura placa" maxlength="8" style="font-family: cursive"/> 
 								
 
@@ -80,7 +82,7 @@
 		
 			<div class="panel panel-default">
 			
-				<div class="panel-heading" style="font-family: cursive;"><center><h4><strong>  Dimensiones II </strong></h4></center></div>
+				<div class="panel-heading" style="font-family: cursive;"><center><h4><strong>  Alas </strong></h4></center></div>
 				
 				
 				
@@ -89,20 +91,22 @@
 					
 						
 							<div class="form-group" >
-							
-								 
 								
-								<label for="alaIzquierda" style="font-family: cursive">[C1] Ala izquierda (mm):</label>
+								<label for="alaIzquierda" style="font-family: cursive">[C1] Ala izquierda:</label>
 								<input type="text" class="form-control" id="alaIzquierda" name="alaIzquierda" placeholder="Ala izquierda" maxlength="7" style="font-family: cursive"/> 
 								<br>
-								<label for="alaDerecha" style="font-family: cursive">[C2] Ala derecha (mm):</label>
+								
+								<label for="alaDerecha" style="font-family: cursive">[C2] Ala derecha:</label>
 								<input type="text" class="form-control" id="alaDerecha" name="alaDerecha" placeholder="Ala derecha" maxlength="7" style="font-family: cursive"/> 
 								<br>
-								<label for="alaSuperior" style="font-family: cursive">[C3] Ala superior (mm):</label>
+								
+								<label for="alaSuperior" style="font-family: cursive">[C3] Ala superior:</label>
 								<input type="text" class="form-control" id="alaSuperior" name="alaSuperior" placeholder="Ala superior" maxlength="7" style="font-family: cursive"/> 
 								<br>
-								<label for="alaInferior" style="font-family: cursive">[C4] Ala inferior (mm):</label>
+								
+								<label for="alaInferior" style="font-family: cursive">[C4] Ala inferior:</label>
 								<input type="text" class="form-control" id="alaInferior" name="alaInferior" placeholder="Ala inferior" maxlength="7" style="font-family: cursive"/>
+								
 								
 						   </div>
 					
@@ -117,7 +121,7 @@
 		
 			<div class="panel panel-default">
 			
-				<div class="panel-heading" style="font-family: cursive;"><center><h4><strong>  Dimensiones III </strong></h4></center></div>
+				<div class="panel-heading" style="font-family: cursive;"><center><h4><strong>  Pliegues </strong></h4></center></div>
 				
 				
 				
@@ -125,10 +129,11 @@
 				
 							<div class="form-group" >
 							
-								<label for="pliegueIzq" style="font-family: cursive">[P1] Pliegue Izquierda(mm):</label>
+								<label for="pliegueIzq" style="font-family: cursive">[P1] Pliegue Izquierda:</label>
 								<input type="text" class="form-control" id="pliegueIzq" name="pliegueIzq" placeholder="Pliegue izq" maxlength="7" style="font-family: cursive"/> 
 								<br>
-								<label for="pliegueDer" style="font-family: cursive">[P2] Pliegue Derecha(mm):</label>
+								
+								<label for="pliegueDer" style="font-family: cursive">[P2] Pliegue Derecha:</label>
 								<input type="text" class="form-control" id="pliegueDer" name="pliegueDer" placeholder="Pliegue der" maxlength="7" style="font-family: cursive"/> 
 								
 						   </div>
@@ -154,20 +159,18 @@
 						
 							<div class="form-group" >
 							
-								<label for="textoDescriptivo" style="font-family: cursive"> Nombre de la placa (texto):</label>
-								
+								<label for="textoDescriptivo" style="font-family: cursive"> Nombre de la placa:</label>
 								<input type="text" class="form-control" id="textoDescriptivo" name="textoDescriptivo" placeholder="Nombre de la placa" style="font-family: cursive"/> 
-
 								<br>			
 								
 								<label for="margenMecanizado" style="font-family: cursive"> Margen cálculo área:</label>
-								<input type="text" class="form-control" id="margenMecanizado" name="margenMecanizado" placeholder="Margen mecanizado" maxlength="4" style="font-family: cursive"/>																				
+								<input type="text" class="form-control" id="margenMecanizado" name="margenMecanizado" placeholder="Margen mecanizado" maxlength="4" style="font-family: cursive"/>
 
 								
 							
 						   </div>
 					
-													
+								
 					
 				</div> <!-- cierre cuerpo panel -->
 			</div> <!-- cierre panel -->

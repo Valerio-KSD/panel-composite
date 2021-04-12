@@ -1,7 +1,11 @@
 -- VECTRIC LUA SCRIPT
 require "strict"
 
-rutaPaqueteArchivosAuxiliares=";C:/Users/Public/Documents/Vectric Files/Gadgets/Cut2D Pro V9.5/PanelesComposite/archivosAuxiliares/?.lua"
+
+
+
+rutaPaqueteArchivosAuxiliares=";C:/Users/Public/Documents/Vectric Files/Gadgets/Cut2D Pro V9.5/Paneles/archivosAuxiliares/?.lua"
+
 
 package.path = package.path .. rutaPaqueteArchivosAuxiliares
 
@@ -18,6 +22,11 @@ require "Referencia005"
 require "Referencia006"
 require "Referencia007_008"
 require "Referencia009"
+
+require "Referencia010"
+require "Referencia011"
+require "Referencia012"
+
 
 require "LlamadasHTML"
 require "FuncionesAuxiliares"
@@ -43,6 +52,7 @@ function main(script_path)
 	else
 		html_path = "file:" .. script_path .. "\\Paneles\\licencia.html"
 	end
+
 
 	local licencia = HTML_Dialog(false, html_path, 300,190, "KSDpanel")
 
@@ -98,6 +108,63 @@ function OnLuaButton_aceptarLicencia(licencia)
 	return true;
 
 end
+
+		
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+>>>>>>> e4c20688f70a6061564a3528be00fa41e27fa9b4
 
 
 

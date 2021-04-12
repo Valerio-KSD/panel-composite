@@ -12,8 +12,10 @@
 ---------------------------------------------------------------
 ------------------- GESTION DE ARCHIVOS -----------------------
 ---------------------------------------------------------------
+
 contrasenaUsuario=""
 contrasenaProducto=""
+
 
 
 ruta_carpeta="https://cuttool.es/prueba/"
@@ -171,6 +173,36 @@ dibujoVertical=0
 --PIEZA ESPECIAL 004
 margenM=100
 margenL=700
+
+
+--PIEZA ESPECIAL 006
+margenS=522.6872
+alfa=45
+
+--PIEZA ESPECIAL 012
+pliegueSup1=10
+pliegueSup2=25
+pliegueSup3=50
+
+pliegueIzq1=10
+PliegueIzq2=25
+pliegueIzq3=50
+
+pliegueDer1=10
+pliegueDer2=25
+pliegueDer3=50
+
+pliegueInf1=10
+pliegueInf2=25
+pliegueInf3=50
+
+anchuraInf=900
+anchuraSup=900
+anchuraDer=400
+anchuraIzq=400
+
+
+
 
 --Documento
 ruta=""
