@@ -167,10 +167,16 @@ function OnLuaButton_aceptarG(modelo000)
 		alaIzquierda = modelo000:GetDoubleField("alaIzquierda")
 		pliegueSuperior = modelo000:GetDoubleField("pliegueSuperior")
 		margenMecanizado=modelo000:GetDoubleField("margenMecanizado")
+		
+		--Punto inicial de la pieza
+			origenX=-(anchuraPlaca+alaIzquierda+alaDerecha+400)
+			origenY= 400
+		
 		dibujarFresado004(doc)
 		dibujarCorte004(doc)
 		dibujarTexto(doc)
 		DisplayMessageBox("MODELO 004 CREADO CORRECTAMENTE")
+	
 	
 	elseif modelo==105 then  --PIEZA G2
 		
@@ -184,6 +190,11 @@ function OnLuaButton_aceptarG(modelo000)
 		alaIzquierda = modelo000:GetDoubleField("alaIzquierda")
 		pliegueSuperior = modelo000:GetDoubleField("pliegueSuperior")
 		margenMecanizado=modelo000:GetDoubleField("margenMecanizado")
+		
+		--Punto inicial de la pieza
+			origenX=-(anchuraPlaca+alaIzquierda+alaDerecha+400)
+			origenY= 400
+		
 		dibujarFresado005(doc)
 		dibujarCorte005(doc)
 		dibujarTexto(doc)
@@ -209,6 +220,10 @@ function OnLuaButton_aceptarG(modelo000)
 		
 		margenMecanizado=modelo000:GetDoubleField("margenMecanizado")
 		
+		--Punto inicial de la pieza
+			origenX=-(anchuraPlaca+alaIzquierda+alaDerecha+400)
+			origenY= 400
+		
 		dibujarFresado006(doc)
 		dibujarCorte006(doc)
 		
@@ -231,7 +246,6 @@ function OnLuaButton_aceptarG(modelo000)
 		
 		margenFresado = modelo000:GetDoubleField("margenFresado")
 		
-		
 		--AJUSTES DEBIDOS A LA SIMETRIA DE LA PIEZA--
 		pliegueSup1=pliegueInf1
 		pliegueSup2=pliegueInf2
@@ -240,6 +254,12 @@ function OnLuaButton_aceptarG(modelo000)
 		pliegueDer1=pliegueIzq1
 		pliegueDer2=pliegueIzq2
 		pliegueDer3=pliegueIzq3
+		
+		
+		
+		--Punto inicial de la pieza
+			origenX=-(pliegueIzq1+pliegueIzq2+pliegueIzq3+anchuraPlaca+pliegueDer1+pliegueDer2+pliegueDer3+400)
+			origenY= 400
 		
 		
 		

@@ -23,7 +23,7 @@ carpeta="Paneles"
 
 --DisplayMessageBox("La ruta es: " .. ruta_carpeta.. "" .. carpeta .. "")
 
-remoto=0 --Esto es para que los archivos html se lean en remoto (https://...) o en local (file:/...)
+remoto=1 --Esto es para que los archivos html se lean en remoto (https://...) o en local (file:/...)
 --1=remoto
 --0=local
 

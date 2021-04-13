@@ -227,13 +227,13 @@ function OnLuaButton_aceptarDH(modeloDH)
 	    alturaPlaca = modeloDH:GetDoubleField("alturaPlaca")
 
 		
-		--Punto inicial de la pieza
-			origenX=-(anchuraPlaca+400)
-			origenY= 400
+		
 		
 	    margenMecanizado= modeloDH:GetDoubleField("margenMecanizado")
 
-
+		--Punto inicial de la pieza
+			origenX=-(anchuraPlaca+400)
+			origenY= 400
 
 	
 	elseif modelo==41 then  --DH1
