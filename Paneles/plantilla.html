@@ -1,0 +1,185 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Creador de Paneles</title>
+	
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/user.css" rel="stylesheet">
+	
+	
+	
+</head>
+
+
+
+<body role="document">
+<div class="container-fluid">
+
+	<div class="row"> <!-- primera fila -->
+	
+		
+		<div class="col-xs-12"> <!-- columna modelo A -->
+		
+			<div class="panel panel-default">
+			
+				<div class="panel-heading" style="font-family: cursive; font-size: 150%;"  ><center><strong>      PLANTILLA       </strong></center></div>
+				
+				
+				
+				<div class="panel-body">
+				
+										
+					     <center><input type="image" src="images/plantilla.jpg" alt='ReferenciaAH' width='950' height='250'/></center>
+						 
+						 <!-- <label for="textoDescriptivo" style="font-family: cursive"> *Todas las dimensiones deben ir en milimetros </label> -->
+						
+						
+						
+					
+				</div> <!-- cierre cuerpo panel -->
+			</div> <!-- cierre panel -->
+		</div> <!-- fin columna imagen Referencia AH -->
+						
+	</div> <!-- fin primera fila imagen Referencia AH -->
+
+	
+	<div class="row"> <!-- segunda fila -->
+
+		<div class="col-xs-3"> <!-- columna datos 1 -->
+		
+			<div class="panel panel-default">
+			
+				<div class="panel-heading" style="font-family: cursive;"><center><h4><strong>  Escala plantilla </strong></h4></center></div>
+				
+				
+				
+				<div class="panel-body" >
+							
+							
+							
+							<div class="form-group" >
+								
+								<label for="escalaPlantilla" style="font-family: cursive" >Escala: </label>
+								<input type="text" class="form-control" id="escalaPlantilla" name="escalaPlantilla" placeholder="Escala Plantilla" maxlength="7" style="font-family: cursive"/>
+								
+								
+
+							
+						   </div>
+					
+													
+					
+				</div> <!-- cierre cuerpo panel -->
+			</div> <!-- cierre panel -->
+		</div> <!-- fin columna datos 1 -->
+		
+		
+		
+       <div class="col-xs-3"> <!-- columna datos 1 -->
+		
+			<div class="panel panel-default">
+			
+				<div class="panel-heading" style="font-family: cursive;"><center><h4><strong>  Datos </strong></h4></center></div>
+				<div class="panel-body" >
+							<div class="form-group" >
+
+								
+							
+								<label for="titulo" style="font-family: cursive"> Titulo: </label>
+								<input type="text" class="form-control" id="titulo" name="titulo" placeholder="titulo" maxlength="8" style="font-family: cursive"/> 
+								<br>
+								
+								<label for="cliente" style="font-family: cursive"> Cliente: </label>
+								<input type="text" class="form-control" id="cliente" name="cliente" placeholder="cliente" maxlength="8" style="font-family: cursive"/> 
+								<br>
+								
+								<label for="obra" style="font-family: cursive"> Obra: </label>
+								<input type="text" class="form-control" id="obra" name="obra" placeholder="obra " maxlength="8" style="font-family: cursive"/> 
+								<br>
+								
+								<label for="situacion" style="font-family: cursive"> Situación: </label>
+								<input type="text" class="form-control" id="situacion" name="situacion" placeholder="situacion " maxlength="8" style="font-family: cursive"/> 
+								<br>
+								
+								<label for="referencia" style="font-family: cursive"> Ref.: </label>
+								<input type="text" class="form-control" id="referencia" name="referencia" placeholder="referencia " maxlength="8" style="font-family: cursive"/> 
+							
+						   </div>
+					
+													
+					
+				</div> <!-- cierre cuerpo panel -->
+			</div> <!-- cierre panel -->
+		</div> <!-- fin columna datos 1 -->
+		
+		
+		
+		
+		
+		
+		
+		
+		<div class="col-xs-3"> <!-- columna datos 1 -->
+		
+			<div class="panel panel-default">
+			
+				<div class="panel-heading" style="font-family: cursive;"><center><h4><strong>  Caracteristicas </strong></h4></center></div>
+				<div class="panel-body" >
+							<div class="form-group" >
+
+								
+							
+								<label for="fecha" style="font-family: cursive"> Fecha: </label>
+								<input type="text" class="form-control" id="fecha" name="fecha" placeholder="fecha" maxlength="8" style="font-family: cursive"/> 
+								<br>
+								
+								<label for="escala" style="font-family: cursive"> Escala: </label>
+								<input type="text" class="form-control" id="escala" name="escala" placeholder="escala" maxlength="8" style="font-family: cursive"/> 
+								<br>
+								
+								<label for="numeroPlano" style="font-family: cursive"> Nº Plano: </label>
+								<input type="text" class="form-control" id="numeroPlano" name="numeroPlano" placeholder="numero Plano " maxlength="8" style="font-family: cursive"/> 
+								
+						   </div>
+					
+													
+					
+				</div> <!-- cierre cuerpo panel -->
+			</div> <!-- cierre panel -->
+		</div> <!-- fin columna datos 1 -->
+
+
+
+
+
+		
+
+
+		
+
+
+
+		
+	</div> <!-- fin segunda fila -->
+	
+	
+	
+	<div class="row"> <!--  fila botones -->
+
+		<div class="col-xs-12">
+				
+				<center><button class="LuaButton" id="aceptarPlantilla" type="button" style="background-color:chartreuse;color:black; font-family:cursive;font-size:180%;text-align:center;"> Crear plantilla </button></center>
+				<br>
+		</div>
+		
+		
+	</div> <!-- fin fila botones -->
+	
+	
+</div>
+</body>
+</html>

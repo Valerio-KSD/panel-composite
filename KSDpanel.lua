@@ -3,6 +3,7 @@ require "strict"
 
 
 
+
 rutaPaqueteArchivosAuxiliares=";C:/Users/Public/Documents/Vectric Files/Gadgets/Cut2D Pro V9.5/Paneles/archivosAuxiliares/?.lua"
 
 
@@ -16,16 +17,15 @@ require "FamiliaE"
 require "FamiliaF"
 require "FamiliaG"
 
+
+
 require "LlamadasHTML"
 require "FuncionesAuxiliares"
 require "VariablesExternasGlobales"
 
-
-
+require "botonesOpciones"
 
 --Función PRINCIPAL
-
-
 
 function main(script_path)
 
@@ -36,9 +36,9 @@ function main(script_path)
 	   DisplayMessageBox("Trabajo NO Cargado")
 		return false;
 	end	
-	
-	
+
 	--Comprobación LICENCIA
+
 	
 	if remoto==1 then
 		html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/licencia.html"
@@ -48,6 +48,7 @@ function main(script_path)
 
 
 	local licencia = HTML_Dialog(false, html_path, 300,190, "KSDpanel")
+
 
 	--licencia:AddTextField("contrasenaUsuario", contrasenaUsuario)
     licencia:AddTextField("contrasenaProducto", contrasenaProducto)
@@ -69,7 +70,7 @@ function main(script_path)
 
 		
 		
-		local framePrincipal = HTML_Dialog(false, html_path, tamX, tamY, "KSD Motion Control S.L.U.")
+		local framePrincipal = HTML_Dialog(false, html_path, tamX, tamY, "KSD Motion Control S.L.U.") --14.7" (proporción 4:3)
 		
 		
 		
@@ -92,7 +93,6 @@ function main(script_path)
 end 
 
 
-
 function OnLuaButton_aceptarLicencia(licencia)
 
 	--contrasenaUsuario=licencia:GetTextField("contrasenaUsuario")
@@ -101,4 +101,6 @@ function OnLuaButton_aceptarLicencia(licencia)
 	return true;
 
 end
+
+
 

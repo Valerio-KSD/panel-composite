@@ -23,7 +23,7 @@ carpeta="Paneles"
 
 --DisplayMessageBox("La ruta es: " .. ruta_carpeta.. "" .. carpeta .. "")
 
-remoto=1 --Esto es para que los archivos html se lean en remoto (https://...) o en local (file:/...)
+remoto=0 --Esto es para que los archivos html se lean en remoto (https://...) o en local (file:/...)
 --1=remoto
 --0=local
 
@@ -229,6 +229,19 @@ elseif tamanoVentana==3 then --PEQUEÑA
 	tamX=1024
 	tamY=768
 end
+
+--Plantillas
+escalaPlantilla=1
+
+titulo="titulo"
+cliente="cliente"
+obra="cliente"
+situacion="situacion"
+referencia="ref."
+
+fecha="00/00/0000"
+escala="escala"
+numeroPlano="1"
 
 
 

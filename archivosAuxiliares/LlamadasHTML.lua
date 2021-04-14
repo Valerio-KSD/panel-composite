@@ -360,7 +360,7 @@ function OnLuaButton_noCrearFresado()
 end
 
 
---Pliegues Izquierda
+--Pliegues Izquierda --PIEZA 003 [F3]
 function OnLuaButton_pliegueIzq1()
 	pliegueIzq1=1
 	return true
@@ -402,7 +402,7 @@ function OnLuaButton_pliegueIzq10()
 	return true
 end
 
---Pliegues Derecha
+--Pliegues Derecha --PIEZA 003 [F3]
 function OnLuaButton_pliegueDer1()
 	pliegueDer1=1
 	return true
