@@ -230,18 +230,26 @@ elseif tamanoVentana==3 then --PEQUEÑA
 	tamY=768
 end
 
+
 --Plantillas
+formatoPapel=1
+
 escalaPlantilla=1
+tamHorizontal=297
+tamVertical=210
 
-titulo="titulo"
-cliente="cliente"
-obra="cliente"
-situacion="situacion"
-referencia="ref."
+margenInf=7
+margenDer=7
+margenSup=7
+margenIzq=12
 
-fecha="00/00/0000"
-escala="escala"
-numeroPlano="1"
+anchuraCajetin=120
+alturaLineas=6.50
+anchuraCaracteristicas=25
+
+anchuraImg=37.5
+
+
 
 
 
