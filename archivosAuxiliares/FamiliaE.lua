@@ -685,23 +685,77 @@ function dibujarFresadoExteriorE(doc)
 	
 	local Contour = Contour(0.0)
 	
+	local beta 
+	local x1
+	local alfa
+	local y2
 	
 	if modelo==50 then --[E0]
-		local corte1 = Point2D(origenX+margenM1-margenFresado,origenY+altura5+altura4+altura3+altura2)
-		local corte2 = Point2D(origenX-margenFresado,origenY+altura5+altura4+altura3)
-		local corte3 = Point2D(origenX-margenFresado,origenY+altura5+altura4)
-		local corte4 = Point2D(origenX+margenM1-margenFresado,origenY+altura5)
-		dibujarFresado_auxiliar(doc,corte1,corte2)
-		dibujarFresado_auxiliar(doc,corte2,corte3)
-		dibujarFresado_auxiliar(doc,corte3,corte4)
+	
 		
-		local corte5 = Point2D(origenX+margenM1+anchuraPlaca+margenM2-altura1+margenFresado,origenY+altura5+altura4+altura3+altura2+altura1)
-		local corte6 = Point2D(origenX+margenM1+anchuraPlaca+margenM2+margenFresado,origenY+altura5+altura4+altura3+altura2)
-		local corte7 = Point2D(origenX+margenM1+anchuraPlaca+margenM2+margenFresado,origenY+altura5+altura4+altura3)
-		local corte8 = Point2D(origenX+margenM1+anchuraPlaca+margenFresado,origenY+altura5+altura4)
+		--FRESADO EXTERIOR parte IZQUIERDA--
+		--Tramo superior
+		beta = math.atan(altura2/margenM1)
+		x1 = margenFresado/math.sin(beta)
+		alfa = math.rad(90) - beta		
+		y2 = margenFresado/math.sin(alfa)
+		
+		local corte1 = Point2D(origenX+margenM1-x1,origenY+altura5+altura4+altura3+altura2)
+		local corte2 = Point2D(origenX,origenY+altura5+altura4+altura3+y2)
+		
+		--Tramo medio
+		local corte3 = Point2D(origenX-margenFresado,origenY+altura5+altura4+altura3)
+		local corte4 = Point2D(origenX-margenFresado,origenY+altura5+altura4)
+		
+		--Tramo inferior
+		beta = math.atan(altura4/margenM1)
+		x1 = margenFresado/math.sin(beta)
+		alfa = math.rad(90) - beta		
+		y2 = margenFresado/math.sin(alfa)
+		
+		local corte5 = Point2D(origenX,origenY+altura5+altura4-y2)
+		local corte6 = Point2D(origenX+margenM1-x1,origenY+altura5)
+		
+		--Dibujar puntos calculados
+		dibujarFresado_auxiliar(doc,corte1,corte2)
+		dibujarFresado_auxiliar(doc,corte2,corte3) --Esto podria ser un ArcTo
+		dibujarFresado_auxiliar(doc,corte3,corte4)
+		dibujarFresado_auxiliar(doc,corte4,corte5) --Esto podria ser un ArcTo
+		dibujarFresado_auxiliar(doc,corte5,corte6)
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		--FRESADO EXTERIOR parte DERECHA--
+		--Tramo superior
+		beta = math.atan(altura1/altura1)
+		x1 = margenFresado/math.sin(beta)
+		alfa = math.rad(90) - beta		
+		y2 = margenFresado/math.sin(alfa)
+		local corte5 = Point2D(origenX+margenM1+anchuraPlaca+margenM2-altura1+x1,origenY+altura5+altura4+altura3+altura2+altura1)
+		local corte6 = Point2D(origenX+margenM1+anchuraPlaca+margenM2,origenY+altura5+altura4+altura3+altura2+y2)
+		
+		local corte7 = Point2D(origenX+margenM1+anchuraPlaca+margenM2+margenFresado,origenY+altura5+altura4+altura3+altura2)
+		local corte8 = Point2D(origenX+margenM1+anchuraPlaca+margenM2+margenFresado,origenY+altura5+altura4+altura3)
+		
+		beta = math.atan(altura3/margenM2)
+		x1 = margenFresado/math.sin(beta)
+		alfa = math.rad(90) - beta		
+		y2 = margenFresado/math.sin(alfa)
+		local corte9 = Point2D(origenX+margenM1+anchuraPlaca+margenM2,origenY+altura5+altura4+altura3-y2)
+		local corte10 = Point2D(origenX+margenM1+anchuraPlaca+x1,origenY+altura5+altura4)
+		
 		dibujarFresado_auxiliar(doc,corte5,corte6)
 		dibujarFresado_auxiliar(doc,corte6,corte7)
 		dibujarFresado_auxiliar(doc,corte7,corte8)
+		dibujarFresado_auxiliar(doc,corte8,corte9)
+		dibujarFresado_auxiliar(doc,corte9,corte10)
 		
 		
 		
