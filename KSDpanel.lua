@@ -65,7 +65,8 @@ function main(script_path)
 	if contrasenaProducto=="1" then
 	
 		if remoto==1 then
-			html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/Paneles.html"
+			--html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/Paneles.html"
+			html_path = "" .. ruta_carpeta_panelPrincipal .. "/Paneles.html"
 		else
 			html_path = "file:" .. script_path .. "\\Paneles\\Paneles.html"
 		end
