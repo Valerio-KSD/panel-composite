@@ -6,7 +6,7 @@ require "strict"
  
 rutaPaqueteArchivosAuxiliares=";C:/Program Files/KSDpanel/archivosAuxiliares/?.lua"
 
---rutaPaqueteArchivosAuxiliares=";C:/Program Files/archivosAuxiliares/?.lua"
+
 
 
 package.path = package.path .. rutaPaqueteArchivosAuxiliares
@@ -42,27 +42,27 @@ function main(script_path)
 	--Comprobación LICENCIA
 
 	
-	if remoto==1 then
-		html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/licencia.html"
-	else
-		html_path = "file:" .. script_path .. "\\Paneles\\licencia.html"
-	end
+	-- if remoto==1 then
+		-- html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/Paneles.html"
+	-- else
+		-- html_path = "file:" .. script_path .. "\\Paneles\\licencia.html"
+	-- end
 
 
-	local licencia = HTML_Dialog(false, html_path, 300,190, "KSDpanel")
+	-- local licencia = HTML_Dialog(false, html_path, tamX,tamY, "KSDpanel")
 
 
-	--licencia:AddTextField("contrasenaUsuario", contrasenaUsuario)
-    licencia:AddTextField("contrasenaProducto", contrasenaProducto)
+	-- --licencia:AddTextField("contrasenaUsuario", contrasenaUsuario)
+    -- licencia:AddTextField("contrasenaProducto", contrasenaProducto)
 
-    licencia:ShowDialog() 
+    -- licencia:ShowDialog() 
 
     
-	--Llamada al panel principal SI las contraseñas coinciden
+	-- --Llamada al panel principal SI las contraseñas coinciden
 
-	--contrasenaProducto==contrasenaUsuario
+	-- --contrasenaProducto==contrasenaUsuario
 
-	if contrasenaProducto=="1" then
+	-- if contrasenaProducto=="1" then
 	
 		if remoto==1 then
 			--html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/Paneles.html"
@@ -83,27 +83,27 @@ function main(script_path)
 			
 		end
 
-		return true;
+		--return true;
 
-	else
-		--Mensaje de licencia caducada
-		DisplayMessageBox("LICENCIA CADUCADA. Contacte con la empresa proveedora.")
-		return true;
+	-- else
+		-- --Mensaje de licencia caducada
+		-- DisplayMessageBox("LICENCIA CADUCADA. Contacte con la empresa proveedora.")
+		-- return true;
 
-	end
+	-- end
 		
 	return true; 
 end 
 
 
-function OnLuaButton_aceptarLicencia(licencia)
+-- function OnLuaButton_aceptarLicencia(licencia)
 
-	--contrasenaUsuario=licencia:GetTextField("contrasenaUsuario")
-	contrasenaProducto=licencia:GetTextField("contrasenaProducto")
+	-- --contrasenaUsuario=licencia:GetTextField("contrasenaUsuario")
+	-- contrasenaProducto=licencia:GetTextField("contrasenaProducto")
 
-	return true;
+	-- return true;
 
-end
+-- end
 
 
 
