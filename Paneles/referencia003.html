@@ -9,10 +9,46 @@
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/user.css" rel="stylesheet">
-
+	
+	
+	
+	
+	
+	
+	<!-- Javascript -->
+	<script language='JavaScript' type='text/javascript'>
+	
+	
+	 function check_value(fieldvalue)
+    { 
+		if (fieldvalue==1 && fieldvalue==2 && fieldvalue==3 && fieldvalue==4 && fieldvalue==5 && fieldvalue==6 && fieldvalue==7 && fieldvalue==8 && fieldvalue==9 && fieldvalue==10){
+			
+			var valor1 = document.getElementById("altura1");
+			
+			if (valor1 != 0) {
+			
+			document.getElementById("imagedest").innerHTML = "<center><img src='paneles/REF_003cotas2.jpg' alt='refAH' width='629' height='338'></center>";
+			
+			}
+		}
+	}
+	
+	
+	</script>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 
 </head>
+
 <body role="document">
 	<!--<div class="container-fluid">
 
@@ -48,11 +84,11 @@
 							<div class="form-group" >
 
 								<label for="anchuraPlaca" style="font-family: cursive" >Anchura Placa:</label>
-								<input type="text" class="form-control" id="anchuraPlaca" name="anchuraPlaca" placeholder="Anchura Placa" maxlength="7" style="font-family: cursive"/>
+								<input type="text" class="form-control" id="anchuraPlaca" name="anchuraPlaca" placeholder="Anchura Placa" maxlength="7" style="font-family: cursive" onclick='check_value(1)'/>
 								<br>
 							
 								<label for="altura1" style="font-family: cursive">Altura 1:</label>
-								<input type="text" class="form-control" id="altura1" name="altura1" placeholder="Altura 1" maxlength="8" style="font-family: cursive"/> 
+								<input type="text" class="form-control" id="altura1" name="altura1" placeholder="Altura 1" maxlength="8" style="font-family: cursive" onclick='check_value(1)'/> 
 								<br><br>
 								
 								<label for="altura2" style="font-family: cursive">Altura 2:</label>
@@ -168,28 +204,27 @@
 			<div class="panel panel-default">
 				<div class="panel-heading" style="font-family: cursive;"><center><h4><strong> REFERENCIA F3 </strong></h4></center></div>
 				<div class="panel-body" >
-							<div class="form-group" >
+					<div class="form-group" >
 								<label for="textoDescriptivo" style="font-family: cursive"> Nombre de la placa:</label>
 								<input type="text" class="form-control" id="textoDescriptivo" name="textoDescriptivo" placeholder="Nombre de la placa" style="font-family: cursive"/> 
 								
-								
-								<div class="panel-body">
+								<div class="form-group" id='imagedest' >
 								<input type="image" src="images/REF_003cotas.jpg" alt='ReferenciaAH' width='350' height='1020'/>
+								</div>
 								
 								<br>
 								<label for="margenMecanizado" style="font-family: cursive"> Margen cálculo área:</label>
 								<input type="text" class="form-control" id="margenMecanizado" name="margenMecanizado" placeholder="Margen mecanizado" maxlength="4" style="font-family: cursive"/>
-						   </div>
 							
 							
 							
-				</div> <!-- cierre cuerpo panel -->
-			</div> <!-- cierre panel -->
-		</div> <!-- fin columna datos 1 -->
+					</div> <!-- cierre cuerpo panel -->
+				</div> <!-- cierre panel -->
+			</div> <!-- fin columna datos 1 -->
 		
 		
 		
-	</div> <!-- fin segunda fila -->
+		</div> <!-- fin segunda fila -->
 		
 		
 		

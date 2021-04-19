@@ -35,6 +35,7 @@ remoto=0 --Esto es para que los archivos html se lean en remoto (https://...) o 
 
 
 
+
 --Margen mecanizado
 margenMecanizado=4
 
