@@ -16,11 +16,11 @@
 contrasenaUsuario=""
 contrasenaProducto=""
 
---Ruta HTML secundarios--
+--Ruta HTML archivos comunes-- 
 ruta_carpeta="https://cuttool.es/panelCam"
 carpeta="/General" 
 
---Ruta HTML general--
+--Ruta HTML archivo invidual por cliente--
 ruta_carpeta_panelPrincipal="https://cuttool.es/panelCam/Cliente0-BYZEZ"  
 
 

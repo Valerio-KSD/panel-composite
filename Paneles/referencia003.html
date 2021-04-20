@@ -19,19 +19,44 @@
 	<script language='JavaScript' type='text/javascript'>
 	
 	
-	 function check_value(fieldvalue)
-    { 
-		if (fieldvalue==1 && fieldvalue==2 && fieldvalue==3 && fieldvalue==4 && fieldvalue==5 && fieldvalue==6 && fieldvalue==7 && fieldvalue==8 && fieldvalue==9 && fieldvalue==10){
+	 <!--function check_value(fieldvalue){--> 
+		<!--if (fieldvalue==1 && fieldvalue==2 && fieldvalue==3 && fieldvalue==4 && fieldvalue==5 && fieldvalue==6 && fieldvalue==7 && fieldvalue==8 && fieldvalue==9 && fieldvalue==10){-->
 			
-			var valor1 = document.getElementById("altura1");
+			<!--var valor1 = document.getElementById("altura1");-->
 			
-			if (valor1 != 0) {
+			<!--if (valor1 != 0) {-->
 			
-			document.getElementById("imagedest").innerHTML = "<center><img src='paneles/REF_003cotas2.jpg' alt='refAH' width='629' height='338'></center>";
+			<!--document.getElementById("imagedest").innerHTML = "<center><img src='paneles/REF_003cotas2.jpg' alt='refAH' width='629' height='338'></center>";-->
 			
+			<!--}-->
+		<!--}-->
+		
+		
+		function check_value(valor) {
+			var image = document.getElementById('imagedest');
+			if (valor==1 || valor==2) {
+				image.src = "images/REF_003cotas2.jpg";
+			} else if (valor==3){
+				image.src = "images/REF_003cotas3.jpg";
+			} else if (valor==4){
+				image.src = "images/REF_003cotas4.jpg";
+			}else if (valor==5){
+				image.src = "images/REF_003cotas5.jpg";
+			}else if (valor==6){
+				image.src = "images/REF_003cotas6.jpg";
+			}else if (valor==7){
+				image.src = "images/REF_003cotas7.jpg";
+			}else if (valor==8){
+				image.src = "images/REF_003cotas8.jpg";
+			}else if (valor==9){
+				image.src = "images/REF_003cotas9.jpg";
+			}else if (valor==10){
+				image.src = "images/REF_003cotas10.jpg";
 			}
 		}
-	}
+		
+		
+	
 	
 	
 	</script>
@@ -84,7 +109,7 @@
 							<div class="form-group" >
 
 								<label for="anchuraPlaca" style="font-family: cursive" >Anchura Placa:</label>
-								<input type="text" class="form-control" id="anchuraPlaca" name="anchuraPlaca" placeholder="Anchura Placa" maxlength="7" style="font-family: cursive" onclick='check_value(1)'/>
+								<input type="text" class="form-control" id="anchuraPlaca" name="anchuraPlaca" placeholder="Anchura Placa" maxlength="7" style="font-family: cursive"/>
 								<br>
 							
 								<label for="altura1" style="font-family: cursive">Altura 1:</label>
@@ -92,39 +117,39 @@
 								<br><br>
 								
 								<label for="altura2" style="font-family: cursive">Altura 2:</label>
-								<input type="text" class="form-control" id="altura2" name="altura2" placeholder="Altura 2" maxlength="8" style="font-family: cursive"/> 
+								<input type="text" class="form-control" id="altura2" name="altura2" placeholder="Altura 2" maxlength="8" style="font-family: cursive" onclick='check_value(2)'/> 
 								<br><br>
 								
 								<label for="altura3" style="font-family: cursive">Altura 3:</label>
-								<input type="text" class="form-control" id="altura3" name="altura3a" placeholder="Altura 3" maxlength="8" style="font-family: cursive"/> 
+								<input type="text" class="form-control" id="altura3" name="altura3a" placeholder="Altura 3" maxlength="8" style="font-family: cursive" onclick='check_value(3)'/> 
 								<br><br>
 								
 								<label for="altura4" style="font-family: cursive">Altura 4:</label>
-								<input type="text" class="form-control" id="altura4" name="altura4" placeholder="Altura 4" maxlength="8" style="font-family: cursive"/> 
+								<input type="text" class="form-control" id="altura4" name="altura4" placeholder="Altura 4" maxlength="8" style="font-family: cursive" onclick='check_value(4)'/> 
 								<br><br>
 								
 								<label for="altura5" style="font-family: cursive">Altura 5:</label>
-								<input type="text" class="form-control" id="altura5" name="altura5" placeholder="Altura 5" maxlength="8" style="font-family: cursive"/> 
+								<input type="text" class="form-control" id="altura5" name="altura5" placeholder="Altura 5" maxlength="8" style="font-family: cursive" onclick='check_value(5)'/> 
 								<br><br>
 								
 								<label for="altura6" style="font-family: cursive">Altura 6:</label>
-								<input type="text" class="form-control" id="altura6" name="altura6" placeholder="Altura 6" maxlength="8" style="font-family: cursive"/> 
+								<input type="text" class="form-control" id="altura6" name="altura6" placeholder="Altura 6" maxlength="8" style="font-family: cursive" onclick='check_value(6)'/> 
 								<br><br>
 								
 								<label for="altura7" style="font-family: cursive">Altura 7:</label>
-								<input type="text" class="form-control" id="altura7" name="altura7" placeholder="Altura 7" maxlength="8" style="font-family: cursive"/> 
+								<input type="text" class="form-control" id="altura7" name="altura7" placeholder="Altura 7" maxlength="8" style="font-family: cursive" onclick='check_value(7)'/> 
 								<br><br>
 								
 								<label for="altura8" style="font-family: cursive">Altura 8:</label>
-								<input type="text" class="form-control" id="altura8" name="altura8" placeholder="Altura 8" maxlength="8" style="font-family: cursive"/> 
+								<input type="text" class="form-control" id="altura8" name="altura8" placeholder="Altura 8" maxlength="8" style="font-family: cursive" onclick='check_value(8)'/> 
 								<br><br>
 								
 								<label for="altura9" style="font-family: cursive">Altura 9:</label>
-								<input type="text" class="form-control" id="altura9" name="altura9" placeholder="Altura 9" maxlength="8" style="font-family: cursive"/> 
+								<input type="text" class="form-control" id="altura9" name="altura9" placeholder="Altura 9" maxlength="8" style="font-family: cursive" onclick='check_value(9)'/> 
 								<br><br>
 								
 								<label for="altura10" style="font-family: cursive">Altura 10:</label>
-								<input type="text" class="form-control" id="altura10" name="altura10" placeholder="Altura 10" maxlength="8" style="font-family: cursive"/> 
+								<input type="text" class="form-control" id="altura10" name="altura10" placeholder="Altura 10" maxlength="8" style="font-family: cursive" onclick='check_value(10)'/> 
 								<br>
 								
 								<br>
@@ -208,9 +233,13 @@
 								<label for="textoDescriptivo" style="font-family: cursive"> Nombre de la placa:</label>
 								<input type="text" class="form-control" id="textoDescriptivo" name="textoDescriptivo" placeholder="Nombre de la placa" style="font-family: cursive"/> 
 								
-								<div class="form-group" id='imagedest' >
-								<input type="image" src="images/REF_003cotas.jpg" alt='ReferenciaAH' width='350' height='1020'/>
+								
+								<div>
+								<!--<input type="image" src="images/REF_003cotas.jpg" alt='ReferenciaAH' width='350' height='1020' id='imagedest' />-->
+								<input type="image" src="images/REF_003cotas.jpg" alt='ReferenciaAH' width='350' height='1020' id='imagedest' />
+								
 								</div>
+								
 								
 								<br>
 								<label for="margenMecanizado" style="font-family: cursive"> Margen cálculo área:</label>
