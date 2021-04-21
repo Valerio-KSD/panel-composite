@@ -122,7 +122,7 @@ function dibujarPlantilla(doc)
 	local fresado3 = Point2D(origenX+tamHorizontal,origenY+tamVertical)
 	local fresado4 = Point2D(origenX,origenY+tamVertical)
 	
-	dibujarPlantilla_auxiliar(doc,fresado1,fresado2,fresado3,fresado4)
+	dibujarPlantilla_auxiliar(doc,fresado1,fresado2,fresado3,fresado4,0)
 	
 	
 	--Borde interior
@@ -131,7 +131,7 @@ function dibujarPlantilla(doc)
 	local fresado7 = Point2D(origenX+tamHorizontal-margenDer,origenY+tamVertical-margenSup)
 	local fresado8 = Point2D(origenX+margenIzq,origenY+tamVertical-margenSup)
 	
-	dibujarPlantilla_auxiliar(doc,fresado5,fresado6,fresado7,fresado8)
+	dibujarPlantilla_auxiliar(doc,fresado5,fresado6,fresado7,fresado8,0)
 	
 	
 	--Cajetin
@@ -154,13 +154,16 @@ function dibujarPlantilla(doc)
 	local fresado22 = Point2D(origenX+tamHorizontal-margenDer-anchuraCajetin-anchuraImg,origenY+margenInf+alturaLineas*5+5*escalaPlantilla)
 	local fresado23 = Point2D(origenX+tamHorizontal-margenDer-anchuraCajetin-anchuraImg,origenY+margenInf)
 	
-	dibujarPlantilla_auxiliar(doc,fresado9,fresado10,fresado13,fresado11)
-	dibujarPlantilla_auxiliar(doc,fresado11,fresado12,fresado15,fresado14)
-	dibujarPlantilla_auxiliar(doc,fresado14,fresado15,fresado17,fresado16)
-	dibujarPlantilla_auxiliar(doc,fresado16,fresado17,fresado19,fresado18)
-	dibujarPlantilla_auxiliar(doc,fresado18,fresado19,fresado21,fresado20)
-	dibujarPlantilla_auxiliar(doc,fresado12,fresado13,fresado6,fresado21)
-	dibujarPlantilla_auxiliar(doc,fresado22,fresado23,fresado20,fresado9)
+	dibujarPlantilla_auxiliar(doc,fresado9,fresado10,fresado13,fresado11,0)
+	dibujarPlantilla_auxiliar(doc,fresado11,fresado12,fresado15,fresado14,1)
+	dibujarPlantilla_auxiliar(doc,fresado14,fresado15,fresado17,fresado16,1)
+	dibujarPlantilla_auxiliar(doc,fresado16,fresado17,fresado19,fresado18,1)
+	dibujarPlantilla_auxiliar(doc,fresado18,fresado19,fresado21,fresado20,1)
+	dibujarPlantilla_auxiliar(doc,fresado12,fresado13,fresado6,fresado21,0)
+	dibujarPlantilla_auxiliar(doc,fresado22,fresado23,fresado20,fresado9,0)
+	
+	
+	
 	
 	
 	
@@ -188,26 +191,65 @@ function dibujarPlantilla_A3vertical(doc)
 	return true;
 end
 
-function dibujarPlantilla_auxiliar(doc,punto1,punto2,punto3,punto4)
+function dibujarPlantilla_auxiliar(doc,punto1,punto2,punto3,punto4,dibujarCruz)
+  --dibujarCruz es para dibujar una cruz en el lateral del rectangulo para asi poder clickar y escribir en el mas facil [dibujarCruz=0 NO SE DIBUJA] [dibujarCruz=1 SE DIBUJA]--
   
   local Contour = Contour(0.0)
   Contour:AppendPoint(punto1)
   
-  if punto3==0 then
+  if punto3==0 and dibujarCruz==0 then
 	Contour:LineTo(punto2)
-  elseif punto4==0 then
+  elseif punto4==0 and dibujarCruz==0 then
 	Contour:LineTo(punto2)
 	Contour:LineTo(punto3)
-  else
+  elseif dibujarCruz==0 then
 	Contour:LineTo(punto2)
 	Contour:LineTo(punto3)
 	Contour:LineTo(punto4)
 	Contour:LineTo(punto1)
+	
+  elseif dibujarCruz==1 then
+	Contour:LineTo(punto2)
+	
+	local alturaRecuadro = (punto2.Y - punto3.Y)
+	local anchuraRecuadro = (punto2.X - punto1.X)
+	--DisplayMessageBox("altura adjfdlkjadfk:    " .. anchuraRecuadro .. "")
+	
+	local tamCruz=0.625*2*escalaPlantilla
+	local tam1=0.25*2*escalaPlantilla
+	local tam2=tam1*2
+	
+	local puntoCruz1 = Point2D(punto2.X,punto3.Y+alturaRecuadro/2 +tam1)
+	local puntoCruz2 = Point2D(punto2.X-tamCruz,punto3.Y+alturaRecuadro/2 +tam1)
+	local puntoCruz3 = Point2D(punto2.X-tamCruz,punto3.Y+alturaRecuadro/2 +tam1+tamCruz)
+	local puntoCruz4 = Point2D(punto2.X-tamCruz-tamCruz,punto3.Y+alturaRecuadro/2 +tam1+tamCruz)
+	local puntoCruz5 = Point2D(punto2.X-tamCruz-tamCruz,punto3.Y+alturaRecuadro/2 +tam1)
+	local puntoCruz6 = Point2D(punto2.X-tamCruz-tamCruz-tamCruz,punto3.Y+alturaRecuadro/2 +tam1)
+	local puntoCruz7 = Point2D(punto2.X-tamCruz-tamCruz-tamCruz,punto3.Y+alturaRecuadro/2 +tam1-tam2)
+	local puntoCruz8 = Point2D(punto2.X-tamCruz-tamCruz,punto3.Y+alturaRecuadro/2 +tam1-tam2)
+	local puntoCruz9 = Point2D(punto2.X-tamCruz-tamCruz,punto3.Y+alturaRecuadro/2 +tam1-tam2-tamCruz)
+	local puntoCruz10 = Point2D(punto2.X-tamCruz,punto3.Y+alturaRecuadro/2 +tam1-tam2-tamCruz)
+	local puntoCruz11 = Point2D(punto2.X-tamCruz,punto3.Y+alturaRecuadro/2 +tam1-tam2)
+	local puntoCruz12 = Point2D(punto2.X,punto3.Y+alturaRecuadro/2 -tam1)
+	
+	Contour:LineTo(puntoCruz1)
+	Contour:LineTo(puntoCruz2)
+	Contour:LineTo(puntoCruz3)
+	Contour:LineTo(puntoCruz4)
+	Contour:LineTo(puntoCruz5)
+	Contour:LineTo(puntoCruz6)
+	Contour:LineTo(puntoCruz7)
+	Contour:LineTo(puntoCruz8)
+	Contour:LineTo(puntoCruz9)
+	Contour:LineTo(puntoCruz10)
+	Contour:LineTo(puntoCruz11)
+	Contour:LineTo(puntoCruz12)
+
+	
+	Contour:LineTo(punto3)
+	Contour:LineTo(punto4)
+	Contour:LineTo(punto1)
   end
-  
-  
-  
-  
   
   
   --------------------------------------------------------

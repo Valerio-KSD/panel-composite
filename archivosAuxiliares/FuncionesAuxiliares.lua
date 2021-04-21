@@ -65,7 +65,7 @@ end
 
 
 function dibujarTaladro(puntoCentro, Radio, Layer)
-
+	
 	
     
     local function Polar2D(pt, ang, dis)     

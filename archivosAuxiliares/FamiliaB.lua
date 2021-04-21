@@ -2,9 +2,10 @@
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
------------------------------------------------------------------------------------------------ FAMILIA B --------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------- FAMILIA B ---------------------------------------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 --Familia B
 function OnLuaButton_modeloBH(framePrincipal)
 	
@@ -1671,13 +1672,13 @@ function dibujarTaladrosBH(doc)
    		 	for i=0,numeroColisos do
    		 	
 		   		--Taladro Superior Izquierda
-		   		local puntoCentro = Point2D(origenX+alaIzquierda+anchuraColiso+anchuraColiso/2+(i*(anchura1+(pliegueSuperior))),alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
+		   		local puntoCentro = Point2D(origenX+alaIzquierda+anchuraColiso+anchuraColiso/2+(i*(anchura1+(pliegueSuperior))),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
 		        local radio = diametroTaladros/2
 		        local layer = "Taladros"
 		        dibujarTaladro(puntoCentro, radio, layer)
 		        
 		        --Taladro Superior Derecha
-		   		local puntoCentro = Point2D(origenX+alaIzquierda+anchura1-(pliegueSuperior)-(anchuraColiso)-anchuraColiso/2+(i*(anchura2+(pliegueSuperior))),alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
+		   		local puntoCentro = Point2D(origenX+alaIzquierda+anchura1-(pliegueSuperior)-(anchuraColiso)-anchuraColiso/2+(i*(anchura2+(pliegueSuperior))),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
 		        local radio = diametroTaladros/2
 		        local layer = "Taladros"
 		        dibujarTaladro(puntoCentro, radio, layer)
@@ -1723,13 +1724,13 @@ function dibujarTaladrosBH(doc)
    		 	for i=0,numeroColisos do
    		 	
 		   		--Taladro Superior Izquierda
-		   		local puntoCentro = Point2D(origenX+alaIzquierda+anchuraColiso+anchuraColiso/2+(i*(anchura1+(pliegueSuperior))),alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
+		   		local puntoCentro = Point2D(origenX+alaIzquierda+anchuraColiso+anchuraColiso/2+(i*(anchura1+(pliegueSuperior))),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
 		        local radio = diametroTaladros/2
 		        local layer = "Taladros"
 		        dibujarTaladro(puntoCentro, radio, layer)
 		        
 		        --Taladro Superior Derecha
-		   		local puntoCentro = Point2D(origenX+alaIzquierda+anchura1-(pliegueSuperior)-(anchuraColiso)-anchuraColiso/2+(i*(anchura2+(pliegueSuperior))),alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
+		   		local puntoCentro = Point2D(origenX+alaIzquierda+anchura1-(pliegueSuperior)-(anchuraColiso)-anchuraColiso/2+(i*(anchura2+(pliegueSuperior))),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
 		        local radio = diametroTaladros/2
 		        local layer = "Taladros"
 		        dibujarTaladro(puntoCentro, radio, layer)
@@ -1775,13 +1776,13 @@ function dibujarTaladrosBH(doc)
    		 	for i=0,numeroColisos do
    		 	
 		   		--Taladro Superior Izquierda
-		   		local puntoCentro = Point2D(origenX+alaIzquierda+anchuraColiso+anchuraColiso/2+(i*(anchura1+(pliegueSuperior))),alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
+		   		local puntoCentro = Point2D(origenX+alaIzquierda+anchuraColiso+anchuraColiso/2+(i*(anchura1+(pliegueSuperior))),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
 		        local radio = diametroTaladros/2
 		        local layer = "Taladros"
 		        dibujarTaladro(puntoCentro, radio, layer)
 		        
 		        --Taladro Superior Derecha
-		   		local puntoCentro = Point2D(origenX+alaIzquierda+anchura1-(pliegueSuperior)-(anchuraColiso)-anchuraColiso/2+(i*(anchura2+(pliegueSuperior))),alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
+		   		local puntoCentro = Point2D(origenX+alaIzquierda+anchura1-(pliegueSuperior)-(anchuraColiso)-anchuraColiso/2+(i*(anchura2+(pliegueSuperior))),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
 		        local radio = diametroTaladros/2
 		        local layer = "Taladros"
 		        dibujarTaladro(puntoCentro, radio, layer)
@@ -1825,13 +1826,13 @@ function dibujarTaladrosBH(doc)
    		 	for i=0,numeroColisos do
    		 	
 		   		--Taladro Superior Izquierda
-		   		local puntoCentro = Point2D(origenX+alaIzquierda+anchuraColiso+anchuraColiso/2+(i*(anchura1+(pliegueSuperior))),alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
+		   		local puntoCentro = Point2D(origenX+alaIzquierda+anchuraColiso+anchuraColiso/2+(i*(anchura1+(pliegueSuperior))),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
 		        local radio = diametroTaladros/2
 		        local layer = "Taladros"
 		        dibujarTaladro(puntoCentro, radio, layer)
 		        
 		        --Taladro Superior Derecha
-		   		local puntoCentro = Point2D(origenX+alaIzquierda+anchura1-(pliegueSuperior)-(anchuraColiso)-anchuraColiso/2+(i*(anchura2+(pliegueSuperior))),alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
+		   		local puntoCentro = Point2D(origenX+alaIzquierda+anchura1-(pliegueSuperior)-(anchuraColiso)-anchuraColiso/2+(i*(anchura2+(pliegueSuperior))),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
 		        local radio = diametroTaladros/2
 		        local layer = "Taladros"
 		        dibujarTaladro(puntoCentro, radio, layer)
@@ -1878,13 +1879,13 @@ function dibujarTaladrosBH(doc)
    		 	for i=0,numeroColisos do
    		 	
 		   		--Taladro Superior Izquierda
-		   		local puntoCentro = Point2D(origenX+alaIzquierda+anchuraColiso+anchuraColiso/2+(i*(anchura1+(alaSuperior+pliegueSuperior))),alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
+		   		local puntoCentro = Point2D(origenX+alaIzquierda+anchuraColiso+anchuraColiso/2+(i*(anchura1+(alaSuperior+pliegueSuperior))),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
 		        local radio = diametroTaladros/2
 		        local layer = "Taladros"
 		        dibujarTaladro(puntoCentro, radio, layer)
 		        
 		        --Taladro Superior Derecha
-		   		local puntoCentro = Point2D(origenX+alaIzquierda+anchura1-(alaSuperior+pliegueSuperior)-(anchuraColiso)-anchuraColiso/2+(i*(anchura2+(alaSuperior+pliegueSuperior))),alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
+		   		local puntoCentro = Point2D(origenX+alaIzquierda+anchura1-(alaSuperior+pliegueSuperior)-(anchuraColiso)-anchuraColiso/2+(i*(anchura2+(alaSuperior+pliegueSuperior))),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
 		        local radio = diametroTaladros/2
 		        local layer = "Taladros"
 		        dibujarTaladro(puntoCentro, radio, layer)
@@ -1930,13 +1931,13 @@ function dibujarTaladrosBH(doc)
    		 	for i=0,numeroColisos do
    		 	
 		   		--Taladro Superior Izquierda
-		   		local puntoCentro = Point2D(origenX+alaIzquierda+anchuraColiso+anchuraColiso/2+(i*(anchura1+(alaSuperior+pliegueSuperior))),alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
+		   		local puntoCentro = Point2D(origenX+alaIzquierda+anchuraColiso+anchuraColiso/2+(i*(anchura1+(alaSuperior+pliegueSuperior))),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
 		        local radio = diametroTaladros/2
 		        local layer = "Taladros"
 		        dibujarTaladro(puntoCentro, radio, layer)
 		        
 		        --Taladro Superior Derecha
-		   		local puntoCentro = Point2D(origenX+alaIzquierda+anchura1-(alaSuperior+pliegueSuperior)-(anchuraColiso)-anchuraColiso/2+(i*(anchura2+(alaSuperior+pliegueSuperior))),alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
+		   		local puntoCentro = Point2D(origenX+alaIzquierda+anchura1-(alaSuperior+pliegueSuperior)-(anchuraColiso)-anchuraColiso/2+(i*(anchura2+(alaSuperior+pliegueSuperior))),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
 		        local radio = diametroTaladros/2
 		        local layer = "Taladros"
 		        dibujarTaladro(puntoCentro, radio, layer)
@@ -1981,13 +1982,13 @@ function dibujarTaladrosBH(doc)
    		 	for i=0,numeroColisos do
    		 	
 		   		--Taladro Superior Izquierda
-		   		local puntoCentro = Point2D(origenX+alaIzquierda+anchuraColiso+anchuraColiso/2+(i*(anchura1+(pliegueSuperior))),alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
+		   		local puntoCentro = Point2D(origenX+alaIzquierda+anchuraColiso+anchuraColiso/2+(i*(anchura1+(pliegueSuperior))),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
 		        local radio = diametroTaladros/2
 		        local layer = "Taladros"
 		        dibujarTaladro(puntoCentro, radio, layer)
 		        
 		        --Taladro Superior Derecha
-		   		local puntoCentro = Point2D(origenX+alaIzquierda+anchura1-(pliegueSuperior)-(anchuraColiso)-anchuraColiso/2+(i*(anchura2+(pliegueSuperior))),alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
+		   		local puntoCentro = Point2D(origenX+alaIzquierda+anchura1-(pliegueSuperior)-(anchuraColiso)-anchuraColiso/2+(i*(anchura2+(pliegueSuperior))),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
 		        local radio = diametroTaladros/2
 		        local layer = "Taladros"
 		        dibujarTaladro(puntoCentro, radio, layer)
@@ -2032,13 +2033,13 @@ function dibujarTaladrosBH(doc)
    		 	for i=0,numeroColisos do
    		 	
 		   		--Taladro Superior Izquierda
-		   		local puntoCentro = Point2D(origenX+alaIzquierda+anchuraColiso+anchuraColiso/2+(i*(anchura1+(pliegueSuperior))),alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
+		   		local puntoCentro = Point2D(origenX+alaIzquierda+anchuraColiso+anchuraColiso/2+(i*(anchura1+(pliegueSuperior))),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
 		        local radio = diametroTaladros/2
 		        local layer = "Taladros"
 		        dibujarTaladro(puntoCentro, radio, layer)
 		        
 		        --Taladro Superior Derecha
-		   		local puntoCentro = Point2D(origenX+alaIzquierda+anchura1-(pliegueSuperior)-(anchuraColiso)-anchuraColiso/2+(i*(anchura2+(pliegueSuperior))),alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
+		   		local puntoCentro = Point2D(origenX+alaIzquierda+anchura1-(pliegueSuperior)-(anchuraColiso)-anchuraColiso/2+(i*(anchura2+(pliegueSuperior))),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
 		        local radio = diametroTaladros/2
 		        local layer = "Taladros"
 		        dibujarTaladro(puntoCentro, radio, layer)
@@ -2083,13 +2084,13 @@ function dibujarTaladrosBH(doc)
    		 	for i=0,numeroColisos do
    		 	
 		   		--Taladro Superior Izquierda
-		   		local puntoCentro = Point2D(origenX+alaIzquierda+anchuraColiso+anchuraColiso/2+(i*(anchura1+(pliegueSuperior))),alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
+		   		local puntoCentro = Point2D(origenX+alaIzquierda+anchuraColiso+anchuraColiso/2+(i*(anchura1+(pliegueSuperior))),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
 		        local radio = diametroTaladros/2
 		        local layer = "Taladros"
 		        dibujarTaladro(puntoCentro, radio, layer)
 		        
 		        --Taladro Superior Derecha
-		   		local puntoCentro = Point2D(origenX+alaIzquierda+anchura1-(pliegueSuperior)-(anchuraColiso)-anchuraColiso/2+(i*(anchura2+(pliegueSuperior))),alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
+		   		local puntoCentro = Point2D(origenX+alaIzquierda+anchura1-(pliegueSuperior)-(anchuraColiso)-anchuraColiso/2+(i*(anchura2+(pliegueSuperior))),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
 		        local radio = diametroTaladros/2
 		        local layer = "Taladros"
 		        dibujarTaladro(puntoCentro, radio, layer)
@@ -2135,13 +2136,13 @@ function dibujarTaladrosBH(doc)
    		 	
    		 	
 		   		--Taladro Superior Izquierda
-		   		local puntoCentro = Point2D(origenX+alaIzquierda+anchuraColiso+anchuraColiso/2,alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
+		   		local puntoCentro = Point2D(origenX+alaIzquierda+anchuraColiso+anchuraColiso/2,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
 		        local radio = diametroTaladros/2
 		        local layer = "Taladros"
 		        dibujarTaladro(puntoCentro, radio, layer)
 		        
 		        --Taladro Superior Derecha
-		   		local puntoCentro = Point2D(origenX+alaIzquierda+anchura1+anchura2-(anchuraColiso)-(anchuraColiso/2),alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
+		   		local puntoCentro = Point2D(origenX+alaIzquierda+anchura1+anchura2-(anchuraColiso)-(anchuraColiso/2),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
 		        local radio = diametroTaladros/2
 		        local layer = "Taladros"
 		        dibujarTaladro(puntoCentro, radio, layer)
@@ -2186,13 +2187,13 @@ function dibujarTaladrosBH(doc)
    		 	
    		 	
 		   		--Taladro Superior Izquierda
-		   		local puntoCentro = Point2D(origenX+alaIzquierda+anchuraColiso+anchuraColiso/2,alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
+		   		local puntoCentro = Point2D(origenX+alaIzquierda+anchuraColiso+anchuraColiso/2,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
 		        local radio = diametroTaladros/2
 		        local layer = "Taladros"
 		        dibujarTaladro(puntoCentro, radio, layer)
 		        
 		        --Taladro Superior Derecha
-		   		local puntoCentro = Point2D(origenX+alaIzquierda+anchura1+anchura2-(anchuraColiso)-(anchuraColiso/2),alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
+		   		local puntoCentro = Point2D(origenX+alaIzquierda+anchura1+anchura2-(anchuraColiso)-(anchuraColiso/2),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
 		        local radio = diametroTaladros/2
 		        local layer = "Taladros"
 		        dibujarTaladro(puntoCentro, radio, layer)
@@ -2237,13 +2238,13 @@ function dibujarTaladrosBH(doc)
    		 	
    		 	
 		   		--Taladro Superior Izquierda
-		   		local puntoCentro = Point2D(origenX+alaIzquierda+anchuraColiso+anchuraColiso/2,alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
+		   		local puntoCentro = Point2D(origenX+alaIzquierda+anchuraColiso+anchuraColiso/2,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
 		        local radio = diametroTaladros/2
 		        local layer = "Taladros"
 		        dibujarTaladro(puntoCentro, radio, layer)
 		        
 		        --Taladro Superior Derecha
-		   		local puntoCentro = Point2D(origenX+alaIzquierda+anchura1+anchura2-(anchuraColiso)-(anchuraColiso/2),alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
+		   		local puntoCentro = Point2D(origenX+alaIzquierda+anchura1+anchura2-(anchuraColiso)-(anchuraColiso/2),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
 		        local radio = diametroTaladros/2
 		        local layer = "Taladros"
 		        dibujarTaladro(puntoCentro, radio, layer)
@@ -2288,13 +2289,13 @@ function dibujarTaladrosBH(doc)
    		 	
    		 	
 		   		--Taladro Superior Izquierda
-		   		local puntoCentro = Point2D(origenX+alaIzquierda+anchuraColiso+anchuraColiso/2,alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
+		   		local puntoCentro = Point2D(origenX+alaIzquierda+anchuraColiso+anchuraColiso/2,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
 		        local radio = diametroTaladros/2
 		        local layer = "Taladros"
 		        dibujarTaladro(puntoCentro, radio, layer)
 		        
 		        --Taladro Superior Derecha
-		   		local puntoCentro = Point2D(origenX+alaIzquierda+anchura1+anchura2-(anchuraColiso)-(anchuraColiso/2),alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
+		   		local puntoCentro = Point2D(origenX+alaIzquierda+anchura1+anchura2-(anchuraColiso)-(anchuraColiso/2),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
 		        local radio = diametroTaladros/2
 		        local layer = "Taladros"
 		        dibujarTaladro(puntoCentro, radio, layer)
@@ -2339,13 +2340,13 @@ function dibujarTaladrosBH(doc)
    		 	
    		 	
 		   		--Taladro Superior Izquierda
-		   		local puntoCentro = Point2D(origenX+alaIzquierda+anchuraColiso+anchuraColiso/2,alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
+		   		local puntoCentro = Point2D(origenX+alaIzquierda+anchuraColiso+anchuraColiso/2,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
 		        local radio = diametroTaladros/2
 		        local layer = "Taladros"
 		        dibujarTaladro(puntoCentro, radio, layer)
 		        
 		        --Taladro Superior Derecha
-		   		local puntoCentro = Point2D(origenX+alaIzquierda+anchura1+anchura2-(anchuraColiso)-(anchuraColiso/2),alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
+		   		local puntoCentro = Point2D(origenX+alaIzquierda+anchura1+anchura2-(anchuraColiso)-(anchuraColiso/2),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
 		        local radio = diametroTaladros/2
 		        local layer = "Taladros"
 		        dibujarTaladro(puntoCentro, radio, layer)
@@ -2390,13 +2391,13 @@ function dibujarTaladrosBH(doc)
    		 	
    		 	
 		   		--Taladro Superior Izquierda
-		   		local puntoCentro = Point2D(origenX+alaIzquierda+anchuraColiso+anchuraColiso/2,alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
+		   		local puntoCentro = Point2D(origenX+alaIzquierda+anchuraColiso+anchuraColiso/2,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
 		        local radio = diametroTaladros/2
 		        local layer = "Taladros"
 		        dibujarTaladro(puntoCentro, radio, layer)
 		        
 		        --Taladro Superior Derecha
-		   		local puntoCentro = Point2D(origenX+alaIzquierda+anchura1+anchura2-(anchuraColiso)-(anchuraColiso/2),alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
+		   		local puntoCentro = Point2D(origenX+alaIzquierda+anchura1+anchura2-(anchuraColiso)-(anchuraColiso/2),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
 		        local radio = diametroTaladros/2
 		        local layer = "Taladros"
 		        dibujarTaladro(puntoCentro, radio, layer)
@@ -2441,13 +2442,13 @@ function dibujarTaladrosBH(doc)
    		 	
    		 	
 		   		--Taladro Superior Izquierda
-		   		local puntoCentro = Point2D(origenX+alaIzquierda+anchuraColiso+anchuraColiso/2,alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
+		   		local puntoCentro = Point2D(origenX+alaIzquierda+anchuraColiso+anchuraColiso/2,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
 		        local radio = diametroTaladros/2
 		        local layer = "Taladros"
 		        dibujarTaladro(puntoCentro, radio, layer)
 		        
 		        --Taladro Superior Derecha
-		   		local puntoCentro = Point2D(origenX+alaIzquierda+anchura1+anchura2-(anchuraColiso)-(anchuraColiso/2),alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
+		   		local puntoCentro = Point2D(origenX+alaIzquierda+anchura1+anchura2-(anchuraColiso)-(anchuraColiso/2),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
 		        local radio = diametroTaladros/2
 		        local layer = "Taladros"
 		        dibujarTaladro(puntoCentro, radio, layer)
@@ -2492,13 +2493,13 @@ function dibujarTaladrosBH(doc)
    		 	
    		 	
 		   		--Taladro Superior Izquierda
-		   		local puntoCentro = Point2D(origenX+alaIzquierda+anchuraColiso+anchuraColiso/2,alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
+		   		local puntoCentro = Point2D(origenX+alaIzquierda+anchuraColiso+anchuraColiso/2,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
 		        local radio = diametroTaladros/2
 		        local layer = "Taladros"
 		        dibujarTaladro(puntoCentro, radio, layer)
 		        
 		        --Taladro Superior Derecha
-		   		local puntoCentro = Point2D(origenX+alaIzquierda+anchura1+anchura2-(anchuraColiso)-(anchuraColiso/2),alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
+		   		local puntoCentro = Point2D(origenX+alaIzquierda+anchura1+anchura2-(anchuraColiso)-(anchuraColiso/2),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
 		        local radio = diametroTaladros/2
 		        local layer = "Taladros"
 		        dibujarTaladro(puntoCentro, radio, layer)
@@ -2543,13 +2544,13 @@ function dibujarTaladrosBH(doc)
    		 	
    		 	
 		   		--Taladro Superior Izquierda
-		   		local puntoCentro = Point2D(origenX+alaIzquierda+anchuraColiso+anchuraColiso/2,alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
+		   		local puntoCentro = Point2D(origenX+alaIzquierda+anchuraColiso+anchuraColiso/2,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
 		        local radio = diametroTaladros/2
 		        local layer = "Taladros"
 		        dibujarTaladro(puntoCentro, radio, layer)
 		        
 		        --Taladro Superior Derecha
-		   		local puntoCentro = Point2D(origenX+alaIzquierda+anchura1+anchura2-(anchuraColiso)-(anchuraColiso/2),alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
+		   		local puntoCentro = Point2D(origenX+alaIzquierda+anchura1+anchura2-(anchuraColiso)-(anchuraColiso/2),origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior-alturaColiso-alturaColiso/2)
 		        local radio = diametroTaladros/2
 		        local layer = "Taladros"
 		        dibujarTaladro(puntoCentro, radio, layer)

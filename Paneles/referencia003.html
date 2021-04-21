@@ -17,45 +17,428 @@
 	
 	<!-- Javascript -->
 	<script language='JavaScript' type='text/javascript'>
-	
-	
-	 <!--function check_value(fieldvalue){--> 
-		<!--if (fieldvalue==1 && fieldvalue==2 && fieldvalue==3 && fieldvalue==4 && fieldvalue==5 && fieldvalue==6 && fieldvalue==7 && fieldvalue==8 && fieldvalue==9 && fieldvalue==10){-->
-			
-			<!--var valor1 = document.getElementById("altura1");-->
-			
-			<!--if (valor1 != 0) {-->
-			
-			<!--document.getElementById("imagedest").innerHTML = "<center><img src='paneles/REF_003cotas2.jpg' alt='refAH' width='629' height='338'></center>";-->
-			
-			<!--}-->
-		<!--}-->
 		
 		
-		function check_value(valor) {
+		
+		function check_value() {
 			var image = document.getElementById('imagedest');
-			if (valor==1 || valor==2) {
-				image.src = "images/REF_003cotas2.jpg";
-			} else if (valor==3){
-				image.src = "images/REF_003cotas3.jpg";
-			} else if (valor==4){
-				image.src = "images/REF_003cotas4.jpg";
-			}else if (valor==5){
-				image.src = "images/REF_003cotas5.jpg";
-			}else if (valor==6){
-				image.src = "images/REF_003cotas6.jpg";
-			}else if (valor==7){
-				image.src = "images/REF_003cotas7.jpg";
-			}else if (valor==8){
-				image.src = "images/REF_003cotas8.jpg";
-			}else if (valor==9){
-				image.src = "images/REF_003cotas9.jpg";
-			}else if (valor==10){
+			if (document.getElementById("altura10").value != 0) 
+			{
+				document.getElementById("pliegueIzq1").style.visibility="visible"; <!--Pligues Izquierda-->
+				document.getElementById("pliegueIzq2").style.visibility="visible";
+				document.getElementById("pliegueIzq3").style.visibility="visible";
+				document.getElementById("pliegueIzq4").style.visibility="visible";
+				document.getElementById("pliegueIzq5").style.visibility="visible";
+				document.getElementById("pliegueIzq6").style.visibility="visible";
+				document.getElementById("pliegueIzq7").style.visibility="visible";
+				document.getElementById("pliegueIzq8").style.visibility="visible";
+				document.getElementById("pliegueIzq9").style.visibility="visible";
+				document.getElementById("pliegueIzq10").style.visibility="visible";
+				document.getElementById("pliegueDer1").style.visibility="visible"; <!--Pligues Derecha-->
+				document.getElementById("pliegueDer2").style.visibility="visible";
+				document.getElementById("pliegueDer3").style.visibility="visible";
+				document.getElementById("pliegueDer4").style.visibility="visible";
+				document.getElementById("pliegueDer5").style.visibility="visible";
+				document.getElementById("pliegueDer6").style.visibility="visible";
+				document.getElementById("pliegueDer7").style.visibility="visible";
+				document.getElementById("pliegueDer8").style.visibility="visible";
+				document.getElementById("pliegueDer9").style.visibility="visible";
+				document.getElementById("pliegueDer10").style.visibility="visible";
+				
+				document.getElementById("pliegueIzq1text").style.visibility="visible"; <!--Pligues Izquierda-->
+				document.getElementById("pliegueIzq2text").style.visibility="visible";
+				document.getElementById("pliegueIzq3text").style.visibility="visible";
+				document.getElementById("pliegueIzq4text").style.visibility="visible";
+				document.getElementById("pliegueIzq5text").style.visibility="visible";
+				document.getElementById("pliegueIzq6text").style.visibility="visible";
+				document.getElementById("pliegueIzq7text").style.visibility="visible";
+				document.getElementById("pliegueIzq8text").style.visibility="visible";
+				document.getElementById("pliegueIzq9text").style.visibility="visible";
+				document.getElementById("pliegueIzq10text").style.visibility="visible";
+				document.getElementById("pliegueDer1text").style.visibility="visible"; <!--Pligues Derecha-->
+				document.getElementById("pliegueDer2text").style.visibility="visible";
+				document.getElementById("pliegueDer3text").style.visibility="visible";
+				document.getElementById("pliegueDer4text").style.visibility="visible";
+				document.getElementById("pliegueDer5text").style.visibility="visible";
+				document.getElementById("pliegueDer6text").style.visibility="visible";
+				document.getElementById("pliegueDer7text").style.visibility="visible";
+				document.getElementById("pliegueDer8text").style.visibility="visible";
+				document.getElementById("pliegueDer9text").style.visibility="visible";
+				document.getElementById("pliegueDer10text").style.visibility="visible";
+				
 				image.src = "images/REF_003cotas10.jpg";
+			} 
+			else if (document.getElementById("altura9").value != 0)
+			{
+				document.getElementById("pliegueIzq1").style.visibility="visible"; <!--Pligues Izquierda-->
+				document.getElementById("pliegueIzq2").style.visibility="visible";
+				document.getElementById("pliegueIzq3").style.visibility="visible";
+				document.getElementById("pliegueIzq4").style.visibility="visible";
+				document.getElementById("pliegueIzq5").style.visibility="visible";
+				document.getElementById("pliegueIzq6").style.visibility="visible";
+				document.getElementById("pliegueIzq7").style.visibility="visible";
+				document.getElementById("pliegueIzq8").style.visibility="visible";
+				document.getElementById("pliegueIzq9").style.visibility="visible";
+				document.getElementById("pliegueIzq10").style.visibility="hidden";
+				document.getElementById("pliegueDer1").style.visibility="visible"; <!--Pligues Derecha-->
+				document.getElementById("pliegueDer2").style.visibility="visible";
+				document.getElementById("pliegueDer3").style.visibility="visible";
+				document.getElementById("pliegueDer4").style.visibility="visible";
+				document.getElementById("pliegueDer5").style.visibility="visible";
+				document.getElementById("pliegueDer6").style.visibility="visible";
+				document.getElementById("pliegueDer7").style.visibility="visible";
+				document.getElementById("pliegueDer8").style.visibility="visible";
+				document.getElementById("pliegueDer9").style.visibility="visible";
+				document.getElementById("pliegueDer10").style.visibility="hidden";
+				
+				document.getElementById("pliegueIzq1text").style.visibility="visible"; <!--Pligues Izquierda-->
+				document.getElementById("pliegueIzq2text").style.visibility="visible";
+				document.getElementById("pliegueIzq3text").style.visibility="visible";
+				document.getElementById("pliegueIzq4text").style.visibility="visible";
+				document.getElementById("pliegueIzq5text").style.visibility="visible";
+				document.getElementById("pliegueIzq6text").style.visibility="visible";
+				document.getElementById("pliegueIzq7text").style.visibility="visible";
+				document.getElementById("pliegueIzq8text").style.visibility="visible";
+				document.getElementById("pliegueIzq9text").style.visibility="visible";
+				document.getElementById("pliegueIzq10text").style.visibility="hidden";
+				document.getElementById("pliegueDer1text").style.visibility="visible"; <!--Pligues Derecha-->
+				document.getElementById("pliegueDer2text").style.visibility="visible";
+				document.getElementById("pliegueDer3text").style.visibility="visible";
+				document.getElementById("pliegueDer4text").style.visibility="visible";
+				document.getElementById("pliegueDer5text").style.visibility="visible";
+				document.getElementById("pliegueDer6text").style.visibility="visible";
+				document.getElementById("pliegueDer7text").style.visibility="visible";
+				document.getElementById("pliegueDer8text").style.visibility="visible";
+				document.getElementById("pliegueDer9text").style.visibility="visible";
+				document.getElementById("pliegueDer10text").style.visibility="hidden";
+				
+				image.src = "images/REF_003cotas9.jpg";
+			} 
+			else if (document.getElementById("altura8").value != 0)
+			{
+				document.getElementById("pliegueIzq1").style.visibility="visible"; <!--Pligues Izquierda-->
+				document.getElementById("pliegueIzq2").style.visibility="visible";
+				document.getElementById("pliegueIzq3").style.visibility="visible";
+				document.getElementById("pliegueIzq4").style.visibility="visible";
+				document.getElementById("pliegueIzq5").style.visibility="visible";
+				document.getElementById("pliegueIzq6").style.visibility="visible";
+				document.getElementById("pliegueIzq7").style.visibility="visible";
+				document.getElementById("pliegueIzq8").style.visibility="visible";
+				document.getElementById("pliegueIzq9").style.visibility="hidden";
+				document.getElementById("pliegueIzq10").style.visibility="hidden";
+				document.getElementById("pliegueDer1").style.visibility="visible"; <!--Pligues Derecha-->
+				document.getElementById("pliegueDer2").style.visibility="visible";
+				document.getElementById("pliegueDer3").style.visibility="visible";
+				document.getElementById("pliegueDer4").style.visibility="visible";
+				document.getElementById("pliegueDer5").style.visibility="visible";
+				document.getElementById("pliegueDer6").style.visibility="visible";
+				document.getElementById("pliegueDer7").style.visibility="visible";
+				document.getElementById("pliegueDer8").style.visibility="visible";
+				document.getElementById("pliegueDer9").style.visibility="hidden";
+				document.getElementById("pliegueDer10").style.visibility="hidden";
+				
+				document.getElementById("pliegueIzq1text").style.visibility="visible"; <!--Pligues Izquierda-->
+				document.getElementById("pliegueIzq2text").style.visibility="visible";
+				document.getElementById("pliegueIzq3text").style.visibility="visible";
+				document.getElementById("pliegueIzq4text").style.visibility="visible";
+				document.getElementById("pliegueIzq5text").style.visibility="visible";
+				document.getElementById("pliegueIzq6text").style.visibility="visible";
+				document.getElementById("pliegueIzq7text").style.visibility="visible";
+				document.getElementById("pliegueIzq8text").style.visibility="visible";
+				document.getElementById("pliegueIzq9text").style.visibility="hidden";
+				document.getElementById("pliegueIzq10text").style.visibility="hidden";
+				document.getElementById("pliegueDer1text").style.visibility="visible"; <!--Pligues Derecha-->
+				document.getElementById("pliegueDer2text").style.visibility="visible";
+				document.getElementById("pliegueDer3text").style.visibility="visible";
+				document.getElementById("pliegueDer4text").style.visibility="visible";
+				document.getElementById("pliegueDer5text").style.visibility="visible";
+				document.getElementById("pliegueDer6text").style.visibility="visible";
+				document.getElementById("pliegueDer7text").style.visibility="visible";
+				document.getElementById("pliegueDer8text").style.visibility="visible";
+				document.getElementById("pliegueDer9text").style.visibility="hidden";
+				document.getElementById("pliegueDer10text").style.visibility="hidden";
+				
+				image.src = "images/REF_003cotas8.jpg";
+			}
+			else if (document.getElementById("altura7").value != 0)
+			{
+				document.getElementById("pliegueIzq1").style.visibility="visible"; <!--Pligues Izquierda-->
+				document.getElementById("pliegueIzq2").style.visibility="visible";
+				document.getElementById("pliegueIzq3").style.visibility="visible";
+				document.getElementById("pliegueIzq4").style.visibility="visible";
+				document.getElementById("pliegueIzq5").style.visibility="visible";
+				document.getElementById("pliegueIzq6").style.visibility="visible";
+				document.getElementById("pliegueIzq7").style.visibility="visible";
+				document.getElementById("pliegueIzq8").style.visibility="hidden";
+				document.getElementById("pliegueIzq9").style.visibility="hidden";
+				document.getElementById("pliegueIzq10").style.visibility="hidden";
+				document.getElementById("pliegueDer1").style.visibility="visible"; <!--Pligues Derecha-->
+				document.getElementById("pliegueDer2").style.visibility="visible";
+				document.getElementById("pliegueDer3").style.visibility="visible";
+				document.getElementById("pliegueDer4").style.visibility="visible";
+				document.getElementById("pliegueDer5").style.visibility="visible";
+				document.getElementById("pliegueDer6").style.visibility="visible";
+				document.getElementById("pliegueDer7").style.visibility="visible";
+				document.getElementById("pliegueDer8").style.visibility="hidden";
+				document.getElementById("pliegueDer9").style.visibility="hidden";
+				document.getElementById("pliegueDer10").style.visibility="hidden";
+				
+				document.getElementById("pliegueIzq1text").style.visibility="visible"; <!--Pligues Izquierda-->
+				document.getElementById("pliegueIzq2text").style.visibility="visible";
+				document.getElementById("pliegueIzq3text").style.visibility="visible";
+				document.getElementById("pliegueIzq4text").style.visibility="visible";
+				document.getElementById("pliegueIzq5text").style.visibility="visible";
+				document.getElementById("pliegueIzq6text").style.visibility="visible";
+				document.getElementById("pliegueIzq7text").style.visibility="visible";
+				document.getElementById("pliegueIzq8text").style.visibility="hidden";
+				document.getElementById("pliegueIzq9text").style.visibility="hidden";
+				document.getElementById("pliegueIzq10text").style.visibility="hidden";
+				document.getElementById("pliegueDer1text").style.visibility="visible"; <!--Pligues Derecha-->
+				document.getElementById("pliegueDer2text").style.visibility="visible";
+				document.getElementById("pliegueDer3text").style.visibility="visible";
+				document.getElementById("pliegueDer4text").style.visibility="visible";
+				document.getElementById("pliegueDer5text").style.visibility="visible";
+				document.getElementById("pliegueDer6text").style.visibility="visible";
+				document.getElementById("pliegueDer7text").style.visibility="visible";
+				document.getElementById("pliegueDer8text").style.visibility="hidden";
+				document.getElementById("pliegueDer9text").style.visibility="hidden";
+				document.getElementById("pliegueDer10text").style.visibility="hidden";
+				
+				image.src = "images/REF_003cotas7.jpg";
+			}
+			else if (document.getElementById("altura6").value != 0)
+			{
+				document.getElementById("pliegueIzq1").style.visibility="visible"; <!--Pligues Izquierda-->
+				document.getElementById("pliegueIzq2").style.visibility="visible";
+				document.getElementById("pliegueIzq3").style.visibility="visible";
+				document.getElementById("pliegueIzq4").style.visibility="visible";
+				document.getElementById("pliegueIzq5").style.visibility="visible";
+				document.getElementById("pliegueIzq6").style.visibility="visible";
+				document.getElementById("pliegueIzq7").style.visibility="hidden";
+				document.getElementById("pliegueIzq8").style.visibility="hidden";
+				document.getElementById("pliegueIzq9").style.visibility="hidden";
+				document.getElementById("pliegueIzq10").style.visibility="hidden";
+				document.getElementById("pliegueDer1").style.visibility="visible"; <!--Pligues Derecha-->
+				document.getElementById("pliegueDer2").style.visibility="visible";
+				document.getElementById("pliegueDer3").style.visibility="visible";
+				document.getElementById("pliegueDer4").style.visibility="visible";
+				document.getElementById("pliegueDer5").style.visibility="visible";
+				document.getElementById("pliegueDer6").style.visibility="visible";
+				document.getElementById("pliegueDer7").style.visibility="hidden";
+				document.getElementById("pliegueDer8").style.visibility="hidden";
+				document.getElementById("pliegueDer9").style.visibility="hidden";
+				document.getElementById("pliegueDer10").style.visibility="hidden";
+				
+				document.getElementById("pliegueIzq1text").style.visibility="visible"; <!--Pligues Izquierda-->
+				document.getElementById("pliegueIzq2text").style.visibility="visible";
+				document.getElementById("pliegueIzq3text").style.visibility="visible";
+				document.getElementById("pliegueIzq4text").style.visibility="visible";
+				document.getElementById("pliegueIzq5text").style.visibility="visible";
+				document.getElementById("pliegueIzq6text").style.visibility="visible";
+				document.getElementById("pliegueIzq7text").style.visibility="hidden";
+				document.getElementById("pliegueIzq8text").style.visibility="hidden";
+				document.getElementById("pliegueIzq9text").style.visibility="hidden";
+				document.getElementById("pliegueIzq10text").style.visibility="hidden";
+				document.getElementById("pliegueDer1text").style.visibility="visible"; <!--Pligues Derecha-->
+				document.getElementById("pliegueDer2text").style.visibility="visible";
+				document.getElementById("pliegueDer3text").style.visibility="visible";
+				document.getElementById("pliegueDer4text").style.visibility="visible";
+				document.getElementById("pliegueDer5text").style.visibility="visible";
+				document.getElementById("pliegueDer6text").style.visibility="visible";
+				document.getElementById("pliegueDer7text").style.visibility="hidden";
+				document.getElementById("pliegueDer8text").style.visibility="hidden";
+				document.getElementById("pliegueDer9text").style.visibility="hidden";
+				document.getElementById("pliegueDer10text").style.visibility="hidden";
+				
+				image.src = "images/REF_003cotas6.jpg";
+			}
+			else if (document.getElementById("altura5").value != 0)
+			{
+				document.getElementById("pliegueIzq1").style.visibility="visible"; <!--Pligues Izquierda-->
+				document.getElementById("pliegueIzq2").style.visibility="visible";
+				document.getElementById("pliegueIzq3").style.visibility="visible";
+				document.getElementById("pliegueIzq4").style.visibility="visible";
+				document.getElementById("pliegueIzq5").style.visibility="visible";
+				document.getElementById("pliegueIzq6").style.visibility="hidden";
+				document.getElementById("pliegueIzq7").style.visibility="hidden";
+				document.getElementById("pliegueIzq8").style.visibility="hidden";
+				document.getElementById("pliegueIzq9").style.visibility="hidden";
+				document.getElementById("pliegueIzq10").style.visibility="hidden";
+				document.getElementById("pliegueDer1").style.visibility="visible"; <!--Pligues Derecha-->
+				document.getElementById("pliegueDer2").style.visibility="visible";
+				document.getElementById("pliegueDer3").style.visibility="visible";
+				document.getElementById("pliegueDer4").style.visibility="visible";
+				document.getElementById("pliegueDer5").style.visibility="visible";
+				document.getElementById("pliegueDer6").style.visibility="hidden";
+				document.getElementById("pliegueDer7").style.visibility="hidden";
+				document.getElementById("pliegueDer8").style.visibility="hidden";
+				document.getElementById("pliegueDer9").style.visibility="hidden";
+				document.getElementById("pliegueDer10").style.visibility="hidden";
+				
+				document.getElementById("pliegueIzq1text").style.visibility="visible"; <!--Pligues Izquierda-->
+				document.getElementById("pliegueIzq2text").style.visibility="visible";
+				document.getElementById("pliegueIzq3text").style.visibility="visible";
+				document.getElementById("pliegueIzq4text").style.visibility="visible";
+				document.getElementById("pliegueIzq5text").style.visibility="visible";
+				document.getElementById("pliegueIzq6text").style.visibility="hidden";
+				document.getElementById("pliegueIzq7text").style.visibility="hidden";
+				document.getElementById("pliegueIzq8text").style.visibility="hidden";
+				document.getElementById("pliegueIzq9text").style.visibility="hidden";
+				document.getElementById("pliegueIzq10text").style.visibility="hidden";
+				document.getElementById("pliegueDer1text").style.visibility="visible"; <!--Pligues Derecha-->
+				document.getElementById("pliegueDer2text").style.visibility="visible";
+				document.getElementById("pliegueDer3text").style.visibility="visible";
+				document.getElementById("pliegueDer4text").style.visibility="visible";
+				document.getElementById("pliegueDer5text").style.visibility="visible";
+				document.getElementById("pliegueDer6text").style.visibility="hidden";
+				document.getElementById("pliegueDer7text").style.visibility="hidden";
+				document.getElementById("pliegueDer8text").style.visibility="hidden";
+				document.getElementById("pliegueDer9text").style.visibility="hidden";
+				document.getElementById("pliegueDer10text").style.visibility="hidden";
+				
+				image.src = "images/REF_003cotas5.jpg";
+			}
+			else if (document.getElementById("altura4").value != 0)
+			{
+				document.getElementById("pliegueIzq1").style.visibility="visible"; <!--Pligues Izquierda-->
+				document.getElementById("pliegueIzq2").style.visibility="visible";
+				document.getElementById("pliegueIzq3").style.visibility="visible";
+				document.getElementById("pliegueIzq4").style.visibility="visible";
+				document.getElementById("pliegueIzq5").style.visibility="hidden";
+				document.getElementById("pliegueIzq6").style.visibility="hidden";
+				document.getElementById("pliegueIzq7").style.visibility="hidden";
+				document.getElementById("pliegueIzq8").style.visibility="hidden";
+				document.getElementById("pliegueIzq9").style.visibility="hidden";
+				document.getElementById("pliegueIzq10").style.visibility="hidden";
+				document.getElementById("pliegueDer1").style.visibility="visible"; <!--Pligues Derecha-->
+				document.getElementById("pliegueDer2").style.visibility="visible";
+				document.getElementById("pliegueDer3").style.visibility="visible";
+				document.getElementById("pliegueDer4").style.visibility="visible";
+				document.getElementById("pliegueDer5").style.visibility="hidden";
+				document.getElementById("pliegueDer6").style.visibility="hidden";
+				document.getElementById("pliegueDer7").style.visibility="hidden";
+				document.getElementById("pliegueDer8").style.visibility="hidden";
+				document.getElementById("pliegueDer9").style.visibility="hidden";
+				document.getElementById("pliegueDer10").style.visibility="hidden";
+				
+				document.getElementById("pliegueIzq1text").style.visibility="visible"; <!--Pligues Izquierda-->
+				document.getElementById("pliegueIzq2text").style.visibility="visible";
+				document.getElementById("pliegueIzq3text").style.visibility="visible";
+				document.getElementById("pliegueIzq4text").style.visibility="visible";
+				document.getElementById("pliegueIzq5text").style.visibility="hidden";
+				document.getElementById("pliegueIzq6text").style.visibility="hidden";
+				document.getElementById("pliegueIzq7text").style.visibility="hidden";
+				document.getElementById("pliegueIzq8text").style.visibility="hidden";
+				document.getElementById("pliegueIzq9text").style.visibility="hidden";
+				document.getElementById("pliegueIzq10text").style.visibility="hidden";
+				document.getElementById("pliegueDer1text").style.visibility="visible"; <!--Pligues Derecha-->
+				document.getElementById("pliegueDer2text").style.visibility="visible";
+				document.getElementById("pliegueDer3text").style.visibility="visible";
+				document.getElementById("pliegueDer4text").style.visibility="visible";
+				document.getElementById("pliegueDer5text").style.visibility="hidden";
+				document.getElementById("pliegueDer6text").style.visibility="hidden";
+				document.getElementById("pliegueDer7text").style.visibility="hidden";
+				document.getElementById("pliegueDer8text").style.visibility="hidden";
+				document.getElementById("pliegueDer9text").style.visibility="hidden";
+				document.getElementById("pliegueDer10text").style.visibility="hidden";
+				
+				image.src = "images/REF_003cotas4.jpg";
+			}
+			else if (document.getElementById("altura3").value != 0)
+			{
+				document.getElementById("pliegueIzq1").style.visibility="visible"; <!--Pligues Izquierda-->
+				document.getElementById("pliegueIzq2").style.visibility="visible";
+				document.getElementById("pliegueIzq3").style.visibility="visible";
+				document.getElementById("pliegueIzq4").style.visibility="hidden";
+				document.getElementById("pliegueIzq5").style.visibility="hidden";
+				document.getElementById("pliegueIzq6").style.visibility="hidden";
+				document.getElementById("pliegueIzq7").style.visibility="hidden";
+				document.getElementById("pliegueIzq8").style.visibility="hidden";
+				document.getElementById("pliegueIzq9").style.visibility="hidden";
+				document.getElementById("pliegueIzq10").style.visibility="hidden";
+				document.getElementById("pliegueDer1").style.visibility="visible"; <!--Pligues Derecha-->
+				document.getElementById("pliegueDer2").style.visibility="visible";
+				document.getElementById("pliegueDer3").style.visibility="visible";
+				document.getElementById("pliegueDer4").style.visibility="hidden";
+				document.getElementById("pliegueDer5").style.visibility="hidden";
+				document.getElementById("pliegueDer6").style.visibility="hidden";
+				document.getElementById("pliegueDer7").style.visibility="hidden";
+				document.getElementById("pliegueDer8").style.visibility="hidden";
+				document.getElementById("pliegueDer9").style.visibility="hidden";
+				document.getElementById("pliegueDer10").style.visibility="hidden";
+				
+				document.getElementById("pliegueIzq1text").style.visibility="visible"; <!--Pligues Izquierda-->
+				document.getElementById("pliegueIzq2text").style.visibility="visible";
+				document.getElementById("pliegueIzq3text").style.visibility="visible";
+				document.getElementById("pliegueIzq4text").style.visibility="hidden";
+				document.getElementById("pliegueIzq5text").style.visibility="hidden";
+				document.getElementById("pliegueIzq6text").style.visibility="hidden";
+				document.getElementById("pliegueIzq7text").style.visibility="hidden";
+				document.getElementById("pliegueIzq8text").style.visibility="hidden";
+				document.getElementById("pliegueIzq9text").style.visibility="hidden";
+				document.getElementById("pliegueIzq10text").style.visibility="hidden";
+				document.getElementById("pliegueDer1text").style.visibility="visible"; <!--Pligues Derecha-->
+				document.getElementById("pliegueDer2text").style.visibility="visible";
+				document.getElementById("pliegueDer3text").style.visibility="visible";
+				document.getElementById("pliegueDer4text").style.visibility="hidden";
+				document.getElementById("pliegueDer5text").style.visibility="hidden";
+				document.getElementById("pliegueDer6text").style.visibility="hidden";
+				document.getElementById("pliegueDer7text").style.visibility="hidden";
+				document.getElementById("pliegueDer8text").style.visibility="hidden";
+				document.getElementById("pliegueDer9text").style.visibility="hidden";
+				document.getElementById("pliegueDer10text").style.visibility="hidden";
+				
+				image.src = "images/REF_003cotas3.jpg";
+			}
+			else if (document.getElementById("altura2").value != 0 || document.getElementById("altura1").value != 0)
+			{
+				document.getElementById("pliegueIzq1").style.visibility="visible"; <!--Pligues Izquierda-->
+				document.getElementById("pliegueIzq2").style.visibility="visible";
+				document.getElementById("pliegueIzq3").style.visibility="hidden";
+				document.getElementById("pliegueIzq4").style.visibility="hidden";
+				document.getElementById("pliegueIzq5").style.visibility="hidden";
+				document.getElementById("pliegueIzq6").style.visibility="hidden";
+				document.getElementById("pliegueIzq7").style.visibility="hidden";
+				document.getElementById("pliegueIzq8").style.visibility="hidden";
+				document.getElementById("pliegueIzq9").style.visibility="hidden";
+				document.getElementById("pliegueIzq10").style.visibility="hidden";
+				document.getElementById("pliegueDer1").style.visibility="visible"; <!--Pligues Derecha-->
+				document.getElementById("pliegueDer2").style.visibility="visible";
+				document.getElementById("pliegueDer3").style.visibility="hidden";
+				document.getElementById("pliegueDer4").style.visibility="hidden";
+				document.getElementById("pliegueDer5").style.visibility="hidden";
+				document.getElementById("pliegueDer6").style.visibility="hidden";
+				document.getElementById("pliegueDer7").style.visibility="hidden";
+				document.getElementById("pliegueDer8").style.visibility="hidden";
+				document.getElementById("pliegueDer9").style.visibility="hidden";
+				document.getElementById("pliegueDer10").style.visibility="hidden";
+				
+				document.getElementById("pliegueIzq1text").style.visibility="visible"; <!--Texto Izquierda-->
+				document.getElementById("pliegueIzq2text").style.visibility="visible";
+				document.getElementById("pliegueIzq3text").style.visibility="hidden";
+				document.getElementById("pliegueIzq4text").style.visibility="hidden";
+				document.getElementById("pliegueIzq5text").style.visibility="hidden";
+				document.getElementById("pliegueIzq6text").style.visibility="hidden";
+				document.getElementById("pliegueIzq7text").style.visibility="hidden";
+				document.getElementById("pliegueIzq8text").style.visibility="hidden";
+				document.getElementById("pliegueIzq9text").style.visibility="hidden";
+				document.getElementById("pliegueIzq10text").style.visibility="hidden";
+				document.getElementById("pliegueDer1text").style.visibility="visible"; <!--Texto Derecha-->
+				document.getElementById("pliegueDer2text").style.visibility="visible";
+				document.getElementById("pliegueDer3text").style.visibility="hidden";
+				document.getElementById("pliegueDer4text").style.visibility="hidden";
+				document.getElementById("pliegueDer5text").style.visibility="hidden";
+				document.getElementById("pliegueDer6text").style.visibility="hidden";
+				document.getElementById("pliegueDer7text").style.visibility="hidden";
+				document.getElementById("pliegueDer8text").style.visibility="hidden";
+				document.getElementById("pliegueDer9text").style.visibility="hidden";
+				document.getElementById("pliegueDer10text").style.visibility="hidden";
+				
+				image.src = "images/REF_003cotas2.jpg";
 			}
 		}
 		
-		
+		setInterval('check_value()',100);  <!-- Esto hace que la funcion de check_value() se ejecute cada 0.1 segundos -->
 	
 	
 	
@@ -113,43 +496,43 @@
 								<br>
 							
 								<label for="altura1" style="font-family: cursive">Altura 1:</label>
-								<input type="text" class="form-control" id="altura1" name="altura1" placeholder="Altura 1" maxlength="8" style="font-family: cursive" onclick='check_value(1)'/> 
+								<input type="text" class="form-control" id="altura1" name="altura1" placeholder="Altura 1" maxlength="8" style="font-family: cursive"/> 
 								<br><br>
 								
 								<label for="altura2" style="font-family: cursive">Altura 2:</label>
-								<input type="text" class="form-control" id="altura2" name="altura2" placeholder="Altura 2" maxlength="8" style="font-family: cursive" onclick='check_value(2)'/> 
+								<input type="text" class="form-control" id="altura2" name="altura2" placeholder="Altura 2" maxlength="8" style="font-family: cursive"/> 
 								<br><br>
 								
 								<label for="altura3" style="font-family: cursive">Altura 3:</label>
-								<input type="text" class="form-control" id="altura3" name="altura3a" placeholder="Altura 3" maxlength="8" style="font-family: cursive" onclick='check_value(3)'/> 
+								<input type="text" class="form-control" id="altura3" name="altura3a" placeholder="Altura 3" maxlength="8" style="font-family: cursive" /> 
 								<br><br>
 								
 								<label for="altura4" style="font-family: cursive">Altura 4:</label>
-								<input type="text" class="form-control" id="altura4" name="altura4" placeholder="Altura 4" maxlength="8" style="font-family: cursive" onclick='check_value(4)'/> 
+								<input type="text" class="form-control" id="altura4" name="altura4" placeholder="Altura 4" maxlength="8" style="font-family: cursive"/> 
 								<br><br>
 								
 								<label for="altura5" style="font-family: cursive">Altura 5:</label>
-								<input type="text" class="form-control" id="altura5" name="altura5" placeholder="Altura 5" maxlength="8" style="font-family: cursive" onclick='check_value(5)'/> 
+								<input type="text" class="form-control" id="altura5" name="altura5" placeholder="Altura 5" maxlength="8" style="font-family: cursive"/> 
 								<br><br>
 								
 								<label for="altura6" style="font-family: cursive">Altura 6:</label>
-								<input type="text" class="form-control" id="altura6" name="altura6" placeholder="Altura 6" maxlength="8" style="font-family: cursive" onclick='check_value(6)'/> 
+								<input type="text" class="form-control" id="altura6" name="altura6" placeholder="Altura 6" maxlength="8" style="font-family: cursive"/> 
 								<br><br>
 								
 								<label for="altura7" style="font-family: cursive">Altura 7:</label>
-								<input type="text" class="form-control" id="altura7" name="altura7" placeholder="Altura 7" maxlength="8" style="font-family: cursive" onclick='check_value(7)'/> 
+								<input type="text" class="form-control" id="altura7" name="altura7" placeholder="Altura 7" maxlength="8" style="font-family: cursive"/> 
 								<br><br>
 								
 								<label for="altura8" style="font-family: cursive">Altura 8:</label>
-								<input type="text" class="form-control" id="altura8" name="altura8" placeholder="Altura 8" maxlength="8" style="font-family: cursive" onclick='check_value(8)'/> 
+								<input type="text" class="form-control" id="altura8" name="altura8" placeholder="Altura 8" maxlength="8" style="font-family: cursive"/> 
 								<br><br>
 								
 								<label for="altura9" style="font-family: cursive">Altura 9:</label>
-								<input type="text" class="form-control" id="altura9" name="altura9" placeholder="Altura 9" maxlength="8" style="font-family: cursive" onclick='check_value(9)'/> 
+								<input type="text" class="form-control" id="altura9" name="altura9" placeholder="Altura 9" maxlength="8" style="font-family: cursive"/> 
 								<br><br>
 								
 								<label for="altura10" style="font-family: cursive">Altura 10:</label>
-								<input type="text" class="form-control" id="altura10" name="altura10" placeholder="Altura 10" maxlength="8" style="font-family: cursive" onclick='check_value(10)'/> 
+								<input type="text" class="form-control" id="altura10" name="altura10" placeholder="Altura 10" maxlength="8" style="font-family: cursive"/> 
 								<br>
 								
 								<br>
@@ -192,33 +575,53 @@
 								
 								<label for="alaDerecha" style="font-family: cursive">Seleccion:</label><br>
 								
-								Izq 1 <input class="LuaButton" type="checkbox" id="pliegueIzq1" name="pliegueIzq1" value="active"/>
-								<br><br><br><br><br>
-								Izq 2 <input class="LuaButton" type="checkbox" id="pliegueIzq2" name="pliegueIzq" value="active"/>          
-								<br><br><br><br><br>
-								Izq 3 <input class="LuaButton" type="checkbox" id="pliegueIzq3" name="pliegueIzq" value="active"/>          
-								<br><br><br><br><br>
-								Izq 4 <input class="LuaButton" type="checkbox" id="pliegueIzq4" name="pliegueIzq" value="active"/>          
-								<br><br><br><br><br>
-								Izq 5 <input class="LuaButton" type="checkbox" id="pliegueIzq5" name="pliegueIzq" value="active"/>          
-								<br><br><br><br><br>
-								Izq 6 <input class="LuaButton" type="checkbox" id="pliegueIzq6" name="pliegueIzq" value="active"/>          
-								<br><br><br><br><br>
-								Izq 7 <input class="LuaButton" type="checkbox" id="pliegueIzq7" name="pliegueIzq" value="active"/>          
-								<br><br><br><br><br>
-								Izq 8 <input class="LuaButton" type="checkbox" id="pliegueIzq8" name="pliegueIzq" value="active"/>          
-								<br><br><br><br><br>
-								Izq 9 <input class="LuaButton" type="checkbox" id="pliegueIzq9" name="pliegueIzq" value="active"/>          
-								<br><br><br><br><br>
-								Izq 10 <input class="LuaButton" type="checkbox" id="pliegueIzq10" name="pliegueIzq" value="active"/>        
+								<label for="alaIzquierda" id='pliegueIzq1text' style="font-family: cursive"> Izq 1 </label>
+								<input class="LuaButton" type="checkbox" id="pliegueIzq1" name="pliegueIzq1" value="active"/>
 								<br><br><br><br><br>
 								
-
-							
+								<label for="alaIzquierda" id='pliegueIzq2text' style="font-family: cursive"> Izq 2 </label>
+								<input class="LuaButton" type="checkbox" id="pliegueIzq2" name="pliegueIzq" value="active"/>          
+								<br><br><br><br><br>
+								
+								<label for="alaIzquierda" id='pliegueIzq3text' style="font-family: cursive"> Izq 3 </label>
+								<input class="LuaButton" type="checkbox" id="pliegueIzq3" name="pliegueIzq" value="active"/>          
+								<br><br><br><br><br>
+								
+								<label for="alaIzquierda" id='pliegueIzq4text' style="font-family: cursive"> Izq 4 </label>
+								<input class="LuaButton" type="checkbox" id="pliegueIzq4" name="pliegueIzq" value="active"/>          
+								<br><br><br><br><br>
+								
+								<label for="alaIzquierda" id='pliegueIzq5text' style="font-family: cursive"> Izq 5 </label>
+								<input class="LuaButton" type="checkbox" id="pliegueIzq5" name="pliegueIzq" value="active"/>          
+								<br><br><br><br><br>
+								
+								<label for="alaIzquierda" id='pliegueIzq6text' style="font-family: cursive"> Izq 6 </label>
+								<input class="LuaButton" type="checkbox" id="pliegueIzq6" name="pliegueIzq" value="active"/>          
+								<br><br><br><br><br>
+								
+								<label for="alaIzquierda" id='pliegueIzq7text' style="font-family: cursive"> Izq 7 </label>
+								<input class="LuaButton" type="checkbox" id="pliegueIzq7" name="pliegueIzq" value="active"/>          
+								<br><br><br><br><br>
+								
+								<label for="alaIzquierda" id='pliegueIzq8text' style="font-family: cursive"> Izq 8 </label>
+								<input class="LuaButton" type="checkbox" id="pliegueIzq8" name="pliegueIzq" value="active"/>          
+								<br><br><br><br><br>
+								
+								<label for="alaIzquierda" id='pliegueIzq9text' style="font-family: cursive"> Izq 9 </label>
+								<input class="LuaButton" type="checkbox" id="pliegueIzq9" name="pliegueIzq" value="active"/>          
+								<br><br><br><br><br>
+								
+								<label for="alaIzquierda" id='pliegueIzq10text' style="font-family: cursive"> Izq 10 </label>
+								<input class="LuaButton" type="checkbox" id="pliegueIzq10" name="pliegueIzq" value="active"/>        
+								<br><br><br><br><br>
+								
+								
+								
+								
 						   </div>
-					
-													
-					
+							
+							
+							
 				</div> <!-- cierre cuerpo panel -->
 			</div> <!-- cierre panel -->
 		</div> <!-- fin columna datos 3 -->
@@ -236,7 +639,7 @@
 								
 								<div>
 								<!--<input type="image" src="images/REF_003cotas.jpg" alt='ReferenciaAH' width='350' height='1020' id='imagedest' />-->
-								<input type="image" src="images/REF_003cotas.jpg" alt='ReferenciaAH' width='350' height='1020' id='imagedest' />
+								<input type="image" src="images/REF_003cotas2.jpg" alt='ReferenciaAH' width='350' height='1090' id='imagedest' />
 								
 								</div>
 								
@@ -273,32 +676,51 @@
 								
 								<label for="alaDerecha" style="font-family: cursive">Seleccion:</label><br>
 								
-								Der 1 <input class="LuaButton" type="checkbox" id="pliegueDer1" name="pliegueDer1" value="inactive"/>
+								<label for="alaDerecha" id='pliegueDer1text' style="font-family: cursive"> Der 1 </label>
+								<input class="LuaButton" type="checkbox" id="pliegueDer1" name="pliegueDer1" value="inactive"/>
 								<br><br><br><br><br>
-								Der 2 <input class="LuaButton" type="checkbox" id="pliegueDer2" name="pliegueDer" value="inactive"/> 
+								
+								<label for="alaDerecha" id='pliegueDer2text' style="font-family: cursive"> Der 2 </label>
+								<input class="LuaButton" type="checkbox" id="pliegueDer2" name="pliegueDer" value="inactive"/> 
 								<br><br><br><br><br>
-								Der 3 <input class="LuaButton" type="checkbox" id="pliegueDer3" name="pliegueDer" value="inactive"/> 
+								
+								<label for="alaDerecha" id='pliegueDer3text' style="font-family: cursive"> Der 3 </label>
+								<input class="LuaButton" type="checkbox" id="pliegueDer3" name="pliegueDer" value="inactive"/> 
 								<br><br><br><br><br>
-								Der 4 <input class="LuaButton" type="checkbox" id="pliegueDer4" name="pliegueDer" value="inactive"/> 
+								
+								<label for="alaDerecha" id='pliegueDer4text' style="font-family: cursive"> Der 4 </label>
+								<input class="LuaButton" type="checkbox" id="pliegueDer4" name="pliegueDer" value="inactive"/> 
 								<br><br><br><br><br>
-								Der 5 <input class="LuaButton" type="checkbox" id="pliegueDer5" name="pliegueDer" value="inactive"/> 
+								
+								<label for="alaDerecha" id='pliegueDer5text' style="font-family: cursive"> Der 5 </label>
+								<input class="LuaButton" type="checkbox" id="pliegueDer5" name="pliegueDer" value="inactive"/> 
 								<br><br><br><br><br>
-								Der 6 <input class="LuaButton" type="checkbox" id="pliegueDer6" name="pliegueDer" value="inactive"/> 
+								
+								<label for="alaDerecha" id='pliegueDer6text' style="font-family: cursive"> Der 6 </label>
+								<input class="LuaButton" type="checkbox" id="pliegueDer6" name="pliegueDer" value="inactive"/> 
 								<br><br><br><br><br>
-								Der 7 <input class="LuaButton" type="checkbox" id="pliegueDer7" name="pliegueDer" value="inactive"/> 
+								
+								<label for="alaDerecha" id='pliegueDer7text' style="font-family: cursive"> Der 7 </label>
+								<input class="LuaButton" type="checkbox" id="pliegueDer7" name="pliegueDer" value="inactive"/> 
 								<br><br><br><br><br>
-								Der 8 <input class="LuaButton" type="checkbox" id="pliegueDer8" name="pliegueDer" value="inactive"/> 
+								
+								<label for="alaDerecha" id='pliegueDer8text' style="font-family: cursive"> Der 8 </label>
+								<input class="LuaButton" type="checkbox" id="pliegueDer8" name="pliegueDer" value="inactive"/> 
 								<br><br><br><br><br>
-								Der 9 <input class="LuaButton" type="checkbox" id="pliegueDer9" name="pliegueDer" value="inactive"/> 
+								
+								<label for="alaDerecha" id='pliegueDer9text' style="font-family: cursive"> Der 9 </label>
+								<input class="LuaButton" type="checkbox" id="pliegueDer9" name="pliegueDer" value="inactive"/> 
 								<br><br><br><br><br>
-								Der 10 <input class="LuaButton" type="checkbox" id="pliegueDer10" name="pliegueDer" value="inactive"/> 
+								
+								<label for="alaDerecha" id='pliegueDer10text' style="font-family: cursive"> Der 10 </label>
+								<input class="LuaButton" type="checkbox" id="pliegueDer10" name="pliegueDer" value="inactive"/> 
 								<br><br><br><br><br>
-
-							
+								
+								
 						   </div>
-					
-													
-					
+							
+							
+							
 				</div> <!-- cierre cuerpo panel -->
 			</div> <!-- cierre panel -->
 		</div> <!-- fin columna datos 1 -->

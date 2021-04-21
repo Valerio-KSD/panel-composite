@@ -51,19 +51,22 @@ anchuraColiso=20
 alturaColiso=5
 
 --Márgenes Taladros
---margenAla=26.26
+-- margenAla=26.26
 
---margenTaladroBota=8.04
+-- margenTaladroBota=8.04
 
---margenXTaladroSuperior=13.46
---margenYTaladroSuperior=9.06
+-- margenXTaladroSuperior=13.46
+-- margenYTaladroSuperior=9.06
 
---margenXTaladroInferior=11.64
---margenYTaladroInferior=8.84
+-- margenXTaladroInferior=11.64
+-- margenYTaladroInferior=8.84
 
---distanciaYTaladrosSuperiores=53.24
+-- distanciaYTaladrosSuperiores=53.24
 
---distanciaXTaladrosInferiores=1.82
+-- distanciaXTaladrosInferiores=1.82
+
+
+
 
 
 alturaBotaDeCuelgue=56
