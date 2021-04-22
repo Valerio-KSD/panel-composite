@@ -167,6 +167,11 @@ function OnLuaButton_aceptarG(modelo000)
 		alaIzquierda = modelo000:GetDoubleField("alaIzquierda")
 		pliegueSuperior = modelo000:GetDoubleField("pliegueSuperior")
 		margenMecanizado=modelo000:GetDoubleField("margenMecanizado")
+		
+		--Punto inicial de la pieza
+			origenX=-(anchuraPlaca+alaIzquierda+alaDerecha+400)
+			origenY= 400
+		
 		dibujarFresado004(doc)
 		dibujarCorte004(doc)
 		dibujarTexto(doc)
@@ -184,6 +189,11 @@ function OnLuaButton_aceptarG(modelo000)
 		alaIzquierda = modelo000:GetDoubleField("alaIzquierda")
 		pliegueSuperior = modelo000:GetDoubleField("pliegueSuperior")
 		margenMecanizado=modelo000:GetDoubleField("margenMecanizado")
+		
+		--Punto inicial de la pieza
+			origenX=-(anchuraPlaca+alaIzquierda+alaDerecha+400)
+			origenY= 400
+		
 		dibujarFresado005(doc)
 		dibujarCorte005(doc)
 		dibujarTexto(doc)
@@ -208,6 +218,10 @@ function OnLuaButton_aceptarG(modelo000)
 		pliegueSuperior = modelo000:GetDoubleField("pliegueSuperior")
 		
 		margenMecanizado=modelo000:GetDoubleField("margenMecanizado")
+		
+		--Punto inicial de la pieza
+			origenX=-(margenL+alaIzquierda+alaDerecha+400)
+			origenY= 400
 		
 		dibujarFresado006(doc)
 		dibujarCorte006(doc)
@@ -241,6 +255,9 @@ function OnLuaButton_aceptarG(modelo000)
 		pliegueDer2=pliegueIzq2
 		pliegueDer3=pliegueIzq3
 		
+		--Punto inicial de la pieza
+			origenX=-(pliegueIzq1+pliegueIzq2+pliegueIzq3+anchuraPlaca+pliegueDer1+pliegueDer2+pliegueDer3+400)
+			origenY= 400
 		
 		
 		dibujarFresado012(doc)
@@ -648,8 +665,8 @@ function dibujarCorte006(doc)
 	local corte2 = Point2D(origenX,origenY)
 	local corte3 = Point2D(origenX+alaInferior+margenL+alaInferior,origenY)
 	local corte4 = Point2D(origenX+alaInferior+margenL,origenY+alaInferior)
-	local corte5 = Point2D(origenX+alaInferior+margenL+alaIzquierda,origenY+alaInferior+alaIzquierda)
-	local corte6 = Point2D(origenX+alaInferior+margenL+alaIzquierda,origenY+alaInferior+alturaPlaca-alaIzquierda)
+	local corte5 = Point2D(origenX+alaInferior+margenL+alaDerecha,origenY+alaInferior+alaDerecha)
+	local corte6 = Point2D(origenX+alaInferior+margenL+alaDerecha,origenY+alaInferior+alturaPlaca-alaDerecha)
 	local corte7 = Point2D(origenX+alaInferior+margenL,origenY+alaInferior+alturaPlaca)
 	local corte8 = Point2D(origenX+alaInferior+margenL+pliegueSuperior,origenY+alaInferior+alturaPlaca+pliegueSuperior)
 	local corte9 = Point2D(origenX+alaInferior+margenL,origenY+alaInferior+alturaPlaca+pliegueSuperior)

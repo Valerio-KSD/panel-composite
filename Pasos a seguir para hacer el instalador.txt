@@ -1,6 +1,8 @@
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ----------------------------------------------------------------- PASOS A SEGUIR PARA HACER EL INSTALADOR -----------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Paso 0: Poner el tamaño de ventana "Pequeño" por defecto
+	tamanoVentana=3
 
 Paso 1: Cambiar la rutaPaqueteArchivosAuxiliares en "KSDpale.lua" [lineas 7 y 8] [la ruta buena es ";C:/Program Files/KSDpanel/archivosAuxiliares/?.lua"]
 
@@ -12,7 +14,7 @@ Paso 4: En el mismo archivo ("VariablesExternasGlobales.lua") asignar ruta_carpe
 	cambiar la parte final de la direccion: 
 	ruta_carpeta_panelPrincipal="https://cuttool.es/panelCam/ClienteX-XXXXX"
 
-Paso 5: Abrimos instaladorKSDpanel.iss con inno setup, y elegimos la versión que está utilizando el cliente del software CUT2D (8.5, 9.5, 10.5,...). Esto se cambia
+Paso 5: Abrimos "instaladorKSDpanel.iss" con inno setup, y elegimos la versión que está utilizando el cliente del software CUT2D (8.5, 9.5, 10.5,...). Esto se cambia
 	en en la siguiente linea:
 	Source: "C:\instalador-ksdpanel\KSDpanel.lua"; Attribs: hidden; DestDir: "C:\ProgramData\Vectric\Cut2D Pro\V8.5\Gadgets"; Flags: ignoreversion
 

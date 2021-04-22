@@ -410,6 +410,10 @@ function OnLuaButton_aceptarF(modelo000)
 		margenFresado=modelo000:GetDoubleField("margenFresado")
 		margenMecanizado=modelo000:GetDoubleField("margenMecanizado")
 		
+		--Punto inicial de la pieza
+			origenX=-(anchura1+anchura2+anchura3+anchura4+anchura5+anchura6+anchura7+400)
+			origenY= 400
+		
 		
 		dibujarFresado001(doc)
 		dibujarCorte001(doc)
@@ -444,6 +448,10 @@ function OnLuaButton_aceptarF(modelo000)
 		margenFresado=modelo000:GetDoubleField("margenFresado")
 		margenMecanizado=modelo000:GetDoubleField("margenMecanizado")
 		
+		--Punto inicial de la pieza
+			origenX=-(anchura1+anchura2+anchura3+anchura4+anchura5+anchura6+anchura7+400)
+			origenY= 400
+		
 		dibujarFresado002(doc)
 		dibujarCorte002(doc)
 		dibujarTexto(doc)
@@ -470,6 +478,16 @@ function OnLuaButton_aceptarF(modelo000)
 		alaDerecha=modelo000:GetDoubleField("alaDerecha")
 		
 		margenMecanizado=modelo000:GetDoubleField("margenMecanizado")
+		
+		--Punto inicial de la pieza
+			if dibujoHorizontal==1 then
+				origenX= 400
+				origenY= -(altura1+altura2+altura3+altura4+altura5+altura6+altura7+altura8+altura9+altura10+400)
+			else
+				origenX=-(anchuraPlaca+400)
+				origenY= 400
+			end
+		
 		dibujarFresado003(doc)
 		if dibujoHorizontal==1 then
 			dibujarCorte003Horizontal(doc)
@@ -496,6 +514,12 @@ function OnLuaButton_aceptarF(modelo000)
 		
 		margenFresado = modelo000:GetDoubleField("margenFresado")
 		
+		--Punto inicial de la pieza
+			origenX=-(anchura1+anchura2+anchura3+anchura4+400)
+			origenY= 400
+		
+		
+		
 		dibujarFresado007(doc)
 		dibujarCorte007(doc)
 		dibujarTexto(doc)
@@ -518,6 +542,10 @@ function OnLuaButton_aceptarF(modelo000)
 		pliegueSuperior = modelo000:GetDoubleField("pliegueSuperior")
 		
 		margenFresado = modelo000:GetDoubleField("margenFresado")
+		
+		--Punto inicial de la pieza
+			origenX=-(anchura1+anchura2+anchura3+anchura4+anchura5+alaDerecha+400)
+			origenY= 400
 		
 		dibujarFresado008(doc)
 		dibujarCorte007(doc)
@@ -547,7 +575,9 @@ function OnLuaButton_aceptarF(modelo000)
 		
 		margenFresado = modelo000:GetDoubleField("margenFresado")
 		
-		
+		--Punto inicial de la pieza
+			origenX=-(anchura1+anchura2+anchura3+anchura4+pliegueIzq+alaIzquierda+400)
+			origenY= 400
 		
 		dibujarFresado009(doc)
 		dibujarCorte009(doc)
@@ -576,6 +606,10 @@ function OnLuaButton_aceptarF(modelo000)
 		pliegueInf4 = modelo000:GetDoubleField("pliegueInf4")
 		
 		margenFresado = modelo000:GetDoubleField("margenFresado")
+		
+		--Punto inicial de la pieza
+			origenX=-(anchura1+anchura2+anchura3+anchura4+alaDerecha+400)
+			origenY= 400
 		
 		dibujarFresado010(doc)
 		dibujarCorte010(doc)
@@ -607,6 +641,10 @@ function OnLuaButton_aceptarF(modelo000)
 		
 		pliegueSuperior = modelo000:GetDoubleField("pliegueSuperior")
 		
+		--Punto inicial de la pieza
+			origenX=-(anchura1+anchura2+anchura3+anchura4+anchura5+alaDerecha+400)
+			origenY= 400
+		
 		dibujarFresado011(doc)
 		dibujarCorte011(doc)
 		dibujarTexto(doc)
@@ -630,6 +668,10 @@ function OnLuaButton_aceptarF(modelo000)
 		pliegueIzq = modelo000:GetDoubleField("pliegueIzq")
 		
 		margenFresado = modelo000:GetDoubleField("margenFresado")
+		
+		--Punto inicial de la pieza
+			origenX=-(anchura1+anchura2+anchura3+anchura4+pliegueIzq+alaIzquierda+400)
+			origenY= 400
 		
 		dibujarFresado013(doc)
 		dibujarCorte013(doc)
