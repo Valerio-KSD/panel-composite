@@ -350,6 +350,10 @@ function OnLuaButton_ref020()
   return true
 end
 
+
+
+
+
 function OnLuaButton_crearFresado()
 	crearFresado=1
 	return true
@@ -358,6 +362,9 @@ function OnLuaButton_noCrearFresado()
 	crearFresado=0
 	return true
 end
+
+
+
 
 
 --Pliegues Izquierda --PIEZA 003 [F3]
@@ -401,6 +408,7 @@ function OnLuaButton_pliegueIzq10()
 	pliegueIzq10=1
 	return true
 end
+
 
 --Pliegues Derecha --PIEZA 003 [F3]
 function OnLuaButton_pliegueDer1()

@@ -27,6 +27,12 @@ Paso 6: Compilar y ejecutar
 
 
 
+RECORDATORIOS PARA LA SIGUIENTE VERSION:
+1-En las piezas ref_001 y ref_002 (F1 y F2) añadir la opcion a los html de crearFresado SI o NO y eliminar del lua familiaF crearFresado=1 (esto esta hecho asi para evitar
+	problemas con la version1 del gadged. Al fijar crearFresado=1 no da problemas que esta entrada no se coja del html.
+
+
+
 
 
 

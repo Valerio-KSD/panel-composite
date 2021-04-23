@@ -71,6 +71,7 @@ function main(script_path)
 			html_path = "" .. ruta_carpeta_panelPrincipal .. "/Paneles.html"
 		else
 			html_path = "file:" .. script_path .. "\\Paneles\\Paneles.html"
+			--DisplayMessageBox("Estas trabajando en LOCAL")
 		end
 
 		
