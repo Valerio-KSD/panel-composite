@@ -466,11 +466,103 @@ function OnLuaButton_modeloF(framePrincipal)
 				return false;
 		end
 		
+	
+	
+	elseif modelo == 116 then  --F12
+		local html_path
+		if remoto==1 then
+			html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referencia016.html"
+		else
+			html_path = "file:" .. ruta .. "\\Paneles\\referencia016.html"
+		end
 		
+		
+		local modelo000 = HTML_Dialog(false, html_path, tamX, tamY, "BANDEJA CLIENTES F12")
+		
+		textoDescriptivo="Bandeja F12"
+		alturaPlaca=500 anchura1=150 anchura2=300 anchura3=600
+		alaSuperior=45 alaInferior=45 alaIzquierda=40 alaDerecha=45
+		pliegueSuperior=45  pliegueDer=45
+		
+        modelo000:AddTextField("textoDescriptivo", textoDescriptivo)
+		
+		modelo000:AddDoubleField("alturaPlaca", alturaPlaca)
+		modelo000:AddDoubleField("anchura1", anchura1)
+		modelo000:AddDoubleField("anchura2", anchura2)
+		modelo000:AddDoubleField("anchura3", anchura3)
+		
+		modelo000:AddDoubleField("alaSuperior", alaSuperior)
+		modelo000:AddDoubleField("alaInferior", alaInferior)
+		modelo000:AddDoubleField("alaIzquierda", alaIzquierda)
+		modelo000:AddDoubleField("alaDerecha", alaDerecha)
+		
+		modelo000:AddDoubleField("pliegueSuperior", pliegueSuperior)
+		modelo000:AddDoubleField("pliegueDer", pliegueDer)
+		
+		modelo000:AddDoubleField("margenFresado", margenFresado)
+		
+		modelo000:AddDoubleField("margenMecanizado", margenMecanizado)-----
+		
+	    if  not modelo000:ShowDialog() then
+				return false;
+		end
+	
+	
+	
+	elseif modelo == 117 then  --F13
+		local html_path
+		if remoto==1 then
+			html_path = "" .. ruta_carpeta .. "" .. carpeta .. "/referencia017.html"
+		else
+			html_path = "file:" .. ruta .. "\\Paneles\\referencia017.html"
+		end
+		
+		
+		local modelo000 = HTML_Dialog(false, html_path, tamX, tamY, "BANDEJA CLIENTES F13")
+		
+		textoDescriptivo="Bandeja F13"
+		alturaPlaca=500 anchura1=150 anchura2=300 anchura3=600 
+		alaSuperior=45 alaInferior=15  pliegueSuperior=45  alaIzquierda=30
+		pliegueInf1=100 pliegueInf2=100 pliegueInf3=100
+		
+        modelo000:AddTextField("textoDescriptivo", textoDescriptivo)
+		
+		modelo000:AddDoubleField("alturaPlaca", alturaPlaca)
+		modelo000:AddDoubleField("anchura1", anchura1)
+		modelo000:AddDoubleField("anchura2", anchura2)
+		modelo000:AddDoubleField("anchura3", anchura3)
+		
+		modelo000:AddDoubleField("pliegueInf1", pliegueInf1)
+		modelo000:AddDoubleField("pliegueInf2", pliegueInf2)
+		modelo000:AddDoubleField("pliegueInf3", pliegueInf3)
+		
+		modelo000:AddDoubleField("alaSuperior", alaSuperior)
+		modelo000:AddDoubleField("alaIzquierda", alaIzquierda)
+		modelo000:AddDoubleField("alaInferior", alaInferior)
+		modelo000:AddDoubleField("alaDerecha", alaDerecha)
+		
+		modelo000:AddDoubleField("margenFresado", margenFresado)
+		
+		modelo000:AddDoubleField("pliegueSuperior", pliegueSuperior)
+		modelo000:AddDoubleField("pliegueDer", pliegueDer)
+		
+		modelo000:AddDoubleField("margenMecanizado", margenMecanizado)-----
+		
+	    if  not modelo000:ShowDialog() then
+				return false;
+		end
+	
 	
 	end
 	
 end
+
+
+
+
+
+
+
 
 
 function OnLuaButton_aceptarF(modelo000)
@@ -766,10 +858,12 @@ function OnLuaButton_aceptarF(modelo000)
 	
 	
 	
+	
 	elseif modelo==114 then  --PIEZA F10
 		
 		textoDescriptivo = modelo000:GetTextField("textoDescriptivo")
 		alturaPlaca = modelo000:GetDoubleField("alturaPlaca")
+		
 		anchura1 = modelo000:GetDoubleField("anchura1")
 		anchura2 = modelo000:GetDoubleField("anchura2")
 		anchura3 = modelo000:GetDoubleField("anchura3")
@@ -806,11 +900,10 @@ function OnLuaButton_aceptarF(modelo000)
 		anchura4 = modelo000:GetDoubleField("anchura4")
 		
 		alaSuperior = modelo000:GetDoubleField("alaSuperior")
-		alaDerecha = modelo000:GetDoubleField("alaDerecha")
+		alaIzquierda = modelo000:GetDoubleField("alaIzquierda")
 		alaInferior = modelo000:GetDoubleField("alaInferior")
 		
-		pliegueSuperior = modelo000:GetDoubleField("pliegueSuperior")
-		
+		pliegueSuperior = modelo000:GetDoubleField("pliegueSuperior")		
 		
 		pliegueInf1 = modelo000:GetDoubleField("pliegueInf1")
 		pliegueInf2 = modelo000:GetDoubleField("pliegueInf2")
@@ -828,6 +921,79 @@ function OnLuaButton_aceptarF(modelo000)
 		dibujarTexto(doc)
 		
 		DisplayMessageBox("MODELO F11 CREADO CORRECTAMENTE")
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	elseif modelo==116 then  --PIEZA F12
+		
+		textoDescriptivo = modelo000:GetTextField("textoDescriptivo")
+		alturaPlaca = modelo000:GetDoubleField("alturaPlaca")
+		
+		anchura1 = modelo000:GetDoubleField("anchura1")
+		anchura2 = modelo000:GetDoubleField("anchura2")
+		anchura3 = modelo000:GetDoubleField("anchura3")
+		
+		alaSuperior = modelo000:GetDoubleField("alaSuperior")
+		alaInferior = modelo000:GetDoubleField("alaInferior")
+		alaIzquierda = modelo000:GetDoubleField("alaIzquierda")
+		alaDerecha = modelo000:GetDoubleField("alaDerecha")
+		
+		pliegueSuperior = modelo000:GetDoubleField("pliegueSuperior")
+		pliegueDer = modelo000:GetDoubleField("pliegueDer")
+		
+		margenFresado = modelo000:GetDoubleField("margenFresado")
+		
+		--Punto inicial de la pieza
+			origenX=-(anchura1+anchura2+anchura3+alaIzquierda+alaDerecha+pliegueDer+400)
+			origenY= 400
+		
+		
+		
+		dibujarFresado016(doc)
+		dibujarCorte016(doc)
+		dibujarTexto(doc)
+		DisplayMessageBox("MODELO F12 CREADO CORRECTAMENTE")
+	
+	
+	
+	elseif modelo==117 then  --PIEZA F13
+		
+		textoDescriptivo = modelo000:GetTextField("textoDescriptivo")
+		alturaPlaca = modelo000:GetDoubleField("alturaPlaca")
+		anchura1 = modelo000:GetDoubleField("anchura1")
+		anchura2 = modelo000:GetDoubleField("anchura2")
+		anchura3 = modelo000:GetDoubleField("anchura3")
+		
+		alaSuperior = modelo000:GetDoubleField("alaSuperior")
+		alaIzquierda = modelo000:GetDoubleField("alaIzquierda")
+		alaInferior = modelo000:GetDoubleField("alaInferior")
+		alaDerecha = modelo000:GetDoubleField("alaDerecha")
+		
+		pliegueSuperior = modelo000:GetDoubleField("pliegueSuperior")
+		pliegueDer = modelo000:GetDoubleField("pliegueDer")
+		
+		
+		pliegueInf1 = modelo000:GetDoubleField("pliegueInf1")
+		pliegueInf2 = modelo000:GetDoubleField("pliegueInf2")
+		pliegueInf3 = modelo000:GetDoubleField("pliegueInf3")
+		
+		margenFresado = modelo000:GetDoubleField("margenFresado")
+		
+		--Punto inicial de la pieza
+			origenX=-(anchura1+anchura2+anchura3+alaIzquierda+alaDerecha+pliegueDer+400)
+			origenY= 400
+		
+		dibujarFresado017(doc)
+		dibujarCorte017(doc)
+		dibujarTexto(doc)
+		
+		DisplayMessageBox("MODELO F13 CREADO CORRECTAMENTE")
 	
 	
 	
@@ -853,7 +1019,7 @@ end
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------ DIBUJAR BANDEJAS CLIENTES PERSONALIZADAS -----------------------------------------------------------------------------------------------------
------------------------------------------------------------------------------------------------ [REFERENCIA 001] ------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------- [REFERENCIA 001 - F1] ------------------------------------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 function dibujarFresado001(doc)
@@ -1180,7 +1346,7 @@ end
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------ DIBUJAR BANDEJAS CLIENTES PERSONALIZADAS ----------------------------------------------------------------------------------------------------
------------------------------------------------------------------------------------------------ [REFERENCIA 002] -----------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------- [REFERENCIA 002 - F2] -----------------------------------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 function dibujarFresado002(doc)
@@ -1590,7 +1756,7 @@ end
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------ DIBUJAR BANDEJAS CLIENTES PERSONALIZADAS ----------------------------------------------------------------------------------------------------
------------------------------------------------------------------------------------------------ [REFERENCIA 003] -----------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------- [REFERENCIA 003 - F3] -----------------------------------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 function numeroPestanas003(alturas)
@@ -2341,7 +2507,7 @@ end
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------ DIBUJAR BANDEJAS CLIENTES PERSONALIZADAS ----------------------------------------------------------------------------------------------------
------------------------------------------------------------------------------------------------ [REFERENCIA 007 - 008] -----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------- [REFERENCIA 007 - 008 - F5 - F4] -----------------------------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -2819,7 +2985,7 @@ end
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------ DIBUJAR BANDEJAS CLIENTES PERSONALIZADAS ----------------------------------------------------------------------------------------------------
------------------------------------------------------------------------------------------------ [REFERENCIA 009] -----------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------- [REFERENCIA 009 - F6] -----------------------------------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 --[[
@@ -3226,7 +3392,7 @@ end
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------ DIBUJAR BANDEJAS CLIENTES PERSONALIZADAS ----------------------------------------------------------------------------------------------------
------------------------------------------------------------------------------------------------ [REFERENCIA 010] -----------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------- [REFERENCIA 010 - F7] -----------------------------------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 function dibujarFresado010(doc)
@@ -3633,7 +3799,7 @@ end
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------ DIBUJAR BANDEJAS CLIENTES PERSONALIZADAS ----------------------------------------------------------------------------------------------------
------------------------------------------------------------------------------------------------ [REFERENCIA 011] -----------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------- [REFERENCIA 011 - F8] -----------------------------------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 function dibujarFresado011(doc)
@@ -4109,7 +4275,7 @@ end
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------ DIBUJAR BANDEJAS CLIENTES PERSONALIZADAS ----------------------------------------------------------------------------------------------------
------------------------------------------------------------------------------------------------ [REFERENCIA 013] -----------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------- [REFERENCIA 013 - F9] -----------------------------------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -4447,7 +4613,7 @@ end
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------- DIBUJAR BANDEJAS CLIENTES PERSONALIZADAS --------------------------------------------------------------------------------------------------
--------------------------------------------------------------------------------------------------- [REFERENCIA 014] --------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------- [REFERENCIA 014 - F10] --------------------------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -4713,7 +4879,7 @@ function dibujarCorte014(doc)
 	
 	
 	local corte4 = Point2D(origenX+alaIzquierda,origenY+alaInferior+alturaPlaca+pliegueSuperior)
-	local corte5 = Point2D(origenX,origenY+alaInferior+alturaPlaca+pliegueSuperior)
+	local corte5 = Point2D(origenX+alaIzquierda-pliegueSuperior,origenY+alaInferior+alturaPlaca+pliegueSuperior)
 	local corte6 = Point2D(origenX+alaIzquierda,origenY+alaInferior+alturaPlaca)
 	local corte7 = Point2D(origenX,origenY+alaInferior+alturaPlaca-alaIzquierda)
 	local corte8 = Point2D(origenX,origenY+alaInferior+alaIzquierda)
@@ -4739,6 +4905,1219 @@ function dibujarCorte014(doc)
 	-----------------------------------------------------------------
 	return true; 
 end
+
+
+
+
+
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------- DIBUJAR BANDEJAS CLIENTES PERSONALIZADAS --------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------- [REFERENCIA 015 - F11] --------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+function dibujarFresado015(doc)
+	
+	
+	local plieguesInf={pliegueInf1, pliegueInf2, pliegueInf3, pliegueInf4}
+	
+	--sacar el mayor pliegue
+	pliegueInferior=pliegueInf1
+	for n=1, 4 do
+		if pliegueInferior<plieguesInf[n] then
+			pliegueInferior=plieguesInf[n]
+		end
+	end
+	
+	
+	
+	--Puntos trayectoria 
+	local Contour = Contour(0.0)
+	
+	local fresado11 = Point2D(origenX+alaIzquierda+anchura1,origenY+alaInferior+pliegueInferior)
+	local fresado12 = Point2D(origenX+alaIzquierda+anchura1+anchura2,origenY+alaInferior+pliegueInferior)
+	local fresado13 = Point2D(origenX+alaIzquierda+anchura1+anchura2+anchura3,origenY+alaInferior+pliegueInferior)
+	local fresado14 = Point2D(origenX+alaIzquierda+anchura1+anchura2+anchura3+anchura4,origenY+alaInferior+pliegueInferior)
+	
+	
+	
+	local fresado16 = Point2D(origenX+alaIzquierda,origenY+alaInferior+pliegueInferior) 
+	local fresado17 = Point2D(origenX+alaIzquierda,origenY+alaInferior+pliegueInferior+alturaPlaca)
+	
+	local fresado18 = Point2D(origenX+alaIzquierda+anchura1,origenY+alaInferior+pliegueInferior+alturaPlaca)
+	local fresado19 = Point2D(origenX+alaIzquierda+anchura1+anchura2,origenY+alaInferior+pliegueInferior+alturaPlaca)
+	local fresado20 = Point2D(origenX+alaIzquierda+anchura1+anchura2+anchura3,origenY+alaInferior+pliegueInferior+alturaPlaca)
+	local fresado21 = Point2D(origenX+alaIzquierda+anchura1+anchura2+anchura3+anchura4,origenY+alaInferior+pliegueInferior+alturaPlaca)
+	
+	local fresado22 = Point2D(origenX+alaIzquierda+anchura1+anchura2+anchura3+anchura4,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior)
+	
+	
+	--[[if anchura4>pliegueInf4 then
+		local fresado15 = Point2D(origenX+alaIzquierda+anchura1+anchura2+anchura3+anchura4,origenY+alaInferior+pliegueInferior-pliegueInf4-alaInferior)
+		dibujarFresado_auxiliar(doc,fresado15,fresado22)
+	else
+		dibujarFresado_auxiliar(doc,fresado14,fresado22)
+	end--]]
+	local fresado2 = Point2D(origenX+alaIzquierda,origenY)
+	
+	dibujarFresado_auxiliar(doc,fresado16,fresado14)
+	dibujarFresado_auxiliar(doc,fresado20,fresado13)
+	dibujarFresado_auxiliar(doc,fresado12,fresado19)
+	dibujarFresado_auxiliar(doc,fresado18,fresado11)
+	dibujarFresado_auxiliar(doc,fresado17,fresado21)
+	
+	
+	
+	
+	
+	
+	--anchura1 - Inferior
+	if anchura1>pliegueInf1 then
+		--local fresado10 = Point2D(origenX+alaIzquierda,origenY+pliegueInferior+alaInferior) 
+		local fresado1 = Point2D(origenX+alaIzquierda,origenY+alaInferior+pliegueInferior-pliegueInf1)
+		--local fresado2 = Point2D(origenX+alaIzquierda,origenY+alaInferior+pliegueInferior-pliegueInf1)
+		local fresado3 = Point2D(origenX+alaIzquierda+anchura1-pliegueInf1,origenY+alaInferior+pliegueInferior-pliegueInf1)
+		
+		--dibujarFresado_auxiliar(doc,fresado10,fresado1)
+		dibujarFresado_auxiliar(doc,fresado1,fresado3)
+		--dibujarFresado_auxiliar(doc,fresado2,fresado11)
+	end 
+	
+	--anchura2 - Inferior
+	if anchura2>(pliegueInf2*2) then
+		local fresado4 = Point2D(origenX+alaIzquierda+anchura1+pliegueInf2,origenY+alaInferior+pliegueInferior-pliegueInf2)
+		local fresado5 = Point2D(origenX+alaIzquierda+anchura1+anchura2-pliegueInf2,origenY+alaInferior+pliegueInferior-pliegueInf2)
+		dibujarFresado_auxiliar(doc,fresado4,fresado5)
+	end
+	
+	--anchura3 - Inferior
+	if anchura3>(pliegueInf3*2) then
+		local fresado6 = Point2D(origenX+alaIzquierda+anchura1+anchura2+pliegueInf3,origenY+alaInferior+pliegueInferior-pliegueInf3)
+		local fresado7 = Point2D(origenX+alaIzquierda+anchura1+anchura2+anchura3-pliegueInf3,origenY+alaInferior+pliegueInferior-pliegueInf3)
+		dibujarFresado_auxiliar(doc,fresado6,fresado7)
+	end 
+	
+	--anchura4 - Inferior
+	if anchura4>pliegueInf4 then
+		local fresado8 = Point2D(origenX+alaIzquierda+anchura1+anchura2+anchura3+pliegueInf4,origenY+alaInferior+pliegueInferior-pliegueInf4)
+		local fresado9 = Point2D(origenX+alaIzquierda+anchura1+anchura2+anchura3+anchura4,origenY+alaInferior+pliegueInferior-pliegueInf4)
+		dibujarFresado_auxiliar(doc,fresado8,fresado9)
+	end 
+	
+	
+	
+
+	
+	
+
+	
+	--anchura1 - Superior
+	if anchura1>(pliegueSuperior*2) then
+		local fresado25 = Point2D(origenX+alaIzquierda,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior)
+		local fresado26 = Point2D(origenX+alaIzquierda+anchura1-pliegueSuperior,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior)
+		dibujarFresado_auxiliar(doc,fresado25,fresado26)
+		
+		if crearFresado==1 then --Esto es para hacer el fresado externo o no
+			local fresado27 = Point2D(origenX+alaIzquierda+anchura1-pliegueSuperior+margenFresado,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior)
+			local fresado28 = Point2D(origenX+alaIzquierda+anchura1-pliegueSuperior+margenFresado,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior)
+			dibujarFresado_auxiliar(doc,fresado27,fresado28)
+		end
+	end
+	
+	--anchura2 - Superior
+	if anchura2>(pliegueSuperior*2) then
+		local fresado31 = Point2D(origenX+alaIzquierda+anchura1+pliegueSuperior,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior)
+		local fresado32 = Point2D(origenX+alaIzquierda+anchura1+anchura2-pliegueSuperior,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior)
+		dibujarFresado_auxiliar(doc,fresado31,fresado32)
+		
+		if crearFresado==1 then
+			local fresado29 = Point2D(origenX+alaIzquierda+anchura1+pliegueSuperior-margenFresado,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior)
+			local fresado30 = Point2D(origenX+alaIzquierda+anchura1+pliegueSuperior-margenFresado,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior)
+			dibujarFresado_auxiliar(doc,fresado29,fresado30)
+			local fresado33 = Point2D(origenX+alaIzquierda+anchura1+anchura2-pliegueSuperior+margenFresado,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior)
+			local fresado34 = Point2D(origenX+alaIzquierda+anchura1+anchura2-pliegueSuperior+margenFresado,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior)
+			dibujarFresado_auxiliar(doc,fresado33,fresado34)
+		end
+	end
+	
+	--anchura3 - Superior
+	if anchura3>pliegueSuperior*2 then
+		local fresado37 = Point2D(origenX+alaIzquierda+anchura1+anchura2+pliegueSuperior,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior)
+		local fresado38 = Point2D(origenX+alaIzquierda+anchura1+anchura2+anchura3-pliegueSuperior,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior)
+		dibujarFresado_auxiliar(doc,fresado37,fresado38)
+		
+		if crearFresado==1 then
+			local fresado35 = Point2D(origenX+alaIzquierda+anchura1+anchura2+pliegueSuperior-margenFresado,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior)
+			local fresado36 = Point2D(origenX+alaIzquierda+anchura1+anchura2+pliegueSuperior-margenFresado,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior)
+			dibujarFresado_auxiliar(doc,fresado35,fresado36)
+			local fresado39 = Point2D(origenX+alaIzquierda+anchura1+anchura2+anchura3-pliegueSuperior+margenFresado,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior)
+			local fresado40 = Point2D(origenX+alaIzquierda+anchura1+anchura2+anchura3-pliegueSuperior+margenFresado,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior)
+			dibujarFresado_auxiliar(doc,fresado39,fresado40)
+		end
+	end
+	
+	--anchura4 - Superior
+	if anchura4>pliegueSuperior then
+		local fresado43 = Point2D(origenX+alaIzquierda+anchura1+anchura2+anchura3+pliegueSuperior,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior)
+		local fresado44 = Point2D(origenX+alaIzquierda+anchura1+anchura2+anchura3+anchura4,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior)
+		dibujarFresado_auxiliar(doc,fresado43,fresado44)
+		
+		if crearFresado==1 then
+			local fresado41 = Point2D(origenX+alaIzquierda+anchura1+anchura2+anchura3+pliegueSuperior-margenFresado,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior)
+			local fresado42 = Point2D(origenX+alaIzquierda+anchura1+anchura2+anchura3+pliegueSuperior-margenFresado,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior)
+			dibujarFresado_auxiliar(doc,fresado41,fresado42)
+		end
+	end
+	
+	
+	local fresado2 = Point2D(origenX+alaIzquierda,origenY)
+	local fresado25 = Point2D(origenX+alaIzquierda,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior)
+	dibujarFresado_auxiliar(doc,fresado2,fresado25)
+	
+	
+	
+	
+	--------------------------------------------------------
+	local cad_object = CreateCadContour(Contour)
+	local cur_layer = doc.LayerManager:GetActiveLayer()
+	local layer = doc.LayerManager:GetLayerWithName("Fresado")
+	layer:AddObject(cad_object, true)
+	layer:SetColor(0.3,0.8,0.4)
+	layer.Visible = true 
+	doc.LayerManager:SetActiveLayer(cur_layer)
+	doc:Refresh2DView()	
+	--------------------------------------------------------
+	return true; 
+end
+
+
+
+function dibujarCorte015(doc)
+	
+	local plieguesInf={pliegueInf1, pliegueInf2, pliegueInf3, pliegueInf4}
+	
+	--sacar el mayor pliegue
+	pliegueInferior=pliegueInf1
+	for n=1, 4 do
+		if pliegueInferior<plieguesInf[n] then
+			pliegueInferior=plieguesInf[n]
+		end
+	end
+	
+	
+	local Contour = Contour(0.0)
+	
+	--Corte inferior anchura1
+	local corte1 = Point2D(origenX+alaIzquierda,origenY)
+	Contour:AppendPoint(corte1)
+	
+	if anchura1>pliegueInf1 then
+		local corte2 = Point2D(origenX+alaIzquierda,origenY+pliegueInferior-pliegueInf1)
+		local corte3 = Point2D(origenX+alaIzquierda+anchura1-pliegueInf1-alaInferior,origenY+pliegueInferior-pliegueInf1)
+		local corte4 = Point2D(origenX+alaIzquierda+anchura1,origenY+alaInferior+pliegueInferior)
+		Contour:LineTo(corte2)
+		Contour:LineTo(corte3)
+		Contour:LineTo(corte4)
+	else 
+		local corte2 = Point2D(origenX+alaIzquierda,origenY+alaInferior+pliegueInferior-anchura1)
+		local corte3 = Point2D(origenX+alaIzquierda+anchura1,origenY+alaInferior+pliegueInferior)
+		Contour:LineTo(corte2)
+		Contour:LineTo(corte3)
+	end
+	
+	
+	--Corte inferior anchura2
+	if anchura2>pliegueInf2*2 then
+		local corte12 = Point2D(origenX+alaIzquierda+anchura1,origenY+alaInferior+pliegueInferior)
+		local corte13 = Point2D(origenX+alaIzquierda+anchura1+pliegueInf2+alaInferior,origenY+pliegueInferior-pliegueInf2)
+		local corte14 = Point2D(origenX+alaIzquierda+anchura1+anchura2-pliegueInf2-alaInferior,origenY+pliegueInferior-pliegueInf2)
+		local corte15 = Point2D(origenX+alaIzquierda+anchura1+anchura2,origenY+alaInferior+pliegueInferior)
+		Contour:LineTo(corte12)
+		Contour:LineTo(corte13)
+		Contour:LineTo(corte14)
+		Contour:LineTo(corte15)
+	else
+		local corte12 = Point2D(origenX+alaIzquierda+anchura1,origenY+alaInferior+pliegueInferior)
+		local corte13 = Point2D(origenX+alaIzquierda+anchura1+anchura2/2,origenY+alaInferior+pliegueInferior-anchura2/2)
+		local corte14 = Point2D(origenX+alaIzquierda+anchura1+anchura2,origenY+alaInferior+pliegueInferior)
+		Contour:LineTo(corte12)
+		Contour:LineTo(corte13)
+		Contour:LineTo(corte14)
+	end
+	
+	
+	--Corte inferior anchura3
+	if anchura3>pliegueInf3*2 then
+		local corte16 = Point2D(origenX+alaIzquierda+anchura1+anchura2,origenY+alaInferior+pliegueInferior)
+		local corte17 = Point2D(origenX+alaIzquierda+anchura1+anchura2+pliegueInf3+alaInferior,origenY+pliegueInferior-pliegueInf3)
+		local corte18 = Point2D(origenX+alaIzquierda+anchura1+anchura2+anchura3-pliegueInf3-alaInferior,origenY+pliegueInferior-pliegueInf3)
+		local corte19 = Point2D(origenX+alaIzquierda+anchura1+anchura2+anchura3,origenY+alaInferior+pliegueInferior)
+		Contour:LineTo(corte16)
+		Contour:LineTo(corte17)
+		Contour:LineTo(corte18)
+		Contour:LineTo(corte19)
+	else
+		local corte16 = Point2D(origenX+alaIzquierda+anchura1+anchura2,origenY+alaInferior+pliegueInferior)
+		local corte17 = Point2D(origenX+alaIzquierda+anchura1+anchura2+anchura3/2,origenY+alaInferior+pliegueInferior-anchura3/2)
+		local corte18 = Point2D(origenX+alaIzquierda+anchura1+anchura2+anchura3,origenY+alaInferior+pliegueInferior)
+		Contour:LineTo(corte16)
+		Contour:LineTo(corte17)
+		Contour:LineTo(corte18)
+	end
+	
+	--Corte inferior anchura4
+	if anchura4>pliegueInf4 then
+			local corte20 = Point2D(origenX+alaIzquierda+anchura1+anchura2+anchura3,origenY+alaInferior+pliegueInferior)
+			local corte21 = Point2D(origenX+alaIzquierda+anchura1+anchura2+anchura3+pliegueInf4+alaInferior,origenY+pliegueInferior-pliegueInf4)
+			local corte22 = Point2D(origenX+alaIzquierda+anchura1+anchura2+anchura3+anchura4,origenY+pliegueInferior-pliegueInf4)
+			local corte23 = Point2D(origenX+alaIzquierda+anchura1+anchura2+anchura3+anchura4,origenY+pliegueInferior-pliegueInf4+alaInferior)
+			local corte24 = Point2D(origenX+alaIzquierda+anchura1+anchura2+anchura3+anchura4,origenY+pliegueInferior-pliegueInf4+alaInferior)
+			local corte25 = Point2D(origenX+alaIzquierda+anchura1+anchura2+anchura3+anchura4,origenY+pliegueInferior-pliegueInf4+alaInferior+pliegueInferior)
+			local corte26 = Point2D(origenX+alaIzquierda+anchura1+anchura2+anchura3+anchura4,origenY+pliegueInferior-pliegueInf4+alaInferior+pliegueInferior)
+			Contour:LineTo(corte20)
+			Contour:LineTo(corte21)
+			Contour:LineTo(corte22)
+			Contour:LineTo(corte23)
+			Contour:LineTo(corte24)
+			Contour:LineTo(corte25)
+			Contour:LineTo(corte26)
+	else --anchura4<pliegueInf4
+		local corte20 = Point2D(origenX+alaIzquierda+anchura1+anchura2+anchura3,origenY+alaInferior+pliegueInferior)
+		local corte21 = Point2D(origenX+alaIzquierda+anchura1+anchura2+anchura3+anchura4,origenY+pliegueInferior+alaInferior-anchura4)
+		local corte22 = Point2D(origenX+alaIzquierda+anchura1+anchura2+anchura3+anchura4,origenY+alaInferior+pliegueInferior)
+		Contour:LineTo(corte20)
+		Contour:LineTo(corte21)
+		Contour:LineTo(corte22)
+	end
+	
+	
+	
+	
+	
+	
+	
+
+	--Anchura 4 - Superior
+	if anchura4>pliegueSuperior then
+		local corte32 = Point2D(origenX+alaIzquierda+anchura1+anchura2+anchura3+anchura4,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior)
+		local corte33 = Point2D(origenX+alaIzquierda+anchura1+anchura2+anchura3+pliegueSuperior,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior)
+		local corte34 = Point2D(origenX+alaIzquierda+anchura1+anchura2+anchura3+pliegueSuperior,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior)
+		local corte35 = Point2D(origenX+alaIzquierda+anchura1+anchura2+anchura3,origenY+alaInferior+pliegueInferior+alturaPlaca)
+		Contour:LineTo(corte32)
+		Contour:LineTo(corte33)
+		Contour:LineTo(corte34)
+		Contour:LineTo(corte35)
+	else --anchura4<pliegueSuperior
+		local corte32 = Point2D(origenX+alaIzquierda+anchura1+anchura2+anchura3+anchura4,origenY+alaInferior+pliegueInferior+alturaPlaca+anchura4)
+		local corte33 = Point2D(origenX+alaIzquierda+anchura1+anchura2+anchura3,origenY+alaInferior+pliegueInferior+alturaPlaca)
+		Contour:LineTo(corte32)
+		Contour:LineTo(corte33)
+	end
+
+
+
+
+	--Anchura 3 - Superior
+	if anchura3>(pliegueSuperior*2) then
+		local corte28 = Point2D(origenX+alaIzquierda+anchura1+anchura2+anchura3-pliegueSuperior,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior)
+		local corte29 = Point2D(origenX+alaIzquierda+anchura1+anchura2+anchura3-pliegueSuperior,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior)
+		local corte30 = Point2D(origenX+alaIzquierda+anchura1+anchura2+pliegueSuperior,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior)
+		local corte31 = Point2D(origenX+alaIzquierda+anchura1+anchura2+pliegueSuperior,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior)
+		local corte32 = Point2D(origenX+alaIzquierda+anchura1+anchura2,origenY+alaInferior+pliegueInferior+alturaPlaca)
+		Contour:LineTo(corte28)
+		Contour:LineTo(corte29)
+		Contour:LineTo(corte30)
+		Contour:LineTo(corte31)
+		Contour:LineTo(corte32)
+	else
+		local corte28 = Point2D(origenX+alaIzquierda+anchura1+anchura2+anchura3/2,origenY+alaInferior+pliegueInferior+alturaPlaca+anchura3/2)
+		local corte29 = Point2D(origenX+alaIzquierda+anchura1+anchura2,origenY+alaInferior+pliegueInferior+alturaPlaca)
+		Contour:LineTo(corte28)
+		Contour:LineTo(corte29)
+	end
+	
+	
+	--Anchura 2 - Superior
+	if anchura2>(pliegueSuperior*2) then
+		local corte33 = Point2D(origenX+alaIzquierda+anchura1+anchura2-pliegueSuperior,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior)
+		local corte34 = Point2D(origenX+alaIzquierda+anchura1+anchura2-pliegueSuperior,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior)
+		local corte35 = Point2D(origenX+alaIzquierda+anchura1+pliegueSuperior,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior)
+		local corte36 = Point2D(origenX+alaIzquierda+anchura1+pliegueSuperior,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior)
+		local corte37 = Point2D(origenX+alaIzquierda+anchura1,origenY+alaInferior+pliegueInferior+alturaPlaca)
+		Contour:LineTo(corte33)
+		Contour:LineTo(corte34)
+		Contour:LineTo(corte35)
+		Contour:LineTo(corte36)
+		Contour:LineTo(corte37)
+	else
+		local corte33 = Point2D(origenX+alaIzquierda+anchura1+anchura2/2,origenY+alaInferior+pliegueInferior+alturaPlaca+anchura2/2)
+		local corte34 = Point2D(origenX+alaIzquierda+anchura1,origenY+alaInferior+pliegueInferior+alturaPlaca)
+		Contour:LineTo(corte33)
+		Contour:LineTo(corte34)
+	end
+	
+	
+	--Anchura 1 - Superior
+	if anchura1>(pliegueSuperior*2) then
+		local corte38 = Point2D(origenX+alaIzquierda+anchura1-pliegueSuperior,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior)
+		local corte39 = Point2D(origenX+alaIzquierda+anchura1-pliegueSuperior,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior)
+		local corte40 = Point2D(origenX+alaIzquierda,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior)
+		local corte41 = Point2D(origenX+alaIzquierda,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior)
+		Contour:LineTo(corte38)
+		Contour:LineTo(corte39)
+		Contour:LineTo(corte40)
+		Contour:LineTo(corte41)
+	else
+		local corte38 = Point2D(origenX+alaIzquierda,origenY+alaInferior+pliegueInferior+alturaPlaca+anchura1)
+		local corte39 = Point2D(origenX+alaIzquierda,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior)
+		Contour:LineTo(corte38)
+		Contour:LineTo(corte39)
+	end
+	
+	
+	
+	local corte40 = Point2D(origenX+alaIzquierda-pliegueSuperior,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior)
+	local corte41 = Point2D(origenX+alaIzquierda,origenY+alaInferior+pliegueInferior+alturaPlaca)
+	local corte42 = Point2D(origenX,origenY+alaInferior+pliegueInferior+alturaPlaca-alaIzquierda)
+	local corte43 = Point2D(origenX,origenY+alaInferior+pliegueInferior+alaIzquierda)
+	local corte44 = Point2D(origenX+alaIzquierda,origenY+alaInferior+pliegueInferior)
+	local corte45 = Point2D(origenX,origenY+alaInferior+pliegueInferior-alaIzquierda)
+	local corte46 = Point2D(origenX,origenY+alaInferior+alaIzquierda)
+	local corte47 = Point2D(origenX+alaIzquierda,origenY+alaInferior)
+	local corte48 = Point2D(origenX+alaIzquierda-alaInferior,origenY)
+	local corte49 = Point2D(origenX+alaIzquierda,origenY)
+	
+	Contour:LineTo(corte40)
+	Contour:LineTo(corte41)
+	Contour:LineTo(corte42)
+	Contour:LineTo(corte43)
+	Contour:LineTo(corte44)
+	Contour:LineTo(corte45)
+	Contour:LineTo(corte46)
+	Contour:LineTo(corte47)
+	Contour:LineTo(corte48)
+	Contour:LineTo(corte49)
+	
+	
+	
+	
+	--------------------------------------------------------
+	local cad_object = CreateCadContour(Contour)
+	local cur_layer = doc.LayerManager:GetActiveLayer()
+	local layer = doc.LayerManager:GetLayerWithName("Corte")
+	layer:AddObject(cad_object, true)
+    layer:SetColor(0.9,0.2,0.2)
+	layer.Visible = true 
+	doc.LayerManager:SetActiveLayer(cur_layer)
+	doc:Refresh2DView()	
+	-------------------------------------------------------
+	
+	return true; 
+end
+
+
+
+
+
+
+
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------- DIBUJAR BANDEJAS CLIENTES PERSONALIZADAS --------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------- [REFERENCIA 016 - F12] --------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+function dibujarFresado016(doc)
+	anchura4=0
+	anchura5=0
+	
+	--Puntos trayectoria 
+	local Contour = Contour(0.0)
+			--Son los mismos puntos que la figura 001 (el unico que cambia es fresado6 y fresado14)
+	local fresado1 = Point2D(origenX+alaIzquierda,origenY+alaInferior) 
+	local fresado2 = Point2D(origenX+alaIzquierda+anchura1,origenY+alaInferior)
+	local fresado3 = Point2D(origenX+alaIzquierda+anchura1+anchura2,origenY+alaInferior)
+	local fresado4 = Point2D(origenX+alaIzquierda+anchura1+anchura2+anchura3,origenY+alaInferior)
+	local fresado5 = Point2D(origenX+alaIzquierda+anchura1+anchura2+anchura3+anchura4,origenY+alaInferior)
+	
+	
+	
+	
+	
+	
+	local fresado6 = Point2D(origenX+alaIzquierda,origenY) --punto fresado abajo a la izquierda
+	
+	local fresado7 = Point2D(origenX+alaIzquierda+anchura1+anchura2+anchura3+anchura4+pliegueDer,origenY+alaInferior)
+	
+	
+	
+	local fresado9 = Point2D(origenX+alaIzquierda,origenY+alaInferior+alturaPlaca)
+	local fresado10 = Point2D(origenX+alaIzquierda+anchura1,origenY+alaInferior+alturaPlaca)
+	local fresado11 = Point2D(origenX+alaIzquierda+anchura1+anchura2,origenY+alaInferior+alturaPlaca)
+	local fresado12 = Point2D(origenX+alaIzquierda+anchura1+anchura2+anchura3,origenY+alaInferior+alturaPlaca)
+	--local fresado13 = Point2D(origenX+alaIzquierda+anchura1+anchura2+anchura3+anchura4,origenY+alaInferior+alturaPlaca)
+	
+	local fresado14 = Point2D(origenX+alaIzquierda,origenY+alaInferior+alturaPlaca+pliegueSuperior)
+
+	local fresado13 = Point2D(origenX+alaIzquierda+anchura1+anchura2+anchura3+anchura4+pliegueDer,origenY+alaInferior+alturaPlaca)
+	
+	dibujarFresado_auxiliar(doc,fresado1,fresado7)
+	dibujarFresado_auxiliar(doc,fresado9,fresado13)
+	dibujarFresado_auxiliar(doc,fresado7,fresado13)
+	dibujarFresado_auxiliar(doc,fresado2,fresado10)
+	dibujarFresado_auxiliar(doc,fresado3,fresado11)
+	dibujarFresado_auxiliar(doc,fresado4,fresado12)
+	dibujarFresado_auxiliar(doc,fresado6,fresado14)
+	
+	
+	
+	
+	--anchura1
+	if anchura1>pliegueSuperior then
+		local fresado17 = Point2D(origenX+alaIzquierda,origenY+alaInferior+alturaPlaca+pliegueSuperior)
+		local fresado18 = Point2D(origenX+alaIzquierda+anchura1-pliegueSuperior,origenY+alaInferior+alturaPlaca+pliegueSuperior)
+		dibujarFresado_auxiliar(doc,fresado17,fresado18)
+		if crearFresado==1 then 
+			local fresado19 = Point2D(origenX+alaIzquierda+anchura1-pliegueSuperior+margenFresado,origenY+alaInferior+alturaPlaca+pliegueSuperior)
+			local fresado20 = Point2D(origenX+alaIzquierda+anchura1-pliegueSuperior+margenFresado,origenY+alaInferior+alturaPlaca+pliegueSuperior+alaSuperior)
+			dibujarFresado_auxiliar(doc,fresado19,fresado20)
+		end
+	end
+	
+	
+	--anchura2
+	if anchura2>pliegueSuperior*2 then
+		
+		local fresado23 = Point2D(origenX+alaIzquierda+anchura1+pliegueSuperior,origenY+alaInferior+alturaPlaca+pliegueSuperior)
+		local fresado24 = Point2D(origenX+alaIzquierda+anchura1+anchura2-pliegueSuperior,origenY+alaInferior+alturaPlaca+pliegueSuperior)
+		dibujarFresado_auxiliar(doc,fresado23,fresado24)
+		if crearFresado==1 then 
+			local fresado22 = Point2D(origenX+alaIzquierda+anchura1+pliegueSuperior-margenFresado,origenY+alaInferior+alturaPlaca+pliegueSuperior)
+			local fresado21 = Point2D(origenX+alaIzquierda+anchura1+pliegueSuperior-margenFresado,origenY+alaInferior+alturaPlaca+pliegueSuperior+alaSuperior)
+			dibujarFresado_auxiliar(doc,fresado21,fresado22)
+			local fresado25 = Point2D(origenX+alaIzquierda+anchura1+anchura2-pliegueSuperior+margenFresado,origenY+alaInferior+alturaPlaca+pliegueSuperior)
+			local fresado26 = Point2D(origenX+alaIzquierda+anchura1+anchura2-pliegueSuperior+margenFresado,origenY+alaInferior+alturaPlaca+pliegueSuperior+alaSuperior)
+			dibujarFresado_auxiliar(doc,fresado25,fresado26)
+		end
+	end
+	
+	
+	--anchura3
+	if anchura3>pliegueSuperior*2 then
+		local fresado29 = Point2D(origenX+alaIzquierda+anchura1+anchura2+pliegueSuperior,origenY+alaInferior+alturaPlaca+pliegueSuperior)
+		local fresado30 = Point2D(origenX+alaIzquierda+anchura1+anchura2+anchura3-pliegueSuperior,origenY+alaInferior+alturaPlaca+pliegueSuperior)
+		dibujarFresado_auxiliar(doc,fresado29,fresado30)
+		if crearFresado==1 then 
+			local fresado28 = Point2D(origenX+alaIzquierda+anchura1+anchura2+pliegueSuperior-margenFresado,origenY+alaInferior+alturaPlaca+pliegueSuperior)
+			local fresado27 = Point2D(origenX+alaIzquierda+anchura1+anchura2+pliegueSuperior-margenFresado,origenY+alaInferior+alturaPlaca+pliegueSuperior+alaSuperior)
+			dibujarFresado_auxiliar(doc,fresado28,fresado27)
+			local fresado31 = Point2D(origenX+alaIzquierda+anchura1+anchura2+anchura3-pliegueSuperior+margenFresado,origenY+alaInferior+alturaPlaca+pliegueSuperior)
+			local fresado32 = Point2D(origenX+alaIzquierda+anchura1+anchura2+anchura3-pliegueSuperior+margenFresado,origenY+alaInferior+alturaPlaca+pliegueSuperior+alaSuperior)
+			dibujarFresado_auxiliar(doc,fresado31,fresado32)
+		end
+	end
+	
+	
+	--anchura4
+	if anchura4>pliegueSuperior then
+		local fresado35 = Point2D(origenX+alaIzquierda+anchura1+anchura2+anchura3+pliegueSuperior,origenY+alaInferior+alturaPlaca+pliegueSuperior)
+		local fresado36 = Point2D(origenX+alaIzquierda+anchura1+anchura2+anchura3+anchura4,origenY+alaInferior+alturaPlaca+pliegueSuperior)
+		dibujarFresado_auxiliar(doc,fresado35,fresado36)
+		
+		if crearFresado==1 then 
+			local fresado34 = Point2D(origenX+alaIzquierda+anchura1+anchura2+anchura3+pliegueSuperior-margenFresado,origenY+alaInferior+alturaPlaca+pliegueSuperior)
+			local fresado33 = Point2D(origenX+alaIzquierda+anchura1+anchura2+anchura3+pliegueSuperior-margenFresado,origenY+alaInferior+alturaPlaca+pliegueSuperior+alaSuperior)
+			dibujarFresado_auxiliar(doc,fresado33,fresado34)
+		end
+	end
+	
+	
+	
+	--------------------------------------------------------
+	local cad_object = CreateCadContour(Contour)
+	local cur_layer = doc.LayerManager:GetActiveLayer()
+	local layer = doc.LayerManager:GetLayerWithName("Fresado")
+	layer:AddObject(cad_object, true)
+	layer:SetColor(0.3,0.8,0.4)
+	layer.Visible = true 
+	doc.LayerManager:SetActiveLayer(cur_layer)
+	doc:Refresh2DView()	
+	--------------------------------------------------------
+	return true; 
+end
+
+
+
+
+
+
+function dibujarCorte016(doc)
+
+	
+	local repeticiones
+	local anchuras
+	local nAnchuras
+
+	repeticiones=1
+	anchuras={anchura1,anchura2,anchura3}
+	nAnchuras=3 --numero de valores del vector "anchuras"
+	anchura5=0
+	anchura4=0
+	
+	
+	
+	
+	
+	
+	local Contour = Contour(0.0)
+	
+	--PARTE INFERIOR-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	local corte1 = Point2D(origenX+alaIzquierda,origenY+alaInferior)
+	local corte2 = Point2D(origenX+alaIzquierda-alaInferior,origenY)
+	local corte3 = Point2D(origenX+alaIzquierda+anchura1-alaInferior,origenY)
+	local corte4 = Point2D(origenX+alaIzquierda+anchura1,origenY+alaInferior)
+	Contour:AppendPoint(corte1)
+	Contour:LineTo(corte2)
+	Contour:LineTo(corte3)
+	Contour:LineTo(corte4)
+	
+	
+	--Bucle anchuras intermedias
+	--local anchuras={anchura1,anchura2,anchura3,anchura4}
+	--local repeticiones=2 --math.length(anchuras -2)
+	local anchoA=anchuras[1]
+	for n=2, (repeticiones+1) do
+		local corte1 = Point2D(origenX+alaIzquierda+anchoA,origenY+alaInferior)
+		Contour:LineTo(corte1)
+		if anchuras[n]>alaInferior*2 then
+			local corte2 = Point2D(origenX+alaIzquierda+anchoA+alaInferior,origenY)
+			local corte3 = Point2D(origenX+alaIzquierda+anchoA+anchuras[n]-alaInferior,origenY)
+			Contour:LineTo(corte2)
+			Contour:LineTo(corte3)
+			
+		else
+			local corte2 = Point2D(origenX+alaIzquierda+anchoA+anchuras[n]/2,origenY+alaInferior-anchuras[n]/2)
+			Contour:LineTo(corte2)
+		end
+		
+		local corte4 = Point2D(origenX+alaIzquierda+anchoA+anchuras[n],origenY+alaInferior)
+		Contour:LineTo(corte4)
+		
+		anchoA=anchoA+anchuras[n]
+	end	
+		
+	
+	--Anchura ultima	
+	if anchuras[nAnchuras]>alaInferior then --Para que acabe en pico o acabe en plano el ala inferior
+		local corte1 = Point2D(origenX+alaIzquierda+anchoA,origenY+alaInferior)
+		local corte2 = Point2D(origenX+alaIzquierda+anchoA+alaInferior,origenY)
+		local corte3 = Point2D(origenX+alaIzquierda+anchoA+anchuras[nAnchuras]-alaInferior,origenY)
+		local corte4 = Point2D(origenX+alaIzquierda+anchoA+anchuras[nAnchuras],origenY+alaInferior)
+		Contour:LineTo(corte1)
+		Contour:LineTo(corte2)
+		Contour:LineTo(corte3)
+		Contour:LineTo(corte4)
+	else
+		local corte1 = Point2D(origenX+alaIzquierda+anchoA,origenY+alaInferior)
+		local corte2 = Point2D(origenX+alaIzquierda+anchoA+anchuras[nAnchuras]/2,origenY+alaInferior-anchuras[nAnchuras]/2)
+		local corte3 = Point2D(origenX+alaIzquierda+anchoA+anchuras[nAnchuras],origenY+alaInferior)
+		Contour:LineTo(corte1)
+		Contour:LineTo(corte2)
+		Contour:LineTo(corte3)
+	end
+	
+	local corte1 = Point2D(origenX+alaIzquierda+anchoA+anchuras[nAnchuras]+pliegueDer,origenY+alaInferior-pliegueDer)
+	local corte2 = Point2D(origenX+alaIzquierda+anchoA+anchuras[nAnchuras]+pliegueDer,origenY+alaInferior)
+	local corte3 = Point2D(origenX+alaIzquierda+anchoA+anchuras[nAnchuras]+pliegueDer+alaDerecha,origenY+alaInferior)
+	local corte4 = Point2D(origenX+alaIzquierda+anchoA+anchuras[nAnchuras]+pliegueDer+alaDerecha,origenY+alaInferior+alturaPlaca)
+	local corte5 = Point2D(origenX+alaIzquierda+anchoA+anchuras[nAnchuras]+pliegueDer,origenY+alaInferior+alturaPlaca)
+	local corte6 = Point2D(origenX+alaIzquierda+anchoA+anchuras[nAnchuras]+pliegueDer,origenY+alaInferior+alturaPlaca+pliegueDer)
+	local corte7 = Point2D(origenX+alaIzquierda+anchoA+anchuras[nAnchuras],origenY+alaInferior+alturaPlaca)
+	
+	Contour:LineTo(corte1)
+	Contour:LineTo(corte2)
+	Contour:LineTo(corte3)
+	Contour:LineTo(corte4)
+	Contour:LineTo(corte5)
+	Contour:LineTo(corte6)
+	Contour:LineTo(corte7)
+	
+	
+	
+	
+	
+	--PARTE SUPERIOR------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	anchoA=anchura1+anchura2+anchura3
+	
+	--Anchura primera
+	if anchuras[nAnchuras]>pliegueSuperior then
+		local corte1 = Point2D(origenX+alaIzquierda+anchoA,origenY+alaInferior+alturaPlaca)
+		local corte2 = Point2D(origenX+alaIzquierda+anchoA-pliegueSuperior,origenY+alaInferior+alturaPlaca+pliegueSuperior)
+		local corte3 = Point2D(origenX+alaIzquierda+anchoA-pliegueSuperior,origenY+alaInferior+alturaPlaca+pliegueSuperior+alaSuperior)
+		local corte4 = Point2D(origenX+alaIzquierda+anchoA-(anchuras[nAnchuras]-pliegueSuperior),origenY+alaInferior+alturaPlaca+pliegueSuperior+alaSuperior)
+		local corte5 = Point2D(origenX+alaIzquierda+anchoA-(anchuras[nAnchuras]-pliegueSuperior),origenY+alaInferior+alturaPlaca+pliegueSuperior)
+		Contour:LineTo(corte1)
+		Contour:LineTo(corte2)
+		Contour:LineTo(corte3)
+		Contour:LineTo(corte4)
+		Contour:LineTo(corte5)
+	else
+		local corte1 = Point2D(origenX+alaIzquierda+anchoA-anchuras[nAnchuras]/2,origenY+alaInferior+alturaPlaca+anchuras[nAnchuras]/2)
+		local corte2 = Point2D(origenX+alaIzquierda+anchoA-anchuras[nAnchuras],origenY+alaInferior+alturaPlaca)
+		Contour:LineTo(corte1)
+		Contour:LineTo(corte2)
+	end
+	
+	
+	--Anchuras intermedias
+	anchoA=anchoA-anchuras[nAnchuras]
+	local m=repeticiones+1
+	for n=2, (repeticiones+1) do
+		
+		local corte1 = Point2D(origenX+alaIzquierda+anchoA,origenY+alaInferior+alturaPlaca)
+		Contour:LineTo(corte1)
+		if anchuras[m]>pliegueSuperior*2 then
+			local corte2 = Point2D(origenX+alaIzquierda+anchoA-pliegueSuperior,origenY+alaInferior+alturaPlaca+pliegueSuperior)
+			local corte3 = Point2D(origenX+alaIzquierda+anchoA-pliegueSuperior,origenY+alaInferior+alturaPlaca+pliegueSuperior+alaSuperior)
+			local corte4 = Point2D(origenX+alaIzquierda+anchoA-anchuras[m]+pliegueSuperior,origenY+alaInferior+alturaPlaca+pliegueSuperior+alaSuperior)
+			local corte5 = Point2D(origenX+alaIzquierda+anchoA-anchuras[m]+pliegueSuperior,origenY+alaInferior+alturaPlaca+pliegueSuperior)
+			Contour:LineTo(corte2)
+			Contour:LineTo(corte3)
+			Contour:LineTo(corte4)
+			Contour:LineTo(corte5)
+		else
+			local corte2 = Point2D(origenX+alaIzquierda+anchoA-anchuras[m]/2,origenY+alaInferior+alturaPlaca+anchuras[m]/2)
+			Contour:LineTo(corte2)
+		end
+		
+		local corte4 = Point2D(origenX+alaIzquierda+anchoA-anchuras[m],origenY+alaInferior+alturaPlaca)
+		Contour:LineTo(corte4)
+		
+		anchoA=anchoA-anchuras[m]
+		m=m-1
+	end	
+	
+	
+	--Anchura ultima
+	if anchura1>pliegueSuperior then
+		local corte1 = Point2D(origenX+alaIzquierda+anchoA,origenY+alaInferior+alturaPlaca)
+		local corte2 = Point2D(origenX+alaIzquierda+anchoA-pliegueSuperior,origenY+alaInferior+alturaPlaca+pliegueSuperior)
+		local corte3 = Point2D(origenX+alaIzquierda+anchoA-pliegueSuperior,origenY+alaInferior+alturaPlaca+pliegueSuperior+alaSuperior)
+		local corte4 = Point2D(origenX+alaIzquierda,origenY+alaInferior+alturaPlaca+pliegueSuperior+alaSuperior)
+		Contour:LineTo(corte1)
+		Contour:LineTo(corte2)
+		Contour:LineTo(corte3)
+		Contour:LineTo(corte4)
+		
+	else
+		local corte1 = Point2D(origenX+alaIzquierda+anchoA,origenY+alaInferior+alturaPlaca)
+		local corte2 = Point2D(origenX+alaIzquierda+anchoA-anchura1,origenY+alaInferior+alturaPlaca+anchura1)
+		Contour:LineTo(corte1)
+		Contour:LineTo(corte2)
+	end
+	
+	
+	
+	local corte4 = Point2D(origenX+alaIzquierda,origenY+alaInferior+alturaPlaca+pliegueSuperior)
+	local corte5 = Point2D(origenX+alaIzquierda-pliegueSuperior,origenY+alaInferior+alturaPlaca+pliegueSuperior)
+	local corte6 = Point2D(origenX+alaIzquierda,origenY+alaInferior+alturaPlaca)
+	local corte7 = Point2D(origenX,origenY+alaInferior+alturaPlaca-alaIzquierda)
+	local corte8 = Point2D(origenX,origenY+alaInferior+alaIzquierda)
+	local corte9 = Point2D(origenX+alaIzquierda,origenY+alaInferior)
+	
+	Contour:LineTo(corte4)
+	Contour:LineTo(corte5)
+	Contour:LineTo(corte6)
+	Contour:LineTo(corte7)
+	Contour:LineTo(corte8)
+	Contour:LineTo(corte9)
+
+	
+	--------------------------------------------------------
+	local cad_object = CreateCadContour(Contour)
+	local cur_layer = doc.LayerManager:GetActiveLayer()
+	local layer = doc.LayerManager:GetLayerWithName("Corte")
+	layer:AddObject(cad_object, true)
+    layer:SetColor(0.9,0.2,0.2)
+	layer.Visible = true 
+	doc.LayerManager:SetActiveLayer(cur_layer)
+	doc:Refresh2DView()	
+	-----------------------------------------------------------------
+	return true; 
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------- DIBUJAR BANDEJAS CLIENTES PERSONALIZADAS --------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------- [REFERENCIA 017 - F13] --------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+function dibujarFresado017(doc)
+	
+	
+	local plieguesInf={pliegueInf1, pliegueInf2, pliegueInf3, pliegueInf4}
+	
+	--sacar el mayor pliegue
+	pliegueInferior=pliegueInf1
+	for n=1, 4 do
+		if pliegueInferior<plieguesInf[n] then
+			pliegueInferior=plieguesInf[n]
+		end
+	end
+	
+	
+	pliegueInf4=0
+	
+	
+	--Puntos trayectoria 
+	local Contour = Contour(0.0)
+	
+	local fresado11 = Point2D(origenX+alaIzquierda+anchura1,origenY+alaInferior+pliegueInferior)
+	local fresado12 = Point2D(origenX+alaIzquierda+anchura1+anchura2,origenY+alaInferior+pliegueInferior)
+	local fresado13 = Point2D(origenX+alaIzquierda+anchura1+anchura2+anchura3,origenY+alaInferior+pliegueInferior)
+	local fresado14 = Point2D(origenX+alaIzquierda+anchura1+anchura2+anchura3,origenY+alaInferior+pliegueInferior)
+	
+	
+	
+	local fresado16 = Point2D(origenX+alaIzquierda,origenY+alaInferior+pliegueInferior) 
+	local fresado17 = Point2D(origenX+alaIzquierda,origenY+alaInferior+pliegueInferior+alturaPlaca)
+	
+	local fresado18 = Point2D(origenX+alaIzquierda+anchura1,origenY+alaInferior+pliegueInferior+alturaPlaca)
+	local fresado19 = Point2D(origenX+alaIzquierda+anchura1+anchura2,origenY+alaInferior+pliegueInferior+alturaPlaca)
+	local fresado20 = Point2D(origenX+alaIzquierda+anchura1+anchura2+anchura3,origenY+alaInferior+pliegueInferior+alturaPlaca)
+	local fresado21 = Point2D(origenX+alaIzquierda+anchura1+anchura2+anchura3,origenY+alaInferior+pliegueInferior+alturaPlaca)
+	
+	local fresado22 = Point2D(origenX+alaIzquierda+anchura1+anchura2+anchura3,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior)
+	
+	
+	--[[if anchura4>pliegueInf4 then
+		local fresado15 = Point2D(origenX+alaIzquierda+anchura1+anchura2+anchura3+anchura4,origenY+alaInferior+pliegueInferior-pliegueInf4-alaInferior)
+		dibujarFresado_auxiliar(doc,fresado15,fresado22)
+	else
+		dibujarFresado_auxiliar(doc,fresado14,fresado22)
+	end--]]
+	
+	local fresado2 = Point2D(origenX+alaIzquierda,origenY)
+	
+	dibujarFresado_auxiliar(doc,fresado16,fresado14)
+	--dibujarFresado_auxiliar(doc,fresado20,fresado13)
+	dibujarFresado_auxiliar(doc,fresado12,fresado19)
+	dibujarFresado_auxiliar(doc,fresado18,fresado11)
+	dibujarFresado_auxiliar(doc,fresado17,fresado21)
+	
+
+	
+	
+	
+	--anchura1 - Inferior
+	if anchura1>pliegueInf1 then
+		--local fresado10 = Point2D(origenX+alaIzquierda,origenY+pliegueInferior+alaInferior) 
+		local fresado1 = Point2D(origenX+alaIzquierda,origenY+alaInferior+pliegueInferior-pliegueInf1)
+		--local fresado2 = Point2D(origenX+alaIzquierda,origenY+alaInferior+pliegueInferior-pliegueInf1)
+		local fresado3 = Point2D(origenX+alaIzquierda+anchura1-pliegueInf1,origenY+alaInferior+pliegueInferior-pliegueInf1)
+		
+		--dibujarFresado_auxiliar(doc,fresado10,fresado1)
+		dibujarFresado_auxiliar(doc,fresado1,fresado3)
+		--dibujarFresado_auxiliar(doc,fresado2,fresado11)
+	end 
+	
+	--anchura2 - Inferior
+	if anchura2>(pliegueInf2*2) then
+		local fresado4 = Point2D(origenX+alaIzquierda+anchura1+pliegueInf2,origenY+alaInferior+pliegueInferior-pliegueInf2)
+		local fresado5 = Point2D(origenX+alaIzquierda+anchura1+anchura2-pliegueInf2,origenY+alaInferior+pliegueInferior-pliegueInf2)
+		dibujarFresado_auxiliar(doc,fresado4,fresado5)
+	end
+	
+	--anchura3 - Inferior
+	if anchura3>(pliegueInf3) then
+		local fresado6 = Point2D(origenX+alaIzquierda+anchura1+anchura2+pliegueInf3,origenY+alaInferior+pliegueInferior-pliegueInf3)
+		local fresado7 = Point2D(origenX+alaIzquierda+anchura1+anchura2+anchura3+pliegueDer,origenY+alaInferior+pliegueInferior-pliegueInf3) --
+		dibujarFresado_auxiliar(doc,fresado6,fresado7)
+	end 
+	
+	
+	
+	
+	
+	
+	--Puntos extra para esta pieza
+	local fresado7 = Point2D(origenX+alaIzquierda+anchura1+anchura2+anchura3+pliegueDer,origenY+alaInferior+pliegueInferior-pliegueInf3)
+	local fresado8 = Point2D(origenX+alaIzquierda+anchura1+anchura2+anchura3+pliegueDer,origenY+alaInferior+pliegueInferior-pliegueDer)
+	dibujarFresado_auxiliar(doc,fresado7,fresado8)
+	
+	local fresado9 = Point2D(origenX+alaIzquierda+anchura1+anchura2+anchura3+pliegueDer,origenY+alaInferior+pliegueInferior+pliegueDer)
+	local fresado10 = Point2D(origenX+alaIzquierda+anchura1+anchura2+anchura3+pliegueDer,origenY+alaInferior+pliegueInferior+alturaPlaca)
+	dibujarFresado_auxiliar(doc,fresado9,fresado10)
+	
+	dibujarFresado_auxiliar(doc,fresado21,fresado10)
+	
+	local fresado11 = Point2D(origenX+alaIzquierda+anchura1+anchura2+anchura3,origenY+alaInferior)
+	dibujarFresado_auxiliar(doc,fresado20,fresado11)
+	
+	
+	
+	
+	
+	
+	
+
+	
+	--anchura1 - Superior
+	if anchura1>(pliegueSuperior*2) then
+		local fresado25 = Point2D(origenX+alaIzquierda,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior)
+		local fresado26 = Point2D(origenX+alaIzquierda+anchura1-pliegueSuperior,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior)
+		dibujarFresado_auxiliar(doc,fresado25,fresado26)
+		
+		if crearFresado==1 then --Esto es para hacer el fresado externo o no
+			local fresado27 = Point2D(origenX+alaIzquierda+anchura1-pliegueSuperior+margenFresado,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior)
+			local fresado28 = Point2D(origenX+alaIzquierda+anchura1-pliegueSuperior+margenFresado,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior)
+			dibujarFresado_auxiliar(doc,fresado27,fresado28)
+		end
+	end
+	
+	--anchura2 - Superior
+	if anchura2>(pliegueSuperior*2) then
+		local fresado31 = Point2D(origenX+alaIzquierda+anchura1+pliegueSuperior,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior)
+		local fresado32 = Point2D(origenX+alaIzquierda+anchura1+anchura2-pliegueSuperior,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior)
+		dibujarFresado_auxiliar(doc,fresado31,fresado32)
+		
+		if crearFresado==1 then
+			local fresado29 = Point2D(origenX+alaIzquierda+anchura1+pliegueSuperior-margenFresado,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior)
+			local fresado30 = Point2D(origenX+alaIzquierda+anchura1+pliegueSuperior-margenFresado,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior)
+			dibujarFresado_auxiliar(doc,fresado29,fresado30)
+			local fresado33 = Point2D(origenX+alaIzquierda+anchura1+anchura2-pliegueSuperior+margenFresado,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior)
+			local fresado34 = Point2D(origenX+alaIzquierda+anchura1+anchura2-pliegueSuperior+margenFresado,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior)
+			dibujarFresado_auxiliar(doc,fresado33,fresado34)
+		end
+	end
+	
+	--anchura3 - Superior
+	if anchura3>pliegueSuperior*2 then
+		local fresado37 = Point2D(origenX+alaIzquierda+anchura1+anchura2+pliegueSuperior,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior)
+		local fresado38 = Point2D(origenX+alaIzquierda+anchura1+anchura2+anchura3-pliegueSuperior,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior)
+		dibujarFresado_auxiliar(doc,fresado37,fresado38)
+		
+		if crearFresado==1 then
+			local fresado35 = Point2D(origenX+alaIzquierda+anchura1+anchura2+pliegueSuperior-margenFresado,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior)
+			local fresado36 = Point2D(origenX+alaIzquierda+anchura1+anchura2+pliegueSuperior-margenFresado,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior)
+			dibujarFresado_auxiliar(doc,fresado35,fresado36)
+			local fresado39 = Point2D(origenX+alaIzquierda+anchura1+anchura2+anchura3-pliegueSuperior+margenFresado,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior)
+			local fresado40 = Point2D(origenX+alaIzquierda+anchura1+anchura2+anchura3-pliegueSuperior+margenFresado,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior)
+			dibujarFresado_auxiliar(doc,fresado39,fresado40)
+		end
+	end
+	
+	
+	local fresado2 = Point2D(origenX+alaIzquierda,origenY)
+	local fresado25 = Point2D(origenX+alaIzquierda,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior)
+	dibujarFresado_auxiliar(doc,fresado2,fresado25)
+	
+	
+	
+	
+	--------------------------------------------------------
+	local cad_object = CreateCadContour(Contour)
+	local cur_layer = doc.LayerManager:GetActiveLayer()
+	local layer = doc.LayerManager:GetLayerWithName("Fresado")
+	layer:AddObject(cad_object, true)
+	layer:SetColor(0.3,0.8,0.4)
+	layer.Visible = true 
+	doc.LayerManager:SetActiveLayer(cur_layer)
+	doc:Refresh2DView()	
+	--------------------------------------------------------
+	return true; 
+end
+
+
+
+function dibujarCorte017(doc)
+	
+	local plieguesInf={pliegueInf1, pliegueInf2, pliegueInf3, pliegueInf4}
+	
+	--sacar el mayor pliegue
+	pliegueInferior=pliegueInf1
+	for n=1, 4 do
+		if pliegueInferior<plieguesInf[n] then
+			pliegueInferior=plieguesInf[n]
+		end
+	end
+	
+	
+	local Contour = Contour(0.0)
+	
+	--Corte inferior anchura1
+	local corte1 = Point2D(origenX+alaIzquierda,origenY)
+	Contour:AppendPoint(corte1)
+	
+	if anchura1>pliegueInf1 then
+		local corte2 = Point2D(origenX+alaIzquierda,origenY+pliegueInferior-pliegueInf1)
+		local corte3 = Point2D(origenX+alaIzquierda+anchura1-pliegueInf1-alaInferior,origenY+pliegueInferior-pliegueInf1)
+		local corte4 = Point2D(origenX+alaIzquierda+anchura1,origenY+alaInferior+pliegueInferior)
+		Contour:LineTo(corte2)
+		Contour:LineTo(corte3)
+		Contour:LineTo(corte4)
+	else 
+		local corte2 = Point2D(origenX+alaIzquierda,origenY+alaInferior+pliegueInferior-anchura1)
+		local corte3 = Point2D(origenX+alaIzquierda+anchura1,origenY+alaInferior+pliegueInferior)
+		Contour:LineTo(corte2)
+		Contour:LineTo(corte3)
+	end
+	
+	
+	--Corte inferior anchura2
+	if anchura2>pliegueInf2*2 then
+		local corte12 = Point2D(origenX+alaIzquierda+anchura1,origenY+alaInferior+pliegueInferior)
+		local corte13 = Point2D(origenX+alaIzquierda+anchura1+pliegueInf2+alaInferior,origenY+pliegueInferior-pliegueInf2)
+		local corte14 = Point2D(origenX+alaIzquierda+anchura1+anchura2-pliegueInf2-alaInferior,origenY+pliegueInferior-pliegueInf2)
+		local corte15 = Point2D(origenX+alaIzquierda+anchura1+anchura2,origenY+alaInferior+pliegueInferior)
+		Contour:LineTo(corte12)
+		Contour:LineTo(corte13)
+		Contour:LineTo(corte14)
+		Contour:LineTo(corte15)
+	else
+		local corte12 = Point2D(origenX+alaIzquierda+anchura1,origenY+alaInferior+pliegueInferior)
+		local corte13 = Point2D(origenX+alaIzquierda+anchura1+anchura2/2,origenY+alaInferior+pliegueInferior-anchura2/2)
+		local corte14 = Point2D(origenX+alaIzquierda+anchura1+anchura2,origenY+alaInferior+pliegueInferior)
+		Contour:LineTo(corte12)
+		Contour:LineTo(corte13)
+		Contour:LineTo(corte14)
+	end
+	
+	
+	--Corte inferior anchura3
+	if anchura3>pliegueInf3*2 then
+		local corte16 = Point2D(origenX+alaIzquierda+anchura1+anchura2,origenY+alaInferior+pliegueInferior)
+		local corte17 = Point2D(origenX+alaIzquierda+anchura1+anchura2+pliegueInf3+alaInferior,origenY+pliegueInferior-pliegueInf3)
+		local corte18 = Point2D(origenX+alaIzquierda+anchura1+anchura2+anchura3-alaInferior,origenY+pliegueInferior-pliegueInf3)
+		--local corte19 = Point2D(origenX+alaIzquierda+anchura1+anchura2+anchura3,origenY+alaInferior+pliegueInferior)
+		Contour:LineTo(corte16)
+		Contour:LineTo(corte17)
+		Contour:LineTo(corte18)
+		--Contour:LineTo(corte19)
+	else
+		local corte16 = Point2D(origenX+alaIzquierda+anchura1+anchura2,origenY+alaInferior+pliegueInferior)
+		local corte17 = Point2D(origenX+alaIzquierda+anchura1+anchura2+anchura3/2,origenY+alaInferior+pliegueInferior-anchura3/2)
+		local corte18 = Point2D(origenX+alaIzquierda+anchura1+anchura2+anchura3,origenY+alaInferior+pliegueInferior)
+		Contour:LineTo(corte16)
+		Contour:LineTo(corte17)
+		Contour:LineTo(corte18)
+	end
+	
+	--Corte inferior anchura4
+	--[[if anchura4>pliegueInf4 then
+			local corte20 = Point2D(origenX+alaIzquierda+anchura1+anchura2+anchura3,origenY+alaInferior+pliegueInferior)
+			local corte21 = Point2D(origenX+alaIzquierda+anchura1+anchura2+anchura3+pliegueInf4+alaInferior,origenY+pliegueInferior-pliegueInf4)
+			local corte22 = Point2D(origenX+alaIzquierda+anchura1+anchura2+anchura3+anchura4,origenY+pliegueInferior-pliegueInf4)
+			local corte23 = Point2D(origenX+alaIzquierda+anchura1+anchura2+anchura3+anchura4,origenY+pliegueInferior-pliegueInf4+alaInferior)
+			local corte24 = Point2D(origenX+alaIzquierda+anchura1+anchura2+anchura3+anchura4,origenY+pliegueInferior-pliegueInf4+alaInferior)
+			local corte25 = Point2D(origenX+alaIzquierda+anchura1+anchura2+anchura3+anchura4,origenY+pliegueInferior-pliegueInf4+alaInferior+pliegueInferior)
+			local corte26 = Point2D(origenX+alaIzquierda+anchura1+anchura2+anchura3+anchura4,origenY+pliegueInferior-pliegueInf4+alaInferior+pliegueInferior)
+			Contour:LineTo(corte20)
+			Contour:LineTo(corte21)
+			Contour:LineTo(corte22)
+			Contour:LineTo(corte23)
+			Contour:LineTo(corte24)
+			Contour:LineTo(corte25)
+			Contour:LineTo(corte26)
+	else --anchura4<pliegueInf4
+		local corte20 = Point2D(origenX+alaIzquierda+anchura1+anchura2+anchura3,origenY+alaInferior+pliegueInferior)
+		local corte21 = Point2D(origenX+alaIzquierda+anchura1+anchura2+anchura3+anchura4,origenY+pliegueInferior+alaInferior-anchura4)
+		local corte22 = Point2D(origenX+alaIzquierda+anchura1+anchura2+anchura3+anchura4,origenY+alaInferior+pliegueInferior)
+		Contour:LineTo(corte20)
+		Contour:LineTo(corte21)
+		Contour:LineTo(corte22)
+	end--]]
+	
+	
+	
+	local corte19 = Point2D(origenX+alaIzquierda+anchura1+anchura2+anchura3,origenY+alaInferior)
+	local corte20 = Point2D(origenX+alaIzquierda+anchura1+anchura2+anchura3+pliegueDer,origenY+alaInferior-pliegueDer)
+	local corte21 = Point2D(origenX+alaIzquierda+anchura1+anchura2+anchura3+pliegueDer,origenY+alaInferior)
+	local corte22 = Point2D(origenX+alaIzquierda+anchura1+anchura2+anchura3+pliegueDer+alaDerecha,origenY+alaInferior)
+	local corte23 = Point2D(origenX+alaIzquierda+anchura1+anchura2+anchura3+pliegueDer+alaDerecha,origenY+alaInferior+pliegueInferior-pliegueDer)
+	local corte24 = Point2D(origenX+alaIzquierda+anchura1+anchura2+anchura3+pliegueDer,origenY+alaInferior+pliegueInferior-pliegueDer)
+	local corte25 = Point2D(origenX+alaIzquierda+anchura1+anchura2+anchura3,origenY+alaInferior+pliegueInferior)
+	local corte26 = Point2D(origenX+alaIzquierda+anchura1+anchura2+anchura3+pliegueDer,origenY+alaInferior+pliegueInferior+pliegueDer)
+	local corte27 = Point2D(origenX+alaIzquierda+anchura1+anchura2+anchura3+pliegueDer+alaDerecha,origenY+alaInferior+pliegueInferior+pliegueDer)
+	local corte28 = Point2D(origenX+alaIzquierda+anchura1+anchura2+anchura3+pliegueDer+alaDerecha,origenY+alaInferior+pliegueInferior+alturaPlaca)
+	local corte29 = Point2D(origenX+alaIzquierda+anchura1+anchura2+anchura3+pliegueDer,origenY+alaInferior+pliegueInferior+alturaPlaca)
+	local corte30 = Point2D(origenX+alaIzquierda+anchura1+anchura2+anchura3+pliegueDer,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueDer)
+	local corte31 = Point2D(origenX+alaIzquierda+anchura1+anchura2+anchura3,origenY+alaInferior+pliegueInferior+alturaPlaca)
+	
+	Contour:LineTo(corte19)
+	Contour:LineTo(corte20)
+	Contour:LineTo(corte21)
+	Contour:LineTo(corte22)
+	Contour:LineTo(corte23)
+	Contour:LineTo(corte24)
+	Contour:LineTo(corte25)
+	Contour:LineTo(corte26)
+	Contour:LineTo(corte27)
+	Contour:LineTo(corte28)
+	Contour:LineTo(corte29)
+	Contour:LineTo(corte30)
+	Contour:LineTo(corte31)
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+	--Anchura 4 - Superior
+	--[[if anchura4>pliegueSuperior then
+		local corte32 = Point2D(origenX+alaIzquierda+anchura1+anchura2+anchura3+anchura4,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior)
+		local corte33 = Point2D(origenX+alaIzquierda+anchura1+anchura2+anchura3+pliegueSuperior,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior)
+		local corte34 = Point2D(origenX+alaIzquierda+anchura1+anchura2+anchura3+pliegueSuperior,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior)
+		local corte35 = Point2D(origenX+alaIzquierda+anchura1+anchura2+anchura3,origenY+alaInferior+pliegueInferior+alturaPlaca)
+		Contour:LineTo(corte32)
+		Contour:LineTo(corte33)
+		Contour:LineTo(corte34)
+		Contour:LineTo(corte35)
+	else --anchura4<pliegueSuperior
+		local corte32 = Point2D(origenX+alaIzquierda+anchura1+anchura2+anchura3+anchura4,origenY+alaInferior+pliegueInferior+alturaPlaca+anchura4)
+		local corte33 = Point2D(origenX+alaIzquierda+anchura1+anchura2+anchura3,origenY+alaInferior+pliegueInferior+alturaPlaca)
+		Contour:LineTo(corte32)
+		Contour:LineTo(corte33)
+	end--]]
+
+
+
+
+	--Anchura 3 - Superior
+	if anchura3>(pliegueSuperior*2) then
+		local corte28 = Point2D(origenX+alaIzquierda+anchura1+anchura2+anchura3-pliegueSuperior,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior)
+		local corte29 = Point2D(origenX+alaIzquierda+anchura1+anchura2+anchura3-pliegueSuperior,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior)
+		local corte30 = Point2D(origenX+alaIzquierda+anchura1+anchura2+pliegueSuperior,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior)
+		local corte31 = Point2D(origenX+alaIzquierda+anchura1+anchura2+pliegueSuperior,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior)
+		local corte32 = Point2D(origenX+alaIzquierda+anchura1+anchura2,origenY+alaInferior+pliegueInferior+alturaPlaca)
+		Contour:LineTo(corte28)
+		Contour:LineTo(corte29)
+		Contour:LineTo(corte30)
+		Contour:LineTo(corte31)
+		Contour:LineTo(corte32)
+	else
+		local corte28 = Point2D(origenX+alaIzquierda+anchura1+anchura2+anchura3/2,origenY+alaInferior+pliegueInferior+alturaPlaca+anchura3/2)
+		local corte29 = Point2D(origenX+alaIzquierda+anchura1+anchura2,origenY+alaInferior+pliegueInferior+alturaPlaca)
+		Contour:LineTo(corte28)
+		Contour:LineTo(corte29)
+	end
+	
+	
+	--Anchura 2 - Superior
+	if anchura2>(pliegueSuperior*2) then
+		local corte33 = Point2D(origenX+alaIzquierda+anchura1+anchura2-pliegueSuperior,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior)
+		local corte34 = Point2D(origenX+alaIzquierda+anchura1+anchura2-pliegueSuperior,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior)
+		local corte35 = Point2D(origenX+alaIzquierda+anchura1+pliegueSuperior,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior)
+		local corte36 = Point2D(origenX+alaIzquierda+anchura1+pliegueSuperior,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior)
+		local corte37 = Point2D(origenX+alaIzquierda+anchura1,origenY+alaInferior+pliegueInferior+alturaPlaca)
+		Contour:LineTo(corte33)
+		Contour:LineTo(corte34)
+		Contour:LineTo(corte35)
+		Contour:LineTo(corte36)
+		Contour:LineTo(corte37)
+	else
+		local corte33 = Point2D(origenX+alaIzquierda+anchura1+anchura2/2,origenY+alaInferior+pliegueInferior+alturaPlaca+anchura2/2)
+		local corte34 = Point2D(origenX+alaIzquierda+anchura1,origenY+alaInferior+pliegueInferior+alturaPlaca)
+		Contour:LineTo(corte33)
+		Contour:LineTo(corte34)
+	end
+	
+	
+	--Anchura 1 - Superior
+	if anchura1>(pliegueSuperior*2) then
+		local corte38 = Point2D(origenX+alaIzquierda+anchura1-pliegueSuperior,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior)
+		local corte39 = Point2D(origenX+alaIzquierda+anchura1-pliegueSuperior,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior)
+		local corte40 = Point2D(origenX+alaIzquierda,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior+alaSuperior)
+		local corte41 = Point2D(origenX+alaIzquierda,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior)
+		Contour:LineTo(corte38)
+		Contour:LineTo(corte39)
+		Contour:LineTo(corte40)
+		Contour:LineTo(corte41)
+	else
+		local corte38 = Point2D(origenX+alaIzquierda,origenY+alaInferior+pliegueInferior+alturaPlaca+anchura1)
+		local corte39 = Point2D(origenX+alaIzquierda,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior)
+		Contour:LineTo(corte38)
+		Contour:LineTo(corte39)
+	end
+	
+	
+	
+	local corte40 = Point2D(origenX+alaIzquierda-pliegueSuperior,origenY+alaInferior+pliegueInferior+alturaPlaca+pliegueSuperior)
+	local corte41 = Point2D(origenX+alaIzquierda,origenY+alaInferior+pliegueInferior+alturaPlaca)
+	local corte42 = Point2D(origenX,origenY+alaInferior+pliegueInferior+alturaPlaca-alaIzquierda)
+	local corte43 = Point2D(origenX,origenY+alaInferior+pliegueInferior+alaIzquierda)
+	local corte44 = Point2D(origenX+alaIzquierda,origenY+alaInferior+pliegueInferior)
+	local corte45 = Point2D(origenX,origenY+alaInferior+pliegueInferior-alaIzquierda)
+	local corte46 = Point2D(origenX,origenY+alaInferior+alaIzquierda)
+	local corte47 = Point2D(origenX+alaIzquierda,origenY+alaInferior)
+	local corte48 = Point2D(origenX+alaIzquierda-alaInferior,origenY)
+	local corte49 = Point2D(origenX+alaIzquierda,origenY)
+	
+	Contour:LineTo(corte40)
+	Contour:LineTo(corte41)
+	Contour:LineTo(corte42)
+	Contour:LineTo(corte43)
+	Contour:LineTo(corte44)
+	Contour:LineTo(corte45)
+	Contour:LineTo(corte46)
+	Contour:LineTo(corte47)
+	Contour:LineTo(corte48)
+	Contour:LineTo(corte49)
+	
+	
+	
+	
+	--------------------------------------------------------
+	local cad_object = CreateCadContour(Contour)
+	local cur_layer = doc.LayerManager:GetActiveLayer()
+	local layer = doc.LayerManager:GetLayerWithName("Corte")
+	layer:AddObject(cad_object, true)
+    layer:SetColor(0.9,0.2,0.2)
+	layer.Visible = true 
+	doc.LayerManager:SetActiveLayer(cur_layer)
+	doc:Refresh2DView()	
+	-------------------------------------------------------
+	
+	return true; 
+end
+
 
 
 

@@ -1,0 +1,261 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Creador de Paneles</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/user.css" rel="stylesheet">
+
+	<!-- Javascript -->
+	<script language='JavaScript' type='text/javascript'>
+
+    function check_value(fieldvalue)
+    {    
+		if (fieldvalue == 0){
+			document.getElementById("textoMargenFresado").style.visibility="visible"; <!--SE VE-->
+			document.getElementById("margenFresado").style.visibility="visible";
+		} else if (fieldvalue==1){
+			document.getElementById("textoMargenFresado").style.visibility="hidden"; <!--NO SE VE-->
+			document.getElementById("margenFresado").style.visibility="hidden";
+		}
+		
+    }
+	</script>
+
+</head>
+
+
+
+
+
+<body role="document">
+<div class="container-fluid">
+
+	<div class="row"> <!-- primera fila -->
+	
+		
+		<div class="col-xs-12"> <!-- columna modelo A -->
+		
+			<div class="panel panel-default">
+			
+				<div class="panel-heading" style="font-family: cursive; font-size: 150%;"  ><center><strong>      REFERENCIA F17       </strong></center></div>
+				
+				
+				
+				<div class="panel-body">
+										
+					     <center><input type="image" src="images/REF_017cotas.jpg" alt='ReferenciaAH' width='520' height='275'/></center>
+						 
+						 <label for="textoDescriptivo" style="font-family: cursive"> *Todas las dimensiones deben ir en milimetros (mm) </label>
+						
+					
+				</div> <!-- cierre cuerpo panel -->
+			</div> <!-- cierre panel -->
+		</div> <!-- fin columna imagen Referencia AH -->
+						
+	</div> <!-- fin primera fila imagen Referencia AH -->
+
+	
+	<div class="row"> <!-- segunda fila -->
+
+		<div class="col-xs-3"> <!-- columna datos 1 -->
+		
+			<div class="panel panel-default">
+			
+				<div class="panel-heading" style="font-family: cursive;"><center><h4><strong>  Dimensiones Placa </strong></h4></center></div>
+				
+				
+				
+				<div class="panel-body" >
+				
+					
+						
+							<div class="form-group" >
+
+								
+							
+								<label for="alturaPlaca" style="font-family: cursive">[A] Altura placa:</label>
+								<input type="text" class="form-control" id="alturaPlaca" name="alturaPlaca" placeholder="Altura placa" maxlength="8" style="font-family: cursive"/> 
+								<br>
+								
+								<label for="anchura1" style="font-family: cursive">[B1] Anchura 1:</label>
+								<input type="text" class="form-control" id="anchura1" name="anchura1" placeholder="anchura 1" maxlength="8" style="font-family: cursive"/> 
+								<br>
+								
+								<label for="anchura2" style="font-family: cursive">[B2] Anchura 2:</label>
+								<input type="text" class="form-control" id="anchura2" name="anchura2" placeholder="anchura 2" maxlength="8" style="font-family: cursive"/> 
+								<br>
+								
+								<label for="anchura3" style="font-family: cursive">[B3] Anchura 3:</label>
+								<input type="text" class="form-control" id="anchura3" name="anchura3" placeholder="anchura 3" maxlength="8" style="font-family: cursive"/> 
+								
+								
+								
+						   </div>
+								
+								
+								
+				</div> <!-- cierre cuerpo panel -->
+			</div> <!-- cierre panel -->
+		</div> <!-- fin columna datos 1 -->
+		
+       
+
+		<div class="col-xs-3"> <!-- columna datos 3 -->
+		
+			<div class="panel panel-default">
+			
+				<div class="panel-heading" style="font-family: cursive;"><center><h4><strong>  Pliegues/Alas </strong></h4></center></div>
+				
+				
+				
+				<div class="panel-body" >
+				
+					
+						
+							<div class="form-group" >
+								<label for="pliegueSuperior" style="font-family: cursive">[P1] Pliegue superior:</label>
+								<input type="text" class="form-control" id="pliegueSuperior" name="pliegueSuperior" placeholder="pliegue superior" maxlength="4" style="font-family: cursive"/> .
+								<br>
+								
+								<label for="pliegueDer" style="font-family: cursive">[P2] Pliegue derecha:</label>
+								<input type="text" class="form-control" id="pliegueDer" name="pliegueDer" placeholder="pliegue derecha" maxlength="4" style="font-family: cursive"/> .
+								<br>
+								
+								<label for="alaSuperior" style="font-family: cursive">[C1] Ala superior:</label>
+								<input type="text" class="form-control" id="alaSuperior" name="alaSuperior" placeholder="Ala superior" maxlength="4" style="font-family: cursive"/> 
+								<br>
+								
+								<label for="alaIzquierda" style="font-family: cursive">[C2] Ala izquierda:</label>
+								<input type="text" class="form-control" id="alaIzquierda" name="alaIzquierda" placeholder="Ala izquierda" maxlength="4" style="font-family: cursive"/> 
+								<br>
+								
+								<label for="alaDerecha" style="font-family: cursive">[C3] Ala derecha:</label>
+								<input type="text" class="form-control" id="alaDerecha" name="alaDerecha" placeholder="Ala derecha" maxlength="4" style="font-family: cursive"/> 
+								<br>							
+								
+								<label for="alaInferior" style="font-family: cursive">[C4] Ala inferior:</label>
+								<input type="text" class="form-control" id="alaInferior" name="alaInferior" placeholder="Ala inferior" maxlength="4" style="font-family: cursive"/> 
+								
+								
+						   </div>
+					
+							
+					
+				</div> <!-- cierre cuerpo panel -->
+			</div> <!-- cierre panel -->
+		</div> <!-- fin columna datos 3 -->
+
+		
+		
+		
+		
+		<div class="col-xs-3"> <!-- columna datos 3 -->
+		
+			<div class="panel panel-default">
+			
+				<div class="panel-heading" style="font-family: cursive;"><center><h4><strong>  Pliegues Inferiores </strong></h4></center></div>
+				
+				
+				
+				<div class="panel-body" >
+				
+					
+						
+							<div class="form-group" >
+								
+								<label for="pliegueInf1" style="font-family: cursive">[P3] Pliegue inferior 1:</label>
+								<input type="text" class="form-control" id="pliegueInf1" name="pliegueInf1" placeholder="pliegue inf1" maxlength="4" style="font-family: cursive"/> .
+								<br>
+								
+								<label for="pliegueInf2" style="font-family: cursive">[P3] Pliegue inferior 2:</label>
+								<input type="text" class="form-control" id="pliegueInf2" name="pliegueInf2" placeholder="pliegue inf2" maxlength="4" style="font-family: cursive"/> .
+								<br>
+								
+								<label for="pliegueInf3" style="font-family: cursive">[P3] Pliegue inferior 3:</label>
+								<input type="text" class="form-control" id="pliegueInf3" name="pliegueInf3" placeholder="pliegue inf3" maxlength="4" style="font-family: cursive"/> .
+								
+						   </div>
+					
+							
+					
+				</div> <!-- cierre cuerpo panel -->
+			</div> <!-- cierre panel -->
+		</div> <!-- fin columna datos 3 -->
+		
+		
+		
+		
+		
+		
+		<div class="col-xs-3"> <!-- columna datos 4 -->
+		
+			<div class="panel panel-default">
+			
+				<div class="panel-heading" style="font-family: cursive;"><center><h4><strong>  Otros parametros </strong></h4></center></div>
+				
+				
+				
+				<div class="panel-body" >
+				
+					
+						
+							<div class="form-group" >
+							
+								<label for="textoDescriptivo" style="font-family: cursive"> Nombre de la placa:</label>							
+								<input type="text" class="form-control" id="textoDescriptivo" name="textoDescriptivo" placeholder="Nombre de la placa" style="font-family: cursive"/> 
+								<br>
+								
+								<label for="margenMecanizado" style="font-family: cursive"> Margen cálculo área:</label>
+								<input type="text" class="form-control" id="margenMecanizado" name="margenMecanizado" placeholder="Margen mecanizado" maxlength="4" style="font-family: cursive"/>
+								<br>
+								
+								<label for="crearFresado" style="font-family: cursive"> ¿Dibujar fresado exterior? </label>
+								<center>
+								SI <input class="LuaButton" type="radio" id="crearFresado" name="crearFresado" value="0" onclick='check_value(0)'/> 
+								NO <input class="LuaButton" type="radio" id="noCrearFresado" name="crearFresado" value="1" checked="checked" onclick='check_value(1)' /> 
+								</center>
+								
+								<label for="margenFresado" id="textoMargenFresado" style="font-family: cursive ; visibility: hidden" > Margen fresado:</label>
+								<input type="text" class="form-control" id="margenFresado" name="margenFresado" placeholder="Margen Fresado" maxlength="8" style="font-family: cursive ; visibility: hidden"/> 
+								
+								
+								
+						   </div>
+								
+								
+							
+				</div> <!-- cierre cuerpo panel -->
+			</div> <!-- cierre panel -->
+		</div> <!-- fin columna datos 4 -->
+
+
+
+		
+
+
+
+		
+	</div> <!-- fin segunda fila -->
+	
+	
+	
+	<div class="row"> <!--  fila botones -->
+
+		<div class="col-xs-12">
+				
+				<center><button class="LuaButton" id="aceptarF" type="button" style="background-color:chartreuse;color:black; font-family:cursive;font-size:180%;text-align:center;"> CREAR </button></center>
+				<br>
+		</div>
+		
+		
+	</div> <!-- fin fila botones -->
+	
+	
+</div>
+</body>
+</html>

@@ -4,8 +4,8 @@ require "strict"
 
 
  
---rutaPaqueteArchivosAuxiliares=";C:/Program Files/KSDpanel/archivosAuxiliares/?.lua"  --[CAMBIAR PARA HACER EL INSTALADOR]
-rutaPaqueteArchivosAuxiliares=";C:/Users/Public/Documents/Vectric Files/Gadgets/Cut2D Pro V9.5/Paneles/archivosAuxiliares/?.lua" 
+rutaPaqueteArchivosAuxiliares=";C:/Program Files/KSDpanel/archivosAuxiliares/?.lua"  --[CAMBIAR PARA HACER EL INSTALADOR]
+--rutaPaqueteArchivosAuxiliares=";C:/Users/Public/Documents/Vectric Files/Gadgets/Cut2D Pro V9.5/Paneles/archivosAuxiliares/?.lua" 
 
 
 

@@ -222,7 +222,7 @@ doc = VectricJob()
 
 
 --Tamaño de la ventana [en pixeles]
-tamanoVentana=1
+tamanoVentana=3
 
 if tamanoVentana==1 then --GRANDE
 	tamX=1024--1920
