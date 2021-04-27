@@ -6,12 +6,12 @@ Paso 0: Poner el tamaño de ventana "Pequeño" por defecto
 
 Paso 1: Cambiar la rutaPaqueteArchivosAuxiliares en "KSDpale.lua" [lineas 7 y 8] [la ruta buena es ";C:/Program Files/KSDpanel/archivosAuxiliares/?.lua"]
 
-Paso 2: Dentro de la carpeta c:\instalador-ksdpanel, reemplazar los "archivosAuxiliares" y "KSDpanel.lua" por las versiones actualizadas. 
+Paso 2: Dentro de la carpeta c:\instalador-ksdpanel, reemplazar los "archivosAuxiliares" y "KSDpanel.lua" por las versiones actualizadas.
 
 Paso 3: Seguidamente vamos a la carpeta "archivosAuxiliares", abrimos "VariablesExternasGlobales.lua" y ponemos la variable "remoto=1"
 
 Paso 4: En el mismo archivo ("VariablesExternasGlobales.lua") asignar ruta_carpeta_PanelPrincipal al cliente correspondiente. Para ello solo hay que 
-	cambiar la parte final de la direccion: 
+	cambiar la parte final de la direccion:
 	ruta_carpeta_panelPrincipal="https://cuttool.es/panelCam/ClienteX-XXXXX"
 
 Paso 5: Abrimos "instaladorKSDpanel.iss" con inno setup, y elegimos la versión que está utilizando el cliente del software CUT2D (8.5, 9.5, 10.5,...). Esto se cambia

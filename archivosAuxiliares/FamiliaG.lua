@@ -19,9 +19,9 @@ function OnLuaButton_modeloG(framePrincipal)
 		end
 		
 		
-		local modelo000 = HTML_Dialog(false, html_path, tamX, tamY, "BANDEJA CLIENTES 004")
+		local modelo000 = HTML_Dialog(false, html_path, tamX, tamY, "BANDEJA CLIENTES G1")
 		
-		textoDescriptivo="BANDEJA 004"
+		textoDescriptivo="BANDEJA G1"
 		alturaPlaca=500 anchuraPlaca=1000 margenM=107.5401 margenL=565.4093		
 		alaSuperior=45 alaInferior=45 alaIzquierda=45 alaDerecha=45 pliegueSuperior=45  
 		
@@ -50,9 +50,9 @@ function OnLuaButton_modeloG(framePrincipal)
 		end
 		
 		
-		local modelo000 = HTML_Dialog(false, html_path, tamX, tamY, "BANDEJA CLIENTES 005")
+		local modelo000 = HTML_Dialog(false, html_path, tamX, tamY, "BANDEJA CLIENTES G2")
 		
-		textoDescriptivo="BANDEJA 005"
+		textoDescriptivo="BANDEJA G2"
 		alturaPlaca=500 anchuraPlaca=1000 margenL=565.4093		
 		alaSuperior=45 alaInferior=45 alaIzquierda=45 alaDerecha=45 pliegueSuperior=45  
 		
@@ -81,9 +81,9 @@ function OnLuaButton_modeloG(framePrincipal)
 		end
 		
 		
-		local modelo000 = HTML_Dialog(false, html_path, tamX, tamY, "BANDEJA CLIENTES 006")
+		local modelo000 = HTML_Dialog(false, html_path, tamX, tamY, "BANDEJA CLIENTES G3")
 		
-		textoDescriptivo="BANDEJA 006"
+		textoDescriptivo="BANDEJA G3"
 		alturaPlaca=500 anchuraPlaca=733.5821 margenL=985.9861	margenS=522.6872 margenM=311.5437
 		alaSuperior=45 alaInferior=45 alaIzquierda=45 alaDerecha=45 pliegueSuperior=50  	
 		
@@ -117,9 +117,9 @@ function OnLuaButton_modeloG(framePrincipal)
 		end
 		
 		
-		local modelo000 = HTML_Dialog(false, html_path, tamX, tamY, "BANDEJA CLIENTES 012")
+		local modelo000 = HTML_Dialog(false, html_path, tamX, tamY, "BANDEJA CLIENTES G4")
 		
-		textoDescriptivo="[012]Tapa Machon"
+		textoDescriptivo="[G4]Tapa Machon"
 		alturaPlaca=500 anchuraPlaca=1000
 		pliegueIzq1=15 pliegueIzq2=30 pliegueIzq3=80
 		pliegueInf1=15 pliegueInf2=30 pliegueInf3=80
