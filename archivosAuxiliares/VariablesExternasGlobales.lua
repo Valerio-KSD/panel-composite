@@ -136,15 +136,21 @@ modelo=0
 --[ref001=101 - ref002=102 - ref003=103 - ref004=104 - ref005=105]
 
 
+--PIEZA ESPECIAL 001 - 002
+anchura1=100
+anchura2=100
+anchura3=100
+anchura4=100
+anchura5=100
+anchura6=100
+anchura7=100
+anchura8=100
+anchura9=100
+anchura10=100
+
+dibujarForma=1
 
 --PIEZA ESPECIAL 001 - 002
-anchura1=50
-anchura2=130
-anchura3=285
-anchura4=1745
-anchura5=300
-anchura6=130
-anchura7=50
 alturaPlaca=457
 alaInferior=34
 pliegueSuperior=35

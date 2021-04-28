@@ -1,0 +1,414 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Creador de Paneles</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/user.css" rel="stylesheet">
+	
+	
+	
+	
+	
+	
+	<!-- Javascript -->
+	<script language='JavaScript' type='text/javascript'>
+		
+		
+		
+		function check_value(value) {
+			
+			<!--TRAMO SUPERIOR-->
+			if (value == 1) {
+				document.getElementById("alaSuperiorText").style.visibility="visible";
+				document.getElementById("alaSuperior").style.visibility="visible";
+				document.getElementById("pliegueSuperiorText").style.visibility="visible";
+				document.getElementById("pliegueSuperior").style.visibility="visible";
+			}
+			
+			else if (value == 2) {
+				document.getElementById("alaSuperiorText").style.visibility="visible";
+				document.getElementById("alaSuperior").style.visibility="visible";
+				document.getElementById("pliegueSuperiorText").style.visibility="hidden";
+				document.getElementById("pliegueSuperior").style.visibility="hidden";
+			}
+			
+			else if (value==3) {
+				document.getElementById("alaSuperiorText").style.visibility="hidden";
+				document.getElementById("alaSuperior").style.visibility="hidden";
+				document.getElementById("pliegueSuperiorText").style.visibility="hidden";
+				document.getElementById("pliegueSuperior").style.visibility="hidden";
+			}
+			
+			<!--TRAMO INFERIOR-->
+			else if (value == 4) {
+				document.getElementById("alaInferiorText").style.visibility="visible";
+				document.getElementById("alaInferior").style.visibility="visible";
+				document.getElementById("pliegueInferiorText").style.visibility="visible";
+				document.getElementById("pliegueInferior").style.visibility="visible";
+			}
+			
+			else if (value == 5) {
+				document.getElementById("alaInferiorText").style.visibility="visible";
+				document.getElementById("alaInferior").style.visibility="visible";
+				document.getElementById("pliegueInferiorText").style.visibility="hidden";
+				document.getElementById("pliegueInferior").style.visibility="hidden";
+			}
+			
+			else if (value == 6) {
+				document.getElementById("alaInferiorText").style.visibility="hidden";
+				document.getElementById("alaInferior").style.visibility="hidden";
+				document.getElementById("pliegueInferiorText").style.visibility="hidden";
+				document.getElementById("pliegueInferior").style.visibility="hidden";
+			}
+			
+			<!--TRAMO IZQUIERDA-->
+			else if (value == 7) {
+				document.getElementById("alaIzquierdaText").style.visibility="visible";
+				document.getElementById("alaIzquierda").style.visibility="visible";
+				document.getElementById("pliegueIzqText").style.visibility="visible";
+				document.getElementById("pliegueIzq").style.visibility="visible";
+			}
+			
+			else if (value == 8) {
+				document.getElementById("alaIzquierdaText").style.visibility="visible";
+				document.getElementById("alaIzquierda").style.visibility="visible";
+				document.getElementById("pliegueIzqText").style.visibility="hidden";
+				document.getElementById("pliegueIzq").style.visibility="hidden";
+			}
+			
+			else if (value == 9) {
+				document.getElementById("alaIzquierdaText").style.visibility="hidden";
+				document.getElementById("alaIzquierda").style.visibility="hidden";
+				document.getElementById("pliegueIzqText").style.visibility="hidden";
+				document.getElementById("pliegueIzq").style.visibility="hidden";
+			}
+			
+			<!--TRAMO DERECHA-->
+			else if (value == 10) {
+				document.getElementById("alaDerechaText").style.visibility="visible";
+				document.getElementById("alaDerecha").style.visibility="visible";
+				document.getElementById("pliegueDerText").style.visibility="visible";
+				document.getElementById("pliegueDer").style.visibility="visible";
+			}
+			
+			else if (value == 11) {
+				document.getElementById("alaDerechaText").style.visibility="visible";
+				document.getElementById("alaDerecha").style.visibility="visible";
+				document.getElementById("pliegueDerText").style.visibility="hidden";
+				document.getElementById("pliegueDer").style.visibility="hidden";
+			}
+			
+			else if (value == 12) {
+				document.getElementById("alaDerechaText").style.visibility="hidden";
+				document.getElementById("alaDerecha").style.visibility="hidden";
+				document.getElementById("pliegueDerText").style.visibility="hidden";
+				document.getElementById("pliegueDer").style.visibility="hidden";
+			}
+		}
+		
+	
+	
+	
+	</script>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+
+</head>
+
+<body role="document">
+	<div class="container-fluid">
+		
+		<div class="row"> <!-- primera fila-->
+			<div class="col-xs-12"> <!-- columna modelo A-->
+				<div class="panel panel-default"> 
+					<div class="panel-heading" style="font-family: cursive"><h3><center><strong>  BANDEJA CLIENTES F3  </strong></center></h3></div>
+					
+					<div class="panel-body">
+				
+										
+					     <center><input type="image" src="images/REF_015cotas.jpg" alt='Referencia000' width='500' height='250'/></center>
+						 
+						 <label for="textoDescriptivo" style="font-family: cursive"> *Todas las dimensiones deben ir en milimetros </label>
+						
+						
+						
+					
+				</div> <!-- cierre cuerpo panel-->
+				
+			</div> <!-- cierre panel-->
+		</div> <!-- fin columna imagen Referencia AH-->
+		
+	</div> <!-- fin primera fila imagen Referencia AH -->
+
+
+
+
+
+	
+	<div class="row"> <!-- segunda fila -->
+
+		<div class="col-xs-2"> <!-- columna datos 1 -->
+		
+			<div class="panel panel-default">
+			
+				<div class="panel-heading" style="font-family: cursive;"><center><h4><strong>  Dimensiones Placa </strong></h4></center></div>
+				
+				
+				
+				<div class="panel-body" >
+				
+					
+						
+							<div class="form-group" >
+
+								<label for="alturaPlaca" style="font-family: cursive" >Altura Placa:</label>
+								<input type="text" class="form-control" id="alturaPlaca" name="alturaPlaca" placeholder="Altura Placa" maxlength="7" style="font-family: cursive"/>
+								<br><br>
+							
+								<label for="anchura1" style="font-family: cursive">Anchura 1:</label>
+								<input type="text" class="form-control" id="anchura1" name="anchura1" placeholder="Anchura 1" maxlength="8" style="font-family: cursive"/> 
+								<br>
+								
+								<label for="anchura2" style="font-family: cursive">Anchura 2:</label>
+								<input type="text" class="form-control" id="anchura2" name="anchura2" placeholder="Anchura 2" maxlength="8" style="font-family: cursive"/> 
+								<br>
+								
+								<label for="anchura3" style="font-family: cursive">Anchura 3:</label>
+								<input type="text" class="form-control" id="anchura3" name="anchura3a" placeholder="Anchura 3" maxlength="8" style="font-family: cursive" /> 
+								<br>
+								
+								<label for="anchura4" style="font-family: cursive">Anchura 4:</label>
+								<input type="text" class="form-control" id="anchura4" name="anchura4" placeholder="Anchura 4" maxlength="8" style="font-family: cursive"/> 
+								<br>
+								
+								<label for="anchura5" style="font-family: cursive">Anchura 5:</label>
+								<input type="text" class="form-control" id="anchura5" name="anchura5" placeholder="Anchura 5" maxlength="8" style="font-family: cursive"/> 
+								<br>
+								
+								<label for="anchura6" style="font-family: cursive">Anchura 6:</label>
+								<input type="text" class="form-control" id="anchura6" name="anchura6" placeholder="Anchura 6" maxlength="8" style="font-family: cursive"/> 
+								<br>
+								
+								<label for="anchura7" style="font-family: cursive">Anchura 7:</label>
+								<input type="text" class="form-control" id="anchura7" name="anchura7" placeholder="Anchura 7" maxlength="8" style="font-family: cursive"/> 
+								<br>
+								
+								<label for="anchura8" style="font-family: cursive">Anchura 8:</label>
+								<input type="text" class="form-control" id="anchura8" name="anchura8" placeholder="Anchura 8" maxlength="8" style="font-family: cursive"/> 
+								<br>
+								
+								<label for="anchura9" style="font-family: cursive">Anchura 9:</label>
+								<input type="text" class="form-control" id="anchura9" name="anchura9" placeholder="Anchura 9" maxlength="8" style="font-family: cursive"/> 
+								<br>
+								
+								<label for="anchura10" style="font-family: cursive">Anchura 10:</label>
+								<input type="text" class="form-control" id="anchura10" name="anchura10" placeholder="Anchura 10" maxlength="8" style="font-family: cursive"/> 
+								<br><br><br><br><br>
+								
+								
+								
+								
+								
+								
+								<label for="textoDescriptivo" style="font-family: cursive"> Nombre de la placa:</label>
+								<input type="text" class="form-control" id="textoDescriptivo" name="textoDescriptivo" placeholder="Nombre de la placa" style="font-family: cursive"/> 
+								<br>
+								
+								<label for="margenMecanizado" style="font-family: cursive"> Margen cálculo área:</label>
+								<input type="text" class="form-control" id="margenMecanizado" name="margenMecanizado" placeholder="Margen mecanizado" maxlength="4" style="font-family: cursive"/>
+							
+
+							
+						   </div>
+					
+						
+					
+				</div> <!-- cierre cuerpo panel -->
+			</div> <!-- cierre panel -->
+		</div> <!-- fin columna datos 1 -->
+		
+		
+		
+		
+		
+		
+		
+		<div class="col-xs-2"> <!-- columna datos 3 -->
+			<div class="panel panel-default">
+				<div class="panel-heading" style="font-family: cursive;"><center><h4><strong> Pliegue Superior </strong></h4></center></div>
+					<div class="panel-body" >
+								
+								<label for="alaDerecha" style="font-family: cursive">Tipo de pliegue:</label><br>
+								
+								<input type="radio" class="LuaButton" id="pliegueDobleSup" name="superior"  checked="checked" onclick='check_value(1)'> 
+								Pliegue doble
+								<br>
+								<input type="radio" class="LuaButton" id="pliegueSimpleSup" name="superior" onclick='check_value(2)'> 
+								Pliegue simple
+								<br>
+								<input type="radio" class="LuaButton" id="ningunoSup" name="superior" onclick='check_value(3)'> 
+								Ninguno
+								<br><br>
+								
+								<label for="alaSuperior" id="alaSuperiorText" style="font-family: cursive"> Pliegue 1: </label>
+								<input type="text" class="form-control" id="alaSuperior" name="alaSuperior" placeholder="Ala superior" maxlength="4" style="font-family: cursive"/> 
+								<br>
+								
+								<label for="pliegueSuperior" id="pliegueSuperiorText" style="font-family: cursive"> Pliegue 2: </label>
+								<input type="text" class="form-control" id="pliegueSuperior" name="pliegueSuperior" placeholder="Pliegue superior" maxlength="4" style="font-family: cursive"/> 
+								<br>
+								
+								
+								<!--<label for="alaIzquierda" id='pliegueIzq2text' style="font-family: cursive"> Izq 2 </label>
+								<input class="LuaButton" type="radio" id="pliegueIzq2" name="pliegueIzq" value="active"/>          
+								<br><br><br><br><br>-->
+								
+								
+				</div> <!-- cierre cuerpo panel -->
+			</div> <!-- cierre panel -->
+		</div> <!-- fin columna datos 3 -->
+		
+		
+		
+		
+		
+		
+		<div class="col-xs-2"> <!-- columna datos 1 -->
+			<div class="panel panel-default">
+				<div class="panel-heading" style="font-family: cursive;"><center><h4><strong> Pliegue inferior </strong></h4></center></div>
+					<div class="panel-body" >
+						
+								<label for="alaDerecha" style="font-family: cursive">Tipo de pliegue:</label><br>
+								
+								<input type="radio" class="LuaButton" id="pliegueDobleInf" name="inferior"  checked="checked" onclick='check_value(4)'> 
+								Pliegue doble
+								<br>
+								<input type="radio" class="LuaButton" id="pliegueSimpleInf" name="inferior" onclick='check_value(5)'> 
+								Pliegue simple
+								<br>
+								<input type="radio" class="LuaButton" id="ningunoInf" name="inferior" onclick='check_value(6)'> 
+								Ninguno
+								<br><br>
+								
+								<label for="alaInferior" id="alaInferiorText" style="font-family: cursive"> Pliegue 1: </label>
+								<input type="text" class="form-control" id="alaInferior" name="alaInferior" placeholder="Ala inferior" maxlength="4" style="font-family: cursive"/> 
+								<br>
+								
+								<label for="pliegueInferior" id="pliegueInferiorText" style="font-family: cursive"> Pliegue 2: </label>
+								<input type="text" class="form-control" id="pliegueInferior" name="pliegueInferior" placeholder="Pliegue inferior" maxlength="4" style="font-family: cursive"/> 
+								<br>
+								
+					
+								
+							
+							
+				</div> <!-- cierre panel -->
+			</div> <!-- fin columna datos 1 -->
+		</div> <!-- fin segunda fila -->
+		
+		
+		
+		
+		
+		<div class="col-xs-2"> <!-- columna datos 1 -->
+			<div class="panel panel-default">
+				<div class="panel-heading" style="font-family: cursive;"><center><h4><strong>  Pliegue izquierda </strong></h4></center></div>
+					<div class="panel-body" >
+						
+								<label for="alaDerecha" style="font-family: cursive">Tipo de pliegue:</label><br>
+								
+								<input type="radio" class="LuaButton" id="pliegueDobleInf" name="izquierda"  checked="checked" onclick='check_value(7)'> 
+								Pliegue doble
+								<br>
+								<input type="radio" class="LuaButton" id="pliegueSimpleInf" name="izquierda" onclick='check_value(8)'> 
+								Pliegue simple
+								<br>
+								<input type="radio" class="LuaButton" id="ningunoInf" name="izquierda" onclick='check_value(9)'> 
+								Ninguno
+								<br><br>
+								
+								<label for="alaIzquierda" id="alaIzquierdaText" style="font-family: cursive"> Pliegue 1: </label>
+								<input type="text" class="form-control" id="alaIzquierda" name="alaIzquierda" placeholder="Ala izquierda" maxlength="4" style="font-family: cursive"/> 
+								<br>
+								
+								<label for="pliegueIzq" id="pliegueIzqText" style="font-family: cursive"> Pliegue 2: </label>
+								<input type="text" class="form-control" id="pliegueIzq" name="pliegueIzq" placeholder="Pliegue izquierda" maxlength="4" style="font-family: cursive"/> 
+								<br>
+						
+						
+						
+				</div> <!-- cierre cuerpo panel -->
+			</div> <!-- cierre panel -->
+		</div> <!-- fin columna datos 1 -->
+		
+		
+		
+		
+		
+	
+		<div class="col-xs-2"> <!-- columna datos 1 -->
+			<div class="panel panel-default">
+				<div class="panel-heading" style="font-family: cursive;"><center><h4><strong>  Pliegue Derecha </strong></h4></center></div>
+					<div class="panel-body" >
+							
+								<label for="alaDerecha" style="font-family: cursive">Tipo de pliegue:</label><br>
+								
+								<input type="radio" class="LuaButton" id="pliegueDobleInf" name="derecha"  checked="checked" onclick='check_value(10)'> 
+								Pliegue doble
+								<br>
+								<input type="radio" class="LuaButton" id="pliegueSimpleInf" name="derecha" onclick='check_value(11)'> 
+								Pliegue simple
+								<br>
+								<input type="radio" class="LuaButton" id="ningunoInf" name="derecha" onclick='check_value(12)'> 
+								Ninguno
+								<br><br>
+								
+								<label for="alaDerecha" id="alaDerechaText" style="font-family: cursive"> Pliegue 1: </label>
+								<input type="text" class="form-control" id="alaDerecha" name="alaDerecha" placeholder="Ala derecha" maxlength="4" style="font-family: cursive"/> 
+								<br>
+								
+								<label for="pliegueDer" id="pliegueDerText" style="font-family: cursive"> Pliegue 2: </label>
+								<input type="text" class="form-control" id="pliegueDer" name="pliegueDer" placeholder="Pliegue derecha" maxlength="4" style="font-family: cursive"/> 
+								<br>
+							
+							
+							
+				</div> <!-- cierre cuerpo panel -->
+			</div> <!-- cierre panel -->
+		</div> <!-- fin columna datos 1 -->
+	
+	
+	
+	
+	
+	
+	
+	<div class="row"> <!--  fila botones -->
+
+		<div class="col-xs-12">
+				
+				<center><button class="LuaButton" id="aceptarF" type="button" style="background-color:chartreuse;color:black; font-family:cursive;font-size:180%;text-align:center;"> CREAR </button></center>
+				<br>
+		</div>
+		
+		
+	</div> <!-- fin fila botones -->
+	
+	
+</div>
+</body>
+</html>

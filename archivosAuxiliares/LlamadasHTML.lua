@@ -267,6 +267,10 @@ end
 
 
 
+function OnLuaButton_ref000()
+	modelo=100
+  return true
+end
 function OnLuaButton_ref001()
 	modelo=101
   return true
