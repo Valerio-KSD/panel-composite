@@ -361,14 +361,84 @@ function dibujarTexto(doc)
 
     textoDescriptivo=textoDescriptivo .. "\nArea Total: " .. round(areaTotal,2) .. " m2" .. "\nArea Plana: " .. round(areaPlana,2) .. " m2"
 
-  --elseif modelo==112 then --modelo 112
+  
+  elseif modelo==112 then --modelo G4
 
+    origenTexto = Point2D(origenX+(pliegueDer1+pliegueDer2+pliegueDer3+anchuraPlaca+pliegueIzq1+pliegueIzq2+pliegueIzq3)/2,origenY+(alturaPlaca)/2+pliegueInf1+pliegueInf2+pliegueInf3)
 
+    areaTotal= ((pliegueDer1+pliegueDer2+pliegueDer3+anchuraPlaca+pliegueIzq1+pliegueIzq2+pliegueIzq3+2*margenMecanizado)*(pliegueInf1+pliegueInf2+pliegueInf3+alturaPlaca+pliegueSup1+pliegueSup2+pliegueSup3+margenMecanizado*2))/1000000
+    areaPlana= (alturaPlaca*anchuraPlaca)/1000000
 
+    textoDescriptivo=textoDescriptivo .. "\nArea Total: " .. round(areaTotal,2) .. " m2" .. "\nArea Plana: " .. round(areaPlana,2) .. " m2"
+	
+  elseif modelo==113 then --modelo F9
+  
+	origenTexto = Point2D(origenX+(pliegueIzq+alaIzquierda+anchura1+anchura2+anchura3+anchura4)/2,origenY+alaInferior+(alturaPlaca)/2)
 
+    areaTotal= ((margenMecanizado*2+alaIzquierda+pliegueIzq+anchura1+anchura2+anchura3+anchura4)*(margenMecanizado*2+alaInferior+alturaPlaca+alaSuperior+pliegueSuperior))/1000000
+    areaPlana= ((anchura1+anchura2+anchura3+anchura4)*alturaPlaca)/1000000
+
+    textoDescriptivo=textoDescriptivo .. "\nArea Total: " .. round(areaTotal,2) .. " m2" .. "\nArea Plana: " .. round(areaPlana,2) .. " m2"
+	
+  elseif modelo==114 then --modelo F10
+	
+	origenTexto = Point2D(origenX+(alaIzquierda+anchura1+anchura2+anchura3+anchura4)/2,origenY+alaInferior+(alturaPlaca)/2)
+
+    areaTotal= ((margenMecanizado*2+alaIzquierda+anchura1+anchura2+anchura3+anchura4)*(margenMecanizado*2+alaInferior+alturaPlaca+alaSuperior+pliegueSuperior))/1000000
+    areaPlana= ((anchura1+anchura2+anchura3+anchura4)*alturaPlaca)/1000000
+
+    textoDescriptivo=textoDescriptivo .. "\nArea Total: " .. round(areaTotal,2) .. " m2" .. "\nArea Plana: " .. round(areaPlana,2) .. " m2"
+	
+  elseif modelo==115 then --modelo F11
+  
+	origenTexto = Point2D(origenX+(alaIzquierda+anchura1+anchura2+anchura3+anchura4)/2,origenY+alaInferior+pliegueInferior+(alturaPlaca)/2)
+
+    areaTotal= ((margenMecanizado*2+alaIzquierda+anchura1+anchura2+anchura3+anchura4)*(margenMecanizado*2+alaInferior+pliegueInferior+alturaPlaca+alaSuperior+pliegueSuperior))/1000000
+    areaPlana= ((anchura1+anchura2+anchura3+anchura4)*alturaPlaca)/1000000
+
+    textoDescriptivo=textoDescriptivo .. "\nArea Total: " .. round(areaTotal,2) .. " m2" .. "\nArea Plana: " .. round(areaPlana,2) .. " m2"
+	
+  elseif modelo==116 then --modelo F12
+	
+	origenTexto = Point2D(origenX+(alaIzquierda+anchura1+anchura2+anchura3+pliegueDer+alaDerecha)/2,origenY+alaInferior+(alturaPlaca)/2)
+
+    areaTotal= ((margenMecanizado*2+alaIzquierda+anchura1+anchura2+anchura3+pliegueDer+alaDerecha)*(margenMecanizado*2+alaInferior+alturaPlaca+alaSuperior+pliegueSuperior))/1000000
+    areaPlana= ((anchura1+anchura2+anchura3)*alturaPlaca)/1000000
+
+    textoDescriptivo=textoDescriptivo .. "\nArea Total: " .. round(areaTotal,2) .. " m2" .. "\nArea Plana: " .. round(areaPlana,2) .. " m2"
+	
+  elseif modelo==117 then --modelo F13
+	
+	origenTexto = Point2D(origenX+(alaIzquierda+anchura1+anchura2+anchura3+pliegueDer+alaDerecha)/2,origenY+alaInferior+math.max(pliegueInf1,pliegueInf2,pliegueInf3)+(alturaPlaca)/2)
+
+    areaTotal= ((margenMecanizado*2+alaIzquierda+anchura1+anchura2+anchura3+pliegueDer+alaDerecha)*(margenMecanizado*2+alaInferior+math.max(pliegueInf1,pliegueInf2,pliegueInf3)+alturaPlaca+alaSuperior+pliegueSuperior))/1000000
+    areaPlana= ((anchura1+anchura2+anchura3)*alturaPlaca)/1000000
+
+    textoDescriptivo=textoDescriptivo .. "\nArea Total: " .. round(areaTotal,2) .. " m2" .. "\nArea Plana: " .. round(areaPlana,2) .. " m2"
+	
+  elseif modelo==118 then --modelo F14
+  
+	origenTexto = Point2D(origenX+(alaIzquierda+anchura1+anchura2+anchura3+anchura4+anchura5)/2,origenY+alaInferior+math.max(pliegueInf1,pliegueInf2,pliegueInf3,pliegueInf4,pliegueInf5)+(alturaPlaca)/2)
+
+    areaTotal= ((margenMecanizado*2+alaIzquierda+anchura1+anchura2+anchura3+anchura4+anchura5)*(margenMecanizado*2+alaInferior+math.max(pliegueInf1,pliegueInf2,pliegueInf3,pliegueinf4,pliegueInf5)+alturaPlaca+alaSuperior+pliegueSuperior))/1000000
+    areaPlana= ((anchura1+anchura2+anchura3+anchura4+anchura5)*alturaPlaca)/1000000
+
+    textoDescriptivo=textoDescriptivo .. "\nArea Total: " .. round(areaTotal,2) .. " m2" .. "\nArea Plana: " .. round(areaPlana,2) .. " m2"
+	
+  elseif modelo==119 then --modelo F15
+  
+	origenTexto = Point2D(origenX+(alaIzquierda+anchura1+anchura2+anchura3+anchura4+anchura5)/2,origenY+alaInferior+math.max(pliegueInf1,pliegueInf2,pliegueInf3,pliegueInf4,pliegueInf5)+(alturaPlaca)/2)
+
+    areaTotal= ((margenMecanizado*2+alaIzquierda+anchura1+anchura2+anchura3+anchura4+anchura5)*(margenMecanizado*2+alaInferior+alturaPlaca+alaSuperior+pliegueSuperior))/1000000
+    areaPlana= ((anchura1+anchura2+anchura3+anchura4+anchura5)*alturaPlaca)/1000000
+
+    textoDescriptivo=textoDescriptivo .. "\nArea Total: " .. round(areaTotal,2) .. " m2" .. "\nArea Plana: " .. round(areaPlana,2) .. " m2"
+	
+	
+	
   else
     origenTexto = Point2D(origenX+(anchuraPlaca/3)-(2*alaIzquierda),origenY+(alturaPlaca/2)+pliegueInferior+alaInferior)
-    end
+  end
   
   
   local texto=CadMarker(textoDescriptivo,origenTexto,0)
